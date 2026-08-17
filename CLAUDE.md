@@ -51,13 +51,65 @@ Root holds only `CLAUDE.md`, `index.md`, `log.md`.
   ---
   ```
   `aliases` matter — they let you resolve shorthand in future sessions.
-- **Dates**: absolute `YYYY-MM-DD`. Never "last week" or "recently".
+- **Dates**: absolute `YYYY-MM-DD`. Never "last week" or "recently". Determine
+  them yourself — see **Dates** below. Never ask msilva for a date you can read.
 - **Confidence**: mark unverified claims inline — `(unverified: …)` — and state
   what would confirm them. Distinguish *what the docs say* from *what you saw in
   the code*. Corrections to earlier pages are called out inline, not silently
   overwritten.
 - **Citations**: when a claim comes from a source, cite the wiki page and the
   underlying raw file: `— [[Airtable API docs]] (raw/airtable-api.md)`.
+
+## Dates
+
+**Never ask msilva what date something is.** Work it out, and say which source
+you used if it wasn't obvious.
+
+### A source's date — check in this order, stop at the first hit
+
+1. **Inside the file.** Almost always correct: transcripts and exports carry a
+   header date, emails carry `Date:`, design docs carry a title block. Read the
+   first ~20 lines before anything else.
+2. **The filename**, when it's already `YYYY-MM-DD …`. Also parse the raw export
+   forms — `2026_08_10 17_03 GMT-03_00` → `2026-08-10`.
+3. **Filesystem timestamps — last resort, and flag it.** These date the
+   *download*, not the event.
+
+   ```bash
+   stat -c 'birth=%w mtime=%y' "raw/<file>"
+   ```
+
+   Worked example: the 2026-08-10 onboarding transcript reports
+   `birth=2026-08-17`, a week after the meeting it records. Had the filename not
+   carried the date, the header line `ago. 10, 2026` would have been the only
+   correct source. If you ever fall through to this rule, write the date with
+   `(unverified: from file mtime, may be the download date)`.
+
+**Portuguese dates parse to ISO**, and the month abbreviations are not English:
+`jan fev mar abr mai jun jul ago set out nov dez`. So `ago. 10, 2026` →
+`2026-08-10`, and `10/08/2026` is **day-first** → `2026-08-10`, never August 10th
+read as October 8th.
+
+### Today's date
+
+For `updated:` fields and log entries, use the current date from the session
+context. If it isn't there:
+
+```bash
+date +%F
+```
+
+### Where dates go
+
+- `updated:` — the date you touched the page. Bump it on every edit.
+- `date:` — the date of the underlying event (meeting held, decision made,
+  document published). **Not** the date you ingested it. These differ often;
+  keep both.
+- Filenames in `meetings/` and `decisions/` lead with the **event** date.
+- Log entries carry the date of the operation.
+
+When a page's `date:` and `updated:` are far apart, that's normal for a meeting
+and a smell for a `status: active` page — [[log]] and `lint` both rely on it.
 
 ## Operations
 

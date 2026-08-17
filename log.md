@@ -46,3 +46,13 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
   speaker attribution is inline on the meeting page instead.
 - Open after this ingest: does proxy-side retry belong to v1? Is "Orca" a real
   system? Which agent gets built first and where does it live?
+
+## [2026-08-17] refactor | Schema: derive dates automatically
+- Added a `Dates` section to `CLAUDE.md` at msilva's request: never ask for a
+  date that can be read.
+- Precedence: file contents → filename → filesystem timestamps (last resort,
+  must be flagged unverified). Evidence: the 2026-08-10 transcript reports
+  `birth=2026-08-17`, i.e. its download date, a week after the meeting.
+- Recorded PT month abbreviations and day-first `DD/MM/YYYY` parsing.
+- Clarified `date:` (event) vs `updated:` (last touched) and which one leads a
+  filename.
