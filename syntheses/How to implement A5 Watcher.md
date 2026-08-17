@@ -157,20 +157,53 @@ grouping reduces volume; the ceiling bounds it.
 
 ## Stage 2 — Receiver and agent
 
-Two viable homes, and this is an open decision:
+**Decided 2026-08-17 (msilva): a plain container on Cloud Run, `min-instances=0`.**
+Full rationale and the three rejected alternatives —
+[[2026-08-17 A5 receiver runs on Cloud Run]]. In short: n8n loses on isolation
+(a shared licence with finance, and the documented reason Gabriel's flow could not
+be debugged), and a container is the choice that **defers** the hosting question,
+which is downstream of the still-open production telemetry backend.
 
-| | **n8n** | **Cloud Run service** |
-|---|---|---|
-| Webhook receiver | Free, built in | Build it (small Go/Node service) |
-| Scheduling | Built in | Cloud Scheduler |
-| Isolation | **Shared licence with finance** — crowded logs, and a stuck lock blocked debugging entirely ([[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]]) | **Isolated.** msilva controls it |
-| Fits existing infra | The area's de facto runtime | The proxy already deploys to Cloud Run |
-| Effort | Low | Higher |
+Three consequences that shape the code:
 
-**The n8n isolation problem is not hypothetical** — it is the documented reason
-Gabriel's flow could not be debugged. A monitoring agent that can be silenced by
-another team's stuck execution is a poor monitoring agent. Worth weighing against
-n8n being what the area actually uses, and what A9's sanctioned stack names.
+- **Idle costs nothing, and one setting reverses that.** Leave CPU throttling ON;
+  `--no-cpu-throttling` bills the instance's whole lifetime.
+- **Therefore triage cannot run after returning 200** — CPU is throttled once the
+  response is sent, so `BackgroundTasks` stalls. A **Cloud Tasks queue** sits
+  between the webhook route and the triage worker, and is where the ceiling from
+  Stage 1b lives as config: `--max-dispatches-per-second`,
+  `--max-concurrent-dispatches`, `--max-attempts`.
+- **Auth is asymmetric.** Cloud Scheduler and Cloud Tasks mint OIDC tokens and get
+  real IAM. Grafana cannot, so the webhook route needs a shared bearer secret and
+  the service is publicly reachable with one route guarded by a string comparison.
+
+### Parse at the edge
+
+Convert the vendor payload into an internal alert shape in **one adapter function**,
+and let triage, dedup and the issue builder work on that shape only. The production
+backend is undecided (Cloud Monitoring / Datadog / New Relic — [[Airtable Proxy]]
+§14), and their alert webhooks carry the same *concepts* in different JSON. This is
+a parse boundary the receiver needs regardless — distinct from the `shared/`-stays-
+empty rule, which is about not guessing at structure shared between agents that
+don't exist yet.
+
+### What the receiver must handle
+
+- **`status: "resolved"`.** Grafana sends these when a condition clears, provided
+  the contact point keeps `disableResolveMessage: false`. Without handling them A5
+  files bugs and never learns they cleared — the Linear board fills with stale open
+  issues, which is exactly the alert-fatigue failure mode in risk #5.
+- **Fingerprint from `groupLabels`, not the per-alert `fingerprint`.** `groupLabels`
+  is precisely what the notification policy grouped on, so dedup and grouping
+  cannot drift apart. Grafana's own `fingerprint` is over the full label set and is
+  too granular for issue-level dedup. (**verify** the field names against the
+  running Grafana version.)
+- **`truncatedAlerts > 0`** is itself a storm signal — surface it as *"and N more"*
+  rather than implying A5 saw everything.
+- **Ignore payloads without the routing label.** Grafana's contact-point *Test*
+  button sends a synthetic payload with `alertname: TestAlert` and no `a5` label, so
+  gating on that label makes test notifications exercise auth and parsing without
+  filing an issue.
 
 ## Stage 2b — Deduplication, without building A13
 
@@ -260,7 +293,12 @@ Per the spec template's third field, and aimed squarely at the fatigue risk:
 
 ## Open decisions
 
-- **n8n or Cloud Run** for the receiver.
+- ~~n8n or Cloud Run for the receiver~~ — **settled 2026-08-17**, see
+  [[2026-08-17 A5 receiver runs on Cloud Run]].
+- **Where the daily ceiling's counter lives.** Cloud Run scales horizontally, so an
+  in-process counter neither works nor survives a redeploy. Firestore is the
+  cheapest durable option; the alternative is shipping v1 on the queue's rate cap
+  alone and **saying so** rather than implying a ceiling exists.
 - **Which alerts** ship in the first version. Fewer is better; start with 429
   sustained and proxy liveness.
 - Does filing into **Linear** have Gabrielle's support mid-migration?

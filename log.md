@@ -706,3 +706,36 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
 - Not done: `people/` remains empty (msilva's standing call); the prep note is
   still `draft` after its meeting date; the empty `Novo(a) Documento de Texto.txt`
   is untouched in `raw/`.
+
+## [2026-08-17] decision | A5's receiver runs on Cloud Run
+- Worked through **how A5 receives Grafana events**, then what should host the
+  endpoint. msilva settled it: **a plain container on Cloud Run,
+  `min-instances=0`** — idle costs nothing, it joins the local `otel-lgtm` compose
+  stack, and a container **defers** the hosting question, which hangs off the
+  still-open production telemetry backend.
+- New: `decisions/2026-08-17 A5 receiver runs on Cloud Run.md`. Records all three
+  rejected alternatives **with what would reopen each** — n8n (isolation),
+  Cloudflare Workers (reach + the skill runtime; reopens if prod lands on Grafana
+  Cloud), and co-location beside the observability stack (*deferred, not rejected* —
+  the best option if the stack is self-hosted, since it deletes the public surface
+  and the bearer token outright).
+- Updated: [[How to implement A5 Watcher]]. Stage 2 rewritten around the decision.
+  Three findings added from this session:
+  - **`--no-cpu-throttling` reverses the cost basis**, and because CPU is throttled
+    after the response, triage cannot run post-200 — which is what the Cloud Tasks
+    queue is actually for.
+  - **Resolve events were missing from the design.** Without handling
+    `status: "resolved"`, A5 files bugs and never learns they cleared — the stale-
+    board version of risk #5.
+  - **Fingerprint from `groupLabels`**, not Grafana's per-alert `fingerprint`, so
+    dedup cannot drift from the grouping the policy performed.
+- Also added: *parse at the edge* — one adapter from vendor payload to an internal
+  alert shape, so an eventual Cloud Monitoring/Datadog switch touches one file.
+- New open decision recorded: **where the daily ceiling's counter lives**, since
+  Cloud Run scales horizontally and an in-process counter survives neither.
+- Flagged, not acted on: the **agents-monorepo decision (2026-08-17) is recorded
+  inline** in [[How to implement A5 Watcher]] rather than as a `decisions/` page,
+  which is inconsistent with this entry. msilva's call whether to extract it.
+- Corrected in conversation: I claimed n8n could not join the compose stack. It can;
+  the real objection is that a local n8n isn't the shared-licence instance you would
+  deploy to, so the local test doesn't validate the production runtime.

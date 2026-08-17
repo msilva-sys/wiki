@@ -30,6 +30,7 @@ _(empty — deliberately; see [[log]] 2026-08-17)_
 - [[2026-08-10 Onboarding runs proxy and agent flow in parallel]] — proxy first and fast, agent flow alongside with no delivery pressure.
 - [[2026-08-14 Migrate project management from Jira to Linear]] — Linear becomes the system of record; proxy issues to be restructured.
 - [[2026-08-14 No mandatory PR review while the proxy is pre-production]] — msilva merges his own work; Luís reviews history after the fact.
+- [[2026-08-17 A5 receiver runs on Cloud Run]] — plain container, `min-instances=0`. Records why n8n, Cloudflare Workers and co-location were not chosen, and what would reopen each.
 
 _(next candidates, extractable from [[Airtable Proxy]]: token-terminating auth, OTel/OTLP over BigQuery, Cloud Run min=1)_
 
