@@ -178,8 +178,11 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 
 ## Domain notes
 
-- Employer **Livemode**; msilva is an engineer there. Jira board **AIRTABLEGC**
-  (ticket refs like `AIRTABLEGC-34`, sometimes `GC-34`).
+- Employer **Livemode**; msilva is an engineer there, started 2026-08-10.
+- **Project tracking is moving from Jira to Linear** (decided 2026-08-14). The
+  Jira board **AIRTABLEGC** (`AIRTABLEGC-34`, sometimes `GC-34`) is legacy —
+  keep existing refs as history, don't create new pages against Jira IDs. See
+  [[2026-08-14 Migrate project management from Jira to Linear]].
 - Active project: the **Airtable Proxy** — Go, observability-first, OpenTelemetry
   → Grafana LGTM, deployed to Cloud Run. It is *not* a caching project.
 - Prefer the repo and the code as ground truth over design docs when they
@@ -187,6 +190,14 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 
 ## Rules
 
+- **Never write a credential into the wiki.** No tokens, private keys, API keys,
+  passwords, or connection strings — not even dev or sandbox ones, and not even
+  when copying a file verbatim. Record the variable **name**, what it's for, and
+  **where to obtain it**; that is the durable knowledge. Replace the value with
+  `<REDACTED — where to find it>`. `NEXT_PUBLIC_*` and equivalents that ship to
+  the browser are not secrets and may be kept.
+  This vault is a git repository: a secret written here is a secret in history.
+  If you find one already present, **stop and tell msilva before committing**.
 - Never modify `raw/`.
 - Ask before deleting a wiki page; rewriting and merging are fine unprompted.
 - Every write operation ends with `index.md` and `log.md` updated. This is not

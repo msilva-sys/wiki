@@ -11,6 +11,29 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > Related: [[Proxy Environments]] · [[AIRTABLEGC-34]] · [[LiveScript]] ·
 > [[Airtable Rate Limits]] · [[Agent Flow]]
 
+> [!tip] Current state, 2026-08-17
+> Active work is **app authentication + centralizing Airtable key distribution**
+> — see the superseded-roadmap note below. Tracking is moving to **Linear**
+> ([[2026-08-14 Migrate project management from Jira to Linear]]). msilva merges
+> his own PRs ([[2026-08-14 No mandatory PR review while the proxy is pre-production]]).
+> First confirmed anti-pattern found in the wild: an events-panel query returning
+> an entire table with no need.
+
+## How it's framed internally
+
+msilva's own description to the team, worth reusing because it's compact and it
+landed:
+
+> "O proxy é um serviço que vai ficar em frente ao Airtable, então toda requisição
+> pro Airtable vai passar pelo proxy e aí a gente vai ter mais controle sobre quem
+> faz as requisições e como faz."
+
+The metrics named as the point of the exercise: **whether a request filters
+rather than pulling the whole table**, and **which application is calling**.
+Scoped to [[LiveScript]] first, *"mas a ideia é para ser geral para todos os
+serviços aqui da empresa"* — presented internally as company-wide infrastructure,
+not a LiveScript fix ([[2026-08-14 Recap da Semana]]).
+
 ## Why this project exists
 
 Added 2026-08-17 from [[2026-08-10 Onboarding Técnico - Matheus]]. The rest of
@@ -20,6 +43,11 @@ from Gabrielle Ferreira in onboarding.
 - **The trigger was the World Cup.** A day of heavy concurrent usage on
   [[LiveScript]] — an app requiring real-time editing and real-time feedback —
   exceeded what the Airtable API could absorb. See [[Airtable Rate Limits]].
+  **Users lost work**: requests failed and edits already made were destroyed —
+  *"muitas das requisições que as pessoas faziam davam erro e aí perdia o que foi
+  feito"* ([[2026-08-14 1-1 Matheus - Gabrielle]]). The failure mode was data
+  loss, not just slowness, which is a materially stronger justification for the
+  project than "it got slow."
 - **The user-visible cost is still being paid.** LiveScript restricts its users
   to stay under the limit: whole-row locking even when two people need different
   fields, and only one person creating rows at a time. These are workarounds, not
@@ -162,8 +190,22 @@ telemetry*, not enforcement:
 - [ ] Commit roteiros observability work on `feat/airtable-observability-local`
       (not `main`, no push).
 
-**Deferred (do not start unprompted):** multi-app API-key auth (phase 3),
+**Deferred (do not start unprompted):** ~~multi-app API-key auth (phase 3)~~,
 Pulumi IaC (phase 4), rate-limiting (phase 5), metadata cache (phase 6).
+
+> [!important] Superseded 2026-08-17 — app auth is active work, not deferred
+> As of 2026-08-14 msilva is **building app authentication and centralizing
+> Airtable key distribution** ([[2026-08-14 1-1 Matheus - Gabrielle]]). That is
+> "phase 3" in the list above, being done during phase 1.
+>
+> This is not scope creep — **Luís deliberately reordered the issues**, partly to
+> keep msilva inside the proxy and out of [[LiveScript]], and he considers his
+> original breakdown outdated enough that he'd design it differently today. The
+> phase numbering above therefore describes the *design doc's* plan, not the
+> current plan. Treat the roadmap as a record of intent, not a schedule.
+>
+> The reordering is also why the issues are being restructured during
+> [[2026-08-14 Migrate project management from Jira to Linear]].
 
 ---
 

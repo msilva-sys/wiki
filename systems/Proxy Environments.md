@@ -1,16 +1,36 @@
 ---
 type: system
 status: active
-updated: 2026-08-11
+updated: 2026-08-17
 aliases: [envs prxy, proxy envs]
-tags: [airtable, proxy, config, environments]
+tags: [airtable, proxy, config, environments, livescript]
 ---
 
 # Proxy Environments
 
-Environment and configuration reference for the [[Airtable Proxy]].
+Environment and configuration reference for the [[Airtable Proxy]] and
+[[LiveScript]].
 
-```
+> [!danger] Redacted 2026-08-17
+> This page previously contained **live credentials** in plaintext: an Airtable
+> PAT, a Firebase service-account private key, and LogRocket / Bugsnag / integration
+> API keys. They were replaced with placeholders during a `lint` pass, and the
+> vault's git history was rebuilt so the values are not recoverable from it.
+>
+> **Rotation is still required** — the values were on disk in plaintext from
+> 2026-08-11 and the redaction does not undo that. See [[log]] 2026-08-17.
+>
+> Real values live in the app's local `.env` and in Secret Manager. **Never paste
+> a credential into this wiki** — record the variable's *name*, *purpose*, and
+> *where to obtain it* instead. That is the part worth writing down; the secret
+> itself is worthless here and dangerous.
+
+`NEXT_PUBLIC_*` values are intentionally kept: they ship to the browser by
+definition and are not secrets.
+
+## Airtable
+
+```bash
 # Airtable Configuration
 # Obtenha o PAT em: https://airtable.com/create/tokens
 # Veja AIRTABLE_SETUP.md para instruções detalhadas
@@ -45,7 +65,6 @@ AIRTABLE_MATRIZ_ROTEIRO_PRONTO_FIELD_ID=fldH74oC0ppcrojoI
 # Sandbox:    fldPBl5NivGBJjyHW
 AIRTABLE_MATRIZ_ROTEIRO_GRUPOS_LINK_FIELD_ID=fldPBl5NivGBJjyHW
 
-
 # Lookup do RecordID do evento em ROTEIRO_GRUPOS. Permite filtrar grupos por
 # evento via `filterByFormula` (PRD-031 — fluxo "Copiar de outro evento").
 # Different per base because dev and prod were created independently.
@@ -70,14 +89,34 @@ AIRTABLE_OK_DO_CONTEUDO_FIELD_ID=fldsd1R0Ss5izTa38
 # Sandbox:    fldh6JGsthl9rXzJO
 AIRTABLE_HORARIO_OFICIAL_INICIO_FIELD_ID=fldh6JGsthl9rXzJO
 
+AIRTABLE_ESPELHO_COTA_FIELD_ID=fldWDr447imihH4I6
+
 # View IDs (per-base; opcional — se não definir, usa o default de produção)
 # Production view: viwFwSXcTcsHIKqkT (Matriz CazéTV)
 # Desenvolvimento view:    viwZS2NRgE64FybIB
 AIRTABLE_MATRIZES_VIEW_ID=viwZS2NRgE64FybIB
+```
 
-# Firebase Configuration (Client-Side)
-# Variáveis com prefixo NEXT_PUBLIC_ são expostas ao cliente (browser)
-# Obtenha essas credenciais em: https://console.firebase.google.com/
+## Proxy wiring
+
+```bash
+# Point the app at the proxy instead of api.airtable.com.
+# Commented out = app talks to Airtable directly (current default).
+#AIRTABLE_ENDPOINT_URL=http://localhost:8080
+
+OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318
+```
+
+This is the migration mechanism described in
+[[2026-08-10 Onboarding Técnico - Matheus]]: uncommenting one variable repoints
+the app. Confirms the "base-URL swap, not DNS cutover" model in
+[[Airtable Proxy]].
+
+## Firebase
+
+```bash
+# Client-side. NEXT_PUBLIC_ variables are exposed to the browser by design.
+# Obtenha em: https://console.firebase.google.com/
 # Project Settings → Your apps → Add app → Web
 NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyBUIs8UyjEjk2IBlEPZEXqVmeQcqG4u_qw
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=livemode-roteiros-dev.firebaseapp.com
@@ -87,73 +126,69 @@ NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=195810529635
 NEXT_PUBLIC_FIREBASE_APP_ID=1:195810529635:web:8ad4494080a5694beb4356
 NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-1NC9K7FF0S
 
-# Base URL (Client-Side)
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
-
-# Edit lock expiration (client-side). Time in seconds after which the edit lock is released due to inactivity. Default: 180 (3 min). Use a smaller value locally (e.g. 30 or 60) for easier development.
-# NEXT_PUBLIC_EDIT_LOCK_TIMEOUT_SECONDS=180
-
-# LogRocket (Client-Side, opcional)
-# Se não definir, usa o app ID padrão mbailj/livemode-roteiros
-#Deixe vazio ou comente para desativar LogRocket em desenvolvimento
-NEXT_PUBLIC_LOGROCKET_APP_ID=livemode-livescript/livescript
-
-# Desativar completamente (não grava sessão nem envia erros):
-NEXT_PUBLIC_LOGROCKET_DISABLED=1
-
-# Reduzir impacto (sem rede/console na gravação; DOM e erros continuam):
-NEXT_PUBLIC_LOGROCKET_MINIMAL=0
-
-# API key server-side/CI for uploading source maps after `pnpm build`:
-LOGROCKET_API_KEY=<REDACTED-PURGED>
-
-
-# Bugsnag (Client-Side: erros + performance)
-# Se não definir, usa a chave padrão do projeto
-NEXT_PUBLIC_BUGSNAG_API_KEY=27bfa09a57d60ca8d3f5fbdf7514f825
-
-NEXT_PUBLIC_BUGSNAG_ENABLED_IN_DEV=1
-NEXT_PUBLIC_BUGSNAG_SEND_FROM_DEV=1
-
-
-# Bugsnag (Server-Side: API routes + Airtable monitoring)
-# Prefer a dedicated Bugsnag project for backend/server events.
-# If unset, server integration falls back to BUGSNAG_API_KEY or NEXT_PUBLIC_BUGSNAG_API_KEY.
-BUGSNAG_SERVER_API_KEY=<REDACTED-PURGED>
-# Optional legacy/server key alias:
-# BUGSNAG_API_KEY=your_server_project_api_key_here
-#
-# By default, backend events are sent only from production.
-# To also send backend events from development:
-BUGSNAG_SERVER_SEND_FROM_DEV=1
-BUGSNAG_SERVER_ENABLED_IN_DEV=1
-
-# Firebase Admin SDK (Server-Side Only)
-# Variáveis SEM prefixo NEXT_PUBLIC_ são apenas para o servidor (não expostas ao cliente)
-# Obtenha essas credenciais em: https://console.firebase.google.com/
+# Admin SDK — server-side only, never exposed to the client.
 # Project Settings → Service Accounts → Generate New Private Key
-# NOTA: FIREBASE_PROJECT_ID geralmente tem o mesmo valor de NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-# mas são usadas em contextos diferentes (servidor vs cliente)
 FIREBASE_PROJECT_ID=livemode-roteiros-dev
 FIREBASE_CLIENT_EMAIL=firebase-adminsdk-fbsvc@livemode-roteiros-dev.iam.gserviceaccount.com
 FIREBASE_PRIVATE_KEY=<REDACTED-PURGED>
+```
 
+## Observability (app-side)
 
+Distinct from the proxy's OTel pipeline — this is LiveScript's own error and
+session tooling.
 
-# Comma-separated emails allowed to paginate through the full change-history log
+```bash
+# LogRocket (client-side, optional). Default app ID: mbailj/livemode-roteiros
+NEXT_PUBLIC_LOGROCKET_APP_ID=livemode-livescript/livescript
+NEXT_PUBLIC_LOGROCKET_DISABLED=1      # 1 = no session recording, no errors
+NEXT_PUBLIC_LOGROCKET_MINIMAL=0       # 1 = drop network/console from recording
+
+# Server-side/CI, for uploading source maps after `pnpm build`
+LOGROCKET_API_KEY=<REDACTED-PURGED>
+
+# Bugsnag — client-side (errors + performance)
+NEXT_PUBLIC_BUGSNAG_API_KEY=27bfa09a57d60ca8d3f5fbdf7514f825
+NEXT_PUBLIC_BUGSNAG_ENABLED_IN_DEV=1
+NEXT_PUBLIC_BUGSNAG_SEND_FROM_DEV=1
+
+# Bugsnag — server-side (API routes + Airtable monitoring).
+# Prefer a dedicated Bugsnag project for backend events.
+# If unset, falls back to BUGSNAG_API_KEY or NEXT_PUBLIC_BUGSNAG_API_KEY.
+# By default backend events are sent only from production.
+BUGSNAG_SERVER_API_KEY=<REDACTED-PURGED>
+BUGSNAG_SERVER_SEND_FROM_DEV=1
+BUGSNAG_SERVER_ENABLED_IN_DEV=1
+```
+
+## App behaviour flags
+
+```bash
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+# Seconds of inactivity before an edit lock is released. Default 180 (3 min).
+# Use 30–60 locally for easier development.
+# NEXT_PUBLIC_EDIT_LOCK_TIMEOUT_SECONDS=180
+
+NEXT_PUBLIC_FEATURE_GENERATE_SCRIPT_IN_APP=true
+
+# Comma-separated emails allowed to paginate the full change-history log
 # (infinite scroll in Histórico de Alterações). UX-only gate for internal admins.
 CHANGE_HISTORY_ADMIN_EMAILS=lfernandez.projetos@livemode.com,tech@livemode.com
 
-
-NEXT_PUBLIC_FEATURE_GENERATE_SCRIPT_IN_APP=true
-AIRTABLE_ESPELHO_COTA_FIELD_ID=fldWDr447imihH4I6
-
-# Integrations API (PRD-032 / LIVESCRIPT-9) — static API key for /api/integrations/*
-# Local-only dev value (generated with `openssl rand -hex 32`). Do NOT reuse in Vercel.
+# Integrations API (PRD-032 / LIVESCRIPT-9) — static key for /api/integrations/*
+# Local-only dev value (generated with `openssl rand -hex 32`).
+# Do NOT reuse in Vercel.
 INTEGRATION_API_KEY=<REDACTED-PURGED>
-
-
-#AIRTABLE_ENDPOINT_URL=http://localhost:8080
-
-OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318
 ```
+
+`NEXT_PUBLIC_EDIT_LOCK_TIMEOUT_SECONDS` is the implementation of the row-level
+*trava* described in [[LiveScript]] — the lock auto-expires after 3 minutes of
+inactivity.
+
+## Knowledge gap — the PRD/ADR corpus
+
+The comments above cite **PRD-007, PRD-029, PRD-031, PRD-032, PRD-036, ADR-011**
+and **LIVESCRIPT-9**. None of these documents are in the wiki and none are in
+`raw/`. This looks like the single richest unexploited source of context on
+[[LiveScript]]. Worth locating and ingesting.

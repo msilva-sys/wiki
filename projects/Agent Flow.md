@@ -80,6 +80,30 @@ designing the next one:
 
 It was abandoned. The flows *"não necessariamente eram conversacionais entre si"*.
 
+## Constraints that surfaced later
+
+**Token cost is a first-class design constraint, not an afterthought.** A
+colleague's flow burned roughly **$7 in a single day of testing**. Gabrielle's
+framing: a flow running once a month in production at that cost is fine; the same
+spend every day through a long experimentation phase is not obviously
+sustainable. Optimizing token consumption — context, memory, how much the agent
+is handed — is an explicit goal
+([[2026-08-14 1-1 Matheus - Gabrielle]]).
+
+**Sharing is the underlying problem.** Work built in Claude can't easily be
+handed to a team — at best a shared workspace, or packaging it as a skill to
+distribute. n8n covers scheduled and event-triggered runs that Claude alone
+doesn't, which is why colleagues build in one and move to the other. **A
+platform where agent flows can live and be maintained collaboratively is the gap
+this project exists to fill.**
+
+**Scope, as msilva described it to the team**: automate *"desde os PRDs […] até a
+entrega"* — from PRDs through delivery ([[2026-08-14 Recap da Semana]]). Narrower
+and more concrete than the full architecture diagram, and it makes the PRD corpus
+flagged in [[Proxy Environments]] directly relevant input.
+
+Work starts **2026-08-17**, splitting time with the [[Airtable Proxy]].
+
 ## msilva's deliverable
 
 1. An understanding of what each proposed agent is for.
@@ -98,5 +122,9 @@ the agent picks up real context and gets working in practice.
   design addresses adoption.
 - How do agents actually talk to each other? The unsolved problem that killed
   the prior attempt.
-- Is **Orca** a distinct system? (unverified — named once, transcription
-  uncertain)
+- ~~Is **Orca** a distinct system?~~ **Resolved 2026-08-17.** Orca is real, and
+  is cited as *the* example of a project essential to Livemode's operations
+  ([[2026-08-14 Papo de Projetos]]). That makes it a credible first target for
+  the monitoring agent. Note a separate, unrelated use of the word: an
+  orchestration tool an outside author used in a model Luís shared
+  ([[2026-08-14 1-1 Matheus - Gabrielle]]) — don't conflate them.

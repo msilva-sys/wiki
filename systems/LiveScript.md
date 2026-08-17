@@ -12,11 +12,14 @@ Livemode's collaborative script-editing application (*roteiro* = script). **The
 heaviest user of the Airtable API at Livemode**, and the reason the
 [[Airtable Proxy]] exists.
 
-> [!note] Name reconciliation
-> The transcript says "LiveScript" (garbled as *live stre / live strip /
-> Live Scit*); the codebase notes say "roteiros app" (`config.service.ts`,
-> `narrator.service.ts`). Confirmed by msilva on 2026-08-17 that these are the
-> same system. Both names kept as aliases.
+> [!note] Name reconciliation — settled
+> The transcripts say "LiveScript"; the codebase notes say "roteiros app"
+> (`config.service.ts`, `narrator.service.ts`). Same system, now confirmed three
+> ways: msilva said so directly on 2026-08-17; he said it on the record on
+> 2026-08-14 — *"o live script, que é o de roteiros"*
+> ([[2026-08-14 Recap da Semana]]); and [[Proxy Environments]] shows the Firebase
+> project as `livemode-roteiros-dev` alongside a LogRocket app named
+> `livemode-livescript/livescript`.
 
 ## Why it strains Airtable
 
@@ -25,6 +28,16 @@ not a database. When one person edits a line, everyone else must see the edit
 and the lock immediately. During the **World Cup**, a day of high concurrent
 usage exceeded what the Airtable API could absorb —
 [[2026-08-10 Onboarding Técnico - Matheus]].
+
+**The failure mode was data loss.** The app didn't simply slow down or go
+offline: requests failed and the work people had already done was lost —
+*"muitas das requisições que as pessoas faziam davam erro e aí perdia o que foi
+feito"* ([[2026-08-14 1-1 Matheus - Gabrielle]]). For a live script being edited
+during a broadcast, that is the worst available failure.
+
+**A concrete instance is already identified**: a query in the events panel
+returning an entire table when it had no need to. First confirmed sighting of the
+over-fetch anti-pattern the [[Airtable Proxy]] dashboards were built to detect.
 
 ## Concurrency workarounds (*travas*) — product debt
 
