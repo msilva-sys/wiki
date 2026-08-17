@@ -1,4 +1,14 @@
+---
+type: project
+status: active
+updated: 2026-08-11
+aliases: [prxy, the proxy, airtable proxy]
+tags: [airtable, go, observability, opentelemetry, cloud-run]
+---
+
 # Airtable Proxy — Project Notes (reconciled with the repo)
+
+> Related: [[Proxy Environments]] · [[AIRTABLEGC-34]]
 
 > **Updated 2026-08-11** after reading the actual repo
 > (`livemode-airtable-proxy-main`). The earlier version of this note was a

@@ -1,3 +1,13 @@
+---
+type: reference
+status: active
+updated: 2026-08-13
+aliases: [GC-34]
+tags: [airtable, jira, livescript]
+---
+
+> Ticket notes. Related: [[Airtable Proxy]]
+
 /> https://livemode-projetos.atlassian.net/browse/AIRTABLEGC-34
 
 No projeto do livescript, há uma função, 

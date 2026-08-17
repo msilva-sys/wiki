@@ -1,3 +1,15 @@
+---
+type: system
+status: active
+updated: 2026-08-11
+aliases: [envs prxy, proxy envs]
+tags: [airtable, proxy, config, environments]
+---
+
+# Proxy Environments
+
+Environment and configuration reference for the [[Airtable Proxy]].
+
 ```
 # Airtable Configuration
 # Obtenha o PAT em: https://airtable.com/create/tokens
