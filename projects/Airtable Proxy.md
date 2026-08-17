@@ -94,8 +94,20 @@ from Gabrielle Ferreira in onboarding.
 
 - **It is not greenfield.** v1 is built (8 commits) and its acceptance test
   passes. There is a working Go proxy, two Grafana dashboards, and a 429 alert.
-- **v1 is observability-only.** No caching, no rate-limiting, no enforcement —
-  *on purpose*. The strategy is **measure first, then decide what to fix.**
+- **v1 adds no caching and no rate-limiting** — *on purpose*. The strategy is
+  **measure first, then decide what to fix.**
+
+  > [!warning] Corrected 2026-08-17 — "no enforcement" is no longer true
+  > This line previously read *"observability-only. No caching, no rate-limiting,
+  > no enforcement."* The proxy now **401s any request without `X-App-Id`**
+  > ([[How LiveScript sends the proxy X-App-Id header]]) — rejecting
+  > unauthenticated callers **is** enforcement, and it ships in v1. Gabrielle also
+  > describes proxy-side 429 retry as intended
+  > ([[2026-08-10 Onboarding Técnico - Matheus]]), which is intervention too.
+  >
+  > The accurate claim is the narrow one kept above: no caching, no rate-limiting.
+  > "Observability-first" remains true as a *strategy* — measure before deciding
+  > what to fix — but it never meant the proxy does nothing but observe.
 - **My job right now is not to build caching or a rate limiter.** Those are
   deferred (roadmap phases 5–6). The live work is enriching the telemetry.
 

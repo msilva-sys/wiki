@@ -1,7 +1,10 @@
 ---
 title: Sharing via Projects — what belongs in the accounting project
-date: 2026-08-14
 type: reference
+status: active
+updated: 2026-08-17
+date: 2026-08-14
+aliases: [sharing via projects, the accounting project]
 tags: [claude, projects, sharing, accounting, knowledge-base]
 related: "[[Sharing the accounting automation with the team]]"
 ---

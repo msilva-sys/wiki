@@ -1,7 +1,10 @@
 ---
 title: Claude capabilities map — accounting / large-data scope
-date: 2026-08-14
 type: reference
+status: active
+updated: 2026-08-17
+date: 2026-08-14
+aliases: [capabilities map, claude capabilities]
 tags: [claude, capabilities, accounting, context-window, plugins, mcp]
 related: "[[Meeting prep - accounting data in Claude - 2026-08-17]]"
 ---

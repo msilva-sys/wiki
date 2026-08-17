@@ -51,5 +51,8 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 - [[How LiveScript sends the proxy X-App-Id header]] — GC-5 client side: **implemented** via a `pnpm patch` (SDK) + centralized REST injection; data-plane honours the endpoint, metadata pinned direct. Corrects the "drop the PAT / X-Api-Key" onboarding model.
 
 ## Reference
+- [[Claude capabilities map - accounting data scope]] — Claude capabilities by layer for large-data/accounting work, cheapest-to-adopt first.
+- [[Sharing the accounting automation with the team]] — distribution options for getting one person's workflow to a team. Bears directly on [[Agent Flow]]'s sharing problem.
+- [[Sharing via Projects - the accounting project]] — Projects as a sharing mechanism; what belongs in one.
 - [[AIRTABLEGC-34]] — ticket notes (legacy Jira).
 - [[Zed Cheatsheet]] — editor keybindings.

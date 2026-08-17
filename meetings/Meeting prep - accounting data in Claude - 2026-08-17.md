@@ -314,8 +314,20 @@ Tier 0. Five people, every month, on a million rows → Tier 3.
 
 ## Related
 
-- [[Claude - context window and large data]]
-- [[LiveMode - AI tooling and data access]]
+Companion pages, written alongside this note:
+
+- [[Claude capabilities map - accounting data scope]] — capabilities by layer,
+  cheapest-to-adopt first.
+- [[Sharing the accounting automation with the team]] — distribution options for
+  getting one person's workflow to a whole team.
+- [[Sharing via Projects - the accounting project]] — what belongs in a shared
+  Project.
+
+> [!note] Repointed 2026-08-17
+> This section previously listed two placeholder links —
+> `Claude - context window and large data` and
+> `LiveMode - AI tooling and data access` — that were never written. The three
+> companions above cover that territory and already existed.
 
 ## Sources
 

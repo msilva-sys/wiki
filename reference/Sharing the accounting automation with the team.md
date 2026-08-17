@@ -1,7 +1,10 @@
 ---
 title: Sharing the accounting automation with the team — distribution options
-date: 2026-08-14
 type: reference
+status: active
+updated: 2026-08-17
+date: 2026-08-14
+aliases: [distribution options, sharing automations]
 tags: [claude, plugins, skills, distribution, admin, accounting]
 related: "[[Claude capabilities map - accounting data scope]]"
 ---

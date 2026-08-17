@@ -343,3 +343,39 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 - Still open (gate the endpoint flip): does the proxy overwrite `Authorization`,
   and does it serve the Metadata API. The 5 metadata call sites stay direct and
   still need a real PAT until answered.
+
+## [2026-08-17] lint | Third health check
+- 27 pages, 8 raw sources, 16 commits.
+- **Credentials still in git history** (6 commits) — third lint reporting it.
+  Purge remains blocked; PAT and Firebase key rotation still outstanding.
+- Found: the "observability-only" claim is now contradicted by shipped code;
+  three accounting pages misfiled in `sources/` with `type: reference`, missing
+  `status`/`updated`, absent from the index, one a full orphan; an empty
+  `Novo(a) Documento de Texto.txt` in `raw/`; the prep note still `draft` after
+  its meeting date.
+- Clean: raw coverage complete, no stale pages, no other contradictions, working
+  tree free of secrets, one legitimate dead-end page.
+
+## [2026-08-17] refactor | Lint fixes — misfiled reference pages, stale claim
+- **Corrected [[Airtable Proxy]]**: *"no enforcement"* removed. The proxy 401s
+  requests without `X-App-Id` — that is enforcement, shipping in v1 — and
+  proxy-side 429 retry is intended. Narrowed the claim to "no caching, no
+  rate-limiting" and kept observability-*first* as the strategy. Correction left
+  visible rather than silently rewritten. This closes a tension carried since the
+  first lint.
+- **Moved to `reference/`** (they are original material, not summaries of `raw/`
+  documents, so `sources/` was wrong): [[Claude capabilities map - accounting data scope]],
+  [[Sharing the accounting automation with the team]],
+  [[Sharing via Projects - the accounting project]]. Added `status:`/`updated:`
+  and aliases; all three now in `index.md`.
+- **Resolved both dangling links.** The prep note's `## Related` section pointed
+  at two never-written placeholders; the three companion pages above already
+  covered that territory, so the links were repointed rather than new pages
+  invented. **The wiki now has zero broken links.**
+- **Wired the sharing research into [[Agent Flow]]** — the substantive find. The
+  project names collaborative maintenance as the gap it exists to fill, and a
+  worked page on distributing one person's workflow to a team had been sitting
+  unlinked in the wrong folder. Combined with the Gabriel session (working
+  component = packaged skill, broken one = unpackaged), **packaging is emerging
+  as both the token-cost lever and the sharing mechanism.**
+- Not touched: the empty file in `raw/` (immutable layer, needs msilva's word).

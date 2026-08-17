@@ -159,6 +159,26 @@ doesn't, which is why colleagues build in one and move to the other. **A
 platform where agent flows can live and be maintained collaboratively is the gap
 this project exists to fill.**
 
+> [!tip] This is already researched — three sources converge on packaging
+> Linked 2026-08-17 during a lint; these existed but nothing pointed at them.
+>
+> - [[Sharing the accounting automation with the team]] — distribution options for
+>   getting one person's workflow to a whole team, worked through for the
+>   accounting case on 2026-08-14.
+> - [[Sharing via Projects - the accounting project]] — Projects as a sharing
+>   mechanism and what belongs in one. The Fluxo Agêntico project **is** a shared
+>   Project ([[Fluxo Agêntico project instruction]]), so this describes the
+>   container the work already lives in.
+> - [[Claude capabilities map - accounting data scope]] — capabilities by layer,
+>   cheapest-to-adopt first.
+>
+> Field evidence points the same way: in
+> [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]] the component
+> that **works** is the one packaged as a skill, and the one that fails is
+> unpackaged. **Packaging is emerging as both the cost lever and the sharing
+> mechanism** — the same answer to two problems, which is worth testing rather
+> than assuming.
+
 **Scope, as msilva described it to the team**: automate *"desde os PRDs […] até a
 entrega"* — from PRDs through delivery ([[2026-08-14 Recap da Semana]]). Narrower
 and more concrete than the full architecture diagram, and it makes the PRD corpus
