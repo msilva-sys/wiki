@@ -1,12 +1,18 @@
 ---
 type: project
 status: active
+phase: research
 updated: 2026-08-17
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
-tags: [agents, llm, automation, onboarding]
+tags: [agents, llm, automation, onboarding, research]
 ---
 
 # Agent Flow
+
+> [!abstract] Currently in the **research phase** (as of 2026-08-17)
+> No build decisions are made yet. The research agenda, the sequencing problem it
+> has to solve, and what to ask whom are in
+> [[What should the Agent Flow research phase study]].
 
 A proposed multi-agent architecture to automate how msilva's area receives,
 classifies, and executes demands. msilva's **second onboarding track**, running

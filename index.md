@@ -45,7 +45,7 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 - [[Meeting prep - accounting data in Claude - 2026-08-17]] — prep notes for the 2026-08-17 accounting-data-in-Claude meeting.
 
 ## Syntheses
-_(empty)_
+- [[What should the Agent Flow research phase study]] — research agenda for the agent project; names the A6/A5 sequencing problem and what to ask before Gabrielle's leave.
 
 ## Reference
 - [[AIRTABLEGC-34]] — ticket notes (legacy Jira).

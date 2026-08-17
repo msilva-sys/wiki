@@ -189,6 +189,25 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 - Raised: the `Brain` repository overlaps A6 Curator, i.e. the centrepiece of the
   architecture rather than a peripheral component.
 
+## [2026-08-17] synthesis | Agent Flow research agenda
+- msilva stated the project is at the **research step**. Recorded as
+  `phase: research` on [[Agent Flow]].
+- New: `syntheses/What should the Agent Flow research phase study.md`, derived
+  from existing pages only — no external research performed yet.
+- **Names a sequencing problem not previously identified**: A5 Watcher, the
+  suggested first build, has no consumers (A3 doesn't exist), and almost every
+  agent depends on A6 Curator, making A6 a precondition rather than a peer. The
+  real first decision is leaf-that-proves-plumbing vs hub-everything-needs.
+- Four research tracks: resolve A6 against `Brain` (blocking); the
+  deterministic/autonomous fork; adoption (the recorded cause of the prior
+  failure, unaddressed by the diagram); and what feeds `Bug (sistema)`.
+- Observed that the diagram is **not paradigm-uniform** — A13 must be
+  deterministic to block, while A3 and A9 create sub-agents dynamically. So the
+  question is which parts are deterministic, not which paradigm wins.
+- Sequencing tied to the calendar: Gabrielle on leave from the week of
+  2026-08-24, Luís part-time afternoons, deadline meeting end of the week of
+  2026-08-17.
+
 ## [2026-08-17] refactor | Lint fixes (continued)
 - **Not done**: the two dangling links from the meeting prep note
   (`Claude - context window and large data`,
