@@ -283,6 +283,31 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 - Track 2 reframed: scheduling and runtime is now the sharpest unknown, and token
   cost binds there — a 5-minute cadence is ~288 invocations/day.
 
+## [2026-08-17] ingest | Matheus / Gabriel — CazéTV revenue recognition
+- Source: `raw/Matheus _ Gabriel - Fluxo de reconhecimento da receita cztv -
+  2026_08_17 15_02 GMT-03_00 - Anotações do Gemini.txt`. The consultation
+  Gabrielle routed to msilva on 2026-08-14; held today.
+- New: `meetings/2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow.md`.
+- Gemini attributed **every** line to msilva this time — the inverse of the
+  earlier transcripts. Attribution inferred from content.
+- **The $7/day token case now has a mechanism**, not just a number: wholesale
+  context loading (an entire 816-row Airtable table fed to an agent that needs
+  slices) plus a probable **loop** repeating operations. Gabriel's working
+  component is the one packaged as a **skill that fetches narrowly**; the broken
+  one is unpackaged.
+- **n8n is the de facto runtime** for agent flows here, on a **licence shared with
+  finance** — no isolation, executions crowd each other's logs, and a stuck
+  *"fechamento em andamento"* lock blocked the debugging session entirely.
+- Updated: [[Agent Flow]] (token cost now has a diagnosed cause),
+  [[What should the Agent Flow research phase study]] (Track 2 shortened — n8n
+  already answers much of the runtime question), `index.md`.
+- First recorded instance of msilva doing the **A4 Teacher** job by hand:
+  diagnose, explain, agree next steps.
+- Financial figures deliberately not recorded; the process is, since the
+  automation can't be reasoned about without it.
+- Open: the review can't proceed until Gabriel resets the stuck lock and produces
+  an execution with logs.
+
 ## [2026-08-17] refactor | Cite airtable.js source for the customHeaders limitation
 - Added upstream source permalinks to
   [[How LiveScript sends the proxy X-App-Id header]] finding #2: `run_action.ts`

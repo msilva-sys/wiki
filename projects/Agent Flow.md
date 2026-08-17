@@ -145,6 +145,13 @@ sustainable. Optimizing token consumption — context, memory, how much the agen
 is handed — is an explicit goal
 ([[2026-08-14 1-1 Matheus - Gabrielle]]).
 
+That flow was diagnosed on 2026-08-17 —
+[[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]]. Probable
+causes: **wholesale context loading** and **a loop repeating operations**. The
+component that works is the one packaged as a **skill fetching only what it
+needs**. So the cost lever is narrow fetching, decided per agent at design time
+rather than tuned afterwards.
+
 **Sharing is the underlying problem.** Work built in Claude can't easily be
 handed to a team — at best a shared workspace, or packaging it as a skill to
 distribute. n8n covers scheduled and event-triggered runs that Claude alone

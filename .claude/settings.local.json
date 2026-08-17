@@ -80,7 +80,25 @@
       "Bash(python3 -)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "mcp__6d9a43a4-3f5b-4db4-98a4-b580ef6085f8__getAccessibleAtlassianResources"
+      "mcp__6d9a43a4-3f5b-4db4-98a4-b580ef6085f8__getAccessibleAtlassianResources",
+      "WebFetch(domain:registry.npmjs.org)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(npx --yes pnpm@10.28.2 patch airtable@0.12.2)",
+      "Bash(npx --yes pnpm@10.28.2 patch-commit \"X:\\\\Tecnologia\\\\livemode-roteiros-nextjs\\\\node_modules\\\\.pnpm_patches\\\\airtable@0.12.2\")",
+      "Bash(node -e \"console.log\\(JSON.stringify\\(require\\('./package.json'\\).pnpm,null,2\\)\\)\")",
+      "Bash(npx --yes pnpm@10.28.2 config get node-linker)",
+      "Bash(npx --yes pnpm@10.28.2 config get store-dir)",
+      "Bash(node \"C:\\\\Users\\\\msilva\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-msilva-Documents-work\\\\c18ddae3-43ca-43db-bcd6-2ff67daa2684\\\\scratchpad\\\\verify-xappid.js\")",
+      "Bash(NODE_PATH='X:\\\\Tecnologia\\\\livemode-roteiros-nextjs\\\\node_modules' node \"C:\\\\Users\\\\msilva\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-msilva-Documents-work\\\\c18ddae3-43ca-43db-bcd6-2ff67daa2684\\\\scratchpad\\\\verify-xappid.js\")",
+      "Bash(node -e \"const s=require\\('./package.json'\\).scripts; for \\(const k of ['typecheck','type-check','tsc','lint','test']\\) if\\(s[k]\\) console.log\\(k, '=>', s[k]\\);\")",
+      "Bash(git -C /x/Tecnologia/livemode-roteiros-nextjs status --short)",
+      "Bash(git -C /x/Tecnologia/livemode-roteiros-nextjs diff --stat)",
+      "Read(//c/Users/msilva/projects/livemode-roteiros-nextjs/node_modules/airtable/lib/**)",
+      "Bash(NODE_PATH='/c/Users/msilva/projects/livemode-roteiros-nextjs\\\\node_modules' node 'C:\\\\Users\\\\msilva\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-msilva-Documents-work\\\\c18ddae3-43ca-43db-bcd6-2ff67daa2684\\\\scratchpad\\\\verify-xappid.js')",
+      "Bash(npx vitest *)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"TSC_EXIT=$?\")",
+      "Bash(npx next *)"
     ]
   }
 }

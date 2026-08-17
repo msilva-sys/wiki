@@ -94,6 +94,24 @@ question, and it's the same wall colleagues already hit:
 caused unease, cadence and context size are the cost levers — so "how much does
 each cycle need to read" is a design constraint on A5 specifically.
 
+> [!tip] Field evidence, 2026-08-17
+> [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]] turns the
+> abstract token worry into a mechanism. That $7/day flow runs **on n8n**, and its
+> probable causes are **wholesale context loading** (feeding an agent an entire
+> 816-row table it only needs slices of) and **a loop repeating operations**.
+> The working half of Gabriel's system is the half packaged as a **skill that
+> fetches narrowly**; the broken half is the unpackaged one.
+>
+> Three transferable conclusions for A5:
+> - **n8n is already the de facto runtime** for agent flows here — that shortens
+>   this track considerably.
+> - **The shared n8n licence is an operational constraint.** Finance shares the
+>   instance; one person's executions crowd others' logs out of view, and a stuck
+>   in-progress lock blocked debugging entirely. Any agent deployed there inherits
+>   that.
+> - **Narrow fetching is the cost lever**, and it's a design decision made per
+>   agent, not a tuning step afterwards.
+
 ## Track 3 — Adoption (still unaddressed by any document)
 
 The one thing neither the diagram nor the instruction addresses, and the recorded
