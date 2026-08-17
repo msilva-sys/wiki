@@ -17,8 +17,16 @@ replaces the wiki's project-tracking assumptions.
 
 > [!warning] Transcription quality
 > Gemini attributes every line to Gabrielle Ferreira, including msilva's own
-> replies. Attribution below is inferred from content. Gemini's own summary
-> header compounds this — it credits msilva's statements to Gabrielle throughout.
+> replies. Attribution below is inferred from content.
+
+> [!note] Source re-read 2026-08-17
+> Originally ingested from the `.docx`; msilva replaced it with a `.txt` export
+> and the page was rebuilt against that. **The `.txt` is transcript-only** — the
+> `.docx` also carried Gemini's summary block (resumo / próximas etapas /
+> detalhes), which this export drops. Every claim here is supported by the
+> transcript body itself, so nothing was lost, but the `.txt` is the thinner of
+> the two sources. Re-reading it added the agent design-approach material below,
+> which the first pass had missed.
 
 > [!note] Scope
 > Contract, working hours, commute, gym, previous-employer questions, and team
@@ -84,7 +92,12 @@ replaces the wiki's project-tracking assumptions.
   colleague packaged his as a skill to distribute it. n8n covers scheduled and
   event-triggered runs that Claude alone doesn't. This is the concrete problem
   [[Agent Flow]] is meant to solve.
-- **Gabrielle is on leave for ~2.5 weeks**, returning the 10th. Carol and Luís
+- **Design direction for [[Agent Flow]] is genuinely open**: deterministic flow
+  versus simply exposing tools and letting agents resolve things; Luís suggested
+  graph-based approaches. msilva has done related work at his previous employer.
+  Gabrielle's ownership framing: *"é teu filho e teu projeto."*
+- **Gabrielle is on leave for ~2.5 weeks**, returning the 10th — starting the
+  week of **2026-08-24** per [[2026-08-14 Papo de Projetos]]. Carol and Luís
   cover; Luís is the primary technical contact.
 - **A "Pulse" immersion week** is planned — see [[Pulse]].
 

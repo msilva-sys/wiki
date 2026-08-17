@@ -151,6 +151,25 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 - `CLAUDE.md` now exempts itself, `index.md`, and `log.md` from frontmatter and
   orphan checks, so lint stops re-reporting them.
 - Citation example de-linked so it no longer registers as a broken link.
+## [2026-08-17] ingest | 1:1 re-read from the .txt source
+- Read the re-supplied `.txt` directly rather than relying on the earlier
+  comparison against the `.docx` extraction. **The comparison had been too
+  shallow** — it matched line counts, byte counts and the final line, which
+  established the transcript bodies were the same but missed detail.
+- **The `.txt` is transcript-only**: it drops Gemini's summary block that the
+  `.docx` carried. Every existing claim on the page is supported by the
+  transcript body, so nothing was invalidated, but the `.txt` is the thinner
+  source of the two.
+- **Two additions the first pass missed**, both on [[Agent Flow]]: the design
+  approach is genuinely undecided between a deterministic flow and simply
+  exposing tools to agents, and **Luís suggested graph-based approaches**
+  (transcription garbled — flagged unverified). Also recorded msilva's prior
+  related work and Gabrielle's ownership framing.
+- Pinned Gabrielle's leave to the week of 2026-08-24 by cross-referencing
+  [[2026-08-14 Papo de Projetos]].
+- Lesson recorded: verifying a file by metadata is not the same as reading it.
+
+## [2026-08-17] refactor | Lint fixes (continued)
 - **Not done**: the two dangling links from the meeting prep note
   (`Claude - context window and large data`,
   `LiveMode - AI tooling and data access`) are left as intentional to-do markers.

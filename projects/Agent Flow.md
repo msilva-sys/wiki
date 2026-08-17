@@ -143,8 +143,31 @@ Agent Flow relates to them — complement, replacement, or duplicate — is wort
 doing before designing, particularly given that one of the transversal agents is
 explicitly about **not building the same thing twice**.
 
+## Design approach — undecided
+
+msilva's own framing of the fork, from [[2026-08-14 1-1 Matheus - Gabrielle]].
+Nothing is settled; these are the axes he named as needing study:
+
+- **Deterministic vs. autonomous.** Either the flow is largely deterministic, or
+  the agents are simply *"mostrar as ferramentas pros agentes […] para ele
+  resolver as coisas"* — handed the tools and left to work it out. The prior
+  attempt's failure was partly that its flows *"não necessariamente eram
+  conversacionais entre si"*, which argues for thinking about this explicitly
+  rather than defaulting.
+- **Graphs.** Luís suggested graph-based approaches — recorded as *"o Luiz já deu
+  umas ideias de questão de gráfis"*. (unverified: transcription is garbled;
+  confirm whether he meant state graphs / a specific framework)
+- **Orchestration shape** — how the orchestrating agent works, unaddressed.
+
+msilva has done related work before, with people at his previous employer, so
+this isn't a standing start.
+
+Gabrielle's framing of ownership: *"é teu filho e teu projeto"*, with Luís as
+consultant rather than validator.
+
 ## Open questions
 
+- Deterministic, tool-exposure, or a mix? See above — the first real design call.
 - Which agent to build first, and where does it live?
 - What makes an agent get used, given the @mention failure above? Nothing in the
   design addresses adoption.
