@@ -35,6 +35,7 @@ _(next candidates, extractable from [[Airtable Proxy]]: token-terminating auth, 
 ## Sources
 - [[Fluxo Agêntico project instruction]] — **authoritative spec** for Agent Flow: AI-First philosophy, anarchic-then-integrated build strategy, per-agent detail for all 14.
 - [[Fluxo Agêntico diagram]] — the 14-agent architecture diagram; A6 Curator is the hub, A13 blocks, `Bug (sistema)` is machine-fed.
+- [[Gabriel Packer - DAG-driven agent orchestration]] — external prior art; the model Luís shared. A working A7→A8→A9 driven by a dependency graph. Resolves what "gráfis" meant.
 
 _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 

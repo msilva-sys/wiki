@@ -406,3 +406,30 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
   does not).
 - Open: execution traceability is still the blocker; the revenue number is still
   wrong.
+
+## [2026-08-17] ingest | Gabriel Packer — DAG-driven agent orchestration
+- Source: `raw/Clippings/Gabriel Packer → visorfinance.app (@gkpacker) no X.md`,
+  published 2026-07-23, clipped 2026-08-17. First web-clipped source, and the
+  first with reliable dates in its own frontmatter.
+- New: `sources/Gabriel Packer - DAG-driven agent orchestration.md`.
+- **Almost certainly the model Luís shared** — it uses Orca, orchestrates
+  information flow, and is graph-based, matching all three details msilva recorded
+  in [[2026-08-14 1-1 Matheus - Gabrielle]].
+- **Resolves "gráfis"**: Luís meant a **dependency graph (DAG) driving execution
+  waves** — explicit `blockedBy` edges, parallelism from the graph rather than
+  from agent count. Previously flagged unverified on [[Agent Flow]].
+- **Resolves the Orca collision**: Livemode's Orca is a business-critical ML
+  system; Packer's Orca creates git worktrees and runs agent terminals. Unrelated.
+- Recorded as a **production-tested implementation of the projects branch**
+  (A7→A8→A9): orchestrator that writes no code, waves off a fresh `origin/main`,
+  one agent per ticket, human quality gate at merge.
+- **His ticket template is effectively A7's output spec** — scope and explicit
+  out-of-scope, acceptance criteria, test scenarios, affected files, `blockedBy`,
+  rollout and kill switch, success metrics. *"Colocar mais agentes não corrige uma
+  especificação ruim"* — which argues A7, not A9, is the highest-leverage agent.
+- Third independent convergence on **skills as the packaging unit**.
+- Updated: [[Agent Flow]] (graphs resolved, Orca disambiguated, prior-art section),
+  [[What should the Agent Flow research phase study]] (Track 2b added; the Luís
+  artifact removed from the blocking list), `index.md`.
+- Caveats recorded: solo founder, single codebase, and one-agent-per-ticket where
+  A9 is specified to spawn sub-agents on demand.

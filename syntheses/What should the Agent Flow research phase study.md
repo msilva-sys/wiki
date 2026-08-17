@@ -120,6 +120,25 @@ each cycle need to read" is a design constraint on A5 specifically.
 > premium. A **token-consumption dashboard exists** and can be requested — get it
 > before, not after, building anything that runs unattended.
 
+## Track 2b — Prior art now in hand
+
+[[Gabriel Packer - DAG-driven agent orchestration]] removes much of the guesswork
+from the projects branch. It is a production-tested A7→A8→A9, and the transferable
+parts are specific:
+
+- **An explicit dependency graph, never inferred** — parallelism comes from the
+  DAG, not from how many agents you start.
+- **Waves off a fresh `origin/main`**, so no agent builds on unmerged code.
+- **A ticket template detailed enough to be a prompt** — this is A7's output
+  specification, already worked out.
+- **Everything packaged as skills**, which is now the third independent
+  convergence on packaging.
+- **A human gate at merge**, matching the AI-First philosophy exactly.
+
+Caveats before borrowing wholesale: he is a **solo founder on one codebase**, and
+his decomposition is **one agent per ticket** where A9 is specified to create
+sub-agents on demand.
+
 ## Track 3 — Adoption (still unaddressed by any document)
 
 The one thing neither the diagram nor the instruction addresses, and the recorded
@@ -154,8 +173,10 @@ meeting with both was set for the end of the week beginning 2026-08-17.
 
 1. **Before 2026-08-24** — confirm the first agent choice with Gabrielle, plus the
    Track 4 inconsistencies and where the still-unshared design docs are.
-2. **From Luís** — his graph suggestion and the model he shared. Less critical now
-   that autonomy is settled, but he's the one present after Gabrielle leaves.
+2. ~~**From Luís** — his graph suggestion and the model he shared.~~ **Obtained
+   2026-08-17**: [[Gabriel Packer - DAG-driven agent orchestration]]. "Gráfis"
+   meant a **dependency graph driving execution waves**. Still worth asking what
+   he thought transferred, but the artifact no longer blocks anything.
 3. **During the leave** — Tracks 1 and 2 are specification and experiment, and
    need neither of them.
 
