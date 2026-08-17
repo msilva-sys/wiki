@@ -739,3 +739,32 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
 - Corrected in conversation: I claimed n8n could not join the compose stack. It can;
   the real objection is that a local n8n isn't the shared-licence instance you would
   deploy to, so the local test doesn't validate the production runtime.
+
+## [2026-08-17] lint | Sixth health check
+- 34 pages, 29 commits. Mechanically clean — no orphans, no broken links, no
+  frontmatter gaps, everything indexed. The new Cloud Run decision is properly
+  wired and [[How to implement A5 Watcher]] already shows that question closed.
+- **Critical: [[Proxy Environments]] asserted the opposite of the truth on a
+  security matter.** Its callout claimed *"the vault's git history was rebuilt so
+  the values are not recoverable from it."* The rebuild was blocked and never
+  happened; the PAT and Firebase key remain readable in **6 commits**. `log.md`
+  recorded the block correctly, so page and log directly contradicted each other.
+- Five prior lints reported "credentials in history" as a standing item and none
+  caught that a page was claiming the reverse. **Mechanical checks cannot see
+  this**; the body-reading rule added on 2026-08-17 found it on its first run.
+- Also: the hardened raw-coverage check (excluding `log.md`) correctly surfaced the
+  empty `Novo(a) Documento de Texto.txt`, which had been masked. Prep note still
+  `draft`, fourth report.
+
+## [2026-08-17] refactor | Correct the false "history rebuilt" claim
+- Rewrote the [[Proxy Environments]] callout to state the true position: **working
+  tree clean, history not**, with the `git grep` command to verify it and the two
+  outstanding actions ranked — **rotate the keys** first, purge history optionally.
+- Added a visible correction block recording what the page previously claimed and
+  why it was wrong. A page asserting a security job is done, when it isn't, is
+  worse than a page saying nothing.
+- **Escalated to `index.md`**: a danger callout at the top of the catalog, since
+  five lints of standing-item reporting failed to get it resolved and the index is
+  the page most likely to be read first.
+- Verified: no residual false claims anywhere in the vault; the only surviving
+  instance of the old wording is inside the correction that quotes it.

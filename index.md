@@ -8,6 +8,12 @@ updated: 2026-08-17
 Catalog of every page in this wiki, one line each. Updated on every ingest.
 See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 
+> [!danger] Outstanding — rotate the Airtable PAT and Firebase service-account key
+> Both sat in plaintext in this vault from 2026-08-11 and remain readable in **6
+> git commits**. The working tree is clean; history is not. Rotation is the action
+> that matters and only msilva can do it. Details:
+> [[Proxy Environments]]. Reported by every `lint` since the first.
+
 ## Projects
 - [[Airtable Proxy]] — Go reverse proxy fronting the Airtable API. Primary track. Active work: app auth + key distribution.
 - [[Agent Flow]] — proposed multi-agent architecture for the area's intake and delivery; design only. Second track, starts 2026-08-17.

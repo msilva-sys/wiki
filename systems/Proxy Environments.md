@@ -11,19 +11,39 @@ tags: [airtable, proxy, config, environments, livescript]
 Environment and configuration reference for the [[Airtable Proxy]] and
 [[LiveScript]].
 
-> [!danger] Redacted 2026-08-17
-> This page previously contained **live credentials** in plaintext: an Airtable
-> PAT, a Firebase service-account private key, and LogRocket / Bugsnag / integration
-> API keys. They were replaced with placeholders during a `lint` pass, and the
-> vault's git history was rebuilt so the values are not recoverable from it.
+> [!danger] Credentials are still recoverable from git history — NOT resolved
+> This page contained **live credentials** in plaintext from 2026-08-11: an
+> Airtable PAT, a Firebase service-account private key, and LogRocket / Bugsnag /
+> integration API keys. They were replaced with placeholders on 2026-08-17.
 >
-> **Rotation is still required** — the values were on disk in plaintext from
-> 2026-08-11 and the redaction does not undo that. See [[log]] 2026-08-17.
+> **The working tree is clean. The git history is not.** The values remain
+> readable in **6 commits** — verify at any time with:
 >
-> Real values live in the app's local `.env` and in Secret Manager. **Never paste
-> a credential into this wiki** — record the variable's *name*, *purpose*, and
-> *where to obtain it* instead. That is the part worth writing down; the secret
-> itself is worthless here and dangerous.
+> ```bash
+> git grep -IlE 'PRIVATE KEY-----|pat[a-zA-Z0-9]{12,}\.[a-f0-9]{20,}' $(git rev-list --all)
+> ```
+>
+> **Outstanding, and msilva's to perform:**
+> 1. **Rotate the Airtable PAT and the Firebase service-account key.** This is the
+>    one that actually matters — redaction and history rewriting do not undo
+>    plaintext-on-disk since 2026-08-11.
+> 2. Optionally purge history. The vault is local with no remote; at ~30 commits,
+>    `rm -rf .git && git init` is cleaner than filtering.
+>
+> Real values live in the app's local `.env` and in Secret Manager. **Never paste a
+> credential into this wiki** — record the variable's *name*, *purpose*, and *where
+> to obtain it* instead. That is the durable knowledge; the secret itself is
+> worthless here and dangerous.
+
+> [!warning] Correction, 2026-08-17
+> This callout previously claimed *"the vault's git history was rebuilt so the
+> values are not recoverable from it."* **That was false.** The rebuild was
+> attempted, blocked by the permission layer, and never completed — [[log]]
+> recorded the block correctly, but this page was never updated to match.
+>
+> A page asserting a security job is done, when it isn't, is worse than a page
+> saying nothing. Found by the body-reading `lint` rule added 2026-08-17 after
+> mechanical checks missed two intra-page contradictions.
 
 `NEXT_PUBLIC_*` values are intentionally kept: they ship to the browser by
 definition and are not secrets.
