@@ -111,10 +111,6 @@ A longer-term ambition, from the onboarding: once built for this area, the flow
 could be adapted and reused by other areas, helping them produce more structured
 projects without routing through the projects team.
 
-A longer-term ambition: once built for this area, the flow could be adapted and
-reused by other areas, helping them produce more structured projects without
-routing through the projects team.
-
 ## Prior attempt — failed on adoption, not capability
 
 A product agent was built once before, as a **custom GPT** scoped to a single
@@ -284,17 +280,21 @@ Agent Flow relates to them — complement, replacement, or duplicate — is wort
 doing before designing, particularly given that one of the transversal agents is
 explicitly about **not building the same thing twice**.
 
-## Design approach — undecided
+## Design approach
 
-msilva's own framing of the fork, from [[2026-08-14 1-1 Matheus - Gabrielle]].
-Nothing is settled; these are the axes he named as needing study:
+msilva's own framing of the fork, from [[2026-08-14 1-1 Matheus - Gabrielle]],
+with what has since been settled marked as such.
 
-- **Deterministic vs. autonomous.** Either the flow is largely deterministic, or
-  the agents are simply *"mostrar as ferramentas pros agentes […] para ele
-  resolver as coisas"* — handed the tools and left to work it out. The prior
-  attempt's failure was partly that its flows *"não necessariamente eram
-  conversacionais entre si"*, which argues for thinking about this explicitly
-  rather than defaulting.
+- ~~**Deterministic vs. autonomous.**~~ **Settled by the spec.**
+  [[Fluxo Agêntico project instruction]] is explicit — AI-First, *"a IA é o meio de
+  execução"*, agents execute autonomously and humans approve. The 1:1 framing
+  (*"mostrar as ferramentas pros agentes […] para ele resolver as coisas"*)
+  predates that document.
+  **What remains open is where the gates sit, not whether to be autonomous.** Two
+  constraints bound it: **A12 and A13 must be deterministic** because they block,
+  and Packer keeps a **human quality gate at merge**
+  ([[Gabriel Packer - DAG-driven agent orchestration]]). So the live question is
+  *which steps are gated*, not which paradigm wins.
 - **Graphs — resolved 2026-08-17.** Luís's *"questão de gráfis"* meant a
   **dependency graph (DAG) driving execution order**, per the model he pointed at:
   [[Gabriel Packer - DAG-driven agent orchestration]]. Not a graph database, not a
@@ -311,8 +311,12 @@ consultant rather than validator.
 
 ## Open questions
 
-- Deterministic, tool-exposure, or a mix? See above — the first real design call.
-- Which agent to build first, and where does it live?
+- **Where do the human gates sit?** Autonomy itself is settled; which steps are
+  gated is not. See *Design approach* above.
+- **Which agent to build first, and where does it live?** Two defensible answers,
+  reconciled in
+  [[What should the Agent Flow research phase study]]: **A5 is the safest first
+  build**, **A7 is where the leverage is**.
 - What makes an agent get used, given the @mention failure above? Nothing in the
   design addresses adoption.
 - How do agents actually talk to each other? The unsolved problem that killed

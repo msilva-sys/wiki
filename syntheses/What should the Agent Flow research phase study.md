@@ -49,6 +49,28 @@ design.
 That last row is effectively the required shape of the "understanding of each
 agent" deliverable. It's a template, not a guess.
 
+## A5 or A7? They answer different questions
+
+Both are defensible and the wiki argued each separately without reconciling them.
+Stating it plainly:
+
+| | **A5 Watcher** | **A7 Discovery** |
+|---|---|---|
+| Claim | The safest **first build** | Where the **leverage** is |
+| Why | Best-specified agent in the instruction; closed scope; needs no human initiative, so it sidesteps the adoption failure that killed the prior attempt | *"Colocar mais agentes não corrige uma especificação ruim."* Spec quality bounds everything downstream; A9's output is only as good as A7's PRD |
+| Risk if wrong | Builds something useful but peripheral | Hard to validate alone — a PRD generator with no A8/A9 has no feedback loop |
+| Evidence | [[Fluxo Agêntico project instruction]], Gabrielle's verbal suggestion | [[Gabriel Packer - DAG-driven agent orchestration]] |
+
+**These aren't competing answers to one question.** Under anarchic-first, the first
+build is a *learning* exercise — it needs a closed scope and a real user, which
+favours A5. Leverage is a *sequencing* argument about where the programme's value
+concentrates, which favours A7 and stays true whenever it gets built.
+
+**Recommendation: A5 first, with A7's spec discipline applied to it.** Packer's
+ticket template is a specification standard, not only an A7 feature — writing A5's
+own spec to that bar (inputs/outputs, success criteria, explicit limits, rollout,
+metrics) tests the discipline on something small before it has to carry a project.
+
 ## Track 1 — Choose the first agent and specify it (do this first)
 
 Anarchic-first turns the question into: **which single agent has the most closed

@@ -463,3 +463,38 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
   a first-class stage in Packer's flow. Gap or deliberate omission?
 - Updated: [[Agent Flow]], [[What should the Agent Flow research phase study]],
   [[Gabriel Packer - DAG-driven agent orchestration]], `index.md`.
+
+## [2026-08-17] lint | Fourth health check
+- 29 pages, 20 commits. **Structurally clean** — no frontmatter gaps, no orphans,
+  no broken links, no stale pages, everything indexed.
+- **Credentials still in git history** (6 commits), fourth report. Rotation
+  outstanding.
+- Content findings: [[Agent Flow]] and its synthesis recommended **different first
+  builds** (A5 vs A7) without reconciling; time-critical questions for Gabrielle
+  scattered across five pages with her leave starting the week of 2026-08-24;
+  **packaging** and **token cost** are themes with no `concepts/` home despite
+  four and three sources respectively; `people/` still empty while operational
+  who-knows-what accumulates in meeting pages.
+- Noted a limitation: the mechanical checks (links, frontmatter, orphans) do not
+  read page bodies, so intra-page contradictions pass them.
+
+## [2026-08-17] query | Agent Flow
+- Answered from [[Agent Flow]], both Fluxo Agêntico sources, both Packer sources,
+  and [[What should the Agent Flow research phase study]]. No new synthesis page —
+  the research agenda already covers the ground.
+- **Two defects found by reading the page**, both missed by the lint: a duplicated
+  "longer-term ambition" paragraph, and an internal contradiction where the
+  Philosophy section recorded autonomy as settled while "Design approach" and
+  "Open questions" still listed deterministic-vs-autonomous as the first open call.
+
+## [2026-08-17] refactor | Fix query-surfaced defects; reconcile A5 vs A7
+- Removed the duplicated paragraph on [[Agent Flow]].
+- **Resolved the deterministic/autonomous contradiction**: the spec settles
+  autonomy; what remains open is **where the human gates sit**. Bounded by two
+  facts already recorded — A12 and A13 must be deterministic because they block,
+  and Packer keeps a human gate at merge.
+- **Reconciled A5 vs A7** in [[What should the Agent Flow research phase study]]:
+  they answer different questions. A5 is the safest *first build* (closed scope,
+  no human initiative required); A7 is where the *leverage* is (spec quality
+  bounds everything downstream). Recommendation recorded: **A5 first, specified to
+  A7's standard.**
