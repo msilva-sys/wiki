@@ -220,6 +220,15 @@ single project rather than the whole portfolio — [[LiveScript]] or Orca were
 named, as the systems under most constant use. Scoping it to one project is how
 the agent picks up real context and gets working in practice.
 
+> [!note] A5's shape, settled 2026-08-17
+> **A5 does not poll.** Grafana alert rules fire webhooks; A5 receives them. The
+> 5-minute cadence belongs to Grafana. **Hybrid**: event-driven for incidents,
+> a daily analytical pass for opportunities — which also serves as a dead-man's
+> switch, since event-driven monitoring otherwise fails silently. A5 gets direct
+> access to Prometheus, Loki and the observability stack, not just alert payloads.
+> **The proxy is not modified.** Full design and the risks it introduces:
+> [[Which agent should be built first]].
+
 > [!tip] Orca is the stronger candidate
 > [[2026-08-14 Papo de Projetos]] describes Orca as a **machine-learning system,
 > in production, that the team using it cannot work without** — its automation is

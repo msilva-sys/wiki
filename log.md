@@ -528,3 +528,40 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
   app-fed. Code wins over docs.
 - Updated: [[Agent Flow]], [[What should the Agent Flow research phase study]],
   `index.md`.
+
+## [2026-08-17] synthesis | A5 as event receiver, and the risks that introduces
+- Continued the A5 discussion. Expanded
+  [[Which agent should be built first]] with the watching mechanism and its risks.
+- **A5 does not poll.** Grafana alert rules already evaluate on a schedule and
+  fire; A5 becomes the **webhook receiver**. Matches the spec, which lists
+  *"webhooks"* and *"alertas de sistemas"* among A1's channels. Cost falls from
+  ~288 invocations/day to *(real incidents)* + one daily pass, and detection stays
+  deterministic and free in PromQL.
+- **The proxy is not modified** — its telemetry path is deliberately non-blocking
+  (drops rather than stalls), and Grafana already does the alerting.
+
+**Settled with msilva 2026-08-17:**
+- **Hybrid**: event-driven incidents, periodic 24h pass for opportunities, which
+  are trend-shaped and have no firing moment. The 5-minute cadence belongs to
+  Grafana.
+- **Grouping and throttling** in Grafana's notification policy, applied *before*
+  the agent, plus a daily invocation ceiling that fails closed.
+- **The daily pass doubles as a dead-man's switch** — event-driven monitoring
+  otherwise fails silently, and there is a documented instance of exactly that
+  (Gabriel's stuck lock with no logs on the shared n8n instance).
+- **A5 gets direct access to Prometheus, Loki and the observability stack**, not
+  just alert payloads — otherwise the intelligence migrates into static thresholds
+  and A5 degrades into a notification formatter.
+- **Explicit limit**: A5 never quotes payloads or headers into an issue; IDs and
+  metrics only. Also: files but never fixes, never touches production, stays
+  silent unless it can say why something matters.
+
+**Open direction, explicitly not a decision** — msilva raised implementing A13.
+Recorded because A5 without A13 generates precisely what A13 exists to block:
+recurring conditions filing the same issue daily. The observation worth keeping is
+that **A5's required dedup logic and A13's purpose are the same thing**, so A13 may
+be the natural second build. Undecided: separate agent, or logic inside A5.
+
+- Also recorded as accepted risk: alert fatigue carries higher stakes than the
+  prior attempt (Linear is the team's live board, mid-migration), and **nothing can
+  be tuned until GC-5 lands** — the tuning loop *is* the project.
