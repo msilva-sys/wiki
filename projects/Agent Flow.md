@@ -242,7 +242,14 @@ in **waves**, starts one implementation agent per ticket, monitors PRs and CI, a
 opens the next wave as blockers merge. A **human quality gate at merge** — which
 matches the AI-First stance of humans as strategic approvers.
 
-Two things to take from it before designing anything:
+Its predecessor, [[Gabriel Packer - solo founder AI workflow (part 1)]]
+(2026-03-26), shows the same system before that automation — every ticket
+dispatched by hand. **The delta between the two posts is the most useful thing
+here: he automated the coordination and left the judgement alone.** The quality
+gates, spec discipline, and human merge review are identical in both. That is a
+migration path, not just an end state, and it says which piece to automate first.
+
+Three things to take from them before designing anything:
 
 - **The ticket is the prompt.** His ticket template — scope and explicit
   out-of-scope, acceptance criteria, test scenarios, affected files, `blockedBy`
@@ -251,6 +258,16 @@ Two things to take from it before designing anything:
 - **Spec quality bounds agent quality**: *"colocar mais agentes não corrige uma
   especificação ruim."* On this evidence A7 is the highest-leverage agent in the
   architecture, not A9.
+- **Agent instructions belong in files, not memory.** From a practitioner replying
+  to part 1: *"memory compacts and agents forget context mid-task. files persist
+  across sessions and every agent reads the same source of truth."* A direct
+  design input for **A6 Curator** — durable shared files rather than per-agent
+  context.
+
+Also worth noting from part 1: **QA is a first-class stage there** (a `qa-tester`
+agent driving Chrome via DevTools) and **the loop closes on observability**
+(AppSignal for traces, PostHog for adoption, adoption feeding the next round).
+Nothing among the 14 covers automated QA — possibly a gap, possibly deliberate.
 
 ## Other prior art
 

@@ -135,9 +135,30 @@ parts are specific:
   convergence on packaging.
 - **A human gate at merge**, matching the AI-First philosophy exactly.
 
-Caveats before borrowing wholesale: he is a **solo founder on one codebase**, and
-his decomposition is **one agent per ticket** where A9 is specified to create
-sub-agents on demand.
+[[Gabriel Packer - solo founder AI workflow (part 1)]] (2026-03-26) shows the same
+system four months earlier, before dispatch was automated. **The delta is the
+finding**: he automated the coordination and left every quality gate, the spec
+discipline, and the human merge review untouched. If Agent Flow needs a migration
+order rather than a target state, that's it — automate dispatch first, judgement
+never.
+
+Part 1 also contributes:
+
+- **Instructions in files, not memory** — *"memory compacts and agents forget
+  context mid-task; files persist and every agent reads the same source of
+  truth."* A concrete design input for **A6 Curator**.
+- **Two levels of parallelism**: across tickets via the DAG, and *within* a ticket
+  by having implementation and test agents agree function contracts first.
+- **The loop closes on observability** — AppSignal and PostHog, with adoption data
+  feeding the next round. That's **A11 Product Intelligence** done by a human.
+- **Linear ships its own agent**, which Packer judged similar to his first stage
+  but *"talvez menos flexível."* Worth checking, given the Linear migration.
+
+Caveats before borrowing wholesale: he is a **solo founder on one codebase**; his
+decomposition is **one agent per ticket** where A9 is specified to create
+sub-agents on demand; and **the tooling is unstable** — he swapped Conductor for
+Orca inside four months, which argues against committing Livemode's flow to any
+one orchestrator.
 
 ## Track 3 — Adoption (still unaddressed by any document)
 

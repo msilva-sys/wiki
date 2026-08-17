@@ -101,7 +101,8 @@
       "Bash(npx next *)",
       "mcp__6d9a43a4-3f5b-4db4-98a4-b580ef6085f8__getTransitionsForJiraIssue",
       "mcp__6d9a43a4-3f5b-4db4-98a4-b580ef6085f8__editJiraIssue",
-      "mcp__6d9a43a4-3f5b-4db4-98a4-b580ef6085f8__transitionJiraIssue"
+      "mcp__6d9a43a4-3f5b-4db4-98a4-b580ef6085f8__transitionJiraIssue",
+      "mcp__6d9a43a4-3f5b-4db4-98a4-b580ef6085f8__searchJiraIssuesUsingJql"
     ]
   }
 }

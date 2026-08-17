@@ -15,6 +15,12 @@ A post by **Gabriel Packer (@gkpacker)**, solo founder of visorfinance.app,
 published **2026-07-23**: *"Meu workflow com IA como solo founder, parte 2"*.
 Clipped 2026-08-17.
 
+**Part 1 is [[Gabriel Packer - solo founder AI workflow (part 1)]]** (2026-03-26),
+where each ticket is still dispatched by hand. This post automates precisely that
+step and changes nothing else — the quality gates, the spec discipline, and the
+human merge review all carry over. He also switched orchestrator between the two:
+**Conductor → Orca**.
+
 > [!important] This is almost certainly the model Luís shared
 > In [[2026-08-14 1-1 Matheus - Gabrielle]] msilva describes a model *"de um cara
 > postando […] no Twitter ou no LinkedIn"* that Luís found relevant for how it

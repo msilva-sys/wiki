@@ -433,3 +433,33 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
   artifact removed from the blocking list), `index.md`.
 - Caveats recorded: solo founder, single codebase, and one-agent-per-ticket where
   A9 is specified to spawn sub-agents on demand.
+
+## [2026-08-17] ingest | Gabriel Packer — solo founder AI workflow (part 1)
+- Source: `raw/Clippings/Post by @gkpacker on X.md`, published 2026-03-26.
+  **Part 1** of the series whose part 2 was ingested earlier today.
+- New: `sources/Gabriel Packer - solo founder AI workflow (part 1).md`;
+  cross-linked from the part 2 page.
+- **The delta between the two posts is the finding**: part 1 dispatches every
+  ticket by hand, part 2 automates only that. Every quality gate, the spec
+  discipline, and the human merge review are unchanged. **He automated the
+  coordination and left the judgement alone** — a migration order, not just a
+  target state.
+- New material from part 1: a quality-gate-heavy pipeline (QA agent driving Chrome
+  via DevTools, CI, manual test, staging, post-deploy verification); **two levels
+  of parallelism** (DAG across tickets; function contracts agreed between
+  implementation and test agents within one); the loop closing on **AppSignal +
+  PostHog**, which is A11 Product Intelligence performed by a human; and
+  role-specialized agents rather than on-demand sub-agents.
+- **Outside lesson worth keeping**: a practitioner reply — *"write agent
+  instructions to files, not memory […] files persist across sessions and every
+  agent reads the same source of truth."* Direct design input for **A6 Curator**,
+  and the premise this wiki already runs on.
+- **Linear ships its own agent**, which Packer judged comparable to his first
+  stage but less flexible. Relevant given
+  [[2026-08-14 Migrate project management from Jira to Linear]].
+- **Tooling instability recorded**: Conductor (March) → Orca (July). Argues against
+  committing to a single orchestrator.
+- New open question: nothing among the 14 agents covers **automated QA**, which is
+  a first-class stage in Packer's flow. Gap or deliberate omission?
+- Updated: [[Agent Flow]], [[What should the Agent Flow research phase study]],
+  [[Gabriel Packer - DAG-driven agent orchestration]], `index.md`.
