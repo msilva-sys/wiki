@@ -146,11 +146,23 @@ is handed — is an explicit goal
 ([[2026-08-14 1-1 Matheus - Gabrielle]]).
 
 That flow was diagnosed on 2026-08-17 —
-[[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]]. Probable
-causes: **wholesale context loading** and **a loop repeating operations**. The
-component that works is the one packaged as a **skill fetching only what it
-needs**. So the cost lever is narrow fetching, decided per agent at design time
-rather than tuned afterwards.
+[[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]].
+
+> [!warning] Corrected 2026-08-17 — $7/day is the bad case, not the norm
+> Measured consumption for one observed run was **11 centavos**, against ~670 for
+> the earlier period. Same flow, same day. **Cost is intermittent, not inherent** —
+> which points at a **runaway execution** (two workflows firing concurrently when
+> one should chain into the next) rather than at context volume as the primary
+> cause. Wholesale context loading is still worth fixing; it just isn't the main
+> culprit.
+>
+> A **token-consumption dashboard exists** and is obtainable on request — the
+> measurement instrument this constraint always needed.
+
+The cost lever is therefore twofold: **narrow fetching** (a design decision per
+agent) and **a correct trigger chain** (an orchestration problem). For A5 Watcher
+at a 5-minute cadence, the second matters more — a runaway loop on a schedule
+compounds in a way a one-off experiment doesn't.
 
 **Sharing is the underlying problem.** Work built in Claude can't easily be
 handed to a team — at best a shared workspace, or packaging it as a skill to
@@ -158,6 +170,21 @@ distribute. n8n covers scheduled and event-triggered runs that Claude alone
 doesn't, which is why colleagues build in one and move to the other. **A
 platform where agent flows can live and be maintained collaboratively is the gap
 this project exists to fill.**
+
+> [!important] Corrected 2026-08-17 — sharing is narrower than recorded
+> Observed working in practice
+> ([[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]]): a
+> colleague **had already sent his Claude skill to his team**, the **n8n instance
+> is shared team-wide**, and extending delivery to the team is just repointing the
+> output channel.
+>
+> So the gap is **not** "work can't be handed over" — skills plus a shared n8n
+> already do that inside a team. The real gaps are narrower and worth restating:
+> - **Maintenance**, not distribution. The team has the skill; whether anyone but
+>   the author can debug it is untested.
+> - **Isolation.** A shared n8n licence means executions crowd each other's logs,
+>   and a stuck lock blocks everyone — which is what made the flow untraceable.
+> - **Cross-area** sharing, as opposed to within one team, remains unexamined.
 
 > [!tip] This is already researched — three sources converge on packaging
 > Linked 2026-08-17 during a lint; these existed but nothing pointed at them.

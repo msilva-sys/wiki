@@ -98,7 +98,10 @@
       "Bash(npx vitest *)",
       "Bash(npx tsc *)",
       "Bash(echo \"TSC_EXIT=$?\")",
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "mcp__6d9a43a4-3f5b-4db4-98a4-b580ef6085f8__getTransitionsForJiraIssue",
+      "mcp__6d9a43a4-3f5b-4db4-98a4-b580ef6085f8__editJiraIssue",
+      "mcp__6d9a43a4-3f5b-4db4-98a4-b580ef6085f8__transitionJiraIssue"
     ]
   }
 }

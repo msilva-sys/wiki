@@ -379,3 +379,30 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
   component = packaged skill, broken one = unpackaged), **packaging is emerging
   as both the token-cost lever and the sharing mechanism.**
 - Not touched: the empty file in `raw/` (immutable layer, needs msilva's word).
+
+## [2026-08-17] ingest | Gabriel session, part 2 (15:31)
+- Source: the 15:31 transcript — a **second segment of the same meeting**, after
+  the stuck lock was cleared. Appended to the existing meeting page rather than
+  creating a second one; both files now listed in its frontmatter.
+- **Corrects a claim carried across three pages**: ~$7/day is the **bad case**,
+  not the characteristic cost. One observed run cost **11 centavos** against ~670
+  earlier, same flow, same day. Cost is intermittent, so the primary suspect
+  shifts from context volume to a **runaway execution** — two workflows firing
+  concurrently where one should chain into the next. Prime suspect: the
+  `simplificado` pass-through workflow.
+- **Corrects the sharing claim on [[Agent Flow]]**: work *can* be handed to a
+  team today — the colleague had already shared his Claude skill, and the n8n
+  instance is team-wide. The real gaps are narrower: **maintenance by someone
+  other than the author**, **isolation** on a shared instance, and **cross-area**
+  sharing.
+- New fact: a **token-consumption dashboard exists** and is obtainable on request.
+  The measurement instrument for a constraint the wiki had only recorded as unease.
+- Separated two failure classes that were being conflated: **business-rule
+  comprehension** (the revenue figure is wrong) versus **execution/orchestration**
+  (runaway cost, concurrency, missing logs).
+- Updated: [[Agent Flow]] (two corrections),
+  [[What should the Agent Flow research phase study]] (cost causes reordered — a
+  broken trigger chain on a 5-minute cadence compounds where an oversized prompt
+  does not).
+- Open: execution traceability is still the blocker; the revenue number is still
+  wrong.

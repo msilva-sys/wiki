@@ -109,8 +109,16 @@ each cycle need to read" is a design constraint on A5 specifically.
 >   instance; one person's executions crowd others' logs out of view, and a stuck
 >   in-progress lock blocked debugging entirely. Any agent deployed there inherits
 >   that.
-> - **Narrow fetching is the cost lever**, and it's a design decision made per
->   agent, not a tuning step afterwards.
+> - **Narrow fetching is a cost lever**, decided per agent at design time.
+>
+> **Revised the same day, after part 2 of that session:** measured consumption for
+> one clean run was **11 centavos** against ~670 earlier — so **$7/day is the bad
+> case, not the norm**, and the likelier primary cause is a **runaway execution**
+> (two workflows firing concurrently instead of chaining) rather than context
+> volume. For a 5-minute cadence this reordering matters: **a broken trigger chain
+> on a schedule compounds**, where an oversized prompt merely costs a fixed
+> premium. A **token-consumption dashboard exists** and can be requested — get it
+> before, not after, building anything that runs unattended.
 
 ## Track 3 — Adoption (still unaddressed by any document)
 

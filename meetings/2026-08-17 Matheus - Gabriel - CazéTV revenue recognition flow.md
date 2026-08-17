@@ -4,7 +4,9 @@ status: active
 updated: 2026-08-17
 date: 2026-08-17
 attendees: [Matheus Silva, Gabriel]
-source: "raw/Matheus _ Gabriel - Fluxo de reconhecimento da receita cztv - 2026_08_17 15_02 GMT-03_00 - Anotações do Gemini.txt"
+source:
+  - "raw/Matheus _ Gabriel - Fluxo de reconhecimento da receita cztv - 2026_08_17 15_02 GMT-03_00 - Anotações do Gemini.txt"
+  - "raw/Matheus _ Gabriel - Fluxo de reconhecimento da receita cztv - 2026_08_17 15_31 GMT-03_00 - Anotações do Gemini.txt"
 transcription_confidence: low
 tags: [n8n, agents, tokens, enablement, finance, claude]
 ---
@@ -96,12 +98,87 @@ They could not run a test:
 **Action**: Gabriel to get the in-progress state reset and re-trigger, so an
 execution can actually be observed. *"Sem log fica difícil da gente entender."*
 
+## Part 2 — after the reset (15:31, same day)
+
+The session resumed once the lock was cleared. Two findings overturn things
+recorded elsewhere in the wiki.
+
+### The $7/day figure is not the steady-state cost
+
+They pulled actual consumption for the run they had just watched: **11 centavos**
+— against roughly **670** for the earlier period. Same flow, same day.
+
+**Cost is wildly variable, not inherent.** That substantially strengthens the loop
+hypothesis over the context-volume one: an agent that costs 11 cents on a clean
+run and ~$7 on a bad one is running away intermittently, not paying a fixed
+premium for wholesale context. Both are still worth fixing, but they aren't
+equally responsible.
+
+> [!warning] Corrects a claim carried across three pages
+> [[Agent Flow]], [[What should the Agent Flow research phase study]] and
+> [[2026-08-14 1-1 Matheus - Gabrielle]] all treat ~$7/day as the flow's
+> characteristic cost. It is the **bad-case** cost. The good case is two orders of
+> magnitude cheaper.
+
+**A token-consumption dashboard exists.** msilva asked whether the team can see
+per-period consumption; Gabriel believed so — *"não acredito que seja nenhum
+segredo de estado"* — and can request it. That is the measurement instrument the
+token question needs, and its existence wasn't previously recorded anywhere.
+
+### Concurrency, and a probable culprit
+
+Watching the run, **two workflows executed simultaneously** when one should have
+finished and triggered the next — msilva: *"não era para terminar um e trigar o
+outro?"*
+
+The **`simplificado`** workflow is the suspect. Gabriel designed it as a
+pass-through: *"um agente que não produz nada, ele só pega de um agente e joga
+para outro agente."* Its behaviour during the run looked wrong. A pass-through
+router that fires concurrently is exactly the shape that produces duplicated
+operations and a runaway bill.
+
+**Execution traceability is still the blocker.** Executions previously appeared
+and Gabriel could catch errors from them; now they don't reliably show —
+*"sem um modo da gente conseguir rastrear as execuções"*.
+
+### Two distinct failure classes, separated
+
+msilva's framing at the top of the segment: *"se ele errar só o número da receita
+em si, é regra de negócio que ele não tá entendendo."*
+
+| Symptom | Class | Fix |
+|---|---|---|
+| Revenue number is wrong | **Business-rule comprehension** | Work the rules through with Claude |
+| Runaway cost, concurrent runs, no logs | **Execution/orchestration** | Trace executions, fix the trigger chain |
+
+They are independent problems and were being conflated. The number did come out
+wrong on this run, so both are live.
+
+### Sharing turned out to be largely solved
+
+The most consequential finding for [[Agent Flow]]:
+
+- **The Claude skill has already been shared with Gabriel's team** — *"a skill do
+  Claude eu já mandei para eles."*
+- **The n8n instance is the whole team's** — *"o n8n é o mesmo da equipe toda."*
+- Extending delivery to the team is just pointing the output at their channel.
+
+So a workflow *was* handed to a team, using skills plus a shared n8n. See the
+correction on [[Agent Flow]].
+
 ## Action items
 
-- [ ] **Gabriel** — reset the stuck *fechamento em andamento* and re-trigger, to
-      produce an observable execution with logs.
+- [x] **Gabriel** — reset the stuck *fechamento em andamento* and re-trigger.
+      Done; executions observed at ~15:32–15:34.
+- [ ] **Gabriel** — keep running it and watch executions; take the execution
+      output and hand it to Claude to analyse (*"pega aquele output e joga pro
+      Claude, fala: analisa isso aqui"*).
+- [ ] **Gabriel** — work the business rules through with Claude, separately from
+      the cost problem. The revenue figure is still wrong.
+- [ ] **Gabriel** — request the token-consumption dashboard access.
 - [ ] **msilva** — review the `RR*` automations for loops and redundant
-      operations once logs exist.
+      operations, starting with **`simplificado`** and why two workflows ran
+      concurrently.
 - [ ] **msilva** — propose a fetch-only-what's-needed skill to replace bulk
       loading of the Airtable table and the Excel.
 
