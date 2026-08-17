@@ -67,6 +67,32 @@ Root holds only `CLAUDE.md`, `index.md`, `log.md`.
 5. Update `index.md`.
 6. Append to `log.md`.
 
+### `ingest` — meeting transcripts (variant)
+Transcripts are long, noisy, and speaker-attributed. Extract, don't summarize:
+
+1. **Write `meetings/<YYYY-MM-DD> <Topic>.md`** with, in this order:
+   `Decisions` · `Action items` (owner + date, `- [ ]`) · `Open questions` ·
+   `Facts stated` (who said it) · `Notable quotes` (verbatim, sparingly).
+   Attendees and date go in frontmatter. Don't paraphrase the whole meeting —
+   the raw file is still there for that; link to it.
+2. **Fan out** — this is where the value is:
+   - answers to questions currently marked open → update the entity page and
+     **delete the open question there**, noting the meeting that settled it
+   - anything settled → `decisions/`, citing who decided and when
+   - who owns / knows / is blocked on what → `people/`
+   - new terminology, systems, or acronyms → `concepts/` or `systems/`
+3. **Attribute claims to the speaker, not to the wiki.** "Gabrielle said prod
+   telemetry goes to Datadog (2026-08-17)" — not "prod telemetry goes to
+   Datadog." Spoken statements are weaker evidence than code or design docs;
+   when they conflict, record the conflict rather than picking a winner.
+4. **Distinguish decided from discussed.** Most of a meeting is thinking aloud.
+   Only things actually concluded become `decisions/`. If it's unclear which,
+   ask rather than promoting a musing to a decision.
+5. **Judgment on what propagates.** Transcripts capture candid remarks about
+   people, vendors, and org politics. Wiki pages get committed to git and reread
+   for months. Carry forward what's needed to do the work; leave the rest in the
+   raw file. If something seems relevant but sensitive, ask before filing it.
+
 ### `query <question>`
 1. Search the wiki first — `index.md`, then relevant pages. Fall back to `raw/`
    only when the wiki is thin, and say so.
