@@ -282,3 +282,17 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
   Go; whether **Programado** can drive a 5-minute cadence.
 - Track 2 reframed: scheduling and runtime is now the sharpest unknown, and token
   cost binds there — a 5-minute cadence is ~288 invocations/day.
+
+## [2026-08-17] refactor | Cite airtable.js source for the customHeaders limitation
+- Added upstream source permalinks to
+  [[How LiveScript sends the proxy X-App-Id header]] finding #2: `run_action.ts`
+  (hardcoded headers, no `customHeaders` merge — verified via raw GitHub),
+  `base.ts` (`makeRequest` merges them), `airtable.ts` (the constructor option
+  that makes it *look* usable).
+- Recorded that **no official doc states the limitation** — the README advertises
+  `customHeaders` without noting it's inert on the deprecated `runAction` path, so
+  the source is the only authoritative evidence.
+- Also confirmed out-of-band (npm dist-tags): **0.12.2 is the latest published
+  version**, so "Option B — upgrade the SDK" has no target. Left the synthesis's
+  Option B wording as-is for now (still says "unconfirmed a version exists");
+  flagged to tighten on the next pass.

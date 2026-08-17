@@ -52,6 +52,19 @@ app uses no `makeRequest`/`customHeaders` anywhere. ⇒
 `new Airtable({ customHeaders: { 'X-App-Id': 'livescript' } })` would attach the
 header to **no real traffic** in this version.
 
+Upstream source confirming this (verified 2026-08-17):
+- `runAction` builds a hardcoded header block and never merges `customHeaders` —
+  [src/run_action.ts](https://github.com/Airtable/airtable.js/blob/master/src/run_action.ts)
+  (header block ~L33-44).
+- `makeRequest` is the only path that merges them —
+  [src/base.ts](https://github.com/Airtable/airtable.js/blob/master/src/base.ts)
+  (`_customHeaders`, mirrored at `base.js:44` locally).
+- `customHeaders` is accepted as a constructor option, which is why it *looks*
+  usable — [src/airtable.ts](https://github.com/Airtable/airtable.js/blob/master/src/airtable.ts).
+- **No official doc states this limitation.** The README advertises
+  `customHeaders` without noting it's inert on the `runAction` path; the source
+  above is the only authoritative evidence.
+
 ### 3. The monitoring layer only half-covers
 - `createMonitoredAirtableBase()` (`lib/services/airtable-monitoring.ts:481`) is a
   **metrics-only Proxy**: it wraps methods for `withAirtableMonitoring` then
