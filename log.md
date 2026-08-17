@@ -618,3 +618,27 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
   issues a human acts on — as the anti-fatigue measure.
 - Flagged **verify against the repo**: exact metric names and label sets, and the
   metrics-vs-logs naming convention, before writing PromQL.
+
+## [2026-08-17] decision | Agents live in a monorepo, starting with A5 only
+- msilva: **monorepo layout, single-agent contents.** Explicitly not building
+  infrastructure for fourteen agents up front — that would be the
+  *"foundation cheio de funções para uso futuro"* Packer warns against.
+- Added a *Where the code lives* section to [[How to implement A5 Watcher]].
+- Layout: `agents/a5-watcher/` rather than `src/`, so the second agent is an
+  addition and not a refactor; `shared/` deliberately empty until two agents need
+  the same thing; per-agent `README.md` carrying the instruction's four-field spec
+  (inputs/outputs · consults/feeds · success criteria · limits); a repo-level
+  `CLAUDE.md` applying the instructions-in-files lesson.
+- **`contracts/bug-sistema.md` is the one artifact to write first** — the only one
+  with two consumers before either exists (A5 emits, A1 will consume). Turns Phase
+  2 into wiring rather than archaeology.
+- **A5 deliberately spans two repos**: alert rules stay in the [[Airtable Proxy]]
+  repo so a metric rename and its rule update land in the same commit. Silent
+  breakage from a rename is the worst failure available to a monitoring system.
+  The agent's README must point at them.
+- Noted the anarchic-first tension: a monorepo is an integration-first structure
+  and invites premature coupling. Mitigation recorded — agents may depend on
+  `shared/`, never on each other.
+- Open: is this a fourth repo the **homologation flow** has an opinion about? And
+  if A6 Curator is memory-as-files, does its memory live here or does A6 point at
+  this vault — which is already a working prototype of that pattern.

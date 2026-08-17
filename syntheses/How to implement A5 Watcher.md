@@ -39,6 +39,72 @@ proxy ──OTel──► Prometheus / Loki / Tempo
 makes this cheap: a threshold breach costs nothing to evaluate, and the LLM is
 only invoked when something already looks wrong.
 
+## Where the code lives
+
+**Decided 2026-08-17 (msilva): a monorepo, containing only A5 to begin with.**
+Monorepo *layout*, single-agent *contents* — explicitly not building infrastructure
+for fourteen agents up front, which would be the *"ticket de foundation cheio de
+funções para uso futuro"* that
+[[Gabriel Packer - DAG-driven agent orchestration]] warns against.
+
+```
+livemode-agents/
+├── CLAUDE.md              ← how to work in this repo
+├── contracts/
+│   └── bug-sistema.md     ← the only shared artifact worth writing now
+├── shared/                ← deliberately empty
+└── agents/
+    └── a5-watcher/
+        ├── README.md      ← inputs/outputs · consults/feeds · success criteria · limits
+        ├── skill/         ← triage logic, packaged
+        ├── receiver/      ← webhook handler + dedup
+        └── tests/
+```
+
+Four deliberate choices:
+
+- **`agents/a5-watcher/` rather than `src/`.** The naming is the entire cost of
+  "starting as a monorepo", and it means the second agent is an addition rather
+  than a refactor. Paid once, today, for nothing.
+- **`shared/` stays empty until two agents need the same thing.** Extract on the
+  second implementation, never on the first — a shared library shaped by a guess
+  fits nothing.
+- **Per-agent `README.md` is the four-field spec** the instruction requires
+  ([[Fluxo Agêntico project instruction]]). Putting it at each agent's root makes
+  the repo structure enforce the spec discipline instead of relying on memory —
+  and it is what a second person reads first, which is the **maintenance** gap
+  identified in [[Agent Flow]].
+- **The repo gets its own `CLAUDE.md`.** Instructions in files, not memory —
+  the lesson from
+  [[Gabriel Packer - solo founder AI workflow (part 1)]]: *"memory compacts and
+  agents forget context mid-task; files persist and every agent reads the same
+  source of truth."*
+
+### `contracts/bug-sistema.md` — write this first
+
+The payload A5 emits and A1 will eventually consume. **The only artifact with two
+consumers before either exists.** Writing it now makes Phase 2 integration a wiring
+exercise rather than an archaeology exercise, and it is the concrete form of
+Packer's *"ter um bom contrato de API"*. Everything else in `shared/` can wait.
+
+### A5 spans two repos, on purpose
+
+**Alert rules stay in the [[Airtable Proxy]] repo**, not here. They query metric
+names the proxy emits, so co-locating means a rename and its rule update land in
+the same commit; split them and a rename silently breaks detection — the worst
+failure mode available to a monitoring system.
+
+The cost is that A5 is not contained in one place. **`agents/a5-watcher/README.md`
+must say so explicitly**, with a pointer to the rules. A judgment call; reasonable
+people split the other way, since one could argue A5 owns its own detection.
+
+> [!question] Open — where does this repo sit?
+> A fourth repository alongside `Brain`, the proxy, and [[LiveScript]]. Does the
+> **homologation flow** from [[2026-08-14 Papo de Projetos]] have an opinion? And
+> if **A6 Curator** is institutional memory as files, does its memory live in this
+> repo, or does A6 point at this vault — which is already a working prototype of
+> that pattern, and is not in a repo with the agents.
+
 ## Build order
 
 Stage 1 and 2 are **not blocked by GC-5** — see *Testing without traffic* below.
