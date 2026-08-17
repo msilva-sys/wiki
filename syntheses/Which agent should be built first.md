@@ -118,23 +118,36 @@ span — over OTLP to Loki/Prometheus/Tempo. That gives A5 error rates, latency,
 >
 > State this in A5's spec rather than quietly redefining the agent.
 
-### The timing dependency — and why it helps
+### The timing dependency — narrower than it first appears
 
-**The proxy carries no production traffic yet.** LiveScript still talks to Airtable
-directly; the `X-App-Id` header must ship before `AIRTABLE_ENDPOINT_URL` flips or
-every call 401s ([[How LiveScript sends the proxy X-App-Id header]]). Until GC-5
-lands, A5 would be watching an empty pipe.
+**No *production* traffic flows through the proxy yet.** LiveScript still talks to
+Airtable directly; the `X-App-Id` header must ship before `AIRTABLE_ENDPOINT_URL`
+flips, or every call 401s
+([[How LiveScript sends the proxy X-App-Id header]]).
 
-That makes the two tracks sequential in a useful way:
+> [!important] But this blocks far less than it sounds like
+> Corrected 2026-08-17 — this section previously said A5 *"would be watching an
+> empty pipe"*, which reads as "blocked" and is wrong.
+>
+> The repo ships a local **`grafana/otel-lgtm`** stack, so the proxy can be run
+> against a sandbox base with traffic generated on purpose — including deliberately
+> bad patterns. **Real metrics, real alerts, real pipeline, today.**
+>
+> **Only threshold *tuning* needs production traffic.** Alert rules, notification
+> policy, the receiver, dedup, the skill and the daily pass are all buildable and
+> testable now. See [[How to implement A5 Watcher]].
+
+Production traffic still matters for the *end state*, and the two tracks converge
+usefully:
 
 ```
 GC-5 wiring lands → LiveScript traffic flows through the proxy
-   → telemetry becomes real → A5 has something to watch
+   → telemetry becomes real → thresholds can finally be tuned
    → A5 emits Bug (sistema) → the machine-fed channel has its producer
 ```
 
-So the research phase has concrete work while the proxy finishes: **specify A5
-against telemetry being built now, so the two arrive together.**
+So the sequencing is: **build and validate A5 locally now; tune it when the traffic
+arrives.** Not "wait for GC-5."
 
 ### To verify in the repo, not the wiki
 

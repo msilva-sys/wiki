@@ -177,7 +177,12 @@ Health check, report before changing anything:
 - stale claims — `status: active` pages not `updated` in 30+ days
 - orphans (no inbound links) and dead-end pages (no outbound links)
 - `raw/` files with no page in `sources/` — except transcripts, which are
-  satisfied by a `meetings/` page instead
+  satisfied by a `meetings/` page instead. **Exclude `log.md` when checking**: it
+  names raw files in its entries, so a filename grep will report uningested files
+  as covered.
+- **intra-page contradictions.** Mechanical checks (links, frontmatter, orphans)
+  do not read bodies, and a page patched across several sessions can assert two
+  incompatible things. Read the bodies of pages edited more than twice.
 - broken wikilinks worth creating vs. worth deleting
 - decisions marked open in one page and settled in another
 

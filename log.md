@@ -667,3 +667,42 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
   rewritten), [[Which agent should be built first]],
   [[What should the Agent Flow research phase study]] (Track 3 reframed as
   invocation-not-friction, with a table splitting the two halves).
+
+## [2026-08-17] lint | Fifth health check
+- 32 pages, 27 commits. **Mechanically clean** — no frontmatter gaps, no orphans,
+  no broken links, one legitimate dead end.
+- **Credentials still in git history** (6 commits), fifth report.
+- **Intra-page contradiction found**: [[Which agent should be built first]] said A5
+  *"would be watching an empty pipe"* until GC-5, then 160 lines later pointed at
+  the page establishing that only *tuning* is blocked. Reader hits the strong claim
+  first and concludes the work is blocked.
+- **Structural drift**: [[What should the Agent Flow research phase study]] had
+  become a stale mirror — Track 1 recommending A5 without the case against it,
+  Track 2 calling scheduling "the real unknown" after it was settled, the A5-vs-A7
+  reconciliation duplicated.
+- Two themes with no home: **packaging** (six sources) and **token cost** (four).
+  `concepts/` held one page.
+- Noted my own check limitation: raw-coverage greps filenames, and `log.md` names
+  raw files, so uningested files report as covered.
+
+## [2026-08-17] refactor | Reconcile GC-5, demote the agenda, file packaging
+- **Reconciled the GC-5 claim** on [[Which agent should be built first]]: the
+  section now leads with what is *actually* blocked (threshold tuning only) and
+  keeps the correction visible. Sequencing restated as **build and validate
+  locally now; tune when traffic arrives** — not "wait for GC-5".
+- **Demoted [[What should the Agent Flow research phase study]] to a status board
+  and router.** It tracks settled-vs-open and points at the pages carrying the
+  reasoning; the duplicated tracks are gone. Kept: the adoption question (the one
+  live research question with no other home), the pre-2026-08-24 question list, and
+  a *Corrected along the way* section preserving three retracted claims.
+- **New: `concepts/Packaging as skills.md`** — the theme converged from six
+  independent sources. Core claim: packaging is **both** the token-cost lever and
+  the sharing mechanism. Records the Gabriel case as a controlled comparison
+  (packaged component works, unpackaged one fails), and what packaging does *not*
+  solve: **maintenance** and **runtime isolation**.
+- **Hardened the `lint` operation in `CLAUDE.md`**: exclude `log.md` from raw
+  coverage checks, and read the bodies of pages edited more than twice — mechanical
+  checks cannot see intra-page contradictions, which have now caused two findings.
+- Not done: `people/` remains empty (msilva's standing call); the prep note is
+  still `draft` after its meeting date; the empty `Novo(a) Documento de Texto.txt`
+  is untouched in `raw/`.
