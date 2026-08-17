@@ -120,10 +120,19 @@ designing the next one:
 - **It worked technically.** It investigated reported problems, checked whether
   something had been recently implemented or was sitting in the backlog, and
   answered. *"O funcionamento dele foi OK."*
-- **It failed on engagement.** Users had to **@mention it every time**, and they
-  didn't. Gabrielle's observation is the sharpest lesson in the transcript:
-  people with a problem are not motivated to explain their problem carefully —
-  *"elas querem falar que tem um problema"*. They want to report it, not file it.
+- **It was never called.** Users had to **@mention it every time**, and they
+  didn't — the bot sat on one channel, waiting to be addressed.
+
+  > [!important] Corrected 2026-08-17 by msilva — this is channel fragmentation
+  > The failure was previously recorded here as *unwillingness to file*, drawing on
+  > Gabrielle's *"elas querem falar que tem um problema"*. That reading is too
+  > narrow. **People report a problem through whatever path is at hand** — a DM, a
+  > different channel, a meeting, walking over to someone. The bot listened on one
+  > surface and only when explicitly invoked, so most reports never reached it.
+  >
+  > This matters because it changes the fix. Reducing friction on one channel does
+  > nothing; **being present on the channels people already use** is the answer —
+  > which is what **A1 Receptor Universal** is for.
 - **It read as a chatbot, not a colleague** — occasionally strange replies, and
   Gabrielle kept having to step in and complete its answers.
 - **No agent-to-agent interaction.** It could not call another agent, which is
@@ -327,8 +336,12 @@ consultant rather than validator.
   Watcher, targeting the [[Airtable Proxy]]'s telemetry**, because it is the only
   agent that needs no human initiative. Pending confirmation with Gabrielle before
   her leave.
-- What makes an agent get used, given the @mention failure above? Nothing in the
-  design addresses adoption.
+- **Does A1 listen passively, or must it still be addressed?** The sharpened
+  version of the adoption question. A1's multi-channel capture answers the
+  *fragmentation* half of the prior failure — but if every channel still needs a
+  form, a webhook, or a mention, the same failure is rebuilt across six surfaces
+  instead of one. **Passive listening is a different proposition**: classifying a
+  firehose, with cost, noise and privacy consequences nobody has discussed.
 - How do agents actually talk to each other? The unsolved problem that killed
   the prior attempt.
 - ~~Is **Orca** a distinct system?~~ **Resolved 2026-08-17.** Livemode's Orca is a

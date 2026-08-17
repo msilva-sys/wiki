@@ -188,20 +188,31 @@ sub-agents on demand; and **the tooling is unstable** — he swapped Conductor f
 Orca inside four months, which argues against committing Livemode's flow to any
 one orchestrator.
 
-## Track 3 — Adoption (still unaddressed by any document)
+## Track 3 — Adoption: invocation, not friction
 
-The one thing neither the diagram nor the instruction addresses, and the recorded
-cause of the previous attempt's death: users had to `@`-mention the agent and
-didn't, because *"as pessoas quando tem um problema, elas estão um pouco
-engajadas em explicar o seu problema"* — they want to report a problem, not file
-one.
+**Reframed 2026-08-17 by msilva.** The previous attempt died because **it was never
+called** — the bot sat on one Slack channel waiting to be `@`-mentioned, while
+people report problems through whatever path is at hand: a DM, another channel, a
+meeting, walking over. **Channel fragmentation**, not unwillingness to file.
 
-A1's design assumes demands arrive. Nothing explains why they would this time.
+That splits the adoption problem in two, and the design handles them unequally:
 
-**Worth noting in A5's favour**: system alerts and continuous monitoring are the
-only paths in the whole architecture requiring **no human initiative**. Choosing
-A5 first sidesteps the failure mode rather than betting against it — which is a
-stronger argument for it than "it's well specified."
+| Half | Addressed? |
+|---|---|
+| **Fragmentation** — reports arrive by many paths | **Yes.** A1 captures from Slack, Monday, email, forms, webhooks, system alerts |
+| **Invocation** — the agent must still be addressed | **No.** If each channel needs a form, a webhook or a mention, the same failure is rebuilt six times over |
+
+So the live question is: **does A1 listen passively, or does it wait to be
+addressed?** Passive listening is a materially different system — classifying a
+firehose, with cost, noise and privacy consequences nobody has discussed. Explicit
+invocation is cheap and repeats the recorded failure. Nothing in the instruction
+picks a side.
+
+**Worth noting in A5's favour**: its input is a system alert — **one channel, no
+fragmentation, no invocation, no human in the loop at all.** It is the only agent
+immune to *both* halves of the problem. Choosing A5 first sidesteps the failure
+mode rather than betting against it, which is a stronger argument for it than "it
+is well specified."
 
 ## Track 4 — Two documented inconsistencies to confirm
 

@@ -20,14 +20,21 @@ wider agenda. This page answers the narrow question.
 
 **A5 is the only agent that needs no human initiative.**
 
-The prior attempt failed for a documented reason: users had to `@`-mention it and
-didn't, because *"as pessoas quando têm um problema […] querem falar que têm um
-problema"* — they want to report, not file ([[Agent Flow]]). **Nothing in the
-14-agent design addresses this.**
+The prior attempt failed for a documented reason: **it was never called.** The bot
+sat on one Slack channel waiting to be `@`-mentioned, and people report problems
+through whatever path is at hand — a DM, another channel, a meeting, walking over
+([[Agent Flow]], corrected by msilva 2026-08-17). **Channel fragmentation**, not
+unwillingness.
 
-A1, A3, A4 and A7 all wait to be addressed. A5 observes. It is the only agent that
-produces value whether or not anyone changes their behaviour — so it *sidesteps*
-the one recorded failure mode instead of betting against it.
+A1 answers that half by design — it captures from Slack, Monday, email, forms,
+webhooks and system alerts. **What it does not answer is invocation**: if each of
+those channels still requires a form, a webhook or a mention, the same failure is
+rebuilt across six surfaces instead of one.
+
+**A5 is the only agent immune to both halves.** Its input is a system alert: one
+channel, no fragmentation, no invocation, no human in the loop at all. It produces
+value whether or not anyone changes their behaviour — so it *sidesteps* the
+recorded failure rather than betting against it.
 
 Everything else below is supporting.
 

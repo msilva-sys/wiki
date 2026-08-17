@@ -642,3 +642,28 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
 - Open: is this a fourth repo the **homologation flow** has an opinion about? And
   if A6 Curator is memory-as-files, does its memory live here or does A6 point at
   this vault — which is already a working prototype of that pattern.
+
+## [2026-08-17] refactor | Correct the prior-attempt failure diagnosis
+- **msilva corrected a reading propagated across three pages.** The previous
+  agent's failure had been recorded as *unwillingness to file* — people wanting to
+  report rather than describe a problem. **That is too narrow.**
+- The actual failure was **channel fragmentation**: the bot sat on one Slack
+  channel waiting to be `@`-mentioned, while people report problems through
+  whatever path is at hand — a DM, another channel, a meeting, walking over. Most
+  reports never reached it.
+- **This retracts a claim**: "nothing in the 14-agent design addresses adoption"
+  was wrong. **A1 Receptor Universal addresses the fragmentation half by design**
+  — Slack, Monday, email, forms, webhooks, system alerts.
+- **The unaddressed half is now sharper**: *invocation*. If every channel still
+  requires a form, a webhook or a mention, the same failure is rebuilt across six
+  surfaces instead of one. New open question, on [[Agent Flow]] and Track 3 of the
+  research agenda: **does A1 listen passively, or wait to be addressed?** Passive
+  listening is a materially different system — classifying a firehose, with cost,
+  noise and privacy consequences nobody has discussed.
+- **Strengthens the A5-first case rather than weakening it.** A5's input is a
+  system alert: one channel, no fragmentation, no invocation, no human in the loop.
+  It is the only agent immune to *both* halves.
+- Updated: [[Agent Flow]] (correction callout on the prior attempt; open question
+  rewritten), [[Which agent should be built first]],
+  [[What should the Agent Flow research phase study]] (Track 3 reframed as
+  invocation-not-friction, with a table splitting the two halves).
