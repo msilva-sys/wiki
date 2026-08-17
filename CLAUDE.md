@@ -122,7 +122,9 @@ and a smell for a `status: active` page — [[log]] and `lint` both rely on it.
 ### `ingest <file or topic>`
 1. Read the raw source in full.
 2. Discuss the takeaways with msilva **before** writing.
-3. Write `sources/Source: <Title>.md` — summary, key claims, open questions.
+3. Write `sources/<Title>.md` — summary, key claims, open questions. (No
+   `Source:` prefix — a colon is an illegal filename character on Windows, and
+   the folder already says what the page is.)
 4. Update every affected entity page: `projects/`, `systems/`, `concepts/`,
    `people/`, `decisions/`. A real ingest usually touches 5–15 pages.
 5. Update `index.md`.

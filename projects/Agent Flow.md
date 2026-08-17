@@ -13,11 +13,13 @@ classifies, and executes demands. msilva's **second onboarding track**, running
 in parallel with the [[Airtable Proxy]] but with no delivery deadline —
 [[2026-08-10 Onboarding runs proxy and agent flow in parallel]].
 
-> [!info] Status: design only
+> [!info] Status: design only, but the design is now in hand
 > Described as *"um desenho inicial"* — an initial drawing. Validated
 > conceptually, but **no decision on where it would live or how it would be
-> built**. Design documentation and recorded design conversations exist and were
-> to be shared with msilva.
+> built**. The diagram itself was received on 2026-08-17 and is transcribed at
+> [[Fluxo Agêntico diagram]]; it is a **revision**, with agents renumbered at
+> least once. The accompanying design documentation and recorded design
+> conversations have still not been received.
 
 ## The three fronts it automates
 
@@ -29,32 +31,50 @@ The architecture mirrors how the area actually works today:
 3. **Quick execution** — pointed demands on things already built: production
    breakage, small fixes, a newly requested feature.
 
-## Proposed shape
+## Proposed shape — 14 agents
 
-**Receptor agents** accept incoming demands from any of the three fronts, then a
-**classification flow** routes each demand to a matching pipeline:
+Rewritten 2026-08-17 from the design diagram itself
+([[Fluxo Agêntico diagram]]), which is more specific than the verbal description
+this section previously relied on. Full agent table on that page.
+
+**Four entry channels** — `Bug (sistema)` · `Bug (manual)` · `Tarefa` ·
+`Consultoria` — converge on **A1 Receptor Universal** (filters, formats,
+classifies), which hands off to **A2 Classificador & Decisor** for routing:
 
 | Route | Pipeline |
 |---|---|
-| New project | Discovery / product → orchestrator → developer, the developer working with subagents |
-| Enablement | A "tier"-style agent that helps a person get unstuck |
-| Quick execution | Maintenance and bugfixes on existing projects |
+| **Projetos** | A7 Discovery (**generates a complete PRD**) → A8 Orchestrator → A9 Developer, which creates sub-agents on demand |
+| **Enablement** | A4 Teacher — teaches areas. A single agent, not a pipeline |
+| **Operacional** | A3 Executor — orchestrates fast demands, also creates sub-agents on demand |
 
-**Transversal agents** sit across all routes, feeding and being fed by the
-others:
+**Five transversal intelligences**: A10 Portfolio (prioritization), A11 Product
+(usage analysis), A12 Data Gov (data quality), A13 Deduplication (**detects and
+blocks**), A14 PM Agent (request through to delivery).
 
-- **Portfolio** — suggests prioritization, including what the other agents
-  should be working on first.
-- **Product** — are shipped products actually being used? What insight comes out
-  of usage, and what fixes or new demands does it imply?
-- **Data governance** — deduplication: making sure the same thing isn't built
-  twice, and that concepts, ideas, and patterns get reused.
-- **Delivery tracking** — follows a product from arrival to delivery, taking
-  that off a person's hands manually.
-- **Monitoring** — watches everything and raises alerts. Explicitly tied to the
-  telemetry the [[Airtable Proxy]] produces.
-- **Institutional memory** — a central store of everything known about the
-  area's projects. Described as intranet-like.
+> [!important] Three corrections to what this page previously said
+> The verbal description in [[2026-08-10 Onboarding Técnico - Matheus]] flattened
+> distinctions the diagram makes:
+>
+> 1. **A6 Curator is the architectural centre, not one transversal agent among
+>    six.** It occupies its own layer — `MEMÓRIA & APRENDIZADO` — is drawn
+>    emphasized, and every other agent connects to it. This page previously
+>    listed institutional memory as a peer of portfolio and product. It isn't.
+> 2. **A5 Watcher is not transversal either.** It's a separate concern that
+>    **feeds back directly into A3 Executor** (*"retroalimenta execução"*) as
+>    well as into the intelligences. Monitoring drives execution here, it doesn't
+>    just report.
+> 3. **A13 Deduplication blocks.** *"Detecta e bloqueia"* — a gate with authority
+>    to stop work, feeding context back to A1. Previously recorded as merely
+>    ensuring things aren't built twice.
+
+**`Bug (sistema)` is a machine-generated channel**, distinct from `Bug (manual)`.
+Nothing states what emits it — but the [[Airtable Proxy]]'s telemetry and A5
+Watcher are the two obvious candidates, which would make it the concrete
+integration point between msilva's two projects.
+
+A longer-term ambition, from the onboarding: once built for this area, the flow
+could be adapted and reused by other areas, helping them produce more structured
+projects without routing through the projects team.
 
 A longer-term ambition: once built for this area, the flow could be adapted and
 reused by other areas, helping them produce more structured projects without
@@ -130,8 +150,10 @@ Livemode already has more in this space than the architecture diagram suggests:
 
 - **The `Brain` repository and Hub** — a company-wide Markdown-in-GitHub
   knowledge base with per-project architecture, decisions, and README pages.
-  It substantially overlaps the proposed institutional-memory agent, and it
-  already exists. See [[2026-08-14 Papo de Projetos]].
+  It substantially overlaps **A6 Curator**, which the diagram makes the
+  centrepiece of the whole architecture rather than a side component — so this
+  is an overlap with the core, not the periphery. See
+  [[2026-08-14 Papo de Projetos]].
 - **A shared AI architecture for Livemode**, named as a long-term goal by the
   area lead, with no detail given.
 - **A Claude Code training programme** being built for all areas.

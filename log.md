@@ -169,6 +169,26 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
   [[2026-08-14 Papo de Projetos]].
 - Lesson recorded: verifying a file by metadata is not the same as reading it.
 
+## [2026-08-17] ingest | Fluxo Agêntico diagram (14 agents)
+- Source: `raw/fluxo_agentico_ajustado (2).html` — an SVG architecture diagram,
+  the design artifact behind [[Agent Flow]]. First non-transcript source.
+- New: `sources/Fluxo Agêntico diagram.md` with the full 14-agent table and flow.
+- **Three corrections to [[Agent Flow]]**, which had been built from the verbal
+  description only: **A6 Curator is the architectural centre**, not one of six
+  transversal agents; **A5 Watcher is not transversal** and feeds back directly
+  into A3 Executor; **A13 Deduplication blocks**, it doesn't merely advise.
+- Noted `Bug (sistema)` as a machine-generated entry channel — the likely
+  integration point between the [[Airtable Proxy]] and [[Agent Flow]].
+- The diagram is a **revision**: stale HTML comments preserve an older numbering
+  (e.g. `A10: Project Orchestrator` now renders as A8), so agents were renumbered
+  at least once. Rendered labels treated as authoritative.
+- Date unresolved — no internal or filename date; filesystem mtime is the
+  download. Flagged unverified per the Dates rule.
+- **Schema fix**: the `sources/Source: <Title>.md` convention was unusable — a
+  colon is an illegal filename character on Windows. Dropped the prefix.
+- Raised: the `Brain` repository overlaps A6 Curator, i.e. the centrepiece of the
+  architecture rather than a peripheral component.
+
 ## [2026-08-17] refactor | Lint fixes (continued)
 - **Not done**: the two dangling links from the meeting prep note
   (`Claude - context window and large data`,

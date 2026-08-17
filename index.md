@@ -33,6 +33,8 @@ _(empty — deliberately; see [[log]] 2026-08-17)_
 _(next candidates, extractable from [[Airtable Proxy]]: token-terminating auth, OTel/OTLP over BigQuery, Cloud Run min=1)_
 
 ## Sources
+- [[Fluxo Agêntico diagram]] — the 14-agent architecture diagram behind Agent Flow; A6 Curator is the hub, A13 blocks, `Bug (sistema)` is machine-fed.
+
 _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 
 ## Meetings
