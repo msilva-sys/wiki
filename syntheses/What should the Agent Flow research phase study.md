@@ -49,6 +49,12 @@ design.
 That last row is effectively the required shape of the "understanding of each
 agent" deliverable. It's a template, not a guess.
 
+> [!tip] Worked through in full on 2026-08-17
+> [[Which agent should be built first]] carries the complete argument — including
+> the honest case *against* A5, why A1 is the better second build, and the
+> proxy-telemetry target with its timing dependency on GC-5. The summary below
+> stands; that page supersedes it on detail.
+
 ## A5 or A7? They answer different questions
 
 Both are defensible and the wiki argued each separately without reconciling them.

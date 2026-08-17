@@ -313,10 +313,11 @@ consultant rather than validator.
 
 - **Where do the human gates sit?** Autonomy itself is settled; which steps are
   gated is not. See *Design approach* above.
-- **Which agent to build first, and where does it live?** Two defensible answers,
-  reconciled in
-  [[What should the Agent Flow research phase study]]: **A5 is the safest first
-  build**, **A7 is where the leverage is**.
+- **Which agent to build first, and where does it live?** Worked through on
+  2026-08-17 — see [[Which agent should be built first]]. Recommendation: **A5
+  Watcher, targeting the [[Airtable Proxy]]'s telemetry**, because it is the only
+  agent that needs no human initiative. Pending confirmation with Gabrielle before
+  her leave.
 - What makes an agent get used, given the @mention failure above? Nothing in the
   design addresses adoption.
 - How do agents actually talk to each other? The unsolved problem that killed

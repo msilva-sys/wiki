@@ -498,3 +498,33 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
   no human initiative required); A7 is where the *leverage* is (spec quality
   bounds everything downstream). Recommendation recorded: **A5 first, specified to
   A7's standard.**
+
+## [2026-08-17] synthesis | Which agent should be built first
+- Worked through in discussion with msilva. New:
+  `syntheses/Which agent should be built first.md`.
+- **Conclusion: A5 Watcher, targeting the [[Airtable Proxy]]'s telemetry.**
+- **The load-bearing argument is narrower than the wiki previously implied**: not
+  that A5 is best-specified, but that it is the **only agent needing no human
+  initiative** — the one documented cause of the prior attempt's death.
+- Recorded the honest case *against* A5 so it isn't rediscovered: least
+  agent-shaped of the fourteen, most cost-exposed (~288 invocations/day against a
+  runaway-loop failure mode), teaches least, and Gabrielle's suggestion predates
+  every document now in hand.
+- **A1 evaluated as the alternative** at msilva's prompting. Better second build:
+  most-connected agent where A5 is least; produces nothing usable alone; maximally
+  exposed to the adoption failure; and its data contract can't be designed before
+  its consumers exist. Named explicitly that **choosing A1 first is an argument
+  against anarchic-first**, and should be raised with Gabrielle as such.
+- **Scope caveat recorded**: the proxy serves incident detection cleanly, but its
+  anti-pattern dashboards are *technical* opportunity (inefficient queries), not
+  the *product/process* opportunity the instruction specifies. Must be stated in
+  A5's spec rather than silently redefining the agent.
+- **Timing dependency identified**: the proxy carries no production traffic until
+  GC-5 lands, so the two tracks become usefully sequential — GC-5 → real telemetry
+  → A5 has data → A5 produces `Bug (sistema)`. Specify A5 now against telemetry
+  being built now.
+- Flagged for repo verification: `hasFilter`/`recordCount`/`bytes` are recorded as
+  coming only from LiveScript's SDK wrapper, so some anti-pattern panels may be
+  app-fed. Code wins over docs.
+- Updated: [[Agent Flow]], [[What should the Agent Flow research phase study]],
+  `index.md`.
