@@ -109,11 +109,25 @@ from Gabrielle Ferreira in onboarding.
 2. **No DNS cutover.** I assumed clients would transparently hit
    `api.airtable.com` and DNS would silently redirect to the proxy. The real
    onboarding (design §11) is **explicit per-app reconfiguration**:
-   - `airtable` SDK: set `endpointUrl: <proxy-url>`
+   - `airtable` SDK: set `endpointUrl: <proxy-url>` (via `AIRTABLE_ENDPOINT_URL`)
    - raw REST: swap the base-URL constant
    - add headers `X-App-Id` + `X-Api-Key`
    - drop the PAT from the app env
    So there is no "intercept at the DNS layer" step to plan.
+
+   > [!warning] Corrected 2026-08-17 for the LiveScript client (GC-5)
+   > Verified against the app's SDK — see
+   > [[How LiveScript sends the proxy X-App-Id header]]. Two of the four steps
+   > above don't hold as written for [[LiveScript]]:
+   > - **`X-Api-Key` is deferred** — only `X-App-Id` is required right now.
+   > - **"Drop the PAT" isn't literally possible.** The `airtable` SDK v0.12.2
+   >   always sends `Authorization: Bearer <apiKey>` and refuses to start without
+   >   a non-empty one, so the app needs a **dummy `AIRTABLE_API_KEY`** and the
+   >   proxy must **overwrite/ignore** the incoming `Authorization`.
+   > - Setting `endpointUrl` also does **not** carry the header: `customHeaders`
+   >   is a no-op for every operation this app uses in v0.12.2. The header needs a
+   >   `node-fetch` interceptor (Option A) or an SDK upgrade (Option B) — both
+   >   pending research on the synthesis page.
 
 3. **Observability-first, not caching-first.** The whole premise is: instrument
    every Airtable call, *then* let the dashboards tell us whether 429s come from
@@ -125,6 +139,12 @@ from Gabrielle Ferreira in onboarding.
    Apps authenticate to the *proxy* with their own `X-Api-Key`. Apps never see
    the PAT. (Design §4.) — This answers my old "pass through or translate the
    key?" question.
+   > [!note] Updated 2026-08-17 — auth is `X-App-Id`-only for now, and the app
+   > still sends a (dummy) PAT. The `X-Api-Key` half of §4 is deferred; the proxy
+   > identifies the app by `X-App-Id` alone. Because the SDK can't stop sending
+   > `Authorization`, "apps never see the PAT" holds only if the app is given a
+   > throwaway key and the proxy replaces the header. See
+   > [[How LiveScript sends the proxy X-App-Id header]].
 
 5. **Instrumentation is decided: OpenTelemetry / OTLP.** Local dev uses a single
    `grafana/otel-lgtm` container (Loki + Prometheus + Tempo + Grafana).

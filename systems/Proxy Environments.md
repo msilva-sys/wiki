@@ -112,6 +112,14 @@ This is the migration mechanism described in
 the app. Confirms the "base-URL swap, not DNS cutover" model in
 [[Airtable Proxy]].
 
+> [!warning] Uncommenting alone is not enough (added 2026-08-17, GC-5)
+> Repointing at the proxy makes every call **401** until the app also sends
+> `X-App-Id: livescript`, which the `airtable` SDK v0.12.2 can't attach via
+> config — so this variable must be flipped **only after** the header change
+> ships. The app also keeps a **dummy `AIRTABLE_API_KEY`** (the SDK refuses to
+> start without one and always sends it; the proxy overwrites it). Full analysis:
+> [[How LiveScript sends the proxy X-App-Id header]].
+
 ## Firebase
 
 ```bash

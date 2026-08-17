@@ -214,3 +214,36 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
   `LiveMode - AI tooling and data access`) are left as intentional to-do markers.
   Writing those pages means reading that note in full first — creating them from
   a skim is the mistake that produced the bad Papo page.
+
+## [2026-08-17] synthesis | LiveScript → proxy auth (X-App-Id, GC-5)
+- Source: code investigation of `livemode-roteiros-nextjs` + the installed
+  `airtable` SDK v0.12.2 (`node_modules/airtable/lib/*.js`), plus the pasted GC-5
+  task note. No `raw/` file — findings are code-derived, so filed as a synthesis,
+  not a `sources/` page.
+- Also posted as a comment on the proxy epic **AIRTABLEGC-5** ("Auth + multi-app"),
+  comment id 10085 — the LiveScript client-side counterpart to that proxy work.
+  (Jira, not Linear, at msilva's explicit direction despite the migration.)
+- New: `syntheses/How LiveScript sends the proxy X-App-Id header.md`. Core
+  findings, all verified in code: (1) the SDK's 401 → "provide valid api key"
+  message is synthesized from the status code, ignoring the body
+  (`base.js:119-121`) — a red herring for a missing `X-App-Id`; (2) `customHeaders`
+  is a no-op in v0.12.2 for every op the app uses (all go through the deprecated
+  `runAction`/`run_action.js`, not `makeRequest`); (3) `createMonitoredAirtableBase`
+  is metrics-only and never touches outbound HTTP, so only the REST wrapper can
+  set the header app-side; (4) the SDK uses its own `node-fetch`, so a global
+  `fetch` patch misses it. Two fixes left open pending research: a startup
+  `node-fetch` interceptor (Option A, doubles as the OTel propagation seam) or an
+  SDK upgrade (Option B).
+- **Corrections to the recorded onboarding model** on [[Airtable Proxy]] (design
+  §4/§11): `X-Api-Key` is deferred (only `X-App-Id` now), and "drop the PAT" is
+  not literally possible — the SDK always sends `Authorization: Bearer` and won't
+  start without a non-empty key, so the app needs a **dummy** `AIRTABLE_API_KEY`
+  and the proxy must overwrite the header. Annotated points 2 and 4 inline rather
+  than rewriting them.
+- Updated: [[Airtable Proxy]] (two inline corrections), [[LiveScript]] (new
+  "Wiring to the proxy (auth)" section), [[Proxy Environments]] (the "uncomment
+  one variable" note flagged incomplete — 401s without the header first),
+  `index.md`.
+- Open (carried to the ticket): does the proxy overwrite the incoming
+  `Authorization`? Does it serve the Metadata API or only the data plane? Both
+  gate how narrowly the interceptor is scoped.

@@ -72,6 +72,25 @@ Nothing was said about which data, which engine, or when.
   every app.
 - Named as a candidate target for the first monitoring agent — [[Agent Flow]].
 
+## Wiring to the proxy (auth) — GC-5
+
+Repointing LiveScript at the [[Airtable Proxy]] is **not** a pure config change.
+Investigated 2026-08-17 against the app's `airtable` SDK (v0.12.2) —
+[[How LiveScript sends the proxy X-App-Id header]] has the full evidence:
+
+- `AIRTABLE_ENDPOINT_URL` repoints traffic (the SDK reads it natively), but the
+  proxy now requires an `X-App-Id: livescript` header, and the SDK **cannot carry
+  it via `customHeaders`** in this version — every op the app uses goes through
+  the SDK's deprecated `runAction`, which ignores custom headers.
+- The app's own monitoring layer (`lib/services/airtable-monitoring.ts`) can set
+  the header only on the ~10 hand-built REST calls, not on the SDK path.
+- Two candidate fixes, both pending research: a `node-fetch` interceptor at
+  startup (`instrumentation.node.ts`), or an SDK upgrade.
+- The SDK always sends `Authorization: Bearer`, so the app keeps a **dummy PAT**;
+  the proxy overwrites it. `X-Api-Key` is deferred — `X-App-Id` only for now.
+- **Rollout order matters:** the header must ship before `AIRTABLE_ENDPOINT_URL`
+  flips, or every proxied call 401s.
+
 ## Open questions
 
 - Which data is in scope for the dedicated database, and on what engine?

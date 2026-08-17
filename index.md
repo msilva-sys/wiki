@@ -46,6 +46,7 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 
 ## Syntheses
 - [[What should the Agent Flow research phase study]] — research agenda for the agent project; names the A6/A5 sequencing problem and what to ask before Gabrielle's leave.
+- [[How LiveScript sends the proxy X-App-Id header]] — GC-5 client side: the SDK v0.12.2 can't carry `X-App-Id` via config; two fixes pending research; corrects the "drop the PAT / X-Api-Key" onboarding model.
 
 ## Reference
 - [[AIRTABLEGC-34]] — ticket notes (legacy Jira).

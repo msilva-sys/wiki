@@ -40,30 +40,41 @@ alerting the [[Airtable Proxy]] dashboards already do.
 
 **Almost everything depends on A6 Curator.** A6 is the hub every other agent
 connects to. Any agent built before it either invents its own memory or has none.
-That makes A6 less "one of the 14" and more a **precondition** — which is
-awkward, because A6 is also the agent that most overlaps something that already
-exists (`Brain`).
+That makes A6 less "one of the 14" and more a **precondition**.
 
 **Consequence for the research phase**: the choice isn't A5-vs-something-else. It's
 whether the first build is *a leaf that proves the plumbing* (A5, needing a
-defined output sink) or *the hub everything needs* (A6, needing a `Brain`
-decision first). That's the question worth resolving before writing code.
+defined output sink) or *the hub everything needs* (A6). That's the question worth
+resolving before writing code.
 
-## Track 1 — Resolve A6 against `Brain` (blocking)
+## Track 1 — Define what A6 Curator actually is (blocking)
 
-**Why first**: it's the architectural centre, it gates the other 13, and the
-answer is a conversation, not an experiment.
+**Why first**: it's the architectural centre and it gates the other 13. Until
+there's a concrete answer to "what is institutional memory, mechanically," no
+other agent has anywhere to read from or write to.
 
-- Read the **`Brain` repository** — msilva has GitHub access
-  ([[2026-08-14 Papo de Projetos]]). What's actually in it, how it's structured,
-  how the Hub renders it, how stale it is.
-- Establish whether A6 **is** `Brain` (an agent maintaining an existing repo),
-  **wraps** it (a retrieval layer over it), or **replaces** it.
-- Note the precedent staring at us: **this wiki is an LLM-maintained knowledge
-  base with a schema, an index, and a log.** If A6 is "an agent that maintains
-  institutional memory in Markdown under governance," it already has a working
-  prototype in `C:\Users\msilva\Documents\work`. That's an argument worth making
-  from evidence rather than assertion.
+The diagram gives only two lines of specification — *"memória institucional"* and
+*"hub central de conhecimento"* — which is nowhere near enough to build against.
+What needs deciding:
+
+- **Storage**: files, a database, a vector store, or a repo. What can the other 13
+  read from cheaply?
+- **Write discipline**: who writes, when, and under what rules? An institutional
+  memory that any agent can write to freely degrades fast.
+- **Retrieval**: how does an agent ask it a question, and how is the answer kept
+  small enough to matter given the token constraint in Track 2?
+
+> [!tip] There is a working prototype of this in the room
+> **This wiki is an LLM-maintained institutional memory**: Markdown under a
+> written schema, with an index, an append-only log, linting for contradictions
+> and staleness, and citation discipline separating what a source claimed from
+> what was verified. It has already caught its own errors and corrected them in
+> place.
+>
+> That is a substantial part of A6's specification, already tested on real
+> material. Whatever A6 becomes, the schema in `CLAUDE.md` is evidence about what
+> maintaining institutional memory actually requires — argued from something that
+> works rather than from a diagram.
 
 ## Track 2 — The deterministic/autonomous decision
 
