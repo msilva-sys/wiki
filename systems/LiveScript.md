@@ -80,16 +80,20 @@ Investigated 2026-08-17 against the app's `airtable` SDK (v0.12.2) —
 
 - `AIRTABLE_ENDPOINT_URL` repoints traffic (the SDK reads it natively), but the
   proxy now requires an `X-App-Id: livescript` header, and the SDK **cannot carry
-  it via `customHeaders`** in this version — every op the app uses goes through
-  the SDK's deprecated `runAction`, which ignores custom headers.
-- The app's own monitoring layer (`lib/services/airtable-monitoring.ts`) can set
-  the header only on the ~10 hand-built REST calls, not on the SDK path.
-- Two candidate fixes, both pending research: a `node-fetch` interceptor at
-  startup (`instrumentation.node.ts`), or an SDK upgrade.
+  it via `customHeaders`** as shipped — every op the app uses goes through the
+  SDK's deprecated `runAction`, which ignores custom headers.
+- **Implemented 2026-08-17** (commits `754896b` / `d565c26` on
+  `feature/airtable-proxy-observability`): a `pnpm patch` on `airtable@0.12.2`
+  makes `runAction` honour `customHeaders`, and the monitored base sets
+  `X-App-Id`. On the REST path the header is injected centrally in
+  `fetchAirtableWithMonitoring`, and data-plane calls now honour
+  `AIRTABLE_ENDPOINT_URL` via `airtableApiBaseUrl()`. Metadata API calls stay
+  pinned to Airtable direct pending the proxy contract. `X-App-Id` now rides
+  both transports.
 - The SDK always sends `Authorization: Bearer`, so the app keeps a **dummy PAT**;
   the proxy overwrites it. `X-Api-Key` is deferred — `X-App-Id` only for now.
-- **Rollout order matters:** the header must ship before `AIRTABLE_ENDPOINT_URL`
-  flips, or every proxied call 401s.
+- **Rollout order matters:** the header shipped before `AIRTABLE_ENDPOINT_URL`
+  flips (it's inert against Airtable), so it can't 401 anything until the flip.
 
 ## Open questions
 

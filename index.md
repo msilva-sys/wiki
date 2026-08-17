@@ -2,7 +2,7 @@
 type: index
 updated: 2026-08-17
 ---
-a
+
 # Index
 
 Catalog of every page in this wiki, one line each. Updated on every ingest.
@@ -47,7 +47,7 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 
 ## Syntheses
 - [[What should the Agent Flow research phase study]] — research agenda for the agent project; names the A6/A5 sequencing problem and what to ask before Gabrielle's leave.
-- [[How LiveScript sends the proxy X-App-Id header]] — GC-5 client side: the SDK v0.12.2 can't carry `X-App-Id` via config; two fixes pending research; corrects the "drop the PAT / X-Api-Key" onboarding model.
+- [[How LiveScript sends the proxy X-App-Id header]] — GC-5 client side: **implemented** via a `pnpm patch` (SDK) + centralized REST injection; data-plane honours the endpoint, metadata pinned direct. Corrects the "drop the PAT / X-Api-Key" onboarding model.
 
 ## Reference
 - [[AIRTABLEGC-34]] — ticket notes (legacy Jira).

@@ -124,10 +124,12 @@ from Gabrielle Ferreira in onboarding.
    >   always sends `Authorization: Bearer <apiKey>` and refuses to start without
    >   a non-empty one, so the app needs a **dummy `AIRTABLE_API_KEY`** and the
    >   proxy must **overwrite/ignore** the incoming `Authorization`.
-   > - Setting `endpointUrl` also does **not** carry the header: `customHeaders`
-   >   is a no-op for every operation this app uses in v0.12.2. The header needs a
-   >   `node-fetch` interceptor (Option A) or an SDK upgrade (Option B) — both
-   >   pending research on the synthesis page.
+   > - Setting `endpointUrl` also does **not** carry the header out of the box:
+   >   `customHeaders` is a no-op for every operation this app uses in v0.12.2.
+   >   **Resolved 2026-08-17** via a `pnpm patch` making the SDK's `runAction`
+   >   honour `customHeaders`, plus centralizing the header on the REST path —
+   >   `X-App-Id` now rides both transports. Commits `754896b` / `d565c26`. See
+   >   [[How LiveScript sends the proxy X-App-Id header]] for the full resolution.
 
 3. **Observability-first, not caching-first.** The whole premise is: instrument
    every Airtable call, *then* let the dashboards tell us whether 429s come from

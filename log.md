@@ -296,3 +296,25 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
   version**, so "Option B — upgrade the SDK" has no target. Left the synthesis's
   Option B wording as-is for now (still says "unconfirmed a version exists");
   flagged to tighten on the next pass.
+
+## [2026-08-17] synthesis | GC-5 implemented — X-App-Id on both transports; code review #1 fixed
+- Context: a code review of `livemode-roteiros-nextjs` flagged that our
+  uncommitted GC-5 change broke `pnpm test` (→ `pnpm build`): a top-level import
+  of `AIRTABLE_APP_ID` from `airtable-constants` dragged in its load-time
+  `requireEnv()`, so the monitoring suites threw at import. Confirmed by running
+  the two suites. Fixed by moving the constant into its sole consumer
+  (`airtable-monitoring.ts`). Suite green: 47 files / 370 tests.
+- Implemented the REST-path half of GC-5: `X-App-Id` injected centrally in
+  `fetchAirtableWithMonitoring`; `airtableApiBaseUrl()` makes **data-plane** REST
+  honour `AIRTABLE_ENDPOINT_URL` like the SDK; **metadata** API pinned to
+  `AIRTABLE_METADATA_BASE_URL` (direct) pending the proxy contract.
+- Commits in `livemode-roteiros-nextjs` on `feature/airtable-proxy-observability`:
+  `754896b` (SDK path — pnpm patch + monitored-base header + constant move) and
+  `d565c26` (REST path). Both validated: `tsc --noEmit` clean, 370 tests, lint clean.
+- Updated: [[How LiveScript sends the proxy X-App-Id header]] (Resolution section;
+  Options A/B marked not-taken, B confirmed impossible), [[Airtable Proxy]]
+  (point-2 warning → resolved), [[LiveScript]] (GC-5 wiring section → implemented),
+  `index.md` (synthesis line; removed a stray `a`).
+- Still open (gate the endpoint flip): does the proxy overwrite `Authorization`,
+  and does it serve the Metadata API. The 5 metadata call sites stay direct and
+  still need a real PAT until answered.
