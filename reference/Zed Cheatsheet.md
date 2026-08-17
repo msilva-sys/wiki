@@ -1,6 +1,12 @@
 ---
-
-## title: Zed vim mode — sidebar & file navigation cheatsheet date: 2026-08-11 tags: [zed, vim, editor, cheatsheet, keybindings] platform: windows
+type: reference
+status: active
+updated: 2026-08-11
+date: 2026-08-11
+aliases: [zed cheatsheet, zed vim]
+tags: [zed, vim, editor, cheatsheet, keybindings]
+platform: windows
+---
 
 # Zed vim mode — sidebar & file navigation
 

@@ -80,7 +80,7 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
   **Rotation of the Airtable PAT and Firebase service-account key is still
   required and is msilva's to perform.**
 
-## [2026-08-17] ingest | Three 2026-08-14 meetings
+## [2026-08-17] ingest | Three 2026-08-14 meetings (first pass)
 - Sources: the 1:1, Recap da Semana, and Papo de Projetos. `.docx` originals were
   read by extracting `word/document.xml`; msilva later supplied Recap as `.txt`
   and it was re-ingested in full from that.
@@ -109,3 +109,50 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 - Open: deadlines for both projects (meeting set for end of week beginning
   2026-08-17); does the design doc's phase numbering still mean anything; where
   the first agent lives; locating the PRD/ADR corpus and the documentation Hub.
+
+## [2026-08-17] lint | Second health check
+- 19 pages, 4 sources, 7 commits.
+- **Credentials still present in git history** — unchanged; the purge remains
+  blocked and rotation is still outstanding.
+- Found: [[2026-08-14 Papo de Projetos]] had been built from Gemini's summary
+  only (32 of 309 lines read); stale `.docx` source path on
+  [[2026-08-14 1-1 Matheus - Gabrielle]] after msilva re-supplied it as `.txt`;
+  the "observability-only" framing now contradicted twice over; unfixed
+  frontmatter items carried from the first lint.
+- Clean: raw coverage complete, every page indexed, no stale pages, working tree
+  free of secrets. Hubs formed — [[Airtable Proxy]] 14 inbound links,
+  [[LiveScript]] 12, [[Agent Flow]] 11.
+
+## [2026-08-17] ingest | Papo de Projetos, re-ingested in full
+- Rebuilt [[2026-08-14 Papo de Projetos]] from the complete transcript. Better
+  source than the others: Gemini labelled multiple speakers correctly.
+- **Orca substantially upgraded**: a machine-learning system, in production,
+  whose automation is valued at ~10 headcount and which cannot go down. Now the
+  stronger candidate for the first monitoring agent in [[Agent Flow]].
+- **`Brain` repository discovered** — a company-wide Markdown-in-GitHub knowledge
+  base rendered into a Hub, with per-project architecture/decisions/README pages.
+  Direct precedent for this vault and overlaps the proposed institutional-memory
+  agent. msilva has write access and was asked to correct his own entries.
+- Also recorded: the team's five own products (CRM, Orca, LiveScript, Taxonomia,
+  Pulse); a homologation flow being built for large projects; project ownership
+  resting with area managers; Luís is part-time (afternoons); the matriz de
+  eventos — the source of the `AIRTABLE_MATRIZ_*` IDs in [[Proxy Environments]] —
+  was built by a departed colleague and maintained by Arthur Tavares, who is
+  changing area.
+- Verified the re-supplied 1:1 `.txt` against the earlier `.docx` extraction:
+  same content, same endpoint. **No re-ingest needed** — only the source path was
+  corrected.
+
+## [2026-08-17] refactor | Lint fixes
+- [[Zed Cheatsheet]] frontmatter repaired — the delimiter and fields had
+  collapsed onto one line, so nothing parsed.
+- Meeting prep note given an `updated:` field; `meeting-prep`, `reference`, and
+  `draft` added to the schema's enumerations rather than forcing the page to fit.
+- `CLAUDE.md` now exempts itself, `index.md`, and `log.md` from frontmatter and
+  orphan checks, so lint stops re-reporting them.
+- Citation example de-linked so it no longer registers as a broken link.
+- **Not done**: the two dangling links from the meeting prep note
+  (`Claude - context window and large data`,
+  `LiveMode - AI tooling and data access`) are left as intentional to-do markers.
+  Writing those pages means reading that note in full first — creating them from
+  a skim is the mistake that produced the bad Papo page.

@@ -111,9 +111,37 @@ Work starts **2026-08-17**, splitting time with the [[Airtable Proxy]].
 3. A proposal for which one, and where its first version lives.
 
 Gabrielle's suggestion: start with the **monitoring/watch agent**, scoped to a
-single project rather than the whole portfolio — [[LiveScript]] or "Orca" were
+single project rather than the whole portfolio — [[LiveScript]] or Orca were
 named, as the systems under most constant use. Scoping it to one project is how
 the agent picks up real context and gets working in practice.
+
+> [!tip] Orca is the stronger candidate
+> [[2026-08-14 Papo de Projetos]] describes Orca as a **machine-learning system,
+> in production, that the team using it cannot work without** — its automation is
+> valued at roughly ten headcount, and *"isso não pode estar fora do ar."* A
+> business-critical system that must not go down makes the value of a monitoring
+> agent self-evident, which is exactly what the prior attempt failed to achieve.
+> [[LiveScript]] is the system msilva knows better; Orca is the one where an
+> alert would obviously matter.
+
+## Prior art to read first
+
+Livemode already has more in this space than the architecture diagram suggests:
+
+- **The `Brain` repository and Hub** — a company-wide Markdown-in-GitHub
+  knowledge base with per-project architecture, decisions, and README pages.
+  It substantially overlaps the proposed institutional-memory agent, and it
+  already exists. See [[2026-08-14 Papo de Projetos]].
+- **A shared AI architecture for Livemode**, named as a long-term goal by the
+  area lead, with no detail given.
+- **A Claude Code training programme** being built for all areas.
+- **TES**, an AI-orchestration vendor under trial
+  ([[2026-08-14 Recap da Semana]]).
+
+None of these were mentioned when the project was handed over. Understanding how
+Agent Flow relates to them — complement, replacement, or duplicate — is worth
+doing before designing, particularly given that one of the transversal agents is
+explicitly about **not building the same thing twice**.
 
 ## Open questions
 

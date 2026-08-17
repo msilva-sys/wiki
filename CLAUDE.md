@@ -43,14 +43,18 @@ Root holds only `CLAUDE.md`, `index.md`, `log.md`.
 - **Frontmatter** on every page:
   ```yaml
   ---
-  type: project | system | concept | person | decision | source | meeting | synthesis
-  status: active | stable | stale | deferred | superseded
+  type: project | system | concept | person | decision | source | meeting
+      | meeting-prep | synthesis | reference
+  status: active | stable | draft | stale | deferred | superseded
   updated: 2026-08-17
   aliases: [prxy, the proxy]   # shorthand msilva actually uses
   tags: [airtable, observability]
   ---
   ```
   `aliases` matter — they let you resolve shorthand in future sessions.
+  **Exempt**: `CLAUDE.md`, `index.md`, and `log.md` are infrastructure, not
+  pages. They need no `status:` and `CLAUDE.md` needs no frontmatter at all.
+  Having no inbound links is also correct for them — don't flag it as orphaning.
 - **Dates**: absolute `YYYY-MM-DD`. Never "last week" or "recently". Determine
   them yourself — see **Dates** below. Never ask msilva for a date you can read.
 - **Confidence**: mark unverified claims inline — `(unverified: …)` — and state
@@ -58,7 +62,9 @@ Root holds only `CLAUDE.md`, `index.md`, `log.md`.
   the code*. Corrections to earlier pages are called out inline, not silently
   overwritten.
 - **Citations**: when a claim comes from a source, cite the wiki page and the
-  underlying raw file: `— [[Airtable API docs]] (raw/airtable-api.md)`.
+  underlying raw file — e.g. a link to the page `Airtable API docs` followed by
+  `(raw/airtable-api.md)`. (Written out rather than shown as a live wikilink, so
+  this example doesn't register as a broken link in Obsidian.)
 
 ## Dates
 
