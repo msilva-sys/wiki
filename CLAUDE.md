@@ -57,7 +57,7 @@ Root holds only `CLAUDE.md`, `index.md`, `log.md`.
   the code*. Corrections to earlier pages are called out inline, not silently
   overwritten.
 - **Citations**: when a claim comes from a source, cite the wiki page and the
-  underlying raw file: `— [[Source: Airtable API docs]] (raw/airtable-api.md)`.
+  underlying raw file: `— [[Airtable API docs]] (raw/airtable-api.md)`.
 
 ## Operations
 
