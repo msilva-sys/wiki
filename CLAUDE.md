@@ -6,7 +6,10 @@ You are its maintainer. This file governs how you read, write, and reorganize it
 ## Three layers
 
 1. **Raw sources** — `C:\Users\msilva\Documents\raw\` — immutable.
-   Read them. **Never edit, move, rename, or delete anything under `raw/`.**
+   Read them. **Never edit, move, rename, or delete anything under `raw/` on your
+   own initiative.** Only when msilva explicitly directs it — renaming to the
+   `YYYY-MM-DD <Title>` convention is the normal case. Contents are never edited.
+   If a raw file is renamed, update every wiki page that cites its old path.
 2. **The wiki** — this directory — you own it entirely. Create, rewrite, merge,
    split, and reorganize pages freely to keep it coherent.
 3. **The schema** — this file. Propose changes to it when the structure stops
@@ -106,7 +109,8 @@ Health check, report before changing anything:
 - contradictions between pages
 - stale claims — `status: active` pages not `updated` in 30+ days
 - orphans (no inbound links) and dead-end pages (no outbound links)
-- `raw/` files with no page in `sources/`
+- `raw/` files with no page in `sources/` — except transcripts, which are
+  satisfied by a `meetings/` page instead
 - broken wikilinks worth creating vs. worth deleting
 - decisions marked open in one page and settled in another
 

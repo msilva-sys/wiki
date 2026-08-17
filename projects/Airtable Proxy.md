@@ -1,14 +1,52 @@
 ---
 type: project
 status: active
-updated: 2026-08-11
-aliases: [prxy, the proxy, airtable proxy]
+updated: 2026-08-17
+aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
 
 # Airtable Proxy — Project Notes (reconciled with the repo)
 
-> Related: [[Proxy Environments]] · [[AIRTABLEGC-34]]
+> Related: [[Proxy Environments]] · [[AIRTABLEGC-34]] · [[LiveScript]] ·
+> [[Airtable Rate Limits]] · [[Agent Flow]]
+
+## Why this project exists
+
+Added 2026-08-17 from [[2026-08-10 Onboarding Técnico - Matheus]]. The rest of
+this page describes *what* is being built; this section is the *why*, which came
+from Gabrielle Ferreira in onboarding.
+
+- **The trigger was the World Cup.** A day of heavy concurrent usage on
+  [[LiveScript]] — an app requiring real-time editing and real-time feedback —
+  exceeded what the Airtable API could absorb. See [[Airtable Rate Limits]].
+- **The user-visible cost is still being paid.** LiveScript restricts its users
+  to stay under the limit: whole-row locking even when two people need different
+  fields, and only one person creating rows at a time. These are workarounds, not
+  product intent. **The proxy is what eventually lets them be removed** — worth
+  keeping in view, since the repo-level work doesn't make this obvious.
+- **Bad usage is cheaper to detect than to hunt.** A second Airtable consumer is
+  poorly implemented — refetching and over-loading needlessly. Gabrielle's
+  rationale for building detection into the proxy: *"se eu tiver que ficar
+  procurando essas más práticas aqui, é muito mais trabalhoso do que eu criar um
+  cara mega inteligente aqui que ele identifica e alerta."*
+- **Migration is a base-URL swap.** Apps repoint at a proxy host
+  (`airtable.livemode.space` was the illustrative form) and it passes through
+  transparently — expected to be near-zero effort for app owners. This confirms
+  the "no DNS cutover" correction below, from the other direction.
+- **This is half of a merged initiative.** The proxy and *LiveScript
+  stabilization* were joined into one programme. Phase 2 moves data that doesn't
+  need to be in Airtable into a LiveScript-only database — see [[LiveScript]].
+  **That phase is absent from the roadmap recorded below.**
+
+> [!question] Open tension — does the proxy retry 429s, and when?
+> Gabrielle described 429 retry/backoff as a proxy responsibility, so apps don't
+> each implement their own: *"deu um erro de 429 […] ele próprio segura, tenta e
+> retenta de novo."* But this page records v1 as **deliberately
+> observability-only, with no enforcement or intervention** — and a retry is an
+> intervention. Either retry is a later phase not yet written down, or the
+> observability-only framing needs qualifying. **Unresolved.** Ask Gabrielle;
+> the design doc's phase list is the place to check first.
 
 > **Updated 2026-08-11** after reading the actual repo
 > (`livemode-airtable-proxy-main`). The earlier version of this note was a
@@ -114,7 +152,7 @@ telemetry*, not enforcement:
 
 - [ ] **Extract usage signals in the proxy itself:** `hasFilter`,
       `hasFieldProjection`, `recordCount`, `bytes`. Today these come only from
-      the roteiros app's SDK wrapper — `proxy.go`'s `emit()` logs
+      the roteiros ([[LiveScript]]) app's SDK wrapper — `proxy.go`'s `emit()` logs
       status/latency/operation but not these. Moving them into the proxy makes
       anti-pattern detection work for *any* app, not just roteiros.
 - [ ] **Normalize `app.route`** into logs/spans (from Next.js
