@@ -10,9 +10,38 @@ tags: [agents, llm, automation, onboarding, research]
 # Agent Flow
 
 > [!abstract] Currently in the **research phase** (as of 2026-08-17)
-> No build decisions are made yet. The research agenda, the sequencing problem it
-> has to solve, and what to ask whom are in
+> Authoritative spec: [[Fluxo Agêntico project instruction]] (per-agent detail for
+> all 14). Architecture: [[Fluxo Agêntico diagram]]. Agenda and open questions:
 > [[What should the Agent Flow research phase study]].
+
+## Philosophy and build strategy
+
+From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides
+the verbal descriptions the rest of this page was originally built from.
+
+**AI-First.** *"A IA é o meio de execução, não apenas um assistente."* Autonomous
+agents write code, build automations, deploy, monitor, and teach. **Humans are
+strategic approvers and quality refiners**, not operators. This settles the
+deterministic-versus-autonomous question below in favour of autonomy with human
+approval gates.
+
+**Anarchic first, integrated second.** *"A estratégia de construção é anárquica
+primeiro, integrada depois."*
+
+- **Phase 1** — each agent built independently, closed scope, validated in
+  isolation, **running in production individually even without integration**.
+  Explicit goal: no cross-dependency.
+- **Phase 2** — wire them per the architecture; A6 begins capturing from
+  everything; the transversal intelligences start running in parallel.
+
+**This means an agent with no consumers is buildable by design.** Any concern that
+A5 needs A3, or that A6 must come first, is answered by the strategy rather than
+by sequencing.
+
+**Working method**: one conversation per agent or per connection. Each agent is
+specified as **inputs/outputs · what it consults and feeds · success criteria ·
+limits (what it does not do)**. That four-part frame is the shape the
+"understanding of each agent" deliverable should take.
 
 A proposed multi-agent architecture to automate how msilva's area receives,
 classifies, and executes demands. msilva's **second onboarding track**, running
@@ -154,12 +183,6 @@ the agent picks up real context and gets working in practice.
 
 Livemode already has more in this space than the architecture diagram suggests:
 
-- **The `Brain` repository and Hub** — a company-wide Markdown-in-GitHub
-  knowledge base with per-project architecture, decisions, and README pages.
-  It substantially overlaps **A6 Curator**, which the diagram makes the
-  centrepiece of the whole architecture rather than a side component — so this
-  is an overlap with the core, not the periphery. See
-  [[2026-08-14 Papo de Projetos]].
 - **A shared AI architecture for Livemode**, named as a long-term goal by the
   area lead, with no detail given.
 - **A Claude Code training programme** being built for all areas.

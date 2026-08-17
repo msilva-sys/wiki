@@ -247,3 +247,38 @@ Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 - Open (carried to the ticket): does the proxy overwrite the incoming
   `Authorization`? Does it serve the Metadata API or only the data plane? Both
   gate how narrowly the interceptor is scoped.
+
+## [2026-08-17] synthesis | Agent Flow research agenda
+- msilva stated the project is at the **research step**. Recorded as
+  `phase: research` on [[Agent Flow]].
+- New: `syntheses/What should the Agent Flow research phase study.md`.
+- First version argued a **sequencing problem**: A5 Watcher has no consumers and
+  A6 Curator is a precondition, so the first decision was leaf-vs-hub.
+- Per msilva's instruction, the `Brain` repository was **dropped as a research
+  track**. The factual record of its existence stays in
+  [[2026-08-14 Papo de Projetos]]; only the agenda changed.
+
+## [2026-08-17] ingest | Fluxo Agêntico project instruction
+- Source: `raw/instrucao-projeto-fluxo-agentico.md.txt` — *"Instrução do Projeto:
+  Fluxo Agêntico AI-First"*, created by Gabi. **The authoritative spec for
+  [[Agent Flow]]**; supersedes verbal descriptions and the diagram.
+- New: `sources/Fluxo Agêntico project instruction.md` — per-agent specification
+  for all 14, the authoritative connection list, and the build strategy.
+- **Corrected the synthesis**: the sequencing problem it led with **does not
+  exist**. The instruction mandates *"anárquica primeiro, integrada depois"* —
+  agents built independently, in production individually, explicitly **without
+  cross-dependency**. A consumer-less A5 is the method, not a problem. Correction
+  left visible on the page.
+- Resolved: **autonomy over determinism** (AI-First — *"a IA é o meio de
+  execução"*, humans as strategic approvers); **`Bug (sistema)`** is A1 ingesting
+  *"alertas de sistemas"*; the intelligences' dotted lines go to **A9**; **A12
+  also hard-blocks**, so A13 isn't the only gate; the project currently lives in a
+  **claude.ai Project** with an unconfigured recurring-task facility.
+- Recorded A5's concrete cadences (health 5 min / usage 1h / report 24h) and the
+  four-part agent spec template the instruction requires: inputs and outputs,
+  dependencies, success criteria, **limits**.
+- New open questions: **Monday** is listed as an intake channel despite the Linear
+  migration; **A9's controlled stack omits Go** while the [[Airtable Proxy]] is
+  Go; whether **Programado** can drive a 5-minute cadence.
+- Track 2 reframed: scheduling and runtime is now the sharpest unknown, and token
+  cost binds there — a 5-minute cadence is ~288 invocations/day.

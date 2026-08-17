@@ -96,14 +96,22 @@ exactly this kind of signal, and A5 Watcher is the obvious other candidate.
 
 ## Open questions
 
-- **Who authored it, and when?** Presumably Gabrielle with Pedro (the departed
-  developer who co-designed it), but the file records no author.
-- **What feeds `Bug (sistema)`?** If it's proxy telemetry or Watcher output,
-  that's a concrete first integration point between msilva's two projects.
-- **What does A13 block, and how?** "Blocks" implies authority over the flow —
-  unspecified.
-- **Why the renumbering?** The stale comments imply agents were merged, split, or
-  reordered. Knowing what changed would say which parts are settled.
-- The dotted lines from the transversal agents terminate on the **projects
-  branch** (around A9 Developer), while a stale comment calls them "Inteligências
-  → A7/A10". Unclear whether they feed the whole branch or just the developer.
+Mostly resolved by [[Fluxo Agêntico project instruction]], which arrived after
+this page was written:
+
+- ~~**What feeds `Bug (sistema)`?**~~ **Resolved** — A1 ingests *"alertas de
+  sistemas"* as a first-class channel, alongside Slack, Monday, email, forms and
+  webhooks. The [[Airtable Proxy]]'s alerting is a candidate producer.
+- ~~**The dotted lines from the transversal agents**~~ **Resolved** — the
+  authoritative connection list says **A10, A11, A12 → A9**, consulted before
+  project decisions. The geometry reading was right and the stale comment wrong.
+- ~~**What does A13 block?**~~ **Partly resolved** — it blocks duplicated work
+  before it enters the flow. Also worth noting **A12 hard-blocks too**
+  (unauthorized external APIs, critical compliance exports, whole-base deletes),
+  so A13 is not the only gate — correcting the claim made earlier on this page.
+- **Who authored it, and when?** The instruction is credited to "Gabi"; the
+  diagram itself records no author. Pedro (the departed developer) co-designed the
+  architecture per [[2026-08-10 Onboarding Técnico - Matheus]]. Date still
+  unresolved.
+- **Why the renumbering?** Still open. Knowing what was merged, split, or reordered
+  would indicate which parts are settled.

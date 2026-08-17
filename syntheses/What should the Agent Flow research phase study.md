@@ -9,159 +9,133 @@ tags: [agents, research, planning]
 
 # What should the Agent Flow research phase study?
 
-Derived entirely from what the wiki already holds — [[Fluxo Agêntico diagram]],
-[[2026-08-10 Onboarding Técnico - Matheus]], [[2026-08-14 1-1 Matheus - Gabrielle]],
-[[2026-08-14 Papo de Projetos]]. No new external research yet; this is the agenda,
-not the answers.
+> [!important] Rewritten 2026-08-17 after reading the project instruction
+> The first version of this page was derived from the diagram and the transcripts.
+> [[Fluxo Agêntico project instruction]] then arrived and **answered most of it**,
+> including the problem this page led with. Corrections are kept visible below
+> rather than quietly deleted.
 
-## The deliverable, restated
+## Correction: the sequencing problem doesn't exist
 
-Two things, from the onboarding and the 1:1:
+This page previously argued that A5 Watcher couldn't be built first because its
+consumers (A3, the intelligences) don't exist, and that A6 Curator was a
+precondition for everything. It concluded the first real decision was
+*leaf-that-proves-plumbing versus hub-everything-needs*.
 
-1. An understanding of what each of the 14 agents is for.
-2. **One agent actually built**, plus a proposal for which one and where it lives.
+**The instruction dismisses that framing outright:**
 
-**(1) is already largely done** — [[Fluxo Agêntico diagram]] covers all 14 roles.
-The research phase is therefore mostly in service of (2): choosing correctly and
-building something that survives contact with users.
+> "A estratégia de construção é anárquica primeiro, integrada depois. Cada agente
+> principal será construído de forma independente, validado isoladamente."
 
-## The sequencing problem nobody has named yet
+Phase 1 is explicitly agents **in production individually, without integration**,
+and the stated rationale is fast iteration **without cross-dependency**
+(*"sem dependência cruzada"*). A6 only begins capturing from everything in Phase 2.
 
-Gabrielle's suggestion is to build **A5 Watcher** first, scoped to one project.
-Reading that against the diagram raises two structural problems:
+So building a consumer-less A5 isn't a problem to solve — it's the method. The
+reasoning was sound given the diagram alone; the diagram just wasn't the whole
+design.
 
-**A5's consumers don't exist.** The diagram gives A5 two outputs: a feedback loop
-into **A3 Executor** (*"retroalimenta execução"*) and dotted context lines into the
-transversal intelligences. Build A5 alone and it has nowhere to send anything. So
-the first real design question isn't "how do I monitor" — it's **what a standalone
-A5 does with its output when A3 doesn't exist.** Plausible answers: it alerts a
-human directly (a Slack channel), or it writes into A6, or it degenerates into the
-alerting the [[Airtable Proxy]] dashboards already do.
+## What's now settled
 
-**Almost everything depends on A6 Curator.** A6 is the hub every other agent
-connects to. Any agent built before it either invents its own memory or has none.
-That makes A6 less "one of the 14" and more a **precondition**.
-
-**Consequence for the research phase**: the choice isn't A5-vs-something-else. It's
-whether the first build is *a leaf that proves the plumbing* (A5, needing a
-defined output sink) or *the hub everything needs* (A6). That's the question worth
-resolving before writing code.
-
-## Track 1 — Define what A6 Curator actually is (blocking)
-
-**Why first**: it's the architectural centre and it gates the other 13. Until
-there's a concrete answer to "what is institutional memory, mechanically," no
-other agent has anywhere to read from or write to.
-
-The diagram gives only two lines of specification — *"memória institucional"* and
-*"hub central de conhecimento"* — which is nowhere near enough to build against.
-What needs deciding:
-
-- **Storage**: files, a database, a vector store, or a repo. What can the other 13
-  read from cheaply?
-- **Write discipline**: who writes, when, and under what rules? An institutional
-  memory that any agent can write to freely degrades fast.
-- **Retrieval**: how does an agent ask it a question, and how is the answer kept
-  small enough to matter given the token constraint in Track 2?
-
-> [!tip] There is a working prototype of this in the room
-> **This wiki is an LLM-maintained institutional memory**: Markdown under a
-> written schema, with an index, an append-only log, linting for contradictions
-> and staleness, and citation discipline separating what a source claimed from
-> what was verified. It has already caught its own errors and corrected them in
-> place.
->
-> That is a substantial part of A6's specification, already tested on real
-> material. Whatever A6 becomes, the schema in `CLAUDE.md` is evidence about what
-> maintaining institutional memory actually requires — argued from something that
-> works rather than from a diagram.
-
-## Track 2 — The deterministic/autonomous decision
-
-The fork msilva named in the 1:1: a largely deterministic flow, versus exposing
-tools and letting agents resolve things. Luís suggested **graph-based**
-approaches *(unverified: transcription garbled — confirm what he meant)*.
-
-What makes this decidable rather than a matter of taste, given the recorded
-constraints:
-
-| Constraint | Pressure it applies |
+| Question | Answer |
 |---|---|
-| **Token cost** — $7/day in one colleague's testing; *"se for gastar 7 todo dia […] talvez a gente não sabe se a gente tá confortável"* | Toward deterministic. Every autonomous hop costs tokens and varies |
-| **A13 blocks** — a gate with authority to stop work | Toward deterministic. A blocking gate needs predictable, auditable behaviour |
-| **Prior attempt died partly because agents couldn't call each other** | Toward explicit orchestration — a graph — over implicit tool-calling |
-| **A3 and A9 both "create sub-agents on demand"** | Toward autonomy, at least inside those two nodes |
+| Build order | Anarchic first — any agent, independently, closed scope, isolated validation |
+| Deterministic vs autonomous | **Autonomous.** AI-First: *"a IA é o meio de execução"*; humans are strategic approvers and quality refiners, not operators |
+| What feeds `Bug (sistema)` | A1 ingests *"alertas de sistemas"* as a first-class channel alongside Slack, Monday, email, forms, webhooks |
+| Where it lives today | A **claude.ai Project**, with the instruction and diagram attached, and an unconfigured recurring-task facility |
+| Working method | **One conversation per agent or per connection** |
+| Agent spec template | Inputs/outputs · what it consults and feeds · success criteria · **limits (what it does not do)** |
 
-The last row matters: the diagram is **not uniform**. Two nodes are explicitly
-dynamic while A13's blocking role demands determinism. So the honest question is
-*which parts are deterministic*, not which paradigm wins. Worth studying
-orchestration frameworks with that hybrid in mind, and worth getting the model
-Luís shared, which reportedly addresses exactly this.
+That last row is effectively the required shape of the "understanding of each
+agent" deliverable. It's a template, not a guess.
 
-## Track 3 — Adoption, which killed the last attempt
+## Track 1 — Choose the first agent and specify it (do this first)
 
-The most under-researched area, and the one with the clearest recorded failure
-data. From [[Agent Flow]]: the prior product agent worked technically but died
-because users had to `@`-mention it and didn't, and because *"as pessoas quando
-tem um problema, elas estão um pouco engajadas em explicar o seu problema"* —
-people want to report a problem, not file one.
+Anarchic-first turns the question into: **which single agent has the most closed
+scope and can reach production alone?**
 
-Nothing in the 14-agent diagram addresses this. A1 Receptor Universal assumes
-demands arrive; it doesn't explain why anyone would send them.
+**A5 Watcher is the strongest candidate, and the instruction makes it more so** —
+it is the most concretely specified agent in the document:
 
-Study questions:
+- Fixed cadences: **system health every 5 min, usage patterns hourly, general
+  report every 24h.**
+- Two clear modes: **incident detection** (systems down, recurring errors, failing
+  workflows) and **opportunity detection** (unused features, frequent manual
+  processes, cross-area redundancy).
+- One output, and while A3 doesn't exist it can go to a human.
 
-- What makes the four entry channels **zero-friction**? `Bug (sistema)` is
-  automatic by construction — the other three depend on human behaviour that has
-  already failed once.
-- Is there a design where the agent **observes** rather than waits to be
-  addressed? This is why `Bug (sistema)` and A5 Watcher are interesting beyond
-  their stated roles: they're the only paths that need no human initiative.
-- The **sharing problem** from the 1:1: work built in Claude can't easily be
-  handed to a team, n8n covers scheduling and event triggers that Claude alone
-  doesn't, and colleagues therefore build in one and migrate to the other. **A
-  platform where flows live and are maintained collaboratively is the gap this
-  project exists to fill** — so "where does it run" is an adoption question, not
-  just an infrastructure one.
+Combined with Gabrielle's verbal suggestion to scope it to one project, and Orca
+being business-critical ([[2026-08-14 Papo de Projetos]]), this is close to
+decided. What remains is genuine specification work, not research:
 
-## Track 4 — What feeds `Bug (sistema)`
+- What "system health" means concretely for the chosen target, and what data
+  source answers it every 5 minutes.
+- Where alerts land while A3 is absent.
+- **Its limits** — the instruction demands these explicitly. A watcher that
+  detects "opportunities" could sprawl without them.
 
-The cheapest concrete win available, and the only identified seam between
-msilva's two projects.
+## Track 2 — Scheduling and runtime (newly the real unknown)
 
-The [[Airtable Proxy]] already emits telemetry, has dashboards for anti-patterns,
-and fires `airtable_429_alert`. A first confirmed over-fetch has been found in
-[[LiveScript]]'s events panel. If proxy alerts become `Bug (sistema)` events, the
-channel has a real producer and A5 has something to watch — using work that
-already exists rather than new infrastructure.
+A5 needs to run **every 5 minutes, unattended**. That is now the sharpest open
+question, and it's the same wall colleagues already hit:
 
-Worth testing whether this is what was intended, or coincidence.
+- The Claude Project has a **Programado** (recurring tasks) section, currently
+  unconfigured. Whether it can drive a 5-minute cadence is unverified and worth
+  testing early — it would be the cheapest possible answer.
+- **n8n covers scheduled and event-triggered runs**, which is precisely why
+  colleagues build in Claude and migrate to n8n
+  ([[2026-08-14 1-1 Matheus - Gabrielle]]). It's also in A9's sanctioned stack.
+- The **sharing problem** is unresolved and is a runtime question, not a
+  packaging one: work built in Claude can't easily be handed to a team. An agent
+  only msilva can run or maintain repeats the prior failure in a new form.
 
-## Sequencing, and the calendar
+**Token cost binds here**, not in the paradigm choice. A 5-minute health check is
+~288 invocations a day. Against a recorded $7-per-day experimentation burn that
+caused unease, cadence and context size are the cost levers — so "how much does
+each cycle need to read" is a design constraint on A5 specifically.
 
-**Gabrielle is on leave from the week of 2026-08-24** for ~2.5 weeks, returning
-the 10th. **Luís is the primary technical contact** and is **part-time,
-afternoons** ([[2026-08-14 Papo de Projetos]]). A deadline-setting meeting with
-both was set for the end of the week beginning 2026-08-17.
+## Track 3 — Adoption (still unaddressed by any document)
 
-That gives a clear ordering:
+The one thing neither the diagram nor the instruction addresses, and the recorded
+cause of the previous attempt's death: users had to `@`-mention the agent and
+didn't, because *"as pessoas quando tem um problema, elas estão um pouco
+engajadas em explicar o seu problema"* — they want to report a problem, not file
+one.
 
-1. **Before 2026-08-24** — ask Gabrielle the things only she can answer: what
-   feeds `Bug (sistema)`, why the agents were renumbered, whether A6 is meant to
-   be `Brain`, and where the still-unshared design documentation is.
-2. **Also before the deadline meeting** — get Luís's graph suggestion and the
-   model he shared, since Track 2 can't resolve without it and he's the one
-   present after Gabrielle leaves.
-3. **During the leave** — Tracks 1 and 3 are reading and analysis; they don't
-   need either of them.
+A1's design assumes demands arrive. Nothing explains why they would this time.
 
-## Open questions this agenda can't resolve
+**Worth noting in A5's favour**: system alerts and continuous monitoring are the
+only paths in the whole architecture requiring **no human initiative**. Choosing
+A5 first sidesteps the failure mode rather than betting against it — which is a
+stronger argument for it than "it's well specified."
 
-- Which is the first build: a leaf that proves plumbing, or the hub everything
-  needs?
-- Is there an existing budget or token-cost ceiling, or just the unease recorded
-  in the 1:1?
-- Does the homologation flow from [[2026-08-14 Papo de Projetos]] apply to this
-  project? It validates architecture, tooling, security, and data governance
-  before implementation — which would make it a gate on this work.
-- Who owns A6 if `Brain` already has an owner?
+## Track 4 — Two documented inconsistencies to confirm
+
+Cheap to resolve, both with Gabrielle before **2026-08-24**:
+
+- **Monday is listed as an intake channel**, but tracking is migrating to Linear
+  ([[2026-08-14 Migrate project management from Jira to Linear]]). Is the
+  instruction stale here?
+- **A9's controlled stack omits Go** (React, Python, Node.js, known APIs, N8n,
+  Vercel/Replit) — yet the [[Airtable Proxy]] is Go. Does the constraint apply
+  only to new systems?
+
+## The calendar
+
+**Gabrielle is on leave from the week of 2026-08-24** for ~2.5 weeks. **Luís is
+the primary technical contact** and works afternoons only. A deadline-setting
+meeting with both was set for the end of the week beginning 2026-08-17.
+
+1. **Before 2026-08-24** — confirm the first agent choice with Gabrielle, plus the
+   Track 4 inconsistencies and where the still-unshared design docs are.
+2. **From Luís** — his graph suggestion and the model he shared. Less critical now
+   that autonomy is settled, but he's the one present after Gabrielle leaves.
+3. **During the leave** — Tracks 1 and 2 are specification and experiment, and
+   need neither of them.
+
+## Open questions
+
+- Which agent does msilva actually build? Not stated in writing anywhere.
+- What counts as "production" for a Phase 1 agent with no integration?
+- Is there a token budget, or only the unease recorded in the 1:1?
+- Does the homologation flow from [[2026-08-14 Papo de Projetos]] gate this work?
