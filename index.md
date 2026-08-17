@@ -51,6 +51,7 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 ## Syntheses
 - [[What should the Agent Flow research phase study]] — research agenda for the agent project; tracks, constraints, and what to ask before Gabrielle's leave.
 - [[Which agent should be built first]] — A5 Watcher on proxy telemetry, and why. Includes the case against it, why A1 is the better second build, and the GC-5 timing dependency.
+- [[How to implement A5 Watcher]] — build plan: alert rules as code, throttling as cost control, Linear as dedup store, and how to build most of it before GC-5 lands.
 - [[How LiveScript sends the proxy X-App-Id header]] — GC-5 client side: **implemented** via a `pnpm patch` (SDK) + centralized REST injection; data-plane honours the endpoint, metadata pinned direct. Corrects the "drop the PAT / X-Api-Key" onboarding model.
 
 ## Reference

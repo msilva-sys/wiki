@@ -587,3 +587,34 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
   arrangement, with an explicit *don't re-duplicate the schema* instruction so a
   future session doesn't helpfully undo this. Frontmatter exemption extended to
   cover it.
+
+## [2026-08-17] synthesis | How to implement A5 Watcher
+- New: `syntheses/How to implement A5 Watcher.md` (`status: draft` — unvalidated
+  against the repo). Linked from [[Which agent should be built first]] and
+  `index.md`.
+- **The GC-5 dependency is narrower than recorded.** The repo ships a local
+  `grafana/otel-lgtm` stack, so the proxy can be run against a sandbox base with
+  deliberately bad traffic generated on purpose — unfiltered reads, N+1 loops,
+  enough volume to trip 429s. Rules, notification policy, receiver, dedup, the
+  skill and the daily pass can all be built and validated **before** GC-5 lands.
+  **Only threshold tuning needs production traffic.**
+- **Alert rules belong in the proxy repo**, provisioned as code beside the
+  dashboards — they depend on metric names the proxy emits, and should version with
+  the code that emits them.
+- **The existing 429 rule needs re-tuning**: `increase(...[5m]) > 0` fires on any
+  single 429, and 429s are bursty by design. Needs a rate plus a `for:` duration so
+  it fires on sustained limiting.
+- **A proxy-liveness alert is missing and matters most** — without a no-data rule,
+  a dead proxy produces silence, which the event-driven design cannot distinguish
+  from health.
+- **Dedup via Linear as the state store** — fingerprint from the alert's grouping
+  labels, search for an open issue, comment rather than create. That logic *is*
+  A13's core scoped to one producer, and needs no new infrastructure.
+- **New open decision surfaced**: n8n versus a Cloud Run service for the receiver.
+  n8n is free and is the area's runtime; Cloud Run is isolated and already the
+  proxy's target. The shared-n8n isolation problem is documented, not hypothetical.
+- Recorded read-only credentials as a structural enforcement of the "never fixes"
+  limit, and success criteria led by **action rate** — the proportion of filed
+  issues a human acts on — as the anti-fatigue measure.
+- Flagged **verify against the repo**: exact metric names and label sets, and the
+  metrics-vs-logs naming convention, before writing PromQL.

@@ -278,6 +278,12 @@ reviewed.
 **Settled — an explicit limit:** A5 **never quotes payloads or headers** into an
 issue. IDs and metrics only.
 
+> [!tip] Build plan
+> [[How to implement A5 Watcher]] carries the concrete steps — alert rules as code
+> in the proxy repo, notification policy as the cost control, Linear as the dedup
+> state store, and the local `otel-lgtm` stack as the way to build and test most of
+> it **before** GC-5 lands.
+
 ## A5's limits, as they now stand
 
 Per the spec template's fourth field — what it does **not** do:
