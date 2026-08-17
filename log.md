@@ -565,3 +565,25 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
 - Also recorded as accepted risk: alert fatigue carries higher stakes than the
   prior attempt (Linear is the team's live board, mid-migration), and **nothing can
   be tuned until GC-5 lands** — the tuning loop *is* the project.
+
+## [2026-08-17] query | A5
+- Answered from [[Fluxo Agêntico project instruction]],
+  [[Fluxo Agêntico diagram]], [[Agent Flow]] and
+  [[Which agent should be built first]]. No new page — the synthesis already
+  holds it.
+- Surfaced a maintenance hazard: `AGENTS.md` had been created as a **full copy** of
+  `CLAUDE.md` (identical but for self-references).
+
+## [2026-08-17] refactor | AGENTS.md becomes a pointer, not a copy
+- Two copies of the schema would drift, and the schema is the one file where drift
+  is expensive.
+- `CLAUDE.md` kept **canonical** — it is the file this environment auto-loads, and
+  the mechanism the vault has relied on throughout.
+- `AGENTS.md` rewritten as a pointer to it, repeating **only** the two hard rules
+  (never write a credential; never modify `raw/`) so a tool reading that file alone
+  still fails safe. Those two are stable, so the drift risk is negligible and the
+  safety value is not.
+- `CLAUDE.md` updated: directory layout now names `AGENTS.md` and explains the
+  arrangement, with an explicit *don't re-duplicate the schema* instruction so a
+  future session doesn't helpfully undo this. Frontmatter exemption extended to
+  cover it.

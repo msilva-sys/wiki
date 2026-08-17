@@ -32,7 +32,13 @@ cross-references, consistency, indices, and logs.
 | `syntheses/` | Cross-cutting write-ups answering a question | question |
 | `reference/` | Personal reference that isn't domain knowledge — cheatsheets, ticket scratch notes | thing |
 
-Root holds only `CLAUDE.md`, `index.md`, `log.md`.
+Root holds only `CLAUDE.md`, `AGENTS.md`, `index.md`, `log.md`.
+
+`AGENTS.md` is a **pointer to this file**, for tools that look for that filename.
+It is deliberately not a copy — two schemas drift, and this is the one file where
+drift is expensive. It repeats only the two hard rules (no credentials, never
+modify `raw/`) so a tool reading it alone still fails safe. **Don't re-duplicate
+the schema into it.**
 
 ## Page conventions
 
@@ -52,8 +58,9 @@ Root holds only `CLAUDE.md`, `index.md`, `log.md`.
   ---
   ```
   `aliases` matter — they let you resolve shorthand in future sessions.
-  **Exempt**: `CLAUDE.md`, `index.md`, and `log.md` are infrastructure, not
-  pages. They need no `status:` and `CLAUDE.md` needs no frontmatter at all.
+  **Exempt**: `CLAUDE.md`, `AGENTS.md`, `index.md`, and `log.md` are
+  infrastructure, not pages. They need no `status:`, and `CLAUDE.md` / `AGENTS.md`
+  need no frontmatter at all.
   Having no inbound links is also correct for them — don't flag it as orphaning.
 - **Dates**: absolute `YYYY-MM-DD`. Never "last week" or "recently". Determine
   them yourself — see **Dates** below. Never ask msilva for a date you can read.
