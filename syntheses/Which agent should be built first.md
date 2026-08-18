@@ -26,6 +26,21 @@ tags: [agents, planning, a5, a1, a7]
 > **msilva's own position, stated 2026-08-18: A1 + A2 first.** Recorded as a
 > position, not a decision. Nothing has been decided.
 
+> [!danger] Same day, a second reopening — Luís wants A5 decoupled from the proxy
+> [[2026-08-18 1-1 Matheus - Luís]] (14:59, hours after the note above was written
+> at 11:04): Luís argues the Watcher/A5 should be designed **as if the proxy didn't
+> exist** — scoping it to proxy telemetry caps its value at whatever LiveScript
+> alone generates early on, in his view. This directly contradicts the
+> proxy-Orca-reach argument this page and [[Agent Flow]] built up the same morning.
+> Full tension recorded on that meeting page; not resolved here.
+>
+> Practical effect on this page: everything below the reach argument (webhook
+> receiver, Grafana grouping, Linear dedup, the two-repo split) is **mechanism**,
+> not **target** — it doesn't assume the proxy specifically, but its stated
+> motivation (proxy reach growing to cover Orca) is exactly what Luís wants set
+> aside. **Next step before more design**: separate discovery conversations with
+> Gabrielle and Carol about what each imagines the Watcher doing.
+
 Two criteria have now been applied, and they give different answers. **Under
 lowest-risk-of-failing (2026-08-17): A5 Watcher, targeting the [[Airtable Proxy]]'s
 telemetry** — the reasoning matters more than the answer, because two of the

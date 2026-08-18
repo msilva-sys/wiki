@@ -319,16 +319,35 @@ response headers pass through an allowlist only.
 
 ---
 
+> [!tip] Progress, 2026-08-18 ([[2026-08-18 1-1 Matheus - Luís]])
+> **`hasFilter` and operation detection fixed.** The proxy previously inferred the
+> Airtable operation from the HTTP method alone — wrong, since Airtable allows a
+> `select` via `POST`. Now uses a proper triage/switch instead. Page size and
+> response byte count are also captured. Metrics confirmed flowing into Grafana.
+> **`X-App-Id` confirmed working end-to-end** in the dev environment (proxy +
+> LiveScript integrated locally). This is progress against the open item directly
+> below, not yet closed — `hasFieldProjection`/`recordCount` status unconfirmed.
+>
+> **Scope clarified the same day**: msilva's job is the proxy working 100%, not
+> LiveScript's own Airtable usage. LiveScript talks to Airtable via **both** the
+> SDK and hand-built REST calls; only REST-transport validation is in scope right
+> now, and that's a deliberate stopping point, not a gap — *"a gente não quer sair
+> de zero para 100%."* Partial migration (some percentage of calls through the
+> proxy) is an accepted intermediate state, not a problem.
+
 ## What's actually open next (the real work)
 
 From `STATUS_proxy_airtable.md`, immediate items — all about *enriching
 telemetry*, not enforcement:
 
-- [ ] **Extract usage signals in the proxy itself:** `hasFilter`,
+- [x] **Extract usage signals in the proxy itself:** `hasFilter`,
       `hasFieldProjection`, `recordCount`, `bytes`. Today these come only from
       the roteiros ([[LiveScript]]) app's SDK wrapper — `proxy.go`'s `emit()` logs
       status/latency/operation but not these. Moving them into the proxy makes
       anti-pattern detection work for *any* app, not just roteiros.
+      **Progress 2026-08-18**: `hasFilter`, operation, page size and bytes now
+      captured in the proxy per the callout above. `hasFieldProjection`/`recordCount`
+      not confirmed either way — verify in the repo before marking fully done.
 - [ ] **Normalize `app.route`** into logs/spans (from Next.js
       `getRequestContext()`) for proxy↔app correlation, then add a "Top app
       routes by Airtable calls" panel.

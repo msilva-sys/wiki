@@ -21,6 +21,13 @@ tags: [agents, research, planning, index]
 > Two new facts feed it: **[[Orca (CDE)]] and other services are to be plugged into
 > the [[Airtable Proxy]]**, and **A7 cannot be chat-only**.
 
+> [!danger] New, same day: Luís wants A5/Watcher decoupled from the proxy entirely
+> [[2026-08-18 1-1 Matheus - Luís]], hours after the note above was written.
+> Contradicts the proxy-Orca-reach framing directly; not resolved. **Blocks further
+> A5 design** until msilva runs separate discovery conversations with Gabrielle and
+> Carol about what each imagines the Watcher doing. Full detail: [[Agent Flow]] and
+> [[Which agent should be built first]].
+
 **Status board and router for [[Agent Flow]]'s research phase.** This page tracks
 *what is settled and what is open*; the reasoning lives on the pages it points to.
 
@@ -178,6 +185,11 @@ struck through, kept for the record — and the answers reshape the list.
 
 ## Still open, no owner
 
+- **New, 2026-08-18 — discovery, not design, is the next step for the Watcher/A5.**
+  Separate ~30-minute conversations with Gabrielle and Carol, deliberately apart,
+  about what each imagines the agent doing at a level of detail msilva could act
+  on. Prerequisite for resolving the Gabrielle-vs-Luís tension above. Owner:
+  msilva.
 - **How do agents talk to each other?** The unsolved problem that killed the prior
   attempt.
 - **Automated QA** is a first-class stage in Packer's flow and absent from all 14

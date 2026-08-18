@@ -109,6 +109,33 @@ crowded others' logs out of view. Packaging the logic doesn't isolate the runtim
 - `contracts/bug-sistema.md` is written first: the contract is the packaged
   interface between agents that don't exist yet.
 
+## The team-generic vs. project-specific boundary is itself unsettled
+
+New, 2026-08-18 ([[2026-08-18 1-1 Matheus - Luís]]). While migrating the proxy
+backlog to Linear, msilva started from a set of Linear-automation skills he
+associates with [[Orca (CDE)]], already stripping out Orca-specific references
+to generalize them. At least **three divergent versions exist**, none official:
+a "PM linear" skill attributed to Gabrielle, msilva's Orca-derived generalization,
+and Luís's own — evolved further, and living inside the **"Fronte de Negócios"**
+project repo rather than anywhere shared.
+
+Luís named the risk directly: *"a gente tem coisas que são do nosso time [...]
+elas não deveriam ter citação de nada de nenhum projeto [...] senão a gente vai
+entrar num fluxo de despadronização muito grande."* A reusable skill that still
+carries one project's name (Orca) is coupled to that project by construction —
+packaging alone doesn't prevent this; naming and placement discipline does.
+
+**A real, generic, team-wide skills/plugins repo is being built by Carol**
+(repo literally named `livemode`), and **Luís is starting to help her build it.**
+No standard exists yet, and Luís is explicit that's fine for now — *"a gente tem
+que definir em algum momento como nosso padrão. Por enquanto [...] tá tudo bem."*
+
+This adds a layer above what this page previously covered: the evidence so far is
+about whether *one skill in isolation* works. This is the layer above it — which
+skills are team-generic versus project-bound, and where the generic ones actually
+live. Worth revisiting once Carol's repo exists as something to compare the
+current fragments against.
+
 ## Open questions
 
 - **Does packaging survive complexity?** Every example here is small — a report
@@ -116,6 +143,11 @@ crowded others' logs out of view. Packaging the logic doesn't isolate the runtim
   something genuinely large.
 - **Where do skills live** once there are several — the agents monorepo, a Project,
   or somewhere the whole company can reach? Bears on
-  [[Sharing via Projects - the accounting project]].
+  [[Sharing via Projects - the accounting project]]. **Partially answered
+  2026-08-18**: Carol's `livemode` repo is meant to be that place for team-generic
+  skills, though it doesn't exist as a working target yet.
 - **Cross-area sharing** is unexamined. Within a team it works; between areas
   nobody has tried.
+- **What should the standard actually be**, once Carol's repo and Luís's evolved
+  "Fronte de Negócios" version can be compared against msilva's Orca-derived one?
+  Nobody has done the comparison yet.

@@ -95,6 +95,29 @@ Investigated 2026-08-17 against the app's `airtable` SDK (v0.12.2) —
 - **Rollout order matters:** the header shipped before `AIRTABLE_ENDPOINT_URL`
   flips (it's inert against Airtable), so it can't 401 anything until the flip.
 
+## Next.js caching — intentional on the events page, not a bug
+
+Raised 2026-08-18 ([[2026-08-18 1-1 Matheus - Luís]]): msilva found the **events
+page** caches browser requests heavily enough that a proxy-side change causing a
+401 didn't surface for ~30 minutes. Read initially as a testing hazard.
+
+**Luís's correction: this is correct behaviour for that page** — the events data
+changes rarely, so aggressive caching is the right call. The page to actually test
+proxy changes against is the **real-time collaborative script editor**, where every
+keystroke and lock hits the network with no comparable caching. Confirms this
+page's existing framing: Airtable pressure concentrates in the editor, not the
+events view.
+
+## Scope boundary, clarified 2026-08-18
+
+LiveScript reaches Airtable via **both** the `airtable` SDK and hand-built REST
+calls. Per [[2026-08-18 1-1 Matheus - Luís]], getting `X-App-Id` onto *all* of that
+traffic — i.e. fully migrating LiveScript's SDK-routed calls — is explicitly **not**
+the current job. The current job is the [[Airtable Proxy]] working correctly;
+validating it via the REST-transport traffic alone is an accepted stopping point,
+not a gap to close urgently. See the *Scope of the current work* section on that
+meeting page.
+
 ## Open questions
 
 - Which data is in scope for the dedicated database, and on what engine?
@@ -102,3 +125,7 @@ Investigated 2026-08-17 against the app's `airtable` SDK (v0.12.2) —
   which are genuine product constraints?
 - Is the badly-implemented second Airtable consumer described in the meeting a
   separate app, or another surface of this one? (unverified)
+- **Does the `airtable` SDK have a native way to route through a custom
+  endpoint/proxy**, without the `pnpm patch` already shipped? Luís half-remembers
+  solving something like this before but wasn't sure; msilva is checking. See
+  [[How LiveScript sends the proxy X-App-Id header]].

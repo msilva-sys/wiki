@@ -147,6 +147,22 @@ the SDK, both need qualifying:
   `Authorization`, and the app needs a **dummy `AIRTABLE_API_KEY`**, not an empty
   one.
 
+> [!warning] Luís is uneasy about the `pnpm patch`, raised after the fact — 2026-08-18
+> Hearing the detail of this fix for the first time in
+> [[2026-08-18 1-1 Matheus - Luís]], Luís pushed back on two separate fronts:
+>
+> 1. **Process**: this was shipped without being brought to him as a decision with
+>    alternatives. See [[2026-08-18 Bring options to Luís before deciding, communicate async and often]].
+> 2. **Substance**: *"eu confio zero nisso"* about `pnpm patch`/`patch-package` as a
+>    class of tool — *"para mim é má prática de comunidade JavaScript."* Not a
+>    rejection, but a request to confirm there's no cleaner native option before
+>    keeping it: does the `airtable` SDK support redirecting to a custom endpoint
+>    without patching? msilva tried to check Airtable's GitHub the day before but it
+>    was down.
+>
+> **Not resolved.** The patch is still what's shipped; this is an open question, not
+> a reversal.
+
 ## Open questions for the proxy (gate the endpoint flip)
 
 Both must be answered by the proxy owner before `AIRTABLE_ENDPOINT_URL` flips:

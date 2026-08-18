@@ -116,6 +116,23 @@ integration point between msilva's two projects.
 > targeting question. Timing is still open — Orca's migration isn't mentioned in
 > its own roadmap ([[Orca Next Version]]) — see [[Which agent should be built first]].
 
+> [!danger] Contradicted the same day by Luís — 2026-08-18, unresolved
+> Hours after the note above was written, [[2026-08-18 1-1 Matheus - Luís]] has Luís
+> arguing the opposite: **decouple the Watcher/A5 from the proxy entirely.**
+> *"eu desassociaria ele completamente do proxy [...] imagina que ele não funciona
+> com o proxy, não existe, ele ainda é útil."* His reasoning — the proxy will only
+> serve LiveScript for a long while, so an agent scoped to it generates little
+> value early on: *"ele vai ficar vigiando um proxy que só [...] script usa no
+> começo. Pouco valor."*
+>
+> Neither speaker referenced the other's framing; recorded as a genuine,
+> unreconciled tension per the schema, not resolved by picking one. It means the
+> proxy-reach argument above — and the detailed A5 design in
+> [[Which agent should be built first]] / [[How to implement A5 Watcher]] — may be
+> optimizing for a target Luís wants set aside. Next step, per the same
+> conversation: msilva runs separate discovery conversations with Gabrielle and
+> Carol about what each actually imagines the Watcher doing, before any more design.
+
 A longer-term ambition, from the onboarding: once built for this area, the flow
 could be adapted and reused by other areas, helping them produce more structured
 projects without routing through the projects team.
@@ -572,6 +589,12 @@ consultant rather than validator.
 
 ## Open questions
 
+- **What, concretely, does the Watcher/A5 agent do — and does it need the proxy at
+  all?** New 2026-08-18, from [[2026-08-18 1-1 Matheus - Luís]]. Luís's read of
+  msilva's own description was *"muito genérico"*, and he wants **separate**
+  ~30-minute discovery conversations with Gabrielle and Carol — deliberately apart,
+  so neither's answer shapes the other's — before more design happens. This also
+  carries the unresolved Gabrielle-vs-Luís tension above.
 - **Where do the human gates sit?** Autonomy itself is settled; which steps are
   gated is not. See *Design approach* above.
 - **Which agent to build first?** **The selection criterion changed on 2026-08-18** —

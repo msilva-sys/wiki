@@ -1413,3 +1413,88 @@ it is a second, contradictory claim.
   content drift, not just a status one. Not fixed this pass; flagged for msilva.
   Also open: how/whether to wind down `AIRTABLEGC`; the Business-trial purchase
   decision ([[Linear Project Structure]]).
+
+## [2026-08-18] ingest | 1:1 Matheus / Luís (2026-08-18, 14:59)
+
+- Source: `raw/Matheus - Luis - 2026_08_18 14_59 GMT-03_00 - Anotações do Gemini.md`.
+  Second meeting of the day, after [[2026-08-18 1-1 Matheus - Gabrielle]] (11:04).
+  Gemini attributes speakers correctly and consistently (unusual for this vault),
+  but turns are heavily fragmented by interruptions. First appearance of Luís's
+  surname, **Fernandez**, in a transcript — kept calling him "Luís" everywhere per
+  existing convention; no `people/` page created (standing rule, still declined).
+- New: `meetings/2026-08-18 1-1 Matheus - Luís.md`,
+  `decisions/2026-08-18 Bring options to Luís before deciding, communicate async and often.md`,
+  `reference/Claude Code Working Habits.md`
+- Updated: `projects/Agent Flow.md`, `syntheses/Which agent should be built first.md`,
+  `syntheses/What should the Agent Flow research phase study.md`,
+  `projects/Airtable Proxy.md`, `systems/LiveScript.md`,
+  `syntheses/How LiveScript sends the proxy X-App-Id header.md`,
+  `concepts/Packaging as skills.md`, `index.md`
+
+**The most consequential finding: Luís contradicts Gabrielle's own-morning framing,
+same day.** Gabrielle's 1:1 (11:04) reinforced Orca-and-other-services-behind-the-proxy
+as A5's strongest utility case. Luís (14:59) argues the opposite — *"eu desassociaria
+ele completamente do proxy [...] imagina que ele não funciona com o proxy, não existe,
+ele ainda é útil"* — reasoning that scoping the Watcher to the proxy caps its value at
+whatever LiveScript alone generates early on. Neither referenced the other. Recorded as
+an unresolved conflict per the schema, on [[Agent Flow]],
+[[Which agent should be built first]] and [[What should the Agent Flow research phase
+study]] — not adjudicated. **Next step, agreed in the call**: msilva runs separate
+~30-minute discovery conversations with Gabrielle and Carol, deliberately apart, about
+what each actually imagines the Watcher doing, before any more A5 design. This
+downgrades confidence in the existing detailed A5 build plan
+([[How to implement A5 Watcher]]) — its mechanism doesn't assume the proxy specifically,
+but its stated motivation does, and that motivation is exactly what Luís wants set aside.
+
+**Second finding: a decision already shipped without being brought as a decision.**
+The `pnpm patch` fix for the LiveScript SDK header
+([[How LiveScript sends the proxy X-App-Id header]], shipped 2026-08-17) was msilva's
+own call, made to unblock validating the proxy. Hearing the detail for the first time,
+Luís both distrusts the mechanism (*"eu confio zero nisso"*, calls `pnpm patch`/
+`patch-package` bad JS-community practice) and objects to the process — he wasn't given
+alternatives to choose between. **New process norm agreed**: bring compared options
+before acting on a technical decision; communicate async and often rather than saving
+things for scheduled 1:1s. Filed as
+[[2026-08-18 Bring options to Luís before deciding, communicate async and often]].
+Not a reversal of the patch — an open question to revisit with alternatives.
+
+**Scope clarified**: msilva's job is the [[Airtable Proxy]] working correctly, not
+migrating LiveScript's own Airtable usage (SDK-routed calls explicitly deferred,
+REST-transport validation is enough for now). Partial migration is an accepted
+intermediate state, not a gap — *"a gente não quer sair de zero para 100%."* Also
+resolved: a caching concern msilva raised about LiveScript's events page turned out to
+be intentional design (data changes rarely), not a defect masking proxy issues; the
+real-time script editor is the correct place to test against.
+
+**Progress reported**: the operation-detection bug (previously inferred from HTTP
+method alone, wrong for cases like an Airtable `select` via `POST`) is fixed; page
+size and byte counts are captured; `X-App-Id` confirmed working end-to-end in the dev
+environment. Updated the open checklist item on [[Airtable Proxy]].
+
+**No Linear-skills standard exists yet.** msilva had started from an Orca-derived skill
+set; at least three divergent versions exist (Gabrielle's, msilva's, and Luís's own
+evolved one living in the "Fronte de Negócios" repo, not anywhere shared). **A real
+team-wide skills/plugins repo is being built by Carol** (named `livemode`), and Luís is
+now starting to help her with it. No standard is expected yet — explicitly fine for
+now. New angle on [[Packaging as skills]]: which skills are team-generic versus
+project-bound is itself unsettled, separate from whether any single skill works.
+
+**Tooling feedback, filed as a new reference page**: Claude Code's verbosity (relative
+to msilva's prior GPT/Cursor experience) is fixable by pinning explicit instructions
+into the project the first time an unwanted behavior appears — demonstrated live by
+Luís adding a "never generate artifacts without asking" instruction. A field
+application of the "instructions in files, not memory" lesson already on
+[[Agent Flow]]. Also recommended: VS Code + the Claude Code extension over
+browser-only use. New: `reference/Claude Code Working Habits.md`.
+
+**Machine/security reopened and reframed**: the real risk of using a personal machine
+for work is physical (loss/theft while commuting), not informational leakage as
+originally framed by Gabrielle. msilva keeps using the work laptop; not urgent to
+revisit.
+
+- Excluded per standing instruction: a brief personal-health remark at the start of
+  the call (msilva feeling unwell). No org-structure, hiring, or departure content in
+  this transcript.
+- Open, low confidence: a "Pedro" mentioned once as the possible author of an
+  alternative first-agent design mockup Carol was asked to review — first mention of
+  this name in the vault; not investigated this pass.
