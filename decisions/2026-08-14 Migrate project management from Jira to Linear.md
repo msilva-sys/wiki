@@ -167,6 +167,34 @@ full at [[Linear Project Structure]]:
     restored all four manually in the Linear UI. Re-verified via API:
     `archivedAt: null` on all four, Todo, assigned to msilva, related to
     `PRO-78`.
+- **`PRO-78` epic worked through 2026-08-18 — three of four children closed as
+  already-done-in-code, one deferred to Luís.**
+  - **`PRO-80` (Mapa appId → {apiKey, allowedBase}) → Done.** Design called for
+    Secret Manager; actual roadmap is **env JSON (now) → banco de dados
+    (depois) → Secret Manager (eventualmente)**. Confirmed in
+    `internal/config/config.go`: `PROXY_APPS` env var already implements the
+    map (`map[string]App{ID, Token, Bases}`), read by `authenticate()` in
+    `internal/proxy/auth.go`. Nothing left to build at this step.
+  - **`PRO-81` (Injetar PAT) → Done.** Confirmed in `internal/proxy/proxy.go`'s
+    `Director`: strips client `Authorization`/`X-App-Id`, injects
+    `Authorization: Bearer {app.Token}` from the same registry. Apps never see
+    the PAT. Both `PRO-79`'s PR #7 already shipped this — `PRO-80`/`PRO-81`
+    were documenting/closing out work that had already landed, not new builds.
+  - **`PRO-82` (Onboarding/key-issuance flow) → In Progress, blocked on Luís.**
+    No code to write for the current env-JSON setup — this is a process
+    decision. Per [[2026-08-18 Bring options to Luís before deciding,
+    communicate async and often]], msilva posted 3 options as a Linear comment
+    (manual env edit / self-serve script over env / defer until DB migration)
+    rather than deciding unilaterally. Leaning option 3, but explicitly framed
+    as Luís's call.
+  - **`PRO-83` (Spike: rotação de chaves) → blocked by `PRO-82`.** Rotation is
+    "re-run onboarding for an existing key," so it can't be designed before
+    onboarding is settled. Native `blockedBy` relation set in Linear.
+  - Searched the wiki for a prior Luís conversation about Secret Manager
+    (msilva recalled discussing it with him) — found none. The only related
+    decision on record (`X-Api-Key` deferral) is sourced from Jira's own
+    comment text, not from any transcript ingested here; that 1:1 was never
+    captured in this wiki.
 
 ## Open questions
 

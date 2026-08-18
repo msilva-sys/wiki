@@ -1663,3 +1663,36 @@ revisit.
   (fourth gap recorded under Resolved, now fully closed).
 - Open: `AIRTABLEGC` wind-down; Business-trial purchase decision (both carried
   from prior entries).
+
+## [2026-08-18] refactor | PRO-78 epic worked through: three closed as already-done, one deferred to Luís
+- Read the actual proxy code (`C:\Users\msilva\projects\livemode-airtable-proxy`
+  — confirmed via `git remote`/`git log` as the real clone; a same-named
+  `Documents\repos\` copy has no `.git` and was ignored) to check each of
+  `PRO-78`'s four children against reality before touching status.
+- **`PRO-80` (Mapa appId → {apiKey, allowedBase}) → Done.** msilva clarified the
+  roadmap: env JSON (now) → banco de dados (depois) → Secret Manager
+  (eventualmente) — not straight to Secret Manager as originally designed.
+  `internal/config/config.go`'s `PROXY_APPS` env var already is that map.
+  Nothing left to build at this step; description updated, closed.
+- **`PRO-81` (Injetar PAT) → Done.** Read `internal/proxy/proxy.go`'s
+  `Director` with msilva: confirmed PAT injection from the same registry,
+  `Authorization` stripped from clients first. Already shipped in PR #7 (the
+  same PR `PRO-79` cited) — linked it here too.
+- **`PRO-82` (Onboarding/key-issuance flow) → In Progress, not closed.**
+  msilva called this one out for Luís rather than deciding it — matches
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and
+  often]]. Drafted and tightened 3 options, posted as a Linear comment
+  (`@Luis Fernandez` — first draft used the accented spelling and wouldn't
+  have resolved as a real mention; corrected).
+- **`PRO-83` (Spike: rotação de chaves) → `blockedBy: PRO-82`** (native
+  relation, confirmed via `get_issue` `includeRelations`). msilva's own call:
+  rotation can't be designed before onboarding/key-issuance is settled.
+- Searched the wiki for a Luís conversation about Secret Manager msilva
+  remembered having — not found. Two "Secret Manager" mentions exist
+  ([[Airtable Proxy]], [[Proxy Environments]]) but neither ties to Luís; the
+  only related decision (`X-Api-Key` deferral) is sourced from Jira comment
+  text, not a wiki-ingested transcript. That conversation was never captured
+  here — flagged to msilva.
+- Updated: [[2026-08-14 Migrate project management from Jira to Linear]].
+- Open: Luís's answer on `PRO-82`'s onboarding-flow options; everything else
+  carried from prior entries.
