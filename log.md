@@ -859,3 +859,29 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
 - States the anarchic-first departure as a disagreement to raise, not something to
   work around.
 - Updated: index.md, syntheses/Comparing the first-agent candidates.md (pointer)
+
+## [2026-08-18] lint | index and reconcile the 2026-08-17 weekly page
+
+- **Housekeeping failure, recorded rather than hidden.** meetings/2026-08-17 Weekly -
+  Projetos e Tarefas.md (323 lines) was sitting uncommitted in the working tree from a
+  parallel session and was **swept into commit eca19f4**, whose message does not
+  mention it. Content is intact; nothing was lost. It was **absent from index.md and
+  log.md**, i.e. invisible per the schema.
+- Indexed it. Two of its facts change pages written earlier today:
+  - **The matriz gateway** — the business independently proposed *"um agente para tá
+    ali no meio"* (interpret, validate, write) for external events into the matriz.
+    **That is A1 + A2 in miniature, with demand pull behind it.** Added as a pro to
+    [[Comparing the first-agent candidates]] and as a third reason in the one-pager.
+  - **Orca is not observable yet** — nothing deployed as of 2026-08-17. Strengthens
+    the A5 con from "unscheduled" to "not observable".
+- **Contradiction flagged, not resolved**: [[2026-08-14 Papo de Projetos]] has Orca in
+  production and indispensable (~10 headcount); the weekly says nothing is deployed.
+  May be different scopes; nobody has said so. Marked as needing resolution before
+  Orca is used as A5's value story.
+- Also added the two in-house agent precedents (AI status readout; Luís's unattended
+  ultracode run on Farol) to the cross-cutting facts.
+- **Broken wikilink worth creating**: the weekly says the AI status readout is "filed as
+  its own page" as [[AI status reporting on Linear]] — **that page does not exist.**
+  It is the only in-house evidence about a running agent, so it is worth writing.
+- Updated: index.md, meetings/Meeting prep - first agent decision.md,
+  syntheses/Comparing the first-agent candidates.md

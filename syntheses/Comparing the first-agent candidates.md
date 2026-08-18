@@ -80,6 +80,13 @@ anything is automated downstream.
   @-mentioned. A1's multi-channel capture is the designed answer.
 - **Partial infrastructure already exists**: `Slack form → Airtable base → team
   board`, requests in the *projetos* channel ([[2026-08-14 Recap da Semana]]).
+- **The business has independently asked for this shape.** In the 2026-08-17 weekly,
+  the matriz/external-events problem produced the proposal *"a gente pode até criar
+  um agente para tá ali no meio, ver o que que ele mandou pra gente, a gente já
+  interpretar ali e validar ou não e jogar na matriz"* — interpret, validate, write.
+  **That is A1 + A2 in miniature, arriving from a real problem rather than from the
+  architecture diagram** ([[2026-08-17 Weekly - Projetos e Tarefas]]). It is the only
+  candidate with demand pull behind it.
 - **It carries the document's only performance target** (`< 10 s`), so success is
   measurable rather than argued.
 
@@ -146,6 +153,17 @@ alert.
   with traffic: GC-5 must land for [[LiveScript]], then Orca must migrate. **msilva
   does not know whether the Orca migration is sequenced or merely intended
   (2026-08-18)** — so **no date can be put on this.**
+- **Orca is not observable yet, which is worse than "unscheduled".** As of the
+  2026-08-17 weekly **nothing is deployed** — the developer is still on documentation
+  and the wordmap, with deliveries planned for 2026-08-21, 24 and 28 and the project
+  targeted to close 2026-08-28 ([[2026-08-17 Weekly - Projetos e Tarefas]]).
+
+  > [!warning] Unresolved contradiction about Orca — do not paper over it
+  > [[2026-08-14 Papo de Projetos]] records Orca as **in production and
+  > indispensable**, its automation worth ~10 headcount. The 2026-08-17 weekly says
+  > **nothing is deployed.** These may describe different scopes — a live system plus
+  > a current build phase — but nobody has said so. **Resolve this before using Orca
+  > as A5's value story**, because the whole argument rests on it.
 - **Least agent-shaped of the fourteen.** Grafana already does scheduled threshold
   checks. Built naively, A5 proves an LLM can do what infrastructure already does,
   more expensively.
@@ -275,6 +293,13 @@ Qualitative on purpose; two cells are honestly unmeasurable today.
   a measured normal run was **11 centavos**. A **token-consumption dashboard exists**
   and is obtainable on request. The levers are **narrow fetching** (per-agent design)
   and **a correct trigger chain** (orchestration).
+- **Two in-house agent precedents now exist**, both from 2026-08-17 and both better
+  evidence than any design document: the **AI status readout** on Linear (four real
+  insights, two real failure modes) and **Luís's unattended ultracode run** on Farol,
+  which took Uber, OnFly and Expresso close to integrated in one 4–5 hour pass. The
+  second is a working demonstration of the AI-First premise by the tech lead — and
+  also exactly the shape of the token-cost worry. See
+  [[2026-08-17 Weekly - Projetos e Tarefas]].
 - **Packaging is both the cost lever and the sharing mechanism** —
   [[Packaging as skills]]. In the one natural experiment available, the component
   packaged as a skill works and the unpackaged one burns context.
