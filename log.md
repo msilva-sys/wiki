@@ -1656,10 +1656,10 @@ revisit.
   same decision documents (native sub-issues are invisible to the weekly AI
   status readout). He chose **flat**: `relatedTo` link instead of `parentId`.
   Set on all four, plus assignee → msilva, state → Todo.
-- **Still broken: archived.** No available MCP tool unarchives an issue —
-  `save_issue` silently leaves `archivedAt` in place. msilva must restore
-  `PRO-80/81/82/83` manually in the Linear UI before they'll actually appear.
+- No available MCP tool unarchives an issue — `save_issue` silently leaves
+  `archivedAt` in place. msilva restored `PRO-80/81/82/83` manually in the
+  Linear UI. Re-verified via API: `archivedAt: null` on all four.
 - Updated: [[2026-08-14 Migrate project management from Jira to Linear]]
-  (fourth gap recorded under Resolved).
-- Open: the manual restore, above. Also still open from prior entries:
-  `AIRTABLEGC` wind-down, Business-trial purchase decision.
+  (fourth gap recorded under Resolved, now fully closed).
+- Open: `AIRTABLEGC` wind-down; Business-trial purchase decision (both carried
+  from prior entries).

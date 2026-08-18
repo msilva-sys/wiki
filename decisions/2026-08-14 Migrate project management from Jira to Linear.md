@@ -163,10 +163,10 @@ full at [[Linear Project Structure]]:
     recreated the exact problem the flat-structure rule exists to avoid. msilva's
     call: kept flat — `relatedTo` link to `PRO-78` instead of `parentId`,
     assigned to msilva, state → Todo.
-  - **Not fixed: still archived.** No MCP tool available exposes an
-    unarchive/restore action — `save_issue` updates other fields but leaves
-    `archivedAt` untouched. msilva needs to restore all four manually in the
-    Linear UI before they're visible on the board.
+  - **Restored 2026-08-18.** No MCP tool exposed an unarchive action, so msilva
+    restored all four manually in the Linear UI. Re-verified via API:
+    `archivedAt: null` on all four, Todo, assigned to msilva, related to
+    `PRO-78`.
 
 ## Open questions
 
