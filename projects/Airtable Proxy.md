@@ -166,7 +166,12 @@ from Gabrielle Ferreira in onboarding.
 - **This is half of a merged initiative.** The proxy and *LiveScript
   stabilization* were joined into one programme. Phase 2 moves data that doesn't
   need to be in Airtable into a LiveScript-only database — see [[LiveScript]].
-  **That phase is absent from the roadmap recorded below.**
+  ~~**That phase is absent from the roadmap recorded below.**~~ **Corrected
+  2026-08-18**: it is not absent from the *programme* — it is very likely the
+  **Livemode data hub**, a sibling project in the same initiative (see the callout at
+  the top). It remains absent from *this project's* roadmap, which is now the correct
+  place for it not to be. *(unverified: inference from two hedged descriptions
+  matching; ask Luís.)*
 
 > [!question] Open tension — does the proxy retry 429s, and when?
 > Gabrielle described 429 retry/backoff as a proxy responsibility, so apps don't

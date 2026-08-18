@@ -1216,3 +1216,99 @@ say so as loudly as the first version of the meeting page did.**
 Transcript attribution is also collapsed here — every line is credited to Gabrielle,
 including msilva's own questions and his commitment to migrate. Third file with this
 defect, and the second where it runs in this direction.
+
+## [2026-08-18] lint | full health check, then six fixes
+
+### Clean
+
+- **0 broken wikilinks** across 40 pages. **0 orphans** — every page has at least one
+  inbound link excluding `log.md`. **`raw/` fully covered** — all 12 sources have a
+  `sources/` or `meetings/` page. **0 pages stale by the 30-day rule** — the vault is 8
+  days old, so that rule cannot fire yet; the oldest `active` page is
+  [[Zed Cheatsheet]] at 7 days. **No decision marked open in one page and settled in
+  another.**
+- **The credential warning on `index.md` is accurate.** Verified by walking every commit:
+  exactly **6** contain the Airtable PAT / Firebase key. Unchanged, because the working
+  tree is clean and history does not grow. **Rotation is still outstanding.**
+- Non-issues confirmed as such: `log.md:17`'s *"raw/ … currently empty"* is historical in
+  an append-only file, not a stale claim; the `raw/2026-06-14-Papo de Projetos`
+  misnaming is already flagged in-wiki.
+
+### The pattern behind most of the findings
+
+**Four of the six were retraction debt created earlier the same day.** The 2026-08-18
+re-ingest corrected pages at the point where the new evidence landed and left older
+affirmations of the same claim standing elsewhere — on the same page in two cases, and
+two hops away in the graph in two more. Three were introduced within the hour.
+
+**Habit to adopt: after a retraction, grep the retracted phrasing across the vault before
+committing.** A retraction that only lands where the evidence arrived is not a retraction;
+it is a second, contradictory claim.
+
+### Fixed
+
+1. **The $7-vs-11-centavos retraction now propagates.** Three pages still asserted it
+   flatly. [[Comparing the first-agent candidates]] — the decision doc for a meeting in
+   ~3 days — read *"the scary number was a bad case […] traced to a probable runaway
+   execution, not context volume"*; rewritten to say the cause is **genuinely unknown**,
+   that both levers are therefore worth building in, and that leadership has accepted
+   higher spend during stabilization. [[Packaging as skills]] and [[Agent Flow]]: the
+   asserting sentences struck in place rather than deleted, with the structural point each
+   page actually needed preserved — for packaging, that it addresses a fixed context
+   premium and never a broken trigger chain, *whichever* dominates the bill. Also struck
+   the original claim on the source page,
+   [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]], since it is what
+   three other pages inherited.
+2. **[[Meeting prep - first agent decision]] brought current** — the highest-stakes
+   finding, since the meeting is ~2026-08-21. Three inputs from the re-ingest were
+   missing. Recommendation reason 1 now carries **two** A5 blockers rather than one (the
+   n8n flows need key distribution *and* a discovery step nobody owns); a fourth reason
+   was added — **A2's ticket-authoring is already solved in-house, making A1+A2 the
+   smallest of the four builds, not the largest**; and question 6 (*"can agent output file
+   into Linear?"*) was **struck as answered** and replaced with **who owns finding the
+   n8n flows** — a real prerequisite with no owner. Question 2 now notes that Gabrielle's
+   own-initiative/one-project-per-agent suggestion is structurally anarchic-first, which
+   cuts against starting at intake.
+3. **Intra-page contradiction on [[Airtable Proxy]]** — the new callout said Phase 2 *"is
+   not absent, it is a sibling project"* while a line below still bold-asserted *"that
+   phase is absent from the roadmap."* Struck and reconciled: absent from *this project's*
+   roadmap is now correct, because it belongs to the data hub.
+4. **Intra-page contradiction on [[AI status reporting on Linear]]** — *"the first is
+   deterministic and fixable by summing differently"* survived the reclassification of
+   subtask blindness as a deliberate aggregation level. Restated, and the restatement
+   produced something better than a patch: **the asymmetry between the two failure classes
+   is the finding.** One has an owner, a cause and a plan; the other — reasoning past the
+   evidence — has none of those, nobody in the meeting treated it as a problem, and it is
+   the real design burden for [[Agent Flow]].
+   Also refined *"A1 and A2 would inherit the subtask blindness directly"*: they inherit
+   the **parent/subissue ambiguity**, which is in the data, but not the **choice**, which
+   was made for a human skimming a weekly readout. An intake agent has a different
+   audience and should decide for itself. The transferable lesson is that the choice exists
+   and is worth 6% against 20–25% when made wrong for the purpose.
+5. **Cross-page inconsistency on the n8n logs.** The *"executions crowd each other's logs
+   out of view"* overstatement was narrowed on [[Packaging as skills]] during the re-ingest
+   but left standing on [[Agent Flow]]. Both now say the same thing: successful production
+   executions **were never saved**, so for those runs the history never existed to be
+   crowded out; per-user filtering (searchable by name only, sorted by recency) is the
+   genuine tenancy defect.
+6. **Stale count** on [[Comparing the first-agent candidates]]: *"two in-house agent
+   precedents"* → **three**, the new one being Claude authoring the area's Linear backlogs
+   — and the most relevant of the three to the decision that page exists to inform.
+
+### Also strengthened while in there, not just corrected
+
+- A5's candidate section on [[Comparing the first-agent candidates]] gained both halves of
+  the n8n finding: it is **A5's strongest utility argument** (an unknown number of flows
+  written by people who, on the Gabriel evidence, do not know what their automations cost
+  or whether they loop — the population most likely to generate anti-patterns and the one
+  with nobody watching it) **and its worst dating problem** (two unscheduled prerequisites
+  instead of one). Recording both under Pros and Cons rather than picking, because the
+  same fact genuinely does both.
+
+### Not fixed, reported only
+
+- **[[Zed Cheatsheet]] is the only dead-end page** — 0 outbound links, 1 inbound. Arguably
+  correct for a keybindings reference; left alone.
+- **`people/` is still empty.** Offered and declined twice. Every ingest since 2026-08-14
+  has added named ownership facts that now live in meeting pages instead. Noting, not
+  acting.

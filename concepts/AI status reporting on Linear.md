@@ -128,18 +128,37 @@ capability, not remediation. The readout had the ticket data and drew a
 conclusion the ticket data cannot support.
 
 These are different failures with different fixes, and it matters not to conflate
-them. The first is deterministic and fixable by summing differently. The second is
-the agent reasoning past its evidence — the failure mode no amount of data
-plumbing removes.
+them. ~~The first is deterministic and fixable by summing differently.~~ **Restated
+2026-08-18**: the first is not a summation bug at all — it is a **deliberate
+aggregation level with drill-down already planned** by the tool's owner. So it is
+"fixable" in the weakest sense: it will be fixed, on someone else's schedule, and it
+was never wrong. The second is the agent reasoning past its evidence — the failure
+mode no amount of data plumbing removes.
+
+**The asymmetry is the point.** One of these two failures has an owner, a cause and a
+plan. The other has none of those, and nobody in the meeting treated it as a problem
+worth solving — Gabrielle rejected the Orca conclusion and the group moved on. **For
+anything built under [[Agent Flow]], the second class is the real design burden**, and
+it is the one this meeting produced no mechanism for.
 
 ## What this implies for Agent Flow
 
-**A1 and A2 would inherit the subtask blindness directly.** Both read Linear
-([[Agents read primary sources]]), and the recommended first build is the
-[[Comparing the first-agent candidates|intake pair A1 + A2]]. Anything computing
-state or progress from that board hits the same parent/subtask ambiguity. This is
-a concrete, already-observed design constraint on the first agent, not a
-hypothetical — and it was found for free by watching an existing system fail.
+**A1 and A2 inherit the parent/subissue ambiguity, but not the blindness.** Both read
+Linear ([[Agents read primary sources]]), and the recommended first build is the
+[[Comparing the first-agent candidates|intake pair A1 + A2]]. Anything computing state
+or progress from that board has to decide what a partially-done parent means — that
+ambiguity is in the data and it is real.
+
+*Refined 2026-08-18:* what A1 and A2 do **not** inherit is the *choice* made here. The
+board aggregates at issue level to reduce noise for a human audience skimming a weekly
+readout. An intake agent has a different audience and a different question, so it should
+make its own call rather than copy this one. **The transferable lesson is that the choice
+exists and is consequential** — worth 6% against 20–25% when made wrong for the purpose —
+not that issue-level is correct.
+
+**And A2's output side is already solved here**, which is the more actionable finding:
+Claude writes this area's Linear backlogs from documentation
+([[Linear Project Structure]]). See [[Agent Flow]].
 
 **Humans-as-approvers is validated, and so is the failure it catches.** The
 architecture's premise is that *"humanos são aprovadores estratégicos e

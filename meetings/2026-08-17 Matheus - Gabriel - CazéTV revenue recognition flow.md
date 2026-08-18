@@ -108,11 +108,14 @@ recorded elsewhere in the wiki.
 They pulled actual consumption for the run they had just watched: **11 centavos**
 — against roughly **670** for the earlier period. Same flow, same day.
 
-**Cost is wildly variable, not inherent.** That substantially strengthens the loop
+~~**Cost is wildly variable, not inherent.** That substantially strengthens the loop
 hypothesis over the context-volume one: an agent that costs 11 cents on a clean
 run and ~$7 on a bad one is running away intermittently, not paying a fixed
 premium for wholesale context. Both are still worth fixing, but they aren't
-equally responsible.
+equally responsible.~~
+
+*Struck 2026-08-18 — retracted in full immediately below. Kept because it is what this
+page claimed for a day and three other pages inherited it.*
 
 > [!danger] Retracted 2026-08-18 — the two runs may not be comparable
 > The paragraph above is the wiki's most-propagated inference and it rests on the two

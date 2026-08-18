@@ -51,12 +51,21 @@ plus an uploaded spreadsheet, when it needed slices of both. The fix proposed wa
 not a smaller prompt but **a skill that fetches only what's needed** — *"ensinar o
 agente a aprender só o que você quer, que aí não estoura esse contexto."*
 
-> [!warning] Packaging is not the whole cost story
-> The same investigation found a clean run of that flow cost **11 centavos** against
-> ~670 earlier. Cost is **intermittent**, which points at a **runaway execution**
-> — two workflows firing concurrently — rather than context volume as the primary
-> cause. Packaging addresses the fixed premium; it does nothing about a broken
-> trigger chain. Both need fixing; they are different problems.
+> [!warning] Packaging is not the whole cost story — and the numbers don't settle it
+> The same investigation found a run of that flow cost **11 centavos** against ~$7
+> earlier. ~~Cost is **intermittent**, which points at a **runaway execution** — two
+> workflows firing concurrently — rather than context volume as the primary cause.~~
+>
+> **Struck 2026-08-18**: the author switched LLM provider between the two runs, so the
+> delta isn't attributable to variance — see
+> [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]]. The runaway-execution
+> hypothesis still stands on two people's independent judgement, but **not on this
+> measurement.**
+>
+> The structural point is unaffected, and it is the one this page needs: **packaging
+> addresses a fixed context premium; it does nothing about a broken trigger chain.**
+> Different problems, different fixes, and packaging only reaches one of them —
+> regardless of which turns out to dominate the bill.
 
 ## What packaging does *not* solve
 
@@ -84,6 +93,12 @@ crowded others' logs out of view. Packaging the logic doesn't isolate the runtim
 > problems. **Worth separating**, because it narrows what packaging is being asked to
 > solve: the runtime still isn't isolated, but observability on a shared runtime turns
 > out to be configurable rather than structurally lost.
+>
+> More precisely still (transcript read 2026-08-18): **failed executions were being
+> saved all along; successful production ones were not.** So the history wasn't crowded
+> out — for successful runs it never existed. Per-user filtering is the real tenancy
+> defect: the list is searchable by name only and sorted by recency, which is what
+> pushed one person's runs out of view.
 
 ## Consequences already acted on
 

@@ -161,13 +161,20 @@ is handed — is an explicit goal
 That flow was diagnosed on 2026-08-17 —
 [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]].
 
-> [!warning] Corrected 2026-08-17 — $7/day is the bad case, not the norm
-> Measured consumption for one observed run was **11 centavos**, against ~670 for
-> the earlier period. Same flow, same day. **Cost is intermittent, not inherent** —
-> which points at a **runaway execution** (two workflows firing concurrently when
-> one should chain into the next) rather than at context volume as the primary
-> cause. Wholesale context loading is still worth fixing; it just isn't the main
-> culprit.
+> [!warning] $7/day is a bad case, not the norm — but the comparison is not clean
+> Measured consumption for one observed run was **11 centavos**, against ~$7 for the
+> earlier period. ~~Same flow, same day. **Cost is intermittent, not inherent**~~ —
+> **struck 2026-08-18: Gabriel switched LLM provider (Anthropic → GPT) between the two
+> runs**, so the delta cannot be attributed to run-to-run variance. Full retraction on
+> [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]].
+>
+> **What still stands:** $7 happened, 11 centavos happened, and $7 is not explicable by
+> context volume alone for this workload. The **runaway-execution** hypothesis (two
+> workflows firing concurrently when one should chain into the next) also still stands —
+> msilva and Gabrielle reached it independently — but it now rests on two people's
+> judgement rather than on a measurement. Wholesale context loading remains worth
+> fixing. **Which of the two dominates is unknown**, and the execution logs are what
+> would say.
 >
 > A **token-consumption dashboard exists** and is obtainable on request — the
 > measurement instrument this constraint always needed.
@@ -192,18 +199,11 @@ That flow was diagnosed on 2026-08-17 —
 > ([[How to implement A5 Watcher]]): **you cannot throttle what you cannot see**, and
 > the seeing was a setting nobody had turned on.
 
-> [!danger] The $7-vs-11-centavos evidence is retracted — 2026-08-18
-> The callout above and this section's framing both rest on that comparison. **Gabriel
-> switched LLM provider from Anthropic to GPT between the two runs**, and that is when
-> the flow first worked at all — see the retraction on
-> [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]].
->
-> "Cost is intermittent, not inherent" no longer has a clean measurement behind it. The
-> loop hypothesis survives on two independent people's judgement (msilva's and
-> Gabrielle's, reached separately) rather than on data. **What that means for this
-> project: the token constraint is still real, but the wiki does not actually know
-> whether wholesale context or runaway execution dominates.** Do not design around the
-> answer until the execution logs produce one.
+> [!danger] What the retraction means for this project — 2026-08-18
+> Mechanics in the struck callout above. The design consequence: **the token constraint
+> is real, but the wiki does not know whether wholesale context or runaway execution
+> dominates.** Do not design around either answer until the execution logs produce one
+> ([[2026-08-18 Save n8n execution logs for audit]]).
 
 > [!note] Leadership has authorized higher spend during stabilization — 2026-08-18
 > Gabrielle's guidance to Gabriel: *"talvez é só alinhar que durante esse período de
@@ -255,8 +255,11 @@ this project exists to fill.**
 > already do that inside a team. The real gaps are narrower and worth restating:
 > - **Maintenance**, not distribution. The team has the skill; whether anyone but
 >   the author can debug it is untested.
-> - **Isolation.** A shared n8n licence means executions crowd each other's logs,
->   and a stuck lock blocks everyone — which is what made the flow untraceable.
+> - **Isolation.** A shared n8n licence means a stuck lock blocks everyone, and the
+>   execution list is searchable by name only and sorted by recency — so one person's
+>   runs get pushed out of view. *(Narrowed 2026-08-18: the flow was untraceable mainly
+>   because **successful production executions weren't being saved at all** — a setting,
+>   not the shared tenancy. See [[2026-08-18 Save n8n execution logs for audit]].)*
 > - **Cross-area** sharing, as opposed to within one team, remains unexamined.
 
 > [!tip] This is already researched — three sources converge on packaging

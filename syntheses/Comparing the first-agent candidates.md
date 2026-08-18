@@ -89,6 +89,13 @@ anything is automated downstream.
   candidate with demand pull behind it.
 - **It carries the document's only performance target** (`< 10 s`), so success is
   measurable rather than argued.
+- **Half of A2's output is already solved here, which makes the build smaller than this
+  page assumed** (found 2026-08-18). Claude routinely writes this area's Linear
+  backlogs — project description, milestones, issues, subissues — from documentation,
+  using Luís's templates ([[Linear Project Structure]]). So **A2's remaining work is
+  classification and routing, not ticket authoring**, and the artifact it must emit
+  already has an in-house target shape rather than only Packer's external one. The
+  scope estimate for this candidate should come down accordingly.
 
 ### Cons
 
@@ -146,6 +153,13 @@ alert.
   behind the proxy** — including a business-critical ML system whose automation is
   valued at ~10 headcount ([[2026-08-14 Papo de Projetos]]). This retires the
   "Orca or LiveScript?" targeting question.
+- **And it grew again on 2026-08-18: the n8n citizen flows are also intended proxy
+  consumers.** Gabrielle, unprompted: *"a ideia é esses projetinhos eles passarem pelo
+  proxy também."* An unknown number of small automations written by non-engineers who,
+  on the evidence of the Gabriel case, **do not know what their own flows cost or
+  whether they are looping.** That is the population most likely to generate the
+  anti-patterns A5 detects, and the one with nobody watching it — the strongest utility
+  argument A5 has. See [[Airtable Proxy]].
 
 ### Cons
 
@@ -181,6 +195,14 @@ alert.
   still being established.
 - **Thresholds cannot be tuned** without real traffic. The first version is
   mis-tuned by construction; *the tuning loop is the project*.
+- **The n8n population is behind a longer chain than it looks** (2026-08-18). It is
+  A5's best value story *and* its worst dating problem: **nobody knows how many such
+  flows exist**, and **each author holds their own Airtable key**, so onboarding them
+  requires the centralized key distribution msilva is only now building. Gabrielle:
+  *"a gente não tem noção de quantos são e cada pessoa tem sua própria chave."* Nobody
+  owns the discovery step. So the largest slice of A5's utility sits behind **two**
+  unscheduled prerequisites, not one — which sharpens rather than softens the
+  no-date objection above.
 
 ---
 
@@ -288,14 +310,25 @@ Qualitative on purpose; two cells are honestly unmeasurable today.
 - **Read `Brain` first.** It reportedly already does A6's job and **nobody has looked
   at it.** It may already be the retrieval layer, and building a parallel one is
   exactly what A13 exists to block.
-- **Token cost is a design constraint, but the scary number was a bad case.** ~$7 in a
-  day of testing was traced to a probable **runaway execution**, not context volume —
-  a measured normal run was **11 centavos**. A **token-consumption dashboard exists**
-  and is obtainable on request. The levers are **narrow fetching** (per-agent design)
-  and **a correct trigger chain** (orchestration).
-- **Two in-house agent precedents now exist**, both from 2026-08-17 and both better
-  evidence than any design document: the **AI status readout** on Linear (four real
-  insights, two real failure modes) and **Luís's unattended ultracode run** on Farol,
+- **Token cost is a design constraint, and the cause is genuinely unknown.** ~$7 in a
+  day of testing against **11 centavos** on a later run — but the author **switched LLM
+  provider between them** (2026-08-18), so that comparison does not establish which
+  cause dominates. Runaway execution is still the leading hypothesis, held independently
+  by msilva and Gabrielle; wholesale context loading is still live. The two levers are
+  **narrow fetching** (per-agent design) and **a correct trigger chain** (orchestration),
+  and **both remain worth building in** since the evidence doesn't pick between them.
+  A **token-consumption dashboard exists**, and n8n execution saving has now been turned
+  on — so the next spike is diagnosable.
+  **Also: leadership has explicitly accepted higher spend during stabilization**
+  (Gabrielle to Gabriel, 2026-08-18), and there is no hard ~$20 ceiling. Cost is a goal
+  here, not a gate on building.
+- **Three in-house agent precedents now exist**, all better evidence than any design
+  document. The third, found 2026-08-18 and the most relevant to this decision:
+  **Claude already authors this area's Linear backlogs** — documentation and PRDs in,
+  project description plus milestones plus issues out, unattended, using Luís's
+  templates. See [[Agent Flow]]. The other two: the **AI status readout** on Linear
+  (four real insights, two real failure modes) and **Luís's unattended ultracode run**
+  on [[Farol]],
   which took Uber, OnFly and Expresso close to integrated in one 4–5 hour pass. The
   second is a working demonstration of the AI-First premise by the tech lead — and
   also exactly the shape of the token-cost worry. See

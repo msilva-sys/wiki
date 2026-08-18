@@ -30,10 +30,14 @@ for ~2.5 weeks**, so without a decision this slips about three weeks.
 Capture from every channel → classify (type · scope · complexity · risk) → route.
 **Humans are the three branches in v1.**
 
-Three reasons, the first two comparative rather than absolute:
+Four reasons, the first two comparative rather than absolute:
 
-1. **A5 has no date.** It needs traffic through the proxy: GC-5 must land, then Orca
-   must migrate — and that migration isn't scheduled.
+1. **A5 has no date, and it now has two blockers rather than one.** It needs traffic
+   through the proxy: GC-5 must land, then Orca must migrate — that migration isn't
+   scheduled. And the **n8n flows people build for themselves are also meant to go
+   behind the proxy** (Gabrielle, 2026-08-18) — but nobody knows how many there are and
+   **each author holds their own Airtable key**, so that population needs centralized
+   key distribution first, and nobody owns finding them.
 2. **A7 can't be evaluated.** Its value is value-per-PRD × how often we start new
    projects, and **nobody has that number.** A1 + A2 is the build that produces it.
 3. **The business has already asked for this shape.** In the 2026-08-17 weekly, the
@@ -41,6 +45,11 @@ Three reasons, the first two comparative rather than absolute:
    — interpret, validate, then write. That is A1 + A2 in miniature, arriving from a
    real problem rather than from the architecture diagram
    ([[2026-08-17 Weekly - Projetos e Tarefas]]).
+4. **Half of it is already built here.** Claude routinely writes our Linear backlogs
+   from documentation — project description, milestones, issues, subissues, using Luís's
+   templates. So **A2's remaining work is classification and routing, not writing
+   tickets**, and the target format already exists in-house. This is the smallest of the
+   four builds, not the largest ([[Linear Project Structure]]).
 
 It is also the only candidate that is a **working system with no other agent
 present**, and it attacks the documented reason the last agent failed: it was never
@@ -54,8 +63,8 @@ raise it than work around it.
 
 | Candidate | Best thing about it | Worst thing about it |
 |---|---|---|
-| **A1 + A2** intake | Works alone; measures what actually arrives | Departs from anarchic-first; people must still send things |
-| **A5** Watcher | Zero adoption risk; best-specified; one watcher covers every service behind the proxy | **No date, and worse than thought** — blocked on GC-5, and **Orca is not observable yet** (nothing deployed as of 2026-08-17) |
+| **A1 + A2** intake | Works alone; measures what actually arrives; **ticket-writing already solved in-house**, so it's the smallest build | Departs from anarchic-first; people must still send things |
+| **A5** Watcher | Zero adoption risk; best-specified; one watcher covers every service behind the proxy — **including everyone's n8n flows, which nobody is watching** | **No date, and two blockers** — GC-5, **Orca not observable yet** (nothing deployed as of 2026-08-17), and the n8n population needs key distribution plus a discovery step nobody owns |
 | **A7** Discovery | Highest ceiling — spec quality bounds everything downstream | Can't be chat-only, so it drags A6's retrieval layer in with it |
 | **A4** Teacher | Saves the most human time; the only automation on the enablement front | Vaguest spec; needs people to opt in; may duplicate the Claude Code training programme |
 
@@ -69,12 +78,20 @@ project-start rate in hand.
 
 1. **Utility or lowest-risk?** And by utility do you mean *value if it works*, or
    *expected value* — value × chance it works × how often it runs?
-2. **Is departing from anarchic-first acceptable** to start at intake?
+2. **Is departing from anarchic-first acceptable** to start at intake? *(Related: you
+   suggested Agent Flow gets its own initiative with each part a project — that
+   structure is anarchic-first. Starting at intake cuts against it.)*
 3. **Is Orca's proxy migration scheduled?** This is what decides whether A5 can be
    dated at all.
 4. **How often does the area start a new project?**
 5. **A6 split** — retrieval as shared tooling now, curation as an agent in phase 2?
-6. **Can agent output file into Linear** while the migration is still bedding in?
+6. **Who owns finding the n8n flows that hit Airtable?** You said nobody knows how many
+   there are and each person holds their own key. That discovery step is a prerequisite
+   for both key distribution and any A5 coverage of them, and it currently has no owner.
+
+~~6. **Can agent output file into Linear** while the migration is still bedding in?~~
+**Answered 2026-08-18** — Claude already writes our project descriptions, milestones and
+issues into Linear as routine practice. Dropped, and replaced above.
 
 ## Two things that would change my answer
 
