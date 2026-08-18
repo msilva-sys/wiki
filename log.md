@@ -1521,3 +1521,60 @@ revisit.
   stale "implemented"/"confirmed working" claims, corrected inline per schema).
 - Open: which option Luís picks; delivery channel to actually show him the
   comparison not yet decided.
+
+## [2026-08-18] refactor | Open people/ — 23 pages, role and ownership only
+- msilva asked to add people to the wiki, reversing the standing decision to
+  leave the folder empty (offered and declined three times: 2026-08-17,
+  2026-08-18 x2). Scoped with him first: **everyone named** across the vault,
+  **role and ownership only** — no opinions, no sensitive transcript content.
+- New: 23 pages under `people/` — [[Gabrielle Ferreira]], [[Luís Fernandez]],
+  [[Carolina Bezerra]], [[Yasmin Macedo]], [[Arthur Tavares]],
+  [[João Victor Andrade]], [[Michelly Magalhães]], [[Maria Fernanda Lemos]],
+  [[Gabriel (CazéTV automation)]], [[Gabriel (matriz de eventos, departed)]],
+  [[Osmar]], [[Nina]], [[Diego]], [[Bianca (Bia)]], [[Kauan]],
+  [[Pedro Alves]], [[Yuri Muanes]], [[Lucas Gomes]], [[Júlia]], [[Sérgio]],
+  [[Ribon]], [[Zoca]], [[Cristian]].
+- **Two same-first-name Gabriels disambiguated as separate pages**, cross-linked
+  each way rather than merged: the CazéTV n8n colleague versus the departed
+  colleague who built the matriz de eventos. Confirmed distinct from context
+  (one active 2026-08-17, the other described as already gone on 2026-08-14).
+- **"Gabi" resolved as an alias on [[Gabrielle Ferreira]]**, not a separate
+  page — corroborated by Luís's *"eu que mandei pra Gabi"* — but the
+  2026-08-10 onboarding transcript's *"a second colleague, referred to as
+  Gabi"* is flagged unresolved rather than silently merged, since it reads as
+  a distinct attendee.
+- **Found and corrected a defect while sourcing [[Pedro Alves]]**: **[[Fluxo
+  Agêntico diagram]]** asserted *"Pedro (the departed developer) co-designed
+  the architecture"*, citing [[2026-08-10 Onboarding Técnico - Matheus]] —
+  but that meeting page names no Pedro and no departed developer. Citation
+  didn't check out. Removed rather than merged into a fabricated person page;
+  correction left visible on the source page with a pointer to re-verify
+  against `raw/` before restoring it.
+- **msilva has no page of his own** — the vault already is the record of his
+  work; noted explicitly on `index.md` rather than left silently absent.
+- Deliberately excluded per every relevant meeting page's standing scope
+  instruction: org chart, hiring, DISC profiles, role transitions, personal
+  remarks. Pages carry only what was already recorded elsewhere in the wiki
+  as project-relevant ownership.
+- Two attendee-only pages ([[Michelly Magalhães]], [[Maria Fernanda Lemos]])
+  carry no role — say so rather than inventing one.
+- Updated: `index.md` (new People section, replacing the "empty
+  deliberately" note), `sources/Fluxo Agêntico diagram.md` (correction above).
+
+> [!warning] Bookkeeping anomaly — the index.md edit landed in someone else's commit
+> Same failure class as the two prior instances this log already records. A parallel
+> session committed `101137b` ("revert X-App-Id SDK patch...") while this operation was
+> in progress, and its snapshot of `index.md` already carried this session's new
+> **People** section — so the section is real and correct, but it is attributed to a
+> commit message that never mentions people/ at all. History not rewritten; recorded
+> here instead. The 23 new `people/*.md` files, this log entry, and the
+> `Fluxo Agêntico diagram.md` correction were made after that commit and are committed
+> separately, on top of it.
+- Not touched: three files already modified on disk from the prior, separate
+  SDK-patch-revert operation (`projects/Airtable Proxy.md`,
+  `systems/LiveScript.md`,
+  `syntheses/How LiveScript sends the proxy X-App-Id header.md`) — pending
+  commit from that operation, left alone as out of scope for this one.
+- Open: does msilva want [[Pedro Alves]] and the unrelated "Pedro" mockup
+  mention investigated further with Carol? Does "Gabi" as a second onboarding
+  attendee need resolving, or is it transcription noise?

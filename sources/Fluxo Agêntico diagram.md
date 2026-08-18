@@ -110,8 +110,17 @@ this page was written:
   (unauthorized external APIs, critical compliance exports, whole-base deletes),
   so A13 is not the only gate — correcting the claim made earlier on this page.
 - **Who authored it, and when?** The instruction is credited to "Gabi"; the
-  diagram itself records no author. Pedro (the departed developer) co-designed the
-  architecture per [[2026-08-10 Onboarding Técnico - Matheus]]. Date still
-  unresolved.
+  diagram itself records no author. Date still unresolved.
+
+> [!warning] Correction — the "Pedro co-designed it" claim doesn't check out
+> This section previously said *"Pedro (the departed developer) co-designed the
+> architecture per [[2026-08-10 Onboarding Técnico - Matheus]]"*. That meeting
+> page, as it stands, names no Pedro and no departed developer at all — the
+> citation doesn't support the claim. Found while building out [[people/]] pages
+> and refusing to fabricate a "Pedro (departed developer)" entry on unverifiable
+> grounds. Removed rather than kept; if the fact is real it came from somewhere
+> else (a raw file not yet re-checked, or a conflation with
+> [[Gabriel (matriz de eventos, departed)]]). Re-verify against `raw/` before
+> restoring it.
 - **Why the renumbering?** Still open. Knowing what was merged, split, or reordered
   would indicate which parts are settled.
