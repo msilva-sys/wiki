@@ -250,10 +250,12 @@ from Gabrielle Ferreira in onboarding.
    >   proxy must **overwrite/ignore** the incoming `Authorization`.
    > - Setting `endpointUrl` also does **not** carry the header out of the box:
    >   `customHeaders` is a no-op for every operation this app uses in v0.12.2.
-   >   **Resolved 2026-08-17** via a `pnpm patch` making the SDK's `runAction`
-   >   honour `customHeaders`, plus centralizing the header on the REST path —
-   >   `X-App-Id` now rides both transports. Commits `754896b` / `d565c26`. See
-   >   [[How LiveScript sends the proxy X-App-Id header]] for the full resolution.
+   >   A fix shipped 2026-08-17 via a `pnpm patch` making the SDK's `runAction`
+   >   honour `customHeaders` (commits `754896b` / `d565c26`), but was
+   >   **reverted 2026-08-18** so alternatives could be brought to Luís first.
+   >   `X-App-Id` is not currently sent by the SDK path. See
+   >   [[How LiveScript sends the proxy X-App-Id header]] for the live options
+   >   comparison.
 
 3. **Observability-first, not caching-first.** The whole premise is: instrument
    every Airtable call, *then* let the dashboards tell us whether 429s come from
@@ -325,8 +327,10 @@ response headers pass through an allowlist only.
 > `select` via `POST`. Now uses a proper triage/switch instead. Page size and
 > response byte count are also captured. Metrics confirmed flowing into Grafana.
 > **`X-App-Id` confirmed working end-to-end** in the dev environment (proxy +
-> LiveScript integrated locally). This is progress against the open item directly
-> below, not yet closed — `hasFieldProjection`/`recordCount` status unconfirmed.
+> LiveScript integrated locally) — **while the now-reverted client patch was in
+> place**; see [[How LiveScript sends the proxy X-App-Id header]]. This is
+> progress against the open item directly below, not yet closed —
+> `hasFieldProjection`/`recordCount` status unconfirmed.
 >
 > **Scope clarified the same day**: msilva's job is the proxy working 100%, not
 > LiveScript's own Airtable usage. LiveScript talks to Airtable via **both** the

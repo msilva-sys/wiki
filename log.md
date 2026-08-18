@@ -1498,3 +1498,26 @@ revisit.
 - Open, low confidence: a "Pedro" mentioned once as the possible author of an
   alternative first-agent design mockup Carol was asked to review — first mention of
   this name in the vault; not investigated this pass.
+
+## [2026-08-18] refactor | X-App-Id SDK patch reverted; options doc for Luís
+- In `livemode-roteiros-nextjs`, at msilva's direction: `git reset --hard c9cc711`
+  on `feature/airtable-proxy-observability` dropped commits `754896b`/`d565c26`
+  (the `pnpm patch` on `airtable@0.12.2` + REST header injection), then
+  `pnpm install` to match. Not pushed, so purely local; branch then fast-forwarded
+  to `origin` (Luís's unrelated `.env.example` docs commit).
+- Reason: bring Luís real alternatives instead of a shipped fait accompli, per
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]].
+- Verified in code (not just re-asserted from the prior investigation): installed
+  `airtable@0.12.2` still routes `select/find/create/update/destroy` through
+  `runAction`, which still ignores `customHeaders`; `npm view airtable dist-tags`
+  still reports `latest: 0.12.2` (no upgrade path exists).
+- Evaluated Luís's own suggestion (screenshot: `customHeaders` on the SDK
+  constructor, no patch) — confirmed insufficient alone, same reason. Also scoped
+  a new option (migrate the remaining SDK calls to hand-rolled REST): ~13 service
+  files, several dozen call sites.
+- Updated: `syntheses/How LiveScript sends the proxy X-App-Id header.md` (now a
+  5-option comparison for Luís, "implemented" status corrected to
+  "reverted"), `systems/LiveScript.md`, `projects/Airtable Proxy.md` (both had
+  stale "implemented"/"confirmed working" claims, corrected inline per schema).
+- Open: which option Luís picks; delivery channel to actually show him the
+  comparison not yet decided.

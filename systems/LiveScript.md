@@ -82,14 +82,16 @@ Investigated 2026-08-17 against the app's `airtable` SDK (v0.12.2) —
   proxy now requires an `X-App-Id: livescript` header, and the SDK **cannot carry
   it via `customHeaders`** as shipped — every op the app uses goes through the
   SDK's deprecated `runAction`, which ignores custom headers.
-- **Implemented 2026-08-17** (commits `754896b` / `d565c26` on
-  `feature/airtable-proxy-observability`): a `pnpm patch` on `airtable@0.12.2`
-  makes `runAction` honour `customHeaders`, and the monitored base sets
-  `X-App-Id`. On the REST path the header is injected centrally in
-  `fetchAirtableWithMonitoring`, and data-plane calls now honour
-  `AIRTABLE_ENDPOINT_URL` via `airtableApiBaseUrl()`. Metadata API calls stay
-  pinned to Airtable direct pending the proxy contract. `X-App-Id` now rides
-  both transports.
+- **Shipped 2026-08-17, reverted 2026-08-18** (commits `754896b` / `d565c26` on
+  `feature/airtable-proxy-observability`, dropped via `git reset --hard
+  c9cc711`): a `pnpm patch` on `airtable@0.12.2` made `runAction` honour
+  `customHeaders`, with the monitored base setting `X-App-Id`, plus centralized
+  header injection on the REST path. Reverted so alternatives could be brought
+  to Luís first, per
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]].
+  `X-App-Id` is **not currently sent** by either transport. See
+  [[How LiveScript sends the proxy X-App-Id header]] for the live options
+  comparison.
 - The SDK always sends `Authorization: Bearer`, so the app keeps a **dummy PAT**;
   the proxy overwrites it. `X-Api-Key` is deferred — `X-App-Id` only for now.
 - **Rollout order matters:** the header shipped before `AIRTABLE_ENDPOINT_URL`
@@ -126,6 +128,10 @@ meeting page.
 - Is the badly-implemented second Airtable consumer described in the meeting a
   separate app, or another surface of this one? (unverified)
 - **Does the `airtable` SDK have a native way to route through a custom
-  endpoint/proxy**, without the `pnpm patch` already shipped? Luís half-remembers
-  solving something like this before but wasn't sure; msilva is checking. See
+  endpoint/proxy**, without a `pnpm patch`? **Answered 2026-08-18**:
+  `endpointUrl` is native and works; `customHeaders` looks native but is a
+  no-op for every SDK call this app makes (routes through the deprecated
+  `runAction`, which ignores it) — confirmed still true, and the SDK has no
+  newer release that fixes it (`npm view airtable dist-tags` still `0.12.2`).
+  Full options comparison for Luís in
   [[How LiveScript sends the proxy X-App-Id header]].

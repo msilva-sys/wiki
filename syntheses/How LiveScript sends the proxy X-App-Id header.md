@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-08-17
+updated: 2026-08-18
 date: 2026-08-17
 aliases: [x-app-id, app auth header, livescript proxy auth, GC-5 client side]
 tags: [airtable, proxy, auth, sdk, livescript, opentelemetry]
@@ -28,12 +28,16 @@ the SDK config in v0.12.2** as shipped, and the app's monitoring layer only set
 the header on the REST path. Getting `X-App-Id` onto *all* traffic needed a code
 change.
 
-> [!success] Resolved & implemented 2026-08-17 — see [Resolution](#resolution--implemented-2026-08-17)
-> Shipped via a **third path** (neither A nor B below): a `pnpm patch` on
-> `airtable@0.12.2` that makes the deprecated `runAction` honour `customHeaders`,
-> plus centralizing the header on the REST path. `X-App-Id` now rides **both**
-> transports. Commits `754896b` (SDK) and `d565c26` (REST) on branch
-> `feature/airtable-proxy-observability`.
+> [!warning] Reverted 2026-08-18 — no longer shipped
+> Commits `754896b` (SDK) and `d565c26` (REST) were dropped via
+> `git reset --hard c9cc711` on `feature/airtable-proxy-observability`, undoing
+> both the `pnpm patch` and the REST-path header injection, at msilva's direction
+> — in order to bring Luís actual alternatives instead of a fait accompli, per
+> [[2026-08-18 Bring options to Luís before deciding, communicate async and often]].
+> The [Resolution](#resolution--implemented-2026-08-17) section below is now a
+> record of **what was tried and undone**, not current state. See
+> [Options for Luís — 2026-08-18](#options-for-luís--2026-08-18) for the live
+> comparison, including Luís's own suggestion.
 
 ## Findings (verified in code)
 
@@ -86,10 +90,11 @@ Upstream source confirming this (verified 2026-08-17):
 `fetch`, server-side. So patching `globalThis.fetch` would **not** intercept the
 SDK path in Node.
 
-## Resolution — implemented 2026-08-17
+## Resolution — implemented 2026-08-17, reverted 2026-08-18
 
-Shipped as a **client-only patch**, the lowest-risk path. Two commits on
-`feature/airtable-proxy-observability` in `livemode-roteiros-nextjs`:
+Shipped as a **client-only patch**, the lowest-risk path at the time. Two
+commits on `feature/airtable-proxy-observability` in `livemode-roteiros-nextjs`
+— **reverted 2026-08-18**, see the warning callout above:
 
 ### SDK path — `754896b`
 - **`pnpm patch` on `airtable@0.12.2`** (`patches/airtable@0.12.2.patch`) makes
@@ -121,17 +126,83 @@ Shipped as a **client-only patch**, the lowest-risk path. Two commits on
 The header is inert against `api.airtable.com`, so both commits are safe to ship
 **before** `AIRTABLE_ENDPOINT_URL` flips.
 
-## Options considered (historical — not taken)
+## Options for Luís — 2026-08-18
 
-- **Option A — one `node-fetch` interceptor at server startup.** Covers SDK +
-  REST in one place, and is the same seam the OTel `traceparent`/`baggage`
-  propagation gap needs. Rejected as fragile: it's a monkeypatch on SDK-internal
-  `require("./fetch")` wiring that fails silently if Next.js re-aliases the
-  module in the server bundle.
-- **Option B — upgrade the `airtable` SDK** to a version routing all ops through
-  `makeRequest`. **Impossible: 0.12.2 is npm `latest`** (`dist-tags.latest`), and
-  no released 0.x version moved `select/find/…` off the deprecated `runAction`.
-  There is no upgrade target.
+Written to bring to Luís as an actual comparison, per
+[[2026-08-18 Bring options to Luís before deciding, communicate async and often]].
+Nothing here is decided; this replaces the "shipped it, tell him after" pattern
+that triggered that decision.
+
+### Option 1 — `pnpm patch` + `customHeaders` (what was shipped, then reverted)
+The original fix: patch `run_action.js` (3 lines) to merge `_customHeaders`,
+same as `base.makeRequest()` already does, then set
+`customHeaders: { "X-App-Id": "livescript" }` on the monitored base.
+- **Pro**: small, mechanical, pinned to the exact installed version
+  (`airtable@0.12.2`) so a version bump fails the install loudly instead of
+  silently dropping the fix. Covers 100% of SDK traffic in one place.
+- **Con**: it's a `pnpm patch`/`patch-package`-class tool, which is what Luís
+  said he doesn't trust (*"eu confio zero nisso... para mim é má prática de
+  comunidade JavaScript"*). Every `pnpm install` re-applies a diff against
+  vendor code that could silently stop matching upstream on any dependency
+  change.
+
+### Option 2 — `customHeaders` only, no patch (Luís's suggestion, 2026-08-18)
+Just the constructor option, no patch:
+```js
+const rawBase = new Airtable({
+  apiKey: config.apiKey,
+  endpointUrl: AIRTABLE_ENDPOINT_URL,
+  customHeaders: { "X-App-Id": AIRTABLE_APP_ID },
+}).base(config.baseId);
+```
+- **Verified insufficient as-is.** In the installed `airtable@0.12.2`,
+  `customHeaders` is only merged by `base.makeRequest()`
+  (`node_modules/airtable/lib/base.js:44`). Every operation this app actually
+  calls — `.select()`, `.find()`, `.create()`, `.update()`, `.destroy()` —
+  routes through the deprecated `runAction` (`run_action.js`), which builds a
+  hardcoded header object and **never reads `_customHeaders`** — confirmed by
+  grep, zero references. That's ~13 service files and several dozen call sites
+  (`airtable-helpers.ts`, `airtable.service.ts`, `config.service.ts`,
+  `grupos.service.ts`, `inventory.service.ts`, `migration.service.ts`,
+  `narrator.service.ts`, `roteiro-reset.service.ts`, `script-copy-data.ts`,
+  `script-generation-data.ts`, `script-generation.service.ts`,
+  `composite-order-migration.ts`).
+- **The risk if shipped as-is**: no error, no warning — it just silently fails
+  to attach `X-App-Id` to nearly all Airtable traffic. It would look correct in
+  code review and in dev (header is inert against `api.airtable.com` either
+  way) and only 401 once `AIRTABLE_ENDPOINT_URL` actually flips to the proxy.
+- Does *not* need the patch **only** for the ~10 hand-built REST calls
+  (`fetchAirtableWithMonitoring` already sets headers via real `fetch()`,
+  unaffected by any of this).
+
+### Option 3 — migrate the remaining SDK calls to hand-rolled REST
+Replace `.select/.find/.create/.update/.destroy` call sites with the same
+`fetch()`-based pattern already used for the ~10 REST calls, so the app stops
+calling into `runAction` at all. No patch, no `customHeaders` gap — every
+header is under direct control.
+- **Pro**: the "clean, no-vendor-patch" option Luís is looking for, and reduces
+  the SDK's role to the parts it isn't in the way of.
+- **Con**: real migration effort — the same ~13 files / several dozen call
+  sites listed above, not a 3-line fix. Higher risk of behavior drift (pagination,
+  retry/backoff, error shapes) since `airtable-monitoring.ts`'s retry-with-backoff
+  logic was itself built to wrap the SDK.
+
+### Option 4 — upgrade the `airtable` SDK
+Re-checked 2026-08-18 (msilva couldn't reach Airtable's GitHub on 2026-08-17):
+`npm view airtable dist-tags` still reports **`latest: 0.12.2`** — same as
+before, no newer release exists. **Still not a real option.**
+
+### Option 5 — one `node-fetch` interceptor at server startup
+Covers SDK + REST in one place, and is the same seam the OTel
+`traceparent`/`baggage` propagation gap needs. Rejected as fragile: it's a
+monkeypatch on SDK-internal `require("./fetch")` wiring that fails silently if
+Next.js re-aliases the module in the server bundle.
+
+**Where this leaves it**: Option 2 alone is not viable (it doesn't work, not
+just "Luís might not like it"). The real choice is Option 1 (small patch,
+tooling Luís distrusts) vs. Option 3 (no patch, real migration cost) vs.
+Option 5 (fragile, not recommended). Bringing exactly this to Luís, not a
+re-ship of Option 1.
 
 ## Corrections to the recorded onboarding model
 
@@ -160,8 +231,11 @@ the SDK, both need qualifying:
 >    without patching? msilva tried to check Airtable's GitHub the day before but it
 >    was down.
 >
-> **Not resolved.** The patch is still what's shipped; this is an open question, not
-> a reversal.
+> **Update 2026-08-18**: no longer "the patch is still what's shipped" — it was
+> reverted (see the top of this page) specifically so this could be brought to
+> Luís properly. His "cleaner native option" question is answered: `endpointUrl`
+> is native, `customHeaders` looks native but is a no-op for this app's traffic
+> without the patch — see [Options for Luís](#options-for-luís--2026-08-18).
 
 ## Open questions for the proxy (gate the endpoint flip)
 

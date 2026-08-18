@@ -32,7 +32,7 @@ See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 > [[What should the Agent Flow research phase study]].
 
 ## Projects
-- [[Airtable Proxy]] — Go reverse proxy fronting the Airtable API. Primary track. Active work: app auth + key distribution. **[[Orca (CDE)]] and other services are planned consumers**, and so are the **n8n citizen flows** (2026-08-18) — an unknown number of them, each author holding their own Airtable key, which is what makes centralized key distribution the blocker rather than a nicety. One of **three projects** in an *Airtable governance and reliability* initiative; the third, a **data hub**, is probably the wiki's missing Phase 2. **2026-08-18**: operation-detection bug fixed, `X-App-Id` confirmed end-to-end in dev; scope clarified as proxy-first, LiveScript's own SDK migration explicitly deferred.
+- [[Airtable Proxy]] — Go reverse proxy fronting the Airtable API. Primary track. Active work: app auth + key distribution. **[[Orca (CDE)]] and other services are planned consumers**, and so are the **n8n citizen flows** (2026-08-18) — an unknown number of them, each author holding their own Airtable key, which is what makes centralized key distribution the blocker rather than a nicety. One of **three projects** in an *Airtable governance and reliability* initiative; the third, a **data hub**, is probably the wiki's missing Phase 2. **2026-08-18**: operation-detection bug fixed, `X-App-Id` confirmed end-to-end in dev (with the SDK patch, since reverted); scope clarified as proxy-first, LiveScript's own SDK migration explicitly deferred.
 - [[Agent Flow]] — proposed multi-agent architecture for the area's intake and delivery; design only. Second track, started 2026-08-17. **Which agent to build first is reopened** (2026-08-18): the criterion changed from lowest-risk to utility. Also 2026-08-18: it gets **its own Linear initiative, one project per agent** (Gabrielle); **Claude already authors this area's backlogs**, so A2's hard part is classification, not ticket-writing; the **token-cost evidence is retracted** — a provider switch confounded it; and **Luís contradicts Gabrielle same-day** on whether the Watcher/A5 needs the proxy at all — unresolved, blocks further A5 design until msilva runs discovery with Gabrielle and Carol separately.
 - [[Orca Next Version]] — roadmap/backlog planning workspace for [[Orca (CDE)]]'s next version (repo `orca-produto`, access gained 2026-08-18). Not msilva's, tracked for context. 7 milestones, ~28 issues, approved by stakeholders 2026-08-07; nothing deployed to production yet as of the 2026-08-17 weekly.
 - [[Pulse]] — outsourced front-end for the business pipeline. Not msilva's, but he joins the immersion week for context. **Now `deferred` (2026-08-18)**: approval failed, DOR stood down, delay ≥1 month, Copinha window lost.
@@ -53,7 +53,37 @@ See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 _(next candidates: OpenTelemetry, Reverse Proxy Patterns, Grafana LGTM)_
 
 ## People
-_(empty — deliberately; see [[log]] 2026-08-17)_
+
+Folder opened 2026-08-18, at msilva's request, after being offered and
+declined three times. Role and ownership only — no opinions, no sensitive
+transcript content; see each meeting page for that.
+
+- [[Gabrielle Ferreira]] — msilva's manager; owns [[Agent Flow]], product
+  reviewer, controls the AI status readout. On leave 2026-08-24 → ~2026-09-10.
+- [[Luís Fernandez]] — Tech Lead, part-time (afternoons); primary technical
+  contact during Gabrielle's leave; disagrees with her on A5's proxy scoping.
+- [[Carolina Bezerra]] — runs Papo de Projetos and the `Brain`/Hub docs;
+  building the shared skills repo and Claude Code training programme.
+- [[Yasmin Macedo]] — owns N8N/Monday flows; testing [[Farol]]'s GCP build.
+- [[Arthur Tavares]] — maintains the matriz de eventos schema; moving to
+  another area, so that knowledge is in transition.
+- [[João Victor Andrade]] — new hire, CRM onboarding contract.
+- [[Michelly Magalhães]] · [[Maria Fernanda Lemos]] — attendees only, no
+  role recorded yet.
+- [[Gabriel (CazéTV automation)]] — n8n revenue-recognition flow; **distinct
+  from** [[Gabriel (matriz de eventos, departed)]], who built the matriz and
+  has since left.
+- [[Osmar]] · [[Nina]] · [[Diego]] — *reportagem* team; the matriz
+  external-events gateway use case in [[Agent Flow]] is their problem.
+- [[Bianca (Bia)]] · [[Kauan]] — with Arthur in the TES vendor-trial group.
+- [[Pedro Alves]] — Orca Next Version engineer, E1 infrastructure; likely
+  "Pedrinho" (unverified nickname match).
+- [[Yuri Muanes]] · [[Lucas Gomes]] — Orca ops, Brazil/Portugal.
+- [[Júlia]] — co-created the CRM Slack channel.
+- [[Sérgio]] · [[Ribon]] · [[Zoca]] · [[Cristian]] — leadership approval
+  chain that stalled [[Pulse]]'s immersion week.
+
+_(msilva himself has no page — this vault already is the record of his work.)_
 
 ## Decisions
 - [[2026-08-10 Onboarding runs proxy and agent flow in parallel]] — proxy first and fast, agent flow alongside with no delivery pressure.
@@ -91,7 +121,7 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 - [[Comparing the first-agent candidates]] — **the decision doc.** Motivations, pros and cons for A1+A2, A5, A7 and A4 side by side, what applies whichever is chosen, and eight things to decide before 2026-08-24. Written to be handed to someone else.
 - [[Which agent should be built first]] — **now answers two criteria.** Lowest-risk (2026-08-17) → A5 Watcher on proxy telemetry; utility (2026-08-18) → the intake pair A1 + A2, also msilva's position. Both arguments kept in full, plus why A7 cannot be chat-only. **Also 2026-08-18**: Luís separately argues A5 shouldn't target the proxy at all — unreconciled.
 - [[How to implement A5 Watcher]] — build plan: alert rules as code, throttling as cost control, Linear as dedup store, and how to build most of it before GC-5 lands.
-- [[How LiveScript sends the proxy X-App-Id header]] — GC-5 client side: **implemented** via a `pnpm patch` (SDK) + centralized REST injection; data-plane honours the endpoint, metadata pinned direct. Corrects the "drop the PAT / X-Api-Key" onboarding model.
+- [[How LiveScript sends the proxy X-App-Id header]] — GC-5 client side: shipped via a `pnpm patch` (SDK) + centralized REST injection, **reverted 2026-08-18** to bring alternatives to Luís first. Now a live 5-option comparison (patch / his customHeaders-only suggestion, verified insufficient / REST migration / SDK upgrade, still impossible / fetch interceptor). Corrects the "drop the PAT / X-Api-Key" onboarding model.
 
 ## Reference
 - [[Claude capabilities map - accounting data scope]] — Claude capabilities by layer for large-data/accounting work, cheapest-to-adopt first.
