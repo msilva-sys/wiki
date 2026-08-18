@@ -1626,7 +1626,7 @@ revisit.
   above. Compared Linear's `PRO-79` against Jira's `AIRTABLEGC-37` directly
   (`get_issue`, `getJiraIssue`): Jira recorded a scope change Linear never
   picked up. `X-App-Id` enforcement was implemented and merged
-  (PR #7, `livemode-org/livemode-airtable-proxy`) — 401 on missing/unknown
+  ([PR #7](https://github.com/livemode-org/livemode-airtable-proxy/pull/7)) — 401 on missing/unknown
   `X-App-Id`, 403 on base outside the app's allow-list, PAT injection + header
   strip, denial telemetry, tests green. `X-Api-Key` was explicitly deferred
   (decision with Luís, 1:1 of 2026-08-14), not dropped.
