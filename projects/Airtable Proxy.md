@@ -11,13 +11,18 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > Related: [[Proxy Environments]] · [[AIRTABLEGC-34]] · [[LiveScript]] ·
 > [[Airtable Rate Limits]] · [[Agent Flow]]
 
-> [!tip] Current state, 2026-08-17
+> [!tip] Current state, 2026-08-18
 > Active work is **app authentication + centralizing Airtable key distribution**
-> — see the superseded-roadmap note below. Tracking is moving to **Linear**
-> ([[2026-08-14 Migrate project management from Jira to Linear]]). msilva merges
-> his own PRs ([[2026-08-14 No mandatory PR review while the proxy is pre-production]]).
+> — see the superseded-roadmap note below. msilva merges his own PRs
+> ([[2026-08-14 No mandatory PR review while the proxy is pre-production]]).
 > First confirmed anti-pattern found in the wild: an events-panel query returning
 > an entire table with no need.
+>
+> **Tracking has already moved to Linear** — [Proxy do Airtable](https://linear.app/projetos-livemode/project/proxy-do-airtable-0d3e6dd699eb)
+> (team `Projetos-livemode`), discovered 2026-08-18 to already hold 60 issues across
+> 4 milestones (F1/F2/F3/Backlog deferido), a 1:1 mirror of `AIRTABLEGC` in both title
+> and (mostly) status. See [[2026-08-14 Migrate project management from Jira to Linear]]
+> for the full finding — this predates and supersedes the task as "still to do."
 
 ## How it's framed internally
 

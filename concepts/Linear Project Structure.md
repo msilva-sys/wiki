@@ -252,9 +252,15 @@ qualified in words.
 
 ## Open questions
 
-- **What is the Linear team/project identifier, and what shape are the new issue
-  keys?** Still unanswered as of 2026-08-18, now across three meetings. Gabrielle has an
-  open action to send the project link, which answers it.
+- ~~**What is the Linear team/project identifier, and what shape are the new issue
+  keys?**~~ **Answered 2026-08-18** — checked Linear directly instead of waiting on
+  Gabrielle's link. Team `Projetos-livemode`, `PRO-*` keys, three projects under the
+  **Airtable GC - Governança e Confiabilidade** initiative exactly as described above:
+  [Proxy do Airtable](https://linear.app/projetos-livemode/project/proxy-do-airtable-0d3e6dd699eb),
+  **Proxy expandido para outros apps**, **LiveMode Data Hub (POC)**. See
+  [[2026-08-14 Migrate project management from Jira to Linear]] for the fuller finding:
+  the proxy project already held 60 issues across its 4 milestones, and the migration
+  itself turned out to be substantially already done.
 - ~~**Which initiative does [[Agent Flow]] belong to?**~~ **Answered** — its own, one
   project per part (Gabrielle, hedged).
 - **What does Luís think is wrong with his templates?** He is rewriting them. Assigned.

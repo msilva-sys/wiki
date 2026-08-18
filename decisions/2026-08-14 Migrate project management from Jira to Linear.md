@@ -116,12 +116,30 @@ full at [[Linear Project Structure]]:
   place?** → **Drained wholesale.** Luís, 2026-08-17: *"graças a Deus, a gente caiu
   no Linear. Então agora a gente tira tudo de lá."* msilva restated the migration of
   his own items as his task in the same meeting.
+- ~~What is the Linear project/team identifier, and what do the new issue keys look
+  like?~~ **Answered 2026-08-18, by checking Linear directly rather than waiting for
+  Gabrielle's link.** Team **`Projetos-livemode`**, initiative **Airtable GC -
+  Governança e Confiabilidade**, three projects matching [[Linear Project Structure]]'s
+  three-project account exactly: [Proxy do Airtable](https://linear.app/projetos-livemode/project/proxy-do-airtable-0d3e6dd699eb)
+  (`PRO-*` keys), **Proxy expandido para outros apps**, and **LiveMode Data Hub (POC)**.
+- **The migration itself was already ~done — discovered 2026-08-18, not performed
+  this session.** All **65** `AIRTABLEGC` issues have a Linear counterpart: 60 in
+  `Proxy do Airtable` (matching its 4 milestones — F1/F2/F3/Backlog deferido — exactly
+  as prescribed above) and the remaining 5 (the Data Hub epic and its spikes) in
+  `LiveMode Data Hub (POC)`. Titles match Jira 1:1. This was most likely produced by
+  an earlier, unlogged Claude Code session run against the design docs, per
+  Gabrielle's own workflow described in [[2026-08-18 1-1 Matheus - Gabrielle]] — this
+  wiki simply never recorded it, which is why the task kept reappearing as
+  unstarted across four assignments. **Verified and reconciled 2026-08-18**: 3
+  issues (`PRO-75`, `PRO-77`, `PRO-79`) had drifted from Jira's actual status and
+  were corrected (two to Done, one to In Progress) to match.
 
 ## Open questions
 
-- What is the Linear project/team identifier, and what do the new issue keys look
-  like? Still not stated as of **2026-08-18**, now across three meetings. Gabrielle
-  has an open action to send the project link, which answers it.
+- **How should `AIRTABLEGC` itself be wound down** — bulk-transition its issues,
+  archive the whole Jira project, or leave it as-is? msilva's call 2026-08-18: leave
+  it untouched for now, decide separately. Revisit once the Business-trial /
+  purchase question below is settled.
 - **Is the Business plan being purchased before 2026-09-09?** See the correction
   above. This is the one with a deadline.
 - Confirm the reordering with Luís before restructuring further — Gabrielle

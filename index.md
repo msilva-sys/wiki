@@ -15,13 +15,18 @@ See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 > [[Proxy Environments]]. Reported by every `lint` since the first.
 
 > [!warning] Time-boxed — Gabrielle is on leave 2026-08-24 → 2026-09-10
-> [[2026-08-18 1-1 Matheus - Gabrielle]] was the last scheduled 1:1 before it. Two
-> things carry deadlines inside that window:
-> - **The Linear Business trial expires 2026-09-09**, one day before she is back, with
->   the ~250-issue free cap behind it — while msilva migrates the `AIRTABLEGC` backlog
->   into that workspace. No purchase recorded. She is the person who can authorize it.
-> - **The migration itself** — assigned four times now; msilva committed in the 1:1 to
->   doing it **today (2026-08-18)**, and he has already hit the free cap once.
+> [[2026-08-18 1-1 Matheus - Gabrielle]] was the last scheduled 1:1 before it.
+> - **The migration itself is done** — discovered 2026-08-18, not performed this
+>   session: all 65 `AIRTABLEGC` issues already had Linear counterparts (60 in
+>   `Proxy do Airtable`, 5 in `LiveMode Data Hub (POC)`), title-for-title. Three
+>   drifted statuses reconciled. See
+>   [[2026-08-14 Migrate project management from Jira to Linear]]. `AIRTABLEGC` itself
+>   is left untouched for now (msilva's call) — winding it down is a separate,
+>   still-open question.
+> - **The Linear Business trial still expires 2026-09-09**, one day before Gabrielle is
+>   back, with the ~250-issue free cap behind it. No purchase recorded; she's the
+>   person who can authorize it. Lower urgency now that the migration itself isn't
+>   adding to the count, but still unresolved.
 >
 > The question list to close before 2026-08-24:
 > [[What should the Agent Flow research phase study]].
@@ -52,7 +57,7 @@ _(empty — deliberately; see [[log]] 2026-08-17)_
 
 ## Decisions
 - [[2026-08-10 Onboarding runs proxy and agent flow in parallel]] — proxy first and fast, agent flow alongside with no delivery pressure.
-- [[2026-08-14 Migrate project management from Jira to Linear]] — Linear becomes the system of record; proxy issues to be restructured.
+- [[2026-08-14 Migrate project management from Jira to Linear]] — Linear becomes the system of record. **Turned out to already be ~done** (found 2026-08-18): 65/65 issues mirrored across two Linear projects; `AIRTABLEGC`'s wind-down is now the only open piece.
 - [[2026-08-14 No mandatory PR review while the proxy is pre-production]] — msilva merges his own work; Luís reviews history after the fact.
 - [[2026-08-17 A5 receiver runs on Cloud Run]] — plain container, `min-instances=0`. Records why n8n, Cloudflare Workers and co-location were not chosen, and what would reopen each.
 - [[2026-08-18 Product feedback in Linear, code review in Git]] — **`draft`, demoted from a decision**: the transcript has Gabrielle saying *"não tem martelo batido"*. Kept because the practice is real and observed — **she is the product reviewer**, testing in homologation and returning work via Linear comments, while Luís reviews Yasmin's work in Git. Linear comments never reach Git.

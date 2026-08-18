@@ -1379,3 +1379,32 @@ it is a second, contradictory claim.
   cross-referenced as resolved in the pages that once called them open.
 - Updated: [[Meeting prep - accounting data in Claude - 2026-08-17]],
   [[Proxy Environments]].
+
+## [2026-08-18] refactor | Jira→Linear migration: discovered already done, reconciled
+- msilva asked to plan the `AIRTABLEGC` → Linear migration. Checked Linear directly
+  (`list_teams`, `list_projects`, `list_issues`) instead of waiting on Gabrielle's
+  promised link, and found the migration substantially already complete —
+  most likely an earlier, unlogged Claude Code session run against the design docs
+  (Gabrielle's own documented workflow), never recorded in this wiki.
+- Team `Projetos-livemode`, initiative **Airtable GC - Governança e Confiabilidade**,
+  three projects matching Luís's structure exactly: `Proxy do Airtable` (`PRO-*`),
+  `Proxy expandido para outros apps`, `LiveMode Data Hub (POC)`.
+- Full 1:1 comparison, all 65 `AIRTABLEGC` issues (via paginated JQL, 5-at-a-time —
+  this Jira MCP tool caps page size regardless of `maxResults`) against Linear:
+  **100% parity.** 60 issues in `Proxy do Airtable` (across its 4 milestones
+  F1/F2/F3/Backlog deferido), the remaining 5 (Data Hub epic + its spikes) in
+  `LiveMode Data Hub (POC)`. No issues created — none were missing.
+- Found and fixed 3 status-drift cases where Linear hadn't caught up to Jira's actual
+  state: `PRO-75`, `PRO-77` moved Backlog → Done; `PRO-79` moved Backlog → In
+  Progress (matching Jira's `Em andamento`).
+- `AIRTABLEGC` itself left untouched — msilva's call, deferred pending a separate
+  decision on bulk-transition vs. archive vs. leave-as-is.
+- Updated: [[2026-08-14 Migrate project management from Jira to Linear]] (open
+  question resolved, migration status corrected), [[Linear Project Structure]] (same
+  open question resolved), [[Airtable Proxy]] (current-state callout points at the
+  live Linear project), `index.md` (both banners).
+- Open: `PRO-79`'s description still says `X-Api-Key` is in scope, but Jira's version
+  of the same issue notes it was explicitly deferred (2026-08-14, with Luís) — a small
+  content drift, not just a status one. Not fixed this pass; flagged for msilva.
+  Also open: how/whether to wind down `AIRTABLEGC`; the Business-trial purchase
+  decision ([[Linear Project Structure]]).
