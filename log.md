@@ -796,3 +796,30 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
   A7 → PRD corpus et al).
 - **No decisions/ page written.** Nothing was decided; the criterion change itself
   needs confirming with Gabrielle before 2026-08-24.
+
+## [2026-08-18] synthesis | context retrieval is not a fifteenth agent
+
+- msilva asked whether the shared context-retrieval need warrants a new agent, and
+  answered the two prior open questions: **Orca migration timing unknown**, **no
+  project-start metric**.
+- New: concepts/Agents read primary sources.md — promoted from candidate to a page.
+  Three instances (A5 → Prometheus/Loki, A7 → PRD corpus et al, A1 → Linear + the
+  Airtable board). The rule is what makes *anarchic-first* buildable: cross-agent
+  dependency is forbidden, depending on a data source is not.
+- **Answered: no fifteenth agent.** Decisive reason — a retrieval *agent* would create
+  the cross-agent dependency phase 1 forbids, for A1, A5 and A7 at once. It would also
+  duplicate A6 (which A13 exists to block) and be the intermediary the concept warns
+  against. Build a shared `tools/` layer in the monorepo instead; precedent is Packer's
+  four skills, `orca-linear` among them.
+- **Corollary recorded: A6 splits** into retrieval (tools, now) and curation (an agent,
+  phase 2). This reinterprets the architecture's centrepiece, so it is filed as a
+  recommendation and added to the Gabrielle list, not as settled.
+- Recorded as confirmed-unknown rather than open: Orca timing (**put no date on "A5
+  second"**) and project-start rate (**so A7 cannot be evaluated on utility at all** —
+  itself an argument for A1 + A2).
+- Updated: syntheses/Which agent should be built first.md,
+  syntheses/What should the Agent Flow research phase study.md,
+  projects/Agent Flow.md, index.md
+- New open, all on the concept page: does Gabrielle accept the A6 split? What does
+  `Brain` actually contain and expose — unread, and the highest-value thing to look at
+  before building any retrieval. Access/permission scope for direct reads.

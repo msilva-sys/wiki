@@ -26,8 +26,9 @@ See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 ## Concepts
 - [[Airtable Rate Limits]] — 5 req/s per base, 429 → ~30s lockout, `Retry-After`; the constraint driving the whole programme.
 - [[Packaging as skills]] — converged from six sources: packaging is both the token-cost lever and the sharing mechanism. What it doesn't solve is maintenance.
+- [[Agents read primary sources]] — agents query the underlying data rather than wait for the agent meant to digest it. Three instances (A5, A7, A1); it is what makes *anarchic-first* buildable, and it is why context retrieval is **not** a fifteenth agent. Splits A6 into tools + curation.
 
-_(next candidates: OpenTelemetry, Reverse Proxy Patterns, Grafana LGTM, **Agents read primary sources** — the principle behind A5 querying Prometheus/Loki directly and A7 not being chat-only)_
+_(next candidates: OpenTelemetry, Reverse Proxy Patterns, Grafana LGTM)_
 
 ## People
 _(empty — deliberately; see [[log]] 2026-08-17)_

@@ -90,7 +90,9 @@ for the end of the week beginning 2026-08-17.
   Packer material — none of which she had seen when she suggested it?
 - ~~**Orca or LiveScript?**~~ **Resolved 2026-08-18** — Orca and other services are
   to be plugged into the [[Airtable Proxy]], so it is both, through one chokepoint.
-  Replaced by: **is Orca's migration sequenced or directional, and when?** That is
+  Replaced by: **is Orca's migration sequenced or directional, and when?**
+  **msilva does not know (2026-08-18)** — so ask Gabrielle or Luís, and put no date
+  on "A5 second". That is
   what decides A5's utility date.
 - Does she accept the **narrower reading of opportunity detection** — the proxy
   surfaces *technical* inefficiency, not the product/process opportunity the
@@ -118,13 +120,14 @@ for the end of the week beginning 2026-08-17.
 - **Is there a token budget**, or only the unease recorded in the 1:1?
 - **Where does A6 Curator's memory live** — the agents repo, or this vault, which
   is already a working prototype of memory-as-files?
-- **Who owns context retrieval?** Raised 2026-08-18: A1 needs A6/A13 enrichment,
-  A5 needs Prometheus and Loki, and A7 needs the PRD corpus, `Brain`, Linear, the
-  documentation Hub, the five systems' repos and meeting transcripts. **No agent
-  among the fourteen owns the substrate as a deliverable** — A6 owns it as a
-  *product*, in phase 2. Arguably the first real engineering problem here.
-- **How often does the area start a new project?** Unrecorded, and it decides
-  whether A7 is worth building at all.
+- ~~**Who owns context retrieval?**~~ **Answered 2026-08-18 — not an agent.**
+  See [[Agents read primary sources]]: a shared `tools/` layer in the monorepo, not
+  a fifteenth agent, because a retrieval *agent* would create the cross-agent
+  dependency phase 1 forbids. Corollary: **A6 splits** into retrieval (tools, now)
+  and curation (an agent, phase 2). *Recommendation, not yet agreed with Gabrielle.*
+- **How often does the area start a new project?** **msilva has no metric for this
+  (2026-08-18).** So A7 cannot be evaluated on utility at all — which is itself an
+  argument for A1 + A2, the build that would produce the number. Ask Gabrielle.
 
 ## Corrected along the way
 

@@ -347,15 +347,17 @@ consultant rather than validator.
   **A1 + A2**, which is also **msilva's own position (2026-08-18)**. *Position, not
   decision — nothing is settled, and the criterion itself needs confirming with
   Gabrielle before 2026-08-24.*
-- **Who owns context retrieval?** Raised 2026-08-18 from msilva's point that **A7
-  cannot be chat-only** — it needs the PRD corpus, the `Brain` repo, Linear, the
-  documentation Hub, the five systems' repos and meeting transcripts, not just a
-  conversation. The same substrate is what A1 needs for A6/A13 enrichment and what
-  A5 needs from Prometheus and Loki. **No agent among the fourteen owns it as a
-  deliverable** — A6 owns it as a *product*, and A6 is phase 2 by design. This is
-  arguably the first real engineering problem in the architecture.
-- **How often does the area start a new project?** Unrecorded, and it is the number
-  that decides whether A7 is worth building at all.
+- ~~**Who owns context retrieval?**~~ **Answered 2026-08-18 — it is not an agent.**
+  Raised from msilva's point that **A7 cannot be chat-only**, then asked whether it
+  needed a fifteenth agent. It does not: a retrieval *agent* would create the
+  cross-agent dependency phase 1 forbids, duplicate A6, and be the intermediary that
+  [[Agents read primary sources]] exists to avoid. Build a shared `tools/` layer in
+  the monorepo instead. **Corollary: A6 is two jobs** — retrieval (tools, now) and
+  curation (an agent, phase 2) — which is a reinterpretation of the architecture's
+  centrepiece and so a spec disagreement to raise with Gabrielle explicitly.
+- **How often does the area start a new project?** **msilva has no metric (2026-08-18).**
+  So A7 cannot be evaluated on utility at all — which is itself an argument for
+  A1 + A2, the build that would produce the number.
 - **Does A1 listen passively, or must it still be addressed?** The sharpened
   version of the adoption question. A1's multi-channel capture answers the
   *fragmentation* half of the prior failure — but if every channel still needs a

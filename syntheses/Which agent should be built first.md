@@ -71,9 +71,11 @@ alert payloads.** A7 is the same shape. The instruction has A7 consulting
 A10/A11/A12 to validate — agents that do not exist — so A7 must reach the
 underlying sources directly.
 
-> [!tip] A principle worth naming, now that it has appeared twice
+> [!tip] Now filed as a concept — [[Agents read primary sources]]
 > **Agents read primary sources directly; they do not wait for the agent that was
-> meant to digest it.** Candidate `concepts/` page.
+> meant to digest it.** Three instances (A5, A7, A1). That page also answers why
+> context retrieval is **not** a fifteenth agent, and splits A6 into tools +
+> curation.
 
 What A7 would need to read, from what the wiki knows exists:
 
@@ -486,12 +488,14 @@ Revised 2026-08-18 after the criterion change.
 - ~~**Orca or LiveScript?**~~ **Resolved 2026-08-18** — Orca and other services are
   to be plugged into the [[Airtable Proxy]], so it is both, through one chokepoint.
   What replaces it: **is Orca's migration sequenced or directional**, and roughly
-  when? That is what decides A5's utility date.
-- **How often does the area start a new project?** The number that decides whether
-  A7 is worth building at all. Nothing in the wiki records it.
-- **Who owns context retrieval?** A1 needs A6/A13 enrichment, A5 needs
-  Prometheus/Loki, A7 needs seven sources — and no agent among the fourteen owns the
-  substrate as a deliverable. A6 owns it as a *product*, in phase 2.
+  when? **msilva does not know (2026-08-18)** — so put no date on "A5 second".
+- **How often does the area start a new project?** **msilva has no metric
+  (2026-08-18)**, so A7 cannot be evaluated on utility at all — itself an argument
+  for A1 + A2, the build that would produce the number.
+- ~~**Who owns context retrieval?**~~ **Answered 2026-08-18 — not an agent**; see
+  [[Agents read primary sources]]. What to raise instead: **does she accept the A6
+  split** into retrieval (tools, now) and curation (an agent, phase 2)? It
+  reinterprets the architecture's centrepiece.
 - Does she accept the narrower reading of opportunity detection above?
 - **Is A13 in scope as a second agent, or is deduplication just logic inside A5?**
   See the open direction under risk 3.
