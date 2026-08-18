@@ -150,6 +150,23 @@ full at [[Linear Project Structure]]:
   pre-deferral title/description and "In Progress." Corrected: title and
   description now match Jira's real scope, PR #7 linked as an attachment, status
   → Done.
+- **Fourth gap found 2026-08-18: `PRO-78`'s children were archived, not missing.**
+  msilva asked to create sub-issues for `AIRTABLEGC-38/39/40/41` under `PRO-78`
+  (Auth epic), assuming they'd never been migrated. They had been — as `PRO-80`
+  (Mapa appId), `PRO-81` (Injetar PAT), `PRO-82` (Onboarding), `PRO-83` (Spike:
+  rotação de chaves), correctly typed — but all four were **archived on
+  2026-08-06**, presumably by whatever earlier session did the flat-structure
+  conversion this page already documents. Archived issues don't surface in
+  Linear's normal views, which is why they read as absent.
+  - Given the readout blind-spot this page documents above (**How msilva should
+    structure the issues**), parenting them natively under `PRO-78` would have
+    recreated the exact problem the flat-structure rule exists to avoid. msilva's
+    call: kept flat — `relatedTo` link to `PRO-78` instead of `parentId`,
+    assigned to msilva, state → Todo.
+  - **Not fixed: still archived.** No MCP tool available exposes an
+    unarchive/restore action — `save_issue` updates other fields but leaves
+    `archivedAt` untouched. msilva needs to restore all four manually in the
+    Linear UI before they're visible on the board.
 
 ## Open questions
 

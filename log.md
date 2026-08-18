@@ -1640,3 +1640,26 @@ revisit.
   `Proxy do Airtable` — next pick is one of the F3 Backlog items (`PRO-90`,
   `PRO-84`, `PRO-78`, `PRO-74`) or `PRO-60` (F1 Backlog); msilva hasn't chosen
   yet.
+
+## [2026-08-18] refactor | PRO-78 picked up; four archived children found and relinked
+- msilva confirmed he's actively working `PRO-78` (Auth + multi-app) — moved
+  Todo → In Progress.
+- Cross-checked against Jira's `AIRTABLEGC-5` (same epic): it has 5 children —
+  `AIRTABLEGC-37` (done, this session, see `PRO-79` above) and four more
+  (`-38` map appId, `-39` inject PAT, `-40` onboarding flow, `-41` spike on key
+  rotation) that PRO-78's one-line Linear description doesn't carry.
+- msilva asked to create sub-issues for those four. They already existed —
+  `PRO-80`, `PRO-81`, `PRO-82`, `PRO-83`, correctly typed — but all four were
+  **archived on 2026-08-06**, invisible in Linear's normal views. Not a missing
+  migration; a silent archival, likely from the earlier flat-structure pass.
+- Asked msilva how to relate them to `PRO-78` given the readout blind-spot this
+  same decision documents (native sub-issues are invisible to the weekly AI
+  status readout). He chose **flat**: `relatedTo` link instead of `parentId`.
+  Set on all four, plus assignee → msilva, state → Todo.
+- **Still broken: archived.** No available MCP tool unarchives an issue —
+  `save_issue` silently leaves `archivedAt` in place. msilva must restore
+  `PRO-80/81/82/83` manually in the Linear UI before they'll actually appear.
+- Updated: [[2026-08-14 Migrate project management from Jira to Linear]]
+  (fourth gap recorded under Resolved).
+- Open: the manual restore, above. Also still open from prior entries:
+  `AIRTABLEGC` wind-down, Business-trial purchase decision.
