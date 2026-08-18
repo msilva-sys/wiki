@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-08-17
+updated: 2026-08-18
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -33,6 +33,27 @@ rather than pulling the whole table**, and **which application is calling**.
 Scoped to [[LiveScript]] first, *"mas a ideia é para ser geral para todos os
 serviços aqui da empresa"* — presented internally as company-wide infrastructure,
 not a LiveScript fix ([[2026-08-14 Recap da Semana]]).
+
+> [!important] Orca and other services are planned consumers — msilva, 2026-08-18
+> The plan is to **plug Orca and other services into the proxy**. This makes the
+> company-wide framing above concrete rather than directional, and it reframes the
+> proxy: not [[LiveScript]] infrastructure, but the **shared Airtable data plane**
+> for the area's five systems (CRM, Orca, [[LiveScript]], Taxonomia, [[Pulse]] —
+> [[2026-08-14 Papo de Projetos]]).
+>
+> **Why it matters beyond this page.** One [[Agent Flow]] A5 Watcher on proxy
+> telemetry would eventually cover *every* service behind the proxy, including a
+> business-critical ML system whose automation is valued at ~10 headcount. That
+> resolves the "Orca or LiveScript?" targeting question — it is both, through one
+> chokepoint. See [[Which agent should be built first]].
+>
+> **Open — is Orca the "second Airtable consumer" already recorded below as
+> refetching and over-loading needlessly?** If so, anti-pattern detection has a
+> named first customer. *(unverified: not stated; the two facts are recorded
+> separately and may or may not be the same system.)*
+>
+> **Open — is the migration sequenced or directional?** Whether Orca is queued
+> behind GC-5 or merely intended decides when A5's utility actually arrives.
 
 ## Why this project exists
 

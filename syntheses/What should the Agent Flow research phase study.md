@@ -1,13 +1,25 @@
 ---
 type: synthesis
 status: active
-updated: 2026-08-17
+updated: 2026-08-18
 date: 2026-08-17
 aliases: [agent flow research, research agenda, agent flow status]
 tags: [agents, research, planning, index]
 ---
 
 # What should the Agent Flow research phase study?
+
+> [!warning] The selection criterion changed on 2026-08-18
+> msilva's manager wants the agent with the **most utility** built first. Everything
+> in the *Settled* table below that concerns **which** agent goes first was settled
+> under a different test — *lowest risk of failing*. The A5 design details still
+> hold; the choice of A5 is reopened.
+>
+> **msilva's position, 2026-08-18: A1 + A2 first** — a position, not a decision.
+> Full reasoning both ways: [[Which agent should be built first]].
+>
+> Two new facts feed it: **Orca and other services are to be plugged into the
+> [[Airtable Proxy]]**, and **A7 cannot be chat-only**.
 
 **Status board and router for [[Agent Flow]]'s research phase.** This page tracks
 *what is settled and what is open*; the reasoning lives on the pages it points to.
@@ -35,7 +47,7 @@ tags: [agents, research, planning, index]
 |---|---|
 | **AI-First** — agents execute, humans approve. Autonomy is the default | [[Fluxo Agêntico project instruction]] |
 | **Anarchic first, integrated second** — agents built independently, in production alone, no cross-dependency | ⇧ |
-| **A5 Watcher first**, targeting proxy telemetry | [[Which agent should be built first]] |
+| ~~**A5 Watcher first**, targeting proxy telemetry~~ — **reopened 2026-08-18**: settled under a lowest-risk test, not a utility one | [[Which agent should be built first]] |
 | **A5 does not poll** — Grafana fires, A5 receives. Hybrid: events for incidents, a daily pass for opportunities and liveness | ⇧ |
 | **Grouping + throttling before the agent**, plus a ceiling that fails closed | ⇧ |
 | **Direct access to Prometheus, Loki and the observability stack** — not just alert payloads | ⇧ |
@@ -65,7 +77,8 @@ noise and privacy consequences nobody has discussed. Explicit invocation is chea
 and repeats the recorded failure. The instruction picks neither.
 
 **A5 is immune to both halves** — its input is a system alert: one channel, no
-fragmentation, no invocation, no human in the loop. Which is why it goes first.
+fragmentation, no invocation, no human in the loop. That is why it went first
+**under the lowest-risk criterion** — reopened 2026-08-18, see the warning above.
 
 ## To confirm with Gabrielle before 2026-08-24
 
@@ -75,8 +88,10 @@ for the end of the week beginning 2026-08-17.
 
 - Is **A5 still her recommendation**, given the diagram, the instruction and the
   Packer material — none of which she had seen when she suggested it?
-- **Orca or LiveScript?** Orca has the stronger value story (business-critical ML,
-  ~10 headcount) but **unknown observability and unknown access**.
+- ~~**Orca or LiveScript?**~~ **Resolved 2026-08-18** — Orca and other services are
+  to be plugged into the [[Airtable Proxy]], so it is both, through one chokepoint.
+  Replaced by: **is Orca's migration sequenced or directional, and when?** That is
+  what decides A5's utility date.
 - Does she accept the **narrower reading of opportunity detection** — the proxy
   surfaces *technical* inefficiency, not the product/process opportunity the
   instruction describes?
@@ -103,6 +118,13 @@ for the end of the week beginning 2026-08-17.
 - **Is there a token budget**, or only the unease recorded in the 1:1?
 - **Where does A6 Curator's memory live** — the agents repo, or this vault, which
   is already a working prototype of memory-as-files?
+- **Who owns context retrieval?** Raised 2026-08-18: A1 needs A6/A13 enrichment,
+  A5 needs Prometheus and Loki, and A7 needs the PRD corpus, `Brain`, Linear, the
+  documentation Hub, the five systems' repos and meeting transcripts. **No agent
+  among the fourteen owns the substrate as a deliverable** — A6 owns it as a
+  *product*, in phase 2. Arguably the first real engineering problem here.
+- **How often does the area start a new project?** Unrecorded, and it decides
+  whether A7 is worth building at all.
 
 ## Corrected along the way
 

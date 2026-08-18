@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-08-17
+updated: 2026-08-18
 ---
 
 # Index
@@ -15,8 +15,8 @@ See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 > [[Proxy Environments]]. Reported by every `lint` since the first.
 
 ## Projects
-- [[Airtable Proxy]] — Go reverse proxy fronting the Airtable API. Primary track. Active work: app auth + key distribution.
-- [[Agent Flow]] — proposed multi-agent architecture for the area's intake and delivery; design only. Second track, starts 2026-08-17.
+- [[Airtable Proxy]] — Go reverse proxy fronting the Airtable API. Primary track. Active work: app auth + key distribution. **Orca and other services are planned consumers** (2026-08-18) — it is the area's shared Airtable data plane, not LiveScript infrastructure.
+- [[Agent Flow]] — proposed multi-agent architecture for the area's intake and delivery; design only. Second track, started 2026-08-17. **Which agent to build first is reopened** (2026-08-18): the criterion changed from lowest-risk to utility.
 - [[Pulse]] — outsourced front-end for the business pipeline. Not msilva's, but he joins the immersion week for context.
 
 ## Systems
@@ -27,7 +27,7 @@ See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 - [[Airtable Rate Limits]] — 5 req/s per base, 429 → ~30s lockout, `Retry-After`; the constraint driving the whole programme.
 - [[Packaging as skills]] — converged from six sources: packaging is both the token-cost lever and the sharing mechanism. What it doesn't solve is maintenance.
 
-_(next candidates: OpenTelemetry, Reverse Proxy Patterns, Grafana LGTM)_
+_(next candidates: OpenTelemetry, Reverse Proxy Patterns, Grafana LGTM, **Agents read primary sources** — the principle behind A5 querying Prometheus/Loki directly and A7 not being chat-only)_
 
 ## People
 _(empty — deliberately; see [[log]] 2026-08-17)_
@@ -57,8 +57,8 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 - [[Meeting prep - accounting data in Claude - 2026-08-17]] — prep notes for the 2026-08-17 accounting-data-in-Claude meeting.
 
 ## Syntheses
-- [[What should the Agent Flow research phase study]] — **status board and router** for the agent research: what's settled, what's open, what to ask before Gabrielle's leave.
-- [[Which agent should be built first]] — A5 Watcher on proxy telemetry, and why. Includes the case against it, why A1 is the better second build, and the GC-5 timing dependency.
+- [[What should the Agent Flow research phase study]] — **status board and router** for the agent research: what's settled, what's open, what to ask before Gabrielle's leave. The A5-first row is struck through as of 2026-08-18.
+- [[Which agent should be built first]] — **now answers two criteria.** Lowest-risk (2026-08-17) → A5 Watcher on proxy telemetry; utility (2026-08-18) → the intake pair A1 + A2, also msilva's position. Both arguments kept in full, plus why A7 cannot be chat-only.
 - [[How to implement A5 Watcher]] — build plan: alert rules as code, throttling as cost control, Linear as dedup store, and how to build most of it before GC-5 lands.
 - [[How LiveScript sends the proxy X-App-Id header]] — GC-5 client side: **implemented** via a `pnpm patch` (SDK) + centralized REST injection; data-plane honours the endpoint, metadata pinned direct. Corrects the "drop the PAT / X-Api-Key" onboarding model.
 

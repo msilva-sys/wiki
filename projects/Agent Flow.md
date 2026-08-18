@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: research
-updated: 2026-08-17
+updated: 2026-08-18
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -106,6 +106,14 @@ blocks**), A14 PM Agent (request through to delivery).
 Nothing states what emits it — but the [[Airtable Proxy]]'s telemetry and A5
 Watcher are the two obvious candidates, which would make it the concrete
 integration point between msilva's two projects.
+
+> [!note] Resolved in part, 2026-08-18 (msilva)
+> **Orca and other services are to be plugged into the [[Airtable Proxy]]**,
+> so the proxy becomes the shared Airtable data plane for the area rather than
+> LiveScript-specific infrastructure. That makes proxy telemetry the credible
+> `Bug (sistema)` producer for *several* business-critical systems at once,
+> including Orca — and it retires the "Orca or LiveScript?" targeting question.
+> Timing is the open part: see [[Which agent should be built first]].
 
 A longer-term ambition, from the onboarding: once built for this area, the flow
 could be adapted and reused by other areas, helping them produce more structured
@@ -331,11 +339,23 @@ consultant rather than validator.
 
 - **Where do the human gates sit?** Autonomy itself is settled; which steps are
   gated is not. See *Design approach* above.
-- **Which agent to build first, and where does it live?** Worked through on
-  2026-08-17 — see [[Which agent should be built first]]. Recommendation: **A5
-  Watcher, targeting the [[Airtable Proxy]]'s telemetry**, because it is the only
-  agent that needs no human initiative. Pending confirmation with Gabrielle before
-  her leave.
+- **Which agent to build first?** **The selection criterion changed on 2026-08-18** —
+  msilva's manager wants the agent with the **most utility** first, where the
+  2026-08-17 analysis had optimized for lowest risk of failing. Both readings are
+  worked through in [[Which agent should be built first]]. Under lowest-risk the
+  answer was **A5 Watcher on proxy telemetry**; under utility it is the intake pair,
+  **A1 + A2**, which is also **msilva's own position (2026-08-18)**. *Position, not
+  decision — nothing is settled, and the criterion itself needs confirming with
+  Gabrielle before 2026-08-24.*
+- **Who owns context retrieval?** Raised 2026-08-18 from msilva's point that **A7
+  cannot be chat-only** — it needs the PRD corpus, the `Brain` repo, Linear, the
+  documentation Hub, the five systems' repos and meeting transcripts, not just a
+  conversation. The same substrate is what A1 needs for A6/A13 enrichment and what
+  A5 needs from Prometheus and Loki. **No agent among the fourteen owns it as a
+  deliverable** — A6 owns it as a *product*, and A6 is phase 2 by design. This is
+  arguably the first real engineering problem in the architecture.
+- **How often does the area start a new project?** Unrecorded, and it is the number
+  that decides whether A7 is worth building at all.
 - **Does A1 listen passively, or must it still be addressed?** The sharpened
   version of the adoption question. A1's multi-channel capture answers the
   *fragmentation* half of the prior failure — but if every channel still needs a

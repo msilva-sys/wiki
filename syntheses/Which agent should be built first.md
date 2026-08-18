@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-08-17
+updated: 2026-08-18
 date: 2026-08-17
 aliases: [first agent, A5 first, which agent first]
 tags: [agents, planning, a5, a1, a7]
@@ -9,12 +9,163 @@ tags: [agents, planning, a5, a1, a7]
 
 # Which agent should be built first?
 
-Worked through on 2026-08-17. **Conclusion: A5 Watcher, targeting the
-[[Airtable Proxy]]'s telemetry** — but the reasoning matters more than the answer,
-because two of the obvious justifications don't hold up.
+> [!warning] The selection criterion changed on 2026-08-18 — read this first
+> This page was written on 2026-08-17 to answer **"which agent is least likely to
+> fail?"** and concluded **A5 Watcher on [[Airtable Proxy]] telemetry**.
+>
+> On 2026-08-18 msilva reported that **his manager's criterion is utility** — build
+> the agent with the most utility first. *(Recorded neutrally as "msilva's manager";
+> provenance unconfirmed. It matters: if the criterion came from Gabrielle it is a
+> soft withdrawal of her own A5 suggestion, and the top item on the
+> confirm-before-2026-08-24 list is answered. If it came from above her, that item
+> stays open.)*
+>
+> **Those are different questions with different answers.** The A5 reasoning below
+> is preserved intact — it is still correct, it just answers the older question.
+>
+> **msilva's own position, stated 2026-08-18: A1 + A2 first.** Recorded as a
+> position, not a decision. Nothing has been decided.
+
+Two criteria have now been applied, and they give different answers. **Under
+lowest-risk-of-failing (2026-08-17): A5 Watcher, targeting the [[Airtable Proxy]]'s
+telemetry** — the reasoning matters more than the answer, because two of the
+obvious justifications don't hold up. **Under utility (2026-08-18): the intake
+pair, A1 + A2**, which is also msilva's own position.
 
 Companion to [[What should the Agent Flow research phase study]], which covers the
 wider agenda. This page answers the narrow question.
+
+## Under a utility criterion — the live question (2026-08-18)
+
+The 2026-08-17 analysis optimized for *feasibility and adoption risk*. A utility
+test re-ranks everything, and this page's own case against A5 is where it lands:
+**least agent-shaped, most cost-exposed, teaches least.** None of that mattered
+under "least likely to fail"; all of it matters under "most useful".
+
+### A5's utility ceiling went up; its utility date went out
+
+**New fact, 2026-08-18 (msilva): the plan is to plug Orca and other services into
+the [[Airtable Proxy]].** This makes concrete what the proxy page already recorded
+as directional — *"a ideia é para ser geral para todos os serviços aqui da
+empresa"* ([[Airtable Proxy]]). A confirmation of stated intent, not a new
+direction.
+
+- **"Orca or LiveScript?" stops being a choice** and comes off the
+  confirm-with-Gabrielle list. One A5 on proxy telemetry eventually covers **every
+  service behind the proxy**, including the business-critical ML system whose
+  automation is valued at ~10 headcount ([[2026-08-14 Papo de Projetos]]). This is
+  the strongest utility case A5 has ever had.
+- **Timing is unchanged.** Utility arrives with traffic: GC-5 for [[LiveScript]]
+  first, then an Orca migration that has not started. The ceiling rose; the date
+  moved out.
+
+### A7 cannot be chat-only — raised by msilva 2026-08-18
+
+A7 was the first utility candidate considered, on Packer's evidence that spec
+quality bounds agent quality. **msilva's objection: A7 needs more than one way to
+gather context, spec and PRD material — chat alone is not enough.**
+
+Correct, and it is the same principle already settled for A5 under *risk 4* below:
+**A5 gets direct access to Prometheus, Loki and the observability stack, not just
+alert payloads.** A7 is the same shape. The instruction has A7 consulting
+A10/A11/A12 to validate — agents that do not exist — so A7 must reach the
+underlying sources directly.
+
+> [!tip] A principle worth naming, now that it has appeared twice
+> **Agents read primary sources directly; they do not wait for the agent that was
+> meant to digest it.** Candidate `concepts/` page.
+
+What A7 would need to read, from what the wiki knows exists:
+
+| Source | What it gives A7 | Status |
+|---|---|---|
+| The **PRD corpus** ([[Proxy Environments]]) | House format, worked examples, outcomes for shipped ones | Exists, flagged |
+| The **`Brain` repository** | Institutional memory — already does A6's job ([[2026-08-14 Papo de Projetos]]) | Exists |
+| **Linear** (+ legacy `AIRTABLEGC`) | What is built, in flight, or already requested; Packer's ticket template as target shape | Exists, mid-migration |
+| The **documentation Hub** | Area documentation | Exists, detail thin |
+| **Repos** of the five systems | Real architecture and affected files, both required by Packer's template | Exists |
+| **Proxy telemetry** | Usage evidence — A11's input without A11 | Post-GC-5 |
+| **Meeting transcripts** | Where discovery context is actually said out loud | Exists, ad hoc |
+
+**Consequence: A7 done properly pulls A6 forward.** Every source there is A6
+Curator's job, and A6 is phase 2 by design. A7-with-real-context is not a
+closed-scope agent — it is A7 plus a retrieval layer.
+
+> [!important] Correction to this page's own reasoning
+> A7's independence was previously argued from its input being a conversation. That
+> is too clean. **A7's dependency is not on other agents but on data access** — and
+> *"sem dependência cruzada"* governs agents, not sources. Anarchic-first says
+> nothing about the second kind.
+
+**The important second consequence: the substrate is shared.** A1 is spec'd to
+enrich from A6 and A13; A5 needs Prometheus and Loki; A7 needs the seven sources
+above. **The first real engineering problem in this architecture is context
+retrieval over existing knowledge, and no agent among the fourteen owns it as a
+deliverable.**
+
+### msilva's position — A1 + A2 first
+
+Stated 2026-08-18. **A position, not a decision.**
+
+The pairing matters, because this page's rejection of A1 (below) evaluated **A1
+alone**, and its second objection was that *"with no A2 and no branches, its output
+is a normalized log."* **A1 + A2 defeats that objection by construction**:
+normalize, classify on type/scope/complexity/risk, route. With **humans as the
+three branches**, that is a working system on day one. AI-First puts humans at
+approval gates; phase 1 with humans as executors behind agentic intake is a
+legitimate v1, not a compromise.
+
+**The argument not previously made anywhere:** A1 + A2 is the only build that
+produces **the demand dataset needed to spec the other twelve agents** — what
+arrives, in what mix, at what complexity and risk, at what volume. Every agent
+spec in [[Fluxo Agêntico project instruction]] currently guesses at demand shape,
+including the project-start rate that would decide whether A7 is worth building at
+all. A1 + A2 measures it. Under a utility criterion, **instrumenting the problem
+beats solving one slice of it.**
+
+**On adoption risk — real, but smaller than this page assumed, if sequenced.** Two
+channels carry no adoption risk at all:
+
+- **`Bug (sistema)`** — machine-fed by construction
+- **The existing `Slack form → Airtable base → team board` path** in the *projetos*
+  channel ([[2026-08-14 Recap da Semana]]) — real traffic, existing habit
+
+So **A1 v1 subsumes channels that already carry traffic**, inheriting a habit
+rather than asking for a new one. Passive listening and new surfaces become a
+measurable expansion instead of an upfront bet — which turns the invocation
+problem from a gamble into a sequencing decision.
+
+**Two costs that remain, to be owned explicitly:**
+
+1. **It is a departure from anarchic-first.** Starting at the gateway is
+   integrated-first thinking, and the spec is explicit against it. Per this page's
+   own rule for A1, raise it with Gabrielle **as a disagreement**, not sideways —
+   and she is on leave from 2026-08-24.
+2. **A2's output is an interface commitment.** It is the contract every branch
+   agent will eventually consume, and per Packer a bad spec propagates.
+   *Mitigation*: design it for a **human** consumer first — a triaged queue someone
+   works from — and treat the inter-agent format as a later refactor against real
+   examples.
+
+### Where the analysis lands under utility
+
+Framed as **"instrument the intake first"** rather than "build the gateway first":
+the deliverable is working triage **plus** the demand dataset every other spec
+needs. A5 becomes the natural second — by then GC-5 has landed, Orca may be behind
+the proxy, and `Bug (sistema)` has both a producer and a consumer.
+
+**Still not decided.** The A5 recommendation below is not formally superseded, and
+the criterion change has not been confirmed with Gabrielle.
+
+---
+
+**The sections below answer criterion 1 — lowest risk of failing — and are
+preserved intact as written on 2026-08-17.**
+
+## Criterion 1 — lowest risk of failing (2026-08-17)
+
+Written 2026-08-17, preserved intact. Still correct; it answers the older
+question.
 
 ## The argument that actually carries
 
@@ -315,11 +466,25 @@ Per the spec template's fourth field — what it does **not** do:
 
 ## To confirm with Gabrielle before 2026-08-24
 
-- Is A5 still her recommendation, given the diagram, the instruction and the
-  Packer material — none of which she'd seen when she suggested it?
-- **Orca or LiveScript?** Orca has the stronger value story (business-critical ML,
-  ~10 headcount) but **unknown observability and unknown access**. The proxy route
-  reaches LiveScript's traffic and is fully under msilva's control.
+Revised 2026-08-18 after the criterion change.
+
+- **Does she accept a utility criterion over a lowest-risk one at all?** This is now
+  the question the others hang off. If it came from her, the A5 suggestion is
+  withdrawn and the item below is closed.
+- **Does she back A1 + A2 first**, accepting that it is a deliberate departure from
+  *anarchic-first*? Raise it as a disagreement with the spec, not sideways.
+- ~~Is A5 still her recommendation~~ — **superseded in part.** Still worth asking
+  whether the diagram, the instruction and the Packer material change her view, but
+  the criterion change matters more.
+- ~~**Orca or LiveScript?**~~ **Resolved 2026-08-18** — Orca and other services are
+  to be plugged into the [[Airtable Proxy]], so it is both, through one chokepoint.
+  What replaces it: **is Orca's migration sequenced or directional**, and roughly
+  when? That is what decides A5's utility date.
+- **How often does the area start a new project?** The number that decides whether
+  A7 is worth building at all. Nothing in the wiki records it.
+- **Who owns context retrieval?** A1 needs A6/A13 enrichment, A5 needs
+  Prometheus/Loki, A7 needs seven sources — and no agent among the fourteen owns the
+  substrate as a deliverable. A6 owns it as a *product*, in phase 2.
 - Does she accept the narrower reading of opportunity detection above?
 - **Is A13 in scope as a second agent, or is deduplication just logic inside A5?**
   See the open direction under risk 3.

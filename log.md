@@ -768,3 +768,31 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
   the page most likely to be read first.
 - Verified: no residual false claims anywhere in the vault; the only surviving
   instance of the old wording is inside the correction that quotes it.
+
+## [2026-08-18] query | first agent to build — criterion changed to utility
+
+- Query: msilva thinking about which agent to build first. **His manager's criterion
+  is utility**, where the 2026-08-17 analysis had optimized for lowest risk of
+  failing. Manager recorded neutrally — provenance unconfirmed, asked twice.
+- Three new facts from msilva, all 2026-08-18:
+  - **Orca and other services are to be plugged into the Airtable Proxy** — confirms
+    the already-recorded company-wide intent, and retires the "Orca or LiveScript?"
+    targeting question for A5.
+  - **A7 cannot be chat-only** — it needs multiple context sources to build a PRD.
+  - **His position: A1 + A2 first.** Recorded as a position, not a decision.
+- Updated: syntheses/Which agent should be built first.md (new criterion-1 heading,
+  new utility section ~130 lines, confirm-list rewritten),
+  syntheses/What should the Agent Flow research phase study.md (criterion warning,
+  A5-first row struck, Orca item resolved, two new open questions),
+  projects/Agent Flow.md (open questions rewritten, Bug (sistema) producer note),
+  projects/Airtable Proxy.md (Orca as planned consumer; shared data plane framing),
+  index.md
+- Resolved: "Orca or LiveScript?" — both, through one chokepoint.
+- New open: is Orca's migration sequenced or directional? Is Orca the "second
+  Airtable consumer" already recorded as over-fetching? How often does the area start
+  a new project? **Who owns context retrieval across agents** — nobody among the 14.
+- Candidate concepts/ page noted in index: **Agents read primary sources** — they do
+  not wait for the agent meant to digest it. Two instances now (A5 → Prometheus/Loki,
+  A7 → PRD corpus et al).
+- **No decisions/ page written.** Nothing was decided; the criterion change itself
+  needs confirming with Gabrielle before 2026-08-24.
