@@ -56,6 +56,7 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 - [[2026-08-14 Papo de Projetos]] — area/culture meeting; resolves what Orca is; documentation Hub exists.
 - [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]] — first enablement consultation; diagnoses the $7/day token burn (n8n, wholesale context, probable loop).
 - [[Meeting prep - accounting data in Claude - 2026-08-17]] — prep notes for the 2026-08-17 accounting-data-in-Claude meeting.
+- [[Meeting prep - first agent decision]] — **one-pager** for the deadline meeting with Gabrielle and Luís: recommendation (A1 + A2), the four candidates in a line each, six decisions needed before 2026-08-24. Meeting date not yet recorded.
 
 ## Syntheses
 - [[What should the Agent Flow research phase study]] — **status board and router** for the agent research: what's settled, what's open, what to ask before Gabrielle's leave. The A5-first row is struck through as of 2026-08-18.

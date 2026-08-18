@@ -844,3 +844,18 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
 - Updated: index.md, projects/Agent Flow.md (deliverables 1 and 3 marked drafted),
   syntheses/Which agent should be built first.md (forward pointer)
 - Not published outside the vault; offered.
+
+## [2026-08-18] synthesis | one-pager for the first-agent decision meeting
+
+- New: meetings/Meeting prep - first agent decision.md — one page for the deadline
+  meeting with Gabrielle and Luís, cut down from
+  [[Comparing the first-agent candidates]]: the ask, where we are, the A1 + A2
+  recommendation with its two comparative reasons, four candidates at one line each,
+  the proposed sequence, six decisions needed, and the two things that would flip the
+  answer.
+- **Meeting date is unknown** — recorded as such rather than guessed. Set for "the end
+  of the week beginning 2026-08-17"; the page carries a note to fill the date in and
+  rename, per the meetings/ naming convention.
+- States the anarchic-first departure as a disagreement to raise, not something to
+  work around.
+- Updated: index.md, syntheses/Comparing the first-agent candidates.md (pointer)

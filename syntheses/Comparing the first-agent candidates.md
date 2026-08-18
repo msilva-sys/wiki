@@ -13,6 +13,8 @@ tags: [agents, planning, decision, a1, a2, a5, a7, a4]
 a proposal for which one and where its first version lives.**
 
 > [!info] Relationship to the other pages — read this to avoid drift
+> - **The one-pager** for the meeting itself is
+>   [[Meeting prep - first agent decision]].
 > - **This page** is the *comparison*: motivations, pros, cons, side by side. Written
 >   to be handed to someone else.
 > - [[Which agent should be built first]] is the *reasoning record* — how the
