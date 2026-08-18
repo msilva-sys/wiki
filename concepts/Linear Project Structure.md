@@ -13,9 +13,18 @@ How msilva's area organizes work in Linear. Recorded because
 restructure the [[Airtable Proxy]] issues **however he sees fit**, and left the
 question of *shape* entirely open. This page is the shape.
 
-Source: [[2026-08-18 1-1 Matheus - Gabrielle]], where Gabrielle walked the whole
-method. Note that page's caveat — the raw file is Gemini's paraphrase, not a
-transcript, so there are no verbatim quotes anywhere below.
+Source: [[2026-08-18 1-1 Matheus - Gabrielle]], a screen-share walkthrough. Quotes are
+verbatim from the transcript, including its garbling — *Linear* comes through as
+"liner", *issue* as "iso"/"nicho", *milestone* as "mystone".
+
+> [!important] The conventions are provisional, and msilva is invited to change them
+> Gabrielle, unprompted: *"a gente tá muito nesse processo de entender o melhor fluxo de
+> como criar as coisas no Lin[ear]. Então, não tem muito também um certo nem um errado
+> […] pode ficar à vontade[,] cara[,] [se] ter algum insi[ght], alguma maneira que você
+> tá achando que não tá funcionando[,] de pegar e de mudar."*
+>
+> Read everything below as current practice under active revision, not as policy. Two
+> of the conventions were **changed the day before this meeting**.
 
 ## The hierarchy
 
@@ -25,33 +34,70 @@ transcript, so there are no verbatim quotes anywhere below.
 | **Project** | A **specific segment of value delivery** within the initiative | ⇧ |
 | **Milestone** | A grouping unit for deliveries inside a project's backlog | ⇧ |
 | **Issue / task** | The unit of work. What the status readout counts | ⇧ |
-| **Subtask** | Breakdown inside an issue. **Invisible to the status readout** | [[AI status reporting on Linear]] |
+| **Subissue** | Breakdown inside an issue. **Invisible to the tracking board — by design, drill-down planned** | [[AI status reporting on Linear]] |
+
+In Gabrielle's words:
+
+> *"A gente tá tratando no final a iniciativa como o produto, o sistema, a solução em si
+> e aqui projetos como um pedaço eh uma parte daquela iniciativa."*
 
 The initiative/project distinction is the part that was previously being inferred.
 It is not "big thing / small thing" — it is **solution / delivery segment**, which
 is why one initiative can hold projects that look unrelated.
 
-### The worked example: Airtable governance
+**Her first example is [[LiveScript]]:** the product is the initiative; the version that
+went to production and each subsequent release are its projects. So *release* is a
+natural project granularity, not just *feature area*.
 
-The **Airtable governance** initiative holds three projects:
+### Three worked examples
+
+**Airtable — governance and reliability** (*"governando confiabilidade"*), three
+projects, all created by Luís:
 
 1. the [[Airtable Proxy]];
-2. **expansion to other applications**;
-3. a **Livemode Data Hub**.
+2. **expanding the proxy to other apps beyond LiveScript**;
+3. a **Livemode data hub** — an intermediate database, plausibly the wiki's
+   already-recorded Phase 2. Gabrielle is relaying Luís second-hand and hedges four
+   times; ask him.
 
-Read against the definition, this says the *solution* is governing Airtable access
-company-wide, and the proxy is only the first delivery segment of it. That matches
-msilva's own internal framing of the proxy as company-wide infrastructure rather
-than a [[LiveScript]] fix ([[2026-08-14 Recap da Semana]]) — the initiative
-structure is where that intent is actually encoded.
+Read against the definition, the *solution* is governing and stabilizing Airtable access
+company-wide, and the proxy is one delivery segment. That matches msilva's own internal
+framing of the proxy as company-wide infrastructure rather than a [[LiveScript]] fix
+([[2026-08-14 Recap da Semana]]) — the initiative structure is where that intent is
+actually encoded.
 
-## How work enters
+**[[Farol]]**: the initiative is the product; the current build is project one, and
+**V2** — bronze/prata/ouro layers plus a conversational AI layer — is project two. A
+concrete demonstration that "the V2" is a project, not a roadmap aspiration.
 
-1. **Business rules and context are documented first.** The documentation is the
+**[[Agent Flow]]**, prospectively. Gabrielle: *"talvez quando você for fazer o de agente
+do fluxo agêntico, talvez você iria criar uma iniciativa e aí talvez cada parte ali seria
+um projeto."* Its own initiative, one project per part — which lines up with
+*anarchic-first*, where each agent is independently buildable and independently in
+production.
+
+## How work enters — and Claude does most of it
+
+1. **Business rules, context and PRDs are documented first.** The documentation is the
    input to the roadmap, not a byproduct of it.
-2. Roadmap and backlog are built in Linear from that documentation.
+2. **The documentation goes to Claude, which writes the Linear structure.** This is the
+   step the wiki had reconstructed as manual:
+
+   > *"eu primeiro pego […] alguma documentação ali do projeto em si, mas de produto,
+   > PRDs, etc. E aí eu chego no [Claude] com ele aqui. E aí depois que eu faço isso, eu
+   > peço para ele jogar tudo lá pro [Linear]. E aí ele […] cria tanto a descrição do
+   > projeto […] ele próprio já cria aqui os milestones e aí […] dentro dos milestones vai
+   > subir [issues]. Enfim, ele cria as tarefas sozinho."*
+
+   Project description, milestones, issues and subissues, generated from the templates.
+   See [[Agent Flow]] — this is a running agent workflow, and the wiki previously
+   believed the status readout was the only one.
 3. The backlog is organized into **milestones**, which group deliveries.
-4. Tasks and subtasks hang off those.
+4. Issues and subissues hang off those.
+
+Linear also has a **native description-improving agent** for ad-hoc tasks: *"quando você
+bota a descrição aqui, você tem o agentezinho[que] trata a descrição para dar uma
+melhorada."*
 
 Step 1 is worth noticing: the AI status readout independently identified
 *large-scope projects advance slowly at the start, with early effort going into
@@ -61,93 +107,160 @@ it is the method working as designed. The readout measured the process and repor
 it as a problem, which is its own small lesson about giving an agent a model of
 progress that matches how the team actually works.
 
-## Monitoring
+## Monitoring — the board is not Linear
 
-- A **centralized board** pulls milestones and tasks across multiple projects.
-- Visibility is deliberately kept at **issue level** for clarity; anything more
-  specific means opening the project itself.
-- Project structure is **actively tuned**, not set once — see below.
+The board the team reviews weekly is a **separate in-house tool that pulls from Linear**:
 
-### Restructuring to make the readout accurate
+> *"Ele puxa todos os projetos que estão classificados como em andamento. E aí dentro de
+> cada projeto você consegue selecionar se você quer buscar a fonte do [backlog] do
+> liner, porque nem todos os projetos estão no liner ainda. […] ele puxa aqui todos os
+> milst[ones] que tem lá no liner e as [tasks] dentro dele."*
 
-The team split **"Evolução do Front-End"** from **"Estabilização"** into separate
-projects. The stated reasons:
+- It pulls projects **classified as in-progress**, so a project's classification is what
+  gets it onto the board at all.
+- Per project you choose whether to source the backlog from Linear — because
+  **not every project is in Linear yet**, mid-migration.
+- **Aggregation stops at issue level, deliberately**: *"ele traz a nível de [issue], ele
+  não traz a nível de sub[issue], que é para poder também não ficar tão confuso aqui. A
+  gente precisa só ideia geral […] visibilidade do todo."* Subissue drill-down is planned
+  — *"Eu vou depois liberar aqui também para conseguir clicar e abrir sub[issues]."*
+- It appears to read **Airtable** (*"no final ele tá puxando do Air Table"*), which would
+  make it a proxy candidate. *(unverified — one clause in a garbled passage.)*
 
-- a more accurate read of **completion percentage** — one project mixing new
-  front-end work with remediation produced a number that described neither;
-- easier **bottleneck identification**.
+That closes the standing question on [[AI status reporting on Linear]]: the subtask
+blindness is a **design choice by the tool's owner**, not a defect of unknown origin.
 
-This is the same problem [[AI status reporting on Linear]] documents from the other
-end. The readout reported *Fronte de Negócios* at **6%** against an actual 20–25%,
-and Luís said the 6% frightened more than reality did. The fix the team reached for
-was **not** fixing the agent — it was reshaping the board so the agent's arithmetic
-comes out right.
+**Work outside projects gets a personal board** — a second tab, for things like msilva's
+help to Gabriel. Plus a self-filter (*"tudo que tá no seu nome, ele fica filtrado"*) and
+an **inbox** for comment mentions.
 
-> [!important] The direct lesson for msilva
-> Board structure is a **reporting instrument**, and it is treated as adjustable.
-> Two conventions follow, and they point the same way:
-> - **Split projects along "new work" vs "fixing earlier work"** so the percentage
->   means something.
-> - **Keep issues flat**; subtasks do not roll up. Park found-but-unprioritized
->   work in Luís's `Triagem` column instead of burying it
->   ([[2026-08-17 Weekly - Projetos e Tarefas]]).
+### Restructuring to make the readout accurate — two fixes, not one
+
+The *Fronte de Negócios* project read as *"2% 3% […] acho que se 6%"* complete. Both
+fixes were to the board:
+
+1. **Split the project.** The stabilization project's milestone contained everything in
+   the backlog that was *evolution* rather than stabilization, dragging the number down.
+   They created a separate front-end evolution project and moved it all —
+   *"isso já dá um aspecto mais real […] [da] porcentagem de conclusão do projeto."*
+2. **Break up the single milestone.** All stabilization tasks sat in **one** milestone,
+   so **Carol** could not see where the work stood. Regrouped 2026-08-17; now
+   *"a gente já consegue saber melhor o que realmente tá travado, [o] que a gente já
+   andou."*
+
+Fix 2 carries the sharper lesson, and the first version of this page missed it entirely:
+**milestone granularity is the reporting instrument.** Milestones are the level the board
+*does* count, so a milestone that holds everything is exactly as uninformative as a
+subtask tree — while several well-scoped milestones make progress legible without any
+nesting.
+
+> [!important] Three conventions for msilva, in priority order
+> He is restructuring the proxy backlog this week, and this board is what Gabrielle and
+> Luís see while she is on leave from 2026-08-24.
 >
-> He is restructuring the proxy backlog this week, and this readout is what
-> Gabrielle and Luís see while she is on leave from 2026-08-24.
+> 1. **Several scoped milestones, not one big one.** This is the positive move — it makes
+>    partial progress visible at the level the board reads.
+> 2. **Split projects along "new work" vs "fixing earlier work"** so a percentage means
+>    something. The proxy has that seam: v1 hardening versus new capability.
+> 3. **Keep issues flat**; subissues don't roll up *yet*. Park found-but-unprioritized
+>    work in Luís's `Triagem` column instead of burying it
+>    ([[2026-08-17 Weekly - Projetos e Tarefas]]).
+>
+> Convention 3 is the one with an expiry date — drill-down is planned. Conventions 1 and
+> 2 hold regardless.
 
 ## Teams as the isolation boundary
 
-**Freelancer projects live in separate Linear teams**, for security and access
-control. Teams are the tenancy unit here, not a labelling convenience.
+**Teams are the workspace and permission unit** — *"a gente tem os times que são como se
+fosse o workspace"*. Two exist for freelancers specifically: *"A gente só criou esses dois
+aqui separados porque são com [freela] para ele não ter acesso a todos os nossos outros
+projetos."* The proxy's project sits in the main *projetos* team.
+
+**But initiatives cut across teams:** *"os times é mais como se fosse você dando acesso
+[…] Mas a iniciativa ela olha pro todo projeto, ela não vai ser ligada dentro."* So team
+isolation scopes *access*, not the initiative rollup.
 
 Relevant beyond staffing: it is the only access-control mechanism in the area's
 tooling that has been described at all. If an [[Agent Flow]] agent is ever given
-Linear credentials, the team boundary is what scopes it.
+Linear credentials, the team boundary is what scopes it — with the initiative-level
+caveat above.
 
-## Templates
+## Templates — two kinds, and their author is unhappy with them
 
-Luís authored **Markdown templates** for ticket types — **bugs, spikes, epics** —
-to keep tasks and subtasks consistent in both documentation and flow.
+- **Per-type templates**: Markdown files for **bugs, spikes and epics** —
+  *"o Luís, ele criou uma[s] templates […] para cada tipo de [issue] […] Se é bug, se é
+  spike"*. Applied when the issue is created.
+- **A structural template**: *"como dividir as tarefas em M[ilest]on[e], em épicos, em
+  [issues] e sub[issues]"* — the conventions for what each level means. This is arguably
+  the more valuable of the two, since it encodes the granularity decisions above.
+- A further `.md` **relating the project to Linear and to the skills**.
+- Gabrielle has her own set and rates it poorly: *"o meu eu não achei que tá tão bom."*
 
-This is the concrete local instance of something [[Agent Flow]] treats as a design
-input: *the ticket is the prompt*
-([[Gabriel Packer - DAG-driven agent orchestration]]). A1 and A2 would need a
-target shape to write into, and Packer's ticket template was the only candidate on
-record. **There is now an in-house one.** Whether Luís's templates are rich enough
-to drive an agent — scope, explicit non-goals, affected files — is unknown and
-worth reading before designing A2's output.
+> [!warning] Luís is rewriting his because he dislikes how they turned out
+> *"ele tava ajustando um pouco porque ele não tava gostando muito dos templates de como
+> tavam. Vai também depois perguntar a ele o que que ele achou que tá ficando ruim."*
+>
+> So do not simply adopt them. The templates are the local instance of *the ticket is the
+> prompt* ([[Gabriel Packer - DAG-driven agent orchestration]]), and they are what Claude
+> uses when it authors the backlog — but **their author's account of why they fail in use
+> is the better input** to A2's output contract than the templates themselves. Gabrielle
+> assigned asking him.
 
 ## Slack integration
 
 Linear projects can be wired to specific Slack channels, pushing progress updates
-and task movements automatically. Raised as available, **not configured**.
+and task movements automatically. Available, **not configured** — and Gabrielle offered
+it for the proxy specifically:
+
+> *"dá para você conectar lá no canal do que já existe do proxy e aí botar para ele,
+> tipo, ah, toda vez que você tiver um update, ele post[a] ou sempre que você mover uma
+> tarefa."*
+
+**A proxy Slack channel already exists.** Choose the trigger: every project update, or
+every task movement.
 
 Worth carrying forward: an agent that needs to report to humans may not have to
 build a notification path. If A2 writes a Linear issue, the existing integration
 delivers it. See [[Agent Flow]] and [[How to implement A5 Watcher]], where
 delivery-channel choices are otherwise treated as open.
 
+**Project updates are hand-written weekly.** Gabrielle writes a project health note and
+status each Friday — *"ele traz aqui a saúde do projeto"* — framed as her own practice
+rather than a team requirement. Worth knowing it exists as a surface: it is the narrative
+that sits alongside the computed percentage, and the place a wrong number can be
+qualified in words.
+
 ## Plan constraints
 
-- Free plan caps around **250 issues** — the original reason the Jira migration was
-  postponed.
+- Free plan caps around **250 issues** (*"uma barreira de 250, se não me engano, 150"*) —
+  the original reason the Jira migration was postponed.
 - The team is on a **Business trial expiring 2026-09-09**
   ([[2026-08-18 1-1 Matheus - Gabrielle]]).
-- Gabrielle's stated preference is to stay on Linear.
+- **The purchase is undecided**, not pending: *"pra gente entender qual o plano faz
+  sentido a gente assinar e se faz sentido assinar."*
+- Gabrielle's stated preference is to stay: *"eu particularmente eu gosto do liner, eu
+  acho que a gente vai continuar nele."*
 
-> [!warning] The cap is not permanently gone
+> [!warning] The cap is not permanently gone, and msilva has already hit it
 > [[2026-08-14 Migrate project management from Jira to Linear]] recorded the trial
 > as having *removed* the constraint. It **suspended** it. The trial expires
 > 2026-09-09; Gabrielle returns 2026-09-10. Migrating the `AIRTABLEGC` backlog into
 > the workspace in that window is exactly what fills the cap.
+>
+> And it is not theoretical: Gabrielle to msilva, *"você tomou um rate limit, né? […] não
+> podia mais criar."* He hit the ceiling already, before the migration.
 
 ## Open questions
 
 - **What is the Linear team/project identifier, and what shape are the new issue
-  keys?** Still unanswered as of 2026-08-18, now across three meetings.
-- **Are Luís's templates usable as an agent output contract**, or are they human
-  prose? Read them.
-- **Which initiative does [[Agent Flow]] belong to** — its own, or somewhere
-  existing? Never stated, and it determines where msilva files the research.
-- **Is the Livemode Data Hub a real project or a placeholder?** It was named as a
-  peer of the proxy inside the same initiative.
+  keys?** Still unanswered as of 2026-08-18, now across three meetings. Gabrielle has an
+  open action to send the project link, which answers it.
+- ~~**Which initiative does [[Agent Flow]] belong to?**~~ **Answered** — its own, one
+  project per part (Gabrielle, hedged).
+- **What does Luís think is wrong with his templates?** He is rewriting them. Assigned.
+- **Is the Livemode data hub a real project?** Described as an intermediate database for
+  migrating off Airtable, second-hand and hedged four times. Ask Luís.
+- **Does the tracking board really read Airtable?** If so it is a proxy candidate, and
+  the tool watching msilva's project would sit behind the project itself.
+- **Does a project have to be classified *em andamento* to appear on the board?** Implied.
+  If so, classification is a visibility lever worth knowing about.

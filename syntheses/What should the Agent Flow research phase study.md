@@ -130,32 +130,51 @@ for the end of the week beginning 2026-08-17.
   about Ultra Code, and the same question as the token-cost constraint asked from the
   other end. He owns this one, not Gabrielle.
 
-**Added 2026-08-18 from [[2026-08-18 1-1 Matheus - Gabrielle]].** Note that this 1:1
-was the **last scheduled one before her leave**, so these have no second chance.
+**Added 2026-08-18 from [[2026-08-18 1-1 Matheus - Gabrielle]].** That 1:1 was the
+**last scheduled one before her leave**. Several items here were *answered* by it —
+struck through, kept for the record — and the answers reshape the list.
 
-- **What are the "Tech" and "Humans" accounts?** Tech has daily/monthly caps and can
-  see every flow in the company; Humans has a larger token allowance and an upgrade
-  path. Whether these are **n8n** or the **Claude org account** is genuinely
-  ambiguous in the notes, and it decides where the token-measurement instrument
-  lives — the thing the whole token constraint depends on. **Cheapest high-value
-  question on this list.**
-- **Which initiative does [[Agent Flow]] belong to?** Initiative = product/solution,
-  project = delivery segment ([[Linear Project Structure]]). This project has no
-  recorded home, and that decides whether the research is visible to the weekly
-  readout at all.
-- ~~**What is the AI status readout, mechanically?**~~ Still unanswered, but the
-  team's *revealed* answer arrived: they **restructured the board instead of the
-  agent**, splitting `Evolução do Front-End` from `Estabilização` for a truer
-  completion percentage. Treating the agent as fixed and the board as adjustable is a
-  position; ask whether it is a considered one or just the only lever they had.
-- **Are Luís's ticket templates usable as an agent output contract?** He wrote
-  Markdown templates for bugs, spikes and epics. A2's output shape has until now been
-  modelled on Packer's external template. **Read the in-house ones first** — this is
-  answerable without asking anyone.
-- **Is the Linear Business plan being bought?** Trial expires **2026-09-09**, one day
-  before she returns, with the ~250-issue free cap behind it and msilva migrating the
-  `AIRTABLEGC` backlog in the meantime. Not an agent question, but she is the only
-  person who can authorize it and she leaves on 2026-08-24.
+- ~~**Which initiative does [[Agent Flow]] belong to?**~~ **Answered** — its own, with
+  **one project per agent**, which fits *anarchic-first* exactly. Do this: an initiative
+  with no projects is how the research becomes invisible.
+- ~~**What are the "Tech" and "Humans" accounts?**~~ **Answered, as *both*** — two
+  different tools sharing a naming convention. **Claude plans**: tech is limit-based
+  (daily/monthly, no session windows), *humanos* is seat-based Pro/Max with more tokens
+  and an upgrade path Carol had already requested for msilva. **n8n**: the tech login
+  sees every flow in the company with per-execution token counts, filterable only by name.
+- ~~**What is the AI status readout, mechanically?**~~ **Answered** — an in-house board
+  Gabrielle controls that pulls from Linear, aggregating at issue level **deliberately**,
+  with drill-down planned. The remaining question is narrower and better: **what produces
+  the written insight and the pace classification?** That is the part that got Orca wrong
+  and the only genuinely agent-like part.
+- ~~**Are Luís's ticket templates usable as an agent output contract?**~~ Superseded by a
+  better question: **what does Luís think is wrong with his own templates?** He is
+  rewriting them because he dislikes how they came out. His diagnosis is worth more than
+  the artifact. Gabrielle assigned asking him.
+- **Is the Linear Business plan being bought?** Still open, still deadlined. Trial expires
+  **2026-09-09**, one day before she returns, and *"se faz sentido assinar"* is genuinely
+  undecided. msilva has already hit the free cap once.
+- **How many n8n flows touch Airtable, and who holds which key?** New, and the most
+  consequential of the lot. The citizen flows are intended proxy consumers, nobody knows
+  how many there are, and each author holds their own PAT — [[Airtable Proxy]]. It is a
+  prerequisite for A5 having anything to watch there, and **nobody owns the discovery**.
+- **Is the tracking board an Airtable consumer?** One garbled clause says it pulls from
+  Airtable. If true, the tool that watches msilva's project belongs behind it.
+
+> [!important] Two of this list's premises weakened on 2026-08-18
+> **The token evidence is retracted.** Gabriel switched LLM provider between the $7 run
+> and the 11-centavos run, so *"cost is intermittent, not inherent"* has no clean
+> measurement behind it. Don't design around either hypothesis yet.
+>
+> **The cost constraint is softer than recorded.** Gabrielle told Gabriel that spending
+> more during stabilization is fine and that leadership agrees. Optimizing tokens is a
+> goal, not a gate. Both details: [[Agent Flow]].
+>
+> **And A2's hard part moved.** Claude already writes this area's Linear backlogs from
+> documentation — milestones, issues, subissues, unattended. Ticket *authoring* is
+> solved here; what remains for the intake pair is **classification and routing**, and
+> A1's intake breadth. That sharpens [[Which agent should be built first]] rather than
+> changing its answer.
 
 ## Still open, no owner
 

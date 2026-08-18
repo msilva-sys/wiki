@@ -192,6 +192,36 @@ That flow was diagnosed on 2026-08-17 —
 > ([[How to implement A5 Watcher]]): **you cannot throttle what you cannot see**, and
 > the seeing was a setting nobody had turned on.
 
+> [!danger] The $7-vs-11-centavos evidence is retracted — 2026-08-18
+> The callout above and this section's framing both rest on that comparison. **Gabriel
+> switched LLM provider from Anthropic to GPT between the two runs**, and that is when
+> the flow first worked at all — see the retraction on
+> [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]].
+>
+> "Cost is intermittent, not inherent" no longer has a clean measurement behind it. The
+> loop hypothesis survives on two independent people's judgement (msilva's and
+> Gabrielle's, reached separately) rather than on data. **What that means for this
+> project: the token constraint is still real, but the wiki does not actually know
+> whether wholesale context or runaway execution dominates.** Do not design around the
+> answer until the execution logs produce one.
+
+> [!note] Leadership has authorized higher spend during stabilization — 2026-08-18
+> Gabrielle's guidance to Gabriel: *"talvez é só alinhar que durante esse período de
+> teste você vai gastar um pouco mais e que, tipo, a gente tá OK com isso, sua liderança
+> tá OK com isso, até você estabilizar realmente o fluxo."*
+>
+> She also corrected the budget mechanism he was worried about: there is no hard ~$20
+> ceiling. IT tops up a **company-wide workspace weekly** and each person consumes
+> against their own key — *"não é necessariamente um budget […] que tem que ser recarga
+> pelo cartão."*
+>
+> **This softens the constraint at the top of this section.** The 1:1 framing was that
+> daily spend at experiment scale *"is not obviously sustainable"*. The manager's actual
+> position is that experimentation cost is expected and accepted **until a flow
+> stabilizes**. Optimizing tokens remains an explicit goal; it is not a gate on
+> building. Aligning expectations up front is the recommended move — which is also
+> Luís's answer on Ultra Code, from the other end.
+
 The cost lever is therefore twofold: **narrow fetching** (a design decision per
 agent) and **a correct trigger chain** (an orchestration problem). For A5 Watcher
 at a 5-minute cadence, the second matters more — a runaway loop on a schedule
@@ -332,10 +362,10 @@ Livemode already has more in this space than the architecture diagram suggests:
 - **[[AI status reporting on Linear]] — an agent already running, weekly.** The
   strongest item on this list, added 2026-08-18. An AI reads the area's Linear board
   and produces the status readout the team walks at the top of
-  [[2026-08-17 Weekly - Projetos e Tarefas]]. It is the **only agent-like system in
-  production in this area**, and therefore the only empirical evidence about this
-  architecture that isn't a design document. It produced four real insights and two
-  real failures in one sitting; see that page for what each implies here.
+  [[2026-08-17 Weekly - Projetos e Tarefas]]. **Corrected 2026-08-18: not the only one** —
+  Claude already authors the area's Linear backlogs (see above), and that one works. This
+  remains the most *instructive* case, because it failed in public: four real insights
+  and two real failures in one sitting. See that page for what each implies here.
 - **Ultra Code — the tech lead runs unattended multi-hour agent workflows.** Luís
   tested Claude Code's ultracode on [[Farol]]: it plans a workflow, parallelizes, and
   runs *"4, 5 horas"* unattended. One run took Uber, OnFly and Expresso to
@@ -358,6 +388,44 @@ None of these were mentioned when the project was handed over. Understanding how
 Agent Flow relates to them — complement, replacement, or duplicate — is worth
 doing before designing, particularly given that one of the transversal agents is
 explicitly about **not building the same thing twice**.
+
+## Claude already authors this area's Linear backlogs (2026-08-18)
+
+The single most consequential fact from [[2026-08-18 1-1 Matheus - Gabrielle]], and it
+arrived as an aside describing routine practice:
+
+> *"eu primeiro pego […] alguma documentação ali do projeto em si, mas de produto,
+> PRDs, etc. E aí eu chego no [Claude] com ele aqui. E aí depois que eu faço isso, eu
+> peço para ele jogar tudo lá pro [Linear]. E aí ele […] cria tanto a descrição do
+> projeto […] ele próprio já cria aqui os milestones e aí […] dentro dos milestones vai
+> subir [issues]. Enfim, ele cria as tarefas sozinho."*
+
+Documentation and PRDs in; project description, milestones and issues written into
+Linear, using Luís's templates, unattended. Plus: Luís authors issue context through
+Claude and leaves review comments for Gabrielle from inside it, and Linear itself has a
+**native description-improving agent** (*"o agentezinho[que] trata a descrição para dar
+uma melhorada"*).
+
+> [!important] This corrects the wiki's central claim about local evidence
+> [[AI status reporting on Linear]] was filed as *the only agent-like system actually
+> running in the area*. **It is not.** Backlog authoring is agent-driven, in daily use
+> by the manager, and — unlike the status readout — uncontroversial.
+>
+> The correction cuts both ways. The area has **more** agent adoption than the wiki
+> credited, which strengthens the *"adopts this kind of thing"* read. But it also means
+> the one system this project had been reasoning from was the **atypical** case: the one
+> that failed in public. A working example was sitting in plain sight and nobody
+> described it, because it is just how Gabrielle makes tickets.
+
+**What it means for A2.** A2 Classificador's job includes producing well-formed tickets,
+and the wiki has treated its output shape as an open design question resting on Packer's
+external template. **An agent writing structured Linear issues from context is already
+solved here.** So A2's hard part is not authoring — it is the *classification and
+routing* upstream of it, and the intake breadth of A1. That narrows the first build
+usefully; see [[Which agent should be built first]].
+
+**And it is directly operational today.** msilva must migrate the proxy backlog, has the
+design docs, and now has the established method for doing it. See [[Airtable Proxy]].
 
 ## Infrastructure that already exists in Linear (2026-08-18)
 
@@ -383,22 +451,52 @@ submitting work has to know which gate it is aiming at — different reviewers,
 different rejection criteria.
 
 **An access-control boundary exists.** Freelancer projects are isolated in separate
-**Linear teams**. That is the only described access-control mechanism in the area's
-tooling, and it is what would scope any agent given Linear credentials.
+**Linear teams** — *"para ele não ter acesso a todos os nossos outros projetos."* Teams
+are the workspace/permission unit, and it is what would scope any agent given Linear
+credentials. Note that **initiatives cut across teams** (*"a iniciativa ela olha pro todo
+projeto"*), so an initiative-level view is not constrained by the team boundary — worth
+knowing before assuming team isolation contains anything reading at initiative level.
+
+**A4 Teacher's operating pattern has been stated by the person who owns the role.**
+Gabrielle on the Gabriel consultation: *"A ideia é[:] tu ajudou ele destravar e ele vai
+andar sozinho. […] se ele travar em algum momento, ele procura a gente de novo e a gente
+ajuda[,] ajuda pontual."* Unblock → step back → help on demand. Not continuous teaching,
+and not ownership transfer. That is a tighter spec for A4 than the instruction's
+*"diagnose maturity, generate tutorials, follow execution in real time"*, and it is
+cheaper: the success criterion is **the person proceeding without you**.
 
 **The ticket template is no longer only external prior art.** This project's design
 has leaned on Packer's ticket template as the target output shape for A2
 ([[Gabriel Packer - DAG-driven agent orchestration]] — *the ticket is the prompt*).
-**Luís has authored in-house Markdown templates for bugs, spikes and epics.** Read
-them before designing A2's output: if they already carry scope, explicit non-goals
-and affected files, they are the contract. If they are human prose, the gap between
-them and an agent-consumable spec is itself a finding worth reporting.
+**Luís has authored in-house Markdown templates for bugs, spikes and epics**, plus a
+structural one covering how to divide work across milestones, epics, issues and
+subissues. Gabrielle has her own and rates it poorly (*"o meu eu não achei que tá tão
+bom"*).
 
-> [!question] Which initiative does Agent Flow belong to?
-> Now that initiative/project semantics are known — initiative = product or
-> solution, project = a delivery segment — this project has no recorded home. It is
-> not obviously part of Airtable governance. **Unstated**, and it decides where
-> msilva files the research so it is visible to the weekly readout at all.
+But: **Luís is already rewriting his, because he dislikes how they turned out** —
+*"ele tava ajustando um pouco porque ele não tava gostando muito dos templates de como
+tavam."* So "read the in-house templates" is only half the move. **The valuable artifact
+is Luís's diagnosis of what's wrong with them**, and Gabrielle explicitly assigned
+asking him: *"Vai também depois perguntar a ele o que que ele achou que tá ficando
+ruim."* A template author's account of why his own template fails in use is better input
+to A2's output contract than the template itself.
+
+> [!success] Agent Flow gets its own initiative — Gabrielle, 2026-08-18
+> *"talvez quando você for fazer o de agente do fluxo agêntico, talvez você iria criar
+> uma iniciativa e aí talvez cada parte ali seria um projeto, enfim, acho que talvez
+> depois você entender melhor como ele dividir."*
+>
+> Hedged three times over with *talvez*, and she defers the division to msilva — but it
+> is her answer: **its own initiative, each part a project.** That maps cleanly onto the
+> build strategy. *Anarchic first* means each agent is independently buildable and
+> independently in production, which is exactly what a project is here — a segment of
+> value delivery that stands alone. **One project per agent**, with the four-part spec
+> (inputs/outputs · consults/feeds · success criteria · limits) as the project
+> description.
+>
+> Practical: creating the initiative makes the research **visible to the weekly
+> readout**, which is otherwise the reason work on this track looks like nothing is
+> happening while msilva is heads-down on the proxy.
 
 ## A use case that arrived from the business (2026-08-17)
 

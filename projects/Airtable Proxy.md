@@ -34,35 +34,85 @@ Scoped to [[LiveScript]] first, *"mas a ideia é para ser geral para todos os
 serviços aqui da empresa"* — presented internally as company-wide infrastructure,
 not a LiveScript fix ([[2026-08-14 Recap da Semana]]).
 
-> [!important] The proxy is one of three projects in an **Airtable governance**
-> initiative — Gabrielle, 2026-08-18
+> [!important] A consumer class the wiki had not recorded: the **n8n citizen flows** —
+> Gabrielle, 2026-08-18
+> Unprompted, in [[2026-08-18 1-1 Matheus - Gabrielle]]:
+>
+> > *"Inclusive, conectando com a questão do proxy, a ideia é esses projetinhos eles
+> > passarem pelo proxy também […] todos que use[m Air]table[,] idealmente sim. Só que o
+> > problema é a gente não tem noção de quantos são e cada pessoa tem sua própria
+> > chave. Teria que cada pessoa entrar e dar individualmente a chave. […] a ideia era
+> > ser chave [centralizada]."*
+>
+> The *projetinhos* are the n8n automations colleagues build for themselves — Gabriel's
+> `RR*` flows being the known example. Three facts, all new:
+>
+> 1. **They are intended proxy consumers**, alongside the five named systems. A
+>    different population: many small flows, non-engineer authors, no central registry.
+> 2. **Nobody knows how many hit Airtable.** *"não temos noção de quantos são"* — the
+>    proxy's largest open unknown, and a discovery problem before it is a migration
+>    problem.
+> 3. **Each author holds their own Airtable PAT.** Onboarding them means either every
+>    person surrendering a key, or centralized key distribution.
+>
+> **This validates the current active task from an unexpected direction.** App auth +
+> centralizing key distribution was framed as serving the five systems; the population
+> that *cannot proceed without it* is this one. Per-app keys held by individuals is
+> also a live credential-sprawl problem, not a hypothetical.
+>
+> **Also the strongest utility argument yet for A5.** [[Which agent should be built
+> first]] weighs A5's reach; an unknown number of citizen-built flows, written by
+> people who by Gabrielle's own account do not know what their automations cost, is
+> precisely the population that produces detectable anti-patterns and nobody watching
+> them. But note the ordering: **it cannot be measured until the flows are behind the
+> proxy, and they cannot get behind the proxy until key distribution exists.**
+>
+> **Open — is discovery in scope for msilva?** Enumerating who runs Airtable-touching
+> n8n flows is a prerequisite nobody owns. Gabrielle: *"a gente vai ter que entender
+> melhor [a] maneira de aplicar isso aqui para dentro."*
+
+> [!important] The proxy is one of three projects in an **Airtable governance and
+> reliability** initiative — Gabrielle, 2026-08-18
 > From [[2026-08-18 1-1 Matheus - Gabrielle]], where Linear's semantics were stated
 > for the first time: an **initiative is the product or solution**, a **project is a
-> specific segment of value delivery** ([[Linear Project Structure]]). The Airtable
-> governance initiative holds:
+> specific segment of value delivery** ([[Linear Project Structure]]).
+>
+> > *"se tiver o próprio Air Table aqui governando confiabilidade, o proxy ele tá dentro
+> > dele. Então aqui quando a gente entra nessa iniciativa, a gente tem três projetos
+> > que o Luís tinha criado."*
 >
 > 1. **this proxy**;
-> 2. **expansion to other applications**;
-> 3. a **Livemode Data Hub**.
+> 2. **expanding the proxy to other apps beyond [[LiveScript]]**;
+> 3. a **Livemode data hub**.
+>
+> The initiative's purpose in her words: *"tudo isso é voltado para garantir, né,
+> govern[ança e con]fiabilidade dos dados que hoje a gente consome do A[irtable]."*
+> **Governance *and reliability*** — keep both words. Reliability is what the World Cup
+> data loss was about, and it is the half a purely-governance framing loses.
 >
 > **This is organizational confirmation of the framing below, not a restatement of
 > it.** The company-wide intent was previously only msilva's own verbal framing to
 > the team and Gabrielle's rationale. It is now the shape of the initiative in the
-> tool that runs the area's planning — the *solution* is governing Airtable access
-> company-wide, and the proxy is its first delivery segment. Item 2 is the
-> already-recorded plan to plug Orca and other services in, given a project slot.
+> tool that runs the area's planning. **Luís created all three projects** — so the
+> expansion beyond LiveScript was scoped before msilva arrived.
 >
-> **Item 3 is new information.** A *Livemode Data Hub* has never appeared in this
-> wiki. Sitting inside the same initiative, the natural reading is that it is the
-> proxy's downstream — governed Airtable traffic becoming a governed data layer,
-> which would rhyme with [[Farol]]'s bronze/prata/ouro plan. *(unverified: nothing
-> beyond the name was said. Do not build on this reading.)*
+> **Item 3 — the data hub is probably the wiki's missing Phase 2.** Gabrielle hedges
+> heavily and is relaying Luís second-hand: *"um data hub que ele tava criando da Live
+> Mode que não sei se tem mais detalhes aqui […] Banco de dados intermediári[o] […] Eu
+> acho que é a ideia de ir migrando do air table. Pode ser. Sei. Eu acho que é isso.
+> Deve ser."*
+>
+> An **intermediate database**, with the idea of **migrating off Airtable**. That is
+> the merged programme's Phase 2 as recorded in
+> [[2026-08-10 Onboarding Técnico - Matheus]] and [[LiveScript]] — data that doesn't
+> need to be in Airtable moving to a separate database. This page says below that
+> Phase 2 is **absent from the roadmap**; it is not absent, it is a **sibling project**.
+> *(unverified: this vault's inference from two hedged descriptions matching. **Ask
+> Luís**, not Gabrielle — she said twice she only half-remembers it.)*
 >
 > **Practical consequence for the migration**: msilva is populating **one project**
 > inside this initiative, not modelling the whole programme
-> ([[2026-08-14 Migrate project management from Jira to Linear]]). Phase 2 —
-> LiveScript-only data out of Airtable, recorded below as absent from the roadmap —
-> may belong to a sibling project rather than this one. Worth asking.
+> ([[2026-08-14 Migrate project management from Jira to Linear]]).
 
 > [!important] Orca and other services are planned consumers — msilva, 2026-08-18
 > The plan is to **plug Orca and other services into the proxy**. This makes the
@@ -336,9 +386,19 @@ detail on [[Linear Project Structure]]:
   a format. Issue descriptions are what the product-validation gate reads
   ([[2026-08-18 Product feedback in Linear, code review in Git]]).
 
+**Use the established method rather than doing it by hand.** Gabrielle's own workflow,
+described in [[2026-08-18 1-1 Matheus - Gabrielle]]: hand the documentation and PRDs to
+Claude, ask it to push everything into Linear, and **it writes the project description,
+the milestones, and the issues inside them** using Luís's templates —
+*"ele cria as tarefas sozinho."* The proxy already has the input this expects:
+`airtable-proxy-design.md` and `doc/STATUS_proxy_airtable.md`. This is the area's
+routine practice, not an experiment.
+
 **And a clock.** The Linear Business trial expires **2026-09-09**, with the ~250-issue
-free cap behind it and Gabrielle on leave 2026-08-24 → 2026-09-10. The migration has
-now been assigned three times without moving. Do it this week.
+free cap behind it and Gabrielle on leave 2026-08-24 → 2026-09-10. **msilva has
+already hit that cap once** — Gabrielle: *"você tomou um rate limit, né? […] não podia
+mais criar."* He committed in the 1:1 to moving everything off Jira **today**
+(2026-08-18). Fourth time recorded.
 
 ---
 

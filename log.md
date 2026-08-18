@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-08-17
+updated: 2026-08-18
 ---
 
 # Log
@@ -1076,3 +1076,143 @@ Business trial), not assumed.
 - **`people/` still empty, deliberately.** This source names Yasmin, Luís and a product
   validator role with real ownership attached, and the standing offer to create the
   folder remains declined.
+
+## [2026-08-18] ingest | 1:1 Matheus / Gabrielle (2026-08-18) — re-ingest against the real transcript
+
+- msilva replaced `raw/Matheus _ Gabrielle - 2026_08_18 11_04 GMT-03_00 - Anotações do Gemini.md`
+  with the **actual transcript**. The earlier ingest, two entries above, was written from
+  a version of that file containing **only Gemini's summary blocks**. Re-read in full and
+  the fan-out redone.
+- Rewritten: `meetings/2026-08-18 1-1 Matheus - Gabrielle.md` (from scratch, with quotes)
+- Updated: `concepts/AI status reporting on Linear.md`,
+  `concepts/Linear Project Structure.md`,
+  `decisions/2026-08-18 Product feedback in Linear, code review in Git.md` (**demoted**),
+  `decisions/2026-08-18 Save n8n execution logs for audit.md`,
+  `projects/Airtable Proxy.md`, `projects/Agent Flow.md`, `projects/Farol.md`,
+  `meetings/2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow.md`,
+  `syntheses/What should the Agent Flow research phase study.md`, `index.md`
+
+**The rewrite was not cosmetic — the summary had omitted load-bearing material and
+misrepresented one thing outright.** Recording what changed, because it is the clearest
+evidence yet about what Gemini's summaries are worth.
+
+### Retracted
+
+- **The $7-vs-11-centavos comparison is not clean.** *"Ontem ele trocou o provider, ele
+  tava usando [An]tropic[,] que trocou pro GPT[,] e o fluxo dele funcionou, ele falou que
+  foi a primeira vez que funcionou."* **Gabriel changed LLM provider between the two
+  runs.** The summary omitted this entirely. Gabrielle names the confound herself.
+  *"Same flow, same day, therefore cost is intermittent"* — the wiki's most-propagated
+  inference — loses its evidence. The loop hypothesis survives on two people's
+  independent judgement, not on data. Retraction filed on the CazéTV page and echoed on
+  [[Agent Flow]] and the research synthesis.
+- **The product-feedback split is not a decision.** The summary said feedback *"foi
+  centralizado exclusivamente na plataforma"*. The transcript: *"não tem um o o martelo
+  martelo batido de qual que é o melhor fluxo."* Page **demoted to `status: draft`,
+  `decided_by: nobody`**, kept because the *practice* is real and five pages link to it.
+  Whether it belongs in `decisions/` at all is msilva's call — flagged, not moved.
+
+### Answered
+
+- **Agent Flow gets its own Linear initiative, one project per agent** — Gabrielle,
+  hedged three times with *talvez* but it is her answer. Lines up with *anarchic-first*:
+  a project is a segment that stands alone, which is what each agent is meant to be.
+- **The status readout's mechanism.** Not a Linear feature and not a vendor tool: an
+  **in-house board Gabrielle controls** (*"nosso repórter"*) that pulls in-progress
+  projects from Linear. **The subtask blindness is deliberate** — *"ele traz a nível de
+  [issue], ele não traz a nível de sub[issue], que é para poder também não ficar tão
+  confuso"* — and **drill-down is already planned.** So it is a design trade-off with an
+  owner and a plan, not a defect of unknown origin. Reclassified on that page; the
+  "would msilva fix it?" suggestion is correspondingly weaker.
+- **"Tech" vs "Humans" resolves as *both*** — the ambiguity the previous ingest declined
+  to guess at was two different tools sharing a naming convention. **Claude plans**: tech
+  is limit-based (daily/monthly, no session windows), *humanos* is seat-based Pro/Max
+  with more tokens and an upgrade Carol had already requested for msilva. **n8n**: the
+  tech login sees every company flow with per-execution token counts, searchable by name
+  only, sorted by recency — which is also the mechanism behind Gabriel's runs being
+  pushed down the list.
+- **The n8n defaults, precisely.** Failed executions **are** saved by default; successful
+  production ones are not. So the earlier "logging was off" was too broad, and it
+  explains the symptom that baffled both of them — *"tava running, aí quando terminava
+  sumia"*. A run vanishing **on completion** is that default working as designed. It also
+  answers "was it turned off?": no. The flow started **succeeding**.
+- **Gabrielle is the product reviewer.** Not an unnamed role. She tests in the interface,
+  against **homologation** rather than production, and approves/comments/returns. Luís
+  reviews Yasmin's work in Git instead, because he is checking implementation not
+  behaviour — so the split is two reviewers with different questions, not a policy.
+
+### New, and operationally the most useful
+
+- **The n8n citizen flows are meant to go behind the proxy.** Unprompted, at 00:28:09:
+  *"a ideia é esses projetinhos eles passarem pelo proxy também […] todos que use[m
+  Air]table[,] idealmente sim. Só que o problema é a gente não tem noção de quantos são e
+  cada pessoa tem sua própria chave."* An entire consumer class the wiki had not
+  recorded — many small flows, non-engineer authors, **no registry**, and **each author
+  holding their own Airtable PAT**. This validates *centralizing key distribution* as the
+  active task from an unexpected direction: the five named systems could be onboarded
+  without it; this population cannot. Also the strongest utility argument yet for A5 —
+  with the ordering caveat that nothing can be measured until the flows are behind the
+  proxy, and they cannot get there until key distribution exists. **Discovery is
+  unowned.**
+- **Claude already authors this area's Linear backlogs.** *"eu peço para ele jogar tudo lá
+  pro [Linear] […] ele próprio já cria aqui os milestones e aí […] dentro dos milestones
+  vai subir [issues]. Enfim, ele cria as tarefas sozinho."* Documentation and PRDs in;
+  project description, milestones, issues and subissues out, using Luís's templates.
+  **This corrects the wiki's claim that the status readout was the only agent-like system
+  running here** — a *working* one was in plain sight and nobody described it, because it
+  is just how Gabrielle makes tickets. Two consequences: msilva's migration action item
+  has an established method (hand `airtable-proxy-design.md` to Claude), and **A2's hard
+  part is not authoring** — it is classification and routing, plus A1's intake breadth.
+- **The budget anxiety was partly a misread mechanism, and leadership authorized the
+  spend.** No hard ~$20 ceiling: IT tops up a company-wide workspace weekly and each
+  person consumes against their own key. Gabrielle to Gabriel: *"durante esse período de
+  teste você vai gastar um pouco mais e […] a gente tá OK com isso, sua liderança tá OK
+  com isso, até você estabilizar realmente o fluxo."* Softens the token constraint on
+  [[Agent Flow]] from a gate to a goal.
+- **The second restructuring fix, which the summary had reduced to one.** Besides
+  splitting evolution out of the stabilization project, they **broke up a single
+  milestone** holding all stabilization tasks, because **Carol** could not see where the
+  work stood. Regrouped 2026-08-17. That is the sharper lesson: **milestone granularity
+  is the reporting instrument** — milestones are the level the board *does* count, so
+  several scoped ones make partial progress visible without any nesting. Promoted to the
+  first of three conventions for msilva.
+- **The data hub is probably the wiki's missing Phase 2.** *"Banco de dados
+  intermediári[o] […] Eu acho que é a ideia de ir migrando do air table. Pode ser. Sei.
+  Eu acho que é isso. Deve ser."* Four hedges, relayed second-hand from Luís. If right,
+  [[Airtable Proxy]]'s note that Phase 2 is *absent from the roadmap* is wrong — it is a
+  sibling project. Recorded as this vault's inference. **Ask Luís, not Gabrielle.**
+- **msilva had already hit the Linear free cap**: *"você tomou um rate limit, né? […] não
+  podia mais criar."* The trial deadline stops being abstract. He committed to migrating
+  everything off Jira **today**.
+- **The conventions are explicitly provisional and he is invited to change them**:
+  *"não tem muito também um certo nem um errado […] pode ficar à vontade[,] cara[,] [se]
+  ter algum insi[ght] […] de pegar e de mudar."*
+- **Luís is rewriting his own templates because he dislikes them** — *"vai também depois
+  perguntar a ele o que que ele achou que tá ficando ruim."* So "read the in-house
+  templates" was half an answer; **his diagnosis of why they fail in use is the better
+  input** to A2's output contract. Recorded on three pages.
+- **A4 Teacher's operating pattern, from the person who owns the role**: *"tu ajudou ele
+  destravar e ele vai andar sozinho […] se ele travar em algum momento, ele procura a
+  gente de novo e a gente ajuda[,] ajuda pontual."* Unblock, step back, help on demand —
+  tighter and cheaper than the instruction's "diagnose maturity, generate tutorials,
+  follow execution in real time", with a clean success criterion: the person proceeds
+  without you.
+- **Also new**: initiatives cut across teams (so team isolation scopes access, not
+  rollup); Linear has a native description-improving agent; a **proxy Slack channel
+  already exists** and the integration was offered for it specifically; project updates
+  are hand-written weekly by Gabrielle; subissue-to-PR is not 1:1; and **Linear comments
+  never reach Git**, so review history genuinely lives in two unsynced places.
+
+### Lesson about the sources themselves
+
+Gemini's summary blocks are **not a substitute for the transcript**. Across this one file
+they omitted a provider switch that invalidates a cross-page inference, omitted an entire
+proxy consumer class, omitted a running agent workflow, collapsed two structural fixes
+into one, and **inverted a "nothing is decided" into a decision**. Everything they *did*
+report was directionally right, which is what makes them dangerous: the failure mode is
+confident omission, not visible error. **Prefer transcripts; when only a summary exists,
+say so as loudly as the first version of the meeting page did.**
+
+Transcript attribution is also collapsed here — every line is credited to Gabrielle,
+including msilva's own questions and his commitment to migrate. Third file with this
+defect, and the second where it runs in this direction.

@@ -24,20 +24,53 @@ walks through at the top of [[2026-08-17 Weekly - Projetos e Tarefas]].
 > *about* Farol, so "the farol reported no deliveries" parses either way. It means
 > **Farol's row in the readout**, not the readout naming itself.
 >
-> **This system still has no recorded name.** Nobody in the transcript named it —
-> itself a small finding, given it is the only agent-like system running in the area.
+> **The closest thing to a name is Gabrielle's** *"nosso repórter"* — our reporter,
+> 2026-08-18. Nobody has given it a proper one.
 
-This page exists because it is **the only agent-like system actually running in
-msilva's area**, and therefore the only source of empirical evidence about
-[[Agent Flow]] that isn't a design document. Everything else — the 14-agent
-architecture, the build strategy, the candidate comparison — is on paper.
+This page exists because it was believed to be **the only agent-like system actually
+running in msilva's area**, and therefore the only source of empirical evidence about
+[[Agent Flow]] that isn't a design document.
 
-> [!warning] What this page does not know
-> Who built it, what it runs on, whether it is Linear's own feature or something
-> the team wired up, what prompt or data it gets, and whether it runs on a
-> schedule. None of this was said. It is *used* in the meeting, not explained.
-> **Ask Luís or Gabrielle** — see the open questions below. Every claim here is
-> inferred from how the team talked about its output.
+> [!warning] Corrected 2026-08-18 — it is not the only one
+> [[2026-08-18 1-1 Matheus - Gabrielle]]: **Claude already writes the area's Linear
+> backlogs.** Gabrielle hands it documentation and PRDs and it creates the project
+> description, the milestones, and the issues inside them, using Luís's templates —
+> *"ele cria as tarefas sozinho."* Linear also has a native description-improving
+> agent, and Luís authors issue context through Claude.
+>
+> That is a second running agent-like system, and a **better-behaved** one: daily use
+> by the manager, no disputes recorded. This page's evidence is still the most
+> *instructive* — a system failing in public teaches more than one that works — but the
+> "only agent running here" framing was an artifact of nobody having described routine
+> practice. See [[Agent Flow]].
+
+> [!success] Mechanism found 2026-08-18 — and the subtask blindness is deliberate
+> Gabrielle walked the tool on screen in [[2026-08-18 1-1 Matheus - Gabrielle]]. It is
+> **an in-house board Gabrielle controls**, not a Linear feature and not a vendor tool.
+> She calls it *"nosso repórter"* — the closest thing to a name anyone has used.
+>
+> - It **pulls from Linear**: *"Ele puxa todos os projetos que estão classificados como
+>   em andamento […] ele puxa aqui todos os milst[ones] que tem lá no liner e as
+>   [tasks] dentro dele."*
+> - Per project you choose whether to source the backlog from Linear, *"porque nem
+>   todos os projetos estão no liner ainda"* — so its inputs are heterogeneous
+>   mid-migration.
+> - **The subtask blindness is a design choice, not a bug**: *"ele traz a nível de
+>   [issue], ele não traz a nível de sub[issue], que é para poder também não ficar tão
+>   confuso aqui. A gente precisa só ideia geral […] visibilidade do todo."*
+> - **Drill-down is already planned**: *"Eu vou depois liberar aqui também para
+>   conseguir clicar e abrir sub[issues]."*
+> - It appears to read **Airtable** — *"no final ele tá puxando do Air Table, então só
+>   você botar API do Air Table ou pelo MCP do próprio [Claude]"* — which would make it
+>   an [[Airtable Proxy]] candidate. *(unverified: one clause in a garbled passage.)*
+>
+> **This reframes the mechanical failure below.** It is not an agent that cannot sum
+> subtasks; it is a board deliberately aggregating one level up to cut noise, whose
+> owner intends to add the missing level. The flat-issues advice still holds — but as
+> adapting to a temporary setting, not to a broken system.
+>
+> Still unknown: what generates the *written insight* and pace classification, whether
+> that part is scheduled, and whether it reads anything beyond the board.
 
 ## It got real things right
 
@@ -65,7 +98,12 @@ late-task list.
 
 **1. Subtask blindness — a mechanical defect.** It treats a parent issue as
 undelivered until the whole thing is done, and ignores progress on subtasks. Two
-measured misreadings in one readout:
+measured misreadings in one readout.
+
+*Reclassified 2026-08-18: **not a defect, a deliberate aggregation level** — see the
+mechanism callout above. The misreadings below are real; the cause is a design
+trade-off (clarity over completeness) that its owner plans to revisit, not a summation
+bug.*
 
 | Project | Reported | Actual, per the owner |
 |---|---|---|
@@ -145,10 +183,20 @@ instead of buried as subtasks.
 [[2026-08-18 1-1 Matheus - Gabrielle]] answers what the team actually did about the
 misreadings, and it is not what this page assumed.
 
-They **split "Evolução do Front-End" from "Estabilização"** into separate Linear
-projects. Gabrielle's stated reasons were a more accurate read of **completion
-percentage** and easier **bottleneck identification** — the two things the 6%
-misreading destroyed. Nobody proposed changing the readout.
+They made **two** structural fixes, both to the board:
+
+1. **Split the project.** Everything in the backlog that was *evolution* rather than
+   *stabilization* sat in the stabilization project's milestone, dragging the
+   percentage down. They created a separate front-end evolution project and moved it
+   all across — *"isso já dá um aspecto mais real […] [da] porcentagem de conclusão."*
+2. **Break up the single milestone.** All stabilization tasks were in **one**
+   milestone, so **Carol** could not see where the work stood. Regrouped 2026-08-17;
+   now *"a gente já consegue saber melhor o que realmente tá travado, [o] que a gente
+   já andou."*
+
+Nobody proposed changing the readout. Fix 2 is the one with the sharper lesson:
+milestone *granularity* is what makes progress legible, and it is the level the board
+does count.
 
 That is a coherent choice rather than a capitulation. One project mixing new
 front-end work with remediation produces a percentage describing neither, and the
@@ -162,26 +210,37 @@ invisible in a well-named project. And it does nothing about the second failure
 class, reasoning past the evidence. **Two of the three problems are untouched**, and
 the one being worked is the one the team can fix without owning the agent.
 
-So the pattern is: **the board is treated as the adjustable component, and the agent
-as fixed.** Whether that is because nobody can change it or nobody has tried is
-still open below. For msilva it is the operative fact either way — see
-[[Linear Project Structure]], where the board conventions this implies are collected.
+So the pattern is: **the board is treated as the adjustable component, and the
+aggregation level as fixed.** Not because nobody can change it — Gabrielle owns the
+tool and intends to add subissue drill-down — but because reshaping the board fixed
+the immediate misreading and the drill-down is a later improvement. For msilva the
+operative fact is unchanged: see [[Linear Project Structure]], where the board
+conventions are collected.
+
+**And he is invited to change them.** Gabrielle, on the method as a whole: *"a gente
+tá muito nesse processo de entender o melhor fluxo […] não tem muito também um certo
+nem um errado […] pode ficar à vontade[,] [se] ter algum insi[ght], alguma maneira que
+você tá achando que não tá funcionando[,] de pegar e de mudar."* The conventions are
+provisional by the manager's own account.
 
 ## Open questions
 
-- **What is it, mechanically?** Linear's own feature, a team-built agent, or a
-  vendor tool. Determines whether the subtask summation is fixable at all. As of
-  2026-08-18 the team's revealed answer is *treat it as unfixable* — the board got
-  restructured instead. Not the same as knowing it is unfixable.
-- **Does it read anything beyond Linear?** The context it lacked on Orca exists in
-  the Hub and in `Brain` — if it reads only the board, that failure was
-  structural and predictable.
-- **Is the subtask defect known and being fixed**, or was 2026-08-17 the first
-  time anyone said it out loud? Luís opened the meeting saying the team may need
-  *"começar a organizar de uma forma diferente"*, which reads like the team
-  adapting to the tool rather than the reverse.
-- **Would it be a candidate for msilva to fix or replace?** It is a working
-  agent with a known defect, a real audience, and a weekly slot — an unusually
-  well-defined target. Nobody proposed this; it is this page's suggestion, and
-  it belongs on the list for
+- ~~**What is it, mechanically?**~~ **Answered 2026-08-18** — an in-house board
+  Gabrielle controls, pulling from Linear at issue level by design. See the callout at
+  the top.
+- ~~**Is the subtask defect known and being fixed?**~~ **Answered** — it is a
+  deliberate aggregation level, and drill-down is planned. Not a defect anyone is
+  hunting.
+- **Does it read anything beyond Linear?** Still open, and now sharper: it appears to
+  read **Airtable** too, per one garbled clause. The context it lacked on Orca exists
+  in the Hub and in `Brain`. Confirm the Airtable dependency first — if real, the board
+  that watches msilva's project is itself a candidate to sit **behind** it
+  ([[Airtable Proxy]]).
+- **What produces the written insight and the pace classification?** The aggregation is
+  explained; the *analysis* is not. This is the part that got Orca wrong, and it is the
+  only part that is actually agent-like.
+- **Would it be a candidate for msilva to fix or replace?** Weaker now than when this
+  page proposed it. The mechanical half has an owner with a plan, so the remaining
+  target is the judgment half — smaller, and harder to specify. Still worth raising,
+  but no longer the unusually well-defined build it looked like. On the list at
   [[What should the Agent Flow research phase study]].

@@ -27,8 +27,17 @@ record.
 
 ## What it is
 
-Consolidates data from **several platforms' APIs into a single database**
-(Gabrielle, 2026-08-18). Concretely, per
+**Farol is a Linear *initiative*, and the current build is its first project**
+([[Linear Project Structure]]). Gabrielle, 2026-08-18:
+
+> *"quando a gente vai também, por exemplo, no farol, que é o que o [Luís] tá tocando
+> agora com a Yasmin, dentro dele a gente tem o primeiro projeto, que seria esse farol,
+> que é o que a gente tá construindo agora, que é pegando […] as AP[I]s de cada
+> plataforma, juntando tudo isso no banco. E a gente teria a V2, que é uma evolução dele
+> […] pegando os dados da bronze, botando na ouro, na prata, botando ali uma camada
+> conversacional de com IA."*
+
+So V2 is **project two inside the initiative**, not a vague roadmap item. Concretely, per
 [[2026-08-14 Recap da Semana]] and [[2026-08-17 Weekly - Projetos e Tarefas]]: it
 pulls **corporate travel data** — **Uber, OnFly, Expresso** — for the finance team,
 replacing manual spreadsheet work.
@@ -49,7 +58,7 @@ replacing manual spreadsheet work.
 
 ## The V2 plan
 
-Stated by Gabrielle on 2026-08-18:
+Quoted above. Two parts:
 
 1. **Data layers — bronze / prata / ouro.** The medallion architecture. Bronze
    already exists as the current phase, so V2 is adding silver and gold on top of a

@@ -114,11 +114,35 @@ run and ~$7 on a bad one is running away intermittently, not paying a fixed
 premium for wholesale context. Both are still worth fixing, but they aren't
 equally responsible.
 
+> [!danger] Retracted 2026-08-18 — the two runs may not be comparable
+> The paragraph above is the wiki's most-propagated inference and it rests on the two
+> runs differing only in luck. They did not. **Gabriel switched LLM provider from
+> Anthropic to GPT the day before**, and that is when the flow first worked at all —
+> Gabrielle, [[2026-08-18 1-1 Matheus - Gabrielle]]: *"ontem ele trocou o provider,
+> ele tava usando [An]tropic[,] que trocou pro GPT[,] e o fluxo dele funcionou, ele
+> falou que foi a primeira vez que funcionou."*
+>
+> She flags the confound herself: *"não faço ideia do por[quê,] só [de mu]dado o
+> provider melhorou […] pode ser só isso ou pode ser que ele tava dando muito
+> contexto."*
+>
+> **What survives:** $7 happened, 11 centavos happened, and a run that costs $7 for
+> this workload is not explicable by context volume alone. **What does not survive:**
+> "same flow, same day, therefore cost is intermittent." A model change between the
+> two measurements is too large a variable.
+>
+> The loop hypothesis is **not refuted** — Gabrielle reached it independently, for
+> msilva's reason: *"Eu não achei que […] justificava[m] 7. A minha ideia era algum
+> loop […] só que aí como eu não tinha esses lo[g]s de execução, fiquei perdido."* Two
+> people converging is worth something. But it is a hypothesis with no clean
+> measurement behind it, and **the execution logs are what would settle it** —
+> [[2026-08-18 Save n8n execution logs for audit]].
+
 > [!warning] Corrects a claim carried across three pages
 > [[Agent Flow]], [[What should the Agent Flow research phase study]] and
 > [[2026-08-14 1-1 Matheus - Gabrielle]] all treat ~$7/day as the flow's
 > characteristic cost. It is the **bad-case** cost. The good case is two orders of
-> magnitude cheaper.
+> magnitude cheaper — **on a different model**, per the retraction above.
 
 **A token-consumption dashboard exists.** msilva asked whether the team can see
 per-period consumption; Gabriel believed so — *"não acredito que seja nenhum
@@ -155,8 +179,15 @@ and Gabriel could catch errors from them; now they don't reliably show —
 > one of them.
 >
 > It also unblocks the two msilva action items below, which cannot be worked without
-> execution history. *(unverified: the notes say "the tools" without naming n8n —
-> see the confidence note on the decision page.)*
+> execution history.
+>
+> **Confirmed n8n, and the defaults are more specific than first recorded**
+> (transcript read 2026-08-18): **failed executions *are* saved by default; successful
+> production ones are not.** Gabrielle walked the UI — three-dots menu → settings —
+> and changed it during the call for at least one flow. This explains the symptom that
+> baffled both of them exactly: *"tava running, aí quando terminava sumia"* — a run
+> vanishing **on completion** is what "don't save successful production executions"
+> looks like from the outside.
 
 ### Two distinct failure classes, separated
 
