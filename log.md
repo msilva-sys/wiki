@@ -1346,3 +1346,36 @@ it is a second, contradictory claim.
   it isn't mentioned in `Orca Next Version`'s own roadmap. Confirm "Pedrinho" (2026-08-17
   weekly) = Pedro Alves (unverified nickname match). Has the E1 MAM/IVC legal spike
   started?
+
+## [2026-08-18] lint | full health check, then two fixes
+- **Links**: zero broken wikilinks. Every `[[...]]` target across all 44 pages resolves
+  to a real page, including the two created earlier today ([[Orca (CDE)]],
+  [[Orca Next Version]]).
+- **Orphans**: none. Every content page has at least one inbound link (checked against
+  the full link graph, index.md and log.md links counting as real inbound).
+- **Dead-ends**: only [[Zed Cheatsheet]] (0 outbound, 1+ inbound) — already known and
+  previously judged correct for a keybindings reference; left alone again.
+- **`raw/` coverage**: fully covered. `README.md` is the folder's own instructions, not
+  a source; `Novo(a) Documento de Texto.txt` is empty and already tracked as such; both
+  CazéTV Gemini exports (15_02 and 15_31) are cited together in one meeting's
+  frontmatter; everything else has a 1:1 `sources/` or `meetings/` page.
+- **Stale claims (30+ days)**: none — every page's `updated:` falls within
+  2026-08-11–2026-08-18, and this vault is 8 days old.
+- **Intra-page contradictions** (pages edited 3+ times per `git log --name-only`):
+  checked all 19 — 7 already covered earlier today during the Orca ingest, the
+  remaining 12 read fresh. Two real findings, both fixed:
+  1. **[[Meeting prep - accounting data in Claude - 2026-08-17]]** — frontmatter said
+     `updated: 2026-08-14`, but the body has a "Repointed 2026-08-17" callout describing
+     an edit made to the page that day. Bumped `updated:` to match.
+  2. **[[Proxy Environments]]** — a 2026-08-17 warning said the `AIRTABLE_ENDPOINT_URL`
+     switch "must be flipped only after the header change ships," phrased as still
+     pending. [[How LiveScript sends the proxy X-App-Id header]] (same day) records that
+     change as **shipped** (commits `754896b`, `d565c26`). Reworded to reflect the
+     precondition is met.
+  All other 17 checked pages: internally consistent, corrections properly flagged inline
+  where they exist.
+- **Decisions marked open vs. settled elsewhere**: none found. The two candidates
+  checked (A5 receiver hosting, n8n-logging blocker) are both already correctly
+  cross-referenced as resolved in the pages that once called them open.
+- Updated: [[Meeting prep - accounting data in Claude - 2026-08-17]],
+  [[Proxy Environments]].

@@ -2,7 +2,7 @@
 title: Meeting prep - accounting data in Claude (context window problem)
 type: meeting-prep
 status: draft
-updated: 2026-08-14
+updated: 2026-08-17
 date: 2026-08-14
 meeting: 2026-08-17
 tags: [claude, context-window, accounting, data-engineering, meeting-prep]
