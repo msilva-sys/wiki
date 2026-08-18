@@ -224,6 +224,13 @@ interpretive pass nobody currently makes.
 
 ## Why not A1, the strongest alternative
 
+> [!important] Scope of this section — read with the utility analysis above
+> This evaluates **A1 alone**, under the lowest-risk criterion. Objection 2 below
+> (*"A1 alone produces nothing usable"*) is **answered by pairing A1 with A2**,
+> which is msilva's 2026-08-18 position — see *msilva's position — A1 + A2 first*.
+> Objections 1 and 4 are softened but not removed; **objection 3, invocation,
+> survives** and is the real cost of starting here.
+
 Raised 2026-08-17. Real merits: A1 is where integration value concentrates, its
 spec carries the document's only performance target (**< 10 s**), and an intake
 pipeline partly exists already — Slack form → Airtable → team board
