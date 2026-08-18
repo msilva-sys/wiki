@@ -61,8 +61,8 @@ direction.
   automation is valued at ~10 headcount ([[2026-08-14 Papo de Projetos]]). This is
   the strongest utility case A5 has ever had.
 - **Timing is unchanged.** Utility arrives with traffic: GC-5 for [[LiveScript]]
-  first, then an Orca migration that has not started. The ceiling rose; the date
-  moved out.
+  first, then an Orca migration that has not started, and isn't even mentioned on
+  [[Orca Next Version]]'s own roadmap. The ceiling rose; the date moved out.
 
 ### A7 cannot be chat-only — raised by msilva 2026-08-18
 
@@ -167,10 +167,10 @@ the proxy, and `Bug (sistema)` has both a producer and a consumer.
 > **1. Orca has nothing deployed.** The developer is still on documentation and the
 > wordmap. So "A5 second, once Orca is behind the proxy" is further out than
 > *unscheduled* — the system it would watch is not running. This **widens the gap
-> between A1+A2 and A5** rather than narrowing it. (It also contradicts
-> [[2026-08-14 Papo de Projetos]] recording Orca as in production and
-> indispensable — see the warning in [[Comparing the first-agent candidates]];
-> resolve it before leaning on Orca as A5's value story either way.)
+> between A1+A2 and A5** rather than narrowing it. (This is [[Orca Next Version]]'s
+> next-version roadmap, not the live system — [[2026-08-14 Papo de Projetos]]
+> recording Orca as in production and indispensable describes the *existing*
+> system and both are true at once; resolved in full at [[Orca (CDE)]].)
 >
 > **2. A1 and A2 have a known defect waiting for them.** The team's AI status
 > readout misreports progress because it **ignores subtask progress** — 6% against a
@@ -517,7 +517,8 @@ Revised 2026-08-18 after the criterion change.
 - ~~**Orca or LiveScript?**~~ **Resolved 2026-08-18** — Orca and other services are
   to be plugged into the [[Airtable Proxy]], so it is both, through one chokepoint.
   What replaces it: **is Orca's migration sequenced or directional**, and roughly
-  when? **msilva does not know (2026-08-18)** — so put no date on "A5 second".
+  when? **msilva does not know (2026-08-18)** — it isn't on [[Orca Next Version]]'s
+  own roadmap — so put no date on "A5 second".
 - **How often does the area start a new project?** **msilva has no metric
   (2026-08-18)**, so A7 cannot be evaluated on utility at all — itself an argument
   for A1 + A2, the build that would produce the number.

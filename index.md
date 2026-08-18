@@ -27,13 +27,15 @@ See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 > [[What should the Agent Flow research phase study]].
 
 ## Projects
-- [[Airtable Proxy]] — Go reverse proxy fronting the Airtable API. Primary track. Active work: app auth + key distribution. **Orca and other services are planned consumers**, and so are the **n8n citizen flows** (2026-08-18) — an unknown number of them, each author holding their own Airtable key, which is what makes centralized key distribution the blocker rather than a nicety. One of **three projects** in an *Airtable governance and reliability* initiative; the third, a **data hub**, is probably the wiki's missing Phase 2.
+- [[Airtable Proxy]] — Go reverse proxy fronting the Airtable API. Primary track. Active work: app auth + key distribution. **[[Orca (CDE)]] and other services are planned consumers**, and so are the **n8n citizen flows** (2026-08-18) — an unknown number of them, each author holding their own Airtable key, which is what makes centralized key distribution the blocker rather than a nicety. One of **three projects** in an *Airtable governance and reliability* initiative; the third, a **data hub**, is probably the wiki's missing Phase 2.
 - [[Agent Flow]] — proposed multi-agent architecture for the area's intake and delivery; design only. Second track, started 2026-08-17. **Which agent to build first is reopened** (2026-08-18): the criterion changed from lowest-risk to utility. Also 2026-08-18: it gets **its own Linear initiative, one project per agent** (Gabrielle); **Claude already authors this area's backlogs**, so A2's hard part is classification, not ticket-writing; and the **token-cost evidence is retracted** — a provider switch confounded it.
+- [[Orca Next Version]] — roadmap/backlog planning workspace for [[Orca (CDE)]]'s next version (repo `orca-produto`, access gained 2026-08-18). Not msilva's, tracked for context. 7 milestones, ~28 issues, approved by stakeholders 2026-08-07; nothing deployed to production yet as of the 2026-08-17 weekly.
 - [[Pulse]] — outsourced front-end for the business pipeline. Not msilva's, but he joins the immersion week for context. **Now `deferred` (2026-08-18)**: approval failed, DOR stood down, delay ≥1 month, Copinha window lost.
 - [[Farol]] — travel-data consolidation (Uber, OnFly, Expresso) for finance; Luís + Yasmin. Not msilva's. **V2 adds bronze/prata/ouro layers and a conversational AI layer** — the area's second user-facing AI system. Resolves the *farol* name collision with the status readout.
 
 ## Systems
 - [[LiveScript]] — collaborative script editor, heaviest Airtable consumer, the reason the proxy exists. Also called *roteiros*.
+- [[Orca (CDE)]] — Livemode's computer-vision/audio system proving commercial-insertion display in live sports broadcasts (the CDE, "Comprovante de Entregas"). In production since v3.2.0; business-critical, ~10 headcount worth of automation. **Resolves the "in production" vs. "nothing deployed" contradiction** flagged across five pages — the two statements were about the live system vs. its unshipped next-version roadmap ([[Orca Next Version]]).
 - [[Proxy Environments]] — environment/config reference for the proxy and LiveScript. Credentials redacted 2026-08-17.
 
 ## Concepts

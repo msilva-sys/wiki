@@ -108,12 +108,13 @@ Watcher are the two obvious candidates, which would make it the concrete
 integration point between msilva's two projects.
 
 > [!note] Resolved in part, 2026-08-18 (msilva)
-> **Orca and other services are to be plugged into the [[Airtable Proxy]]**,
-> so the proxy becomes the shared Airtable data plane for the area rather than
-> LiveScript-specific infrastructure. That makes proxy telemetry the credible
-> `Bug (sistema)` producer for *several* business-critical systems at once,
-> including Orca — and it retires the "Orca or LiveScript?" targeting question.
-> Timing is the open part: see [[Which agent should be built first]].
+> **[[Orca (CDE)]] and other services are to be plugged into the
+> [[Airtable Proxy]]**, so the proxy becomes the shared Airtable data plane for
+> the area rather than LiveScript-specific infrastructure. That makes proxy
+> telemetry the credible `Bug (sistema)` producer for *several* business-critical
+> systems at once, including Orca — and it retires the "Orca or LiveScript?"
+> targeting question. Timing is still open — Orca's migration isn't mentioned in
+> its own roadmap ([[Orca Next Version]]) — see [[Which agent should be built first]].
 
 A longer-term ambition, from the onboarding: once built for this area, the flow
 could be adapted and reused by other areas, helping them produce more structured
@@ -300,9 +301,10 @@ carries the motivations, pros and cons for each candidate and a recommendation
 (A1 + A2), plus the eight things needing a decision before 2026-08-24.
 
 Gabrielle's suggestion: start with the **monitoring/watch agent**, scoped to a
-single project rather than the whole portfolio — [[LiveScript]] or Orca were
-named, as the systems under most constant use. Scoping it to one project is how
-the agent picks up real context and gets working in practice.
+single project rather than the whole portfolio — [[LiveScript]] or
+[[Orca (CDE)]] were named, as the systems under most constant use. Scoping it
+to one project is how the agent picks up real context and gets working in
+practice.
 
 > [!note] A5's shape, settled 2026-08-17
 > **A5 does not poll.** Grafana alert rules fire webhooks; A5 receives them. The
@@ -319,8 +321,10 @@ the agent picks up real context and gets working in practice.
 > valued at roughly ten headcount, and *"isso não pode estar fora do ar."* A
 > business-critical system that must not go down makes the value of a monitoring
 > agent self-evident, which is exactly what the prior attempt failed to achieve.
-> [[LiveScript]] is the system msilva knows better; Orca is the one where an
-> alert would obviously matter.
+> [[LiveScript]] is the system msilva knows better; [[Orca (CDE)]] is the one
+> where an alert would obviously matter. Full profile, including why "in
+> production" and "nothing deployed" (2026-08-17) both hold at once:
+> [[Orca (CDE)]].
 
 ## Prior art — a working implementation of the projects branch
 
@@ -597,8 +601,9 @@ consultant rather than validator.
   firehose, with cost, noise and privacy consequences nobody has discussed.
 - How do agents actually talk to each other? The unsolved problem that killed
   the prior attempt.
-- ~~Is **Orca** a distinct system?~~ **Resolved 2026-08-17.** Livemode's Orca is a
-  business-critical **machine-learning** system ([[2026-08-14 Papo de Projetos]]),
-  which makes it a credible first target for the monitoring agent. The unrelated
+- ~~Is **Orca** a distinct system?~~ **Resolved 2026-08-17, confirmed 2026-08-18.**
+  Livemode's Orca is a business-critical **machine-learning** system — see
+  [[Orca (CDE)]], written after msilva gained access to its planning repo — which
+  makes it a credible first target for the monitoring agent. The unrelated
   **Orca** in [[Gabriel Packer - DAG-driven agent orchestration]] is a tool that
   creates git worktrees and runs agent terminals. Same word, no relation.

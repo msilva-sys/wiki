@@ -18,8 +18,8 @@ tags: [agents, research, planning, index]
 > **msilva's position, 2026-08-18: A1 + A2 first** — a position, not a decision.
 > Full reasoning both ways: [[Which agent should be built first]].
 >
-> Two new facts feed it: **Orca and other services are to be plugged into the
-> [[Airtable Proxy]]**, and **A7 cannot be chat-only**.
+> Two new facts feed it: **[[Orca (CDE)]] and other services are to be plugged into
+> the [[Airtable Proxy]]**, and **A7 cannot be chat-only**.
 
 **Status board and router for [[Agent Flow]]'s research phase.** This page tracks
 *what is settled and what is open*; the reasoning lives on the pages it points to.
@@ -91,9 +91,9 @@ for the end of the week beginning 2026-08-17.
 - ~~**Orca or LiveScript?**~~ **Resolved 2026-08-18** — Orca and other services are
   to be plugged into the [[Airtable Proxy]], so it is both, through one chokepoint.
   Replaced by: **is Orca's migration sequenced or directional, and when?**
-  **msilva does not know (2026-08-18)** — so ask Gabrielle or Luís, and put no date
-  on "A5 second". That is
-  what decides A5's utility date.
+  **msilva does not know (2026-08-18)** — it isn't mentioned in
+  [[Orca Next Version]]'s own roadmap — so ask Gabrielle or Luís, and put no date
+  on "A5 second". That is what decides A5's utility date.
 - Does she accept the **narrower reading of opportunity detection** — the proxy
   surfaces *technical* inefficiency, not the product/process opportunity the
   instruction describes?

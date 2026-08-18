@@ -115,11 +115,12 @@ not a LiveScript fix ([[2026-08-14 Recap da Semana]]).
 > ([[2026-08-14 Migrate project management from Jira to Linear]]).
 
 > [!important] Orca and other services are planned consumers — msilva, 2026-08-18
-> The plan is to **plug Orca and other services into the proxy**. This makes the
-> company-wide framing above concrete rather than directional, and it reframes the
-> proxy: not [[LiveScript]] infrastructure, but the **shared Airtable data plane**
-> for the area's five systems (CRM, Orca, [[LiveScript]], Taxonomia, [[Pulse]] —
-> [[2026-08-14 Papo de Projetos]]).
+> The plan is to **plug [[Orca (CDE)]] and other services into the proxy**. This
+> makes the company-wide framing above concrete rather than directional, and it
+> reframes the proxy: not [[LiveScript]] infrastructure, but the **shared Airtable
+> data plane** for the area's five systems (CRM, Orca, [[LiveScript]], Taxonomia,
+> [[Pulse]] — [[2026-08-14 Papo de Projetos]]). Orca's own migration timing is
+> still unconfirmed — it isn't mentioned in [[Orca Next Version]]'s roadmap.
 >
 > **Why it matters beyond this page.** One [[Agent Flow]] A5 Watcher on proxy
 > telemetry would eventually cover *every* service behind the proxy, including a

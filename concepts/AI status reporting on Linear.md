@@ -122,7 +122,7 @@ model of progress disagree. **Fixing this is a convention change as much as a co
 change.**
 
 **2. Missing context — a judgment defect.** It reported that a meaningful share of
-effort goes to fixing prior work, and named Orca as an instance. Gabrielle
+effort goes to fixing prior work, and named [[Orca (CDE)]] as an instance. Gabrielle
 rejected that outright: *"acho que ele não tem o contexto, né?"* Orca is new
 capability, not remediation. The readout had the ticket data and drew a
 conclusion the ticket data cannot support.

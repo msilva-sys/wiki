@@ -1312,3 +1312,37 @@ it is a second, contradictory claim.
 - **`people/` is still empty.** Offered and declined twice. Every ingest since 2026-08-14
   has added named ownership facts that now live in meeting pages instead. Noting, not
   acting.
+
+## [2026-08-18] ingest | orca-produto repo access — Orca resolved
+- msilva gained read access to `orca-produto`
+  (`C:\Users\msilva\projects\orca-produto`), a planning workspace (Claude Code/Cursor)
+  for the next version of Livemode's Orca — not the product's code, which lives at
+  `livemode-org/livemode-comprovante-de-entregas`.
+- Read in full: `README.md`, `PROJETO.md`, `project/DISCOVERY.md`, `project/ROADMAP.md`,
+  `assistant/decisions/2026-08-07-retorno-stakeholders-28-itens.md`,
+  `assistant/meetings/2026-07-17-orca-proximos-passos.md`, `assistant/actions/TASKS.md`.
+- **New: `systems/Orca (CDE).md`** — Orca is Livemode's name for the CDE (Comprovante
+  de Entregas), a computer-vision/audio system proving commercial-insertion display in
+  live sports broadcasts, in production since v3.2.0 (May–Jul 2026), business-critical
+  (~10 headcount worth of automation per [[2026-08-14 Papo de Projetos]]).
+- **New: `projects/Orca Next Version.md`** — the roadmap/backlog planning initiative
+  itself: 7 milestones (E1–E7), ~28 issues, approved by stakeholders 2026-08-07, Linear
+  project "ORCA - Novas Versões". Not msilva's project; tracked for context like
+  [[Pulse]] and [[Farol]].
+- **Resolves a contradiction five pages had flagged or carried unresolved**: "Orca in
+  production and indispensable" (2026-08-14 Papo de Projetos) vs. "Orca: nothing is
+  deployed" (2026-08-17 Weekly) are not in conflict — the first is the live v3.2.0
+  system, the second is the unshipped next-version roadmap. Confirmed, not inferred.
+- Also resolves the older open question on whether Orca is "a real system" or a
+  transcription guess ([[2026-08-10 Onboarding Técnico - Matheus]]) — deleted there,
+  noted as settled by this ingest.
+- Updated: [[Agent Flow]] (3 spots), [[Airtable Proxy]],
+  [[Comparing the first-agent candidates]] (contradiction warning closed out),
+  [[Which agent should be built first]], [[What should the Agent Flow research phase
+  study]], [[Meeting prep - first agent decision]] (4 spots),
+  [[2026-08-10 Onboarding Técnico - Matheus]], [[AI status reporting on Linear]],
+  [[Gabriel Packer - DAG-driven agent orchestration]], `index.md`.
+- Open: is Orca's proxy migration actually sequenced anywhere, or still just intended —
+  it isn't mentioned in `Orca Next Version`'s own roadmap. Confirm "Pedrinho" (2026-08-17
+  weekly) = Pedro Alves (unverified nickname match). Has the E1 MAM/IVC legal spike
+  started?

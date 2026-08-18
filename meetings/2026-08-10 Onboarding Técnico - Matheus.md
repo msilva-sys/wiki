@@ -60,9 +60,9 @@ msilva's first weeks are split between them.
   projects quickly" onboarding design, or is that separate work?
 - Where does the first agent live — inside an existing project's repo, or
   standalone?
-- Is **Orca** a distinct system? Named once as a monitoring candidate alongside
-  LiveScript; nothing else said about it. (unverified: name is a transcription
-  guess)
+- ~~Is **Orca** a distinct system?~~ **Resolved 2026-08-18** — yes: Orca is
+  Livemode's name for the CDE, a business-critical computer-vision/audio system.
+  Not a transcription error. See [[Orca (CDE)]].
 - Does proxy-side 429 retry belong in v1, or in a later phase? See the tension
   noted in [[Airtable Proxy]].
 

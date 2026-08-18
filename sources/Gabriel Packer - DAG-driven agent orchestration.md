@@ -132,7 +132,7 @@ transcription was garbled. Given Luís pointed at this post, he meant a
 general framework. That's now a concrete, worked suggestion rather than a guess.
 
 **The Orca ambiguity — resolved.** Two unrelated things share the name:
-Livemode's **Orca** is a business-critical machine-learning system
+Livemode's **[[Orca (CDE)]]** is a business-critical machine-learning system
 ([[2026-08-14 Papo de Projetos]]); Packer's **Orca** is the tool creating git
 worktrees and running agent terminals. Don't conflate them.
 

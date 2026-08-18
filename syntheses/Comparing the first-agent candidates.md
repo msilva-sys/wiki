@@ -148,11 +148,11 @@ alert.
   Cloud Run, monorepo layout, alert rules as code, explicit limits. See
   [[How to implement A5 Watcher]] and
   [[2026-08-17 A5 receiver runs on Cloud Run]].
-- **Its reach just grew a lot.** Orca and other services are to be plugged into the
-  [[Airtable Proxy]] (msilva, 2026-08-18), so **one A5 eventually covers every service
-  behind the proxy** — including a business-critical ML system whose automation is
-  valued at ~10 headcount ([[2026-08-14 Papo de Projetos]]). This retires the
-  "Orca or LiveScript?" targeting question.
+- **Its reach just grew a lot.** [[Orca (CDE)]] and other services are to be plugged
+  into the [[Airtable Proxy]] (msilva, 2026-08-18), so **one A5 eventually covers
+  every service behind the proxy** — including a business-critical ML system whose
+  automation is valued at ~10 headcount ([[2026-08-14 Papo de Projetos]]). This
+  retires the "Orca or LiveScript?" targeting question.
 - **And it grew again on 2026-08-18: the n8n citizen flows are also intended proxy
   consumers.** Gabrielle, unprompted: *"a ideia é esses projetinhos eles passarem pelo
   proxy também."* An unknown number of small automations written by non-engineers who,
@@ -166,18 +166,23 @@ alert.
 - **Its utility date is unknown, and that is the decisive problem.** Utility arrives
   with traffic: GC-5 must land for [[LiveScript]], then Orca must migrate. **msilva
   does not know whether the Orca migration is sequenced or merely intended
-  (2026-08-18)** — so **no date can be put on this.**
+  (2026-08-18)** — it isn't mentioned in [[Orca Next Version]]'s own roadmap — so
+  **no date can be put on this.**
 - **Orca is not observable yet, which is worse than "unscheduled".** As of the
   2026-08-17 weekly **nothing is deployed** — the developer is still on documentation
   and the wordmap, with deliveries planned for 2026-08-21, 24 and 28 and the project
   targeted to close 2026-08-28 ([[2026-08-17 Weekly - Projetos e Tarefas]]).
 
-  > [!warning] Unresolved contradiction about Orca — do not paper over it
+  > [!success] Resolved 2026-08-18 — not a contradiction, two different scopes
   > [[2026-08-14 Papo de Projetos]] records Orca as **in production and
   > indispensable**, its automation worth ~10 headcount. The 2026-08-17 weekly says
-  > **nothing is deployed.** These may describe different scopes — a live system plus
-  > a current build phase — but nobody has said so. **Resolve this before using Orca
-  > as A5's value story**, because the whole argument rests on it.
+  > **nothing is deployed.** Both are true: the first describes the **existing,
+  > shipped system** (v3.2.0); the second describes **[[Orca Next Version]]**, a
+  > separate next-version roadmap (7 milestones, ~28 issues) that simply hadn't
+  > shipped anything yet. Confirmed via msilva gaining access to the `orca-produto`
+  > planning repo. Full writeup: [[Orca (CDE)]]. What's still open is only whether
+  > *this specific migration* (Orca behind the proxy) is on that roadmap at all —
+  > it isn't mentioned in it.
 - **Least agent-shaped of the fourteen.** Grafana already does scheduled threshold
   checks. Built naively, A5 proves an LLM can do what infrastructure already does,
   more expensively.
@@ -369,7 +374,8 @@ project-start rate in hand.
 
 1. **Which criterion** — utility or lowest-risk? And which reading of utility?
 2. **Does Gabrielle accept A1+A2**, knowing it departs from *anarchic-first*?
-3. **Is Orca's proxy migration scheduled?** Decides whether A5 can be dated at all.
+3. **Is Orca's proxy migration scheduled?** Not on [[Orca Next Version]]'s roadmap
+   as written — decides whether A5 can be dated at all.
 4. **How often does the area start a new project?** Decides whether A7 is worth building.
 5. **Does she accept the A6 split** — retrieval as tools now, curation as an agent in
    phase 2?

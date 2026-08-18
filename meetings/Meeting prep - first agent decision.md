@@ -34,7 +34,8 @@ Four reasons, the first two comparative rather than absolute:
 
 1. **A5 has no date, and it now has two blockers rather than one.** It needs traffic
    through the proxy: GC-5 must land, then Orca must migrate — that migration isn't
-   scheduled. And the **n8n flows people build for themselves are also meant to go
+   scheduled, and isn't even mentioned on [[Orca Next Version]]'s own roadmap. And
+   the **n8n flows people build for themselves are also meant to go
    behind the proxy** (Gabrielle, 2026-08-18) — but nobody knows how many there are and
    **each author holds their own Airtable key**, so that population needs centralized
    key distribution first, and nobody owns finding them.
@@ -64,7 +65,7 @@ raise it than work around it.
 | Candidate | Best thing about it | Worst thing about it |
 |---|---|---|
 | **A1 + A2** intake | Works alone; measures what actually arrives; **ticket-writing already solved in-house**, so it's the smallest build | Departs from anarchic-first; people must still send things |
-| **A5** Watcher | Zero adoption risk; best-specified; one watcher covers every service behind the proxy — **including everyone's n8n flows, which nobody is watching** | **No date, and two blockers** — GC-5, **Orca not observable yet** (nothing deployed as of 2026-08-17), and the n8n population needs key distribution plus a discovery step nobody owns |
+| **A5** Watcher | Zero adoption risk; best-specified; one watcher covers every service behind the proxy — **including everyone's n8n flows, which nobody is watching** | **No date, and two blockers** — GC-5, **[[Orca (CDE)]]'s own team not observable yet** (nothing deployed on their next-version roadmap as of 2026-08-17 — the *current* Orca system is in production), and the n8n population needs key distribution plus a discovery step nobody owns |
 | **A7** Discovery | Highest ceiling — spec quality bounds everything downstream | Can't be chat-only, so it drags A6's retrieval layer in with it |
 | **A4** Teacher | Saves the most human time; the only automation on the enablement front | Vaguest spec; needs people to opt in; may duplicate the Claude Code training programme |
 
@@ -81,8 +82,8 @@ project-start rate in hand.
 2. **Is departing from anarchic-first acceptable** to start at intake? *(Related: you
    suggested Agent Flow gets its own initiative with each part a project — that
    structure is anarchic-first. Starting at intake cuts against it.)*
-3. **Is Orca's proxy migration scheduled?** This is what decides whether A5 can be
-   dated at all.
+3. **Is Orca's proxy migration scheduled?** Not on [[Orca Next Version]]'s roadmap
+   as written. This is what decides whether A5 can be dated at all.
 4. **How often does the area start a new project?**
 5. **A6 split** — retrieval as shared tooling now, curation as an agent in phase 2?
 6. **Who owns finding the n8n flows that hit Airtable?** You said nobody knows how many
@@ -98,5 +99,6 @@ issues into Linear as routine practice. Dropped, and replaced above.
 - **If "utility" means value-if-it-works → A7**, not A1 + A2. I would then need the
   retrieval layer built first, which is a materially bigger first build.
 - **If Orca becomes observable soon → A5** gets a date and becomes competitive again
-  on exactly the grounds it was first suggested. As of 2026-08-17 nothing is deployed;
-  the project is targeted to close 2026-08-28.
+  on exactly the grounds it was first suggested. As of 2026-08-17 nothing is deployed
+  on [[Orca Next Version]]'s roadmap; that project is targeted to close 2026-08-28,
+  but the proxy migration itself isn't on it — see [[Orca (CDE)]].
