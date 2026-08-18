@@ -141,6 +141,14 @@ full at [[Linear Project Structure]]:
   issues (`PRO-60,74,75,77,78,79,84,90`) to msilva. This matters beyond bookkeeping:
   [[Linear Project Structure]] describes a personal self-filter view keyed on
   assignee — none of msilva's actual work was visible there until this fix.
+- **Third gap found 2026-08-18: content drift on `PRO-79`.** Jira's
+  `AIRTABLEGC-37` recorded a scope change the Linear copy never picked up — the
+  `X-App-Id` enforcement was implemented and merged (PR #7,
+  `livemode-org/livemode-airtable-proxy`), while `X-Api-Key` was explicitly
+  deferred (decision with Luís, 1:1 of 2026-08-14). Linear still showed the
+  pre-deferral title/description and "In Progress." Corrected: title and
+  description now match Jira's real scope, PR #7 linked as an attachment, status
+  → Done.
 
 ## Open questions
 

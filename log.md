@@ -1620,3 +1620,23 @@ revisit.
   times (21 candidates) — only the ones that changed since the last full
   read (six sessions ago) were re-read fresh; the rest were already verified
   clean twice and nothing has touched them since.
+
+## [2026-08-18] refactor | PRO-79 content drift closed out
+- Closed the `PRO-79` open item flagged in the migration-reconciliation entry
+  above. Compared Linear's `PRO-79` against Jira's `AIRTABLEGC-37` directly
+  (`get_issue`, `getJiraIssue`): Jira recorded a scope change Linear never
+  picked up. `X-App-Id` enforcement was implemented and merged
+  (PR #7, `livemode-org/livemode-airtable-proxy`) — 401 on missing/unknown
+  `X-App-Id`, 403 on base outside the app's allow-list, PAT injection + header
+  strip, denial telemetry, tests green. `X-Api-Key` was explicitly deferred
+  (decision with Luís, 1:1 of 2026-08-14), not dropped.
+- msilva confirmed PR #7 has landed. Updated `PRO-79`: title →
+  "Validar app por X-App-Id (X-Api-Key adiado)", description rewritten to match
+  Jira's real scope, PR #7 linked as an attachment, status Backlog/In Progress
+  → **Done**.
+- Updated: [[2026-08-14 Migrate project management from Jira to Linear]]
+  (third gap recorded under Resolved).
+- Open: still no other issue in Todo/In Progress for msilva in
+  `Proxy do Airtable` — next pick is one of the F3 Backlog items (`PRO-90`,
+  `PRO-84`, `PRO-78`, `PRO-74`) or `PRO-60` (F1 Backlog); msilva hasn't chosen
+  yet.
