@@ -32,6 +32,11 @@ telemetry** — the reasoning matters more than the answer, because two of the
 obvious justifications don't hold up. **Under utility (2026-08-18): the intake
 pair, A1 + A2**, which is also msilva's own position.
 
+> [!tip] Looking for the shareable version?
+> [[Comparing the first-agent candidates]] is the clean decision doc — motivations,
+> pros and cons side by side, written to be handed to someone else. **This page is
+> the reasoning record** and remains the authority where the two disagree.
+
 Companion to [[What should the Agent Flow research phase study]], which covers the
 wider agenda. This page answers the narrow question.
 

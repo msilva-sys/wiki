@@ -232,6 +232,10 @@ Work starts **2026-08-17**, splitting time with the [[Airtable Proxy]].
 2. **One agent actually built.**
 3. A proposal for which one, and where its first version lives.
 
+**Deliverables 1 and 3 are drafted**: [[Comparing the first-agent candidates]]
+carries the motivations, pros and cons for each candidate and a recommendation
+(A1 + A2), plus the eight things needing a decision before 2026-08-24.
+
 Gabrielle's suggestion: start with the **monitoring/watch agent**, scoped to a
 single project rather than the whole portfolio — [[LiveScript]] or Orca were
 named, as the systems under most constant use. Scoping it to one project is how

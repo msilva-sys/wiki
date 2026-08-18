@@ -823,3 +823,24 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
 - New open, all on the concept page: does Gabrielle accept the A6 split? What does
   `Brain` actually contain and expose — unread, and the highest-value thing to look at
   before building any retrieval. Access/permission scope for direct reads.
+
+## [2026-08-18] synthesis | first-agent candidate comparison (decision doc)
+
+- msilva asked for a doc covering motivations, pros and cons for building each
+  candidate first.
+- New: syntheses/Comparing the first-agent candidates.md — deep treatment of
+  **A1+A2, A5, A7, A4**; brief on A3, A13, A14, A10-A12, A6; a side-by-side table;
+  facts that apply whichever is chosen; a recommendation (**A1 + A2**) with the
+  sequence behind it; and eight things to decide before 2026-08-24.
+- **Division of labour recorded on both pages to prevent drift**: the new page is the
+  *comparison*, written to be handed to someone else; [[Which agent should be built
+  first]] stays the *reasoning record* and remains the authority where they disagree.
+- Makes the choice of utility reading explicit rather than implicit — expected value
+  (value x P(works) x frequency), with "what it teaches" as tiebreak. Notes that under
+  "value if it works" the answer flips to A7.
+- Two cells in the comparison table are marked honestly unmeasurable: A7's frequency
+  of use (no project-start metric) and A5's time to first value (Orca migration
+  unscheduled).
+- Updated: index.md, projects/Agent Flow.md (deliverables 1 and 3 marked drafted),
+  syntheses/Which agent should be built first.md (forward pointer)
+- Not published outside the vault; offered.
