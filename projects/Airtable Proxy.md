@@ -262,6 +262,35 @@ Pulumi IaC (phase 4), rate-limiting (phase 5), metadata cache (phase 6).
 > The reordering is also why the issues are being restructured during
 > [[2026-08-14 Migrate project management from Jira to Linear]].
 
+> [!note] Confirmed again 2026-08-17, by msilva to the whole team
+> In [[2026-08-17 Weekly - Projetos e Tarefas]] he reported both services running
+> locally and integrated (*"já consegui rodar tanto o [proxy] quanto o live script na
+> minha máquina. Já fiz a integração entre os dois"*), the ticket's metrics being
+> captured, and **proxy authentication as the current work** — *"saber de quem tá se
+> comunicando com o proxy, pra gente conseguir ter o controle melhor de métricas,
+> observabilidade e tal."* Third independent confirmation, and the first stated to
+> the team rather than in a 1:1.
+
+---
+
+## Restructuring the issues in Linear — shape matters (2026-08-18)
+
+The migration is msilva's task and the restructuring is sanctioned
+([[2026-08-14 Migrate project management from Jira to Linear]]). What was missing
+was any guidance on *shape*, and there now is some:
+
+The team reviews an **AI-generated status readout** weekly, and it **ignores subtask
+progress** — it reports a parent issue as undelivered until the whole thing is done.
+Measured effect on a real project in the same meeting: **6% reported against 20–25%
+actual**, which produced a stated near-panic from Gabrielle. See
+[[AI status reporting on Linear]].
+
+**So: flat issues, not deep subtask trees.** This is not cosmetic — the deadline
+conversation for this project is happening in the week of 2026-08-17, msilva has the
+shortest track record on the team, and the readout is what Gabrielle and Luís see
+between conversations. Luís's `Triagem`-column convention is the complement: park
+found-but-unprioritized work there, where it's visible, instead of nesting it.
+
 ---
 
 ## Corrected learning roadmap
@@ -298,6 +327,27 @@ These remain open (design §14):
   but scoped to *metadata only* given the attachment-URL constraint.
 - Pulumi language (Go / TS / Python); notification channel (Slack / PagerDuty /
   email); where the app API-key map lives first; one base or all bases in v1.
+
+**Added 2026-08-18, from [[2026-08-17 Weekly - Projetos e Tarefas]] — two consumers
+nobody connected to this project in the room:**
+
+- **Fronte de Negócios wants an automated test suite *isolated from Airtable*,** and
+  is deciding that week whether to run it. Luís: the manual test cases are
+  *"bem chatos"* and doing them by hand is *"impossible"*. Isolation from Airtable is
+  precisely what a controllable chokepoint offers — but nobody suggested the proxy,
+  and the likely default is mocks or a separate base. **Worth raising while the
+  decision is still open**, and worth knowing that a project two weeks from
+  production is an Airtable consumer.
+- **The matriz external-events flow** proposes writing into the matriz through an
+  automation, with a requirement to log who created and who cancelled each record —
+  i.e. attribution on Airtable writes. That is the same problem `X-App-Id` solves for
+  reads. See the use-case note in [[Agent Flow]] and the tables in
+  [[Proxy Environments]].
+
+Both are **read/write consumers arriving independently**, which strengthens the
+shared-data-plane framing this page already carries for Orca — and note that Orca
+itself, as of 2026-08-17, still has **nothing deployed to production**, so it is not
+yet the second consumer in practice.
 
 **To verify (couldn't check myself):** the repo is on a network share with no
 visible `.git`, so I can't confirm the "8 commits / acceptance passed" claims in

@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-17
+updated: 2026-08-18
 date: 2026-08-14
 decided_by: Gabrielle Ferreira
 source: "[[2026-08-14 1-1 Matheus - Gabrielle]]"
@@ -40,11 +40,48 @@ reordered** the issues once, to keep msilva inside the proxy and out of
 - Issue IDs will change. Any page citing a Jira key should eventually carry the
   Linear equivalent.
 
+## Why the proxy was in Jira in the first place (2026-08-17)
+
+Not a leftover — a deliberate tool trial. Luís, in
+[[2026-08-17 Weekly - Projetos e Tarefas]]: he was *"o rebelde contra o Arthur"*
+and tested the options against each other, *"tentei no Linear, tentei no Jira,
+tentei em qualquer [uma]."* The proxy was consequently **one of the projects
+deliberately left un-migrated**, and msilva *"acabou pegando as tarefas"* —
+inheriting them on the losing board.
+
+Two things follow. The `AIRTABLEGC` board's legacy status is unambiguous: it was a
+trial, it lost. And the restructuring licence on this page is not a favour to a new
+joiner — the issue breakdown was written inside an experiment that has since been
+abandoned.
+
+## How msilva should structure the issues — added 2026-08-18
+
+This page sanctions restructuring but said nothing about *shape*. It now has a
+constraint, from [[AI status reporting on Linear]]: the AI status readout the team
+reviews weekly **ignores subtask progress** and reports a parent issue as
+undelivered until it is wholly done. Measured effect on a real project: **6%
+reported against 20–25% actual.**
+
+**Flat issues are legible; deep subtask trees are invisible.** msilva is
+restructuring while the project-deadline conversation is live and he has the least
+established track record on the team, so a 6%-shaped readout is a real cost.
+Luís's `Triagem`-column convention is the complement — found-but-unprioritized work
+goes there, visible, rather than being buried as subtasks.
+
+## Resolved
+
+- **Does the `AIRTABLEGC` board get archived, migrated wholesale, or abandoned in
+  place?** → **Drained wholesale.** Luís, 2026-08-17: *"graças a Deus, a gente caiu
+  no Linear. Então agora a gente tira tudo de lá."* msilva restated the migration of
+  his own items as his task in the same meeting.
+
 ## Open questions
 
 - What is the Linear project/team identifier, and what do the new issue keys look
-  like? Not stated in the meeting.
-- Does the `AIRTABLEGC` board get archived, migrated wholesale, or abandoned in
-  place?
+  like? Still not stated as of 2026-08-17.
 - Confirm the reordering with Luís before restructuring further — Gabrielle
-  suggested checking his thinking first.
+  suggested checking his thinking first. Note that as of 2026-08-17 Luís said he had
+  been following msilva *"um pouco mais distante do que deveria"*, so this needs
+  actively seeking out rather than waiting for.
+- Do the subtask-rollup mechanics have a fix, or is flat structure the only
+  workaround? See [[AI status reporting on Linear]].

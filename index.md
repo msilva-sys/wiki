@@ -17,7 +17,7 @@ See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 ## Projects
 - [[Airtable Proxy]] — Go reverse proxy fronting the Airtable API. Primary track. Active work: app auth + key distribution. **Orca and other services are planned consumers** (2026-08-18) — it is the area's shared Airtable data plane, not LiveScript infrastructure.
 - [[Agent Flow]] — proposed multi-agent architecture for the area's intake and delivery; design only. Second track, started 2026-08-17. **Which agent to build first is reopened** (2026-08-18): the criterion changed from lowest-risk to utility.
-- [[Pulse]] — outsourced front-end for the business pipeline. Not msilva's, but he joins the immersion week for context.
+- [[Pulse]] — outsourced front-end for the business pipeline. Not msilva's, but he joins the immersion week for context. **Now `deferred` (2026-08-18)**: approval failed, DOR stood down, delay ≥1 month, Copinha window lost.
 
 ## Systems
 - [[LiveScript]] — collaborative script editor, heaviest Airtable consumer, the reason the proxy exists. Also called *roteiros*.
@@ -27,6 +27,7 @@ See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 - [[Airtable Rate Limits]] — 5 req/s per base, 429 → ~30s lockout, `Retry-After`; the constraint driving the whole programme.
 - [[Packaging as skills]] — converged from six sources: packaging is both the token-cost lever and the sharing mechanism. What it doesn't solve is maintenance.
 - [[Agents read primary sources]] — agents query the underlying data rather than wait for the agent meant to digest it. Three instances (A5, A7, A1); it is what makes *anarchic-first* buildable, and it is why context retrieval is **not** a fifteenth agent. Splits A6 into tools + curation.
+- [[AI status reporting on Linear]] — the *farol*: **the only agent-like system actually running in the area**, and so the only empirical evidence about [[Agent Flow]]. Four real insights and two real failures in one readout; its subtask blindness is a constraint A1 and A2 inherit.
 
 _(next candidates: OpenTelemetry, Reverse Proxy Patterns, Grafana LGTM)_
 
@@ -55,7 +56,7 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 - [[2026-08-14 Recap da Semana]] — weekly team status; msilva's own framing of the proxy; correction on the review-flow decision.
 - [[2026-08-14 Papo de Projetos]] — area/culture meeting; resolves what Orca is; documentation Hub exists.
 - [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]] — first enablement consultation; diagnoses the $7/day token burn (n8n, wholesale context, probable loop).
-- [[2026-08-17 Weekly - Projetos e Tarefas]] — fourth weekly meeting type; the **matriz gateway** (an agent proposed by the business, A1+A2 in miniature), Luís's unattended ultracode run, the AI status readout, and **Orca not observable yet**. Ingested in a parallel session; indexed 2026-08-18.
+- [[2026-08-17 Weekly - Projetos e Tarefas]] — fourth weekly meeting type; the **matriz gateway** (an agent proposed by the business, A1+A2 in miniature), Luís's unattended ultracode run, the AI status readout, and **Orca not observable yet**. Also: why the proxy was ever in Jira, and a Hub action item **due 2026-08-18**.
 - [[Meeting prep - accounting data in Claude - 2026-08-17]] — prep notes for the 2026-08-17 accounting-data-in-Claude meeting.
 - [[Meeting prep - first agent decision]] — **one-pager** for the deadline meeting with Gabrielle and Luís: recommendation (A1 + A2), the four candidates in a line each, six decisions needed before 2026-08-24. Meeting date not yet recorded.
 

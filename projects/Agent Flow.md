@@ -177,6 +177,16 @@ agent) and **a correct trigger chain** (an orchestration problem). For A5 Watche
 at a 5-minute cadence, the second matters more — a runaway loop on a schedule
 compounds in a way a one-off experiment doesn't.
 
+> [!note] A third data point, 2026-08-17
+> Luís's Ultra Code run on Farol was **deliberately** 4–5 hours of unattended
+> parallel agent work, and he reported the outcome as a clear win with no mention of
+> cost. So the team's live position is not "minimize tokens" — it is that a long
+> expensive run is fine **when the output justifies it**, and the open question he
+> posed is precisely *when that is*: *"em que momento que a gente usa isso e em que
+> momento que a gente trabalha do jeito que a gente vem trabalhando."* That is the
+> same question as this constraint, asked from the other end. Worth resolving with
+> him rather than optimizing in isolation.
+
 **Sharing is the underlying problem.** Work built in Claude can't easily be
 handed to a team — at best a shared workspace, or packaging it as a skill to
 distribute. n8n covers scheduled and event-triggered runs that Claude alone
@@ -299,16 +309,71 @@ Nothing among the 14 covers automated QA — possibly a gap, possibly deliberate
 
 Livemode already has more in this space than the architecture diagram suggests:
 
+- **[[AI status reporting on Linear]] — an agent already running, weekly.** The
+  strongest item on this list, added 2026-08-18. An AI reads the area's Linear board
+  and produces the status readout the team walks at the top of
+  [[2026-08-17 Weekly - Projetos e Tarefas]]. It is the **only agent-like system in
+  production in this area**, and therefore the only empirical evidence about this
+  architecture that isn't a design document. It produced four real insights and two
+  real failures in one sitting; see that page for what each implies here.
+- **Ultra Code — the tech lead runs unattended multi-hour agent workflows.** Luís
+  tested Claude Code's ultracode on Farol: it plans a workflow, parallelizes, and
+  runs *"4, 5 horas"* unattended. One run took Uber, OnFly and Expresso to
+  near-integrated, with the leftovers being genuine inconsistencies in the vendors'
+  APIs rather than agent errors. He wants to present it and agree when it's the right
+  mode. This is the AI-First premise demonstrated inside the team by the person who
+  would validate the architecture — and a 4–5 hour unattended run is the sharp end of
+  the **token-cost constraint** below.
 - **A shared AI architecture for Livemode**, named as a long-term goal by the
   area lead, with no detail given.
 - **A Claude Code training programme** being built for all areas.
 - **TES**, an AI-orchestration vendor under trial
-  ([[2026-08-14 Recap da Semana]]).
+  ([[2026-08-14 Recap da Semana]]). Trial is live as of 2026-08-17: presented the
+  prior week, a WhatsApp group formed with **Bia, Arthur and Kauan**, first feedback
+  already relayed, formal feedback to the vendor targeted for the week of 2026-08-24.
+  **msilva is not in that group** — worth fixing, since TES is the item on this list
+  most likely to overlap or pre-empt his project.
 
 None of these were mentioned when the project was handed over. Understanding how
 Agent Flow relates to them — complement, replacement, or duplicate — is worth
 doing before designing, particularly given that one of the transversal agents is
 explicitly about **not building the same thing twice**.
+
+## A use case that arrived from the business (2026-08-17)
+
+Recorded because it is the **first time anyone at Livemode proposed building an
+agent for a problem they actually had**, rather than as part of this architecture.
+Full detail in [[2026-08-17 Weekly - Projetos e Tarefas]]; the shape:
+
+Osmar built a Vercel app centralizing *reportagem*'s requests to create **external
+events**. The second leg has to create them in the **matriz**, which is sensitive
+data nobody wants to grant him write access to. The proposal, unprompted: *"a gente
+pode até criar um agente para tá ali no meio, ver o que que ele mandou pra gente, a
+gente já interpretar ali e validar ou não e jogar na matriz."* Alongside it, a
+second requirement — the flow should persist in an Airtable base rather than only in
+Vercel, *"porque senão você perde a história e você não sabe quem é [da] automação"*
+— i.e. log who requested and who cancelled.
+
+**This is A1 + A2 in miniature**: receive an unstructured request, interpret it,
+classify it as valid or not, route it to an action, and keep an audit trail. It
+carries three properties the paper candidates in
+[[Comparing the first-agent candidates]] don't:
+
+- **A named requester and a real deadline pressure**, from outside the team.
+- **A concrete definition of success** — Osmar stops asking, Nina and Diego stop
+  hand-creating, nothing malformed reaches the matriz.
+- **A write path into Airtable**, which puts it in the same territory as the
+  [[Airtable Proxy]] and the tables pinned in [[Proxy Environments]].
+
+It also carries an unresolved blocker that is not technical: **nobody knows who is
+supposed to approve these** — *"mas quem deveria [a]provar isso? Porque no final é
+uma gravação."* An approval agent with no defined approver is not buildable, which
+makes this a question to answer before treating it as a candidate.
+
+Not currently on the candidate list, and **not proposed as a replacement for
+A1 + A2** — but it may be the concrete first instance of them, which is a different
+and better thing than a synthetic pilot. Worth raising with Gabrielle before
+2026-08-24.
 
 ## Design approach
 

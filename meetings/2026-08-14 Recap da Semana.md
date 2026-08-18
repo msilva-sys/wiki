@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-17
+updated: 2026-08-18
 date: 2026-08-14
 attendees: [Gabrielle Ferreira, Maria Fernanda Lemos, Yasmin Macedo, Matheus Silva]
 source: "raw/Recap da Semana - 2026_08_14 14_01 GMT-03_00 - Anotações do Gemini.txt"
@@ -84,8 +84,15 @@ proxy is pre-production]] has been corrected accordingly.
 | Meeting | Purpose |
 |---|---|
 | **Recap da Semana** (Fri) | Consolidated status per person; concerns; walks the team board |
+| **Weekly - Projetos e Tarefas** (Mon) | Projects walked against the AI status readout, then tasks per person. Added 2026-08-18 — see [[2026-08-17 Weekly - Projetos e Tarefas]] |
 | **Papo de Projetos** | Company/area news, culture, tools, ideas — not task status. See [[2026-08-14 Papo de Projetos]] |
 | **1:1** (weekly, first month) | See [[2026-08-14 1-1 Matheus - Gabrielle]] |
+
+> [!question] Two status meetings, three days apart
+> The Monday Weekly and this Friday Recap cover nearly the same ground — a
+> per-person walkthrough of the same board. Whether both persist, or one is
+> replacing the other, was never stated. Worth asking, since it doubles the
+> status-reporting overhead on msilva.
 
 ## Other projects named
 
@@ -95,6 +102,12 @@ Landmarks only — no detail captured:
   database for the finance team, replacing manual spreadsheet work. Currently in
   its "bronze" phase: land raw data, no transformation. Blocked on a **GCP
   project only Luís can create**, since he holds the key.
+  **Update 2026-08-17** ([[2026-08-17 Weekly - Projetos e Tarefas]]): the GCP
+  structuring is Luís's active task, with the plan to run locally so Yasmin can test
+  before production — so the block is being worked, not waiting. The vendors are
+  named there as **Uber, OnFly and Expresso**, and one Ultra Code run took all three
+  to near-integrated. **Ownership is split**: data side this team, everything else
+  the finance team — *"a gente só entrega dados para eles."*
 - **Escala** — scheduling automation, formally closed and handed to the networks
   team, who built their own spreadsheet-plus-Claude solution during the World Cup
   after the general-purpose rules didn't survive Copa conditions.

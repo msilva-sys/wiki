@@ -161,6 +161,30 @@ the deliverable is working triage **plus** the demand dataset every other spec
 needs. A5 becomes the natural second — by then GC-5 has landed, Orca may be behind
 the proxy, and `Bug (sistema)` has both a producer and a consumer.
 
+> [!important] Two facts from 2026-08-17 that both push the same way
+> From [[2026-08-17 Weekly - Projetos e Tarefas]], ingested 2026-08-18:
+>
+> **1. Orca has nothing deployed.** The developer is still on documentation and the
+> wordmap. So "A5 second, once Orca is behind the proxy" is further out than
+> *unscheduled* — the system it would watch is not running. This **widens the gap
+> between A1+A2 and A5** rather than narrowing it. (It also contradicts
+> [[2026-08-14 Papo de Projetos]] recording Orca as in production and
+> indispensable — see the warning in [[Comparing the first-agent candidates]];
+> resolve it before leaning on Orca as A5's value story either way.)
+>
+> **2. A1 and A2 have a known defect waiting for them.** The team's AI status
+> readout misreports progress because it **ignores subtask progress** — 6% against a
+> real 20–25% ([[AI status reporting on Linear]]). Anything reading that board for
+> state inherits the ambiguity. This does **not** weaken the A1+A2 case; it is a
+> design constraint discovered for free, before writing any code, from watching a
+> running system fail. Worth more than it costs.
+>
+> **3. A candidate that didn't exist when this was written.** The **matriz
+> external-events gateway** is A1 + A2 in miniature with a real requester and a real
+> deadline — see the use-case section in [[Agent Flow]]. It is not on the candidate
+> list here and probably should be, though it carries a non-technical blocker: nobody
+> knows who approves the requests.
+
 **Still not decided.** The A5 recommendation below is not formally superseded, and
 the criterion change has not been confirmed with Gabrielle.
 

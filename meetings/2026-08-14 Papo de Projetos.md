@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-17
+updated: 2026-08-18
 date: 2026-08-14
 attendees: [Carolina Bezerra, Luis Fernandez, Arthur Tavares, João Victor Andrade, Yasmin Macedo, Michelly Magalhães, Matheus Silva]
 source: "raw/2026-06-14-Papo de Projetos  - Anotações do Gemini.docx"
@@ -87,6 +87,19 @@ intranet Livemode doesn't have.
 > than only here; and note that msilva has write access via GitHub and was
 > **asked** to correct anything wrong in his own entries.
 
+> [!danger] The ask was repeated with a deadline of 2026-08-18
+> In [[2026-08-17 Weekly - Projetos e Tarefas]] everyone was asked to open the Hub,
+> **check their own entry, and report corrections** — explicitly *"entre hoje e
+> amanhã"*, i.e. **by 2026-08-18**, because Gabrielle is away after that. Arthur was
+> excused. Someone reported theirs was empty; the link is in the projects group.
+>
+> The Hub had appeared broken only because a deploy had been forgotten — it works
+> again, so "it was broken" is no longer a reason not to look.
+>
+> This is the second time msilva has been asked. It is also the cheapest possible
+> first read of `Brain`, which [[Agents read primary sources]] flags as **the
+> highest-value unread thing** before designing any retrieval layer.
+
 ## Governance changes that affect the work
 
 **A homologation flow is being built** — an application, with the support team,
@@ -100,6 +113,19 @@ zone — it carries financial data but is being built by the finance team
 themselves. Carolina's answer: the manager decides whether their area is equipped
 to own it; if not, it becomes a corporate project and transfers. A **governance
 document** is being written to help managers make that judgement.
+
+> [!success] Farol's grey zone was settled three days later
+> Luís, in [[2026-08-17 Weekly - Projetos e Tarefas]], answering directly whether
+> Farol ends up maintained by this team or by finance: *"a parte de dados pela gente,
+> o restante todo por eles. A gente só entrega dados para eles no final das contas."*
+> **Split by layer, not assigned wholesale** — which is a third option neither this
+> meeting's framing nor the governance document anticipated.
+>
+> It also **contradicts this page's premise.** Farol is described above as *"being
+> built by the finance team themselves"*, but on 2026-08-17 Luís is doing the GCP
+> structuring and Yasmin is testing it. Either the situation changed or the original
+> characterization was wrong; the transcript doesn't say which. Recorded as a
+> conflict rather than resolved in favour of either.
 
 **Projects are expected to originate anywhere**, and this team enters as
 *habilitador* only when asked — *"não é a gente que corre atrás."* This confirms

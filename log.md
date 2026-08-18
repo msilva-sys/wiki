@@ -885,3 +885,84 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
   It is the only in-house evidence about a running agent, so it is worth writing.
 - Updated: index.md, meetings/Meeting prep - first agent decision.md,
   syntheses/Comparing the first-agent candidates.md
+
+## [2026-08-18] ingest | Weekly - Projetos e Tarefas (2026-08-17)
+
+- Read `raw/Weekly - Projetos e Tarefas  - 2026_08_17 14_03 GMT-03_00 - Anotações do
+  Gemini.txt` in full (271 lines, 38 min). Date from the content header `ago. 17,
+  2026`, corroborated by the filename — no filesystem fallback needed.
+- New: meetings/2026-08-17 Weekly - Projetos e Tarefas.md,
+  concepts/AI status reporting on Linear.md
+- Updated: index.md, projects/Airtable Proxy.md, projects/Agent Flow.md,
+  projects/Pulse.md, decisions/2026-08-14 Migrate project management from Jira to
+  Linear.md, meetings/2026-08-14 Papo de Projetos.md,
+  meetings/2026-08-14 Recap da Semana.md,
+  syntheses/Which agent should be built first.md,
+  syntheses/What should the Agent Flow research phase study.md
+
+> [!warning] Bookkeeping anomaly — the meeting page landed in someone else's commit
+> The meeting page was written, then this session was interrupted (machine suspended).
+> While it sat untracked, a **parallel session committed** `eca19f4`
+> *"synthesis: one-pager for the first-agent decision meeting"*, which swept the
+> 323-line meeting page into that commit. Its log entry and commit message describe
+> only the one-pager, so for a period the page was **committed, unlogged and
+> unindexed** — the invisible-page state the schema forbids. That session then read
+> the page and integrated it into `Comparing the first-agent candidates` and `index.md`
+> on its own. **History not rewritten**; recorded here instead. Practical lesson: an
+> ingest interrupted mid-flight leaves untracked files that another session will
+> commit under the wrong message.
+
+- **A fourth meeting type**, unknown to the wiki: a Monday Weekly that overlaps the
+  Friday Recap almost exactly. Added to the rhythm table with the overlap flagged as
+  an open question.
+- **New concept page — the *farol*.** An AI reads the area's Linear board and produces
+  the status readout the team walks weekly. Filed because it is **the only agent-like
+  system running in the area**, hence the only non-paper evidence about [[Agent Flow]].
+  Four accepted insights (including a good one: slow projects have *no formally late
+  tasks*, so delay metrics never fire) against two distinct failures — mechanical
+  subtask blindness (**6% reported vs 20–25% actual**) and reasoning past its evidence
+  (wrongly calling Orca remediation; Gabrielle: *"ele não tem o contexto"*).
+- **Directly actionable**: msilva is about to restructure the proxy issues in Linear,
+  and that readout is what Gabrielle and Luís see between conversations. Recorded on
+  three pages: **flat issues are legible, deep subtask trees are invisible.** Plus
+  Luís's `Triagem`-column convention as the complement.
+- **Resolved** on [[2026-08-14 Migrate project management from Jira to Linear]]: the
+  `AIRTABLEGC` board is **drained wholesale**, not abandoned. Also *why* the proxy was
+  in Jira — Luís was trialling tools (*"o rebelde contra o Arthur"*) and deliberately
+  left it un-migrated; msilva inherited the tasks on the losing board.
+- **Resolved** on [[Pulse]]: the immersion week **did not happen**. Approval failed
+  (Ribon on leave; Zoca and Cristian wanted his sign-off together), DOR was stood down
+  though it offered to come, approval escalates a level, **delay ≥1 month, Copinha
+  window lost**. Status moved `active` → `deferred`.
+- **Resolved** on [[2026-08-14 Papo de Projetos]]: Farol's ownership grey zone —
+  **split by layer**, data side this team, everything else finance. A third option the
+  governance framing didn't anticipate. Recorded the contradiction it creates with
+  that page's "built by the finance team themselves".
+- **New candidate use case, unprompted by the architecture**: the **matriz
+  external-events gateway**. Osmar's Vercel app must write to the matriz, nobody will
+  grant him access, and the room proposed *"criar um agente para tá ali no meio"* to
+  interpret and validate — A1 + A2 in miniature with a named requester. Carries a
+  non-technical blocker: **nobody knows who approves**. Filed on [[Agent Flow]] and
+  added to the Gabrielle list; **not** substituted for A1 + A2.
+- **Ultra Code** recorded as prior art: the tech lead runs 4–5 hour unattended agent
+  workflows and reported a clear win. Noted as the token-cost constraint asked from
+  the other end — his open question (*when* to use it) is the same question.
+- Two proxy consumers nobody in the room connected to the project: **Fronte wants a
+  test suite isolated from Airtable** (deciding that week), and the matriz flow wants
+  **attribution on writes** — the problem `X-App-Id` solves for reads.
+- **Time-critical**: everyone was asked to check their own Hub entry and report
+  corrections **by 2026-08-18** — today. Second time msilva has been asked, and the
+  cheapest first read of `Brain`.
+- Kept as landmarks only, per the standing scope instruction: Arthur's central-de-dados
+  work, the thumbnail generator handover, Yasmin's audience-monitor documentation,
+  João Victor's CRM onboarding contract, Orca's schedule. One generalized: **a
+  production dashboard died with a departed employee's account** — single-account
+  ownership is a live failure mode here.
+- Deferred deliberately, offered and declined for now: creating `people/` pages. This
+  transcript adds ~20 names with real ownership attached and the folder is still empty;
+  a prior `lint` already flagged that who-owns-what is accumulating in meeting pages.
+- New open: do both weekly status meetings persist? Who approves external event
+  creation? Is the *farol* fixable — and is it a target msilva could take? Should
+  msilva be in the TES trial group (he is not, and vendor feedback is due while
+  Gabrielle is away)? Is [[Pulse]] the 2.0 of the *Fronte de Negócios* Luís is
+  stabilizing — recorded `(unverified)`, one question settles it.

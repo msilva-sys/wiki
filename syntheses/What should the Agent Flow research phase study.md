@@ -108,6 +108,28 @@ for the end of the week beginning 2026-08-17.
   which parts are settled.
 - Where is the **design documentation** she offered to share on 2026-08-10?
 
+**Added 2026-08-18 from [[2026-08-17 Weekly - Projetos e Tarefas]]:**
+
+- **Should the matriz external-events gateway be the first build?** It is A1 + A2 in
+  miniature, arriving from the business with a named requester — but it has an
+  unresolved blocker that is not technical: *who approves these at all*. See the
+  use-case section in [[Agent Flow]]. This is the strongest candidate to appear since
+  the comparison was written, and it deserves a line in that conversation.
+- **What is the AI status readout, mechanically** — Linear's own feature, something
+  the team built, or a vendor tool? [[AI status reporting on Linear]] is the only
+  agent running in the area, it has a known defect that **A1 and A2 would inherit**,
+  and nobody knows who owns it. Ask Luís as well as Gabrielle.
+- **Is the readout's subtask blindness a target msilva could fix or replace?** A
+  working agent, a real weekly audience, a specific defect, and a measured failure
+  (6% vs 20–25%). Unusually well-defined for a first build. **Nobody proposed this —
+  it is this vault's suggestion**, so it needs putting to her rather than assumed.
+- **Should msilva be in the TES trial group?** He is not (Bia, Arthur, Kauan are),
+  and formal vendor feedback is due the week of 2026-08-24 — i.e. while she is away.
+  TES is the adjacent initiative most likely to overlap or pre-empt this project.
+- **When is a long unattended agent run the right tool?** Luís's own open question
+  about Ultra Code, and the same question as the token-cost constraint asked from the
+  other end. He owns this one, not Gabrielle.
+
 ## Still open, no owner
 
 - **How do agents talk to each other?** The unsolved problem that killed the prior
