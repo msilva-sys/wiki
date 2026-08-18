@@ -1397,6 +1397,11 @@ it is a second, contradictory claim.
 - Found and fixed 3 status-drift cases where Linear hadn't caught up to Jira's actual
   state: `PRO-75`, `PRO-77` moved Backlog → Done; `PRO-79` moved Backlog → In
   Progress (matching Jira's `Em andamento`).
+- **msilva flagged a second gap directly**: none of his Jira-assigned issues carried
+  an assignee into Linear. Confirmed — all 65 Linear issues were unassigned or
+  assigned to a service account (`Tech Projetos`). Fixed by assigning the 8 issues
+  Jira had on msilva (`AIRTABLEGC-4,5,6,7,14,34,36,37` → `PRO-60,74,75,77,78,79,84,90`)
+  to him in Linear.
 - `AIRTABLEGC` itself left untouched — msilva's call, deferred pending a separate
   decision on bulk-transition vs. archive vs. leave-as-is.
 - Updated: [[2026-08-14 Migrate project management from Jira to Linear]] (open

@@ -133,6 +133,14 @@ full at [[Linear Project Structure]]:
   unstarted across four assignments. **Verified and reconciled 2026-08-18**: 3
   issues (`PRO-75`, `PRO-77`, `PRO-79`) had drifted from Jira's actual status and
   were corrected (two to Done, one to In Progress) to match.
+- **Second gap found 2026-08-18: assignee didn't migrate at all.** Every issue in
+  `Proxy do Airtable` was either unassigned or assigned to a service account
+  (**Tech Projetos** — presumably whatever ran the original migration). The 8
+  issues Jira had explicitly assigned to msilva (`AIRTABLEGC-4,5,6,7,14,34,36,37`)
+  showed no owner in Linear at all. Fixed by reassigning the matching 8 Linear
+  issues (`PRO-60,74,75,77,78,79,84,90`) to msilva. This matters beyond bookkeeping:
+  [[Linear Project Structure]] describes a personal self-filter view keyed on
+  assignee — none of msilva's actual work was visible there until this fix.
 
 ## Open questions
 
