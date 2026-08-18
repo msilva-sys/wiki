@@ -5,7 +5,7 @@ updated: 2026-08-18
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
-
+	
 # Luís Fernandez
 
 Tech Lead for the area. Part-time — afternoons only, with flexibility

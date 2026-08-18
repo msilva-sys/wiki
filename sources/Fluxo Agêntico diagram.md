@@ -116,7 +116,7 @@ this page was written:
 > This section previously said *"Pedro (the departed developer) co-designed the
 > architecture per [[2026-08-10 Onboarding Técnico - Matheus]]"*. That meeting
 > page, as it stands, names no Pedro and no departed developer at all — the
-> citation doesn't support the claim. Found while building out [[people/]] pages
+> citation doesn't support the claim. Found while building out `people/` pages
 > and refusing to fabricate a "Pedro (departed developer)" entry on unverifiable
 > grounds. Removed rather than kept; if the fact is real it came from somewhere
 > else (a raw file not yet re-checked, or a conflation with

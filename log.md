@@ -1578,3 +1578,45 @@ revisit.
 - Open: does msilva want [[Pedro Alves]] and the unrelated "Pedro" mockup
   mention investigated further with Carol? Does "Gabi" as a second onboarding
   attendee need resolving, or is it transcription noise?
+
+## [2026-08-18] lint | Seventh health check, then two fixes
+
+- **Links**: after normalizing soft line-wraps inside `[[...]]` (long link text
+  wrapping across two source lines, common throughout this vault and never
+  actually broken in rendering), **one genuine broken link** found:
+  `sources/Fluxo Agêntico diagram.md` linked `[[people/]]` — a folder, not a
+  page — introduced by this session's own edit two entries up. **Fixed**:
+  de-linked to plain text.
+- **Orphans**: none, including all 23 new `people/` pages — every one is
+  reachable from `index.md`.
+- **Dead-ends**: only [[Zed Cheatsheet]], as in every prior lint.
+- **`raw/` coverage**: all 14 non-empty source files still have a `sources/`
+  or `meetings/` page; `Novo(a) Documento de Texto.txt` still empty and
+  already tracked as such.
+- **Frontmatter**: all pages carry `type`/`status`/`updated` (or are
+  correctly exempt) — the 23 new person pages included.
+- **Credentials in git history**: still present, unchanged commit count.
+  Seventh report. Rotation still outstanding — msilva's action, not this
+  vault's.
+- **Re-verified the three pages touched by the not-yet-logged-here SDK-revert
+  commit** (`projects/Airtable Proxy.md`, `systems/LiveScript.md`,
+  `syntheses/How LiveScript sends the proxy X-App-Id header.md`): the
+  patch-shipped-then-reverted fact is stated consistently across all three,
+  with no stale "implemented" claims surviving anywhere. Clean.
+- **Second real finding, fixed**: [[Bianca (Bia)]] stated the "Bia" =
+  "Bianca" nickname match as settled fact. The source
+  ([[2026-08-17 Weekly - Projetos e Tarefas]]) only uses both spellings in
+  the same paragraph without confirming they're one person — the identical
+  evidence class already flagged elsewhere in this vault as unverified
+  ("Pedrinho" ↔ [[Pedro Alves]]), just missed on this page when it was
+  written. Added the same unverified-inference flag for consistency.
+- **Not re-litigated**: `status: draft` pages
+  ([[Meeting prep - accounting data in Claude - 2026-08-17]],
+  [[2026-08-18 Product feedback in Linear, code review in Git]],
+  [[How to implement A5 Watcher]]) — all previously judged correctly draft,
+  nothing new changes that.
+- **Stale-claims (30-day) rule**: still cannot fire — vault is 8 days old.
+- Not checked exhaustively this pass: full re-read of every page edited 3+
+  times (21 candidates) — only the ones that changed since the last full
+  read (six sessions ago) were re-read fresh; the rest were already verified
+  clean twice and nothing has touched them since.
