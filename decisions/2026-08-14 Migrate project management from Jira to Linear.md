@@ -21,6 +21,21 @@ have hit the ceiling. The migration was deliberately postponed for that reason.
 A **subscription trial upgrade** has since removed the constraint, so the
 migration is live.
 
+> [!danger] Corrected 2026-08-18 — the trial *suspends* the cap, it does not remove it
+> The line above read *"has since removed the constraint"*. It is a **time-boxed
+> Business trial with 22 days left as of 2026-08-18** — expiring **2026-09-09**
+> ([[2026-08-18 1-1 Matheus - Gabrielle]]). Gabrielle stated a preference for
+> staying on Linear; **no purchase was recorded.**
+>
+> The dates line up badly. Gabrielle is on leave **2026-08-24 → 2026-09-10**, so the
+> trial lapses the day before she returns, and the migration msilva has been asked to
+> perform is what fills the workspace toward the cap in the meantime. Nobody in the
+> meeting connected these; it falls out of the calendar. *(unverified: whether a
+> purchase is already in motion.)*
+>
+> **Ask before 2026-08-24** — the person who can authorize the plan is the person
+> leaving.
+
 ## Why restructuring is sanctioned, not just tolerated
 
 Luís, who authored the original proxy issue breakdown, considers it outdated —
@@ -68,6 +83,33 @@ established track record on the team, so a 6%-shaped readout is a real cost.
 Luís's `Triagem`-column convention is the complement — found-but-unprioritized work
 goes there, visible, rather than being buried as subtasks.
 
+## The structure to migrate *into* — added 2026-08-18
+
+This page sanctioned restructuring and the section above constrains it to *flat*.
+[[2026-08-18 1-1 Matheus - Gabrielle]] supplies the rest of the shape, written up in
+full at [[Linear Project Structure]]:
+
+- **Initiative = product or solution. Project = a specific segment of value
+  delivery.** The [[Airtable Proxy]] is **one of three projects** in an **Airtable
+  governance** initiative, alongside *expansion to other applications* and a
+  *Livemode Data Hub*. Migrating the proxy backlog means populating one project, not
+  representing the whole programme.
+- **Milestones group deliveries** inside the backlog. That is the level above issues
+  — and the one the readout does count, unlike subtasks. Milestones are therefore the
+  place to express "this is a chunk of work" without incurring subtask blindness.
+- **Business rules and context get documented first**, and the roadmap and backlog
+  derive from that documentation. For the proxy the documentation already exists
+  (`airtable-proxy-design.md`, `doc/STATUS_proxy_airtable.md`), which puts msilva
+  ahead of the normal starting point rather than behind it.
+- **Luís authored Markdown templates for bugs, spikes and epics.** Use them rather
+  than inventing an issue format; consistency here is what the product-validation
+  gate reads ([[2026-08-18 Product feedback in Linear, code review in Git]]).
+
+**A third assignment of the same task.** Migrating his own items was assigned here on
+2026-08-14, restated by msilva himself in
+[[2026-08-17 Weekly - Projetos e Tarefas]], and made an explicit 1:1 action item on
+2026-08-18. It has not moved in four days, and the trial clock above is now running.
+
 ## Resolved
 
 - **Does the `AIRTABLEGC` board get archived, migrated wholesale, or abandoned in
@@ -78,7 +120,10 @@ goes there, visible, rather than being buried as subtasks.
 ## Open questions
 
 - What is the Linear project/team identifier, and what do the new issue keys look
-  like? Still not stated as of 2026-08-17.
+  like? Still not stated as of **2026-08-18**, now across three meetings. Gabrielle
+  has an open action to send the project link, which answers it.
+- **Is the Business plan being purchased before 2026-09-09?** See the correction
+  above. This is the one with a deadline.
 - Confirm the reordering with Luís before restructuring further — Gabrielle
   suggested checking his thinking first. Note that as of 2026-08-17 Luís said he had
   been following msilva *"um pouco mais distante do que deveria"*, so this needs

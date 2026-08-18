@@ -966,3 +966,113 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
   msilva be in the TES trial group (he is not, and vendor feedback is due while
   Gabrielle is away)? Is [[Pulse]] the 2.0 of the *Fronte de Negócios* Luís is
   stabilizing — recorded `(unverified)`, one question settles it.
+
+## [2026-08-18] ingest | 1:1 Matheus / Gabrielle (2026-08-18)
+
+- Read `raw/Matheus _ Gabrielle - 2026_08_18 11_04 GMT-03_00 - Anotações do Gemini.md`
+- New: `meetings/2026-08-18 1-1 Matheus - Gabrielle.md`,
+  `concepts/Linear Project Structure.md`, `projects/Farol.md`,
+  `decisions/2026-08-18 Product feedback in Linear, code review in Git.md`,
+  `decisions/2026-08-18 Save n8n execution logs for audit.md`
+- Updated: `concepts/AI status reporting on Linear.md`,
+  `concepts/Packaging as skills.md`,
+  `decisions/2026-08-14 Migrate project management from Jira to Linear.md`,
+  `projects/Airtable Proxy.md`, `projects/Agent Flow.md`, `projects/Pulse.md`,
+  `meetings/2026-08-17 Weekly - Projetos e Tarefas.md`,
+  `meetings/2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow.md`,
+  `syntheses/What should the Agent Flow research phase study.md`, `index.md`
+
+**Source quality is a first for this vault.** The raw file is a `.md` containing
+**only Gemini's generated blocks** — resumo / próximas etapas / detalhes — with the
+transcript itself left behind a Google Docs link. So there are **no verbatim quotes
+on any page from this ingest, and there cannot be.** Flagged prominently on the
+meeting page; every downstream claim is Gemini's paraphrase and is weaker evidence
+than the quoted transcripts. Gemini also writes **"Liner"** throughout, meaning
+Linear — confirmed by content (milestones, initiatives, teams, ~250-issue cap,
+Business trial), not assumed.
+
+- **A naming error the wiki had been propagating: the status readout is not "o farol".**
+  [[AI status reporting on Linear]] was filed 2026-08-17 with *farol* as its alias.
+  Re-reading the raw weekly, **every** occurrence of *farol* is the **project**
+  [[Farol]] — including the *no deliveries* row, which is Farol's row **in** the
+  readout. Gabrielle describing Projeto Farol directly is what surfaced it. Corrected
+  inline on the concept page, the weekly, and `index.md`; the alias is removed. **The
+  readout still has no recorded name** — nobody named it, which is its own small
+  finding about the only agent-like system running in the area.
+- **New page — [[Farol]].** Referenced as a landmark across five meetings and never
+  filed. Gabrielle's description is the first coherent one: consolidates several
+  platforms' APIs into one database (travel data for finance), Yasmin collaborating,
+  currently bronze. **V2 = bronze/prata/ouro layers plus a conversational AI layer** —
+  the area's second user-facing AI system, and better-conditioned than the first
+  because the data is modelled before the model sees it. Nobody has connected it to
+  [[Agent Flow]], and it may be the closest thing to real demand for msilva's work.
+- **New page — [[Linear Project Structure]].** The schema-level answer to a question
+  three meetings had left open: **initiative = the product or solution, project = a
+  specific segment of value delivery, milestones group deliveries.** The **Airtable
+  governance** initiative holds three projects — the [[Airtable Proxy]], *expansion to
+  other applications*, and a **Livemode Data Hub** (never previously mentioned
+  anywhere).
+- **The team's answer to the 6% readout failure: restructure the board, not the
+  agent.** `Evolução do Front-End` was split from `Estabilização` for a truer
+  completion percentage. Recorded on three pages, with the limit stated plainly — it
+  fixes the *category* confusion and touches **neither** subtask blindness **nor**
+  reasoning past the evidence. Two of three problems untouched; the board is treated
+  as adjustable and the agent as fixed.
+- **The proxy is one of three projects, not the programme.** Organizational
+  confirmation of the company-wide framing that had until now been only msilva's own
+  words to the team. Also gives the migration a concrete scope, and raises whether
+  Phase 2 (LiveScript data out of Airtable) belongs to a sibling project.
+- **Two decisions filed.** *Product feedback in Linear, code review in Git* — review
+  split by **kind**, not stage, with a product validator who tests in the interface
+  and can return the task via comments. This is what makes
+  [[2026-08-14 No mandatory PR review while the proxy is pre-production]] defensible
+  rather than reckless: the technical gate relaxed, a product gate formalized.
+  *Save n8n execution logs for audit* — resolves the traceability blocker
+  [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]] recorded twice.
+  The load-bearing detail: **saving production runs, not only failures**, because the
+  expensive runs *succeeded* — they produced a wrong number at $7. Failures-only would
+  have missed every one.
+- **Corrected on [[2026-08-14 Migrate project management from Jira to Linear]]:** the
+  trial **suspends** the 250-issue cap, it does not remove it. That page said removed.
+- **Found by putting two dates side by side, not stated in any meeting:** the Linear
+  Business trial expires **2026-09-09**; Gabrielle returns **2026-09-10**. The trial
+  lapses the day before she is back, while msilva is being asked to move the
+  `AIRTABLEGC` backlog into that workspace — the cap being what postponed the
+  migration originally. No purchase recorded, and the person who can authorize it
+  leaves 2026-08-24. Raised to a callout on `index.md`.
+- **Infrastructure [[Agent Flow]] may not need to build**, all already in Linear: a
+  **Slack delivery channel** per project (relevant to A2 and to A5's notification
+  design), a **human approval gate with a return path**, and **teams as the
+  access-control boundary**. Plus Luís's in-house **Markdown ticket templates** for
+  bugs/spikes/epics — until now the A2 output contract was modelled only on Packer's
+  external template. **Read the in-house ones**; that question is answerable without
+  asking anyone.
+- **Weakened, not resolved**, on [[Pulse]]: two front-end tracks now visibly coexist,
+  one evolving and one being stabilized, which is the shape the "is Pulse *Fronte de
+  Negócios 2.0*?" question predicts. It does not confirm the lineage. Still one
+  question.
+- **Narrowed on [[Packaging as skills]]:** "a shared runtime crowds others' logs out of
+  view" overstated it — some of that history did not exist to be crowded. Stuck locks
+  and absent per-user filtering are genuine tenancy problems; observability on a shared
+  runtime turns out to be **configurable**.
+- **Deliberately left ambiguous rather than guessed:** the **"Tech" vs "Humans"
+  accounts.** Tech has daily/monthly caps and sees every flow in the company; Humans
+  has a larger token allowance and an upgrade path. **n8n** fits the flow-visibility and
+  poor-per-user-filtering details; **the Claude org account** fits the tokens and
+  upgrade path. Gemini conflates them and the notes do not separate them. Recorded as
+  an open question on the meeting page and on [[Agent Flow]], because it decides where
+  the token-measurement instrument actually lives — the thing the entire token-cost
+  constraint depends on. Same question also disconfirms or confirms the n8n reading on
+  the logging decision.
+- **Five questions added to the pre-2026-08-24 list**, since this was the last
+  scheduled 1:1 before her leave: the account question; which initiative Agent Flow
+  belongs to (it has no home, which decides whether the research is visible to the
+  weekly readout at all); whether treating the readout as unfixable is considered or
+  just the only available lever; whether the in-house templates work as an agent output
+  contract; and whether the Business plan is being bought.
+- **Still unanswered after three meetings:** the Linear team/project identifier and the
+  new issue-key shape. Gabrielle has an open action to send the project link, which
+  settles it.
+- **`people/` still empty, deliberately.** This source names Yasmin, Luís and a product
+  validator role with real ownership attached, and the standing offer to create the
+  folder remains declined.

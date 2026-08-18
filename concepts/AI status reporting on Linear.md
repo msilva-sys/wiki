@@ -2,7 +2,7 @@
 type: concept
 status: active
 updated: 2026-08-18
-aliases: [farol, o farol, the farol, status readout, AI status agent]
+aliases: [status readout, AI status agent, Linear status readout]
 tags: [linear, agents, process, observability, metrics]
 ---
 
@@ -10,8 +10,22 @@ tags: [linear, agents, process, observability, metrics]
 
 An AI reads the area's Linear board and produces a per-project status readout —
 progress percentages, pace classification, and written insight — which the team
-walks through at the top of [[2026-08-17 Weekly - Projetos e Tarefas]]. Referred
-to as the **farol** (beacon/dashboard light).
+walks through at the top of [[2026-08-17 Weekly - Projetos e Tarefas]].
+
+> [!warning] Correction 2026-08-18 — this system is **not** called *"o farol"*
+> This page was originally filed with *farol* as its alias, on the reading that the
+> team nicknamed the readout "the beacon". **That was wrong.** Re-reading the raw
+> 2026-08-17 weekly, every occurrence of *farol* is the **project** [[Farol]] — the
+> travel-data consolidation Luís and Yasmin are building. Gabrielle described that
+> project directly in [[2026-08-18 1-1 Matheus - Gabrielle]], which is what surfaced
+> the error.
+>
+> The confusion was close to designed: the readout's most visible misreading was
+> *about* Farol, so "the farol reported no deliveries" parses either way. It means
+> **Farol's row in the readout**, not the readout naming itself.
+>
+> **This system still has no recorded name.** Nobody in the transcript named it —
+> itself a small finding, given it is the only agent-like system running in the area.
 
 This page exists because it is **the only agent-like system actually running in
 msilva's area**, and therefore the only source of empirical evidence about
@@ -55,7 +69,7 @@ measured misreadings in one readout:
 
 | Project | Reported | Actual, per the owner |
 |---|---|---|
-| Farol | *no deliveries* | Luís and Yasmin *"andaram bastante"*, all within one parent |
+| [[Farol]] | *no deliveries* | Luís and Yasmin *"andaram bastante"*, all within one parent |
 | Fronte de Negócios | **6%** | *"por volta de 20, 25%"* |
 
 Gabrielle: *"ele tá considerando a entrega da tarefa como um todo […] e
@@ -107,7 +121,7 @@ cries wolf loses its audience, and a reporting agent that states a wrong number
 flatly does the same damage faster.
 
 **It is evidence the area adopts this kind of thing.** [[Agent Flow]] records the
-prior attempt as having *failed on adoption, not capability*. The farol is in
+prior attempt as having *failed on adoption, not capability*. The readout is in
 active weekly use despite being demonstrably wrong twice in one sitting, which is
 a meaningful counter-signal about what adoption actually requires: being in the
 meeting where the work is discussed.
@@ -115,20 +129,50 @@ meeting where the work is discussed.
 ## Practical consequence for msilva, now
 
 He is about to **restructure the proxy issues in Linear**
-([[2026-08-14 Migrate project management from Jira to Linear]]). The farol will
+([[2026-08-14 Migrate project management from Jira to Linear]]). The readout will
 report on that structure to Gabrielle and Luís, and he is the person with the
 least established track record — the one who can least afford a 6%-shaped
-readout while the deadline conversation is happening.
+readout while the deadline conversation is happening. Gabrielle is on leave from
+**2026-08-24**, so for ~2.5 weeks this readout *is* his visible progress.
 
-**Flat issues are legible to the farol; deep subtask trees are invisible to it.**
+**Flat issues are legible to the readout; deep subtask trees are invisible to it.**
 Luís's `Triagem`-column convention from the same meeting is the complementary
 half: it gives found-but-not-yet-prioritized work somewhere visible to live,
 instead of buried as subtasks.
 
+## The team's response: reshape the board, not the agent — 2026-08-18
+
+[[2026-08-18 1-1 Matheus - Gabrielle]] answers what the team actually did about the
+misreadings, and it is not what this page assumed.
+
+They **split "Evolução do Front-End" from "Estabilização"** into separate Linear
+projects. Gabrielle's stated reasons were a more accurate read of **completion
+percentage** and easier **bottleneck identification** — the two things the 6%
+misreading destroyed. Nobody proposed changing the readout.
+
+That is a coherent choice rather than a capitulation. One project mixing new
+front-end work with remediation produces a percentage describing neither, and the
+readout was right that the number was low — it was wrong about what the number
+meant. Separating the two makes the arithmetic and the reality converge from the
+board's side.
+
+**But note which failure it fixes.** Splitting projects addresses the *category*
+confusion. It does nothing about subtask blindness — a deep subtask tree is equally
+invisible in a well-named project. And it does nothing about the second failure
+class, reasoning past the evidence. **Two of the three problems are untouched**, and
+the one being worked is the one the team can fix without owning the agent.
+
+So the pattern is: **the board is treated as the adjustable component, and the agent
+as fixed.** Whether that is because nobody can change it or nobody has tried is
+still open below. For msilva it is the operative fact either way — see
+[[Linear Project Structure]], where the board conventions this implies are collected.
+
 ## Open questions
 
 - **What is it, mechanically?** Linear's own feature, a team-built agent, or a
-  vendor tool. Determines whether the subtask summation is fixable at all.
+  vendor tool. Determines whether the subtask summation is fixable at all. As of
+  2026-08-18 the team's revealed answer is *treat it as unfixable* — the board got
+  restructured instead. Not the same as knowing it is unfixable.
 - **Does it read anything beyond Linear?** The context it lacked on Orca exists in
   the Hub and in `Brain` — if it reads only the board, that failure was
   structural and predictable.

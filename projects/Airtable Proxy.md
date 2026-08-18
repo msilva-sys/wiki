@@ -34,6 +34,36 @@ Scoped to [[LiveScript]] first, *"mas a ideia é para ser geral para todos os
 serviços aqui da empresa"* — presented internally as company-wide infrastructure,
 not a LiveScript fix ([[2026-08-14 Recap da Semana]]).
 
+> [!important] The proxy is one of three projects in an **Airtable governance**
+> initiative — Gabrielle, 2026-08-18
+> From [[2026-08-18 1-1 Matheus - Gabrielle]], where Linear's semantics were stated
+> for the first time: an **initiative is the product or solution**, a **project is a
+> specific segment of value delivery** ([[Linear Project Structure]]). The Airtable
+> governance initiative holds:
+>
+> 1. **this proxy**;
+> 2. **expansion to other applications**;
+> 3. a **Livemode Data Hub**.
+>
+> **This is organizational confirmation of the framing below, not a restatement of
+> it.** The company-wide intent was previously only msilva's own verbal framing to
+> the team and Gabrielle's rationale. It is now the shape of the initiative in the
+> tool that runs the area's planning — the *solution* is governing Airtable access
+> company-wide, and the proxy is its first delivery segment. Item 2 is the
+> already-recorded plan to plug Orca and other services in, given a project slot.
+>
+> **Item 3 is new information.** A *Livemode Data Hub* has never appeared in this
+> wiki. Sitting inside the same initiative, the natural reading is that it is the
+> proxy's downstream — governed Airtable traffic becoming a governed data layer,
+> which would rhyme with [[Farol]]'s bronze/prata/ouro plan. *(unverified: nothing
+> beyond the name was said. Do not build on this reading.)*
+>
+> **Practical consequence for the migration**: msilva is populating **one project**
+> inside this initiative, not modelling the whole programme
+> ([[2026-08-14 Migrate project management from Jira to Linear]]). Phase 2 —
+> LiveScript-only data out of Airtable, recorded below as absent from the roadmap —
+> may belong to a sibling project rather than this one. Worth asking.
+
 > [!important] Orca and other services are planned consumers — msilva, 2026-08-18
 > The plan is to **plug Orca and other services into the proxy**. This makes the
 > company-wide framing above concrete rather than directional, and it reframes the
@@ -290,6 +320,25 @@ conversation for this project is happening in the week of 2026-08-17, msilva has
 shortest track record on the team, and the readout is what Gabrielle and Luís see
 between conversations. Luís's `Triagem`-column convention is the complement: park
 found-but-unprioritized work there, where it's visible, instead of nesting it.
+
+**Three more shape constraints, from [[2026-08-18 1-1 Matheus - Gabrielle]]** — full
+detail on [[Linear Project Structure]]:
+
+- **Use milestones to group deliveries.** Milestones are the level *above* issues and
+  the readout counts them, so they express "this is a chunk of work" without incurring
+  subtask blindness. This is the structural alternative to nesting.
+- **Split along "new work" vs "fixing earlier work".** The team did exactly this to
+  *Fronte de Negócios*, separating `Evolução do Front-End` from `Estabilização`,
+  because a project mixing the two yields a completion percentage that describes
+  neither. The proxy has the same seam: v1 hardening versus new capability
+  (app auth, key distribution, onboarding new consumers).
+- **Use Luís's Markdown templates** for bugs, spikes and epics rather than inventing
+  a format. Issue descriptions are what the product-validation gate reads
+  ([[2026-08-18 Product feedback in Linear, code review in Git]]).
+
+**And a clock.** The Linear Business trial expires **2026-09-09**, with the ~250-issue
+free cap behind it and Gabrielle on leave 2026-08-24 → 2026-09-10. The migration has
+now been assigned three times without moving. Do it this week.
 
 ---
 

@@ -14,10 +14,22 @@ See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 > that matters and only msilva can do it. Details:
 > [[Proxy Environments]]. Reported by every `lint` since the first.
 
+> [!warning] Time-boxed — Gabrielle is on leave 2026-08-24 → 2026-09-10
+> [[2026-08-18 1-1 Matheus - Gabrielle]] was the last scheduled 1:1 before it. Two
+> things carry deadlines inside that window:
+> - **The Linear Business trial expires 2026-09-09**, one day before she is back, with
+>   the ~250-issue free cap behind it — while msilva migrates the `AIRTABLEGC` backlog
+>   into that workspace. No purchase recorded. She is the person who can authorize it.
+> - **The migration itself** has now been assigned three times without moving.
+>
+> The question list to close before 2026-08-24:
+> [[What should the Agent Flow research phase study]].
+
 ## Projects
 - [[Airtable Proxy]] — Go reverse proxy fronting the Airtable API. Primary track. Active work: app auth + key distribution. **Orca and other services are planned consumers** (2026-08-18) — it is the area's shared Airtable data plane, not LiveScript infrastructure.
 - [[Agent Flow]] — proposed multi-agent architecture for the area's intake and delivery; design only. Second track, started 2026-08-17. **Which agent to build first is reopened** (2026-08-18): the criterion changed from lowest-risk to utility.
 - [[Pulse]] — outsourced front-end for the business pipeline. Not msilva's, but he joins the immersion week for context. **Now `deferred` (2026-08-18)**: approval failed, DOR stood down, delay ≥1 month, Copinha window lost.
+- [[Farol]] — travel-data consolidation (Uber, OnFly, Expresso) for finance; Luís + Yasmin. Not msilva's. **V2 adds bronze/prata/ouro layers and a conversational AI layer** — the area's second user-facing AI system. Resolves the *farol* name collision with the status readout.
 
 ## Systems
 - [[LiveScript]] — collaborative script editor, heaviest Airtable consumer, the reason the proxy exists. Also called *roteiros*.
@@ -27,7 +39,8 @@ See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 - [[Airtable Rate Limits]] — 5 req/s per base, 429 → ~30s lockout, `Retry-After`; the constraint driving the whole programme.
 - [[Packaging as skills]] — converged from six sources: packaging is both the token-cost lever and the sharing mechanism. What it doesn't solve is maintenance.
 - [[Agents read primary sources]] — agents query the underlying data rather than wait for the agent meant to digest it. Three instances (A5, A7, A1); it is what makes *anarchic-first* buildable, and it is why context retrieval is **not** a fifteenth agent. Splits A6 into tools + curation.
-- [[AI status reporting on Linear]] — the *farol*: **the only agent-like system actually running in the area**, and so the only empirical evidence about [[Agent Flow]]. Four real insights and two real failures in one readout; its subtask blindness is a constraint A1 and A2 inherit.
+- [[AI status reporting on Linear]] — **the only agent-like system actually running in the area**, and so the only empirical evidence about [[Agent Flow]]. Four real insights and two real failures in one readout; its subtask blindness is a constraint A1 and A2 inherit. **Not called "o farol" (corrected 2026-08-18)** — that is the project [[Farol]]; this system has no recorded name. The team's fix was to **restructure the board, not the agent**.
+- [[Linear Project Structure]] — **initiative = solution, project = delivery segment, milestones group deliveries.** The shape msilva must migrate the proxy backlog *into*, plus teams-as-isolation, Luís's ticket templates, and the Slack integration. Free cap ~250 issues; **Business trial expires 2026-09-09**.
 
 _(next candidates: OpenTelemetry, Reverse Proxy Patterns, Grafana LGTM)_
 
@@ -39,6 +52,8 @@ _(empty — deliberately; see [[log]] 2026-08-17)_
 - [[2026-08-14 Migrate project management from Jira to Linear]] — Linear becomes the system of record; proxy issues to be restructured.
 - [[2026-08-14 No mandatory PR review while the proxy is pre-production]] — msilva merges his own work; Luís reviews history after the fact.
 - [[2026-08-17 A5 receiver runs on Cloud Run]] — plain container, `min-instances=0`. Records why n8n, Cloudflare Workers and co-location were not chosen, and what would reopen each.
+- [[2026-08-18 Product feedback in Linear, code review in Git]] — review split by kind, not stage. A product validator tests in the interface and can return the task via Linear comments; code review stays in Git. Makes the 2026-08-14 PR decision legible.
+- [[2026-08-18 Save n8n execution logs for audit]] — save **failed and production** runs. Resolves the traceability blocker that stalled the CazéTV debugging; the expensive runs *succeeded*, so failures-only would have missed all of them. Runtime is inferred, not stated.
 
 _(next candidates, extractable from [[Airtable Proxy]]: token-terminating auth, OTel/OTLP over BigQuery, Cloud Run min=1)_
 
@@ -57,6 +72,7 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 - [[2026-08-14 Papo de Projetos]] — area/culture meeting; resolves what Orca is; documentation Hub exists.
 - [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]] — first enablement consultation; diagnoses the $7/day token burn (n8n, wholesale context, probable loop).
 - [[2026-08-17 Weekly - Projetos e Tarefas]] — fourth weekly meeting type; the **matriz gateway** (an agent proposed by the business, A1+A2 in miniature), Luís's unattended ultracode run, the AI status readout, and **Orca not observable yet**. Also: why the proxy was ever in Jira, and a Hub action item **due 2026-08-18**.
+- [[2026-08-18 1-1 Matheus - Gabrielle]] — **last 1:1 before Gabrielle's leave.** Process handover: Linear's initiative/project/milestone semantics, the Airtable governance initiative's three projects, Projeto Farol described directly, the product-feedback split, Luís's templates, and the n8n log fix. **Source is Gemini's summary only — no transcript, so no quotes.**
 - [[Meeting prep - accounting data in Claude - 2026-08-17]] — prep notes for the 2026-08-17 accounting-data-in-Claude meeting.
 - [[Meeting prep - first agent decision]] — **one-pager** for the deadline meeting with Gabrielle and Luís: recommendation (A1 + A2), the four candidates in a line each, six decisions needed before 2026-08-24. Meeting date not yet recorded.
 

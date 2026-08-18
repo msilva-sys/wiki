@@ -85,6 +85,14 @@ estar comprado em fazer ele acontecer"* — because the project's central challe
 > already mentions. If so the two are one lineage, which the wiki does not currently
 > say anywhere. **Confirm with Luís or Gabrielle** — one question settles it, and it
 > changes whether the stabilization work is context msilva should care about.
+>
+> **Weak corroboration, 2026-08-18.** [[2026-08-18 1-1 Matheus - Gabrielle]] records
+> that the team split **"Evolução do Front-End"** from **"Estabilização"** into
+> separate Linear projects, for a cleaner completion percentage and easier bottleneck
+> identification. Two front-end tracks now visibly coexist — one evolving, one being
+> stabilized — which is the shape this question predicts. **It does not confirm the
+> lineage**: it does not say the evolution track *is* Pulse, and Pulse is
+> externally built by DOR while the stabilization is Luís's. Still one question.
 
 ## Why it's worth attending
 

@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-08-17
+updated: 2026-08-18
 date: 2026-08-17
 aliases: [skills, packaging, skill packaging, distribution]
 tags: [agents, skills, tokens, sharing, claude]
@@ -73,6 +73,17 @@ in `skill/` with a spec and a test directory beside it, rather than inline.
 **Isolation.** A shared runtime undoes some of the benefit: on the finance team's
 shared n8n licence, one person's stuck execution blocked debugging entirely and
 crowded others' logs out of view. Packaging the logic doesn't isolate the runtime.
+
+> [!note] Partly a settings problem, not purely a tenancy one — 2026-08-18
+> One of the three symptoms had a mundane cause: **execution logs were not being
+> saved at all**, and the team turned saving on for both failures and production runs
+> ([[2026-08-18 Save n8n execution logs for audit]]). So *"crowded others' logs out of
+> view"* overstated it — some of that history did not exist to be crowded.
+>
+> The stuck-lock and no-per-user-filtering halves stand, and they are genuine tenancy
+> problems. **Worth separating**, because it narrows what packaging is being asked to
+> solve: the runtime still isn't isolated, but observability on a shared runtime turns
+> out to be configurable rather than structurally lost.
 
 ## Consequences already acted on
 

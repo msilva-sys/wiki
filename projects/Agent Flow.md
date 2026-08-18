@@ -172,13 +172,33 @@ That flow was diagnosed on 2026-08-17 —
 > A **token-consumption dashboard exists** and is obtainable on request — the
 > measurement instrument this constraint always needed.
 
+> [!note] The instrument has two halves, and both had to be switched on — 2026-08-18
+> From [[2026-08-18 1-1 Matheus - Gabrielle]]:
+>
+> - **Execution history was off by default.** The team decided to save both failed
+>   *and* production runs — [[2026-08-18 Save n8n execution logs for audit]]. The
+>   generalizable point for this project: on the platform the agents would actually run
+>   on, **observability is opt-in, and the default is off.** The [[Airtable Proxy]] is
+>   observability-first by design; its runtime is not.
+> - **Company-wide visibility exists but is coarse.** The **"Tech" account can see
+>   every flow in the company**, though per-user filtering is limited enough that
+>   isolating one person's runs means manually scanning update history. A second
+>   account, **"Humans"**, was described as having a larger token allowance and an
+>   upgrade path. *(unverified: whether these are n8n accounts or the Claude org
+>   account — the notes conflate them. The open question on the 1:1 page decides where
+>   the token instrument actually lives, and it should be asked before 2026-08-24.)*
+>
+> Consequence for **A5 Watcher**, whose whole cost story is throttling
+> ([[How to implement A5 Watcher]]): **you cannot throttle what you cannot see**, and
+> the seeing was a setting nobody had turned on.
+
 The cost lever is therefore twofold: **narrow fetching** (a design decision per
 agent) and **a correct trigger chain** (an orchestration problem). For A5 Watcher
 at a 5-minute cadence, the second matters more — a runaway loop on a schedule
 compounds in a way a one-off experiment doesn't.
 
 > [!note] A third data point, 2026-08-17
-> Luís's Ultra Code run on Farol was **deliberately** 4–5 hours of unattended
+> Luís's Ultra Code run on [[Farol]] was **deliberately** 4–5 hours of unattended
 > parallel agent work, and he reported the outcome as a clear win with no mention of
 > cost. So the team's live position is not "minimize tokens" — it is that a long
 > expensive run is fine **when the output justifies it**, and the open question he
@@ -317,7 +337,7 @@ Livemode already has more in this space than the architecture diagram suggests:
   architecture that isn't a design document. It produced four real insights and two
   real failures in one sitting; see that page for what each implies here.
 - **Ultra Code — the tech lead runs unattended multi-hour agent workflows.** Luís
-  tested Claude Code's ultracode on Farol: it plans a workflow, parallelizes, and
+  tested Claude Code's ultracode on [[Farol]]: it plans a workflow, parallelizes, and
   runs *"4, 5 horas"* unattended. One run took Uber, OnFly and Expresso to
   near-integrated, with the leftovers being genuine inconsistencies in the vendors'
   APIs rather than agent errors. He wants to present it and agree when it's the right
@@ -338,6 +358,47 @@ None of these were mentioned when the project was handed over. Understanding how
 Agent Flow relates to them — complement, replacement, or duplicate — is worth
 doing before designing, particularly given that one of the transversal agents is
 explicitly about **not building the same thing twice**.
+
+## Infrastructure that already exists in Linear (2026-08-18)
+
+From [[2026-08-18 1-1 Matheus - Gabrielle]], written up at
+[[Linear Project Structure]]. Three pieces of this architecture may not need
+building, and one design input finally has a local instance.
+
+**A delivery channel exists.** Linear projects can be wired to **specific Slack
+channels**, pushing progress and task movements automatically. Available, not
+configured. So an agent that writes a Linear issue gets Slack delivery for free —
+relevant to **A2** (whose output is a ticket) and to
+[[How to implement A5 Watcher]], where notification is otherwise treated as
+something to build. **Reporting is not the hard part; deciding what is worth
+reporting is.**
+
+**An approval gate exists, with a return path.** Work is validated by someone from
+product, who tests it and can send it back through Linear's comment system —
+[[2026-08-18 Product feedback in Linear, code review in Git]]. The architecture's
+*humans as strategic approvers* premise
+([[Fluxo Agêntico project instruction]]) therefore has a concrete place to live, and
+a split: **product/business-rule approval in Linear, technical in Git.** An agent
+submitting work has to know which gate it is aiming at — different reviewers,
+different rejection criteria.
+
+**An access-control boundary exists.** Freelancer projects are isolated in separate
+**Linear teams**. That is the only described access-control mechanism in the area's
+tooling, and it is what would scope any agent given Linear credentials.
+
+**The ticket template is no longer only external prior art.** This project's design
+has leaned on Packer's ticket template as the target output shape for A2
+([[Gabriel Packer - DAG-driven agent orchestration]] — *the ticket is the prompt*).
+**Luís has authored in-house Markdown templates for bugs, spikes and epics.** Read
+them before designing A2's output: if they already carry scope, explicit non-goals
+and affected files, they are the contract. If they are human prose, the gap between
+them and an agent-consumable spec is itself a finding worth reporting.
+
+> [!question] Which initiative does Agent Flow belong to?
+> Now that initiative/project semantics are known — initiative = product or
+> solution, project = a delivery segment — this project has no recorded home. It is
+> not obviously part of Airtable governance. **Unstated**, and it decides where
+> msilva files the research so it is visible to the weekly readout at all.
 
 ## A use case that arrived from the business (2026-08-17)
 

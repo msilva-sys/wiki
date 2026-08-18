@@ -125,7 +125,7 @@ entirely. Two measured instances:
 
 | Project | Reported | Actual, per the owner |
 |---|---|---|
-| Farol | *no deliveries* | Luís and Yasmin *"andaram bastante"* — all inside one parent |
+| [[Farol]] | *no deliveries* | Luís and Yasmin *"andaram bastante"* — all inside one parent |
 | Fronte de Negócios | **6%** | *"por volta de 20, 25%"* |
 
 Gabrielle: *"ele tá considerando a entrega da tarefa como um todo […] e
@@ -151,6 +151,23 @@ produced four real insights and two real failure modes at once, and Gabrielle ar
 with it out loud. It is the closest thing at Livemode to a running [[Agent Flow]]
 agent, and the first evidence about that architecture that comes from a system
 rather than a design document.
+
+> [!warning] Naming correction, 2026-08-18 — the readout is not *"o farol"*
+> This page and that one both originally read *farol* as the team's nickname for the
+> readout. It isn't: every occurrence of *farol* in this transcript refers to the
+> **project** [[Farol]], including the row above about *no deliveries*. Confirmed by
+> Gabrielle describing that project directly in
+> [[2026-08-18 1-1 Matheus - Gabrielle]]. The readout has **no recorded name**.
+
+> [!success] What the team did about it — 2026-08-18
+> They **restructured the board, not the agent**: `Evolução do Front-End` was split
+> from `Estabilização` into separate Linear projects, for a truer completion
+> percentage and easier bottleneck identification
+> ([[2026-08-18 1-1 Matheus - Gabrielle]], [[Linear Project Structure]]).
+>
+> That fixes the *category* confusion behind the 6%. It does nothing about subtask
+> blindness or about the readout reasoning past its evidence on Orca — so the
+> constraint on msilva above stands unchanged.
 
 ## Ultra Code — Luís ran an unattended multi-hour agent workflow
 

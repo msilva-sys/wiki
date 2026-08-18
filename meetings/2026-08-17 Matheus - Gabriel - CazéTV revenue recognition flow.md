@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-17
+updated: 2026-08-18
 date: 2026-08-17
 attendees: [Matheus Silva, Gabriel]
 source:
@@ -140,6 +140,23 @@ operations and a runaway bill.
 **Execution traceability is still the blocker.** Executions previously appeared
 and Gabriel could catch errors from them; now they don't reliably show —
 *"sem um modo da gente conseguir rastrear as execuções"*.
+
+> [!success] Resolved the next day — it was a setting, not the shared licence
+> [[2026-08-18 1-1 Matheus - Gabrielle]]: Gabrielle diagnosed the cause as
+> **execution logs not being saved by default**, and the team decided to turn saving
+> on for **both failed and production runs** —
+> [[2026-08-18 Save n8n execution logs for audit]]. msilva owns the configuration
+> change.
+>
+> This page had attributed the missing history to the shared instance and the stuck
+> lock. Those were real but separate; the logs were off. **Saving production runs and
+> not only failures is the load-bearing half** — the expensive runs *succeeded*, they
+> just produced a wrong number, so a failures-only setting would have missed every
+> one of them.
+>
+> It also unblocks the two msilva action items below, which cannot be worked without
+> execution history. *(unverified: the notes say "the tools" without naming n8n —
+> see the confidence note on the decision page.)*
 
 ### Two distinct failure classes, separated
 

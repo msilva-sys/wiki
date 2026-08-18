@@ -130,6 +130,33 @@ for the end of the week beginning 2026-08-17.
   about Ultra Code, and the same question as the token-cost constraint asked from the
   other end. He owns this one, not Gabrielle.
 
+**Added 2026-08-18 from [[2026-08-18 1-1 Matheus - Gabrielle]].** Note that this 1:1
+was the **last scheduled one before her leave**, so these have no second chance.
+
+- **What are the "Tech" and "Humans" accounts?** Tech has daily/monthly caps and can
+  see every flow in the company; Humans has a larger token allowance and an upgrade
+  path. Whether these are **n8n** or the **Claude org account** is genuinely
+  ambiguous in the notes, and it decides where the token-measurement instrument
+  lives — the thing the whole token constraint depends on. **Cheapest high-value
+  question on this list.**
+- **Which initiative does [[Agent Flow]] belong to?** Initiative = product/solution,
+  project = delivery segment ([[Linear Project Structure]]). This project has no
+  recorded home, and that decides whether the research is visible to the weekly
+  readout at all.
+- ~~**What is the AI status readout, mechanically?**~~ Still unanswered, but the
+  team's *revealed* answer arrived: they **restructured the board instead of the
+  agent**, splitting `Evolução do Front-End` from `Estabilização` for a truer
+  completion percentage. Treating the agent as fixed and the board as adjustable is a
+  position; ask whether it is a considered one or just the only lever they had.
+- **Are Luís's ticket templates usable as an agent output contract?** He wrote
+  Markdown templates for bugs, spikes and epics. A2's output shape has until now been
+  modelled on Packer's external template. **Read the in-house ones first** — this is
+  answerable without asking anyone.
+- **Is the Linear Business plan being bought?** Trial expires **2026-09-09**, one day
+  before she returns, with the ~250-issue free cap behind it and msilva migrating the
+  `AIRTABLEGC` backlog in the meantime. Not an agent question, but she is the only
+  person who can authorize it and she leaves on 2026-08-24.
+
 ## Still open, no owner
 
 - **How do agents talk to each other?** The unsolved problem that killed the prior
