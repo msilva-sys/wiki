@@ -6,7 +6,7 @@ updated: 2026-08-19
 # Log
 
 Append-only. Newest at the bottom. Never rewrite an entry.
-Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
+Prefixes: `ingest` | `callout` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 
 ## [2026-08-17] refactor | LLM-wiki setup
 - Initialized git in the vault; snapshot commit taken before any changes.
@@ -2022,3 +2022,15 @@ revisit.
   gist of the discussion and its conclusion — same substance as any other
   log entry — not a bookkeeping marker. Its presence is still what stops the
   callout being re-surfaced, but now it's also the durable record.
+
+## [2026-08-19] refactor | Name the callout procedure `notes`, add `callout` log prefix
+
+- msilva wants an explicit command to trigger the callout search-and-discuss
+  procedure, not just the automatic session-start run.
+- Named the procedure `notes` in `CLAUDE.md`: same steps as before (search
+  unhandled `[!msilva]` callouts, discuss in chat, resolve on the page, log
+  the actual reasoning), now invokable on demand by typing `notes`, and it's
+  what runs automatically at session start too — one procedure, two triggers.
+- Added a `callout` log prefix for entries `notes` produces, and pointed the
+  `lint` checklist item at it (should rarely fire, since session start
+  already covers it — `lint` is the backstop).

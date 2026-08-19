@@ -80,12 +80,11 @@ the schema into it.**
   aside. If it bears on other pages too, fan it out the next time that area is
   touched — cited as *"msilva, `[!msilva]` callout on [[Page]] (date), ..."*,
   same evidentiary tier as a spoken meeting quote, promoted to `decisions/`
-  only once msilva confirms it's settled. Discussed in chat, not answered
-  inline on the page — see *Session start* under Operations. Once talked
-  through, either deleted (outcome folded into the page or fanned out
-  elsewhere) or left in place if it's a standing opinion with nothing to
-  action; either way the actual reasoning lands in `log.md`, not just a
-  marker that it happened.
+  only once msilva confirms it's settled. Answered by the `notes` operation
+  (below) — discussed in chat, not inline on the page. Once talked through,
+  either deleted (outcome folded into the page or fanned out elsewhere) or
+  left in place if it's a standing opinion with nothing to action; either way
+  the actual reasoning lands in `log.md`, not just a marker that it happened.
 
 ## Dates
 
@@ -140,8 +139,11 @@ and a smell for a `status: active` page — [[log]] and `lint` both rely on it.
 
 ## Operations
 
-### Session start — check `[!msilva]` callouts
-Before starting whatever the session is actually about:
+### `notes`
+Search for and answer msilva's `[!msilva]` callouts. Can be triggered
+explicitly (msilva types `notes`) or on its own at the **start of every
+session**, automatically, before whatever the session is actually about —
+either way it's the same procedure:
 1. Search the vault for `[!msilva]` callouts not yet referenced in `log.md`
    — that absence is what marks a callout unhandled. (Don't re-surface one
    `log.md` already covers.)
@@ -153,7 +155,8 @@ Before starting whatever the session is actually about:
      to-do marker, not a permanent fixture;
    - if it's genuinely a standing personal opinion with nothing to action,
      leave it in place as-is.
-4. Either way, append a `log.md` entry with the actual gist of what was
+4. Either way, append a `log.md` entry (prefix `callout`) with the actual
+   gist of what was
    discussed and concluded — a few lines, same substance as any other log
    entry, not a bare "seen" marker. This is the durable record of the
    thinking (the chat itself isn't reliably re-readable by a later session),
@@ -218,7 +221,8 @@ Health check, report before changing anything:
   incompatible things. Read the bodies of pages edited more than twice.
 - broken wikilinks worth creating vs. worth deleting
 - decisions marked open in one page and settled in another
-- `[!msilva]` callouts not yet referenced in `log.md` — i.e. never discussed
+- `[!msilva]` callouts not yet referenced in `log.md` — i.e. `notes` hasn't
+  caught them yet (should be rare, since `notes` also runs at session start)
 
 ### `log`
 Append-only. Never rewrite history. One entry per operation:
@@ -228,7 +232,7 @@ Append-only. Never rewrite history. One entry per operation:
 - New: concepts/Airtable Rate Limits.md
 - Updated: projects/Airtable Proxy.md, systems/Airtable Proxy.md
 ```
-Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
+Prefixes: `ingest` | `callout` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 
 ## Domain notes
 
