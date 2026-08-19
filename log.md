@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-08-18
+updated: 2026-08-19
 ---
 
 # Log
@@ -1808,3 +1808,25 @@ revisit.
   (fifth gap, closing the old mystery explicitly).
 - Open: `PRO-67`'s stray archive state; whether/when `Backlog deferido` gets
   restored; everything else carried from prior entries.
+
+## [2026-08-19] refactor | LiveScript-vs-proxy split proposed and paused; Done issues linked to real PRs
+- msilva asked to split the ~20 LiveScript-side issues in `Proxy do Airtable`
+  out into **Fluxo Agêntico**, so a separate agent could pick them up. Issued
+  18 parallel `save_issue` project-moves; **all 18 rejected by msilva** with
+  "for now these will stay under Proxy do Airtable" (later corrected: the
+  project's real name is "Proxy do Airtable", not "Airtable GC"). Reverted the
+  one issue that had already moved (`PRO-58`) back to its original project and
+  `F1 - Visibilidade LiveScript na Vercel` milestone.
+- Then: "all the done issues should have the related PR." Ran
+  `gh pr list --repo livemode-org/livemode-airtable-proxy --state all` — 7 PRs
+  total, #1 closed/unmerged (superseded by #2), #2–7 merged.
+- Linked real PRs as attachments: `PRO-75` → PR #2, `PRO-77` → PR #4, `PRO-80`
+  → PR #7 (`PRO-79`/`PRO-81` already carried PR #7 from an earlier fix).
+- Checked `git show b29f85b` to confirm `PRO-60`, `PRO-98`–`PRO-105` predate
+  PR-based review (direct bootstrap commit to `main`, Luís, 2026-06-26) —
+  **deliberately left unlinked**, no PR invented for them.
+- Updated: [[2026-08-14 Migrate project management from Jira to Linear]] (two
+  new Resolved bullets).
+- Open: whether the LiveScript/proxy split gets revisited; `PRO-67`'s stray
+  archive state; `Backlog deferido` restoration; everything else carried
+  from prior entries.

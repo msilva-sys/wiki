@@ -221,6 +221,31 @@ full at [[Linear Project Structure]]:
     decision on record (`X-Api-Key` deferral) is sourced from Jira's own
     comment text, not from any transcript ingested here; that 1:1 was never
     captured in this wiki.
+- **LiveScript-vs-proxy project split proposed and paused, 2026-08-19.** After
+  restoring the 47 archived issues and reassigning them all to msilva, he asked
+  to separate the LiveScript-side issues in `Proxy do Airtable` from the
+  proxy-side ones, so a distinct agent could work the LiveScript backlog. A
+  bulk move of ~20 issues into **Fluxo Agêntico**
+  (`https://linear.app/projetos-livemode/project/fluxo-agentico-300fd8418b8c`)
+  was attempted and **rejected by msilva**: *"for now these will stay under
+  Proxy do Airtable."* One issue (`PRO-58`) that had already moved before the
+  rejection was reverted, including its original `F1 - Visibilidade LiveScript
+  na Vercel` milestone. The split is deferred, not abandoned — revisit only if
+  msilva asks again, not proactively.
+- **Every Done issue checked for a real merged PR, 2026-08-19.** `gh pr list`
+  against `livemode-airtable-proxy` (`--state all`) returned 7 PRs: #1 closed
+  (superseded by #2, not merged), #2–7 merged. Linked as attachments: `PRO-75`
+  → [PR #2](https://github.com/livemode-org/livemode-airtable-proxy/pull/2)
+  (GC-34, list-read signals), `PRO-77` →
+  [PR #4](https://github.com/livemode-org/livemode-airtable-proxy/pull/4)
+  (GC-36, OTel dotted attribute names), `PRO-80` →
+  [PR #7](https://github.com/livemode-org/livemode-airtable-proxy/pull/7)
+  (`PRO-79`/`PRO-81` already had PR #7 from the third-gap fix above).
+  **Deliberately left without a PR:** `PRO-60`, `PRO-98`–`PRO-105` — all part
+  of the original bootstrap commit `b29f85b` (Luís, 2026-06-26), landed direct
+  to `main` before PR-based review existed on this repo, consistent with
+  [[2026-08-14 No mandatory PR review while the proxy is pre-production]]. No
+  link was invented for them.
 
 ## Open questions
 
