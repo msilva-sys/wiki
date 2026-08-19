@@ -2208,3 +2208,18 @@ revisit.
   whether her intranet tool is already A10 Portfolio, and skills-repo overlap
   with A6 Curator.
 - Updated: `index.md`.
+
+## [2026-08-19] refactor | Broaden Carol prep doc beyond A5
+- msilva corrected: today's Carol meeting should not be specific to A5. The
+  prior entry this session created a Watcher-only prep doc, too narrow.
+- Renamed (git mv, content rewritten): `meetings/Meeting prep - A5 Watcher
+  discovery with Carol - 2026-08-19.md` -> `meetings/Meeting prep - Agent Flow
+  discovery with Carol - 2026-08-19.md`.
+- New structure covers five threads: which-agent-first against Carol's own
+  "team's pain" criterion; the Watcher/A5 discovery question (kept, asked
+  cold, since it's still the specific action item from
+  [[2026-08-18 1-1 Matheus - Luís]]); A6 Curator vs. the skills repo she's
+  building; her intranet tool as a possible A10 Portfolio; and getting her
+  context-minimalism view first-hand rather than relayed secondhand from
+  [[2026-08-19 1-1 Matheus - Gabrielle]].
+- Updated: `index.md` (entry rewritten in place, notes the rename).
