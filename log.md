@@ -1982,3 +1982,18 @@ revisit.
   meeting quote) the next time that area is touched if it bears on other
   pages; promoted to `decisions/` only once msilva confirms it's settled.
 - Added a `lint` check for unfanned `[!msilva]` callouts.
+
+## [2026-08-19] refactor | `[!claude]` replies + session-start callout check
+
+- msilva wants his `[!msilva]` callouts actually **seen and thought about**,
+  not just silently fanned out (or not) whenever a page happens to get
+  touched later.
+- Added a `[!claude]` reply convention: every `[!msilva]` callout gets a
+  dated `[!claude]` reply written directly beneath it — real reasoning, a
+  question back, or what was done — not an acknowledgment.
+- Added a new first-thing-every-session step to `CLAUDE.md`: search for
+  `[!msilva]` callouts with no `[!claude]` reply yet, think about each one,
+  reply inline, fan out if it bears on other pages, then summarize the
+  thinking to msilva before starting whatever the session was actually
+  asked to do.
+- No callouts exist yet to process — convention just created.

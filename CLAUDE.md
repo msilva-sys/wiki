@@ -80,7 +80,9 @@ the schema into it.**
   aside. If it bears on other pages too, fan it out the next time that area is
   touched — cited as *"msilva, `[!msilva]` callout on [[Page]] (date), ..."*,
   same evidentiary tier as a spoken meeting quote, promoted to `decisions/`
-  only once msilva confirms it's settled.
+  only once msilva confirms it's settled. **Every `[!msilva]` gets a
+  `[!claude]` reply directly beneath it** — see *Session start* under
+  Operations — so msilva sees the thinking, not just a silent edit elsewhere.
 
 ## Dates
 
@@ -134,6 +136,18 @@ When a page's `date:` and `updated:` are far apart, that's normal for a meeting
 and a smell for a `status: active` page — [[log]] and `lint` both rely on it.
 
 ## Operations
+
+### Session start — check `[!msilva]` callouts
+Before starting whatever the session is actually about:
+1. Search the vault for `[!msilva]` callouts with no `[!claude]` reply
+   directly beneath them — those are unaddressed.
+2. For each: read it in the context of the page it's on and actually think
+   about it — not a rubber-stamp acknowledgment. Write a `[!claude]` reply
+   right after it, dated, with real reasoning, a question back, or a note of
+   what you did about it.
+3. Fan out per the `[!msilva]` rule (below) if it bears on other pages too.
+4. Briefly tell msilva what you found and thought, before moving on to
+   whatever the session was actually asked to do.
 
 ### `ingest <file or topic>`
 1. Read the raw source in full.
