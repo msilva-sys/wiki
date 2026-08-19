@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-08-18
+updated: 2026-08-19
 aliases: [Linear structure, initiatives and projects, milestones, Liner]
 tags: [linear, process, project-management]
 ---
@@ -223,6 +223,12 @@ Worth carrying forward: an agent that needs to report to humans may not have to
 build a notification path. If A2 writes a Linear issue, the existing integration
 delivers it. See [[Agent Flow]] and [[How to implement A5 Watcher]], where
 delivery-channel choices are otherwise treated as open.
+
+**Release notes to Slack, specifically — from Luís, 2026-08-19.** Linear can
+already auto-post a release note to a Slack channel whenever a project ships
+a new version. Raised in the context of [[Agent Flow]]'s A14 (PM Agent),
+which is largely a reporting/status layer — this piece of it may need no
+new build at all. See [[2026-08-19 1-1 Matheus - Gabrielle]].
 
 **Project updates are hand-written weekly.** Gabrielle writes a project health note and
 status each Friday — *"ele traz aqui a saúde do projeto"* — framed as her own practice

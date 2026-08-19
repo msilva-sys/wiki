@@ -86,6 +86,42 @@ classifies), which hands off to **A2 Classificador & Decisor** for routing:
 (usage analysis), A12 Data Gov (data quality), A13 Deduplication (**detects and
 blocks**), A14 PM Agent (request through to delivery).
 
+> [!note] A6, A9–A14 walked through in detail — 2026-08-19
+> [[2026-08-19 1-1 Matheus - Gabrielle]] (Part 2), reading the diagram live.
+>
+> - **A6 Curator has (at least) four functions**, named for the first time:
+>   institutional memory (captures/organizes everything); continuous learning
+>   (patterns, tutorials, templates); redundancy detection across areas
+>   ("corporatização," interfacing heavily with A10); and an interface layer
+>   every other agent goes through — *"uma intranet dos agentes."* msilva's
+>   own flag: this may be **too much for one agent**, sharpening (not
+>   resolving) the existing "A6 splits into retrieval + curation" corollary
+>   below — the split may be 4-way, not 2-way.
+> - **A9 Developer clarified against A3**: both are executors; **A3 is the
+>   fast/operational one, A9 is the project-pipeline one** (behind full A7
+>   discovery). First time the two have been distinguished this plainly.
+> - **A10 Portfolio may already be partly built.** Open question: is
+>   **Carol's intranet tool** (`livemode-intranet.vercel.app`) already
+>   functioning as A10? Company-wide scope confirmed (not just this team);
+>   redundancy and anomaly detection (misaligned priorities, uncontrolled
+>   capacity) overlap what the weekly *recap* already does by hand.
+>   **A10 feeds A11**, which analyzes real usage and produces the reports A10
+>   surfaces.
+> - **A12 Data Gov resolved as data-usage validation** (e.g. every product
+>   must source from the *repositório de competições*; ties to the
+>   [[Airtable Proxy]] — is data sourced correctly, any unauthorized external
+>   API use). **New open question: does this team even own A12**, or does it
+>   belong to a platform/foundation layer, since it's internal validation
+>   rather than anything externally facing? Could also double as a routing
+>   layer telling other agents which data source to use.
+> - **A13 may be the same agent as A10** — deduplication and portfolio-level
+>   redundancy detection could be one job seen from two angles. Not resolved.
+> - **A14 (garbled as "prêmio," almost certainly PM Agent)**: a log/reporting
+>   layer, producing stakeholder-facing status reports requesting approval.
+>   **New infrastructure fact, from Luís**: Linear can already auto-post a
+>   release note to Slack on a new version — see
+>   [[Linear Project Structure]].
+
 > [!note] "Fast" is the wrong word for A3, per msilva himself — 2026-08-19
 > The table row above says "orchestrates fast demands." In
 > [[2026-08-19 1-1 Matheus - Gabrielle]] msilva explicitly rejects that framing:
@@ -155,6 +191,17 @@ integration point between msilva's two projects.
 > already planned, not as a settled answer. Full writeup on the meeting page;
 > [[How to implement A5 Watcher]]'s existing build plan is Path-A-shaped,
 > scoped only to the proxy.
+
+> [!danger] Possible convergence, later the same day — read carefully, attribution is collapsed
+> [[2026-08-19 1-1 Matheus - Gabrielle]] (Part 2): msilva reports agreeing with
+> a view attributed to Gabrielle that **scoping Watch to the proxy doesn't
+> make structural sense today**, since the proxy currently serves one
+> specific project — the same objection Luís raised on 2026-08-18. If the
+> attribution holds, **Gabrielle's position may have moved toward Luís's**,
+> narrowing the tension above on its own, independently of the Path A/B
+> reconciliation immediately above. **Not promoted to fact** — total
+> attribution collapse means this could equally be msilva restating his own
+> evolving view. Needs a direct check with Gabrielle.
 
 A longer-term ambition, from the onboarding: once built for this area, the flow
 could be adapted and reused by other areas, helping them produce more structured
@@ -639,6 +686,20 @@ consultant rather than validator.
   also opens with understanding context before helping.
 - **Is usage/UX-pattern monitoring part of A5 Watcher, or a separate "product"
   concern?** New 2026-08-19, raised and left open, same source.
+- **How much upfront context/documentation is actually right?** New
+  2026-08-19, from a separate debate msilva had "yesterday" with Carol and
+  Luís about how they build software with AI agents *today* — not about
+  [[Agent Flow]]'s design directly, but a direct input to it. Luís preps
+  heavily and isn't clearly moving faster; Carol has had success giving
+  **less** context over time; msilva's own practice favors rapid
+  ship-to-homologation-and-report over understanding everything upfront.
+  **Tension with the bullet above**, not a resolution — see
+  [[2026-08-19 1-1 Matheus - Gabrielle]] Part 2.
+- **Does this team even own A12 Data Gov?** New 2026-08-19 — it's internal
+  data-usage validation, which may belong to a platform/foundation layer
+  instead. Same source.
+- **Is A13 Deduplication the same agent as A10 Portfolio?** New 2026-08-19,
+  same source — redundancy detection shows up in both.
 - **Which agent to build first?** **The selection criterion changed on 2026-08-18** —
   msilva's manager wants the agent with the **most utility** first, where the
   2026-08-17 analysis had optimized for lowest risk of failing. Both readings are
@@ -646,7 +707,12 @@ consultant rather than validator.
   answer was **A5 Watcher on proxy telemetry**; under utility it is the intake pair,
   **A1 + A2**, which is also **msilva's own position (2026-08-18)**. *Position, not
   decision — nothing is settled, and the criterion itself needs confirming with
-  Gabrielle before 2026-08-24.*
+  Gabrielle before 2026-08-24.* **2026-08-19, third pass**: Carol's own criterion —
+  start with what relieves **the team's own most immediate pain** — plus msilva's
+  two stated pains (no unified cross-project backlog/prioritization; no good
+  discovery/documentation minimum) point toward **A10+A14** and **A7/A8** rather
+  than A1+A2 or A5. Not a new decision — see [[Which agent should be built
+  first]] and [[Comparing the first-agent candidates]] for the detail.
 - ~~**Who owns context retrieval?**~~ **Answered 2026-08-18 — it is not an agent.**
   Raised from msilva's point that **A7 cannot be chat-only**, then asked whether it
   needed a fifteenth agent. It does not: a retrieval *agent* would create the

@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-08-18
+updated: 2026-08-19
 date: 2026-08-18
 aliases: [first agent comparison, candidate comparison, first agent doc, first agent trade-offs]
 tags: [agents, planning, decision, a1, a2, a5, a7, a4]
@@ -35,6 +35,19 @@ a proposal for which one and where its first version lives.**
 **msilva's own position (2026-08-18): A1 + A2.** The criterion change itself has not
 been confirmed with Gabrielle, and if it originated with her it is a soft withdrawal
 of her own A5 suggestion.
+
+> [!note] A third framing, 2026-08-19 — not yet reflected in the table above
+> Carol's own test: start with whatever relieves **the team's own most
+> immediate pain**, not utility broadly. Under that framing, msilva's two
+> stated pains — no unified cross-project backlog/prioritization, and no good
+> discovery/documentation minimum — point toward **A10 Portfolio + A14 PM
+> Agent** and **A7 Discovery + A8 Orchestrator**, neither of which is on this
+> page's candidate list. Also that day: a possible narrowing of the A5
+> lowest-risk row above, since Gabrielle may now share Luís's proxy-scoping
+> objection (attribution collapsed, unconfirmed). See
+> [[2026-08-19 1-1 Matheus - Gabrielle]] and [[Which agent should be built
+> first]]. Not incorporated into the comparison below yet — this page still
+> reflects the four candidates as scoped on 2026-08-18.
 
 **Deadline pressure is real**: a deadline-setting meeting with Gabrielle and Luís was
 set for the end of the week beginning 2026-08-17, and **Gabrielle is on leave from

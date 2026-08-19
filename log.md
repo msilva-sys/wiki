@@ -1904,3 +1904,68 @@ revisit.
   `PRO-82` instance).
 - Open: Luís's reply on `PRO-82` and now `PRO-94`; everything else carried
   from prior entries.
+
+## [2026-08-19] ingest | 1:1 Matheus / Gabrielle (2026-08-19), Part 2
+- Source: `raw/Gabrielle _ Matheus - 2026_08_19 11_56 GMT-03_00 - Anotações do
+  Gemini.md`, 26 min 29 s, starting 6 minutes after Part 1 ended — treated as
+  the same meeting's second Gemini segment, per the precedent set for the
+  Gabriel session's two-part recording. **Not a new page** — appended to
+  `meetings/2026-08-19 1-1 Matheus - Gabrielle.md` as "Part 2," frontmatter
+  `source` now lists both raw files.
+- Updated: `projects/Agent Flow.md` (five spots), `syntheses/Which agent
+  should be built first.md` (two spots), `syntheses/Comparing the
+  first-agent candidates.md`, `syntheses/What should the Agent Flow research
+  phase study.md` (two spots), `concepts/Linear Project Structure.md`,
+  `index.md` (three spots).
+- **Same attribution defect as Part 1, unchanged** — everything below is
+  presented as msilva's own account.
+- **Finishes the 14-agent walkthrough this pair started in Part 1**: A6
+  Curator's **four** functions named for the first time (institutional
+  memory, continuous learning, cross-area redundancy detection, and an
+  agent-facing interface layer — *"uma intranet dos agentes"*), with msilva
+  flagging that four functions may be too much for one agent — sharpens,
+  doesn't resolve, the existing "A6 splits into retrieval + curation"
+  corollary from 2026-08-18. A9 Developer clarified against A3 (both
+  executors; A3 fast/operational, A9 behind full A7 discovery). A10
+  Portfolio possibly already prototyped by **Carol's intranet tool**
+  (unconfirmed) and feeding A11 Product Intelligence. A12 Data Gov resolved
+  as data-usage validation, with a new question of whether this team even
+  owns it versus a platform/foundation layer. A13 Deduplication may be the
+  same agent as A10. A14 (garbled as "prêmio," almost certainly PM Agent) is
+  a reporting layer — and Linear can already auto-post release notes to
+  Slack on ship, per Luís, needing no new build for that piece.
+- **A genuinely new, separate debate, from a conversation with Carol and
+  Luís "yesterday": how much upfront context does agentic coding actually
+  need?** Not about [[Agent Flow]]'s design directly, but a direct input to
+  it, and in tension with Part 1's "should discovery be universal?" question.
+  Luís preps heavily and isn't clearly faster for it; Carol has had good
+  results giving **less** context over time; msilva's own practice — push to
+  homologation, test himself, report back via an agent, rather than
+  understand everything upfront — is a concrete example of the same lean.
+  Recorded as a live tension, not resolved either way; msilva says
+  explicitly he still has to study this properly with Carol and Luís.
+- **Possible convergence, flagged carefully.** msilva reports agreeing with
+  a view attributed to Gabrielle that scoping Watch to the proxy doesn't
+  make structural sense today — the same objection Luís raised on
+  2026-08-18. If that attribution holds, the "unreconciled tension" recorded
+  since then may be narrowing on its own, independent of the Path A/B
+  reconciliation from Part 1. **Not promoted to fact anywhere it's
+  recorded** — total attribution collapse means this could equally be
+  msilva restating his own view. Needs a direct check with Gabrielle.
+- **A third "which agent first" framing.** Carol: start with whatever
+  relieves the team's **own most immediate pain**, not utility broadly.
+  msilva's own two pains, stated directly for the first time: (1) no
+  unified cross-project backlog/prioritization view across paused vs. active
+  projects — A10+A14 territory; (2) no good discovery/documentation minimum
+  — A7+A8 territory, and the same pain as the context-tradeoff debate above.
+  Neither points at A1+A2 or A5. Recorded as new input, not a new decision —
+  [[Comparing the first-agent candidates]] explicitly not yet rewritten to
+  reflect it.
+- **A8 Orchestrator gets a new stated role**: checking whether A7's BRD
+  output already carries enough context before build starts — an explicit
+  context-sufficiency gate not previously recorded.
+- Cut off mid-sentence at the very end — *"foi um feedback que eu e Luís
+  chegamos ontem"* — content lost, flagged rather than guessed at.
+- Open: everything above, plus the discovery conversations with Gabrielle
+  and Carol already planned since 2026-08-18, which this meeting's material
+  feeds into rather than replaces.

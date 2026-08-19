@@ -41,6 +41,16 @@ tags: [agents, planning, a5, a1, a7]
 > aside. **Next step before more design**: separate discovery conversations with
 > Gabrielle and Carol about what each imagines the Watcher doing.
 
+> [!danger] Possible convergence, 2026-08-19 — read carefully, attribution collapsed
+> [[2026-08-19 1-1 Matheus - Gabrielle]] (Part 2): msilva reports agreeing with
+> a view attributed to Gabrielle that Watch-scoped-to-the-proxy doesn't make
+> structural sense today — Luís's exact objection. If the attribution holds,
+> the tension above may be narrowing on its own. **Not promoted to fact** —
+> could equally be msilva's own view. Also that day (Part 1): a candidate
+> reconciliation where Watch becomes a multi-tool consolidator (proxy +
+> LogRocket + Vercel) rather than proxy-defined — msilva's synthesis, not run
+> past Luís. Full detail: [[Agent Flow]], the meeting page.
+
 Two criteria have now been applied, and they give different answers. **Under
 lowest-risk-of-failing (2026-08-17): A5 Watcher, targeting the [[Airtable Proxy]]'s
 telemetry** — the reasoning matters more than the answer, because two of the
@@ -219,6 +229,15 @@ the proxy, and `Bug (sistema)` has both a producer and a consumer.
 > deadline — see the use-case section in [[Agent Flow]]. It is not on the candidate
 > list here and probably should be, though it carries a non-technical blocker: nobody
 > knows who approves the requests.
+>
+> **4. A sharper criterion and two direct data points, 2026-08-19.** Carol's own
+> test — start with whatever relieves **the team's own most immediate pain**,
+> not utility to the company broadly — and msilva's two stated pains: **no
+> unified cross-project backlog/prioritization** (A10 Portfolio + A14 PM Agent
+> territory) and **no good discovery/documentation minimum** (A7/A8
+> territory). Neither points at A1+A2 or A5. [[2026-08-19 1-1 Matheus -
+> Gabrielle]] (Part 2) — not a new decision, but the first time msilva's own
+> pain, rather than an abstract utility argument, has entered this comparison.
 
 **Still not decided.** The A5 recommendation below is not formally superseded, and
 the criterion change has not been confirmed with Gabrielle.

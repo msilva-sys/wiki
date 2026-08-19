@@ -37,6 +37,19 @@ tags: [agents, research, planning, index]
 > answer. Detail: [[Agent Flow]], [[Which agent should be built first]],
 > [[How to implement A5 Watcher]].
 
+> [!danger] Possible convergence, same day (Part 2) — attribution collapsed, unconfirmed
+> msilva reports agreeing with a view attributed to Gabrielle that Watch
+> scoped to the proxy doesn't make structural sense today — Luís's exact
+> objection. Could mean the tension above is narrowing on its own, or could
+> just be msilva's own view under collapsed attribution. Needs a direct check
+> with Gabrielle. Same source.
+>
+> **Also from Part 2**: a third candidate framing — start with **the team's
+> own most immediate pain** (Carol), not utility broadly. msilva's two pains
+> (no unified cross-project backlog; no good discovery/documentation minimum)
+> point at **A10+A14** and **A7+A8**, neither previously on the shortlist.
+> Not incorporated into [[Comparing the first-agent candidates]] yet.
+
 **Status board and router for [[Agent Flow]]'s research phase.** This page tracks
 *what is settled and what is open*; the reasoning lives on the pages it points to.
 
@@ -222,8 +235,20 @@ struck through, kept for the record — and the answers reshape the list.
 - **Does A3 need a universal discovery/planning step, or only complex work?**
   New 2026-08-19, same source — msilva questioning his own A3-vs-A7 split.
   Could collapse the fork into "discover always, fork by complexity after."
+  **Part 2, same day**: cuts the other way in places — Carol and msilva's own
+  practice both favor *less* upfront context, while Luís's heavy-context
+  approach isn't visibly faster. Tension, not resolved either direction.
 - **Is UX/usage-pattern monitoring part of A5 Watcher, or a separate product
   concern?** New 2026-08-19, same source.
+- **Does this team own A12 Data Gov**, or does data-usage validation belong to
+  a platform/foundation layer? New 2026-08-19, Part 2.
+- **Is A13 Deduplication the same agent as A10 Portfolio?** New 2026-08-19,
+  Part 2 — redundancy detection shows up in both.
+- **Is A6 a 4-way split, not 2-way?** New 2026-08-19, Part 2 — its four named
+  functions (memory, learning, redundancy detection, agent-interface) may be
+  more than the existing retrieval/curation corollary accounts for.
+- **Is Carol's intranet tool already A10 Portfolio?** New 2026-08-19, Part 2 —
+  unconfirmed.
 
 ## Corrected along the way
 
