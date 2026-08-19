@@ -57,22 +57,30 @@ built out.
   talvez do quanto que a gente quer especializar eles."* His own test: if A2
   only ever talks to A1, splitting them may not be worth it; if A2's inputs
   come from elsewhere too (e.g. A6 Curator), separation earns its keep.
+  msilva's own lean, added on this page afterward: merge them into one —
+  see [[Agent Flow]]'s open questions for the current state of this.
 - **A5 Watcher — which of two designs?** See the dedicated section below; not
   picked, and the two paths differ on exactly the axis Luís's proxy-scoping
-  objection turns on.
+  objection turns on. msilva's own follow-up, added afterward: maybe both,
+  via a shared SDK for the in-service half — see the reconciliation callout
+  below and [[Agent Flow]].
 - **Does discovery/planning belong universally before execution, or only for
   complex work?** msilva questioned his own A3-vs-A7 framing live: *"eu tenho
   me questionando se talvez, mesmo que seja um bug simples, se esse próprio
   agente executor... vai parar e pensar em como corrigir isso da melhor
   maneira, ou se não deveria ter um agente [de discovery]... que iria preparar
   ali o terreno para ele realmente executar."* Explicitly undecided: *"talvez
-  sim, talvez não."*
+  sim, talvez não."* msilva's own lean, added afterward: yes, discovery reads
+  as transversal — see [[Agent Flow]]'s open questions, flagged there against
+  the Part 2 tension below.
 - **Is usability/UX-pattern monitoring in scope for Watch, or is that a
-  "product" concern?** Raised and left open — see below.
+  "product" concern?** Raised and left open — see below. msilva's own lean,
+  added afterward: separate, its own agent — see [[Agent Flow]]'s open
+  questions.
 - **What does a tiered governance/approval structure actually look like?**
   Wanted, not designed: *"acho que a gente seria bom a gente ter esses níveis
   de governança."* Loosely tied to A6 Curator doing the curating that would
-  route work to the right tier.
+  route work to the right tier.so 
 
 ## A5 Watcher: two candidate designs, laid out for the first time
 
@@ -125,6 +133,12 @@ ops-monitoring one, but doesn't resolve it.
 > to just the proxy**, or arguably a narrow slice of Path B with only one
 > source wired in. Either way it doesn't yet reflect the multi-tool
 > consolidator framing above.
+>
+> **msilva's own follow-up, added afterward: maybe both, not either/or.**
+> Watch could run Path B's aggregation *and* Path A's in-service integration
+> where a service's scope is well-defined enough to justify it — via a shared
+> **SDK** for the in-service half, rather than bespoke per-project setup each
+> time. Untested against the build plan; also not run past Luís.
 
 ## A3 (Executor) vs. A7 (discovery-heavy delivery): the axis isn't speed
 
@@ -151,7 +165,10 @@ context, *"que é meio que um mini discovery do que que é o problema."* Same
 shape as A4's operating pattern already recorded from her
 ([[2026-08-18 1-1 Matheus - Gabrielle]]: unblock, step back, help on demand) —
 another data point that some form of upfront context-gathering shows up across
-agents (A3, A4, arguably A7), not just one.
+agents (A3, A4, arguably A7), not just one. **msilva's own read of this point,
+added afterward: it's supporting evidence for A7 Discovery having a more
+fundamental role** — guiding the other agents rather than being just one peer
+among fourteen.
 
 ## `Bug (sistema)` — confirms the existing reading
 
@@ -344,7 +361,11 @@ than inferred:
    error-monitoring findings that piled up while a project like [[Farol]]/
    Fronte sat untouched. When work resumes on a paused project, there's no
    reliable picture of what accumulated. Squarely **A10 Portfolio + A14 PM
-   Agent** territory.
+   Agent** territory. **msilva's own follow-up, added afterward:** this is
+   important precisely *because* it's recurring and current, not a one-off —
+   which is what makes A10/A14 a strong place to actually start, not just a
+   correct diagnosis.
+
 2. **No good discovery/documentation minimum.** Same pain as Part 1's
    discovery discussion: how to reach "just enough" documentation to let
    agents run autonomously, without over- or under-preparing. Ties to A7
@@ -368,11 +389,11 @@ guessed at.
 
 ## What this changes elsewhere
 
-| Page | Change |
-|---|---|
-| [[Agent Flow]] | A1/A2 merge-or-split question added; A5 Watcher two-path design and candidate reconciliation added; A3-vs-A7 axis reframed around complexity/governance, not speed; discovery-universal question added; governance-tier concept noted, loosely tied to A6 Curator. A6's four functions detailed; A9 clarified against A3; A10/A11/A12/A13 relationships added; A12 ownership question added; possible Gabrielle/Luís convergence on Watch flagged; the context-minimalism tension from Carol/Luís added; msilva's two pains added. |
-| [[How to implement A5 Watcher]] | Flagged as one narrow slice (proxy-only) of a larger design-space that now has a named alternative (multi-tool consolidator). |
-| [[Which agent should be built first]] | A5 section gets a pointer to the reconciliation candidate and the possible convergence; A1/A2-as-one-or-two noted against the A1+A2 candidate framing; msilva's two pains added as direct utility evidence. |
-| [[What should the Agent Flow research phase study]] | Status board updated with the new open items from both parts. |
-| [[Comparing the first-agent candidates]] | Carol's "immediate own-pain" criterion and msilva's two pains added. |
-| [[Linear Project Structure]] | Luís's Linear→Slack release-note capability noted. |
+| Page                                                | Change                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [[Agent Flow]]                                      | A1/A2 merge-or-split question added; A5 Watcher two-path design and candidate reconciliation added; A3-vs-A7 axis reframed around complexity/governance, not speed; discovery-universal question added; governance-tier concept noted, loosely tied to A6 Curator. A6's four functions detailed; A9 clarified against A3; A10/A11/A12/A13 relationships added; A12 ownership question added; possible Gabrielle/Luís convergence on Watch flagged; the context-minimalism tension from Carol/Luís added; msilva's two pains added. |
+| [[How to implement A5 Watcher]]                     | Flagged as one narrow slice (proxy-only) of a larger design-space that now has a named alternative (multi-tool consolidator).                                                                                                                                                                                                                                                                                                                                                                                                      |
+| [[Which agent should be built first]]               | A5 section gets a pointer to the reconciliation candidate and the possible convergence; A1/A2-as-one-or-two noted against the A1+A2 candidate framing; msilva's two pains added as direct utility evidence.                                                                                                                                                                                                                                                                                                                        |
+| [[What should the Agent Flow research phase study]] | Status board updated with the new open items from both parts.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| [[Comparing the first-agent candidates]]            | Carol's "immediate own-pain" criterion and msilva's two pains added.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| [[Linear Project Structure]]                        | Luís's Linear→Slack release-note capability noted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |

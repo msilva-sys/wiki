@@ -320,4 +320,8 @@ Per the spec template's third field, and aimed squarely at the fatigue risk:
   consolidator (Path B: proxy + LogRocket + Vercel)?** New 2026-08-19 — see the
   warning at the top of this page and [[Agent Flow]]. Unresolved, and upstream
   of most of the decisions above: a consolidator's pipeline, tools, and
-  triage-skill inputs look different from this proxy-only one.
+  triage-skill inputs look different from this proxy-only one. **msilva's own
+  follow-up, added afterward: maybe both** — Path B's aggregation plus Path
+  A's in-service integration where a service's scope justifies it, via a
+  shared SDK for the in-service half rather than bespoke setup per project.
+  Also unresolved; see [[Agent Flow]].

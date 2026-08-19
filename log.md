@@ -2034,3 +2034,44 @@ revisit.
 - Added a `callout` log prefix for entries `notes` produces, and pointed the
   `lint` checklist item at it (should rarely fire, since session start
   already covers it — `lint` is the backstop).
+
+## [2026-08-19] callout | First `notes` run — six callouts on the 2026-08-19 1-1
+
+- First real run of `notes`. Found six `[!msilva]` callouts on
+  [[2026-08-19 1-1 Matheus - Gabrielle]] — msilva's own post-meeting
+  annotations, added directly in Obsidian, none referenced here yet.
+- **A1/A2 merge lean.** Agreed as a position, not a decision: merge into one
+  agent, since separating them earns nothing if their scope is this similar.
+  Folded into [[Agent Flow]]'s existing open question; callout deleted.
+- **A5 hybrid design, via an SDK.** New material — neither Path A nor Path B
+  alone, but both: Path B's multi-tool aggregation plus Path A's in-service
+  integration where a service's scope justifies it, sharing one SDK for the
+  in-service half instead of bespoke setup per project. Added to the
+  Path A/B reconciliation block on both [[Agent Flow]] and the meeting page
+  itself, and to the open question on [[How to implement A5 Watcher]].
+  Untested against Luís or the existing build plan. Callout deleted.
+- **Discovery-as-transversal lean.** msilva leans toward discovery being
+  universal (called early, by most flows), but this is flagged against the
+  same meeting's Part 2 tension (Carol/msilva's own practice favor *less*
+  upfront context) rather than presented as resolving it. Folded into
+  [[Agent Flow]]'s open question; callout deleted.
+- **UI/UX wants its own agent.** New scope not present anywhere in the
+  14-agent design — msilva's lean is that UX-pattern monitoring is narrower
+  than general observability and shouldn't live inside Watch. Folded into
+  [[Agent Flow]]'s existing open question on Watch's UX scope; worth raising
+  in the planned discovery conversations. Callout deleted.
+- **A7's foundational role.** Read as commentary, not a new claim — folded
+  directly into the "Echo of the A4 Teacher pattern" paragraph on the meeting
+  page itself. Callout deleted.
+- **Pain 1 as a strong starting point, because it's recurring.** msilva
+  confirmed this belongs on Pain 1 (cross-project backlog/prioritization,
+  A10 Portfolio + A14 PM Agent), not Pain 2 as originally placed — he'd
+  already moved it in Obsidian by the time this was resolved. Folded into
+  the meeting page's Pain 1 paragraph, plus a light touch on
+  [[Which agent should be built first]] and
+  [[Comparing the first-agent candidates]], both of which already carried
+  the pain-based argument and just gained the "recurring, not one-off"
+  reasoning. Callout deleted.
+- All six resolved by editing rather than by leaving a reply on the page,
+  per msilva's instruction that inline replies clutter the wiki — the
+  discussion happened in chat, this entry is the durable record.

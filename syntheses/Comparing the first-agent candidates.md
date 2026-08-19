@@ -47,7 +47,9 @@ of her own A5 suggestion.
 > objection (attribution collapsed, unconfirmed). See
 > [[2026-08-19 1-1 Matheus - Gabrielle]] and [[Which agent should be built
 > first]]. Not incorporated into the comparison below yet — this page still
-> reflects the four candidates as scoped on 2026-08-18.
+> reflects the four candidates as scoped on 2026-08-18. **msilva's own
+> follow-up**: Pain 1 argues harder for starting there because it's recurring
+> and current, not one-off.
 
 **Deadline pressure is real**: a deadline-setting meeting with Gabrielle and Luís was
 set for the end of the week beginning 2026-08-17, and **Gabrielle is on leave from

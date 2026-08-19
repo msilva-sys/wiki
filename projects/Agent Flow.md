@@ -191,6 +191,13 @@ integration point between msilva's two projects.
 > already planned, not as a settled answer. Full writeup on the meeting page;
 > [[How to implement A5 Watcher]]'s existing build plan is Path-A-shaped,
 > scoped only to the proxy.
+>
+> **His own follow-up, added afterward: maybe both, not either/or.** Watch
+> could run Path B's aggregation (metrics/logs from tools already in use) *and*
+> Path A's in-service integration where a service's scope is well-defined
+> enough to justify it — via a shared **SDK** for the in-service half, rather
+> than one-off per-project instrumentation each time. Untested against
+> [[How to implement A5 Watcher]]'s build plan; also not run past Luís.
 
 > [!danger] Possible convergence, later the same day — read carefully, attribution is collapsed
 > [[2026-08-19 1-1 Matheus - Gabrielle]] (Part 2): msilva reports agreeing with
@@ -673,9 +680,12 @@ consultant rather than validator.
   tier ([[2026-08-19 1-1 Matheus - Gabrielle]]). Not designed, just wanted.
 - **Is A1 + A2 one agent or two?** New 2026-08-19. msilva's own test: worth
   splitting if A2's inputs come from more than just A1 (e.g. A6 Curator);
-  otherwise maybe not. Bears directly on the A1+A2 candidate in
-  [[Which agent should be built first]] and [[Comparing the first-agent
-  candidates]] — both currently treat it as a pair.
+  otherwise maybe not. **His own lean, added on the meeting page afterward:
+  merge them — questions what's gained by separating two agents whose scope
+  is this similar.** Position, not decision, still open — bears directly on
+  the A1+A2 candidate in [[Which agent should be built first]] and
+  [[Comparing the first-agent candidates]], both of which currently treat it
+  as a pair.
 - **Does discovery/planning belong before every execution, or only complex
   work?** New 2026-08-19, from msilva questioning his own A3-vs-A7 split live:
   should A3 itself always plan before acting — the way he uses Claude Code
@@ -683,9 +693,18 @@ consultant rather than validator.
   complexity? If discovery is universal, today's A3-vs-A7 fork (by complexity)
   might collapse into "discover always, then fork by complexity."
   [[2026-08-19 1-1 Matheus - Gabrielle]]. Echoes the A4 Teacher pattern, which
-  also opens with understanding context before helping.
+  also opens with understanding context before helping. **His own lean, added
+  afterward: yes — discovery reads as transversal, one of the first agents
+  most flows would need to call after ingestion/structuring.** Flagged, not
+  resolved: this same meeting's Part 2 (two bullets below) pulls the other
+  way — Carol and msilva's own practice favor **less** upfront context, not
+  more. The two aren't reconciled.
 - **Is usage/UX-pattern monitoring part of A5 Watcher, or a separate "product"
-  concern?** New 2026-08-19, raised and left open, same source.
+  concern?** New 2026-08-19, raised and left open, same source. **His own
+  lean, added afterward: separate — UX monitoring is a narrower, more
+  specific scope than general observability, and probably wants its own
+  agent rather than living inside Watch.** Not on the 14-agent list anywhere
+  if so; worth raising in the planned discovery conversations.
 - **How much upfront context/documentation is actually right?** New
   2026-08-19, from a separate debate msilva had "yesterday" with Carol and
   Luís about how they build software with AI agents *today* — not about
