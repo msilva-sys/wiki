@@ -2011,3 +2011,14 @@ revisit.
   stops it being re-surfaced next session.
 - Updated the `lint` check and the *Session start* operation in `CLAUDE.md`
   to match.
+
+## [2026-08-19] refactor | log.md entry carries the actual reasoning, not a marker
+
+- msilva asked where Claude's thinking on a `[!msilva]` callout actually
+  lives, once it's not written on the page. As drafted, `log.md` was only
+  getting a bare "seen" flag — the real reasoning would have existed only in
+  that session's chat, which a later session doesn't reliably re-read.
+- Fixed: the `log.md` entry for a discussed callout now carries the actual
+  gist of the discussion and its conclusion — same substance as any other
+  log entry — not a bookkeeping marker. Its presence is still what stops the
+  callout being re-surfaced, but now it's also the durable record.

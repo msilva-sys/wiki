@@ -84,7 +84,8 @@ the schema into it.**
   inline on the page — see *Session start* under Operations. Once talked
   through, either deleted (outcome folded into the page or fanned out
   elsewhere) or left in place if it's a standing opinion with nothing to
-  action; either way `log.md` gets a line so it isn't re-surfaced.
+  action; either way the actual reasoning lands in `log.md`, not just a
+  marker that it happened.
 
 ## Dates
 
@@ -152,8 +153,11 @@ Before starting whatever the session is actually about:
      to-do marker, not a permanent fixture;
    - if it's genuinely a standing personal opinion with nothing to action,
      leave it in place as-is.
-4. Either way, append one `log.md` line recording that it was seen and what
-   happened — this is what stops it being re-surfaced next session.
+4. Either way, append a `log.md` entry with the actual gist of what was
+   discussed and concluded — a few lines, same substance as any other log
+   entry, not a bare "seen" marker. This is the durable record of the
+   thinking (the chat itself isn't reliably re-readable by a later session),
+   and its presence is also what stops the callout being re-surfaced.
 
 ### `ingest <file or topic>`
 1. Read the raw source in full.
