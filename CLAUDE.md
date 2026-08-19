@@ -163,6 +163,24 @@ Transcripts are long, noisy, and speaker-attributed. Extract, don't summarize:
    for months. Carry forward what's needed to do the work; leave the rest in the
    raw file. If something seems relevant but sensitive, ask before filing it.
 
+### `note <idea>`
+For msilva's own ideas, hypotheses, or opinions — raised live in conversation,
+not sourced from a raw file or a transcript.
+
+1. Work out which entity page(s) it actually belongs to — same judgment call
+   as ingest's fan-out. Ask only if genuinely ambiguous between two pages.
+2. Write it in directly, attributed and dated, at the same evidentiary tier as
+   a spoken meeting quote — e.g. *"msilva: the retry logic probably belongs in
+   the proxy, not LiveScript (2026-08-19, conversation)."* Not "the wiki
+   says" — your own idea is a claim, not yet a fact, until something confirms
+   it.
+3. If it's a live hypothesis rather than something you've settled on, file it
+   as an **open question** or a clearly-marked idea, not `decisions/`. Promote
+   it to `decisions/` only once you say it's decided — same rule as meeting
+   ingests.
+4. No `sources/` page for these — there's no raw file underneath it.
+5. Log it: `## [date] note | <topic>`.
+
 ### `query <question>`
 1. Search the wiki first — `index.md`, then relevant pages. Fall back to `raw/`
    only when the wiki is thin, and say so.
@@ -194,7 +212,7 @@ Append-only. Never rewrite history. One entry per operation:
 - New: concepts/Airtable Rate Limits.md
 - Updated: projects/Airtable Proxy.md, systems/Airtable Proxy.md
 ```
-Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
+Prefixes: `ingest` | `note` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 
 ## Domain notes
 

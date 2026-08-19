@@ -6,7 +6,7 @@ updated: 2026-08-19
 # Log
 
 Append-only. Newest at the bottom. Never rewrite an entry.
-Prefixes: `ingest` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
+Prefixes: `ingest` | `note` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 
 ## [2026-08-17] refactor | LLM-wiki setup
 - Initialized git in the vault; snapshot commit taken before any changes.
@@ -1969,3 +1969,17 @@ revisit.
 - Open: everything above, plus the discovery conversations with Gabrielle
   and Carol already planned since 2026-08-18, which this meeting's material
   feeds into rather than replaces.
+
+## [2026-08-19] refactor | Schema: add `note` operation for msilva's own ideas
+
+- msilva asked for a way to put his own ideas into the wiki directly, not just
+  filed as raw notes on the side. Added `note <idea>` to `CLAUDE.md`, parallel
+  to `ingest`/`query`.
+- Distinguishes it from every existing write path: not from a `raw/` file
+  (`ingest`), not spoken in a transcript (meeting variant), not derived from
+  code or docs (`synthesis`). It's msilva's own live claim, attributed and
+  dated the same way a meeting quote is — a claim, not yet a fact, until
+  something confirms it. Hypotheses stay as open questions; only promote to
+  `decisions/` once he says it's decided.
+- No `sources/` page for these — there's no raw file underneath.
+- Added `note` to the log prefix list.
