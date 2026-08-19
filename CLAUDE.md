@@ -80,9 +80,11 @@ the schema into it.**
   aside. If it bears on other pages too, fan it out the next time that area is
   touched — cited as *"msilva, `[!msilva]` callout on [[Page]] (date), ..."*,
   same evidentiary tier as a spoken meeting quote, promoted to `decisions/`
-  only once msilva confirms it's settled. **Every `[!msilva]` gets a
-  `[!claude]` reply directly beneath it** — see *Session start* under
-  Operations — so msilva sees the thinking, not just a silent edit elsewhere.
+  only once msilva confirms it's settled. Discussed in chat, not answered
+  inline on the page — see *Session start* under Operations. Once talked
+  through, either deleted (outcome folded into the page or fanned out
+  elsewhere) or left in place if it's a standing opinion with nothing to
+  action; either way `log.md` gets a line so it isn't re-surfaced.
 
 ## Dates
 
@@ -139,15 +141,19 @@ and a smell for a `status: active` page — [[log]] and `lint` both rely on it.
 
 ### Session start — check `[!msilva]` callouts
 Before starting whatever the session is actually about:
-1. Search the vault for `[!msilva]` callouts with no `[!claude]` reply
-   directly beneath them — those are unaddressed.
-2. For each: read it in the context of the page it's on and actually think
-   about it — not a rubber-stamp acknowledgment. Write a `[!claude]` reply
-   right after it, dated, with real reasoning, a question back, or a note of
-   what you did about it.
-3. Fan out per the `[!msilva]` rule (below) if it bears on other pages too.
-4. Briefly tell msilva what you found and thought, before moving on to
-   whatever the session was actually asked to do.
+1. Search the vault for `[!msilva]` callouts not yet referenced in `log.md`
+   — that absence is what marks a callout unhandled. (Don't re-surface one
+   `log.md` already covers.)
+2. For each: read it in the context of the page it's on and discuss it with
+   msilva in chat — actually think about it, don't just acknowledge it.
+3. Once it's been talked through, resolve the callout **on the page**:
+   - if it needed action, fold the outcome into the page's real prose (or
+     fan it out per the rule below) and **delete the callout** — it was a
+     to-do marker, not a permanent fixture;
+   - if it's genuinely a standing personal opinion with nothing to action,
+     leave it in place as-is.
+4. Either way, append one `log.md` line recording that it was seen and what
+   happened — this is what stops it being re-surfaced next session.
 
 ### `ingest <file or topic>`
 1. Read the raw source in full.
@@ -208,8 +214,7 @@ Health check, report before changing anything:
   incompatible things. Read the bodies of pages edited more than twice.
 - broken wikilinks worth creating vs. worth deleting
 - decisions marked open in one page and settled in another
-- `[!msilva]` callouts that clearly bear on other pages and haven't been
-  fanned out yet
+- `[!msilva]` callouts not yet referenced in `log.md` — i.e. never discussed
 
 ### `log`
 Append-only. Never rewrite history. One entry per operation:

@@ -1997,3 +1997,17 @@ revisit.
   thinking to msilva before starting whatever the session was actually
   asked to do.
 - No callouts exist yet to process — convention just created.
+
+## [2026-08-19] refactor | Drop [!claude] inline reply — discuss in chat, register in log.md
+
+- msilva: an inline `[!claude]` reply under every callout would clutter the
+  wiki. Reverted that part.
+- New shape: unhandled `[!msilva]` callouts (ones `log.md` doesn't yet
+  reference) get discussed live in chat at session start, not answered on
+  the page. Once talked through, the callout is either **deleted** — outcome
+  folded into the page's real prose or fanned out elsewhere — or, if it's a
+  standing opinion with nothing to action, **left in place** untouched.
+  Either way, one `log.md` line records it was seen — that line is also what
+  stops it being re-surfaced next session.
+- Updated the `lint` check and the *Session start* operation in `CLAUDE.md`
+  to match.
