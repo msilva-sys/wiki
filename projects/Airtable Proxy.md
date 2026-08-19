@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-08-18
+updated: 2026-08-19
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -499,7 +499,14 @@ the status doc. Worth confirming the actual git state matches the doc.
 `C:\Users\msilva\projects\livemode-airtable-proxy` — confirmed via `git remote`/
 `git log`. A same-named copy under `Documents\repos\` has no `.git` and is stale.)
 
-## Timeline tension: two sources disagree on where this month goes (2026-08-18)
+## Timeline tension: two sources disagree on where this month goes (2026-08-19)
+
+> [!info] Date corrected 2026-08-19 (eighth lint)
+> This section and its `log.md` entry were originally dated 2026-08-18. The
+> commit that recorded it landed 2026-08-19 10:44 GMT-03:00, and that's when the
+> conversation actually happened — a one-day dating slip, not a backdated fact.
+> `log.md`'s entry is left as-is per the append-only rule; this page is corrected
+> since it isn't.
 
 msilva asked whether a month is realistic to finish [[Linear Project Structure]]'s
 F3 milestone (production deploy + LiveScript-validated). What's actually left
@@ -513,12 +520,12 @@ Two sources on record don't point the same way:
   100%."* The proxy is msilva's actual current job; LiveScript's own SDK-side
   migration is explicitly out of scope for now.
 - **The intranet `metas.md`/`combinados.md`** (`https://livemode-intranet.vercel.app/#pessoa/matheus`
-  — read live 2026-08-18, not yet otherwise ingested here) frame the proxy as
+  — read live 2026-08-19, not yet otherwise ingested here) frame the proxy as
   backlog-qualified work, not the headline measure: the August commitment is the
   **Agent Flow design validated with Gabi by 2026-08-31**, and the 60-day goal
   (2026-10-09) is "first agent of the flow in production" — a different project.
 
-Not resolved — msilva's call 2026-08-18 was to **leave the proxy's Linear dates
+Not resolved — msilva's call 2026-08-19 was to **leave the proxy's Linear dates
 as they are** (no milestone/issue due dates set) rather than pick a side. Worth
 raising explicitly with Luís or Gabrielle if the two timelines start to
 genuinely conflict, per [[2026-08-18 Bring options to Luís before deciding,

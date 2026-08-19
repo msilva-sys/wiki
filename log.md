@@ -1723,3 +1723,59 @@ revisit.
   else carried from prior entries. The intranet page's `combinados.md`/
   `metas.md` content is not otherwise ingested — worth a proper `ingest` pass
   if msilva wants a `people`-style page for his own onboarding tracked here.
+
+## [2026-08-19] lint | Eighth health check, then three fixes
+
+### Clean
+
+- **Links**: 0 broken wikilinks across 72 pages (re-ran the soft-line-wrap
+  normalization from the seventh lint, extended to also collapse blockquote
+  `>` continuations — needed for a wrap inside [[Airtable Proxy]]). The three
+  remaining `[[...]]`/`[[people/]]` hits are inside `log.md`, quoting past
+  entries as literal text, not live links.
+- **Orphans**: none. **Dead-ends**: only [[Zed Cheatsheet]], as in every prior
+  lint. **Frontmatter**: all pages carry `type`/`status`/`updated` or are
+  correctly exempt. **`raw/` coverage**: unchanged, still complete — no new
+  source files since the seventh lint.
+- **Credentials**: working tree still clean (only the intentionally-kept
+  `NEXT_PUBLIC_FIREBASE_API_KEY` matches a key-shaped pattern); still present
+  in git history, unchanged. Eighth report — rotation still outstanding,
+  still msilva's action.
+- **Decisions open-vs-settled**: no mismatches. [[2026-08-18 Product feedback
+  in Linear, code review in Git]] is still correctly `draft` everywhere it's
+  referenced.
+- **Intra-page contradictions**: the only page edited since the seventh lint
+  besides `log.md` — [[2026-08-14 Migrate project management from Jira to
+  Linear]], across five refactor commits (PRO-79 content drift, PRO-78's four
+  archived children restored, the PRO-78 epic worked through) — read in full.
+  Internally consistent; each new "Resolved" bullet is additive, none
+  contradicts an earlier one.
+
+### Fixed
+
+1. **Dating slip on [[Airtable Proxy]] and its `log.md` entry.** The "is a
+   month realistic" query and its "Timeline tension" section were dated
+   2026-08-18, but the commit that recorded them (`c027ed5`) landed
+   **2026-08-19 10:44 GMT-03:00** — today. Corrected the page's section
+   header, its two internal date references, and its `updated:` frontmatter
+   to 2026-08-19, with a visible correction note. **`log.md`'s heading is
+   left as 2026-08-18** — append-only, never rewritten — so the two now
+   disagree on record; this entry is the pointer between them.
+2. **`index.md` had gone five commits without an update.** `PRO-79`'s content
+   drift, the `PRO-78` archived-children restoration, the `PRO-78` epic
+   resolution (3 of 4 children closed, one hard-blocked on Luís), and the
+   2026-08-19 timeline-tension finding were all logged and landed on their
+   source pages, but never reached the catalog — the exact "invisible page"
+   failure mode `CLAUDE.md` warns about, this time for a stale summary line
+   rather than a missing page. Caught up the [[Airtable Proxy]] bullet with
+   both findings; bumped `index.md`'s own `updated:`.
+3. Nothing else needed changing — see Clean above.
+
+### Not fixed, reported only
+
+- **[[Meeting prep - first agent decision]]** still has no confirmed meeting
+  date (estimated ~2026-08-21, which is in 2 days); the file still needs
+  renaming once it's known, per the `meetings/` convention. Unchanged since
+  it was first flagged.
+- **`AIRTABLEGC` wind-down** and the **Linear Business-trial purchase**
+  decision are both still open, carried from every recent entry.
