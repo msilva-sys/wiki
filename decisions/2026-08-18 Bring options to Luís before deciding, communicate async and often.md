@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-18
+updated: 2026-08-19
 date: 2026-08-18
 aliases: [decision process norm, present options first]
 tags: [process, communication]
@@ -53,3 +53,13 @@ of not doing it: *"você tá desperdiçando informação sem necessidade."*
   *"o que tem de mais rico de estar no escritório é você tá com facilidade para
   acessar todo mundo"* — the norm is partly about using that proximity, not just
   about async messages.
+
+## Applied since
+
+- **`PRO-82` (onboarding/key-issuance flow), 2026-08-18.** 3 options posted as a
+  Linear comment (manual env edit / self-serve script over env / defer until DB
+  migration), msilva's lean stated but framed as Luís's call. Still awaiting a
+  reply as of 2026-08-19.
+- **`PRO-94` (Pulumi program language), 2026-08-19.** Same pattern: 3 options
+  (Go / TypeScript / Python) posted as a Linear comment, msilva's lean (Go, for
+  toolchain/CI consistency with the proxy) stated but left as Luís's call.

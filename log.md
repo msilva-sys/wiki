@@ -1885,3 +1885,22 @@ revisit.
   [[Agent Flow]] and its syntheses (the Gabrielle/Carol discovery
   conversations remain the actual next step; this meeting's material is
   input to those, not a substitute for them).
+
+## [2026-08-19] decision | PRO-94 (Pulumi language) options brought to Luís
+- With the auth epic closed out and `PRO-82`/`83`/`76` blocked on Luís,
+  identified `PRO-94` (choose Go/TypeScript/Python for the Pulumi program) as
+  the one unblocked next issue — no GCP project needed, part of the deploy
+  step (`PRO-90`/`84`/`74`) msilva wanted to study.
+- Discussed tradeoffs in chat: Go (same language/toolchain/CI as the proxy,
+  first-class Pulumi SDK, mock-testing support) vs. TypeScript (denser
+  example coverage for `pulumi-gcp`, but a second toolchain in an all-Go repo)
+  vs. Python (no clear fit). msilva's own preference: Go.
+- Per [[2026-08-18 Bring options to Luís before deciding, communicate async
+  and often]], posted the same 3 options as a Linear comment on `PRO-94`
+  rather than deciding unilaterally, lean toward Go stated but left as Luís's
+  call. Moved `PRO-94` to In Progress.
+- Updated: [[2026-08-18 Bring options to Luís before deciding, communicate
+  async and often]] (new "Applied since" section, also backfilling the
+  `PRO-82` instance).
+- Open: Luís's reply on `PRO-82` and now `PRO-94`; everything else carried
+  from prior entries.
