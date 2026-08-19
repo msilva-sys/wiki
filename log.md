@@ -38,6 +38,34 @@ Prefixes: `ingest` | `callout` | `query` | `synthesis` | `lint` | `refactor` | `
   observability-only with no intervention.
 - Updated: `index.md`, `CLAUDE.md` (raw/ rename rule; transcripts satisfy the
   `sources/` lint check via `meetings/`).
+
+## [2026-08-19] ingest | Luis / Matheus 1:1, 15:01
+- Source: `raw/Luis _ Matheus - 2026_08_19 15_01 GMT-03_00 - Anotações do Gemini.md`.
+- Discussed takeaways with msilva before writing, per the schema — confirmed
+  the URL-based app identification is a **path** (`proxy.livemode.com/livescript`,
+  not a subdomain) and that it's **settled**, not still pending Luís's earlier
+  "mini relatório" ask.
+- New: `meetings/2026-08-19 1-1 Matheus - Luís.md`,
+  `decisions/2026-08-19 Identify proxy apps by URL path, not header.md`,
+  `concepts/Claude Agent SDK.md`.
+- Updated: `syntheses/How LiveScript sends the proxy X-App-Id header.md` —
+  marked `superseded`, the whole header-injection option comparison retired by
+  the new URL-path decision, kept as historical record.
+  `projects/Airtable Proxy.md` — auth/identification section flags the
+  supersession, not yet implemented. `concepts/Linear Project Structure.md` —
+  fourth convention (only the active project needs structure now, delete the
+  rest of the restored Jira backlog), msilva's autonomy on Linear decisions,
+  `Release` added as an open question. `projects/Agent Flow.md` — dev-subagent
+  design clarified as project-harness scope, not architecture scope; pointer
+  to the new [[Claude Agent SDK]] concept; third independent confirmation
+  (Luís, after Gabrielle and Carol) of the cross-project visibility pain.
+  `people/Luís Fernandez.md` — Linear-org autonomy grant, visibility-pain
+  confirmation, Claude Agent SDK experimentation, harness-scope statement.
+- Also recorded but not promoted to pages: several open questions (what a
+  Linear "Release" maps to, whether a written comparison report is still
+  wanted, who originally deleted the Jira-migrated Linear issues, which
+  restored issues are still valid) — left as open questions on the new
+  meeting page rather than guessed at.
 - Confirmed by msilva: **LiveScript and the "roteiros" app are the same system** —
   merged into one page with both names as aliases.
 - Per msilva's instruction, org-related material in the transcript (vendor
@@ -823,6 +851,16 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
 - New open, all on the concept page: does Gabrielle accept the A6 split? What does
   `Brain` actually contain and expose — unread, and the highest-value thing to look at
   before building any retrieval. Access/permission scope for direct reads.
+
+## [2026-08-19] query | Linear
+
+- Answered from [[Linear Project Structure]] and
+  [[2026-08-14 Migrate project management from Jira to Linear]] — hierarchy
+  (initiative/project/milestone/issue), how work enters (docs → Claude writes
+  the structure), the 250-issue cap and 2026-09-09 trial expiry, the flat-
+  issues/small-milestones convention driven by the status board's subtask
+  blindness, and the archived-issues/assignee-drift cleanup from 2026-08-18/19.
+- No new synthesis page — both pages already cover the ground comprehensively.
 
 ## [2026-08-18] synthesis | first-agent candidate comparison (decision doc)
 
