@@ -88,6 +88,10 @@ Prefixes: `ingest` | `callout` | `query` | `synthesis` | `lint` | `refactor` | `
 - Updated: `meetings/2026-08-19 1-1 Matheus - Luís.md` (open questions
   resolved inline, action item extended), `concepts/Linear Project
   Structure.md` (Release open question answered, citing the resolution above).
+- msilva's call, same session: the fifth open question (who deleted the
+  original Jira-migrated Linear issues) doesn't matter and isn't worth
+  pursuing — dropped, not answered. Updated:
+  `meetings/2026-08-19 1-1 Matheus - Luís.md`.
 - Confirmed by msilva: **LiveScript and the "roteiros" app are the same system** —
   merged into one page with both names as aliases.
 - Per msilva's instruction, org-related material in the transcript (vendor
