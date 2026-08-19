@@ -2321,3 +2321,47 @@ revisit.
   from her. The doc tells msilva to treat Carol's answers as the more
   reliable signal, not to use the Gabi column as a tie-breaker.
 - Updated: `index.md`.
+
+## [2026-08-19] refactor | Reshape the new proxy project's milestones, add parent/sub-issues
+- msilva pushed back on the milestone shape from the F3-promotion session:
+  *"epic are more related to an issue, no? help me think new milestones"* —
+  correct instinct, milestones are project-level checkpoints, epics are
+  issue-level parents, and a 1:1 mirror between the two (what was built) is
+  redundant.
+- Before reshaping, found that **`PRO-84` (Deploy em produção) and `PRO-90`
+  (IaC Pulumi) aren't two phases** — `PRO-91`/`92`/`93` re-declare the same
+  Cloud Run/Secret Manager/dashboards work `PRO-85`/`86`/(already-done
+  `102`/`103`) do by hand, just as Pulumi code. Surfaced this before asking
+  msilva to choose a milestone shape, since it changes the answer.
+- Presented 3 milestone-shape options and asked which issue clusters should
+  get real parent/sub-issue structure (`AskUserQuestion`). msilva chose the
+  **3-checkpoint shape** and **4 of 6 candidate clusters** (skipped the
+  already-Done MVP cluster; the Deploy+IaC cluster was chosen contingent on
+  merging the two epics first, which happened).
+- **Executed**: renamed 3 of the 6 existing milestones in place (no delete
+  tool exists via this MCP) — `Auth + multi-app` → **Proxy funcionalmente
+  completo**, `Deploy em produção (Cloud Run)` → **Proxy em produção**,
+  `Integração & validação com LiveScript` → **Validado com o LiveScript**.
+  Moved every issue from the other 3 (`MVP local do proxy`,
+  `Observabilidade completa no proxy`, `IaC (Pulumi)`) into these; those 3
+  now sit empty and can't be deleted through the API — msilva can remove
+  them by hand in the Linear UI if he wants them gone.
+- Set real `parentId` on 4 clusters: `PRO-78` → `79-83`; `PRO-74` → `75-77`;
+  `PRO-95` → `96-97`; `PRO-90` (itself now a child of `PRO-84`) → `92-94`
+  (`91` already was); plus `PRO-85-89` directly under `PRO-84`. MVP cluster
+  (`PRO-98` → `99-105`) left flat, per msilva's selection.
+- Updated project summary/description to match the 3-checkpoint shape and
+  the epic merge.
+- **Flagged, not resolved, before acting**: real parent/sub-issue structure
+  is exactly what [[Linear Project Structure]] convention 3 (flat issues)
+  exists to avoid — the readout's subtask blind spot was measured on a
+  parent issue with unfinished children, same shape as these four now have.
+  msilva chose to proceed anyway; milestones (which the readout does count)
+  remain the actual reporting signal, so the risk is contained as long as
+  that stays true.
+- **Not resolved**: whether `PRO-85`/`86`/`89` (manual) and `PRO-91`/`92`
+  (Pulumi) are both still needed now that they sit under one parent, or
+  whether one side should be closed once the deploy method is settled.
+  `PRO-94` (choosing the Pulumi language) is already In Progress, which
+  leans Pulumi, but nothing decided or closed.
+- Updated: [[Linear Project Structure]], [[Airtable Proxy]].

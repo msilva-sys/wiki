@@ -27,13 +27,35 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > **2026-08-19: F3 promoted to its own project**, per Luís
 > ([[2026-08-19 1-1 Matheus - Luís]]) — [Proxy em produção validado c/
 > LiveScript](https://linear.app/projetos-livemode/project/proxy-em-producao-validado-c-livescript-eb1691b502c3),
-> sibling to `Proxy do Airtable` inside the same **Airtable GC** initiative, with
-> its own 6 milestones (one per existing epic: MVP local do proxy, Auth +
-> multi-app, Observabilidade completa no proxy, Deploy em produção (Cloud Run),
-> IaC (Pulumi), Integração & validação com LiveScript). All 32 F3 issues
-> (`PRO-74–105`) moved there. `Proxy do Airtable` keeps F1, F2, and Backlog
-> deferido, left untouched at msilva's call — no rush, per [[Linear Project
-> Structure]].
+> sibling to `Proxy do Airtable` inside the same **Airtable GC** initiative. All
+> 32 F3 issues (`PRO-74–105`) moved there. `Proxy do Airtable` keeps F1, F2, and
+> Backlog deferido, left untouched at msilva's call — no rush, per [[Linear
+> Project Structure]].
+>
+> **Reshaped same day, at msilva's request**: one-milestone-per-epic was wrong
+> (milestones are checkpoints, epics are issue-level parents) — down to **3
+> checkpoints**: *Proxy funcionalmente completo* (`PRO-78` Auth + multi-app,
+> `PRO-74` Observabilidade completa, plus the finished `PRO-98` MVP work),
+> *Proxy em produção* (`PRO-84` Deploy em produção, merged with `PRO-90` IaC
+> (Pulumi) — see the finding below), *Validado com o LiveScript* (`PRO-95`).
+> The four still-open epics (`78`, `84`, `74`, `95`) became real `parentId`
+> parents of their own issues; the finished `PRO-98` MVP cluster was left flat
+> on msilva's call, since parenting already-Done work has no payoff. **Known
+> trade-off, flagged before acting**: this reintroduces the subtask-rollup
+> blind spot [[AI status reporting on Linear]] documents — contained only as
+> long as the milestones (which the readout does count) stay the real
+> progress signal, not the parent issues' own rollup.
+>
+> **Finding from this pass**: `PRO-84` (Deploy em produção) and `PRO-90` (IaC
+> Pulumi) weren't two phases — `PRO-91` "Codificar Cloud Run + Secret Manager
+> em Pulumi" is the same target infra as `PRO-85`/`PRO-86` done as code
+> instead of by hand, and `PRO-93` re-declares dashboards already built in the
+> MVP (`PRO-102`/`103`). `PRO-90` is now a child of `PRO-84` rather than a
+> sibling epic. **Not resolved**: whether the manual issues (`85`, `86`, `89`)
+> and their Pulumi counterparts (`91`, `92`) are both actually needed, or one
+> side should be closed once the deploy method is chosen — `PRO-94`
+> (choosing the Pulumi language) is already In Progress, suggesting Pulumi is
+> the real intended path, but nothing has been decided or closed either way.
 
 ## How it's framed internally
 

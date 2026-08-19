@@ -199,13 +199,34 @@ nesting.
 > **Executed 2026-08-19**: `Proxy do Airtable`'s F3 milestone (*"Proxy em
 > produção validado c/ LiveScript"*) promoted to its own project of the same
 > name, sibling to `Proxy do Airtable` inside **Airtable GC — Governança e
-> Confiabilidade**. Its 6 new milestones reuse the project's existing epics
-> as-is (MVP local do proxy, Auth + multi-app, Observabilidade completa no
-> proxy, Deploy em produção (Cloud Run), IaC (Pulumi), Integração & validação
-> com LiveScript) — no new categorization invented, every F3 issue already
-> named one. `Proxy do Airtable` keeps F1, F2, and Backlog deferido untouched,
-> per msilva's explicit call to leave it as-is. See [[Airtable Proxy]] for the
-> issue-level detail.
+> Confiabilidade**. `Proxy do Airtable` keeps F1, F2, and Backlog deferido
+> untouched, per msilva's explicit call to leave it as-is.
+>
+> **Reshaped again, same day, at msilva's request.** First pass gave the new
+> project one milestone per existing epic — wrong, per msilva: *"epic are more
+> related to an issue, no?"* Milestones are project-level checkpoints, epics
+> are issue-level parents; a 1:1 mirror between them is redundant, and one of
+> the six (the already-100%-done MVP epic) had nothing left to track going
+> forward. Reshaped to **3 delivery checkpoints** — *Proxy funcionalmente
+> completo* (auth + observability + the finished MVP work underlying them),
+> *Proxy em produção* (deploy), *Validado com o LiveScript* (integration) —
+> and the epics became real `parentId` parents of their own issues instead of
+> siblings-by-milestone. See [[Airtable Proxy]] for the issue-level detail,
+> including a real finding that fell out of this pass: the *Deploy em
+> produção* and *IaC (Pulumi)* epics turned out to be the same outcome built
+> two ways (manual vs. code), not two phases — merged into one parent
+> (`PRO-84`) before the milestone reshape, rather than kept as two.
+>
+> **Tension worth flagging, not yet resolved**: real parent/sub-issue
+> structure is exactly what convention 3 above (issues flat, no subtask
+> rolled-up progress) exists to avoid — the readout's 6%-vs-20-25% blind spot
+> was measured on a *parent* issue with unfinished children, same shape as
+> `PRO-78`/`PRO-84`/`PRO-74`/`PRO-95` now. Flagged to msilva before doing it;
+> he chose to proceed with 4 of the 6 candidate clusters anyway (skipping the
+> already-Done MVP cluster). Milestones remain the safety net for readout
+> accuracy — they're what the board actually counts — so the risk is
+> contained as long as milestone progress stays the source of truth for
+> reporting, not subtask rollup.
 >
 > Also from this session: **msilva has autonomy to make Linear organization
 > decisions himself** — Luís explicitly declined to be treated as the
