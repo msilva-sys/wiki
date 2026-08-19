@@ -72,6 +72,15 @@ the schema into it.**
   underlying raw file — e.g. a link to the page `Airtable API docs` followed by
   `(raw/airtable-api.md)`. (Written out rather than shown as a live wikilink, so
   this example doesn't register as a broken link in Obsidian.)
+- **`[!msilva]` callouts**: msilva's own ideas, hypotheses, or opinions,
+  written directly onto a page in Obsidian — `> [!msilva] ...` — with no need
+  to go through a Claude Code session first. Kept verbatim; never rewritten or
+  "cleaned up" silently, same rule as any other quoted source. If it only
+  concerns the page it's on, it stays there permanently as an attributed
+  aside. If it bears on other pages too, fan it out the next time that area is
+  touched — cited as *"msilva, `[!msilva]` callout on [[Page]] (date), ..."*,
+  same evidentiary tier as a spoken meeting quote, promoted to `decisions/`
+  only once msilva confirms it's settled.
 
 ## Dates
 
@@ -185,6 +194,8 @@ Health check, report before changing anything:
   incompatible things. Read the bodies of pages edited more than twice.
 - broken wikilinks worth creating vs. worth deleting
 - decisions marked open in one page and settled in another
+- `[!msilva]` callouts that clearly bear on other pages and haven't been
+  fanned out yet
 
 ### `log`
 Append-only. Never rewrite history. One entry per operation:

@@ -1969,3 +1969,16 @@ revisit.
 - Open: everything above, plus the discovery conversations with Gabrielle
   and Carol already planned since 2026-08-18, which this meeting's material
   feeds into rather than replaces.
+
+## [2026-08-19] refactor | `[!msilva]` callout convention, Obsidian-native
+
+- Reverted the earlier `note <idea>` operation (chat-triggered) at msilva's
+  request — he wants to add his own ideas **through Obsidian directly**, not
+  via a Claude Code conversation.
+- Added a `[!msilva]` callout convention to `CLAUDE.md` instead: msilva writes
+  `> [!msilva] ...` directly on any page, in Obsidian, no session needed.
+  Kept verbatim, never silently rewritten. Stays on the page if it only
+  concerns that page; fanned out (attributed, dated, same tier as a spoken
+  meeting quote) the next time that area is touched if it bears on other
+  pages; promoted to `decisions/` only once msilva confirms it's settled.
+- Added a `lint` check for unfanned `[!msilva]` callouts.
