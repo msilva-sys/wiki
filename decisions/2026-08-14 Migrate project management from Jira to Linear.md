@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-18
+updated: 2026-08-19
 date: 2026-08-14
 decided_by: Gabrielle Ferreira
 source: "[[2026-08-14 1-1 Matheus - Gabrielle]]"
@@ -167,6 +167,32 @@ full at [[Linear Project Structure]]:
     restored all four manually in the Linear UI. Re-verified via API:
     `archivedAt: null` on all four, Todo, assigned to msilva, related to
     `PRO-78`.
+- **Fifth gap found 2026-08-19, and it retroactively explains an old unresolved
+  mystery.** Earlier in this migration (before this page's "second gap" bullet
+  above), msilva reported the Linear UI showing a **completely empty Issues
+  tab** for `Proxy do Airtable`, despite the API confirming all issues existed.
+  That investigation went as far as checking msilva's team membership and
+  `isAdmin` status (he's the only non-admin member of `Projetos-livemode`) as
+  a candidate explanation — inconclusive, and **never written down**, so it
+  was lost when that conversation thread ended.
+  - **The real cause, found by sweeping `list_issues` with `includeArchived`:
+    47 of the project's 60 issues were archived**, all sharing one timestamp
+    cluster (2026-08-06, 17:04:12–15) — one bulk operation, not scattered
+    individual archivals. This included **Done** work (the whole MVP,
+    dashboards, alerting — `PRO-98–105`) and nearly every untouched Backlog
+    item. Not a permissions issue at all — archived issues simply don't
+    surface in Linear's normal views.
+  - Restored via the Linear UI (no unarchive tool exists via MCP, same
+    limitation as the fourth gap above): F1, F2, and F3 milestones. **`Backlog
+    deferido` (`PRO-106–117`) intentionally left archived** — deferred scope,
+    not yet being worked.
+  - All 47 issues assigned to msilva (`assignee` changes apply even to
+    archived issues, unlike `archivedAt` itself) — he is the sole owner of
+    this backlog going forward, Jira's original per-issue assignment (mostly
+    unassigned/`Tech Projetos`) no longer being the relevant reference point.
+  - One straggler: `PRO-67` (F2, "Priorizar ofensores por impacto") still
+    shows `archivedAt` set despite being in the restored F2 group — worth a
+    manual check.
 - **`PRO-78` epic worked through 2026-08-18 — three of four children closed as
   already-done-in-code, one deferred to Luís.**
   - **`PRO-80` (Mapa appId → {apiKey, allowedBase}) → Done.** Design called for

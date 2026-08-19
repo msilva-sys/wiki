@@ -1779,3 +1779,32 @@ revisit.
   it was first flagged.
 - **`AIRTABLEGC` wind-down** and the **Linear Business-trial purchase**
   decision are both still open, carried from every recent entry.
+
+## [2026-08-19] refactor | old empty-Issues-tab mystery finally explained: 47 of 60 issues were archived
+- msilva was studying `PRO-84`/`PRO-90`/`PRO-74` (deploy, IaC, observability)
+  and, in the course of checking `PRO-76` specifically, hit the same
+  `save_comment` "Could not find referenced Issue" error as the fourth-gap
+  issues — `PRO-76` was archived too. Swept the whole project with
+  `list_issues`/`includeArchived` to check for more.
+- **Found 47 of 60 issues archived**, one timestamp cluster (2026-08-06,
+  17:04:12–15) — the same bulk operation as the fourth gap, just far larger
+  than the 4 issues caught then. Included **Done** work (`PRO-98–105`, the
+  entire MVP/dashboards/alerting) and nearly all untouched Backlog.
+- **This is almost certainly the answer to the empty-Issues-tab mystery from
+  earlier in this migration** — msilva reported a completely empty Issues tab
+  well before the fourth-gap discovery; that investigation checked team
+  membership and `isAdmin` status as a candidate cause, went nowhere, and
+  **was never written down**, so it silently dropped when the thread moved on.
+  Not a permissions problem — archived issues just don't show up.
+- msilva restored F1/F2/F3 in the Linear UI (no unarchive tool exists via
+  MCP — same limitation as the fourth gap). **Left `Backlog deferido`
+  (`PRO-106–117`) archived on purpose** — deferred scope, not being worked.
+- Assigned all 47 to msilva (assignee changes apply even while archived,
+  confirmed by testing it against `PRO-106–117` which are still archived).
+  He's now the explicit sole owner of the whole backlog going forward.
+- One loose end: `PRO-67` still shows `archivedAt` set despite being in the
+  restored F2 group — not yet explained, needs a manual look.
+- Updated: [[2026-08-14 Migrate project management from Jira to Linear]]
+  (fifth gap, closing the old mystery explicitly).
+- Open: `PRO-67`'s stray archive state; whether/when `Backlog deferido` gets
+  restored; everything else carried from prior entries.
