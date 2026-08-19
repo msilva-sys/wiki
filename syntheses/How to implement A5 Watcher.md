@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: draft
-updated: 2026-08-17
+updated: 2026-08-19
 date: 2026-08-17
 aliases: [A5 implementation, watcher implementation]
 tags: [agents, a5, implementation, grafana, observability, n8n]
@@ -16,6 +16,18 @@ Concrete build plan. Design rationale and risks are in
 > Written 2026-08-17 from the wiki's record of the [[Airtable Proxy]] repo. Several
 > details below are marked **verify** — the schema rule is that code wins over
 > docs, and the repo notes date from 2026-08-11 plus the GC-5 work.
+
+> [!warning] This plan is one narrow design, not "the" design — 2026-08-19
+> [[2026-08-19 1-1 Matheus - Gabrielle]] lays out two candidate shapes for
+> Watch: **Path A**, instrumented per-project, and **Path B**, a consolidator
+> of tools already in use (LogRocket, Vercel, and the proxy as one input among
+> several rather than its defining scope). **Everything below is Path A
+> applied to a single source** — the proxy's own OTel pipeline — and doesn't
+> yet reflect the multi-tool framing. It may still be the right first slice
+> (the proxy is the source msilva controls and can validate locally), but
+> don't read it as covering Watch's full design space. See [[Agent Flow]]'s
+> *Proposed shape* section for the reconciliation angle with Luís's
+> proxy-scoping objection.
 
 ## The pipeline
 
@@ -304,3 +316,8 @@ Per the spec template's third field, and aimed squarely at the fatigue risk:
 - Does filing into **Linear** have Gabrielle's support mid-migration?
 - Are alert rules welcome **in the proxy repo**, or does that couple two projects
   more than Luís wants?
+- **Does Watch stay proxy-only (Path A/this plan), or become a multi-tool
+  consolidator (Path B: proxy + LogRocket + Vercel)?** New 2026-08-19 — see the
+  warning at the top of this page and [[Agent Flow]]. Unresolved, and upstream
+  of most of the decisions above: a consolidator's pipeline, tools, and
+  triage-skill inputs look different from this proxy-only one.

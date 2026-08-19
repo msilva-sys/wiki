@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: research
-updated: 2026-08-18
+updated: 2026-08-19
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -86,6 +86,15 @@ classifies), which hands off to **A2 Classificador & Decisor** for routing:
 (usage analysis), A12 Data Gov (data quality), A13 Deduplication (**detects and
 blocks**), A14 PM Agent (request through to delivery).
 
+> [!note] "Fast" is the wrong word for A3, per msilva himself — 2026-08-19
+> The table row above says "orchestrates fast demands." In
+> [[2026-08-19 1-1 Matheus - Gabrielle]] msilva explicitly rejects that framing:
+> *"Eu nem sei se eu usaria demanda rápida e demorada como balizador."* The
+> real axis dividing A3 from A7 is **implementation complexity and how many
+> validation/approval layers a change needs** — not how quickly it resolves.
+> Left uncorrected in the table itself since the diagram source uses similar
+> shorthand; the distinction matters for design, not for the label.
+
 > [!important] Three corrections to what this page previously said
 > The verbal description in [[2026-08-10 Onboarding Técnico - Matheus]] flattened
 > distinctions the diagram makes:
@@ -132,6 +141,20 @@ integration point between msilva's two projects.
 > optimizing for a target Luís wants set aside. Next step, per the same
 > conversation: msilva runs separate discovery conversations with Gabrielle and
 > Carol about what each actually imagines the Watcher doing, before any more design.
+
+> [!tip] A candidate reconciliation, 2026-08-19 — msilva's own synthesis, not agreed with Luís
+> [[2026-08-19 1-1 Matheus - Gabrielle]]: Watcher has (at least) two possible
+> designs. **Path A** — instrumented inside each project directly (e.g.
+> [[LiveScript]]), paying a per-project setup cost every time. **Path B** — a
+> **consolidator of tools already in use** (LogRocket, Vercel, and the
+> [[Airtable Proxy]]'s own telemetry as one input among several, not the
+> defining scope). msilva leans toward B. **B is the shape that could satisfy
+> both sides of the conflict above**: the proxy stays genuinely useful once it
+> exists (Gabrielle's case) without Watch being *defined* by it (Luís's
+> objection). Not run past Luís yet — raise it in the discovery conversations
+> already planned, not as a settled answer. Full writeup on the meeting page;
+> [[How to implement A5 Watcher]]'s existing build plan is Path-A-shaped,
+> scoped only to the proxy.
 
 A longer-term ambition, from the onboarding: once built for this area, the flow
 could be adapted and reused by other areas, helping them produce more structured
@@ -596,7 +619,26 @@ consultant rather than validator.
   so neither's answer shapes the other's — before more design happens. This also
   carries the unresolved Gabrielle-vs-Luís tension above.
 - **Where do the human gates sit?** Autonomy itself is settled; which steps are
-  gated is not. See *Design approach* above.
+  gated is not. See *Design approach* above. **2026-08-19**: msilva wants this
+  as an explicit **tiered structure** — some work needs no review at all, some
+  needs only his own approval, some needs Gabrielle's, some needs Luís's too —
+  loosely tied to A6 Curator as the agent that would route work to the right
+  tier ([[2026-08-19 1-1 Matheus - Gabrielle]]). Not designed, just wanted.
+- **Is A1 + A2 one agent or two?** New 2026-08-19. msilva's own test: worth
+  splitting if A2's inputs come from more than just A1 (e.g. A6 Curator);
+  otherwise maybe not. Bears directly on the A1+A2 candidate in
+  [[Which agent should be built first]] and [[Comparing the first-agent
+  candidates]] — both currently treat it as a pair.
+- **Does discovery/planning belong before every execution, or only complex
+  work?** New 2026-08-19, from msilva questioning his own A3-vs-A7 split live:
+  should A3 itself always plan before acting — the way he uses Claude Code
+  personally — rather than discovery being a separate step gated by
+  complexity? If discovery is universal, today's A3-vs-A7 fork (by complexity)
+  might collapse into "discover always, then fork by complexity."
+  [[2026-08-19 1-1 Matheus - Gabrielle]]. Echoes the A4 Teacher pattern, which
+  also opens with understanding context before helping.
+- **Is usage/UX-pattern monitoring part of A5 Watcher, or a separate "product"
+  concern?** New 2026-08-19, raised and left open, same source.
 - **Which agent to build first?** **The selection criterion changed on 2026-08-18** —
   msilva's manager wants the agent with the **most utility** first, where the
   2026-08-17 analysis had optimized for lowest risk of failing. Both readings are

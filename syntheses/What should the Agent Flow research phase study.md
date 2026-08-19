@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-08-18
+updated: 2026-08-19
 date: 2026-08-17
 aliases: [agent flow research, research agenda, agent flow status]
 tags: [agents, research, planning, index]
@@ -27,6 +27,15 @@ tags: [agents, research, planning, index]
 > A5 design** until msilva runs separate discovery conversations with Gabrielle and
 > Carol about what each imagines the Watcher doing. Full detail: [[Agent Flow]] and
 > [[Which agent should be built first]].
+
+> [!tip] A candidate reconciliation, 2026-08-19 — msilva's own idea, not confirmed
+> [[2026-08-19 1-1 Matheus - Gabrielle]]: Watch as a **multi-tool consolidator**
+> (proxy + LogRocket + Vercel) rather than a proxy-scoped agent — the proxy
+> becomes one input, not the definition. Might satisfy both Luís (not
+> proxy-defined) and Gabrielle (proxy still useful). **Doesn't unblock the
+> discovery conversations above** — raise it there, don't treat it as the
+> answer. Detail: [[Agent Flow]], [[Which agent should be built first]],
+> [[How to implement A5 Watcher]].
 
 **Status board and router for [[Agent Flow]]'s research phase.** This page tracks
 *what is settled and what is open*; the reasoning lives on the pages it points to.
@@ -208,6 +217,13 @@ struck through, kept for the record — and the answers reshape the list.
 - **How often does the area start a new project?** **msilva has no metric for this
   (2026-08-18).** So A7 cannot be evaluated on utility at all — which is itself an
   argument for A1 + A2, the build that would produce the number. Ask Gabrielle.
+- **Is A1 + A2 one agent or two?** New 2026-08-19, [[2026-08-19 1-1 Matheus -
+  Gabrielle]]. Splitting earns its keep only if A2 gets inputs beyond A1.
+- **Does A3 need a universal discovery/planning step, or only complex work?**
+  New 2026-08-19, same source — msilva questioning his own A3-vs-A7 split.
+  Could collapse the fork into "discover always, fork by complexity after."
+- **Is UX/usage-pattern monitoring part of A5 Watcher, or a separate product
+  concern?** New 2026-08-19, same source.
 
 ## Corrected along the way
 

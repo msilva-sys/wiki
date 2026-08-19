@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-08-18
+updated: 2026-08-19
 date: 2026-08-17
 aliases: [first agent, A5 first, which agent first]
 tags: [agents, planning, a5, a1, a7]
@@ -79,6 +79,18 @@ direction.
   first, then an Orca migration that has not started, and isn't even mentioned on
   [[Orca Next Version]]'s own roadmap. The ceiling rose; the date moved out.
 
+### A candidate reconciliation with Luís, 2026-08-19 — not yet confirmed
+
+[[2026-08-19 1-1 Matheus - Gabrielle]] adds a design fork this page's "target:
+the proxy's telemetry" section below doesn't yet reflect: Watch could be a
+**consolidator across several monitoring tools** (proxy + LogRocket + Vercel),
+not an agent scoped to the proxy specifically. If so, the proxy is one input
+among several rather than Watch's defining scope — which may answer Luís's
+2026-08-18 objection (decouple Watch from the proxy) without giving up
+Gabrielle's utility case for it. **msilva's own synthesis, not run past
+Luís** — full writeup on [[Agent Flow]] and the meeting page;
+[[How to implement A5 Watcher]]'s build plan is the proxy-only slice.
+
 ### A7 cannot be chat-only — raised by msilva 2026-08-18
 
 A7 was the first utility candidate considered, on Packer's evidence that spec
@@ -128,6 +140,14 @@ deliverable.**
 ### msilva's position — A1 + A2 first
 
 Stated 2026-08-18. **A position, not a decision.**
+
+> [!note] Is it even two agents? — new question, 2026-08-19
+> [[2026-08-19 1-1 Matheus - Gabrielle]]: msilva is unsure whether A1 and A2
+> should be separate agents at all, versus one. His own test — worth
+> splitting if A2's inputs come from more than just A1 (e.g. A6 Curator),
+> maybe not otherwise. Doesn't change the argument below, which treats them as
+> a pair either way, but the "smallest of the four builds" framing further
+> down should be read as *a build*, not necessarily *two agents*.
 
 The pairing matters, because this page's rejection of A1 (below) evaluated **A1
 alone**, and its second objection was that *"with no A2 and no branches, its output

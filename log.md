@@ -1830,3 +1830,58 @@ revisit.
 - Open: whether the LiveScript/proxy split gets revisited; `PRO-67`'s stray
   archive state; `Backlog deferido` restoration; everything else carried
   from prior entries.
+
+## [2026-08-19] ingest | 1:1 Matheus / Gabrielle (2026-08-19)
+- Source: `raw/Gabrielle _ Matheus - 2026_08_19 11_37 GMT-03_00 - Anotações do
+  Gemini.md`. Third 1:1 on record, 13 min 17 s, single-topic: [[Agent Flow]]
+  design (A1/A2 intake, A5 Watcher's shape, A3-vs-A7 boundary).
+- New: `meetings/2026-08-19 1-1 Matheus - Gabrielle.md`.
+- Updated: `projects/Agent Flow.md` (four spots), `syntheses/How to implement
+  A5 Watcher.md`, `syntheses/Which agent should be built first.md` (two
+  spots), `syntheses/What should the Agent Flow research phase study.md`
+  (two spots), `index.md`.
+- **Source quality: attribution collapsed completely**, not partially — every
+  line credited to Matheus, including what reads as Gabrielle's prompting
+  questions and short backchannel reactions folded mid-paragraph. Same defect
+  family as [[2026-08-10 Onboarding Técnico - Matheus]] and
+  [[2026-08-14 1-1 Matheus - Gabrielle]], but total this time. Content
+  presented as msilva's own thinking, said aloud; anything attributed to
+  Gabrielle specifically is flagged unconfirmed on the page.
+- **No decisions.** Pure working/brainstorming session — flagged as such
+  rather than promoted.
+- **The one substantive new design material**: A5 Watcher laid out as two
+  candidate architectures for the first time — **Path A** (instrumented
+  per-project, e.g. inside [[LiveScript]], recurring setup cost) vs. **Path B**
+  (a consolidator of tools already in use — LogRocket, Vercel, the
+  [[Airtable Proxy]]'s telemetry as one input among several). msilva leans B.
+- **Candidate reconciliation for the Luís/Gabrielle proxy-scoping conflict**
+  (flagged unresolved since 2026-08-18): if Watch is a multi-tool
+  consolidator, the proxy is one input, not Watch's defining scope — which
+  may answer Luís's objection without losing Gabrielle's utility case.
+  **msilva's own synthesis from this meeting, not run past Luís** — recorded
+  as a candidate everywhere it touches, never as settled. [[How to implement
+  A5 Watcher]]'s existing build plan is flagged as the Path-A/proxy-only
+  slice, since it predates this distinction.
+- **A3-vs-A7 axis corrected**: msilva explicitly rejects "fast vs. slow
+  demand" as the differentiator (a framing [[Agent Flow]]'s own agent table
+  still uses, annotated in place rather than rewritten) in favor of
+  **implementation complexity and how many approval layers a change needs**.
+- **New open question, not previously asked**: should discovery/planning
+  precede *every* execution (the way msilva personally uses Claude Code —
+  plan then act, scaled to complexity) rather than being a separate step
+  gated by complexity? If universal, today's A3-vs-A7 fork could collapse
+  into "discover always, fork by complexity after."
+- **New open question**: is A1+A2 one agent or two? msilva's own test —
+  worth splitting only if A2's inputs come from more than just A1.
+- **New open question**: is usage/UX-pattern monitoring part of A5 Watcher,
+  or a separate "product" concern? Left open, not assigned either way.
+- **Governance/approval tiers wanted, not designed**: msilva wants an
+  explicit tiered structure (no review needed / his approval / Gabrielle's /
+  Luís's too), loosely tied to A6 Curator as the agent that would route work
+  to the right tier. Noted as a new open question rather than a design.
+- `Bug (sistema)` mention **confirms, doesn't extend**, the existing reading
+  that it's machine-fed with A5 Watcher as a candidate producer.
+- Open, carried forward: everything above, plus everything already open on
+  [[Agent Flow]] and its syntheses (the Gabrielle/Carol discovery
+  conversations remain the actual next step; this meeting's material is
+  input to those, not a substitute for them).
