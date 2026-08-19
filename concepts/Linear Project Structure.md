@@ -274,10 +274,12 @@ qualified in words.
 
 ## Open questions
 
-- **What is a `Release`, and how does it map to milestones?** Raised by Luís,
-  2026-08-19, explicitly unresolved: his guess is several releases per
-  project, each tied to closing a milestone — *"fechou uma release, automação,
-  roda tudo completo[...] tá pronto próximo mileston[e]."* Not designed.
+- ~~**What is a `Release`, and how does it map to milestones?**~~ **Answered
+  2026-08-19, msilva** (resolving a question Luís raised the same call, in
+  [[2026-08-19 1-1 Matheus - Luís]]): a release isn't a Linear-native concept
+  sitting below Project — **a release *is* a project inside the initiative**,
+  matching the LiveScript example above. Milestones stay a manual, per-project
+  call (convention 1 above); "ticket" and "issue" are the same thing.
 - ~~**What is the Linear team/project identifier, and what shape are the new issue
   keys?**~~ **Answered 2026-08-18** — checked Linear directly instead of waiting on
   Gabrielle's link. Team `Projetos-livemode`, `PRO-*` keys, three projects under the

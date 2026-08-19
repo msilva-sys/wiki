@@ -66,6 +66,28 @@ Prefixes: `ingest` | `callout` | `query` | `synthesis` | `lint` | `refactor` | `
   wanted, who originally deleted the Jira-migrated Linear issues, which
   restored issues are still valid) — left as open questions on the new
   meeting page rather than guessed at.
+
+## [2026-08-19] callout | Four `[!msilva]` callouts on 2026-08-19 1-1 Matheus - Luís
+- msilva answered four of his own open questions on
+  `meetings/2026-08-19 1-1 Matheus - Luís.md` directly as `[!msilva]` callouts,
+  same day the page was created. Discussed each in chat before resolving:
+  1. **Mini-comparison report**: not needed — the identification decision is
+     already settled.
+  2. **`X-Api-Key`**: staying deferred and decoupled from the URL-path
+     identification decision — not being touched now.
+  3. **Linear "Release"**: resolved as *not* a distinct concept below
+     Project — a release *is* a project inside the initiative, matching the
+     LiveScript precedent already recorded on `concepts/Linear Project
+     Structure.md` from Gabrielle's 2026-08-18 walkthrough. Milestones stay a
+     manual per-project call; "ticket" = "issue."
+  4. **Jira-restored issue validity**: msilva will personally triage the
+     active project's own restored issues; folded into the existing action
+     item rather than left as a separate question.
+- All four callouts resolved as action taken and deleted from the page (they
+  were to-do markers, not standing opinions).
+- Updated: `meetings/2026-08-19 1-1 Matheus - Luís.md` (open questions
+  resolved inline, action item extended), `concepts/Linear Project
+  Structure.md` (Release open question answered, citing the resolution above).
 - Confirmed by msilva: **LiveScript and the "roteiros" app are the same system** —
   merged into one page with both names as aliases.
 - Per msilva's instruction, org-related material in the transcript (vendor
