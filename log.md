@@ -2194,3 +2194,17 @@ revisit.
   recorded, and closer to (maybe identical to) the multi-tool-consolidator
   reconciliation msilva already proposed 2026-08-19. Not re-confirmed with
   Luís; still to raise in the planned discovery conversation.
+
+## [2026-08-19] refactor | Meeting prep — A5 Watcher discovery with Carol
+- msilva asked for a prep doc for today's discovery conversation with Carol,
+  modeled on the working style of the [[2026-08-19 1-1 Matheus - Gabrielle]]
+  session — the second of the two deliberately-separate Watcher/A5 discovery
+  conversations agreed on 2026-08-18.
+- New: `meetings/Meeting prep - A5 Watcher discovery with Carol - 2026-08-19.md`.
+  Structured to protect the point of asking separately: the cold opening
+  question comes first, background (A5's shape, the Gabrielle/Luís tension,
+  msilva's own Path B reconciliation) is held back until after she answers.
+  Also flags three Carol-specific threads: her own "team's pain" criterion,
+  whether her intranet tool is already A10 Portfolio, and skills-repo overlap
+  with A6 Curator.
+- Updated: `index.md`.
