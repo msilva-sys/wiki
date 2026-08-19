@@ -2365,3 +2365,29 @@ revisit.
   `PRO-94` (choosing the Pulumi language) is already In Progress, which
   leans Pulumi, but nothing decided or closed.
 - Updated: [[Linear Project Structure]], [[Airtable Proxy]].
+- **msilva deleted the 3 leftover empty milestone shells by hand in the
+  Linear UI** (no delete tool exists via this MCP) — confirmed live, the
+  project now holds exactly the 3 checkpoint milestones.
+
+## [2026-08-19] decision | Deploy via Pulumi settled; PRO-85/86 marked duplicate
+- Continued the Deploy-vs-IaC discussion from the reshape above. msilva:
+  named it exactly right first — merging `PRO-85`/`86` into `PRO-91` isn't
+  Linear housekeeping, it's deciding the deploy *method*, the same shape of
+  call [[2026-08-18 Bring options to Luís before deciding, communicate async and often]]
+  exists for. Presented three options (merge now / raise with Luís first /
+  link without merging) rather than assuming.
+- **msilva: "pulumi choice is already settled"** — decision predates this
+  session and wasn't newly made here; not independently re-confirmed with
+  Luís in this conversation.
+- **Executed**: `PRO-85` (manual Cloud Run deploy) and `PRO-86` (manual
+  Secret Manager provisioning) marked `duplicateOf` `PRO-91` — Linear
+  auto-cancelled both (`status: Duplicate`) on save.
+- **Left alone, deliberately, not swept into the same merge**:
+  - `PRO-89` (wiring the real notification channel) and `PRO-92` (codifying
+    the alert policy in Pulumi) — related, not duplicate: one's the rule,
+    one's the channel it fires into.
+  - `PRO-93` (dashboards as code) — re-declares the already-Done
+    `PRO-102`/`103` dashboards, which is legitimate IaC scope (formalizing
+    what already shipped), not wasted duplicate effort to cancel.
+- Updated: [[Airtable Proxy]] (finding section resolved, superseded framing
+  removed).

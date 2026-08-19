@@ -49,13 +49,19 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > **Finding from this pass**: `PRO-84` (Deploy em produção) and `PRO-90` (IaC
 > Pulumi) weren't two phases — `PRO-91` "Codificar Cloud Run + Secret Manager
 > em Pulumi" is the same target infra as `PRO-85`/`PRO-86` done as code
-> instead of by hand, and `PRO-93` re-declares dashboards already built in the
-> MVP (`PRO-102`/`103`). `PRO-90` is now a child of `PRO-84` rather than a
-> sibling epic. **Not resolved**: whether the manual issues (`85`, `86`, `89`)
-> and their Pulumi counterparts (`91`, `92`) are both actually needed, or one
-> side should be closed once the deploy method is chosen — `PRO-94`
-> (choosing the Pulumi language) is already In Progress, suggesting Pulumi is
-> the real intended path, but nothing has been decided or closed either way.
+> instead of by hand. `PRO-90` is now a child of `PRO-84` rather than a
+> sibling epic.
+>
+> **Resolved 2026-08-19, msilva**: Pulumi is the settled deploy method
+> (stated as already decided, not re-confirmed with Luís in this session).
+> `PRO-85` and `PRO-86` marked `duplicateOf` `PRO-91` and auto-cancelled by
+> Linear — manual Cloud Run deploy and Secret Manager provisioning are
+> superseded by `PRO-91` doing both as code. Left alone, deliberately:
+> `PRO-89` (wiring the real notification channel) and `PRO-92` (codifying the
+> alert policy in Pulumi) are related, not duplicate — different work, one
+> is the rule, one is the channel it fires into. `PRO-93` (dashboards as
+> code) also kept as-is; it re-declares the already-Done `PRO-102`/`103`
+> dashboards, which is legitimate IaC scope, not duplicate effort to cancel.
 
 ## How it's framed internally
 
