@@ -2391,3 +2391,41 @@ revisit.
     what already shipped), not wasted duplicate effort to cancel.
 - Updated: [[Airtable Proxy]] (finding section resolved, superseded framing
   removed).
+
+## [2026-08-19] refactor | Backlog review pass, Proxy em produção validado c/ LiveScript
+- Went through all 13 remaining `Backlog` issues in the new project one by
+  one with msilva, per his request ("lets review and validate all the
+  backlog items"). Scope confirmed explicitly beforehand: this project only,
+  not `Proxy do Airtable`'s F1/F2/Backlog deferido.
+- Order: `PRO-74`, `76`, `84`, `87`, `88`, `89`, `90`, `91`, `92`, `93`,
+  `95`, `96`, `97`. All titles/descriptions/hierarchy confirmed accurate;
+  msilva confirmed `PRO-96`'s "Cenário A" framing is a settled design
+  decision, not still open.
+- **Status fixes made**:
+  - `PRO-84`, `PRO-90` (epics): `Backlog` → `In Progress` — their child
+    `PRO-94` had already started and status hadn't caught up. Same gap
+    previously fixed for `PRO-78` during the auth-epic pass.
+  - `PRO-91`: `Backlog` → `Todo` — next actionable step in the deploy
+    milestone, gated only on the in-progress `PRO-94` spike.
+- **Structural fix**: `PRO-89` ("alertas de produção com canal real") and
+  `PRO-117` ("definir canal de notificação", previously sitting inert in
+  `Proxy do Airtable`'s "Backlog deferido" milestone) were duplicative in
+  intent — deciding the channel vs. wiring it up. Merged as parent/sub-issue
+  instead of two disconnected items: `PRO-117` moved into this project,
+  reassigned to the "Proxy em produção" milestone, parented under `PRO-89`.
+  Also discovered `PRO-117` was **archived** (since 2026-08-06, part of the
+  same bulk-archive event already documented for `Proxy do Airtable`) —
+  msilva unarchived it manually in the Linear UI after getting the link.
+- **PRO-76 found blocked in practice**: propagating `app.route` needs
+  LiveScript to *send* it, which is LiveScript-side code, out of scope per
+  [[2026-08-18 1-1 Matheus - Luís]]. Already recorded as a comment on the
+  issue itself (2026-08-19, pre-dates this session) — the comment names
+  Luís directly, which msilva confirmed is fine to leave as-is (he wants to
+  raise the underlying scope question with Luís directly instead).
+- **New decision written**: [[2026-08-18 Proxy first, defer LiveScript-side
+  SDK changes]] — msilva confirmed during this pass that the constraint
+  first stated for `PRO-76` generalizes ("mostly will be deferred") rather
+  than being a one-off, so it's now recorded as a real decision, not just an
+  issue comment. Cites both `PRO-76` and `PRO-82` as blocked by it.
+- Updated: [[Airtable Proxy]] (backlog-review-pass note added to the top
+  callout), `index.md` (new decision listed).

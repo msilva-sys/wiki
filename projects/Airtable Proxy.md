@@ -62,6 +62,20 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > is the rule, one is the channel it fires into. `PRO-93` (dashboards as
 > code) also kept as-is; it re-declares the already-Done `PRO-102`/`103`
 > dashboards, which is legitimate IaC scope, not duplicate effort to cancel.
+>
+> **Backlog review pass, 2026-08-19**: went through all 13 remaining Backlog
+> issues in this project one by one with msilva. Fixes made: `PRO-84`/`PRO-90`
+> bumped `Backlog` → `In Progress` (children had already started, status
+> hadn't caught up); `PRO-91` bumped to `Todo` (next actionable step, only
+> gated on the in-progress Pulumi-language spike `PRO-94`); `PRO-117`
+> ("Definir canal de notificação") moved out of `Proxy do Airtable`'s
+> "Backlog deferido" milestone into this project as a sub-issue of `PRO-89`,
+> and unarchived — it had stopped being genuinely deferred once `PRO-89`
+> needed the decision made. Everything else confirmed as accurate, no
+> changes. New decision recorded from this pass: [[2026-08-18 Proxy first,
+> defer LiveScript-side SDK changes]] — msilva confirmed the scope boundary
+> first stated for `PRO-76` generalizes to most remaining LiveScript-side
+> work.
 
 ## How it's framed internally
 
