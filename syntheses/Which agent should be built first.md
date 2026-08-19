@@ -26,13 +26,18 @@ tags: [agents, planning, a5, a1, a7]
 > **msilva's own position, stated 2026-08-18: A1 + A2 first.** Recorded as a
 > position, not a decision. Nothing has been decided.
 
-> [!danger] Same day, a second reopening — Luís wants A5 decoupled from the proxy
+> [!danger] Same day, a second reopening — Luís thinks A5 shouldn't be scoped to the proxy
 > [[2026-08-18 1-1 Matheus - Luís]] (14:59, hours after the note above was written
-> at 11:04): Luís argues the Watcher/A5 should be designed **as if the proxy didn't
-> exist** — scoping it to proxy telemetry caps its value at whatever LiveScript
-> alone generates early on, in his view. This directly contradicts the
-> proxy-Orca-reach argument this page and [[Agent Flow]] built up the same morning.
-> Full tension recorded on that meeting page; not resolved here.
+> at 11:04): Luís argues the Watcher/A5 shouldn't be *defined* by proxy telemetry —
+> scoping it that way caps its value at whatever LiveScript alone generates early
+> on, in his view. This directly contradicts the proxy-Orca-reach argument this
+> page and [[Agent Flow]] built up the same morning. Full tension recorded on that
+> meeting page; not resolved here.
+>
+> **Corrected 2026-08-19 by msilva**: originally recorded here as "as if the proxy
+> didn't exist" / decoupled — msilva's own account is narrower: Luís's objection is
+> to the proxy being the defining scope, not to it playing any role. See the
+> meeting page for the full correction.
 >
 > Practical effect on this page: everything below the reach argument (webhook
 > receiver, Grafana grouping, Linear dedup, the two-repo split) is **mechanism**,

@@ -2113,3 +2113,20 @@ revisit.
 - **Not fixed / no action needed**: everything else. This was the cleanest
   lint pass to date — no dating errors, no stale index, no unresolved
   callouts.
+
+## [2026-08-19] refactor | Correct Luís's A5-proxy objection
+- msilva clarified in chat: Luís's position on 2026-08-18 was mischaracterized
+  across five pages as "decouple A5/Watcher from the proxy entirely." The
+  actual objection, per msilva (who was in the meeting): the proxy should not
+  be A5's *defining scope*, not that the proxy must play no role at all.
+- Kept the verbatim quote ("desassociaria ele completamente") in place per
+  schema — it is real transcript evidence — but added inline corrections
+  rather than rewriting it.
+- Updated: meetings/2026-08-18 1-1 Matheus - Luís.md (added correction
+  callout), projects/Agent Flow.md, syntheses/What should the Agent Flow
+  research phase study.md, syntheses/Which agent should be built first.md,
+  index.md.
+- Consequence: the Gabrielle/Luís tension is narrower than previously
+  recorded, and closer to (maybe identical to) the multi-tool-consolidator
+  reconciliation msilva already proposed 2026-08-19. Not re-confirmed with
+  Luís; still to raise in the planned discovery conversation.

@@ -21,12 +21,18 @@ tags: [agents, research, planning, index]
 > Two new facts feed it: **[[Orca (CDE)]] and other services are to be plugged into
 > the [[Airtable Proxy]]**, and **A7 cannot be chat-only**.
 
-> [!danger] New, same day: Luís wants A5/Watcher decoupled from the proxy entirely
+> [!danger] New, same day: Luís thinks A5/Watcher shouldn't be scoped to the proxy
 > [[2026-08-18 1-1 Matheus - Luís]], hours after the note above was written.
 > Contradicts the proxy-Orca-reach framing directly; not resolved. **Blocks further
 > A5 design** until msilva runs separate discovery conversations with Gabrielle and
 > Carol about what each imagines the Watcher doing. Full detail: [[Agent Flow]] and
 > [[Which agent should be built first]].
+>
+> **Corrected 2026-08-19 by msilva**: originally recorded here as "decouple
+> entirely" — the transcript quote does say *"completamente"*, but msilva's own
+> account is narrower: Luís objects to the proxy being the agent's *defining
+> scope*, not to the proxy playing any role at all. Smaller gap than it first
+> looked; see the meeting page for the full correction.
 
 > [!tip] A candidate reconciliation, 2026-08-19 — msilva's own idea, not confirmed
 > [[2026-08-19 1-1 Matheus - Gabrielle]]: Watch as a **multi-tool consolidator**

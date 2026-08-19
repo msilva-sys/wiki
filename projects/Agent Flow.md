@@ -178,6 +178,14 @@ integration point between msilva's two projects.
 > conversation: msilva runs separate discovery conversations with Gabrielle and
 > Carol about what each actually imagines the Watcher doing, before any more design.
 
+> [!important] Corrected 2026-08-19 by msilva — narrower than "decouple entirely"
+> Luís's actual objection, per msilva: **A5 shouldn't be *scoped to* the proxy** —
+> not that the proxy must play no role. That's a materially smaller gap from
+> Gabrielle's framing than this page previously suggested, and it lines up with —
+> maybe just restates — the Path B reconciliation immediately below (proxy as one
+> input, not the defining scope). Not re-confirmed with Luís; the planned
+> discovery conversations still stand.
+
 > [!tip] A candidate reconciliation, 2026-08-19 — msilva's own synthesis, not agreed with Luís
 > [[2026-08-19 1-1 Matheus - Gabrielle]]: Watcher has (at least) two possible
 > designs. **Path A** — instrumented inside each project directly (e.g.
