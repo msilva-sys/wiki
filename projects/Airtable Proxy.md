@@ -495,6 +495,34 @@ yet the second consumer in practice.
 **To verify (couldn't check myself):** the repo is on a network share with no
 visible `.git`, so I can't confirm the "8 commits / acceptance passed" claims in
 the status doc. Worth confirming the actual git state matches the doc.
+(Resolved 2026-08-18: the real clone is
+`C:\Users\msilva\projects\livemode-airtable-proxy` — confirmed via `git remote`/
+`git log`. A same-named copy under `Documents\repos\` has no `.git` and is stale.)
+
+## Timeline tension: two sources disagree on where this month goes (2026-08-18)
+
+msilva asked whether a month is realistic to finish [[Linear Project Structure]]'s
+F3 milestone (production deploy + LiveScript-validated). What's actually left
+there: the auth epic's tail (`PRO-82` blocked on Luís, `PRO-83` blocked on
+`PRO-82`), production deploy (`PRO-84`, 5 issues, none started), IaC via Pulumi
+(`PRO-90`, 4 issues), and LiveScript integration/validation (`PRO-95`, 2 issues) —
+roughly 19 open issues against 13 already Done since onboarding (2026-08-10).
+
+Two sources on record don't point the same way:
+- **Luís, 2026-08-18 1:1**: *"Teu primeiro trabalho é botar o proxy funcionando
+  100%."* The proxy is msilva's actual current job; LiveScript's own SDK-side
+  migration is explicitly out of scope for now.
+- **The intranet `metas.md`/`combinados.md`** (`https://livemode-intranet.vercel.app/#pessoa/matheus`
+  — read live 2026-08-18, not yet otherwise ingested here) frame the proxy as
+  backlog-qualified work, not the headline measure: the August commitment is the
+  **Agent Flow design validated with Gabi by 2026-08-31**, and the 60-day goal
+  (2026-10-09) is "first agent of the flow in production" — a different project.
+
+Not resolved — msilva's call 2026-08-18 was to **leave the proxy's Linear dates
+as they are** (no milestone/issue due dates set) rather than pick a side. Worth
+raising explicitly with Luís or Gabrielle if the two timelines start to
+genuinely conflict, per [[2026-08-18 Bring options to Luís before deciding,
+communicate async and often]].
 
 ---
 

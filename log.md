@@ -1696,3 +1696,30 @@ revisit.
 - Updated: [[2026-08-14 Migrate project management from Jira to Linear]].
 - Open: Luís's answer on `PRO-82`'s onboarding-flow options; everything else
   carried from prior entries.
+
+## [2026-08-18] query | is a month realistic for the proxy — surfaced a timeline conflict
+- msilva asked whether one month is realistic to finish the proxy (F3
+  milestone). Counted open work: ~19 issues across auth-tail (blocked on
+  Luís), production deploy, IaC, and LiveScript integration, against 13 Done
+  since onboarding (2026-08-10).
+- To check for prior context, opened `https://livemode-intranet.vercel.app/#pessoa/matheus`
+  (Claude in Chrome, msilva's real logged-in session — the in-app browser hit
+  Google SSO and couldn't get past it). Read all four tabs
+  (Responsabilidades/Perfil/Combinados/Metas) — genuinely new source, not
+  previously in this wiki.
+- Found a real conflict: Luís's 2026-08-18 1:1 says the proxy is msilva's
+  actual current job, 100%. The intranet's `metas.md`/`combinados.md` instead
+  make the Agent Flow design (due 2026-08-31, with Gabi) and "first agent in
+  production" (day 60, 2026-10-09) the headline commitments — the proxy reads
+  as secondary there. Also noted in passing: the 30-day mark (2026-09-09)
+  coincides exactly with the Linear Business-trial expiration already on
+  record, unrelated but same date.
+- msilva's call: **leave the proxy's Linear dates as they are** — no
+  milestone or issue due dates set — rather than resolve the tension now.
+- Updated: [[Airtable Proxy]] (new section recording the conflict; also
+  resolved an old open item — confirmed the real repo clone's path via `git
+  remote`/`git log`).
+- Open: the Metas-vs-Luís conflict itself, unresolved by design; everything
+  else carried from prior entries. The intranet page's `combinados.md`/
+  `metas.md` content is not otherwise ingested — worth a proper `ingest` pass
+  if msilva wants a `people`-style page for his own onboarding tracked here.
