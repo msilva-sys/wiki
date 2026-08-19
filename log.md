@@ -2235,6 +2235,12 @@ revisit.
   shell wasn't deleted — "leave it as it is now" was read as covering the
   whole project, including that leftover. Worth a manual glance next time
   that project is touched.
+- **Follow-up, same session**: filled in the new project's summary and
+  description (pt-BR, business-first per the standing Linear convention) and
+  added two resource links — the GitHub repo and the sibling `Proxy do
+  Airtable` project it was split from. Linear auto-flipped the project's
+  status to "In Progress" on save, presumably because its milestones already
+  carry real progress; not something set explicitly.
 
 ## [2026-08-19] refactor | Meeting prep — A5 Watcher discovery with Carol
 - msilva asked for a prep doc for today's discovery conversation with Carol,
