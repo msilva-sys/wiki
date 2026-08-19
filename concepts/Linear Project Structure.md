@@ -66,6 +66,11 @@ framing of the proxy as company-wide infrastructure rather than a [[LiveScript]]
 ([[2026-08-14 Recap da Semana]]) — the initiative structure is where that intent is
 actually encoded.
 
+**A fourth sibling project joined 2026-08-19**: *Proxy em produção validado c/
+LiveScript*, promoted out of `Proxy do Airtable`'s F3 milestone (see the fourth
+convention below). First concrete instance of the "milestone → sibling project"
+move Luís described, rather than just the three Luís had created up front.
+
 **[[Farol]]**: the initiative is the product; the current build is project one, and
 **V2** — bronze/prata/ouro layers plus a conversational AI layer — is project two. A
 concrete demonstration that "the V2" is a project, not a roadmap aspiration.
@@ -169,14 +174,38 @@ nesting.
 > Convention 3 is the one with an expiry date — drill-down is planned. Conventions 1 and
 > 2 hold regardless.
 
-> [!important] Fourth convention, 2026-08-19 — only the active project needs structuring right now
+> [!important] Fourth convention, 2026-08-19 — a milestone you're actively working can be promoted to its own project
 > [[2026-08-19 1-1 Matheus - Luís]], walking the hierarchy live in Linear with
-> Luís: **only msilva's currently active project needs real milestones/issues
-> today.** Everything else restored from the deleted-then-restored
-> Jira-migrated issues (see [[2026-08-14 Migrate project management from Jira
-> to Linear]]) can simply be **deleted** — it becomes a sibling project inside
-> the initiative later, at no rush. *"Todas essas issas aqui, o restante pode
-> deletar tudo, não tem problema[...] Isso te tira carga cognitiva."*
+> Luís. **Corrected from an earlier, looser reading of this call** — the raw
+> transcript is more specific than "only the active project needs structure":
+> Luís explicitly said the milestone msilva was actively working in should
+> become its own **project**, sibling to the one holding it, inside the same
+> initiative:
+>
+> > *"aqui você vai pegar uma versão dessa inteira aqui, que é onde você tá
+> > trabalhando. **Isso é um projeto, cara. Esse projeto tem milestones.**
+> > Quais são os milestones? A forma que você quiser se organizar..."*
+>
+> Everything else — the milestone(s) left behind, and the rest of the
+> restored, deleted-then-restored Jira-migrated backlog (see
+> [[2026-08-14 Migrate project management from Jira to Linear]]) — doesn't need
+> to move over now. Deleting it is fine; it becomes its own sibling project
+> inside the initiative later, at no rush:
+>
+> > *"Todas essas issas aqui, o restante pode deletar tudo, não tem
+> > problema[...] vai virar em algum momento **projeto irmão** desse aqui
+> > dentro da iniciativa. Isso te tira carga cognitiva."*
+>
+> **Executed 2026-08-19**: `Proxy do Airtable`'s F3 milestone (*"Proxy em
+> produção validado c/ LiveScript"*) promoted to its own project of the same
+> name, sibling to `Proxy do Airtable` inside **Airtable GC — Governança e
+> Confiabilidade**. Its 6 new milestones reuse the project's existing epics
+> as-is (MVP local do proxy, Auth + multi-app, Observabilidade completa no
+> proxy, Deploy em produção (Cloud Run), IaC (Pulumi), Integração & validação
+> com LiveScript) — no new categorization invented, every F3 issue already
+> named one. `Proxy do Airtable` keeps F1, F2, and Backlog deferido untouched,
+> per msilva's explicit call to leave it as-is. See [[Airtable Proxy]] for the
+> issue-level detail.
 >
 > Also from this session: **msilva has autonomy to make Linear organization
 > decisions himself** — Luís explicitly declined to be treated as the

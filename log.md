@@ -2195,6 +2195,47 @@ revisit.
   reconciliation msilva already proposed 2026-08-19. Not re-confirmed with
   Luís; still to raise in the planned discovery conversation.
 
+## [2026-08-19] refactor | Promote F3 from milestone to its own Linear project
+- msilva asked to plan the Airtable Linear reorg "like Luís said" — went back
+  to `raw/Luis _ Matheus - 2026_08_19 15_01...md` (not just the wiki's earlier
+  summary of it) because msilva's own recollection ("F3 should be a project
+  under the Airtable initiative") didn't match what [[Linear Project
+  Structure]]'s "fourth convention" bullet had recorded.
+- **Found a real compression error in the earlier ingest.** The raw transcript
+  has Luís saying explicitly: *"Isso é um projeto, cara. Esse projeto tem
+  milestones"* — the milestone msilva is actively working in gets promoted to
+  its own project, not just "the active project needs structure." The
+  earlier wiki summary lost the promotion mechanism itself.
+- Pulled live Linear state (`get_project`/`list_issues`) before planning,
+  rather than trusting the wiki's 2026-08-18/19 snapshot — confirmed
+  `PRO-67` still shows `archivedAt` despite being "restored," and that F3 had
+  32 issues (13 Done) sitting flat under one 43%-progress milestone.
+- **Executed, confirmed by msilva** (new project name = the milestone's own
+  name; `Proxy do Airtable` left as-is, no rename):
+  - Created project **Proxy em produção validado c/ LiveScript**
+    (`24c71c2a-…`), sibling to `Proxy do Airtable` inside **Airtable GC —
+    Governança e Confiabilidade**.
+  - Created 6 milestones inside it, one per **existing epic** already in the
+    32 issues — no new categorization invented: MVP local do proxy (`PRO-98`
+    + 7), Auth + multi-app (`PRO-78` + 5), Observabilidade completa no proxy
+    (`PRO-74` + 3), Deploy em produção (Cloud Run) (`PRO-84` + 5), IaC
+    (Pulumi) (`PRO-90` + 4, including `PRO-92`/`93` which an earlier
+    in-chat draft of this plan had missed), Integração & validação com
+    LiveScript (`PRO-95` + 2).
+  - Moved all 32 issues (`PRO-74–105`) into the new project and their
+    matching milestone.
+  - Left `Proxy do Airtable` (F1, F2, Backlog deferido, the `PRO-67`
+    straggler) completely untouched, per msilva's explicit call — matches
+    Luís's "no rush, no cognitive cost" framing for everything outside the
+    actively-worked milestone.
+- Updated: [[Linear Project Structure]] (corrected the fourth convention with
+  the verbatim quotes, recorded the execution), [[Airtable Proxy]] (top
+  callout + timeline-tension section), `index.md`.
+- Not done, deliberately: `Proxy do Airtable`'s now-empty F3 milestone
+  shell wasn't deleted — "leave it as it is now" was read as covering the
+  whole project, including that leftover. Worth a manual glance next time
+  that project is touched.
+
 ## [2026-08-19] refactor | Meeting prep — A5 Watcher discovery with Carol
 - msilva asked for a prep doc for today's discovery conversation with Carol,
   modeled on the working style of the [[2026-08-19 1-1 Matheus - Gabrielle]]

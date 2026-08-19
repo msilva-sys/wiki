@@ -23,6 +23,17 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > 4 milestones (F1/F2/F3/Backlog deferido), a 1:1 mirror of `AIRTABLEGC` in both title
 > and (mostly) status. See [[2026-08-14 Migrate project management from Jira to Linear]]
 > for the full finding — this predates and supersedes the task as "still to do."
+>
+> **2026-08-19: F3 promoted to its own project**, per Luís
+> ([[2026-08-19 1-1 Matheus - Luís]]) — [Proxy em produção validado c/
+> LiveScript](https://linear.app/projetos-livemode/project/proxy-em-producao-validado-c-livescript-eb1691b502c3),
+> sibling to `Proxy do Airtable` inside the same **Airtable GC** initiative, with
+> its own 6 milestones (one per existing epic: MVP local do proxy, Auth +
+> multi-app, Observabilidade completa no proxy, Deploy em produção (Cloud Run),
+> IaC (Pulumi), Integração & validação com LiveScript). All 32 F3 issues
+> (`PRO-74–105`) moved there. `Proxy do Airtable` keeps F1, F2, and Backlog
+> deferido, left untouched at msilva's call — no rush, per [[Linear Project
+> Structure]].
 
 ## How it's framed internally
 
@@ -518,12 +529,14 @@ the status doc. Worth confirming the actual git state matches the doc.
 > `log.md`'s entry is left as-is per the append-only rule; this page is corrected
 > since it isn't.
 
-msilva asked whether a month is realistic to finish [[Linear Project Structure]]'s
-F3 milestone (production deploy + LiveScript-validated). What's actually left
-there: the auth epic's tail (`PRO-82` blocked on Luís, `PRO-83` blocked on
-`PRO-82`), production deploy (`PRO-84`, 5 issues, none started), IaC via Pulumi
-(`PRO-90`, 4 issues), and LiveScript integration/validation (`PRO-95`, 2 issues) —
-roughly 19 open issues against 13 already Done since onboarding (2026-08-10).
+msilva asked whether a month is realistic to finish what was then F3 (production
+deploy + LiveScript-validated) — since promoted to its own project, [Proxy em
+produção validado c/ LiveScript](https://linear.app/projetos-livemode/project/proxy-em-producao-validado-c-livescript-eb1691b502c3)
+(see the callout at the top). What's actually left there: the auth epic's tail
+(`PRO-82` blocked on Luís, `PRO-83` blocked on `PRO-82`), production deploy
+(`PRO-84`, 5 issues, none started), IaC via Pulumi (`PRO-90`, 5 issues), and
+LiveScript integration/validation (`PRO-95`, 2 issues) — roughly 19 open issues
+against 13 already Done since onboarding (2026-08-10).
 
 Two sources on record don't point the same way:
 - **Luís, 2026-08-18 1:1**: *"Teu primeiro trabalho é botar o proxy funcionando
