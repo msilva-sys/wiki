@@ -2075,3 +2075,41 @@ revisit.
 - All six resolved by editing rather than by leaving a reply on the page,
   per msilva's instruction that inline replies clutter the wiki — the
   discussion happened in chat, this entry is the durable record.
+
+## [2026-08-19] lint | Ninth health check, one fix
+
+- **Link graph** (Node script, 73 pages): 0 real broken links. The five
+  hits the script flags are expected non-issues: `CLAUDE.md`'s `[[Page]]` is
+  the schema's own citation-format example (deliberately not a live link,
+  per that section), and `log.md`'s `[[...]]`/`[[people/]]` hits are this
+  file quoting past log entries verbatim.
+- **Orphans**: none. **Dead ends**: one, `reference/Zed Cheatsheet.md` —
+  known and accepted since the eighth lint, no outbound links by nature of
+  what the page is.
+- **Frontmatter**: clean across all non-exempt pages.
+- **`raw/` coverage**: every source file has a wiki page except
+  `Novo(a) Documento de Texto.txt` (empty, nothing to ingest) and `README.md`
+  (not a source). The `2026-06-14-Papo de Projetos...docx` filename-vs-content
+  date mismatch (docx says June, the meeting page correctly says
+  `date: 2026-08-14`) was already resolved by a prior ingest per the
+  file-contents-over-filename precedence rule — re-confirmed, not a new fix.
+- **`[!msilva]` callouts**: none outstanding — the prior commit's `notes` run
+  cleared all six on the 2026-08-19 1:1 page, and no others exist in the vault.
+- **Intra-page consistency**: read the pages touched by both parts of the
+  2026-08-19 ingest and the callout-resolution commit in full —
+  [[Agent Flow]], the [[2026-08-19 1-1 Matheus - Gabrielle]] meeting page,
+  [[Which agent should be built first]], [[Comparing the first-agent
+  candidates]], [[What should the Agent Flow research phase study]],
+  [[How to implement A5 Watcher]], [[Linear Project Structure]]. All
+  consistent: the "possible convergence" finding is flagged as unconfirmed
+  identically everywhere it appears, decided-vs-discussed is kept straight,
+  and no decision anywhere is recorded as settled in one place and open in
+  another.
+- **Fixed**: a stray editing artifact from the callout-resolution commit —
+  the "tiered governance" open question on the meeting page had picked up a
+  trailing `.so ` after "route work to the right tier" (`tier.so `),
+  left over from folding a callout's text into the paragraph. Corrected to
+  end cleanly at "tier."
+- **Not fixed / no action needed**: everything else. This was the cleanest
+  lint pass to date — no dating errors, no stale index, no unresolved
+  callouts.

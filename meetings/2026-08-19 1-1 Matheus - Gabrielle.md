@@ -80,7 +80,7 @@ built out.
 - **What does a tiered governance/approval structure actually look like?**
   Wanted, not designed: *"acho que a gente seria bom a gente ter esses níveis
   de governança."* Loosely tied to A6 Curator doing the curating that would
-  route work to the right tier.so 
+  route work to the right tier.
 
 ## A5 Watcher: two candidate designs, laid out for the first time
 
