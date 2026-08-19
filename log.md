@@ -2223,3 +2223,19 @@ revisit.
   context-minimalism view first-hand rather than relayed secondhand from
   [[2026-08-19 1-1 Matheus - Gabrielle]].
 - Updated: `index.md` (entry rewritten in place, notes the rename).
+
+## [2026-08-19] refactor | Add Gabi-comparison to Carol prep doc
+- msilva asked for the same doc, but with what was already gathered from the
+  Gabi conversation laid alongside each thread for direct comparison during
+  the Carol meeting.
+- Rewrote `meetings/Meeting prep - Agent Flow discovery with Carol -
+  2026-08-19.md`: added a quick-comparison table at the top, and a
+  "what the Gabi conversation already gave us" subsection under each of the
+  five threads (which-agent-first, Watcher/A5 scope, A6-vs-skills-repo, A10/
+  intranet tool, context minimalism).
+- **Explicit caveat added and repeated**: [[2026-08-19 1-1 Matheus -
+  Gabrielle]]'s transcription collapsed attribution entirely, so most of the
+  "Gabi side" is msilva's own thinking said out loud, not confirmed quotes
+  from her. The doc tells msilva to treat Carol's answers as the more
+  reliable signal, not to use the Gabi column as a tie-breaker.
+- Updated: `index.md`.
