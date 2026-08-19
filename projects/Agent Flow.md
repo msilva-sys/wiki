@@ -152,6 +152,24 @@ Nothing states what emits it — but the [[Airtable Proxy]]'s telemetry and A5
 Watcher are the two obvious candidates, which would make it the concrete
 integration point between msilva's two projects.
 
+> [!important] Dev subagents are project-harness scope, not architecture scope — Luís, 2026-08-19
+> Carol asked Luís, in a "projetos arquitetura de agentes" group, where the
+> architecture's dev subagents are designed. His answer, in
+> [[2026-08-19 1-1 Matheus - Luís]]: he wouldn't design that as part of this
+> 14-agent flow at all — *"Isso é 100% harness de projeto[...] Esse harness tá
+> dentro do projeto[...] ele tem um contexto de quem que é o time dele que sabe
+> trabalhar dentro dele."* Whatever agent triggers development work, the
+> concrete subagents it spins up are a property of the target project's own
+> setup (CLAUDE.md, skills, tooling), decided per-project — not something the
+> Agent Flow diagram needs to specify. Relevant to **A3** and **A9**, both of
+> which dispatch development work.
+>
+> Same conversation surfaced **[[Claude Agent SDK]]** — running Claude Code via
+> API/CLI without an IDE — as a related but distinct topic worth tracking:
+> the substrate an agent would use to *invoke* a project's harness
+> programmatically, as opposed to the harness itself. Luís is already
+> experimenting with it; nothing concrete tied to a specific agent yet.
+
 > [!note] Resolved in part, 2026-08-18 (msilva)
 > **[[Orca (CDE)]] and other services are to be plugged into the
 > [[Airtable Proxy]]**, so the proxy becomes the shared Airtable data plane for
@@ -740,6 +758,11 @@ consultant rather than validator.
   discovery/documentation minimum) point toward **A10+A14** and **A7/A8** rather
   than A1+A2 or A5. Not a new decision — see [[Which agent should be built
   first]] and [[Comparing the first-agent candidates]] for the detail.
+  **Third independent confirmation, 2026-08-19**: in
+  [[2026-08-19 1-1 Matheus - Luís]], Luís agrees unprompted that the
+  visibility pain (backlog state, project progress) is real and one he shares
+  too, alongside Carol — *"De visibilidade, né?[...] Concordo."* Now three
+  people (msilva, Carol, Luís) independently naming the same pain.
 - ~~**Who owns context retrieval?**~~ **Answered 2026-08-18 — it is not an agent.**
   Raised from msilva's point that **A7 cannot be chat-only**, then asked whether it
   needed a fifteenth agent. It does not: a retrieval *agent* would create the

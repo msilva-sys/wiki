@@ -273,6 +273,16 @@ from Gabrielle Ferreira in onboarding.
    > `Authorization`, "apps never see the PAT" holds only if the app is given a
    > throwaway key and the proxy replaces the header. See
    > [[How LiveScript sends the proxy X-App-Id header]].
+   >
+   > [!important] Superseded 2026-08-19 — identification moves to URL path, not `X-App-Id`
+   > [[2026-08-19 Identify proxy apps by URL path, not header]]: the app is
+   > identified by the **URL path** it's configured to hit (e.g.
+   > `proxy.livemode.com/livescript`), not by a header — settled precisely
+   > because a header can't be relied on across SDK transport, a path can.
+   > `X-Api-Key` (authentication) is unaffected and stays deferred; this only
+   > changes *identification*. **Not yet implemented** — the 401-on-missing-
+   > `X-App-Id` behavior described in this section is still what's live until
+   > path-based routing ships.
 
 5. **Instrumentation is decided: OpenTelemetry / OTLP.** Local dev uses a single
    `grafana/otel-lgtm` container (Loki + Prometheus + Tempo + Grafana).

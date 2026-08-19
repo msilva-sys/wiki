@@ -169,6 +169,22 @@ nesting.
 > Convention 3 is the one with an expiry date — drill-down is planned. Conventions 1 and
 > 2 hold regardless.
 
+> [!important] Fourth convention, 2026-08-19 — only the active project needs structuring right now
+> [[2026-08-19 1-1 Matheus - Luís]], walking the hierarchy live in Linear with
+> Luís: **only msilva's currently active project needs real milestones/issues
+> today.** Everything else restored from the deleted-then-restored
+> Jira-migrated issues (see [[2026-08-14 Migrate project management from Jira
+> to Linear]]) can simply be **deleted** — it becomes a sibling project inside
+> the initiative later, at no rush. *"Todas essas issas aqui, o restante pode
+> deletar tudo, não tem problema[...] Isso te tira carga cognitiva."*
+>
+> Also from this session: **msilva has autonomy to make Linear organization
+> decisions himself** — Luís explicitly declined to be treated as the
+> project's owner (*"não me considero dono do projeto"*) and only wants to be
+> told what changed, not asked up front. And Luís admits he's using *"5% do
+> potencial"* of Linear himself, and is reading Linear's own docs over the
+> weekend of 2026-08-22/23 to bring back organizing guidance.
+
 ## Teams as the isolation boundary
 
 **Teams are the workspace and permission unit** — *"a gente tem os times que são como se
@@ -258,6 +274,10 @@ qualified in words.
 
 ## Open questions
 
+- **What is a `Release`, and how does it map to milestones?** Raised by Luís,
+  2026-08-19, explicitly unresolved: his guess is several releases per
+  project, each tied to closing a milestone — *"fechou uma release, automação,
+  roda tudo completo[...] tá pronto próximo mileston[e]."* Not designed.
 - ~~**What is the Linear team/project identifier, and what shape are the new issue
   keys?**~~ **Answered 2026-08-18** — checked Linear directly instead of waiting on
   Gabrielle's link. Team `Projetos-livemode`, `PRO-*` keys, three projects under the

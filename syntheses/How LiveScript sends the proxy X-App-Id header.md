@@ -1,13 +1,29 @@
 ---
 type: synthesis
-status: active
-updated: 2026-08-18
+status: superseded
+updated: 2026-08-19
 date: 2026-08-17
 aliases: [x-app-id, app auth header, livescript proxy auth, GC-5 client side]
 tags: [airtable, proxy, auth, sdk, livescript, opentelemetry]
 ---
 
 # How LiveScript sends the proxy X-App-Id header
+
+> [!danger] Superseded at the root — 2026-08-19, identification moves to URL path
+> [[2026-08-19 Identify proxy apps by URL path, not header]]: the proxy will
+> identify the calling app by the **URL path** it's configured to hit (e.g.
+> `proxy.livemode.com/livescript`), not by a header. Decided specifically
+> *because* of the problem this page documents — a header can't be relied on
+> to survive SDK transport, but a path can, since it's part of the same
+> `endpointUrl` config every app already sets.
+>
+> That retires the reason this page exists: the entire options comparison
+> below (`pnpm patch` / `customHeaders`-only / REST migration / SDK upgrade /
+> `node-fetch` interceptor) was about getting a header onto SDK traffic. None
+> of it is needed if identification doesn't depend on a header at all. Kept
+> below as a record of what was investigated and why it was hard — not as a
+> live decision to make. **Not yet implemented** — the proxy still enforces
+> `X-App-Id` as described below until the path-based routing ships.
 
 Question raised 2026-08-17: the [[Airtable Proxy]] now enforces app
 identification — every proxied request must carry `X-App-Id` (LiveScript's id is

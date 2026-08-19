@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-18
+updated: 2026-08-19
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
@@ -35,3 +35,14 @@ sometimes builds directly, otherwise supports.
   ([[2026-08-18 Bring options to Luís before deciding, communicate async and often]]).
 - Helping Carolina build the team-wide skills/plugins repo (`livemode`) and
   the Claude Code training programme.
+- Granted msilva explicit autonomy over Linear organization decisions,
+  2026-08-19 — *"não me considero dono do projeto[...] se sente com liberdade
+  para poder tomar essas decisões"* ([[2026-08-19 1-1 Matheus - Luís]]).
+  Self-assesses as using *"5% do potencial"* of Linear; reading its docs over
+  the weekend of 2026-08-22/23 to bring back organizing guidance.
+- Independently confirms the backlog/project visibility pain Gabrielle and
+  Carol have also raised (2026-08-19) — see [[Agent Flow]].
+- Already experimenting with the [[Claude Agent SDK]] (headless Claude Code)
+  for his own purposes, separate from this team's work (2026-08-19).
+- Told Carol that Agent Flow's dev-subagent design is project-harness scope,
+  not architecture scope (2026-08-19) — see [[Agent Flow]].
