@@ -2242,6 +2242,41 @@ revisit.
   status to "In Progress" on save, presumably because its milestones already
   carry real progress; not something set explicitly.
 
+## [2026-08-19] lint | Tenth health check
+- Scoped to the 14 files changed since the ninth lint (`123b0a5`), rather than
+  re-reading everything: that pass had already verified the rest of the vault
+  clean, and the mechanical checks below cover the whole vault regardless.
+- **Mechanical checks, whole vault**: zero broken wikilinks (the only
+  `[[Page]]`/`[[people/]]`-shaped hits are literal example text in `CLAUDE.md`
+  and historical narration in `log.md`, not real links); zero orphans besides
+  the four schema-exempt infra pages (`AGENTS.md`, `CLAUDE.md`, `index.md`,
+  `log.md`); zero dead-ends besides the two already-known/accepted ones
+  (`AGENTS.md`, [[Zed Cheatsheet]]); frontmatter has `type`/`status`/`updated`
+  on every non-exempt page; every `raw/` file (bar `.obsidian/`, `README.md`,
+  the empty `Novo(a) Documento de Texto.txt`) is cited somewhere outside
+  `log.md`; no `[!msilva]` callouts outstanding; nothing close to the 30-day
+  staleness threshold (oldest `updated:` is 2026-08-11, eight days).
+- **Read the 14 changed files for intra-page and cross-page contradictions**
+  (the check mechanical tools can't do). Two real findings, both fixed:
+  1. [[2026-08-19 Identify proxy apps by URL path, not header]]'s "What's
+     still open" list still carried the mini-relatório question as unclear,
+     but [[2026-08-19 1-1 Matheus - Luís]] had already answered and deleted
+     that exact `[!msilva]` callout in the same day's earlier commit. Struck
+     through and answered on the decision page.
+  2. [[2026-08-18 1-1 Matheus - Luís]]'s open question "should the `pnpm
+     patch` stay in production?" and its "SDK header patch" section both
+     still read as unresolved, but the patch was already reverted
+     2026-08-18 and the 2026-08-19 URL-path decision retires header-based
+     identification entirely — there's no live decision left to make.
+     Marked moot in both places, Luís's general discomfort with
+     `pnpm patch`-class tools kept as standing feedback.
+- Everything else in the 14 files checked out consistent — in particular the
+  A5-proxy-scoping correction and the Path A/B reconciliation read the same
+  way across [[Agent Flow]], both syntheses, and the Carol prep note.
+- Not done: didn't re-verify the pages the ninth lint already cleared
+  (`Agent Flow`'s 30 prior commits, `Airtable Proxy`'s 19, etc. weren't
+  touched again in full — only their diffs since then).
+
 ## [2026-08-19] refactor | Meeting prep — A5 Watcher discovery with Carol
 - msilva asked for a prep doc for today's discovery conversation with Carol,
   modeled on the working style of the [[2026-08-19 1-1 Matheus - Gabrielle]]

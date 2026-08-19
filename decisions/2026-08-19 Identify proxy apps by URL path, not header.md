@@ -65,7 +65,9 @@ page now points here instead of continuing to carry the comparison as live.
 - **Not yet implemented.** The proxy currently 401s on a missing `X-App-Id`
   header ([[Airtable Proxy]]); this decision means that check will eventually
   be replaced by path-based routing, not that it already has been.
-- Luís had separately floated a written "mini relatório" comparing solutions
-  before "batendo o martelo" — that request predates the settling in the same
-  conversation, and it's unclear whether a written report is still wanted for
-  the record. See the open question on [[2026-08-19 1-1 Matheus - Luís]].
+- ~~Luís had separately floated a written "mini relatório" comparing solutions
+  before "batendo o martelo" — unclear whether a written report is still
+  wanted for the record.~~ **Answered 2026-08-19, msilva** (via a `[!msilva]`
+  callout on [[2026-08-19 1-1 Matheus - Luís]], since resolved and deleted
+  there): no — the identification question is already settled, no written
+  report needed.
