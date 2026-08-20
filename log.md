@@ -2489,3 +2489,17 @@ revisit.
   entries).
 - Not folded into any decision — registered as a counterpoint to weigh,
   per msilva's explicit direction.
+
+## [2026-08-20] refactor | render the Fluxo Agêntico diagram as Mermaid
+- msilva asked for the 14-agent architecture diagram to be easy to access in
+  the wiki. It previously existed only as an SVG inside
+  `raw/fluxo_agentico_ajustado (2).html` and a rough ASCII sketch on
+  [[Fluxo Agêntico diagram]].
+- Re-read the raw SVG's actual coordinates and edges directly (not just the
+  page's prior summary) to render it faithfully: A5→A3 feedback loop,
+  A5→A10/A11/A12 context feed, A10↔A11↔A12 collaboration, A10/A11/A12→A9,
+  A13→A1 context-back-to-receptor, and A6 Curator's near-universal (faint,
+  low-opacity in the original) connections to every other agent.
+- Updated: [[Fluxo Agêntico diagram]] (ASCII sketch replaced with a
+  Mermaid flowchart, color-classed to match the original SVG's node
+  groupings), `index.md`.

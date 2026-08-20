@@ -110,7 +110,7 @@ _(next candidates, extractable from [[Airtable Proxy]]: token-terminating auth, 
 
 ## Sources
 - [[Fluxo Agêntico project instruction]] — **authoritative spec** for Agent Flow: AI-First philosophy, anarchic-then-integrated build strategy, per-agent detail for all 14.
-- [[Fluxo Agêntico diagram]] — the 14-agent architecture diagram; A6 Curator is the hub, A13 blocks, `Bug (sistema)` is machine-fed.
+- [[Fluxo Agêntico diagram]] — the 14-agent architecture diagram; A6 Curator is the hub, A13 blocks, `Bug (sistema)` is machine-fed. **2026-08-20**: now rendered as an inline Mermaid diagram (colored to match the original SVG's groupings), replacing the earlier ASCII sketch.
 - [[Gabriel Packer - DAG-driven agent orchestration]] — external prior art (part 2); the model Luís shared. A working A7→A8→A9 driven by a dependency graph. Resolves what "gráfis" meant.
 - [[Gabriel Packer - solo founder AI workflow (part 1)]] — the same system before dispatch was automated. Quality-gate-heavy pipeline; instructions-in-files lesson; Linear has its own agent.
 - [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]] — external counterpoint: compounding-failure math and receipted benchmarks against heavy multi-agent orchestration, and against spec-as-source-of-truth (PRD-first) design; his **ai-memory** tool as a structural parallel to this vault. Registered against [[Agent Flow]] 2026-08-20, not a reopened decision.

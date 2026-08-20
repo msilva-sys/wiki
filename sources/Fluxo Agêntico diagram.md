@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-08-17
+updated: 2026-08-20
 date: 2026-08-17
 aliases: [fluxo agentico, 14 agentes, agent flow diagram]
 source: "raw/fluxo_agentico_ajustado (2).html"
@@ -33,20 +33,96 @@ thing the 2026-08-10 onboarding described verbally.
 **Four entry channels** converge on a single receptor: `Bug (sistema)` ·
 `Bug (manual)` · `Tarefa` · `Consultoria`.
 
+Rendered from the raw SVG's actual node coordinates and edges (not just the
+verbal description) — colors match the original's grouping: purple = intake,
+teal = operational/enablement, orange = projects pipeline, red = monitoring,
+pink = transversal intelligences, green = A6's memory hub. Dashed edges are
+the diagram's own "context feeding" lines; solid edges are its main flow.
+
+```mermaid
+flowchart TD
+    BS["Bug (sistema)"]
+    BM["Bug (manual)"]
+    TA["Tarefa"]
+    CO["Consultoria"]
+
+    BS --> A1
+    BM --> A1
+    TA --> A1
+    CO --> A1
+
+    A1["A1: Receptor Universal<br/>Filtra, formata e classifica"]
+    A2["A2: Classificador & Decisor<br/>Análise contextual e roteamento"]
+    A1 --> A2
+
+    A2 -->|OPERACIONAL| A3
+    A2 -->|ENABLEMENT| A4
+    A2 -->|PROJETOS| A7
+
+    A3["A3: Executor<br/>Orquestra demandas<br/><i>cria sub-agentes sob demanda</i>"]
+    A4["A4: Teacher<br/>Ensina áreas"]
+
+    A7["A7: Discovery<br/>Gera PRD completo"]
+    A8["A8: Orchestrator<br/>Orquestra projetos"]
+    A9["A9: Developer<br/>Desenvolve sistemas<br/><i>cria sub-agentes sob demanda</i>"]
+    A7 --> A8 --> A9
+
+    A5["A5: Watcher<br/>Monitora continuamente"]
+    A5 -. retroalimenta execução .-> A3
+    A5 -. detecção proativa .-> A10
+    A5 -.-> A11
+    A5 -.-> A12
+
+    subgraph TRANSV [" "]
+        direction LR
+        A10["A10: Portfolio<br/>Sugere priorização"]
+        A11["A11: Product<br/>Analisa uso"]
+        A12["A12: Data Gov<br/>Qualidade dados"]
+        A13["A13: Deduplication<br/>Detecta e bloqueia"]
+        A14["A14: PM Agent<br/>Pedido à entrega"]
+    end
+
+    A10 <--> A11
+    A11 <--> A12
+    A10 -.-> A9
+    A11 -.-> A9
+    A12 -.-> A9
+
+    A13 -. contexto .-> A1
+
+    A6["A6: Curator<br/>Memória institucional<br/>Hub central de conhecimento"]
+    A2 -.-> A6
+    A3 -.-> A6
+    A9 -.-> A6
+    A5 -.-> A6
+    A10 -.-> A6
+    A11 -.-> A6
+    A12 -.-> A6
+    A13 -.-> A6
+    A14 -.-> A6
+
+    classDef channel fill:#F1EFE8,stroke:#5F5E5A,color:#5F5E5A
+    classDef intake fill:#EEEDFE,stroke:#534AB7,color:#3C3489
+    classDef ops fill:#E1F5EE,stroke:#0F6E56,color:#085041
+    classDef proj fill:#FAEEDA,stroke:#854F0B,color:#633806
+    classDef watch fill:#FCEBEB,stroke:#A32D2D,color:#791F1F
+    classDef transv fill:#FBEAF0,stroke:#993556,color:#72243E
+    classDef curator fill:#EAF3DE,stroke:#3B6D11,color:#27500A,stroke-width:3px
+
+    class BS,BM,TA,CO channel
+    class A1,A2 intake
+    class A3,A4 ops
+    class A7,A8,A9 proj
+    class A5 watch
+    class A10,A11,A12,A13,A14 transv
+    class A6 curator
 ```
-  4 channels → A1 Receptor Universal (filters, formats, classifies)
-                 ↓
-               A2 Classificador & Decisor (contextual analysis, routing)
-                 ↓
-      ┌──────────┼──────────────┐
-  OPERACIONAL  ENABLEMENT     PROJETOS
-      ↓            ↓             ↓
-  A3 Executor  A4 Teacher    A7 Discovery  → generates a complete PRD
-                                 ↓
-                             A8 Orchestrator
-                                 ↓
-                             A9 Developer
-```
+
+**Legend, verbatim from the diagram**: solid lines = main flow, dotted lines
+= context feeding. A6 Curator's edges to every other agent are all faint
+dashed lines in the original (opacity ~0.1) — rendered above as regular
+dashed edges for legibility, since Mermaid can't reproduce that low an
+opacity distinctly.
 
 | Agent | Role | Note |
 |---|---|---|
