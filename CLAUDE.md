@@ -32,7 +32,17 @@ cross-references, consistency, indices, and logs.
 | `syntheses/` | Cross-cutting write-ups answering a question | question |
 | `reference/` | Personal reference that isn't domain knowledge — cheatsheets, ticket scratch notes | thing |
 
-Root holds only `CLAUDE.md`, `AGENTS.md`, `index.md`, `log.md`.
+Root holds only `CLAUDE.md`, `AGENTS.md`, `index.md`, `log.md`, and `notebook/`.
+
+`notebook/` is msilva's personal, **ungoverned** scratch space — loose
+Livemode-work-related thoughts, jotted directly by him in Obsidian, with no
+schema and no expectation of resolution. It is git-ignored and lives here only
+for the convenience of one Obsidian window. Treat it like `raw/` in spirit —
+**never create, edit, or reorganize anything inside it on your own initiative**
+— but unlike `raw/`, it isn't a source to ingest: don't index it, don't link to
+it from wiki pages, don't summarize it into `sources/`. Read it only when
+msilva explicitly asks. If something in it turns out to matter to the wiki,
+that's his call to bring over, not yours to go fetch.
 
 `AGENTS.md` is a **pointer to this file**, for tools that look for that filename.
 It is deliberately not a copy — two schemas drift, and this is the one file where

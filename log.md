@@ -2511,3 +2511,22 @@ revisit.
   nine lines at ~0.1 opacity — decoration meaning "everything feeds the
   memory hub," not nine equally load-bearing connections — so drawing all
   nine at full weight had overstated them, independent of the overflow issue.
+
+## [2026-08-20] refactor | bring the notebook in as a git-ignored, schema-exempt folder
+
+msilva had started a separate, deliberately ungoverned Obsidian vault at
+`Documents\notes` for loose Livemode-work-related thoughts (this session
+named it **notebook**), kept outside this repo so it would never be indexed
+or maintained by me. He asked to move it inside `work/` for the convenience
+of one Obsidian window, without giving up that separation.
+
+- Moved: `Documents\notes` → `work\notebook` (contents untouched —
+  `.obsidian/` config and `Fluxo agêntico.md`).
+- `.gitignore`: added `notebook/` — its contents are never tracked.
+- `CLAUDE.md`: added `notebook/` as a fifth root exemption alongside
+  `CLAUDE.md`/`AGENTS.md`/`index.md`/`log.md` — no frontmatter, no indexing,
+  no linking from wiki pages, read only on explicit request, never edited or
+  reorganized by me. Treated like `raw/` in spirit (hands off) but not a
+  source to ingest.
+- `index.md`: not updated — the folder is explicitly exempt from indexing,
+  same as the four other root files.
