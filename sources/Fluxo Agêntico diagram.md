@@ -40,9 +40,10 @@ pink = transversal intelligences, green = A6's memory hub. Dashed edges are
 the diagram's own "context feeding" lines; solid edges are its main flow.
 
 ```mermaid
+%%{init: {'flowchart': {'nodeSpacing': 12, 'rankSpacing': 24, 'curve': 'basis'}, 'themeVariables': {'fontSize': '11px'}}}%%
 flowchart TD
-    BS["Bug (sistema)"]
-    BM["Bug (manual)"]
+    BS["Bug sistema"]
+    BM["Bug manual"]
     TA["Tarefa"]
     CO["Consultoria"]
 
@@ -51,54 +52,44 @@ flowchart TD
     TA --> A1
     CO --> A1
 
-    A1["A1: Receptor Universal<br/>Filtra, formata e classifica"]
-    A2["A2: Classificador & Decisor<br/>Análise contextual e roteamento"]
+    A1["A1<br/>Receptor Universal"]
+    A2["A2<br/>Classificador &amp; Decisor"]
     A1 --> A2
 
     A2 -->|OPERACIONAL| A3
     A2 -->|ENABLEMENT| A4
     A2 -->|PROJETOS| A7
 
-    A3["A3: Executor<br/>Orquestra demandas<br/><i>cria sub-agentes sob demanda</i>"]
-    A4["A4: Teacher<br/>Ensina áreas"]
+    A3["A3<br/>Executor"]
+    A4["A4<br/>Teacher"]
 
-    A7["A7: Discovery<br/>Gera PRD completo"]
-    A8["A8: Orchestrator<br/>Orquestra projetos"]
-    A9["A9: Developer<br/>Desenvolve sistemas<br/><i>cria sub-agentes sob demanda</i>"]
+    A7["A7<br/>Discovery"]
+    A8["A8<br/>Orchestrator"]
+    A9["A9<br/>Developer"]
     A7 --> A8 --> A9
 
-    A5["A5: Watcher<br/>Monitora continuamente"]
-    A5 -. retroalimenta execução .-> A3
-    A5 -. detecção proativa .-> A10
+    A5["A5<br/>Watcher"]
+    A5 -.-> A3
+    A5 -.-> A10
     A5 -.-> A11
     A5 -.-> A12
 
-    subgraph TRANSV [" "]
-        direction LR
-        A10["A10: Portfolio<br/>Sugere priorização"]
-        A11["A11: Product<br/>Analisa uso"]
-        A12["A12: Data Gov<br/>Qualidade dados"]
-        A13["A13: Deduplication<br/>Detecta e bloqueia"]
-        A14["A14: PM Agent<br/>Pedido à entrega"]
-    end
+    A10["A10<br/>Portfolio"]
+    A11["A11<br/>Product"]
+    A12["A12<br/>Data Gov"]
+    A13["A13<br/>Deduplication"]
+    A14["A14<br/>PM Agent"]
 
     A10 <--> A11
     A11 <--> A12
     A10 -.-> A9
     A11 -.-> A9
     A12 -.-> A9
+    A13 -.-> A1
 
-    A13 -. contexto .-> A1
-
-    A6["A6: Curator<br/>Memória institucional<br/>Hub central de conhecimento"]
+    A6["A6<br/>Curator"]
     A2 -.-> A6
-    A3 -.-> A6
     A9 -.-> A6
-    A5 -.-> A6
-    A10 -.-> A6
-    A11 -.-> A6
-    A12 -.-> A6
-    A13 -.-> A6
     A14 -.-> A6
 
     classDef channel fill:#F1EFE8,stroke:#5F5E5A,color:#5F5E5A
@@ -119,10 +110,20 @@ flowchart TD
 ```
 
 **Legend, verbatim from the diagram**: solid lines = main flow, dotted lines
-= context feeding. A6 Curator's edges to every other agent are all faint
-dashed lines in the original (opacity ~0.1) — rendered above as regular
-dashed edges for legibility, since Mermaid can't reproduce that low an
-opacity distinctly.
+= context feeding. Trimmed for legibility from the raw SVG (full detail
+stays in the table below):
+
+- Node text shortened to `id + name` — role/description text lives in the
+  table, not duplicated in the diagram.
+- **A5 → A3 "retroalimenta execução"** and **A13 → A1 "contexto"** dashed
+  edges are unlabeled above (hover/click isn't available outside Obsidian
+  anyway); both are called out by name in the callout above the diagram in
+  [[Agent Flow]].
+- **A6 Curator's edges are pruned to three representative ones** (from A2,
+  A9, A14) rather than all nine — in the original SVG these are all faint,
+  low-opacity (~0.1) decoration meaning "every agent feeds the memory hub,"
+  not nine distinct load-bearing connections. Drawing all nine at full
+  weight overstated them and was most of what was overflowing the render.
 
 | Agent | Role | Note |
 |---|---|---|

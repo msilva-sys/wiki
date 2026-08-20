@@ -2503,3 +2503,11 @@ revisit.
 - Updated: [[Fluxo Agêntico diagram]] (ASCII sketch replaced with a
   Mermaid flowchart, color-classed to match the original SVG's node
   groupings), `index.md`.
+- **Follow-up, same day**: msilva reported the render overflowing. Shrunk it —
+  shortened node labels to `id + name` (role text stays in the table, not
+  duplicated), added a Mermaid `init` directive for tighter spacing/font, and
+  pruned A6 Curator's edges from all nine agents down to three representative
+  ones. That pruning matters for more than size: the original SVG draws those
+  nine lines at ~0.1 opacity — decoration meaning "everything feeds the
+  memory hub," not nine equally load-bearing connections — so drawing all
+  nine at full weight had overstated them, independent of the overflow issue.
