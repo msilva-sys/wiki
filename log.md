@@ -2661,3 +2661,11 @@ asked for both ingested directly.
   `people/Yasmin Macedo.md` (getting more of Luís's time), `index.md`.
 - No new decisions — `PRO-94` (Pulumi language) confirmed still open, gated
   on Luís, who was sick Tue–Thu this week.
+
+## [2026-08-20] decision | Pulumi IaC language: Go, aligned with Luís
+- `PRO-94` resolved same day as the above 1:1 note (which had it still open,
+  gated on Luís): msilva aligned with Luís on **Go**, matching msilva's
+  stated lean (toolchain/CI consistency with the proxy).
+- Updated: `decisions/2026-08-18 Bring options to Luís before deciding,
+  communicate async and often.md` (Applied since — PRO-94 bullet resolved),
+  `projects/Airtable Proxy.md` (open question resolved).

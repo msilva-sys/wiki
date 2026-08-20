@@ -66,3 +66,4 @@ of not doing it: *"você tá desperdiçando informação sem necessidade."*
 - **`PRO-94` (Pulumi program language), 2026-08-19.** Same pattern: 3 options
   (Go / TypeScript / Python) posted as a Linear comment, msilva's lean (Go, for
   toolchain/CI consistency with the proxy) stated but left as Luís's call.
+  **Resolved 2026-08-20**: Luís aligned on Go. Matches msilva's stated lean.

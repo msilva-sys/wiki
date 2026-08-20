@@ -531,8 +531,12 @@ These remain open (design §14):
   / SaaS query language) — cheap to decide now, hard to backfill later.
 - **Caching freshness tolerance** per table/operation — still the right question,
   but scoped to *metadata only* given the attachment-URL constraint.
-- Pulumi language (Go / TS / Python); notification channel (Slack / PagerDuty /
-  email); where the app API-key map lives first; one base or all bases in v1.
+- ~~Pulumi language (Go / TS / Python)~~ **Resolved 2026-08-20**: Go, aligned
+  with Luís — see [[2026-08-18 Bring options to Luís before deciding,
+  communicate async and often]]. Matches msilva's stated lean (toolchain/CI
+  consistency with the proxy).
+- Notification channel (Slack / PagerDuty / email); where the app API-key map
+  lives first; one base or all bases in v1.
 
 **Added 2026-08-18, from [[2026-08-17 Weekly - Projetos e Tarefas]] — two consumers
 nobody connected to this project in the room:**
