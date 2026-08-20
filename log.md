@@ -2572,3 +2572,47 @@ asked for both ingested directly.
   early), [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]]
   (added the two missing URLs plus the Berkeley study link, flagged the
   selective-citation correction), `index.md`.
+
+## [2026-08-20] lint | Eleventh health check
+- Scoped to the 12 files changed since the tenth lint (`d8a0850`), plus the
+  usual whole-vault mechanical sweep. Reported before changing anything.
+- **Mechanical checks, whole vault**: zero orphans (besides the four
+  schema-exempt infra pages), one known/accepted dead-end
+  ([[Zed Cheatsheet]]), frontmatter complete everywhere, nothing near the
+  30-day staleness threshold, zero outstanding `[!msilva]` callouts. Zero new
+  broken wikilinks beyond one real finding below — the rest of the regex hits
+  are the same known false positives as the tenth lint (line-wrapped links
+  resolving fine, and literal `[[Page]]`/`[[people/]]` example text in
+  `CLAUDE.md`/`log.md`).
+- **Read the 12 changed files for contradictions.** Three real findings, not
+  yet fixed:
+  1. **Stale claim, not yet corrected**: [[2026-08-18 Proxy first, defer
+     LiveScript-side SDK changes]] (still `updated: 2026-08-19`) lists
+     `PRO-82` under "What this blocks," but `PRO-82` was resolved the next day
+     — recorded correctly on [[Airtable Proxy]] and in this log. `index.md`'s
+     Decisions-section summary of this same page repeats the stale "Blocks
+     `PRO-76` and `PRO-82`" line.
+  2. **Wikilink to a non-page**: the same decision page links
+     `[[Proxy em produção validado c/ LiveScript]]` — a Linear project name,
+     referenced everywhere else in the vault as plain text or a Linear URL,
+     not a wiki entity with its own page. The one `[[...]]` instance is an
+     outlier, not an intentional to-do marker for a page that should exist.
+  3. **Citation byte-mismatch**: [[Don't Build Multi-Agents]]'s `source:`
+     field and the wiki page's own filename use a straight apostrophe, but
+     the real raw file (`raw/Clippings/Don't Build Multi-Agents.md`) uses a
+     curly right single quote (U+2019) — confirmed by inspecting the raw
+     filename's bytes. The citation doesn't exactly match the file it points
+     at.
+- **Raw-layer anomaly, not a wiki defect**: `raw/Clippings/How we built our
+  multi-agent research system.md` — the file [[How we built our multi-agent
+  research system]] cites as its `source:` — no longer exists in `raw/`.
+  It was there and empty (frontmatter + title only) during the 2026-08-20
+  ingest; something removed it since. `raw/` is off-limits to touch or
+  investigate further on my own initiative — flagged for msilva, not acted
+  on. The page's own content is unaffected since it was written from a live
+  WebFetch, already flagged inline as such.
+- Not done: none of the three wiki-side findings fixed yet, per the
+  report-before-changing rule. Also not re-verified: [[Agent Flow]] and
+  [[Airtable Proxy]]'s prior history (30+ and 25+ commits respectively) —
+  only the diffs since the tenth lint were read in full, consistent with the
+  ninth/tenth lints' own scoping choice.
