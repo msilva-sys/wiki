@@ -2447,6 +2447,22 @@ revisit.
   (auth epic's tail note — `PRO-82` no longer blocked; `PRO-83` still blocked
   on it but now unblockable).
 
+## [2026-08-20] decision | PRO-83 (key/secret rotation) follows PRO-82's policy
+- Discussed with msilva: `PRO-83` bundles two secrets — the Airtable PAT the
+  proxy holds, and the per-app keys it issues (the `PRO-82` side). Since
+  `PRO-82` settled on manual env-edit + redeploy with no self-serve layer,
+  any rotation strategy today is bounded to the same manual mechanism —
+  generate, edit env, redeploy, revoke/replace old value.
+- **msilva's call: yes, same policy** — manual rotation for both secrets, no
+  tooling built now, revisit once real DB-backed storage exists. Not run past
+  Luís, on the reasoning that this is applying an already-settled precedent
+  (not a fresh architectural fork), which the [[2026-08-18 Bring options to
+  Luís before deciding, communicate async and often]] norm already scopes to
+  "real alternatives," not every micro-choice.
+- Noted in passing: `PRO-83` was overdue (`dueDate` 2026-07-31); msilva to
+  handle the Linear-side status himself.
+- Updated: [[Airtable Proxy]] (auth epic's tail note), `index.md`.
+
 ## [2026-08-20] ingest | Fabio Akita — Harness, Loop and Graph Engineering are bullshit
 - Read `raw/Clippings/Hot take Harness, Loop Engineering, Graph Engineering
   são Bullshit.md` in full (blog post, 2026-08-18, pt-BR).

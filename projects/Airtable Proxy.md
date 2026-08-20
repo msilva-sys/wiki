@@ -576,11 +576,12 @@ deploy + LiveScript-validated) — since promoted to its own project, [Proxy em
 produção validado c/ LiveScript](https://linear.app/projetos-livemode/project/proxy-em-producao-validado-c-livescript-eb1691b502c3)
 (see the callout at the top). What's actually left there: the auth epic's tail
 (`PRO-82` resolved 2026-08-20 — Luís picked the simplest onboarding path, no
-self-serve tooling for now; `PRO-83` still blocked on `PRO-82`, now
-unblockable), production deploy
-(`PRO-84`, 5 issues, none started), IaC via Pulumi (`PRO-90`, 5 issues), and
-LiveScript integration/validation (`PRO-95`, 2 issues) — roughly 19 open issues
-against 13 already Done since onboarding (2026-08-10).
+self-serve tooling for now; `PRO-83` (key/secret rotation strategy) resolved
+the same day, msilva's own call, not re-run past Luís — same policy: manual
+rotation, no tooling, revisit once real DB-backed storage exists), production
+deploy (`PRO-84`, 5 issues, none started), IaC via Pulumi (`PRO-90`, 5
+issues), and LiveScript integration/validation (`PRO-95`, 2 issues) — roughly
+19 open issues against 13 already Done since onboarding (2026-08-10).
 
 Two sources on record don't point the same way:
 - **Luís, 2026-08-18 1:1**: *"Teu primeiro trabalho é botar o proxy funcionando
