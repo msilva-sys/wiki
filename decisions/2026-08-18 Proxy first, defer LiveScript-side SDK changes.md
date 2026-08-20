@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-19
+updated: 2026-08-20
 date: 2026-08-18
 decided_by: Luís Fernandez
 source: "[[2026-08-18 1-1 Matheus - Luís]]"
@@ -15,7 +15,7 @@ aliases: [proxy first, LiveScript SDK deferred, scope boundary proxy vs livescri
 100% — not to finish migrating [[LiveScript]]'s own code onto it. Any fix that
 requires changing LiveScript's code (not the proxy's) is deferred by default,
 not urgent. **Confirmed as a general pattern 2026-08-19** by msilva during the
-Linear backlog review of the [[Proxy em produção validado c/ LiveScript]]
+Linear backlog review of the "Proxy em produção validado c/ LiveScript"
 project: most remaining LiveScript-side changes will be deferred under this
 rule, not just the one case it was first stated for.
 
@@ -37,9 +37,13 @@ problema? Não [...] é uma necessidade identificada."*
 - **`PRO-76`** (propagar `app.route` nas métricas/spans do proxy) — needs
   LiveScript to **send** that attribute in the first place, which is a
   LiveScript-side code change. Recorded on the issue itself (comment,
-  2026-08-19).
-- **`PRO-82`** (fluxo de onboarding e emissão de chaves por app) — same limit
-  applies, per the same comment on `PRO-76`.
+  2026-08-19). Still open.
+- ~~**`PRO-82`** (fluxo de onboarding e emissão de chaves por app) — same
+  limit applies, per the same comment on `PRO-76`.~~ **Resolved 2026-08-20**:
+  Luís settled the onboarding flow directly — no self-serve tooling now,
+  worst case is direct config in the base, per [[2026-08-18 Bring options to
+  Luís before deciding, communicate async and often]]. No longer blocked by
+  this scope rule; see [[Airtable Proxy]] for the resolution.
 
 ## What's still open
 

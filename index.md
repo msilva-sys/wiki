@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-08-19
+updated: 2026-08-20
 ---
 
 # Index
@@ -104,7 +104,7 @@ _(msilva himself has no page — this vault already is the record of his work.)_
 - [[2026-08-18 Save n8n execution logs for audit]] — save **successful production** runs; failed ones already were. That is why runs *"vanished on completion"* — the flow started succeeding. Unblocks the loop diagnosis, which now has two believers and no clean measurement.
 - [[2026-08-18 Bring options to Luís before deciding, communicate async and often]] — msilva agreed to present alternatives before acting on a technical decision, and to communicate more often, asynchronously. Triggered by the SDK patch having shipped without this.
 - [[2026-08-19 Identify proxy apps by URL path, not header]] — the proxy identifies calling apps by URL path (e.g. `proxy.livemode.com/livescript`), not by an `X-App-Id` header, settled with Luís because a header can't reliably survive SDK transport. Retires the header-injection problem on [[How LiveScript sends the proxy X-App-Id header]]. Not yet implemented.
-- [[2026-08-18 Proxy first, defer LiveScript-side SDK changes]] — msilva's job is the proxy, not finishing LiveScript's own migration onto it. Blocks `PRO-76` and `PRO-82`. Confirmed 2026-08-19 as a general pattern, not a one-off.
+- [[2026-08-18 Proxy first, defer LiveScript-side SDK changes]] — msilva's job is the proxy, not finishing LiveScript's own migration onto it. Confirmed 2026-08-19 as a general pattern, not a one-off. Still blocks `PRO-76`; `PRO-82` resolved 2026-08-20 and is no longer blocked by this rule.
 
 _(next candidates, extractable from [[Airtable Proxy]]: token-terminating auth, OTel/OTLP over BigQuery, Cloud Run min=1)_
 

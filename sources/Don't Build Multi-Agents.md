@@ -4,7 +4,7 @@ status: active
 updated: 2026-08-20
 date: 2025-06-12
 aliases: [cognition multi-agent, walden yan, don't build multi-agents, context engineering principles]
-source: "raw/Clippings/Don't Build Multi-Agents.md"
+source: "raw/Clippings/Don’t Build Multi-Agents.md"
 url: "https://cognition.com/blog/dont-build-multi-agents"
 tags: [agents, orchestration, prior-art, opinion, context-engineering]
 ---

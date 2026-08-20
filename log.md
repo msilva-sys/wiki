@@ -2611,8 +2611,32 @@ asked for both ingested directly.
   investigate further on my own initiative — flagged for msilva, not acted
   on. The page's own content is unaffected since it was written from a live
   WebFetch, already flagged inline as such.
-- Not done: none of the three wiki-side findings fixed yet, per the
-  report-before-changing rule. Also not re-verified: [[Agent Flow]] and
-  [[Airtable Proxy]]'s prior history (30+ and 25+ commits respectively) —
-  only the diffs since the tenth lint were read in full, consistent with the
-  ninth/tenth lints' own scoping choice.
+- Not done (at the time of the report): none of the three wiki-side findings
+  fixed yet, per the report-before-changing rule. Also not re-verified:
+  [[Agent Flow]] and [[Airtable Proxy]]'s prior history (30+ and 25+ commits
+  respectively) — only the diffs since the tenth lint were read in full,
+  consistent with the ninth/tenth lints' own scoping choice.
+
+## [2026-08-20] refactor | Lint fixes — stale PRO-82 claim, stray wikilink, citation byte-mismatch
+- msilva asked for the three findings from the eleventh lint fixed.
+- **[[2026-08-18 Proxy first, defer LiveScript-side SDK changes]]**: struck
+  through the `PRO-82` line under "What this blocks" and added a visible
+  **Resolved 2026-08-20** correction pointing at Luís's actual decision and
+  [[Airtable Proxy]] — `PRO-76` remains genuinely open, `PRO-82` no longer
+  blocked by this scope rule. The stray `[[Proxy em produção validado c/
+  LiveScript]]` wikilink (a Linear project name, not a wiki entity) changed to
+  plain quoted text, matching how it's written everywhere else in the vault.
+  `updated:` bumped to 2026-08-20.
+- **`index.md`**: the Decisions-section line for the same page rewritten to
+  drop the stale "Blocks `PRO-76` and `PRO-82`" and state the current split —
+  `PRO-76` still blocks, `PRO-82` resolved. `updated:` bumped to 2026-08-20.
+- **[[Don't Build Multi-Agents]]**: `source:` frontmatter field corrected to
+  use the real raw filename's curly right single quote (U+2019) instead of a
+  straight apostrophe — confirmed byte-for-byte against
+  `raw/Clippings/Don't Build Multi-Agents.md`. The wiki page's own filename
+  and title are unaffected — wiki naming is Title Case/readable by
+  convention, independent of the raw file's exact characters; only the
+  citation pointer needed to match exactly.
+- Not touched: the missing-raw-file anomaly on [[How we built our
+  multi-agent research system]] — still flagged for msilva, not a wiki-side
+  fix.
