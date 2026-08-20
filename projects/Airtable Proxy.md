@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-08-19
+updated: 2026-08-20
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -575,7 +575,9 @@ msilva asked whether a month is realistic to finish what was then F3 (production
 deploy + LiveScript-validated) — since promoted to its own project, [Proxy em
 produção validado c/ LiveScript](https://linear.app/projetos-livemode/project/proxy-em-producao-validado-c-livescript-eb1691b502c3)
 (see the callout at the top). What's actually left there: the auth epic's tail
-(`PRO-82` blocked on Luís, `PRO-83` blocked on `PRO-82`), production deploy
+(`PRO-82` resolved 2026-08-20 — Luís picked the simplest onboarding path, no
+self-serve tooling for now; `PRO-83` still blocked on `PRO-82`, now
+unblockable), production deploy
 (`PRO-84`, 5 issues, none started), IaC via Pulumi (`PRO-90`, 5 issues), and
 LiveScript integration/validation (`PRO-95`, 2 issues) — roughly 19 open issues
 against 13 already Done since onboarding (2026-08-10).

@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-08-19
+updated: 2026-08-20
 ---
 
 # Log
@@ -2429,3 +2429,20 @@ revisit.
   issue comment. Cites both `PRO-76` and `PRO-82` as blocked by it.
 - Updated: [[Airtable Proxy]] (backlog-review-pass note added to the top
   callout), `index.md` (new decision listed).
+
+## [2026-08-20] decision | Luís resolved PRO-82 (onboarding flow)
+- Luís replied on `PRO-82`'s options comment: *"Vamos pelo caminho mais
+  simples possível. Um novo app entraria no proxy com configuração direto na
+  base no pior dos casos. Vamos descobrir a melhor forma conforme os
+  primeiros apps de fora da nossa equipe começarem a acessar o proxy."*
+- Reads as option 3 of the three posted (defer formal tooling until the DB
+  migration) in pragmatic form: no self-serve script now, worst case is
+  direct config, real flow worked out once real external apps show up.
+  Matches msilva's stated lean.
+- Second instance of [[2026-08-18 Bring options to Luís before deciding,
+  communicate async and often]] reaching a reply (after `PRO-94`, still
+  pending).
+- Updated: [[2026-08-18 Bring options to Luís before deciding, communicate
+  async and often]] (`PRO-82` entry marked resolved), [[Airtable Proxy]]
+  (auth epic's tail note — `PRO-82` no longer blocked; `PRO-83` still blocked
+  on it but now unblockable).

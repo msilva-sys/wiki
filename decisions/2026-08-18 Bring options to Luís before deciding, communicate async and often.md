@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-19
+updated: 2026-08-20
 date: 2026-08-18
 aliases: [decision process norm, present options first]
 tags: [process, communication]
@@ -58,8 +58,11 @@ of not doing it: *"você tá desperdiçando informação sem necessidade."*
 
 - **`PRO-82` (onboarding/key-issuance flow), 2026-08-18.** 3 options posted as a
   Linear comment (manual env edit / self-serve script over env / defer until DB
-  migration), msilva's lean stated but framed as Luís's call. Still awaiting a
-  reply as of 2026-08-19.
+  migration), msilva's lean stated but framed as Luís's call. **Resolved
+  2026-08-20**: Luís picked the simplest path — no self-serve tooling now,
+  worst case is direct config, and the real onboarding flow gets worked out
+  once real apps outside the team start hitting the proxy. Matches msilva's
+  stated lean (option 3).
 - **`PRO-94` (Pulumi program language), 2026-08-19.** Same pattern: 3 options
   (Go / TypeScript / Python) posted as a Linear comment, msilva's lean (Go, for
   toolchain/CI consistency with the proxy) stated but left as Luís's call.
