@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-18
+updated: 2026-08-20
 aliases: [Yasmin]
 tags: [people]
 ---
@@ -16,5 +16,7 @@ tags: [people]
   wiki).
 - Testing the [[Farol]] GCP structuring locally, alongside Luís's build work,
   ahead of production.
+- **Getting more of Luís's direct time as of 2026-08-20**, tied to this
+  Farol/GCP deploy ramp-up ([[2026-08-20 1-1 Matheus - Gabrielle]]).
 - Attendee: [[2026-08-14 Papo de Projetos]], [[2026-08-14 Recap da Semana]],
   [[2026-08-17 Weekly - Projetos e Tarefas]].

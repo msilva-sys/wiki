@@ -824,6 +824,14 @@ consultant rather than validator.
   discovery/documentation minimum) point toward **A10+A14** and **A7/A8** rather
   than A1+A2 or A5. Not a new decision — see [[Which agent should be built
   first]] and [[Comparing the first-agent candidates]] for the detail.
+- **Is the current 14-agent diagram the right shape at all, or should Agent
+  Flow start simpler and evolve?** New 2026-08-20, from
+  [[2026-08-20 1-1 Matheus - Gabrielle]] — msilva's own reconsideration,
+  not yet discussed with Luís or Carol. Reinforces, rather than restates, the
+  Akita counterpoint above (compounding-failure math against a heavy
+  up-front design): a complete-but-static architecture risks being obsolete
+  in a few months, versus something smaller that evolves with real use.
+  Position, not decision.
   **Third independent confirmation, 2026-08-19**: in
   [[2026-08-19 1-1 Matheus - Luís]], Luís agrees unprompted that the
   visibility pain (backlog state, project progress) is real and one he shares

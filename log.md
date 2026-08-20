@@ -2640,3 +2640,24 @@ asked for both ingested directly.
 - Not touched: the missing-raw-file anomaly on [[How we built our
   multi-agent research system]] — still flagged for msilva, not a wiki-side
   fix.
+
+## [2026-08-20] ingest | 1:1 Matheus - Gabrielle (2026-08-20)
+- Source: `raw/1_1 Matheus _ Gabrielle - 2026_08_20 15_17 GMT-03_00 -
+  Anotações do Gemini.md`. Machine transcription, attribution fully collapsed
+  onto "Gabrielle Ferreira" — worse than prior 1:1s, but content reads as a
+  genuine back-and-forth check-in rather than one continuous voice; turns
+  inferred from phrasing.
+- Discussed with msilva before writing: confirmed "Ias" (transcription
+  artifact) is Yasmin Macedo, getting more of Luís's time tied to Farol
+  GCP/deploy ramp-up; asked to keep the personal/emotional content (feeling
+  timid, adjusting to in-person work, comparisons to peers) lighter than the
+  established candor precedent for prior 1:1s — written accordingly, kept to
+  neutral, professionally-relevant framing.
+- New: `meetings/2026-08-20 1-1 Matheus - Gabrielle.md`.
+- Updated: `projects/Agent Flow.md` (msilva's own reconsideration of the
+  14-agent diagram's shape, reinforcing the existing Akita counterpoint),
+  `people/Gabrielle Ferreira.md` (leave detail refined), `people/Carolina
+  Bezerra.md` (looped into Agent Flow conversations, weekly check-in),
+  `people/Yasmin Macedo.md` (getting more of Luís's time), `index.md`.
+- No new decisions — `PRO-94` (Pulumi language) confirmed still open, gated
+  on Luís, who was sick Tue–Thu this week.

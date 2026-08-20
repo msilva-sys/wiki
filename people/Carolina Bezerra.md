@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-18
+updated: 2026-08-20
 aliases: [Carolina, Carol]
 tags: [people, governance]
 ---
@@ -27,3 +27,7 @@ elsewhere in the wiki.
 - Asked to review an agent-design mockup reportedly made by "Pedro"
   ([[2026-08-18 1-1 Matheus - Luís]]) — which Pedro is unconfirmed; see
   [[Pedro Alves]].
+- **Looped into [[Agent Flow]] conversations going forward (2026-08-20)** —
+  Gabrielle gave her context on both the proxy and Fluxo Agêntico; escalation
+  path confirmed as msilva → Luís → Carol. Also doing a weekly check-in with
+  msilva through his first month ([[2026-08-20 1-1 Matheus - Gabrielle]]).
