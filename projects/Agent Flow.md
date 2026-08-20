@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: research
-updated: 2026-08-19
+updated: 2026-08-20
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -481,6 +481,35 @@ Also worth noting from part 1: **QA is a first-class stage there** (a `qa-tester
 agent driving Chrome via DevTools) and **the loop closes on observability**
 (AppSignal for traces, PostHog for adoption, adoption feeding the next round).
 Nothing among the 14 covers automated QA — possibly a gap, possibly deliberate.
+
+> [!warning] Counterpoint — heavy orchestration and PRD-as-source-of-truth, both challenged externally (2026-08-20)
+> [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]], registered as a
+> counterpoint to weigh, not a reopened decision (msilva's direction):
+>
+> - **Compounding-failure math**: a 10-agent chain at an optimistic 90%
+>   per-step accuracy succeeds ~35% of the time (0.9^10). Akita measured a
+>   69-point swing (24 vs. 91) on the *same model* orchestrated vs. solo in his
+>   own benchmark; his benchmark's best score came from one strong model in a
+>   simple loop, no orchestration. External corroboration cited: Cognition's
+>   "Don't Build Multi-Agents," Anthropic's own multi-agent research post
+>   (15x token cost, coding is a poor multi-agent fit, 80% of their gains came
+>   from spending more tokens not architecture), and a Berkeley study finding
+>   68% of production agents run ≤10 steps before human intervention. His
+>   carve-out — genuinely parallel/independent bulk work, and unattended
+>   overnight runs with credentials — may cover *some* of this architecture's
+>   breadth, not all of it.
+> - **A7 Discovery's "complete PRD" as the artifact A8/A9 build from** reads
+>   structurally close to "spec-as-source" (Akita's and Thoughtworks's target
+>   for criticism — Thoughtworks parks SDD in Radar's "Assess," not "Adopt"),
+>   not the lighter "spec-anchored" version. [[Gabriel Packer - DAG-driven agent orchestration]]'s
+>   actual practice — ticket-is-the-prompt, scoped per unit of work,
+>   dependency-graph-driven, validated by running, human merge gate — sits
+>   closer to the legitimate end than A7's current spec suggests. The two
+>   prior-art sources aren't in tension with each other; A7's output contract
+>   is what's worth checking against Packer's narrower version.
+>
+> Not a decision, not acted on — a reason to weigh chain depth and A7's output
+> shape before committing, next to the existing open questions below.
 
 ## Other prior art
 

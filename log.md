@@ -2446,3 +2446,30 @@ revisit.
   async and often]] (`PRO-82` entry marked resolved), [[Airtable Proxy]]
   (auth epic's tail note — `PRO-82` no longer blocked; `PRO-83` still blocked
   on it but now unblockable).
+
+## [2026-08-20] ingest | Fabio Akita — Harness, Loop and Graph Engineering are bullshit
+- Read `raw/Clippings/Hot take Harness, Loop Engineering, Graph Engineering
+  são Bullshit.md` in full (blog post, 2026-08-18, pt-BR).
+- Discussed takeaways with msilva before writing, per the schema: agreed to
+  register the piece as a counterpoint against [[Agent Flow]] (not reopen any
+  decision), and separately discussed the structural parallel between
+  Akita's **ai-memory** tool and this vault's own CLAUDE.md-governed
+  wiki-over-spec approach. Conclusion on that discussion: worth recording as
+  an open question — should this vault ever also ingest raw coding-tool
+  session transcripts, the way ai-memory does? — left explicitly undecided,
+  not acted on. Any change to what this vault ingests is a `CLAUDE.md` schema
+  proposal, not a page-level decision.
+- New: [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]] —
+  summary, key claims (harness choice matters for cost more than quality;
+  compounding-failure math against multi-agent orchestration, corroborated by
+  Cognition/Anthropic/a Berkeley study; spec-as-source-of-truth critique
+  paralleling UML/MDA; his own Agile-Vibe-Coding practice; the ai-memory
+  parallel), open questions.
+- Updated: [[Agent Flow]] (counterpoint callout on orchestration depth and
+  A7's PRD-first output contract, cross-referenced against
+  [[Gabriel Packer - DAG-driven agent orchestration]]'s narrower practice),
+  [[Claude Agent SDK]] (harness choice as a cost decision, not an
+  architecture one), `index.md` (Sources, Agent Flow and Claude Agent SDK
+  entries).
+- Not folded into any decision — registered as a counterpoint to weigh,
+  per msilva's explicit direction.

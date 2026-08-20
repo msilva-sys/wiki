@@ -1,7 +1,7 @@
 ---
 type: concept
 status: draft
-updated: 2026-08-19
+updated: 2026-08-20
 aliases: [claude code SDK, headless claude code, agent SDK]
 tags: [claude-code, agents, tooling]
 ---
@@ -37,3 +37,12 @@ programmatically instead of a human opening an IDE.
   Code headless, rather than each agent being its own bespoke orchestration?
 - Nobody on the team has reviewed the official docs/API surface yet, per this
   transcript.
+
+> [!note] External counterpoint on harness choice — 2026-08-20
+> [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]] argues
+> harness/substrate choice barely moves output quality for a strong model —
+> it mainly matters for cost (native provider caching vs. not) and for
+> rescuing weak models. If that holds, the SDK-vs-bespoke-orchestration
+> question above is more a cost/plumbing decision than an architecture one —
+> consistent with Luís's own framing that subagent/harness design is
+> project-scoped detail, not part of the Agent Flow architecture itself.
