@@ -2530,3 +2530,45 @@ of one Obsidian window, without giving up that separation.
   source to ingest.
 - `index.md`: not updated — the folder is explicitly exempt from indexing,
   same as the four other root files.
+
+## [2026-08-20] ingest | primary sources behind Akita's anti-orchestration citations
+
+Akita's post ([[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]])
+cited Cognition's "Don't Build Multi-Agents" and Anthropic's "How we built
+our multi-agent research system" secondhand, for their caveats only. msilva
+asked for both ingested directly.
+
+- Read `raw/Clippings/Don't Build Multi-Agents.md` in full (Walden Yan,
+  Cognition, 2025-06-12). New: [[Don't Build Multi-Agents]] — two context-
+  engineering principles (share full agent traces; actions carry implicit
+  decisions that conflict in parallel), the Flappy Bird worked example, and
+  the Claude Code subagent data point (June 2025: never parallel to the main
+  agent, scoped to Q&A only).
+- `raw/Clippings/How we built our multi-agent research system.md` turned out
+  to contain only frontmatter and a title — the clipping never captured the
+  body. Fetched the live page instead
+  (https://www.anthropic.com/engineering/multi-agent-research-system) via
+  WebFetch, 2026-08-20. New: [[How we built our multi-agent research system]] —
+  flagged inline that its content is sourced from a live fetch, not the raw
+  clipping.
+- **Correction to the wiki's own framing, not just new content**: reading
+  Anthropic's post directly shows Akita's citation was selective — that
+  system beat single-agent Opus 4 by **90.2%** on their eval; the post is a
+  build report with caveats, not a warning-only piece. The real claim in
+  both primary sources is a **fit test** (parallel/independent/high-value
+  work vs. shared-context/interdependent work, most coding), not a blanket
+  verdict against multi-agent.
+- **Sharpened the counterpoint against [[Agent Flow]]**, checked against
+  [[Fluxo Agêntico diagram]]'s actual edges rather than the verbal
+  description: A10↔A11↔A12 are bidirectional, A5→A3 is a direct feedback
+  loop, every agent feeds A6 Curator (a shared-context hub), and A7→A8→A9
+  runs on one shared upfront PRD — none of this is the independent-parallel
+  shape either source calls a good fit. The one candidate exception (A3/A9's
+  on-demand sub-agents, if genuinely independent) is an open question, not
+  settled by the current spec.
+- Updated: [[Agent Flow]] (new callout sharpening and partially complicating
+  the existing Akita counterpoint), [[Claude Agent SDK]] (Claude Code
+  subagent data point, corroborating Luís's harness-scope framing a year
+  early), [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]]
+  (added the two missing URLs plus the Berkeley study link, flagged the
+  selective-citation correction), `index.md`.

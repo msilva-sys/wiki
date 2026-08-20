@@ -72,16 +72,27 @@ from the guides themselves being wrong.
   **no multi-agent combination beat Opus alone** on a cohesive build task —
   planner and executor end up sequential with tripled latency, not actually
   parallel.
-- **External corroboration**: Cognition ("Don't Build Multi-Agents") —
-  every action carries implicit decisions other agents can't see, so no
-  amount of individual reliability fixes divergence. Anthropic's own
-  multi-agent research system post admits **15x token cost**, that coding is
-  a poor fit for multi-agent (most coding work isn't genuinely parallelizable),
-  and that 80% of their measured improvement came from spending more tokens,
-  not from the architecture. A Berkeley study of 86 production systems across
-  26 domains found **68% of production agents run ≤10 steps before human
-  intervention** — real production usage is supervised simple loops, not
-  orchestrated constellations.
+- **External corroboration**: Cognition ("Don't Build Multi-Agents",
+  https://cognition.com/blog/dont-build-multi-agents, now read directly at
+  [[Don't Build Multi-Agents]]) — every action carries implicit decisions
+  other agents can't see, so no amount of individual reliability fixes
+  divergence. Anthropic's own multi-agent research system post
+  (https://www.anthropic.com/engineering/multi-agent-research-system, now
+  read directly at [[How we built our multi-agent research system]]) admits
+  **15x token cost**, that coding is a poor fit for multi-agent (most coding
+  work isn't genuinely parallelizable), and that 80% of their measured
+  improvement came from spending more tokens, not from the architecture. A
+  Berkeley study of 86 production systems across 26 domains
+  (https://arxiv.org/abs/2512.04123) found **68% of production agents run
+  ≤10 steps before human intervention** — real production usage is
+  supervised simple loops, not orchestrated constellations.
+  > [!note] Both citations read directly, 2026-08-20 — the Anthropic citation was selective
+  > This post cites only the Anthropic post's caveats. Read directly, that
+  > post reports its multi-agent system **beat single-agent Opus 4 by 90.2%**
+  > on their eval — it's a build report for a system that worked within a
+  > defined fit (parallel, independent, high-value, non-coding), not a
+  > blanket warning. See the fuller comparison on [[Agent Flow]] and on
+  > [[How we built our multi-agent research system]] itself.
 - **Where orchestration is legitimate**: genuinely parallel, independent bulk
   work (map-reduce, no new name needed), and unattended overnight runs holding
   credentials — there, independent verification and a hard budget are a

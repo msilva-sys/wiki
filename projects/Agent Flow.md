@@ -511,6 +511,43 @@ Nothing among the 14 covers automated QA — possibly a gap, possibly deliberate
 > Not a decision, not acted on — a reason to weigh chain depth and A7's output
 > shape before committing, next to the existing open questions below.
 
+> [!warning] Both primary sources now read directly — the counterpoint sharpens, and is not one-sided (2026-08-20)
+> Akita's post cited [[Don't Build Multi-Agents]] and
+> [[How we built our multi-agent research system]] only for their caveats.
+> Reading them directly changes the shape of the argument:
+>
+> - **Checked against [[Fluxo Agêntico diagram]]'s actual edges**, almost
+>   nothing in the 14-agent design clears either source's bar for when
+>   multi-agent is the right call. Both sources converge on the same test:
+>   does a piece of work need shared context or have real dependencies on
+>   another agent's decisions? By that test: **A10 ↔ A11 ↔ A12 are
+>   bidirectional**, not independent parallel lanes; **A5 → A3** is a direct
+>   feedback loop, not two agents working apart; **every agent feeds A6
+>   Curator**, a shared-context hub the Anthropic post names as a poor fit,
+>   not a mitigation for one; and **A7 → A8 → A9** is a sequential chain
+>   built on one shared upfront PRD, not independent per-unit dispatch. None
+>   of this is the map-reduce shape either source calls a good fit.
+> - **The one part of the diagram that might genuinely qualify**: A3/A9
+>   "creates sub-agents on demand," *if* those sub-agents work independent,
+>   non-communicating units rather than each reading a shared plan first.
+>   Nothing in [[Fluxo Agêntico project instruction]] settles which it is —
+>   worth resolving before assuming any part of the architecture is exempt
+>   from this counterpoint.
+> - **The counterpoint is not one-sided.** Anthropic's own multi-agent system
+>   beat single-agent Opus 4 by **90.2%** on their eval — they shipped it,
+>   they didn't just warn against the pattern. The real finding from both
+>   primary sources is a **fit test** (parallel + independent + high task
+>   value vs. shared-context + interdependent + coding-adjacent), not a
+>   blanket verdict — Akita's citation flattened that into the latter only.
+> - **Claude Code's own subagents** (per [[Don't Build Multi-Agents]], June
+>   2025): never run parallel to the main agent, scoped to answering
+>   questions rather than writing code — the same conclusion Luís reaches
+>   independently a year later calling dev-subagent design project-harness
+>   scope, not Agent Flow architecture (see [[Claude Agent SDK]]).
+>
+> Still not a decision, not acted on — same standing as the Akita counterpoint
+> above, now backed by primary sources instead of one secondhand summary.
+
 ## Other prior art
 
 Livemode already has more in this space than the architecture diagram suggests:

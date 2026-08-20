@@ -46,3 +46,14 @@ programmatically instead of a human opening an IDE.
 > question above is more a cost/plumbing decision than an architecture one —
 > consistent with Luís's own framing that subagent/harness design is
 > project-scoped detail, not part of the Agent Flow architecture itself.
+
+> [!note] Claude Code's own subagent design corroborates this, independently, a year earlier — 2026-08-20
+> [[Don't Build Multi-Agents]] (Cognition, 2025-06-12) notes that as of June
+> 2025, Claude Code's subagents **never run in parallel with the main
+> agent**, and are scoped to answering a well-defined question rather than
+> writing code — a deliberate choice to avoid the implicit-decision conflicts
+> that come with parallel dispatch, not a limitation. Luís reaches the same
+> conclusion independently a year later, from the other direction (harness
+> design is project-scoped, not architecture), in
+> [[2026-08-19 1-1 Matheus - Luís]]. Two independent readings landing on the
+> same non-parallel, narrowly-scoped subagent shape.
