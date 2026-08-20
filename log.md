@@ -2669,3 +2669,22 @@ asked for both ingested directly.
 - Updated: `decisions/2026-08-18 Bring options to Luís before deciding,
   communicate async and often.md` (Applied since — PRO-94 bullet resolved),
   `projects/Airtable Proxy.md` (open question resolved).
+
+## [2026-08-20] ingest | 1:1 Matheus - Luís (2026-08-20)
+- Source: `raw/Matheus _ Luis - 2026_08_20 16_55 GMT-03_00 - Anotações do
+  Gemini.md`. Machine transcription, attribution fully collapsed onto
+  "Matheus Oliveira da Silva" for every turn — same failure mode as the
+  same-day Gabrielle transcript. Turns inferred from phrasing; attribution
+  confirmed directly with msilva before writing (Luís = coaching/discovery
+  feedback voice, msilva = the agir/informar analysis and memory-structure
+  questions).
+- New: `meetings/2026-08-20 1-1 Matheus - Luís.md`.
+- Updated: `projects/Agent Flow.md` (new **agir vs. informar** heuristic for
+  agent-vs-skill classification; A4 Teacher's status as a standalone agent
+  reopened; Luís's same-day, independent reinforcement of msilva's own
+  14-agent-diagram doubts), `people/Luís Fernandez.md` (agents-as-colleagues
+  framing, discovery-first push), `index.md`.
+- No decisions made this call — coaching and framework-building only. Two
+  open threads for msilva to chase directly: which two of the 14 agents
+  Luís considers redundant (not named in the transcript), and how much of
+  this Gabrielle already independently agrees with.

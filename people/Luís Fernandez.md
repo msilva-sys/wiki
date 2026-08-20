@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-19
+updated: 2026-08-20
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
@@ -46,3 +46,9 @@ sometimes builds directly, otherwise supports.
   for his own purposes, separate from this team's work (2026-08-19).
 - Told Carol that Agent Flow's dev-subagent design is project-harness scope,
   not architecture scope (2026-08-19) — see [[Agent Flow]].
+- Frames working AI agents as colleagues — *"para mim são pessoas [...] eu
+  tô dando capacidade para ele"* — a philosophy he says he uses in his own
+  workshops. Pushed msilva, 2026-08-20, to finish the agent-inventory
+  discovery work (agir/informar heuristic) before any implementation or
+  memory design — independently reinforcing msilva's own same-day doubts
+  about the 14-agent diagram's shape ([[2026-08-20 1-1 Matheus - Luís]]).

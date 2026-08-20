@@ -240,6 +240,45 @@ A longer-term ambition, from the onboarding: once built for this area, the flow
 could be adapted and reused by other areas, helping them produce more structured
 projects without routing through the projects team.
 
+## Agent vs. skill — msilva's own working heuristic (2026-08-20)
+
+From [[2026-08-20 1-1 Matheus - Luís]], continuing the inventory work Luís
+says msilva is already doing informally. msilva's own pattern, arrived at
+while testing which of the 14 are genuinely agents: **agir versus informar**
+(act vs. inform). An agent *acts* — changes state, writes code, produces a
+report, alters material against a standard — or **reasons** over its input
+toward a judgment (A5 Watch classifying something as a **bad pattern**, not
+just relaying metrics). Something that only **informs** — plain input in,
+data out, no orchestration, no reasoning, "just one LLM call" — is not a
+standalone agent; it's a **skill or capability living inside another agent**,
+and as a fifteenth entity it "dies."
+
+> [!warning] A4 Teacher's status as a standalone agent reopened
+> Floated as the candidate that might not clear this bar — purely
+> informational rather than acting or reasoning. Not resolved; the table
+> entry above (*"A4 Teacher — teaches areas. A single agent, not a
+> pipeline"*) predates this heuristic and hasn't been re-tested against it.
+
+> [!note] Luís: don't design memory yet — you don't know your team's shape
+> Same call: msilva had started thinking about memory structure (per-agent
+> ownership; Linear-native, a standalone monitoring app, or Claude Code
+> itself) to make the architecture feel concrete. Luís's pushback: premature —
+> settle which entities exist first, then bring build options (A/B/C) once
+> Gabrielle and Carol's appetite for pace is understood. Reinforces the
+> already-open "orchestration shape" question in **Design approach** below and
+> the Akita counterpoint above — same direction, independent source, same day
+> as msilva's own diagram reconsideration in
+> [[2026-08-20 1-1 Matheus - Gabrielle]].
+
+> [!tip] How to validate the inventory, per Luís
+> Complete it and present it plainly: a component that fails the agir/informar
+> test should be self-evidently indefensible (*"isso aqui, galera, não faz
+> sentido nenhum [...] não tem como contra-argumentar"*); one that survives
+> will show real capabilities and consultations that justify its existence.
+> Framed explicitly as **discovery/product work, not implementation** — the
+> standing critique that msilva has been more oriented toward *how* to build
+> than *what* to build.
+
 ## Prior attempt — failed on adoption, not capability
 
 A product agent was built once before, as a **custom GPT** scoped to a single
@@ -831,7 +870,10 @@ consultant rather than validator.
   Akita counterpoint above (compounding-failure math against a heavy
   up-front design): a complete-but-static architecture risks being obsolete
   in a few months, versus something smaller that evolves with real use.
-  Position, not decision.
+  Position, not decision. **Same day, independently, Luís pushes the same
+  direction from a different angle** — do the agent inventory and discovery
+  work before any implementation/memory design — see *Agent vs. skill* above
+  ([[2026-08-20 1-1 Matheus - Luís]]).
   **Third independent confirmation, 2026-08-19**: in
   [[2026-08-19 1-1 Matheus - Luís]], Luís agrees unprompted that the
   visibility pain (backlog state, project progress) is real and one he shares
@@ -848,6 +890,13 @@ consultant rather than validator.
 - **How often does the area start a new project?** **msilva has no metric (2026-08-18).**
   So A7 cannot be evaluated on utility at all — which is itself an argument for
   A1 + A2, the build that would produce the number.
+- **Is A4 Teacher actually a standalone agent, or a skill nested inside
+  another agent?** New 2026-08-20, from
+  [[2026-08-20 1-1 Matheus - Luís]] — the first concrete test case for
+  msilva's own agir/informar heuristic (act/reason vs. purely inform). The
+  table entry above predates the heuristic and hasn't been re-checked
+  against it; unresolved. Also unresolved from the same call: which two of
+  the 14 Luís considers "the same agent" — referenced without naming them.
 - **Does A1 listen passively, or must it still be addressed?** The sharpened
   version of the adoption question. A1's multi-channel capture answers the
   *fragmentation* half of the prior failure — but if every channel still needs a
