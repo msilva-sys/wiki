@@ -2878,3 +2878,22 @@ asked for both ingested directly.
 - Amended `CLAUDE.md`'s root-layout list and frontmatter-exemption clause to
   include `README.md` as infrastructure, rather than letting root drift from
   what the schema documents.
+
+## [2026-08-21] callout | Two `[!msilva]` callouts on Agent Harness Template
+- Ran `notes` at session start. Found two unresolved `[!msilva]` callouts on
+  [[Agent Harness Template]], added directly in Obsidian after the ingest that
+  created the page, not yet referenced here. Discussed both with msilva:
+  1. **"Some agents does not need to have this harness (maybe theyre part of
+     another agent harness)"** — confirmed: some of the 14 agents may not be
+     top-level entries at all, but invoked as a Tool/Skill *inside* a parent
+     agent's harness, with no standalone Trigger/Input/Output. This sharpens
+     (doesn't just restate) the existing "maybe just a skill" flag on A4
+     Teacher and the transversal group. Folded into page prose; opened a
+     narrower open question — which agents nest, and into whose harness —
+     since msilva's answer resolves the general case but not the specific
+     mapping.
+  2. **"Is Trigger Channel meant to replace or sit alongside the four entry
+     channels? / No"** — confirmed as "sits alongside": Trigger Channel is a
+     separate axis from [[Agent Flow]]'s four entry channels, both coexist.
+     Folded into page prose as settled, no follow-up question needed.
+- Both callouts deleted from the page after folding.

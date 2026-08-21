@@ -52,7 +52,10 @@ This template resolves both into one consistent concept: **Harness = Soul.md + S
 
 **Substrate this would presumably run on**: [[Claude Agent SDK]], introduced by Luís on 2026-08-19 as running Claude Code via API/CLI without an IDE — the mechanism an agent would use to *invoke* a harness programmatically. Not yet tied together explicitly by either of them.
 
+**Not every agent gets its own standalone harness.** msilva ([!msilva] callout, 2026-08-21): some of the 14 agents don't need this template applied to them at all — they may instead be invoked as a Tool/Skill *inside* a parent agent's harness, with no standalone Trigger/Input/Output of their own. This confirms, rather than just echoes, the "maybe just a skill" flag already on A4 Teacher and the transversal group above: those agents may not be top-level entries in [[Agent Flow]] at all, but components nested inside another agent's Skills/Tools layer.
+
+**Trigger Channel sits alongside, not in place of, the four entry channels.** msilva ([!msilva] callout, 2026-08-21): Trigger Channel (Slack, Webhook, Cron, etc.) is a separate axis from [[Agent Flow]]'s four entry channels (`Bug sistema` · `Bug manual` · `Tarefa` · `Consultoria`) — both coexist in the model rather than one replacing the other.
+
 ## Open questions
 
-- Does every one of the 14 agents map cleanly onto this template, or do some (the ones already flagged as "maybe just a skill" — A4 Teacher, the transversal group) turn out to have no real Soul.md at all?
-- Is "Trigger Channel" meant to replace or sit alongside the four entry channels already named in [[Agent Flow]] (`Bug sistema` · `Bug manual` · `Tarefa` · `Consultoria`)?
+- Which of the 14 agents are top-level (their own Trigger/Input/Harness/Output) vs. nested inside another agent's harness as a Tool/Skill — and for the nested ones, whose harness do they belong to? Not yet run past Luís.
