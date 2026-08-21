@@ -855,6 +855,14 @@ with what has since been settled marked as such.
 > classifier (A1+A2) uniformly, rather than deciding per-agent whether it can
 > bypass it — *"acho que é precipitado tomar essa decisão."*
 
+> [!tip] The method gets a concrete shape — Luís, Slack message, 2026-08-21
+> [[Agent Harness Template]]: Trigger (Human|Machine) + Trigger Channel →
+> Input → **Harness** (Soul.md, Skills, Tools, MCP) → Output. Same
+> actor→input→output idea above, with the actor side split into trigger
+> type/channel, and the black-box middle given a name and an internal shape
+> for the first time. Also the first template that gives "harness" (used
+> twice before, in two different senses) one consistent meaning.
+
 msilva has done related work before, with people at his previous employer, so
 this isn't a standing start.
 

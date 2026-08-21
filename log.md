@@ -2851,6 +2851,26 @@ asked for both ingested directly.
 - Nothing changed on the wiki page itself — same as the Luís operation, this
   only pushed existing wiki content outward to Linear.
 
+## [2026-08-21] ingest | Agent Harness Template (Luís, Slack message)
+- msilva pasted a Slack message from Luís proposing a generic agent spec:
+  Trigger (Human|Machine) + Trigger Channel → Input → Harness (Soul.md,
+  Skills, Tools, MCP) → Output. No `raw/` file — pasted directly into the
+  session, not a transcript or document.
+- Discussed with msilva first (per the ingest procedure) before writing:
+  flagged that it refines the actor→input→output method from
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]], and that it
+  gives "harness" — used twice before in different senses (project-harness
+  scope for dev subagents on [[2026-08-19 1-1 Matheus - Luís]]; A12/A13 as a
+  rule-enforcement harness on the 2026-08-20 walkthrough) — one consistent
+  meaning for the first time.
+- New: [[Agent Harness Template]] (status `draft` — a proposed template, not
+  yet validated against the 14-agent list). Includes msilva's own candidate
+  synthesis (flagged as unconfirmed) that A12/A13 being called "harness"
+  rather than "agent" may mean they run on Skills+Tools with no real
+  Soul.md — consistent with the agir/informar heuristic.
+- Updated: [[Agent Flow]] (linked under the actor→input→output working
+  method); `index.md`.
+
 ## [2026-08-21] refactor | add README.md, amend schema
 - Now that the vault is pushed to a real GitHub remote, added a `README.md`
   landing page (points to `CLAUDE.md` and `index.md`, notes raw/ lives outside
