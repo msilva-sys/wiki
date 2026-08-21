@@ -2804,6 +2804,25 @@ asked for both ingested directly.
   the existing "only A13 is transversal" callout, as the mechanism behind
   that split, not a new decision).
 
+## [2026-08-21] synthesis | Linear doc restructured as a per-agent walkthrough
+- msilva asked for the Linear document (from the 2026-08-21 synthesis entry
+  above) to be restructured: instead of a flat list of seven convergence
+  points, walk through **every one of the 14 agents**, matching how the
+  actual 2026-08-20 conversation with Luís went — agent by agent, same as
+  he'd already done with Gabrielle.
+- Rewrote the Linear document in full (same id/URL, title unchanged —
+  "Convergências da revisão dos 14 agentes" still fits a per-agent record):
+  one section per agent A1–A14, each stating what it is and what the
+  conversation actually covered for it — including points that don't
+  resolve to a clean verdict (A3's non-code scope, A5's auto-trigger
+  question, A7-vs-PRD-generation split) rather than only the seven that
+  landed as firm calls.
+- Folded in the "harness" detail from the entry above under A12/A13,
+  per msilva's confirmation to add it to the Linear doc too.
+- Kept the not-a-spec/PRD framing and the "O que convergimos"-style caveat
+  from the previous version; nothing on the wiki page itself changed by
+  this operation beyond what the entry above already recorded.
+
 ## [2026-08-21] refactor | add README.md, amend schema
 - Now that the vault is pushed to a real GitHub remote, added a `README.md`
   landing page (points to `CLAUDE.md` and `index.md`, notes raw/ lives outside
