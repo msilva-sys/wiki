@@ -2897,3 +2897,20 @@ asked for both ingested directly.
      separate axis from [[Agent Flow]]'s four entry channels, both coexist.
      Folded into page prose as settled, no follow-up question needed.
 - Both callouts deleted from the page after folding.
+
+## [2026-08-21] decision | Private Airtable Proxy infrastructure behind VPN
+- Discussed the IaC shape with msilva before writing. Settled production access
+  as private at `https://proxy.livemode.com`, reached through the corporate VPN,
+  GCP VPC, private DNS, a regional internal HTTPS load balancer/serverless NEG,
+  and Cloud Run with `internal` ingress.
+- Settled the first-phase trust model: app-id in the URL path selects the PAT,
+  base allow-list, and telemetry identity but does not authenticate the caller;
+  network reachability is the initial gate. A separate app key is explicitly a
+  future layer, while the VPN boundary remains.
+- New: [[2026-08-21 Deploy Airtable Proxy privately behind VPN]] — includes the
+  request path, split-horizon DNS/TLS boundary, Pulumi vs. central-infra
+  ownership, secrets, egress, future app-key phase, and pre-code open inputs.
+- Reconciled [[2026-08-19 Identify proxy apps by URL path, not header]] and
+  [[Airtable Proxy]] with repo ground truth: path routing is no longer pending;
+  it shipped in `8e4297b` and was hardened in `bf5e681`/`12d1423`.
+- Updated: `index.md` (project timeline + both decision entries).

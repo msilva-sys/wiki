@@ -1,7 +1,7 @@
 ---
 type: decision
-status: active
-updated: 2026-08-19
+status: stable
+updated: 2026-08-21
 date: 2026-08-19
 decided_by: Matheus Silva, Luís Fernandez
 source: "[[2026-08-19 1-1 Matheus - Luís]]"
@@ -51,20 +51,19 @@ page now points here instead of continuing to carry the comparison as live.
 
 ## What's still open
 
-- **Routing detail beyond "path."** Not yet worked out: how the proxy routes
-  on that path internally, and whether the path segment replaces or coexists
-  with the base-ID/table-ID segments already in the URL (design §11's
-  `/v0/{baseId}/...` shape).
-- **`X-Api-Key` (authentication) is unaffected and still deferred.** This
-  decision is about *identification*, not authentication — see
-  [[2026-08-14 1-1 Matheus - Gabrielle]] for that deferral. Keep the two
-  decoupled going forward.
-- **Whether `X-App-Id` is dropped entirely or kept as a redundant secondary
-  check** isn't fully spelled out — the call's language ("descarta[...] passa
-  a usar só isso") reads as full removal, but nothing has shipped yet.
-- **Not yet implemented.** The proxy currently 401s on a missing `X-App-Id`
-  header ([[Airtable Proxy]]); this decision means that check will eventually
-  be replaced by path-based routing, not that it already has been.
+- ~~**Routing detail beyond "path."**~~ **Resolved in code 2026-08-20**: callers
+  use `/{appId}/v0/...`; the proxy removes the leading app segment before its
+  authorization/parser/director pipeline sees the canonical `/v0/...` path.
+- **`X-Api-Key` / app-key authentication remains a future layer.** Identification
+  and authentication stay decoupled. The first private deployment deliberately
+  trusts the VPN/network and uses the path only for PAT selection, base
+  authorization, and telemetry; see
+  [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
+- ~~**Whether `X-App-Id` is retained as a redundant check.**~~ **Resolved in code**:
+  it is removed from identity handling and stripped before forwarding upstream.
+- ~~**Not yet implemented.**~~ **Implemented and hardened** by repo commits
+  `8e4297b` (2026-08-20), `bf5e681` and `12d1423` (2026-08-21). The repo and
+  tests are now the ground truth for canonical-path and trailing-slash behavior.
 - ~~Luís had separately floated a written "mini relatório" comparing solutions
   before "batendo o martelo" — unclear whether a written report is still
   wanted for the record.~~ **Answered 2026-08-19, msilva** (via a `[!msilva]`

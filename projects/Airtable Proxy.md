@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-08-20
+updated: 2026-08-21
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -11,9 +11,13 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > Related: [[Proxy Environments]] · [[AIRTABLEGC-34]] · [[LiveScript]] ·
 > [[Airtable Rate Limits]] · [[Agent Flow]]
 
-> [!tip] Current state, 2026-08-18
-> Active work is **app authentication + centralizing Airtable key distribution**
-> — see the superseded-roadmap note below. msilva merges his own PRs
+> [!tip] Current state, 2026-08-21
+> Path-based app identification is implemented and hardened in the repo. The
+> next production step is the Go/Pulumi private-infrastructure slice recorded in
+> [[2026-08-21 Deploy Airtable Proxy privately behind VPN]]. App-key
+> authentication remains a future layer; the first deployment trusts the VPN
+> and uses the app-id path for PAT selection, base authorization, and telemetry.
+> msilva merges his own PRs
 > ([[2026-08-14 No mandatory PR review while the proxy is pre-production]]).
 > First confirmed anti-pattern found in the wild: an events-panel query returning
 > an entire table with no need.
@@ -218,8 +222,8 @@ from Gabrielle Ferreira in onboarding.
   rationale for building detection into the proxy: *"se eu tiver que ficar
   procurando essas más práticas aqui, é muito mais trabalhoso do que eu criar um
   cara mega inteligente aqui que ele identifica e alerta."*
-- **Migration is a base-URL swap.** Apps repoint at a proxy host
-  (`airtable.livemode.space` was the illustrative form) and it passes through
+- **Migration is a base-URL swap.** Apps repoint at
+  `https://proxy.livemode.com/{app-id}` and it passes through
   transparently — expected to be near-zero effort for app owners. This confirms
   the "no DNS cutover" correction below, from the other direction.
 - **This is half of a merged initiative.** The proxy and *LiveScript
@@ -262,17 +266,12 @@ from Gabrielle Ferreira in onboarding.
 - **v1 adds no caching and no rate-limiting** — *on purpose*. The strategy is
   **measure first, then decide what to fix.**
 
-  > [!warning] Corrected 2026-08-17 — "no enforcement" is no longer true
-  > This line previously read *"observability-only. No caching, no rate-limiting,
-  > no enforcement."* The proxy now **401s any request without `X-App-Id`**
-  > ([[How LiveScript sends the proxy X-App-Id header]]) — rejecting
-  > unauthenticated callers **is** enforcement, and it ships in v1. Gabrielle also
-  > describes proxy-side 429 retry as intended
-  > ([[2026-08-10 Onboarding Técnico - Matheus]]), which is intervention too.
-  >
-  > The accurate claim is the narrow one kept above: no caching, no rate-limiting.
-  > "Observability-first" remains true as a *strategy* — measure before deciding
-  > what to fix — but it never meant the proxy does nothing but observe.
+  > [!warning] Corrected again 2026-08-21 — identity is path-based now
+  > The old warning described the then-live `X-App-Id` rejection. Repo commits
+  > `8e4297b`, `bf5e681`, and `12d1423` replaced it with hardened
+  > `/{appId}/...` routing. Unknown/missing IDs still fail closed, but a valid app
+  > ID is currently identification, not proof of identity. The initial private
+  > deployment accepts that trade-off behind the VPN; an app key comes later.
 - **My job right now is not to build caching or a rate limiter.** Those are
   deferred (roadmap phases 5–6). The live work is enriching the telemetry.
 
@@ -288,54 +287,30 @@ from Gabrielle Ferreira in onboarding.
    onboarding (design §11) is **explicit per-app reconfiguration**:
    - `airtable` SDK: set `endpointUrl: <proxy-url>` (via `AIRTABLE_ENDPOINT_URL`)
    - raw REST: swap the base-URL constant
-   - add headers `X-App-Id` + `X-Api-Key`
-   - drop the PAT from the app env
+   - put the app ID in the endpoint path (`https://proxy.livemode.com/{app-id}`)
+   - remove the real Airtable PAT from the app environment
    So there is no "intercept at the DNS layer" step to plan.
 
-   > [!warning] Corrected 2026-08-17 for the LiveScript client (GC-5)
-   > Verified against the app's SDK — see
-   > [[How LiveScript sends the proxy X-App-Id header]]. Two of the four steps
-   > above don't hold as written for [[LiveScript]]:
-   > - **`X-Api-Key` is deferred** — only `X-App-Id` is required right now.
-   > - **"Drop the PAT" isn't literally possible.** The `airtable` SDK v0.12.2
-   >   always sends `Authorization: Bearer <apiKey>` and refuses to start without
-   >   a non-empty one, so the app needs a **dummy `AIRTABLE_API_KEY`** and the
-   >   proxy must **overwrite/ignore** the incoming `Authorization`.
-   > - Setting `endpointUrl` also does **not** carry the header out of the box:
-   >   `customHeaders` is a no-op for every operation this app uses in v0.12.2.
-   >   A fix shipped 2026-08-17 via a `pnpm patch` making the SDK's `runAction`
-   >   honour `customHeaders` (commits `754896b` / `d565c26`), but was
-   >   **reverted 2026-08-18** so alternatives could be brought to Luís first.
-   >   `X-App-Id` is not currently sent by the SDK path. See
-   >   [[How LiveScript sends the proxy X-App-Id header]] for the live options
-   >   comparison.
+   > [!note] Reconciled 2026-08-21 with the shipped path implementation
+   > [[LiveScript]]'s Airtable SDK still requires a non-empty `apiKey` and sends
+   > it as `Authorization`, so the client may need a non-secret placeholder until
+   > the future app-key layer gives that field a real proxy credential. The proxy
+   > overwrites/removes incoming authorization before Airtable. No custom app-id
+   > header or SDK patch is needed: the endpoint path carries identity for SDK and
+   > raw REST traffic alike.
 
 3. **Observability-first, not caching-first.** The whole premise is: instrument
    every Airtable call, *then* let the dashboards tell us whether 429s come from
    duplicate reads (→ cache) or sustained volume (→ rate limit). We don't guess
    up front.
 
-4. **Token-terminating auth (decided).** The proxy holds the Airtable PAT
+4. **Token-terminating boundary (decided).** The proxy holds the Airtable PAT
    (Secret Manager) and injects `Authorization: Bearer {PAT}` on every request.
-   Apps authenticate to the *proxy* with their own `X-Api-Key`. Apps never see
-   the PAT. (Design §4.) — This answers my old "pass through or translate the
-   key?" question.
-   > [!note] Updated 2026-08-17 — auth is `X-App-Id`-only for now, and the app
-   > still sends a (dummy) PAT. The `X-Api-Key` half of §4 is deferred; the proxy
-   > identifies the app by `X-App-Id` alone. Because the SDK can't stop sending
-   > `Authorization`, "apps never see the PAT" holds only if the app is given a
-   > throwaway key and the proxy replaces the header. See
-   > [[How LiveScript sends the proxy X-App-Id header]].
-   >
-   > [!important] Superseded 2026-08-19 — identification moves to URL path, not `X-App-Id`
-   > [[2026-08-19 Identify proxy apps by URL path, not header]]: the app is
-   > identified by the **URL path** it's configured to hit (e.g.
-   > `proxy.livemode.com/livescript`), not by a header — settled precisely
-   > because a header can't be relied on across SDK transport, a path can.
-   > `X-Api-Key` (authentication) is unaffected and stays deferred; this only
-   > changes *identification*. **Not yet implemented** — the 401-on-missing-
-   > `X-App-Id` behavior described in this section is still what's live until
-   > path-based routing ships.
+   Apps never receive the real PAT. Path-based app identification is shipped;
+   separate app-key authentication is deliberately deferred. The first private
+   deployment trusts the VPN/network, while a future app-key layer will prove
+   that the caller may claim the selected app ID. See
+   [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
 
 5. **Instrumentation is decided: OpenTelemetry / OTLP.** Local dev uses a single
    `grafana/otel-lgtm` container (Loki + Prometheus + Tempo + Grafana).
@@ -344,9 +319,49 @@ from Gabrielle Ferreira in onboarding.
    upgrade if ad-hoc SQL is ever needed). — Answers my old "BigQuery? Datadog?"
    question.
 
-6. **Deployment target is decided: Cloud Run, `min=1 max>1` for HA.** The proxy
+6. **Deployment target is decided: private Cloud Run, `min=1 max>1` for HA.**
+   It is reached through the VPN at `https://proxy.livemode.com`, via private
+   DNS and an internal HTTPS load balancer/serverless NEG; Cloud Run ingress is
+   `internal`. See [[2026-08-21 Deploy Airtable Proxy privately behind VPN]]. The proxy
    is on every app's critical path, so a single instance is unacceptable. v1
    holds no shared state, so multiple instances need no coordination. (Design §3.)
+
+---
+
+## Production private infrastructure plan (2026-08-21)
+
+```text
+Internal apps -> VPN -> GCP VPC -> private DNS (proxy.livemode.com)
+  -> regional internal HTTPS load balancer -> serverless NEG
+  -> Cloud Run (internal ingress) -> api.airtable.com
+```
+
+**Trust model now.** Network reachability through the VPN gates access. The
+app-id path selects the PAT, base allow-list, and telemetry identity; it does
+not authenticate the caller. A future app key adds proof of identity without
+making the service public.
+
+**Central infrastructure supplied to the app stack:** existing GCP project,
+VPC/VPN and routes, frontend and proxy-only subnets, private DNS zone, and TLS
+certificate/PKI. `proxy.livemode.com` uses split-horizon DNS and resolves to the
+load balancer's private IP only for connected clients.
+
+**Go/Pulumi-owned application resources:** required APIs, Artifact Registry,
+runtime service account/IAM, Secret Manager metadata/access, Cloud Run v2,
+serverless NEG, regional backend service, URL map, HTTPS target proxy, private
+address, forwarding rule, and (if delegated) the DNS record. Image build/push
+stays in CI and deployments reference immutable images.
+
+**Secrets.** Pulumi owns secret containers and IAM; a secure operator/pipeline
+supplies secret values. The current single `PROXY_APPS` secret matches the code.
+PATs and future app keys never enter the repository or clear-text config.
+
+**Egress.** Start with Cloud Run's normal internet egress to Airtable. Add Direct
+VPC egress + Cloud NAT only if policy requires a static IP or centralized egress.
+
+**Before coding:** resolve project/region, exact network resource IDs, VPN DNS
+forwarding, DNS/certificate ownership, Pulumi state backend, secret-delivery
+procedure, and the production OTLP backend.
 
 ---
 
@@ -536,7 +551,10 @@ These remain open (design §14):
   communicate async and often]]. Matches msilva's stated lean (toolchain/CI
   consistency with the proxy).
 - Notification channel (Slack / PagerDuty / email); where the app API-key map
-  lives first; one base or all bases in v1.
+  lives when that future layer ships; one base or all bases in v1.
+- **Private-infra inputs** — GCP project/region; VPC, frontend subnet and
+  proxy-only subnet IDs; VPN DNS forwarding; private-zone and certificate
+  ownership; Pulumi state backend; whether egress must use a static IP/NAT.
 
 **Added 2026-08-18, from [[2026-08-17 Weekly - Projetos e Tarefas]] — two consumers
 nobody connected to this project in the room:**
@@ -607,6 +625,10 @@ communicate async and often]].
 
 ## Things to actually do
 
+- [ ] Confirm the private-infra inputs in
+      [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
+- [ ] Start the Go/Pulumi stack only after those inputs and ownership boundaries
+      are known; do not recreate shared VPN/VPC/DNS infrastructure in this repo.
 - [ ] Get a **dev** Airtable PAT + a test base id → run `docker compose up --build`
       and watch the dashboards populate (README "Run it").
 - [ ] Learn just enough Go to read `internal/proxy/proxy.go` comfortably.
