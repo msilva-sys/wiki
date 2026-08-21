@@ -82,9 +82,27 @@ classifies), which hands off to **A2 Classificador & Decisor** for routing:
 | **Enablement** | A4 Teacher — teaches areas. A single agent, not a pipeline |
 | **Operacional** | A3 Executor — orchestrates fast demands, also creates sub-agents on demand |
 
+> [!danger] A8 + A9 collapse toward "Claude Code itself" — Luís, 2026-08-20
+> [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]: *"da forma que
+> tá desenhado para mim, A8 e A9 é o Cloud Code"* — an orchestrator that spins
+> up its own subagents on demand is what Claude Code already is. Independent
+> convergence with Luís's own earlier point ([[2026-08-19 1-1 Matheus -
+> Luís]]) that dev-subagent design is project-harness scope, not architecture
+> scope — reached again here, more bluntly, folded together with the A3/A9
+> merge above.
+
 **Five transversal intelligences**: A10 Portfolio (prioritization), A11 Product
 (usage analysis), A12 Data Gov (data quality), A13 Deduplication (**detects and
 blocks**), A14 PM Agent (request through to delivery).
+
+> [!danger] Only one of the five actually is "transversal intelligence" — Luís, 2026-08-20
+> [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]: on review, only
+> **A13 Deduplication** clearly fits the transversal-intelligence shape. A10
+> Portfolio, A11 Product and A12 Data Gov are *"coisas realmente separadas"* —
+> real, distinct concerns, not instances of one homogeneous layer. Bears on
+> the open question below asking whether A13 and A10 are the same agent: this
+> reads as **no** — A13 is the one that stays cross-cutting, A10 is its own
+> separate thing.
 
 > [!note] A6, A9–A14 walked through in detail — 2026-08-19
 > [[2026-08-19 1-1 Matheus - Gabrielle]] (Part 2), reading the diagram live.
@@ -97,9 +115,31 @@ blocks**), A14 PM Agent (request through to delivery).
 >   own flag: this may be **too much for one agent**, sharpening (not
 >   resolving) the existing "A6 splits into retrieval + curation" corollary
 >   below — the split may be 4-way, not 2-way.
+>
+>   > [!danger] Resolved differently 2026-08-20 — not a standalone agent, but the underlying need is the real prize
+>   > [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]: Luís's call —
+>   > **A6 Curator does not exist as its own agent, for now.** If a piece of it
+>   > is only a skill, it's a skill; if it's only memory serving another part,
+>   > it doesn't need a dedicated agent yet — that split earns its keep only
+>   > once the system is genuinely more complex. **This isn't a demotion of the
+>   > problem**: the same conversation calls a well-organized memory maybe the
+>   > single most important piece of this whole project — *"se você conseguir
+>   > organizar a memória muito bem, fodeu."* Read together: memory-as-
+>   > infrastructure stays critical; memory-as-its-own-agent is off the table
+>   > for now. Nothing currently owns the infrastructure need — see that
+>   > meeting's open questions and action items (a memory-source inventory is
+>   > next: message history, the "team brand" body of work, Linear).
 > - **A9 Developer clarified against A3**: both are executors; **A3 is the
 >   fast/operational one, A9 is the project-pipeline one** (behind full A7
 >   discovery). First time the two have been distinguished this plainly.
+>
+>   > [!danger] Reversed 2026-08-20 — A3 and A9 are the same agent
+>   > [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]] collapses
+>   > this distinction: **A3 and A9 are one agent, not two.** Combined with the
+>   > A8+A9 merge below, the "quick execution" and "project pipeline" fronts
+>   > converge toward a single executor whose behavior — plan first or not,
+>   > open a PR or ship straight to prod — depends on the task's
+>   > complexity/risk, not on which named agent picked it up.
 > - **A10 Portfolio may already be partly built.** Open question: is
 >   **Carol's intranet tool** (`livemode-intranet.vercel.app`) already
 >   functioning as A10? Company-wide scope confirmed (not just this team);
@@ -789,6 +829,26 @@ with what has since been settled marked as such.
   already working in production for one author.
 - **Orchestration shape** — how the orchestrating agent works, unaddressed.
 
+> [!tip] Working method sharpened, 2026-08-20 — stop designing the inter-agent graph
+> [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]: *"eu não me
+> preocuparia em montar uma estrutura em que como que eles se falam. Isso não
+> é importante. Importante é saber que existe um cara que tem um input e que
+> tem um output."* Every entity gets specified as **actor (person, agent, or
+> trigger) → input → output**, nothing more, until real necessity forces a
+> sequencing decision. Generalizes, doesn't replace, the four-part spec frame
+> above. Paired with an explicit warning against picking an implementation
+> tool prematurely (*"não caia na besteira de falar[...] 'vou fazer em
+> LangGraph'"*) — but Luís also tasked msilva with a bounded comparison
+> experiment: build a small **A10 Portfolio prototype in LangGraph** and
+> compare it against building the same thing directly in Claude, to settle
+> empirically whether a framework is even needed. Continues the standing
+> tension with [[Fabio Akita - Harness, Loop and Graph Engineering are
+> bullshit]].
+>
+> **Default while this settles**: route everything through the front
+> classifier (A1+A2) uniformly, rather than deciding per-agent whether it can
+> bypass it — *"acho que é precipitado tomar essa decisão."*
+
 msilva has done related work before, with people at his previous employer, so
 this isn't a standing start.
 
@@ -848,8 +908,19 @@ consultant rather than validator.
 - **Does this team even own A12 Data Gov?** New 2026-08-19 — it's internal
   data-usage validation, which may belong to a platform/foundation layer
   instead. Same source.
-- **Is A13 Deduplication the same agent as A10 Portfolio?** New 2026-08-19,
-  same source — redundancy detection shows up in both.
+- ~~**Is A13 Deduplication the same agent as A10 Portfolio?**~~ **Leans "no,"
+  2026-08-20.** Raised 2026-08-19 — redundancy detection shows up in both.
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]] has Luís calling
+  A13 the only one of the five transversal intelligences that actually fits
+  that shape, with A10 (and A11, A12) described as *"coisas realmente
+  separadas."* Not a formal decision, but the two are now read as distinct.
+- **Is "converge findings into a PRD" a separate step/agent from A7 Discovery
+  itself, or the same thing?** New 2026-08-20, from
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]. Argued at
+  length as decoupled — Discovery produces raw research material, a separate
+  step converges it into an executable PRD, modeled on standard
+  product-discovery frameworks. Leaned toward yes, not fully settled against
+  how it fits the three branches above.
 - **Which agent to build first?** **The selection criterion changed on 2026-08-18** —
   msilva's manager wants the agent with the **most utility** first, where the
   2026-08-17 analysis had optimized for lowest risk of failing. Both readings are
@@ -863,6 +934,13 @@ consultant rather than validator.
   discovery/documentation minimum) point toward **A10+A14** and **A7/A8** rather
   than A1+A2 or A5. Not a new decision — see [[Which agent should be built
   first]] and [[Comparing the first-agent candidates]] for the detail.
+  **2026-08-20, a third independent voice**: in
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]], Gabrielle's own
+  stated pain (visibility across projects) is why she says she'd start with
+  Portfolio herself — converging with Carol's pain-based criterion and
+  msilva's own Pain #1. Three people now independently point at **A10
+  Portfolio + A14 PM Agent**, against msilva's standing A1+A2 position. Still
+  not a decision.
 - **Is the current 14-agent diagram the right shape at all, or should Agent
   Flow start simpler and evolve?** New 2026-08-20, from
   [[2026-08-20 1-1 Matheus - Gabrielle]] — msilva's own reconsideration,
@@ -895,8 +973,23 @@ consultant rather than validator.
   [[2026-08-20 1-1 Matheus - Luís]] — the first concrete test case for
   msilva's own agir/informar heuristic (act/reason vs. purely inform). The
   table entry above predates the heuristic and hasn't been re-checked
-  against it; unresolved. Also unresolved from the same call: which two of
-  the 14 Luís considers "the same agent" — referenced without naming them.
+  against it; unresolved. Was also raised, from a different angle, later the
+  same day: [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]
+  argues Teacher stays distinct from A7 Discovery specifically because their
+  *outputs* differ (a direct answer to one person vs. broad raw material for
+  a decision), even though both "search then answer" internally — an
+  input/output-only argument for keeping Teacher standalone, not yet
+  reconciled with the agir/informar question above.
+  ~~Also unresolved from the same call: which two of the 14 Luís considers
+  "the same agent"~~ — **answered same day**: A3/A9, and A8/A9, per
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]] above.
+- **Does A5 Watch's opportunity-detection mode now cover code/query
+  inefficiency, auto-feeding A3/A9 directly without going through the
+  classifier?** New 2026-08-20, from
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]. Discussed as
+  making sense (catching an inefficient Grafana query without a human
+  checking manually) but not fully resolved as in-scope for A5 specifically
+  vs. a separate concern.
 - **Does A1 listen passively, or must it still be addressed?** The sharpened
   version of the adoption question. A1's multi-channel capture answers the
   *fragmentation* half of the prior failure — but if every channel still needs a

@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-08-19
+updated: 2026-08-20
 date: 2026-08-18
 aliases: [first agent comparison, candidate comparison, first agent doc, first agent trade-offs]
 tags: [agents, planning, decision, a1, a2, a5, a7, a4]
@@ -50,6 +50,11 @@ of her own A5 suggestion.
 > reflects the four candidates as scoped on 2026-08-18. **msilva's own
 > follow-up**: Pain 1 argues harder for starting there because it's recurring
 > and current, not one-off.
+>
+> **2026-08-20**: a third independent voice.
+> [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]] has Gabrielle's own stated
+> pain (visibility across projects) as her reason to start with Portfolio herself —
+> converging with Carol and msilva. Still not incorporated into the comparison below.
 
 **Deadline pressure is real**: a deadline-setting meeting with Gabrielle and Luís was
 set for the end of the week beginning 2026-08-17, and **Gabrielle is on leave from

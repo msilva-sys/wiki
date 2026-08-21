@@ -2688,3 +2688,39 @@ asked for both ingested directly.
   open threads for msilva to chase directly: which two of the 14 agents
   Luís considers redundant (not named in the transcript), and how much of
   this Gabrielle already independently agrees with.
+- Also found and fixed while cross-checking: the 16:55 meeting page above had
+  never been added to `index.md` (an un-indexed page from that session) —
+  added below.
+
+## [2026-08-20] ingest | Fluxo Agêntico diagram walkthrough with Luís
+- Source: `raw/Luis _ Matheus - 2026_08_20 18_22 GMT-03_00 - Anotações do
+  Gemini.md`. A second, later Luís call the same day (18:22, vs. the 16:55
+  coaching call above) — the actual per-agent walkthrough of the 14-agent
+  diagram, msilva running the same exercise he'd already run with Gabrielle
+  on 2026-08-19. Machine transcription, attribution fully collapsed onto
+  msilva except the opening line; turns inferred from phrasing and confirmed
+  directly with msilva before writing (seven specific points checked one by
+  one: Luís pushed to eliminate A6 as standalone; the later "organize memory
+  well" line is about memory-as-infrastructure, not about Curator being
+  necessary; A3 and A9 are literally the same agent, not merely similar; the
+  A8+A9≈Claude Code read; the actor→input→output working-method shift;
+  Luís's LangGraph-vs-Claude experiment task; and the third-voice read on
+  Gabrielle's Portfolio-first pain).
+- New: `meetings/2026-08-20 Fluxo Agêntico diagram walkthrough with Luís.md`.
+- Updated: `projects/Agent Flow.md` (A6 Curator resolved as not-a-standalone-
+  agent while the underlying memory-organization need stays critical and
+  unowned; A3/A9 merge reverses the 2026-08-19 split; A8+A9 collapse toward
+  "Claude Code itself"; only A13 fits "transversal intelligence," narrowing
+  the A10/A13-merge question toward no; new actor→input→output working
+  method, deferring inter-agent graph design; Discovery-vs-PRD-generation
+  split added as open; LangGraph-vs-Claude validation experiment and the
+  memory-source/per-agent-tooling inventories added as next steps; A4
+  Teacher's standalone status gets a second, input/output-based argument for
+  survival), `people/Luís Fernandez.md` (the verdict pass, the working
+  method, the validation-experiment task), `syntheses/Which agent should be
+  built first.md` and `syntheses/Comparing the first-agent candidates.md`
+  (Gabrielle's own stated pain as a third independent voice for A10+A14 over
+  A1+A2 — not yet folded into either page's formal recommendation), `index.md`.
+- No new decisions on which agent to build first — msilva's own position
+  (A1+A2) stands, now against three independently-arrived-at voices (Carol,
+  msilva's own Pain #1, Gabrielle) favoring A10 Portfolio + A14 PM Agent.

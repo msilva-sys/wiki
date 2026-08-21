@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-08-19
+updated: 2026-08-20
 date: 2026-08-17
 aliases: [first agent, A5 first, which agent first]
 tags: [agents, planning, a5, a1, a7]
@@ -247,6 +247,14 @@ the proxy, and `Bug (sistema)` has both a producer and a consumer.
 > *because* it's recurring and current, not just because it's real — a
 > standing problem argues harder for building against it than a one-off
 > would.
+>
+> **5. A third independent voice, 2026-08-20.** In
+> [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]], Gabrielle's own
+> stated pain (visibility across projects) is why she says she'd start with
+> Portfolio herself. Three people — Carol, msilva, and now Gabrielle — now
+> independently point at **A10 Portfolio + A14 PM Agent** as the starting
+> pain, none of them arguing from the intake-pair (A1+A2) framing this page's
+> recommendation still rests on.
 
 **Still not decided.** The A5 recommendation below is not formally superseded, and
 the criterion change has not been confirmed with Gabrielle.

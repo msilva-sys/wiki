@@ -52,3 +52,16 @@ sometimes builds directly, otherwise supports.
   discovery work (agir/informar heuristic) before any implementation or
   memory design — independently reinforcing msilva's own same-day doubts
   about the 14-agent diagram's shape ([[2026-08-20 1-1 Matheus - Luís]]).
+- Ran a full agent-by-agent verdict pass on the 14-agent diagram the same day
+  ([[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]): A6 Curator
+  isn't a standalone agent for now (organized memory as infrastructure still
+  matters); A3 and A9 are the same agent; A8+A9 collapse toward "Claude Code
+  itself"; only A13 Deduplication genuinely fits "transversal intelligence,"
+  with A10/A11/A12 being separate concerns.
+- Pushes a working method of specifying every agent as **actor → input →
+  output** only, deferring all inter-agent graph/sequencing design until
+  necessity forces it — same conversation.
+- Tasked msilva with a bounded validation experiment: build a small A10
+  Portfolio prototype in **LangGraph** and compare it against building the
+  same thing directly in Claude, to settle whether a framework is even
+  needed — same conversation.
