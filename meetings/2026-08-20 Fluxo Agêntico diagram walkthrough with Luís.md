@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-20
+updated: 2026-08-21
 date: 2026-08-20
 attendees: [Luis Fernandez, Matheus Silva]
 source: "raw/Luis _ Matheus - 2026_08_20 18_22 GMT-03_00 - Anotações do Gemini.md"
@@ -144,6 +144,13 @@ architecture-validator role ([[Luís Fernandez]]):
 - **A8 Projects reconsidered live**: msilva says he'd been unsure about it,
   and only on reviewing the diagram again realized it appears to spin up its
   own subagents — which is what makes A8+A9 read as "Claude Code itself."
+- **Luís frames deduplication and data governance as a "harness," not a
+  reasoning agent** — *"Tem o harness de duplicação, tem o harness de dados
+  [...] aplicar as regras de governança."* A rule-enforcement/guardrail layer
+  applied transversally over the flow, closer to an automated gate than to
+  something that decides. Consistent with, and the specific mechanism behind,
+  the verdict above that only A13 clears the "transversal intelligence" bar —
+  dedup and data-gov read as harness-shaped, portfolio/product don't.
 - **The four entry channels reconfirmed** (`Bug sistema`, `Bug manual`,
   `Tarefa`, `Consultoria`), with an aside that a project could in principle
   start its own internal flow (e.g. a Watch-triggered fix request straight to
@@ -159,6 +166,9 @@ architecture-validator role ([[Luís Fernandez]]):
 - On the working method: *"importante é saber que existe um cara que tem um
   input e que tem um output."*
 - On A8/A9: *"da forma que tá desenhado para mim, A8 e A9 é o Cloud Code."*
+- On dedup/data-gov: *"Acho que é é tipo harness, né? [...] Tem o harness de
+  duplicação, tem o harness de dados, eu ten[ho que] aplicar as regras de
+  governança."*
 - On not over-committing to a framework: *"zero se prende em como que você
   vai desenvolver isso[...] só não caia na besteira de falar assim: 'Pô, vou
   fazer lá em [Lang]Graph.'"*

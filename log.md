@@ -2790,6 +2790,20 @@ asked for both ingested directly.
 - Nothing changed on the wiki page itself — this operation only pushed
   existing wiki content outward to Linear.
 
+## [2026-08-21] query | Harness framing for A10-A13, missed on first extraction
+- msilva asked what Luís said about the transversal-intelligences agents
+  being "skills or steps on a CI/CD" — no literal CI/CD anywhere in the
+  vault or the raw transcript, but re-reading
+  `raw/Luis _ Matheus - 2026_08_20 18_22 GMT-03_00 - Anotações do Gemini.md`
+  in full (160 lines, not fully covered by the first extraction) surfaced a
+  closer match at 00:34:34: Luís calls A13 (dedup) and A12 (data gov) a
+  **"harness"** — a rule-enforcement/guardrail layer, closer to an automated
+  gate than to something that reasons.
+- Updated: [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]] (new
+  Facts-stated bullet and quote); [[Agent Flow]] (harness framing added under
+  the existing "only A13 is transversal" callout, as the mechanism behind
+  that split, not a new decision).
+
 ## [2026-08-21] refactor | add README.md, amend schema
 - Now that the vault is pushed to a real GitHub remote, added a `README.md`
   landing page (points to `CLAUDE.md` and `index.md`, notes raw/ lives outside

@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: research
-updated: 2026-08-20
+updated: 2026-08-21
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -103,6 +103,12 @@ blocks**), A14 PM Agent (request through to delivery).
 > the open question below asking whether A13 and A10 are the same agent: this
 > reads as **no** — A13 is the one that stays cross-cutting, A10 is its own
 > separate thing.
+>
+> **The mechanism behind the split**: Luís frames A13 (dedup) and A12 (data
+> gov) as a *"harness"* — a rule-enforcement/guardrail layer applied
+> transversally, closer to an automated gate than to something that reasons.
+> Portfolio and Product don't fit that shape, which is why they read as
+> separate concerns rather than transversal intelligence.
 
 > [!note] A6, A9–A14 walked through in detail — 2026-08-19
 > [[2026-08-19 1-1 Matheus - Gabrielle]] (Part 2), reading the diagram live.
