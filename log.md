@@ -2823,6 +2823,34 @@ asked for both ingested directly.
   from the previous version; nothing on the wiki page itself changed by
   this operation beyond what the entry above already recorded.
 
+## [2026-08-21] synthesis | Same treatment for the Gabrielle diagram walkthrough
+- msilva asked for the same per-agent Linear treatment for
+  [[2026-08-19 1-1 Matheus - Gabrielle]] (the earlier full 14-agent
+  walkthrough, done with Gabrielle before the Luís one). Reviewed the draft
+  with him in chat first, same as the Luís version.
+- Flagged two real differences before drafting, both confirmed with msilva:
+  1. This meeting is thinking-out-loud, not a decision meeting — the wiki
+     page itself says so explicitly. No verdicts to report the way the Luís
+     doc reports verdicts.
+  2. Attribution in this transcript is **fully** collapsed (unlike the Luís
+     one, which was partial and confirmed with msilva afterward) — the wiki
+     page already flags any specific claim about what Gabrielle thinks as
+     unconfirmed. msilva chose to name her the same way as Luís anyway; the
+     doc carries an explicit source note saying attributions to her follow
+     msilva's own read, not a confirmed quote.
+  3. A4 Teacher was not actually discussed in this meeting — msilva starts
+     to mention it and self-corrects mid-sentence to talk about A3 instead.
+     Recorded as "not discussed" rather than inventing content for it.
+- Published: Linear document
+  [Passagem pelos 14 agentes com Gabrielle (2026-08-19)](https://linear.app/projetos-livemode/document/passagem-pelos-14-agentes-com-gabrielle-2026-08-19-177b8945bb1a),
+  project Fluxo Agêntico. Per msilva's request, kept only the per-agent
+  sections (A1–A14) — dropped the standalone "which agent first" and "open
+  questions" roll-up sections that the review draft had, though open
+  questions specific to one agent's own discussion stayed inline under that
+  agent.
+- Nothing changed on the wiki page itself — same as the Luís operation, this
+  only pushed existing wiki content outward to Linear.
+
 ## [2026-08-21] refactor | add README.md, amend schema
 - Now that the vault is pushed to a real GitHub remote, added a `README.md`
   landing page (points to `CLAUDE.md` and `index.md`, notes raw/ lives outside
