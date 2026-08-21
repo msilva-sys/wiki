@@ -2759,6 +2759,37 @@ asked for both ingested directly.
   exposure window regardless of whether the push protection would have caught
   it. Treat all five as potentially compromised.
 
+## [2026-08-21] synthesis | Fluxo Agêntico convergences published to Linear
+- msilva asked to get the key points from
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]] into Linear so
+  the team can access them, without going through the wiki.
+- Found the existing Linear structure first rather than assuming one: team
+  **PRO** (Projetos-livemode), project **Fluxo Agêntico** (under initiative
+  *Fluxo agêntico*), which already carries two Documents (the architecture
+  diagram, the project instruction). Matched that pattern rather than
+  creating an issue.
+- Drafted the content as an HTML artifact first for review — msilva's
+  request mid-task — then two rounds of correction before publishing:
+  1. Standing global convention (never name a colleague in Linear-visible
+     text) does **not** apply here — msilva explicitly said Luís can be
+     named, and each verdict is attributed to him directly.
+  2. msilva flagged the framing as reading too much like a settled
+     spec/PRD. Retitled the doc from "Decisões de arquitetura" to
+     **"Convergências da revisão dos 14 agentes"**, renamed the section
+     from "Decisões" to "O que convergimos," and added an explicit line
+     that the document is not a spec or PRD and does not lock the
+     architecture.
+- Published: Linear document
+  [Convergências da revisão dos 14 agentes (2026-08-20)](https://linear.app/projetos-livemode/document/convergencias-da-revisao-dos-14-agentes-2026-08-20-26cc437061a9)
+  under project Fluxo Agêntico. Seven points carried over: A1+A2 merge,
+  A6 not standalone (memory-as-infra still critical), A3=A9, A8+A9≈Claude
+  Code, only A13 is transversal, actor→input→output working method,
+  default-through-classifier. Plus next steps (LangGraph vs. Claude
+  experiment, memory-source inventory, per-agent tooling) and two open
+  questions.
+- Nothing changed on the wiki page itself — this operation only pushed
+  existing wiki content outward to Linear.
+
 ## [2026-08-21] refactor | add README.md, amend schema
 - Now that the vault is pushed to a real GitHub remote, added a `README.md`
   landing page (points to `CLAUDE.md` and `index.md`, notes raw/ lives outside
