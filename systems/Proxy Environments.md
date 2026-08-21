@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-08-17
+updated: 2026-08-21
 aliases: [envs prxy, proxy envs]
 tags: [airtable, proxy, config, environments, livescript]
 ---
@@ -11,24 +11,31 @@ tags: [airtable, proxy, config, environments, livescript]
 Environment and configuration reference for the [[Airtable Proxy]] and
 [[LiveScript]].
 
-> [!danger] Credentials are still recoverable from git history — NOT resolved
+> [!danger] History purge completed 2026-08-21 — rotation still outstanding
 > This page contained **live credentials** in plaintext from 2026-08-11: an
-> Airtable PAT, a Firebase service-account private key, and LogRocket / Bugsnag /
-> integration API keys. They were replaced with placeholders on 2026-08-17.
+> Airtable PAT, a Firebase service-account private key, a LogRocket API key, a
+> Bugsnag server key, and an integration API key. They were replaced with
+> placeholders in the working tree on 2026-08-17, but remained recoverable from
+> the two root commits (`envs prxy.md`, then `systems/Proxy Environments.md`)
+> until 2026-08-21.
 >
-> **The working tree is clean. The git history is not.** The values remain
-> readable in **6 commits** — verify at any time with:
+> **Fixed 2026-08-21**, when the vault was first pushed to a remote
+> (`git@github.com:msilva-sys/wiki.git`) and GitHub's push protection caught the
+> Airtable PAT before the push completed. Used `git filter-branch` to redact all
+> five values from both root commits, verified with the same grep pattern below
+> against `$(git rev-list --all)` (zero matches after `git gc --prune=now`), then
+> pushed the cleaned history. All 96 commits' messages and dates were preserved —
+> only the secret lines were rewritten.
 >
 > ```bash
 > git grep -IlE 'PRIVATE KEY-----|pat[a-zA-Z0-9]{12,}\.[a-f0-9]{20,}' $(git rev-list --all)
 > ```
 >
-> **Outstanding, and msilva's to perform:**
-> 1. **Rotate the Airtable PAT and the Firebase service-account key.** This is the
->    one that actually matters — redaction and history rewriting do not undo
->    plaintext-on-disk since 2026-08-11.
-> 2. Optionally purge history. The vault is local with no remote; at ~30 commits,
->    `rm -rf .git && git init` is cleaner than filtering.
+> **Still outstanding, and msilva's to perform:** rotate all five credentials
+> (Airtable PAT, Firebase service-account key, LogRocket API key, Bugsnag server
+> key, integration API key). The history purge only removes them from the repo —
+> it does not undo the fact that they sat in plaintext on disk since 2026-08-11,
+> so treat all five as potentially compromised regardless.
 >
 > Real values live in the app's local `.env` and in Secret Manager. **Never paste a
 > credential into this wiki** — record the variable's *name*, *purpose*, and *where

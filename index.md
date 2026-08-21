@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-08-20
+updated: 2026-08-21
 ---
 
 # Index
@@ -8,11 +8,13 @@ updated: 2026-08-20
 Catalog of every page in this wiki, one line each. Updated on every ingest.
 See [[log]] for the chronological record and `CLAUDE.md` for the schema.
 
-> [!danger] Outstanding — rotate the Airtable PAT and Firebase service-account key
-> Both sat in plaintext in this vault from 2026-08-11 and remain readable in **6
-> git commits**. The working tree is clean; history is not. Rotation is the action
-> that matters and only msilva can do it. Details:
-> [[Proxy Environments]]. Reported by every `lint` since the first.
+> [!danger] Outstanding — rotate five credentials (git history purge is done)
+> An Airtable PAT, a Firebase service-account key, a LogRocket API key, a Bugsnag
+> server key, and an integration API key sat in plaintext in this vault from
+> 2026-08-11. **History purge completed 2026-08-21** (git filter-branch, forced
+> by the first push to a remote) — no longer readable anywhere in the repo.
+> Rotation is still outstanding and only msilva can do it: the purge doesn't undo
+> the exposure window on disk since 2026-08-11. Details: [[Proxy Environments]].
 
 > [!warning] Time-boxed — Gabrielle is on leave 2026-08-24 → 2026-09-10
 > [[2026-08-18 1-1 Matheus - Gabrielle]] was the last scheduled 1:1 before it.
@@ -49,7 +51,7 @@ deciding, communicate async and often]].
 ## Systems
 - [[LiveScript]] — collaborative script editor, heaviest Airtable consumer, the reason the proxy exists. Also called *roteiros*.
 - [[Orca (CDE)]] — Livemode's computer-vision/audio system proving commercial-insertion display in live sports broadcasts (the CDE, "Comprovante de Entregas"). In production since v3.2.0; business-critical, ~10 headcount worth of automation. **Resolves the "in production" vs. "nothing deployed" contradiction** flagged across five pages — the two statements were about the live system vs. its unshipped next-version roadmap ([[Orca Next Version]]).
-- [[Proxy Environments]] — environment/config reference for the proxy and LiveScript. Credentials redacted 2026-08-17.
+- [[Proxy Environments]] — environment/config reference for the proxy and LiveScript. Credentials redacted 2026-08-17; git history purged 2026-08-21; rotation still outstanding.
 
 ## Concepts
 - [[Airtable Rate Limits]] — 5 req/s per base, 429 → ~30s lockout, `Retry-After`; the constraint driving the whole programme.

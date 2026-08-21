@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-08-20
+updated: 2026-08-21
 ---
 
 # Log
@@ -2724,3 +2724,37 @@ asked for both ingested directly.
 - No new decisions on which agent to build first — msilva's own position
   (A1+A2) stands, now against three independently-arrived-at voices (Carol,
   msilva's own Pain #1, Gabrielle) favoring A10 Portfolio + A14 PM Agent.
+
+## [2026-08-21] refactor | purge leaked secrets from git history, first push to remote
+- msilva asked to push the vault to `git@github.com:msilva-sys/wiki.git`
+  (previously local-only). No remote had been configured yet.
+- The only SSH key on this machine authenticated as the `tech-livemode` GitHub
+  account; the target repo belongs to the separate personal `msilva-sys`
+  account. Generated a dedicated keypair, added a `github-personal` host alias
+  in `~/.ssh/config`, msilva added the public key to `msilva-sys`'s GitHub
+  account, remote re-pointed at the alias.
+- First push attempt was rejected by **GitHub push protection**: an Airtable
+  PAT was live in two commits. This vault's own `systems/Proxy Environments.md`
+  had already flagged this exact gap on 2026-08-17 (redaction landed in the
+  working tree; a history purge was attempted, blocked by a permission layer,
+  and never completed) — the push attempt is what finally forced it.
+- Scoped the exposure: real secrets existed only in the two root commits
+  (`Snapshot: vault before LLM-wiki setup`, `LLM-wiki setup — schema, index,
+  log, folder structure`) — five values total: Airtable PAT, Firebase
+  service-account private key, LogRocket API key, Bugsnag server key,
+  integration API key. Every commit after the 2026-08-17 redaction was clean.
+  (An initial grep sweep over-counted ~70 "hits" — a false positive from a
+  later commit's danger-callout quoting the grep pattern as documentation.)
+- Used `git filter-branch --tree-filter` (built into git; no external tool
+  install) to redact the five values at those two commits only, preserving all
+  96 commits' messages and dates. Verified zero matches for the actual secret
+  values across `git rev-list --all` after deleting the `refs/original/*`
+  safety refs filter-branch leaves behind and running `git gc --prune=now`.
+  Pushed the cleaned history; push succeeded.
+- Updated: `systems/Proxy Environments.md` (danger callout rewritten from
+  "not resolved" to "purge completed 2026-08-21," corrected the credential
+  count from three to five, kept the rotation task open).
+- **Open, msilva's to perform: rotate all five credentials.** They sat in
+  plaintext on disk since 2026-08-11; the git purge does not undo that
+  exposure window regardless of whether the push protection would have caught
+  it. Treat all five as potentially compromised.
