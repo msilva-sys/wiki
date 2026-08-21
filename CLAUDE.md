@@ -32,7 +32,8 @@ cross-references, consistency, indices, and logs.
 | `syntheses/` | Cross-cutting write-ups answering a question | question |
 | `reference/` | Personal reference that isn't domain knowledge — cheatsheets, ticket scratch notes | thing |
 
-Root holds only `CLAUDE.md`, `AGENTS.md`, `index.md`, `log.md`, and `notebook/`.
+Root holds only `CLAUDE.md`, `AGENTS.md`, `README.md`, `index.md`, `log.md`, and
+`notebook/`.
 
 `notebook/` is msilva's personal, **ungoverned** scratch space — loose
 Livemode-work-related thoughts, jotted directly by him in Obsidian, with no
@@ -68,9 +69,9 @@ the schema into it.**
   ---
   ```
   `aliases` matter — they let you resolve shorthand in future sessions.
-  **Exempt**: `CLAUDE.md`, `AGENTS.md`, `index.md`, and `log.md` are
-  infrastructure, not pages. They need no `status:`, and `CLAUDE.md` / `AGENTS.md`
-  need no frontmatter at all.
+  **Exempt**: `CLAUDE.md`, `AGENTS.md`, `README.md`, `index.md`, and `log.md`
+  are infrastructure, not pages. They need no `status:`, and `CLAUDE.md` /
+  `AGENTS.md` / `README.md` need no frontmatter at all.
   Having no inbound links is also correct for them — don't flag it as orphaning.
 - **Dates**: absolute `YYYY-MM-DD`. Never "last week" or "recently". Determine
   them yourself — see **Dates** below. Never ask msilva for a date you can read.

@@ -2758,3 +2758,11 @@ asked for both ingested directly.
   plaintext on disk since 2026-08-11; the git purge does not undo that
   exposure window regardless of whether the push protection would have caught
   it. Treat all five as potentially compromised.
+
+## [2026-08-21] refactor | add README.md, amend schema
+- Now that the vault is pushed to a real GitHub remote, added a `README.md`
+  landing page (points to `CLAUDE.md` and `index.md`, notes raw/ lives outside
+  the repo).
+- Amended `CLAUDE.md`'s root-layout list and frontmatter-exemption clause to
+  include `README.md` as infrastructure, rather than letting root drift from
+  what the schema documents.
