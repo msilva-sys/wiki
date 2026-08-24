@@ -1,7 +1,7 @@
 ---
 type: decision
 status: stable
-updated: 2026-08-21
+updated: 2026-08-24
 date: 2026-08-19
 decided_by: Matheus Silva, Luís Fernandez
 source: "[[2026-08-19 1-1 Matheus - Luís]]"
@@ -12,7 +12,7 @@ aliases: [URL-path app identification, drop X-App-Id header]
 # Identify proxy apps by URL path, not header
 
 **Decision.** The [[Airtable Proxy]] identifies which app is calling it by the
-**URL path the app is configured to hit** — e.g. `proxy.livemode.com/livescript`
+**URL path the app is configured to hit** — e.g. `proxy.livemode.space/livescript`
 — instead of a header like `X-App-Id`. Settled 2026-08-19, msilva's call, with
 Luís's explicit sign-off. Confirmed directly with msilva (2026-08-19): it's a
 **path**, not a subdomain.

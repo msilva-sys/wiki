@@ -1,18 +1,18 @@
 ---
 type: decision
 status: stable
-updated: 2026-08-21
+updated: 2026-08-24
 date: 2026-08-21
 decided_by: Matheus Silva
 source: "Planning discussion with msilva, 2026-08-21"
 tags: [proxy, gcp, cloud-run, networking, pulumi]
-aliases: [private Airtable Proxy infrastructure, proxy.livemode.com]
+aliases: [private Airtable Proxy infrastructure, proxy.livemode.space]
 ---
 
 # Deploy Airtable Proxy privately behind VPN
 
 **Decision.** [[Airtable Proxy]] will be deployed as a private service reachable
-through Livemode's VPN at `https://proxy.livemode.com`. The VPN/network is the
+through Livemode's VPN at `https://proxy.livemode.space`. The VPN/network is the
 initial trust boundary. Calling services identify themselves through the first
 URL path segment, per [[2026-08-19 Identify proxy apps by URL path, not header]],
 but do not authenticate with a separate app key in the first production phase.
@@ -23,7 +23,7 @@ An app key will be layered on later without removing the private-network boundar
 A caller uses an endpoint such as:
 
 ```text
-https://proxy.livemode.com/livescript/v0/...
+https://proxy.livemode.space/livescript/v0/...
 ```
 
 The proxy resolves `livescript` in `PROXY_APPS`, verifies the configured base
@@ -42,14 +42,14 @@ least-privilege PATs, and per-app base allow-lists.
 Internal application
   -> corporate VPN
   -> GCP VPC
-  -> private DNS: proxy.livemode.com
+  -> private DNS: proxy.livemode.space
   -> regional internal HTTPS Application Load Balancer
   -> serverless NEG
   -> Cloud Run (internal ingress)
   -> api.airtable.com
 ```
 
-`proxy.livemode.com` uses split-horizon DNS: inside the VPN it resolves to the
+`proxy.livemode.space` uses split-horizon DNS: inside the VPN it resolves to the
 load balancer's private address; outside the private network it has no usable
 public route. TLS must cover that hostname. The existing private DNS zone,
 certificate/PKI, VPN, VPC, and shared subnets remain central-infrastructure
@@ -70,7 +70,7 @@ The Go Pulumi program for this repository should own:
 - the serverless NEG;
 - the internal load balancer's backend service, URL map, HTTPS proxy, private
   address, and forwarding rule;
-- the `proxy.livemode.com` record in the existing private DNS zone, if the
+- the `proxy.livemode.space` record in the existing private DNS zone, if the
   application stack is authorized to manage that record;
 - production monitoring resources after the OTLP backend is chosen.
 
@@ -110,7 +110,7 @@ to switch at once.
 - Exact VPC, frontend subnet, and existing proxy-only subnet identifiers.
 - Whether the VPN routes directly into that VPC and how VPN clients resolve the
   private DNS zone.
-- Ownership of the `livemode.com` private DNS zone and TLS certificate.
+- Ownership of the `livemode.space` private DNS zone and TLS certificate.
 - Pulumi state backend (Pulumi Cloud or GCS).
 - Secret-value delivery and rotation procedure.
 - Production OTLP backend and monitoring/notification destination.

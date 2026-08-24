@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-08-21
+updated: 2026-08-24
 ---
 
 # Log
@@ -2914,3 +2914,25 @@ asked for both ingested directly.
   [[Airtable Proxy]] with repo ground truth: path routing is no longer pending;
   it shipped in `8e4297b` and was hardened in `bf5e681`/`12d1423`.
 - Updated: `index.md` (project timeline + both decision entries).
+
+## [2026-08-24] refactor | correct proxy domain TLD to .space
+- msilva, in chat: "todos os nossos domínios terminam em *.livemode.space,
+  exemplo: proxy.livemode.space." Several pages had recorded the proxy's
+  domain as `proxy.livemode.com` — wrong TLD, not a typo caught earlier.
+  [[Orca (CDE)]] and [[Orca Next Version]] already had it right
+  (`cde.livemode.space` / `orca.livemode.space`), as did the 2026-08-10
+  onboarding meeting note's illustrative `airtable.livemode.space` — so this
+  was an inconsistency between pages, not a vault-wide error.
+- Corrected `proxy.livemode.com` -> `proxy.livemode.space` (and the bare
+  `livemode.com` DNS-zone reference) in: `index.md`,
+  [[2026-08-19 Identify proxy apps by URL path, not header]],
+  [[2026-08-21 Deploy Airtable Proxy privately behind VPN]] (incl. its alias
+  and the still-open DNS-zone-ownership line), [[Airtable Proxy]] (5
+  occurrences), and the superseded synthesis
+  [[How LiveScript sends the proxy X-App-Id header]].
+- Left `log.md`'s own prior entries (2026-08-19, 2026-08-21) unchanged — they
+  quote what was written at the time, and this log is append-only.
+  `systems/Proxy Environments.md`'s `livemode.com` hits are email addresses
+  (`CHANGE_HISTORY_ADMIN_EMAILS`), unrelated to the service domain, not
+  touched.
+- Updated: `index.md`.

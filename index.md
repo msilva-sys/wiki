@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-08-21
+updated: 2026-08-24
 ---
 
 # Index
@@ -46,7 +46,7 @@ deciding, communicate async and often]].
 **2026-08-21**: path-based app identification is now shipped and hardened
 (`8e4297b`, `bf5e681`, `12d1423`), replacing the wiki's stale "not yet
 implemented" state. Production ingress is now settled as private: VPN -> VPC ->
-private `proxy.livemode.com` -> regional internal HTTPS load balancer/serverless
+private `proxy.livemode.space` -> regional internal HTTPS load balancer/serverless
 NEG -> Cloud Run `internal`. The VPN/network is the initial trust boundary;
 app-id selects PAT/base/telemetry but is not proof of identity, and an app key
 will be layered on later. See
@@ -120,8 +120,8 @@ _(msilva himself has no page — this vault already is the record of his work.)_
 - [[2026-08-18 Product feedback in Linear, code review in Git]] — **`draft`, demoted from a decision**: the transcript has Gabrielle saying *"não tem martelo batido"*. Kept because the practice is real and observed — **she is the product reviewer**, testing in homologation and returning work via Linear comments, while Luís reviews Yasmin's work in Git. Linear comments never reach Git.
 - [[2026-08-18 Save n8n execution logs for audit]] — save **successful production** runs; failed ones already were. That is why runs *"vanished on completion"* — the flow started succeeding. Unblocks the loop diagnosis, which now has two believers and no clean measurement.
 - [[2026-08-18 Bring options to Luís before deciding, communicate async and often]] — msilva agreed to present alternatives before acting on a technical decision, and to communicate more often, asynchronously. Triggered by the SDK patch having shipped without this.
-- [[2026-08-19 Identify proxy apps by URL path, not header]] — the proxy identifies calling apps by URL path (e.g. `proxy.livemode.com/livescript`), not by an `X-App-Id` header, settled with Luís because a header can't reliably survive SDK transport. Implemented and hardened in repo commits `8e4297b`, `bf5e681`, and `12d1423` (2026-08-20/21).
-- [[2026-08-21 Deploy Airtable Proxy privately behind VPN]] — production ingress is private at `proxy.livemode.com`: VPN/VPC -> internal HTTPS load balancer/serverless NEG -> Cloud Run `internal`. App ID is identification only in the first phase; app-key authentication comes later.
+- [[2026-08-19 Identify proxy apps by URL path, not header]] — the proxy identifies calling apps by URL path (e.g. `proxy.livemode.space/livescript`), not by an `X-App-Id` header, settled with Luís because a header can't reliably survive SDK transport. Implemented and hardened in repo commits `8e4297b`, `bf5e681`, and `12d1423` (2026-08-20/21).
+- [[2026-08-21 Deploy Airtable Proxy privately behind VPN]] — production ingress is private at `proxy.livemode.space`: VPN/VPC -> internal HTTPS load balancer/serverless NEG -> Cloud Run `internal`. App ID is identification only in the first phase; app-key authentication comes later.
 - [[2026-08-18 Proxy first, defer LiveScript-side SDK changes]] — msilva's job is the proxy, not finishing LiveScript's own migration onto it. Confirmed 2026-08-19 as a general pattern, not a one-off. Still blocks `PRO-76`; `PRO-82` resolved 2026-08-20 and is no longer blocked by this rule.
 
 _(next candidates, extractable from [[Airtable Proxy]]: token-terminating auth, OTel/OTLP over BigQuery, Cloud Run min=1)_

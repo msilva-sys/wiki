@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-08-21
+updated: 2026-08-24
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -223,7 +223,7 @@ from Gabrielle Ferreira in onboarding.
   procurando essas más práticas aqui, é muito mais trabalhoso do que eu criar um
   cara mega inteligente aqui que ele identifica e alerta."*
 - **Migration is a base-URL swap.** Apps repoint at
-  `https://proxy.livemode.com/{app-id}` and it passes through
+  `https://proxy.livemode.space/{app-id}` and it passes through
   transparently — expected to be near-zero effort for app owners. This confirms
   the "no DNS cutover" correction below, from the other direction.
 - **This is half of a merged initiative.** The proxy and *LiveScript
@@ -287,7 +287,7 @@ from Gabrielle Ferreira in onboarding.
    onboarding (design §11) is **explicit per-app reconfiguration**:
    - `airtable` SDK: set `endpointUrl: <proxy-url>` (via `AIRTABLE_ENDPOINT_URL`)
    - raw REST: swap the base-URL constant
-   - put the app ID in the endpoint path (`https://proxy.livemode.com/{app-id}`)
+   - put the app ID in the endpoint path (`https://proxy.livemode.space/{app-id}`)
    - remove the real Airtable PAT from the app environment
    So there is no "intercept at the DNS layer" step to plan.
 
@@ -320,7 +320,7 @@ from Gabrielle Ferreira in onboarding.
    question.
 
 6. **Deployment target is decided: private Cloud Run, `min=1 max>1` for HA.**
-   It is reached through the VPN at `https://proxy.livemode.com`, via private
+   It is reached through the VPN at `https://proxy.livemode.space`, via private
    DNS and an internal HTTPS load balancer/serverless NEG; Cloud Run ingress is
    `internal`. See [[2026-08-21 Deploy Airtable Proxy privately behind VPN]]. The proxy
    is on every app's critical path, so a single instance is unacceptable. v1
@@ -331,7 +331,7 @@ from Gabrielle Ferreira in onboarding.
 ## Production private infrastructure plan (2026-08-21)
 
 ```text
-Internal apps -> VPN -> GCP VPC -> private DNS (proxy.livemode.com)
+Internal apps -> VPN -> GCP VPC -> private DNS (proxy.livemode.space)
   -> regional internal HTTPS load balancer -> serverless NEG
   -> Cloud Run (internal ingress) -> api.airtable.com
 ```
@@ -343,7 +343,7 @@ making the service public.
 
 **Central infrastructure supplied to the app stack:** existing GCP project,
 VPC/VPN and routes, frontend and proxy-only subnets, private DNS zone, and TLS
-certificate/PKI. `proxy.livemode.com` uses split-horizon DNS and resolves to the
+certificate/PKI. `proxy.livemode.space` uses split-horizon DNS and resolves to the
 load balancer's private IP only for connected clients.
 
 **Go/Pulumi-owned application resources:** required APIs, Artifact Registry,

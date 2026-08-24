@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: superseded
-updated: 2026-08-19
+updated: 2026-08-24
 date: 2026-08-17
 aliases: [x-app-id, app auth header, livescript proxy auth, GC-5 client side]
 tags: [airtable, proxy, auth, sdk, livescript, opentelemetry]
@@ -12,7 +12,7 @@ tags: [airtable, proxy, auth, sdk, livescript, opentelemetry]
 > [!danger] Superseded at the root — 2026-08-19, identification moves to URL path
 > [[2026-08-19 Identify proxy apps by URL path, not header]]: the proxy will
 > identify the calling app by the **URL path** it's configured to hit (e.g.
-> `proxy.livemode.com/livescript`), not by a header. Decided specifically
+> `proxy.livemode.space/livescript`), not by a header. Decided specifically
 > *because* of the problem this page documents — a header can't be relied on
 > to survive SDK transport, but a path can, since it's part of the same
 > `endpointUrl` config every app already sets.
