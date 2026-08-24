@@ -22,8 +22,10 @@ tags: [airtable, proxy, auth, sdk, livescript, opentelemetry]
 > `node-fetch` interceptor) was about getting a header onto SDK traffic. None
 > of it is needed if identification doesn't depend on a header at all. Kept
 > below as a record of what was investigated and why it was hard — not as a
-> live decision to make. **Not yet implemented** — the proxy still enforces
-> `X-App-Id` as described below until the path-based routing ships.
+> live decision to make. **Implemented 2026-08-20/21** — repo commits
+> `8e4297b`, `bf5e681`, `12d1423` shipped and hardened URL-path identification;
+> `X-App-Id` was never shipped this way and plays no role in identification
+> now (removed from the identity path, stripped before forwarding upstream).
 
 Question raised 2026-08-17: the [[Airtable Proxy]] now enforces app
 identification — every proxied request must carry `X-App-Id` (LiveScript's id is

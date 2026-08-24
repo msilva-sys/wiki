@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-20
+updated: 2026-08-24
 date: 2026-08-18
 aliases: [decision process norm, present options first]
 tags: [process, communication]
@@ -46,9 +46,13 @@ of not doing it: *"você tá desperdiçando informação sem necessidade."*
   would meaningfully change downstream work (the SDK patch is the paradigm case).
 - Doesn't require waiting for a scheduled 1:1. The point is to raise it *when it
   happens*, async, in whatever form is fastest (audio/text/screenshot).
-- Retroactive: this doesn't undo the SDK patch decision, but it does mean that
-  decision is now explicitly open for revisiting with alternatives on the table —
-  see the open question on [[How LiveScript sends the proxy X-App-Id header]].
+- Retroactive: this doesn't undo the SDK patch decision on its own, but it does
+  mean that decision was reopened with alternatives on the table. Reopening it
+  is in fact what led to it being **retired outright the next day**: see
+  [[2026-08-19 Identify proxy apps by URL path, not header]], which moved app
+  identification off headers entirely, mooting the header-vs-patch comparison
+  this norm was meant to enable — see [[How LiveScript sends the proxy X-App-Id header]]
+  for that history.
 - Read together with Luís naming being in the office as underused leverage —
   *"o que tem de mais rico de estar no escritório é você tá com facilidade para
   acessar todo mundo"* — the norm is partly about using that proximity, not just

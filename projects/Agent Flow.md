@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: research
-updated: 2026-08-21
+updated: 2026-08-24
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -883,14 +883,14 @@ consultant rather than validator.
   needs only his own approval, some needs Gabrielle's, some needs Luís's too —
   loosely tied to A6 Curator as the agent that would route work to the right
   tier ([[2026-08-19 1-1 Matheus - Gabrielle]]). Not designed, just wanted.
-- **Is A1 + A2 one agent or two?** New 2026-08-19. msilva's own test: worth
-  splitting if A2's inputs come from more than just A1 (e.g. A6 Curator);
-  otherwise maybe not. **His own lean, added on the meeting page afterward:
-  merge them — questions what's gained by separating two agents whose scope
-  is this similar.** Position, not decision, still open — bears directly on
-  the A1+A2 candidate in [[Which agent should be built first]] and
-  [[Comparing the first-agent candidates]], both of which currently treat it
-  as a pair.
+- ~~**Is A1 + A2 one agent or two?**~~ **Merged, reconfirmed 2026-08-20.** New
+  2026-08-19: msilva's own test was whether A2's inputs come from more than
+  just A1 (e.g. A6 Curator); his own lean, added afterward, was to merge
+  them. [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]] confirms
+  it directly as an actual call, not a lean — Luís: *"Para mim eles são a
+  mesma coisa"* — one orchestrator/classifier, not two agents. [[Which agent
+  should be built first]] and [[Comparing the first-agent candidates]] should
+  be read with this settled, not as an open pair.
 - **Does discovery/planning belong before every execution, or only complex
   work?** New 2026-08-19, from msilva questioning his own A3-vs-A7 split live:
   should A3 itself always plan before acting — the way he uses Claude Code

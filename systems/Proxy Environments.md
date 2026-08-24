@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-08-21
+updated: 2026-08-24
 aliases: [envs prxy, proxy envs]
 tags: [airtable, proxy, config, environments, livescript]
 ---
@@ -139,15 +139,21 @@ This is the migration mechanism described in
 the app. Confirms the "base-URL swap, not DNS cutover" model in
 [[Airtable Proxy]].
 
-> [!warning] Uncommenting alone is not enough (added 2026-08-17, GC-5)
-> Repointing at the proxy makes every call **401** until the app also sends
-> `X-App-Id: livescript`, which the `airtable` SDK v0.12.2 can't attach via
-> config. **The header change shipped the same day** — a `pnpm patch` on the SDK
-> plus centralized REST-path injection (commits `754896b`, `d565c26`) — so this
-> variable can now be flipped without the precondition. The app also keeps a
-> **dummy `AIRTABLE_API_KEY`** (the SDK refuses to start without one and always
-> sends it; the proxy overwrites it). Full analysis:
-> [[How LiveScript sends the proxy X-App-Id header]].
+> [!warning] Uncommenting alone is not enough — superseded 2026-08-19 (header → path)
+> Repointing at the proxy makes every call **401** until the app is identified
+> correctly. The fix explored here originally (added 2026-08-17, GC-5) was a
+> header (`X-App-Id: livescript`) via a `pnpm patch` on the SDK plus
+> centralized REST-path injection (commits `754896b`, `d565c26`) — **shipped
+> 2026-08-17, reverted 2026-08-18** (see
+> [[2026-08-18 Bring options to Luís before deciding, communicate async and often]]).
+> That whole header-based approach was retired 2026-08-19: the proxy now
+> identifies the calling app by **URL path** instead — see
+> [[2026-08-19 Identify proxy apps by URL path, not header]], implemented and
+> hardened as of 2026-08-21. So this variable can be flipped once the app's
+> `endpointUrl` carries its app-id path segment; no header or SDK patch is
+> needed. The app still keeps a **dummy `AIRTABLE_API_KEY`** (the SDK refuses
+> to start without one and always sends it; the proxy overwrites it). Full
+> history: [[How LiveScript sends the proxy X-App-Id header]].
 
 ## Firebase
 
