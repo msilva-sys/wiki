@@ -129,7 +129,9 @@ AIRTABLE_MATRIZES_VIEW_ID=viwZS2NRgE64FybIB
 ```bash
 # Point the app at the proxy instead of api.airtable.com.
 # Commented out = app talks to Airtable directly (current default).
-#AIRTABLE_ENDPOINT_URL=http://localhost:8080
+# Path segment (`/livescript`) is the app id the proxy uses to identify the
+# caller — see [[2026-08-19 Identify proxy apps by URL path, not header]].
+#AIRTABLE_ENDPOINT_URL=http://localhost:8080/livescript
 
 OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318
 ```
@@ -154,6 +156,19 @@ the app. Confirms the "base-URL swap, not DNS cutover" model in
 > needed. The app still keeps a **dummy `AIRTABLE_API_KEY`** (the SDK refuses
 > to start without one and always sends it; the proxy overwrites it). Full
 > history: [[How LiveScript sends the proxy X-App-Id header]].
+
+> [!warning] Coverage is partial — the `airtable` SDK path only
+> Confirmed by reading the code 2026-08-24: `AIRTABLE_ENDPOINT_URL` is read
+> natively by the `airtable` npm package's own default config
+> (`node_modules/airtable/lib/airtable.js`), so it repoints calls made through
+> `createMonitoredAirtableBase` (`ConfigService`, parts of `ScriptBaseService`).
+> It does **not** touch the several hand-rolled `fetch()` calls in
+> `config.service.ts`, `airtable-helpers.ts`, `airtable.service.ts`, and
+> `script-base.service.ts` that hardcode `https://api.airtable.com` directly —
+> those keep bypassing the proxy regardless of this variable. Consistent with
+> [[2026-08-18 Proxy first, defer LiveScript-side SDK changes]]: full REST-call
+> migration onto the proxy is out of scope for now, so this partial coverage is
+> expected, not a bug to fix urgently.
 
 ## Firebase
 

@@ -3284,3 +3284,21 @@ asked for both ingested directly.
   [[What should the Agent Flow research phase study]] como estado atual da
   questão.
 - Updated: `index.md`.
+
+## [2026-08-24] refactor | Documentar `AIRTABLE_ENDPOINT_URL` no `.env.example` do LiveScript
+- A pedido de msilva, adicionado exemplo comentado
+  `AIRTABLE_ENDPOINT_URL=http://localhost:8080/livescript` ao
+  `.env.example` do repo `livemode-roteiros-nextjs`, para testar localmente
+  apontando pro [[Airtable Proxy]] em vez da Airtable direto.
+- Confirmado lendo `node_modules/airtable/lib/airtable.js`: a var é lida
+  nativamente pelo SDK `airtable` — nenhuma mudança de código foi
+  necessária, só doc. Mas cobertura é parcial: as chamadas REST hand-rolled
+  em `config.service.ts`, `airtable-helpers.ts`, `airtable.service.ts` e
+  `script-base.service.ts` hardcodam `https://api.airtable.com` e não leem
+  essa var — continuam indo direto. Consistente com
+  [[2026-08-18 Proxy first, defer LiveScript-side SDK changes]].
+- Updated: [[Proxy Environments]] — exemplo corrigido pra incluir o path
+  segment `/livescript` (decisão
+  [[2026-08-19 Identify proxy apps by URL path, not header]] não estava
+  refletida no bloco de código), e novo callout documentando a cobertura
+  parcial do SDK vs. REST hand-rolled.
