@@ -3272,3 +3272,15 @@ asked for both ingested directly.
     explicitamente na própria página e no `index.md` para confirmação do
     msilva, não assumido de um jeito ou de outro.
 - Updated: `index.md` (as duas linhas correspondentes).
+
+## [2026-08-24] callout | Reunião do prep do primeiro agente confirmada: nunca aconteceu
+- Perguntado diretamente, msilva não lembra da reunião que
+  [[Meeting prep - first agent decision]] preparava — não foi esquecida sem
+  registro, simplesmente nunca foi marcada além deste prep.
+- **Resolvido**: `status` mudado de `active` pra `superseded`. Banner
+  reescrito confirmando o fato em vez de deixar como pergunta em aberto.
+  Página mantida (não apagada) como registro do plano tal como estava em
+  2026-08-18 — não como raciocínio vivo. Aponta pra
+  [[What should the Agent Flow research phase study]] como estado atual da
+  questão.
+- Updated: `index.md`.
