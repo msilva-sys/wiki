@@ -2955,3 +2955,15 @@ asked for both ingested directly.
   per the rule against touching the raw layer on my own initiative).
 - Updated: `sources/Fluxo Agêntico diagram.md` (table gained the two missing
   side-labels, callout documenting why), `index.md`.
+
+## [2026-08-24] refactor | drop the v0 source page, fold into the main diagram page
+- msilva: "não há necessidade desse v0" — the separate provenance page from
+  the entry above was unwarranted overhead for a render with no structural
+  differences from [[Fluxo Agêntico diagram]].
+- Deleted: `sources/Fluxo Agêntico diagram v0.md`.
+- The actual finding survives — the "Desenvolvimento"/"Sub-agentes" labels
+  stay in [[Fluxo Agêntico diagram]]'s table — only the separate-page
+  treatment is retracted. Reworded that page's callout and `index.md`'s
+  entry to cite `sources/fluxo agêntico diagrama 0.png` directly instead of
+  a wikilink to the now-deleted page.
+- Updated: `sources/Fluxo Agêntico diagram.md`, `index.md`.

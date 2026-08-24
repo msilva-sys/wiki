@@ -146,12 +146,12 @@ Legend, verbatim from the diagram: **solid lines = main flow, dotted lines =
 context feeding**.
 
 > [!note] "Desenvolvimento" / "Sub-agentes" labels added 2026-08-24
-> [[Fluxo Agêntico diagram v0]] — an earlier PNG render of this same
-> diagram, confirmed by msilva — made visible two side-annotation labels this
-> page hadn't called out individually: `Desenvolvimento` next to A8 and
-> `Sub-agentes` next to A9, alongside the already-recorded `Novos sistemas`
-> next to A7. Folded into the table above rather than duplicated on a
-> separate page.
+> `sources/fluxo agêntico diagrama 0.png` — an earlier PNG render of this same
+> diagram (confirmed by msilva: same underlying diagram, no separate page
+> warranted) — made visible two side-annotation labels this page hadn't
+> called out individually: `Desenvolvimento` next to A8 and `Sub-agentes`
+> next to A9, alongside the already-recorded `Novos sistemas` next to A7.
+> Folded into the table above.
 
 ## Four things the diagram says that the transcript didn't
 
