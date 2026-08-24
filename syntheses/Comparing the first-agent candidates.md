@@ -12,6 +12,12 @@ tags: [agents, planning, decision, a1, a2, a5, a7, a4]
 **A decision doc for [[Agent Flow]]'s deliverable: "one agent actually built", plus
 a proposal for which one and where its first version lives.**
 
+> [!danger] A5 deprioritized entirely — msilva, 2026-08-24
+> [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]: A5 is
+> just one of 14 agents and gets no special focus going forward, as a
+> candidate or as active design. Candidate 2 below is preserved as
+> historical comparison, not a live option.
+
 > [!info] Relationship to the other pages — read this to avoid drift
 > - **The one-pager** for the meeting itself is
 >   [[Meeting prep - first agent decision]].

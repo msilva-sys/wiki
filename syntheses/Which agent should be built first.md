@@ -9,6 +9,12 @@ tags: [agents, planning, a5, a1, a7]
 
 # Which agent should be built first?
 
+> [!danger] A5 deprioritized entirely — msilva, 2026-08-24
+> [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]: A5 is
+> just one of 14 agents and gets no special focus going forward, as a
+> candidate or as active design. Everything below is preserved as the
+> reasoning record, not as a live recommendation — read it as history.
+
 > [!warning] The selection criterion changed on 2026-08-18 — read this first
 > This page was written on 2026-08-17 to answer **"which agent is least likely to
 > fail?"** and concluded **A5 Watcher on [[Airtable Proxy]] telemetry**.

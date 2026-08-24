@@ -3141,3 +3141,22 @@ asked for both ingested directly.
   Perguntas viraram bullets de uma linha em vez de parágrafos. Nenhum fato
   ou convergência removido do conteúdo anterior — só a verbosidade.
 - Updated: `index.md` (linha também encurtada).
+
+## [2026-08-24] decision | despriorizar A5 Watcher como candidato a primeiro agente
+- msilva: *"o Watcher é só mais um agente. Nós não precisamos focar nele."*
+  Perguntei o escopo (só o prep da Carol, também a análise de "qual agente
+  primeiro", ou também o design do A5 em si) — resposta: o mais amplo,
+  despriorizar o design do A5 em si.
+- New: [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]] —
+  registra a decisão; nada do raciocínio técnico é invalidado, só deixa de
+  ser prioridade/foco ativo.
+- Updated: [[Which agent should be built first]] e
+  [[Comparing the first-agent candidates]] (callout no topo apontando para
+  a decisão; conteúdo existente sobre A5 preservado como registro
+  histórico, não recomendação viva); [[How to implement A5 Watcher]]
+  (`status: draft` → `deferred`, callout no topo); [[Agent Flow]] (callout
+  no resumo; item aberto "qual agente primeiro" marcado como resolvido
+  para A5 especificamente, resto continua aberto);
+  [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]] (linha do
+  Watcher/A5 na tabela marcada "se surgir", não item de abertura).
+- Updated: `index.md` (entradas de todas as páginas acima).

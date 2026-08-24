@@ -14,6 +14,13 @@ tags: [agents, llm, automation, onboarding, research]
 > all 14). Architecture: [[Fluxo Agêntico diagram]]. Agenda and open questions:
 > [[What should the Agent Flow research phase study]].
 
+> [!danger] A5 Watcher deprioritized — msilva, 2026-08-24
+> [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]: it's one
+> of 14 agents, not a special focus — as a first-agent candidate or as
+> active design. Everywhere A5 gets detailed treatment below (design paths,
+> cost lever, Gabrielle/Luís tension) is preserved as history, not a
+> standing priority.
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides
@@ -935,7 +942,10 @@ consultant rather than validator.
   step converges it into an executable PRD, modeled on standard
   product-discovery frameworks. Leaned toward yes, not fully settled against
   how it fits the three branches above.
-- **Which agent to build first?** **The selection criterion changed on 2026-08-18** —
+- ~~**Which agent to build first?**~~ **A5 is off the table, 2026-08-24** —
+  [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]] closes it
+  as a candidate regardless of criterion. The rest of the question stays
+  open. **The selection criterion changed on 2026-08-18** —
   msilva's manager wants the agent with the **most utility** first, where the
   2026-08-17 analysis had optimized for lowest risk of failing. Both readings are
   worked through in [[Which agent should be built first]]. Under lowest-risk the

@@ -1,13 +1,18 @@
 ---
 type: synthesis
-status: draft
-updated: 2026-08-19
+status: deferred
+updated: 2026-08-24
 date: 2026-08-17
 aliases: [A5 implementation, watcher implementation]
 tags: [agents, a5, implementation, grafana, observability, n8n]
 ---
 
 # How to implement A5 Watcher
+
+> [!danger] Deferred — msilva, 2026-08-24
+> [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]: not
+> active work for now. Plan preserved as-is so it doesn't need rebuilding
+> if A5 becomes relevant again later.
 
 Concrete build plan. Design rationale and risks are in
 [[Which agent should be built first]]; this page is the *how*.
