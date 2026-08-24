@@ -65,7 +65,8 @@ The Go Pulumi program for this repository should own:
 - required GCP API enablement;
 - an Artifact Registry Docker repository;
 - the Cloud Run runtime service account and least-privilege IAM;
-- Secret Manager secret metadata and access policy for `PROXY_APPS`;
+- ~~Secret Manager secret metadata and access policy for `PROXY_APPS`~~ —
+  **deferred 2026-08-24**, see correction under Secrets below;
 - the Cloud Run v2 service (`internal` ingress, `min=1`, `max>1`, `/healthz`);
 - the serverless NEG;
 - the internal load balancer's backend service, URL map, HTTPS proxy, private
@@ -90,6 +91,18 @@ a new secret version and a new Cloud Run revision. A single `PROXY_APPS` secret
 matches the current code; per-app secrets can be considered when rotation or
 ownership pressure justifies the code change.
 
+> [!warning] Corrected 2026-08-24 — Secret Manager deferred, not built yet
+> Per Luís (relayed by msilva during the `PRO-91` implementation session), the
+> first phase manages `PROXY_APPS` in the codebase/deploy-config layer instead:
+> a Pulumi secret config value, wired straight into the Cloud Run env var.
+> Secret Manager remains the eventual target — this page's shape doesn't
+> change — but `PRO-91`'s actual Pulumi program (`infra/pulumi/` in the repo)
+> does not create any `gcp.secretmanager.*` resources yet. Rotation for now is
+> "edit the Pulumi secret config, `pulumi up`" — the same manual-rotation
+> policy already settled in `PRO-83`, just a different physical location for
+> the value. See
+> [[2026-08-24 Manage Airtable Proxy secrets in the codebase before Secret Manager]].
+
 ## Egress
 
 The first slice uses Cloud Run's normal outbound path to `api.airtable.com`.
@@ -112,5 +125,7 @@ to switch at once.
   private DNS zone.
 - Ownership of the `livemode.space` private DNS zone and TLS certificate.
 - Pulumi state backend (Pulumi Cloud or GCS).
-- Secret-value delivery and rotation procedure.
+- ~~Secret-value delivery and rotation procedure.~~ **Settled for the first
+  phase, 2026-08-24**: Pulumi secret config, not Secret Manager — see the
+  correction under Secrets above.
 - Production OTLP backend and monitoring/notification destination.

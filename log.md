@@ -3066,3 +3066,22 @@ asked for both ingested directly.
   sub-agentes sob demanda.
 - Updated: [[Agent Harness Template]] (nova seção citando as duas fontes),
   `index.md`.
+
+## [2026-08-24] decision | manage Airtable Proxy secrets in the codebase before Secret Manager
+- During the `PRO-91` implementation session (Pulumi program for Cloud Run +
+  Secret Manager), msilva relayed a call from Luís: `PROXY_APPS` stays
+  managed as a Pulumi secret config value for now, wired straight into the
+  Cloud Run env var, rather than moving to GCP Secret Manager. Secret
+  Manager remains the eventual target, just deferred, not dropped.
+- No transcript exists for the source conversation — same gap already
+  flagged 2026-08-18 for an earlier, separate Luís/Secret-Manager
+  conversation that was also never ingested. Flagged again here rather than
+  silently treated as equivalent to a wiki-sourced decision.
+- New: [[2026-08-24 Manage Airtable Proxy secrets in the codebase before Secret Manager]].
+- Updated: [[2026-08-21 Deploy Airtable Proxy privately behind VPN]] (inline
+  correction under "Pulumi ownership" and "Secrets" — Secret Manager
+  resources deferred; "still open" list item on secret-delivery procedure
+  marked settled for this phase); [[Airtable Proxy]] (PRO-91 coded —
+  `infra/pulumi/`: API enablement, Artifact Registry repo, runtime service
+  account, Cloud Run v2 service; NEG/LB/DNS left for a later `PRO-90`
+  sibling); `index.md`.

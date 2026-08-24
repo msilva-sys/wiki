@@ -363,6 +363,28 @@ VPC egress + Cloud NAT only if policy requires a static IP or centralized egress
 forwarding, DNS/certificate ownership, Pulumi state backend, secret-delivery
 procedure, and the production OTLP backend.
 
+> [!tip] PRO-91 coded 2026-08-24 — Cloud Run + Secret Manager, minus Secret Manager
+> Wrote the Go Pulumi program at `infra/pulumi/` (its own module, separate
+> from the proxy's `go.mod`): required API enablement, an Artifact Registry
+> Docker repo, a dedicated Cloud Run runtime service account, and the Cloud
+> Run v2 service itself (`internal` ingress, `min=1`/`max=3`, image supplied
+> via config with a placeholder until CI publishes a real tag). `go build` /
+> `go vet` / `gofmt` all pass; `pulumi preview`/`up` still need msilva's real
+> GCP project and credentials.
+>
+> **Scope narrowed mid-implementation**: per Luís (relayed by msilva),
+> `PROXY_APPS` stays managed as a Pulumi secret config value for this first
+> phase rather than moving into GCP Secret Manager — no
+> `gcp.secretmanager.*` resources were written. See
+> [[2026-08-24 Manage Airtable Proxy secrets in the codebase before Secret Manager]],
+> which also corrects [[2026-08-21 Deploy Airtable Proxy privately behind VPN]]'s
+> "Pulumi ownership" list on this point.
+>
+> Still out of scope, left for a later `PRO-90` sibling: the serverless NEG,
+> internal load balancer, private DNS record, and VPC/subnet wiring — all
+> blocked on the network identifiers in the "before coding" list above, which
+> remain unresolved.
+
 ---
 
 ## The caching landmine (remember this)
