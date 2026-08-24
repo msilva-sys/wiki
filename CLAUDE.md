@@ -3,6 +3,15 @@
 This vault is an **LLM-maintained wiki** about msilva's work at Livemode.
 You are its maintainer. This file governs how you read, write, and reorganize it.
 
+## Audience
+
+This wiki is for **msilva's own use** — sustaining his work, decisions, and
+reflections with data he can point back to. It is not written for a
+teammate to pick up cold, and pages don't need to be self-contained for a
+third party. Generating something shareable from it — a doc, a message, an
+artifact — happens only when msilva explicitly asks for one; it is not a
+default goal of this schema.
+
 ## Three layers
 
 1. **Raw sources** — `C:\Users\msilva\Documents\raw\` — immutable.
@@ -20,17 +29,67 @@ cross-references, consistency, indices, and logs.
 
 ## Directory layout
 
+Two axes decide where something goes. Is the page about an **entity** (a
+stable, nameable thing) or a **proposition** (a claim you hold, at some state
+of settledness)? Two more buckets sit outside that split: raw **evidence**,
+and personal **off-domain** notes.
+
+**Entity pages** — one stable page per nameable thing, meant to be linked
+*to* repeatedly by everything else. Never ask "when was this decided" of one
+of these; it wasn't decided, it just is.
+
 | Folder | Holds | One page per |
 |---|---|---|
 | `projects/` | Ongoing bodies of work | project or initiative |
 | `systems/` | Services, repos, apps, infra | deployable/repo |
-| `concepts/` | Domain & technical knowledge | concept |
 | `people/` | Colleagues, teams, roles, who-owns-what | person or team |
-| `decisions/` | Settled decisions, ADR-style | decision |
+
+**Proposition pages** — a claim you hold about the entities above, filed by
+how settled it is. Check in order, stop at the first "yes":
+
+| Folder | Test | One page per |
+|---|---|---|
+| `decisions/` | Did someone commit to this, at a moment in time? | decision |
+| `concepts/` | Would this still be true if all current context vanished — no owner, no moment it happened? | concept |
+| `syntheses/` | Neither yet — reasoning still being tested against the data | open question |
+
+`syntheses/` is a workbench, not a waiting room. Most decisions and concepts
+never pass through it — they're stated directly and filed straight into
+`decisions/` or `concepts/`. It exists only for reasoning too large or
+uncertain to fit in the body of one of those pages yet.
+
+When a synthesis resolves (`status` moves to `superseded` or `deferred`),
+what happens to it scales with its size, not a fixed rule:
+- **Small** (a paragraph or two of supporting reasoning) — fold into the
+  decision/concept that resolved it, e.g. as a `## Análise` section, and
+  delete the synthesis. Don't leave a stub standing only to say "see that
+  other page."
+- **Large or dense** (an investigation with its own citations, timeline,
+  corrections — evidentiary work in its own right) — leave it as its own
+  archived page, `status: superseded`/`deferred`, cross-linked from the
+  decision it fed. This *is* the data msilva wants decisions sustained by
+  (see **Audience** above); collapsing it into the decision page would bury
+  the decision under the archive, not the other way round.
+
+Merging is fine unprompted; ask before the final delete, per **Rules** below.
+
+**Evidence** — raw material, not a claim about it:
+
+| Folder | Holds | One page per |
+|---|---|---|
 | `sources/` | Summaries of `raw/` documents | raw file (1:1) |
 | `meetings/` | Meeting notes and prep | meeting |
-| `syntheses/` | Cross-cutting write-ups answering a question | question |
-| `reference/` | Personal reference that isn't domain knowledge — cheatsheets, ticket scratch notes | thing |
+
+**Off-domain** — useful to msilva operationally, but not knowledge about
+Livemode's domain at all:
+
+| Folder | Test | One page per |
+|---|---|---|
+| `reference/` | Personal/tool scratch (cheatsheet, ticket note) — not reasoning about Livemode | thing |
+
+If it's reasoning about the domain — even something as informal as "how would
+I share this automation with the team" — it belongs in `syntheses/` or
+`concepts/`, not `reference/`, no matter how personal it feels to write.
 
 Root holds only `CLAUDE.md`, `AGENTS.md`, `README.md`, `index.md`, `log.md`, and
 `notebook/`.

@@ -1,6 +1,6 @@
 ---
 title: Claude capabilities map — accounting / large-data scope
-type: reference
+type: synthesis
 status: active
 updated: 2026-08-17
 date: 2026-08-14

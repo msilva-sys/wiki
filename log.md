@@ -3209,3 +3209,43 @@ asked for both ingested directly.
 - Updated: todos os wikilinks pro nome antigo em `index.md` e neste log
   (`decisions/2026-08-24 Deprioritize A5 Watcher as first-agent
   candidate.md` também corrigido).
+
+## [2026-08-24] refactor | revisar o schema — eixo entidade/proposição, audiência explícita
+- Conversa longa com msilva sobre a estrutura de pastas parecer inflada e
+  difusa, especialmente a fronteira `syntheses/` vs `decisions/` vs
+  `concepts/` vs `reference/`.
+- **Modelo assentado**: duas dimensões, não uma lista plana de pastas.
+  **Entidade** (`projects/`, `systems/`, `people/` — âncora estável pra
+  algo nomeável, nunca "decidida", só é) vs. **proposição** (`decisions/`,
+  `concepts/`, `syntheses/` — uma afirmação, filtrada por teste em ordem:
+  alguém se comprometeu com isso? não, mas seria verdade sem dono nem
+  momento? não, então é raciocínio ainda em teste). Fora disso, **evidência**
+  (`sources/`, `meetings/`) e **fora-do-domínio** (`reference/`, scratch
+  pessoal/ferramental).
+- `syntheses/` redefinida como bancada de trabalho, não corredor
+  obrigatório — a maioria das decisões/conceitos nunca passa por lá.
+- **Correção em cima da própria correção**: a primeira versão da regra
+  dizia "dobrar toda síntese resolvida pra dentro da decisão". Testada
+  contra as 4 sínteses reais do vault (`Comparing the first-agent
+  candidates`, `Which agent should be built first`,
+  `How LiveScript sends the proxy X-App-Id header`, `How to implement A5
+  Watcher`) — são investigações densas de 300-600 linhas, não páginas-
+  ponteiro, e já estão corretamente linkadas às decisões que as
+  resolveram. Fundir teria enterrado a decisão sob o arquivo. Regra final:
+  esconde por tamanho — pequeno raciocínio de apoio dobra pra dentro e
+  apaga a síntese; investigação grande/densa fica arquivada como página
+  própria, `status: superseded`/`deferred`, ligada de volta à decisão.
+  Nenhuma das 4 foi alterada.
+- **Nova seção "Audience"** no `CLAUDE.md`: a wiki é pro uso do próprio
+  msilva, não pra um colega pegar do zero; geração de artefato
+  compartilhável só sob pedido explícito dele.
+- **Aplicado como teste real**: as três páginas em cadeia sobre
+  compartilhar a automação de contabilidade — [[Claude capabilities map -
+  accounting data scope]], [[Sharing the accounting automation with the
+  team]], [[Sharing via Projects - the accounting project]] — são
+  raciocínio de domínio ainda aberto (`status: active`), não scratch
+  pessoal; movidas de `reference/` pra `syntheses/`, frontmatter `type:`
+  corrigido de `reference` pra `synthesis`.
+- Updated: `CLAUDE.md` (seções "Audience" e "Directory layout"),
+  `index.md` (as três linhas movidas de `## Reference` pra
+  `## Syntheses`, com nota da mudança).

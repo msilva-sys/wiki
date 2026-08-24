@@ -1,6 +1,6 @@
 ---
 title: Sharing via Projects — what belongs in the accounting project
-type: reference
+type: synthesis
 status: active
 updated: 2026-08-17
 date: 2026-08-14

@@ -1,6 +1,6 @@
 ---
 title: Sharing the accounting automation with the team — distribution options
-type: reference
+type: synthesis
 status: active
 updated: 2026-08-17
 date: 2026-08-14
