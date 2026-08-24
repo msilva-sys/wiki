@@ -3459,3 +3459,18 @@ asked for both ingested directly.
   there are not being built).
 - Open: no rationale captured beyond the decision itself — flagged
   unverified on the new decision page in case msilva wants one recorded.
+
+## [2026-08-24] decision | Luís confirma o motivo por trás da decisão de base/PAT
+- Luís mandou uma mensagem no Slack (relayed by msilva) confirmando/explicando
+  a decisão anterior: a configuração da PAT no Airtable já resolve o escopo de
+  bases, ele não vê utilidade em duplicar isso no proxy, nem lembra se foi ele
+  quem colocou. Ponto novo: nao deveria haver aplicações compartilhando a
+  mesma PAT.
+- Updated: [[2026-08-24 Control base access via PAT scoping, not proxy logic]]
+  (citação verbatim de Luís na seção Why, dois pontos separados: redundância
+  do allow-list e não-compartilhamento de PAT entre apps). Nota adicionada:
+  o campo `"bases": []` já existe no `PROXY_APPS` do repo
+  (`livemode-airtable-proxy/.env.example`) e fica como follow-up de limpeza,
+  não removido nesta passada.
+- Open: nenhum novo — a decisão em si já estava registrada; isso só preenche
+  o "Why" que tinha ficado marcado como unverified.
