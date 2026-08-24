@@ -97,6 +97,35 @@ the schema into it.**
   left in place if it's a standing opinion with nothing to action; either way
   the actual reasoning lands in `log.md`, not just a marker that it happened.
 
+## Idioma
+
+**Decidido 2026-08-24.** Todo conteúdo novo do wiki — prosa de página,
+linhas de catálogo em `index.md`, entradas de `log.md` — é escrito em
+**pt-BR**. Ficam em inglês apenas:
+
+- **Jargão técnico e nomes próprios**: nomes de sistemas/produtos
+  (`Cloud Run`, `OpenTelemetry`, `Airtable`, `Grafana LGTM`), comandos,
+  chaves e valores de frontmatter (`type: project`, `status: active`,
+  `tags: [airtable, observability]`), nomes de arquivo, alvos de wikilink
+  (`[[Airtable Proxy]]`), e blocos de código.
+- **Citações verbatim**: uma fala atribuída a alguém (reunião, Slack, etc.)
+  não é traduzida se foi dita originalmente em inglês — preserva a fonte
+  primária, mesmo que o resto da página esteja em pt-BR.
+
+**Exceção**: `CLAUDE.md`, `AGENTS.md` e `README.md` continuam em inglês —
+são documentação técnica de operação do agente, não conteúdo do vault.
+
+**Migração é gradual, não em lote.** Páginas já existentes em inglês não são
+retraduzidas proativamente — só quando forem tocadas por outro motivo
+(edição, ingest, fan-out), a prosa dessa página vira pt-BR na mesma
+passada. `log.md` é append-only: entradas antigas em inglês **nunca são
+reescritas**; só as novas seguem pt-BR. O mesmo vale para `index.md` — uma
+linha de catálogo só muda de idioma quando a página que ela descreve for
+atualizada de qualquer forma.
+
+Mesma lógica (mas política distinta, própria do Linear) já vale para issues
+— ver `C:\Users\msilva\.claude\rules\linear-issue-conventions.md`.
+
 ## Dates
 
 **Never ask msilva what date something is.** Work it out, and say which source

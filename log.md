@@ -2967,3 +2967,17 @@ asked for both ingested directly.
   entry to cite `sources/fluxo agêntico diagrama 0.png` directly instead of
   a wikilink to the now-deleted page.
 - Updated: `sources/Fluxo Agêntico diagram.md`, `index.md`.
+
+## [2026-08-24] refactor | Schema: wiki content converts to pt-BR
+- msilva: "gostaria de modificar a wiki para ptBR, mantendo só os jargões e
+  expressões tech em inglês" — added an **Idioma** section to `CLAUDE.md`.
+- New content (page prose, `index.md` catalog lines, `log.md` entries) is
+  pt-BR from now on. English stays only for technical jargon/proper nouns
+  (system names, frontmatter keys/values, filenames, wikilink targets, code
+  blocks) and for verbatim quotes originally spoken in English.
+- `CLAUDE.md` / `AGENTS.md` / `README.md` stay in English — agent-operation
+  docs, not vault content.
+- Migration is gradual, not a mass rewrite: existing English pages convert
+  to pt-BR prose only when next touched for another reason. `log.md`'s past
+  entries are never rewritten (append-only); only new ones follow pt-BR.
+- Updated: `CLAUDE.md`.
