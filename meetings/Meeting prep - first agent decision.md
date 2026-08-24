@@ -1,12 +1,26 @@
 ---
 type: meeting-prep
 status: active
-updated: 2026-08-18
+updated: 2026-08-24
 aliases: [one pager, first agent one pager, first agent prep]
 tags: [agents, planning, decision, meeting-prep]
 ---
 
 # First agent to build — decision needed before 2026-08-24
+
+> [!danger] A5 deprioritized entirely — msilva, 2026-08-24
+> [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]: A5 is just
+> one of 14 agents and gets no special focus going forward, as a candidate or
+> as active design. The recommendation and comparison below still argue A5's
+> case as of 2026-08-18 — kept as reasoning history, not live.
+>
+> **Open question this page can't answer on its own**: this page's meeting
+> ("end of the week beginning 2026-08-17", date never filled in) may never
+> have happened — nothing elsewhere in the wiki records it. If it didn't,
+> the whole recommendation below is stale, not just the A5 point, since the
+> broader "which agent first" conversation moved on considerably by
+> 2026-08-20 (see [[Which agent should be built first]]). Confirm with
+> msilva rather than assuming either way.
 
 > [!note] Meeting date not yet recorded
 > Set for "the end of the week beginning 2026-08-17" with Gabrielle and Luís. Exact

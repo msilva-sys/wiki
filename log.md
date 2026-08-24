@@ -3249,3 +3249,26 @@ asked for both ingested directly.
 - Updated: `CLAUDE.md` (seções "Audience" e "Directory layout"),
   `index.md` (as três linhas movidas de `## Reference` pra
   `## Syntheses`, com nota da mudança).
+
+## [2026-08-24] refactor | Lint fixes — fan-out incompleto da decisão do A5
+- Rodado `lint` completo: reescrita a checagem de wikilinks (bugs próprios de
+  encoding e de continuação de blockquote geravam falsos positivos) —
+  resultado real: **zero links quebrados, zero páginas órfãs**, um dead-end
+  legítimo ([[Zed Cheatsheet]]), zero páginas `status: active` desatualizadas
+  (vault com 2 semanas), zero callouts `[!msilva]` pendentes, cobertura
+  `raw/` completa.
+- **Achado**: [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]
+  atualizou duas sínteses com banner, mas deixou de fora duas páginas que
+  também tratavam A5 como candidato ativo:
+  - [[What should the Agent Flow research phase study]] — o router da fase
+    de pesquisa (21 edições). Adicionado banner `[!danger]` no topo, linha
+    da tabela *Settled* atualizada de "reopened" para "deprioritized
+    entirely", e a pergunta "is A5 still her recommendation" riscada como
+    moot.
+  - [[Meeting prep - first agent decision]] — banner `[!danger]` adicionado.
+    **Não resolvido**: permanece incerto se a reunião que esta página
+    preparava (data nunca preenchida) de fato aconteceu; se não, a
+    recomendação inteira está datada, não só o ponto do A5. Marcado
+    explicitamente na própria página e no `index.md` para confirmação do
+    msilva, não assumido de um jeito ou de outro.
+- Updated: `index.md` (as duas linhas correspondentes).

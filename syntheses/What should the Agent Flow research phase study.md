@@ -1,13 +1,20 @@
 ---
 type: synthesis
 status: active
-updated: 2026-08-19
+updated: 2026-08-24
 date: 2026-08-17
 aliases: [agent flow research, research agenda, agent flow status]
 tags: [agents, research, planning, index]
 ---
 
 # What should the Agent Flow research phase study?
+
+> [!danger] A5 deprioritized entirely — msilva, 2026-08-24
+> [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]: A5 is just one
+> of 14 agents and gets no special focus going forward, as a candidate or as
+> active design, under **any** criterion. Everything below about "which agent
+> first" — settled or open, lowest-risk or utility — is preserved as reasoning
+> history, not a live comparison.
 
 > [!warning] The selection criterion changed on 2026-08-18
 > msilva's manager wants the agent with the **most utility** built first. Everything
@@ -82,7 +89,7 @@ tags: [agents, research, planning, index]
 |---|---|
 | **AI-First** — agents execute, humans approve. Autonomy is the default | [[Fluxo Agêntico project instruction]] |
 | **Anarchic first, integrated second** — agents built independently, in production alone, no cross-dependency | ⇧ |
-| ~~**A5 Watcher first**, targeting proxy telemetry~~ — **reopened 2026-08-18**: settled under a lowest-risk test, not a utility one | [[Which agent should be built first]] |
+| ~~**A5 Watcher first**, targeting proxy telemetry~~ — reopened 2026-08-18 under a utility test, then **deprioritized entirely 2026-08-24** — no longer a candidate under any criterion | [[Which agent should be built first]], [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]] |
 | **A5 does not poll** — Grafana fires, A5 receives. Hybrid: events for incidents, a daily pass for opportunities and liveness | ⇧ |
 | **Grouping + throttling before the agent**, plus a ceiling that fails closed | ⇧ |
 | **Direct access to Prometheus, Loki and the observability stack** — not just alert payloads | ⇧ |
@@ -121,8 +128,10 @@ She is on leave from that week for ~2.5 weeks. **Luís is the primary technical
 contact and works afternoons only.** A deadline-setting meeting with both was set
 for the end of the week beginning 2026-08-17.
 
-- Is **A5 still her recommendation**, given the diagram, the instruction and the
-  Packer material — none of which she had seen when she suggested it?
+- ~~Is **A5 still her recommendation**, given the diagram, the instruction and the
+  Packer material — none of which she had seen when she suggested it?~~
+  **Moot 2026-08-24** — msilva deprioritized A5 as a first-agent candidate
+  regardless of criterion; see the banner at the top of this page.
 - ~~**Orca or LiveScript?**~~ **Resolved 2026-08-18** — Orca and other services are
   to be plugged into the [[Airtable Proxy]], so it is both, through one chokepoint.
   Replaced by: **is Orca's migration sequenced or directional, and when?**
