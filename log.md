@@ -3180,3 +3180,12 @@ asked for both ingested directly.
   levar" no fim. A5/Watcher permanece como uma linha normal, com nota de
   que foi despriorizado em 2026-08-24.
 - Updated: `index.md`.
+
+## [2026-08-24] refactor | usar o diagrama original no prep da Carol
+- msilva: o diagrama deve ser o original (`sources/fluxo agêntico diagrama
+  0.png`), não a recriação em Mermaid da passada anterior.
+- Updated: [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]
+  — bloco Mermaid trocado por embed direto do PNG original
+  (`![[fluxo agêntico diagrama 0.png]]`), já usado como fonte por
+  [[Fluxo Agêntico diagram]].
+- Updated: `index.md`.

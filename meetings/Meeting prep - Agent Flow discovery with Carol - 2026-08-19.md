@@ -19,75 +19,7 @@ a instrução do projeto, e o que Luís e a Gabi já disseram sobre cada um.
 
 ## Diagrama — [[Fluxo Agêntico diagram]]
 
-```mermaid
-%%{init: {'flowchart': {'nodeSpacing': 12, 'rankSpacing': 24, 'curve': 'basis'}, 'themeVariables': {'fontSize': '11px'}}}%%
-flowchart TD
-    BS["Bug sistema"]
-    BM["Bug manual"]
-    TA["Tarefa"]
-    CO["Consultoria"]
-
-    BS --> A1
-    BM --> A1
-    TA --> A1
-    CO --> A1
-
-    A1["A1<br/>Receptor Universal"]
-    A2["A2<br/>Classificador &amp; Decisor"]
-    A1 --> A2
-
-    A2 -->|OPERACIONAL| A3
-    A2 -->|ENABLEMENT| A4
-    A2 -->|PROJETOS| A7
-
-    A3["A3<br/>Executor"]
-    A4["A4<br/>Teacher"]
-
-    A7["A7<br/>Discovery"]
-    A8["A8<br/>Orchestrator"]
-    A9["A9<br/>Developer"]
-    A7 --> A8 --> A9
-
-    A5["A5<br/>Watcher"]
-    A5 -.-> A3
-    A5 -.-> A10
-    A5 -.-> A11
-    A5 -.-> A12
-
-    A10["A10<br/>Portfolio"]
-    A11["A11<br/>Product"]
-    A12["A12<br/>Data Gov"]
-    A13["A13<br/>Deduplication"]
-    A14["A14<br/>PM Agent"]
-
-    A10 <--> A11
-    A11 <--> A12
-    A10 -.-> A9
-    A11 -.-> A9
-    A12 -.-> A9
-    A13 -.-> A1
-
-    A6["A6<br/>Curator"]
-    A2 -.-> A6
-    A9 -.-> A6
-    A14 -.-> A6
-
-    classDef channel fill:#F1EFE8,stroke:#5F5E5A,color:#5F5E5A
-    classDef intake fill:#EEEDFE,stroke:#534AB7,color:#3C3489
-    classDef ops fill:#E1F5EE,stroke:#0F6E56,color:#085041
-    classDef proj fill:#FAEEDA,stroke:#854F0B,color:#633806
-    classDef watch fill:#FCEBEB,stroke:#A32D2D,color:#791F1F
-    classDef transv fill:#FBEAF0,stroke:#993556,color:#72243E
-    classDef curator fill:#EAF3DE,stroke:#3B6D11,color:#27500A,stroke-width:3px
-
-    class BS,BM,TA,CO channel
-    class A1,A2 intake
-    class A3,A4 ops
-    class A7,A8,A9 proj
-    class A5 watch
-    class A10,A11,A12,A13,A14 transv
-    class A6 curator
-```
+![[fluxo agêntico diagrama 0.png]]
 
 Sólido = fluxo principal · pontilhado = contexto/feedback.
 
