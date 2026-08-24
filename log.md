@@ -3091,7 +3091,7 @@ asked for both ingested directly.
   convenção "Idioma" decidida em 2026-08-24 no `CLAUDE.md`. Página tocada
   pela primeira vez desde a decisão, então migra nesta mesma passada em vez
   de esperar por outro motivo.
-- Atualizado: [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]
+- Atualizado: [[Meeting prep - Agent Flow discovery with Carol - 2026-08-24]]
   — prosa inteira traduzida para pt-BR; frontmatter, wikilinks, nomes de
   agente (A1–A14, Watcher, Curator) e a citação verbatim em português
   (*"a ideia é não ser só o nosso time... a empresa toda"*) mantidos como
@@ -3112,7 +3112,7 @@ asked for both ingested directly.
   acontecido — sinalizado explicitamente na própria doc em vez de assumido
   silenciosamente, já que o material acrescentado é cronologicamente
   posterior à data no título da página (2026-08-19).
-- Atualizado: [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]
+- Atualizado: [[Meeting prep - Agent Flow discovery with Carol - 2026-08-24]]
   — novo callout e seção "Convergências já mapeadas antes desta conversa";
   coluna extra na tabela de comparação rápida; bloco "Da conversa com o
   Luís" acrescentado em cada uma das quatro seções de tema que tinham
@@ -3133,7 +3133,7 @@ asked for both ingested directly.
 - msilva: a passada anterior ficou text-heavy demais — meeting preps
   precisam ser mais concisas. Feedback de processo, não específico desta
   doc; guardado em memória para as próximas.
-- Reescrito [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]
+- Reescrito [[Meeting prep - Agent Flow discovery with Carol - 2026-08-24]]
   do zero: os blocos de prosa "Da conversa com a Gabi" / "Da conversa com o
   Luís" repetidos em cada seção de tema foram cortados; todo o conteúdo
   informativo (o que cada um já disse, convergências) agora vive só na
@@ -3157,7 +3157,7 @@ asked for both ingested directly.
   (`status: draft` → `deferred`, callout no topo); [[Agent Flow]] (callout
   no resumo; item aberto "qual agente primeiro" marcado como resolvido
   para A5 especificamente, resto continua aberto);
-  [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]] (linha do
+  [[Meeting prep - Agent Flow discovery with Carol - 2026-08-24]] (linha do
   Watcher/A5 na tabela marcada "se surgir", não item de abertura).
 - Updated: `index.md` (entradas de todas as páginas acima).
 
@@ -3166,7 +3166,7 @@ asked for both ingested directly.
   a descrição de cada um segundo a instrução do projeto, e o que o Luís e a
   Gabi já acharam de cada um — para servir como substrato durante a
   conversa em si, não só como lista de temas a perguntar.
-- Reescrito [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]
+- Reescrito [[Meeting prep - Agent Flow discovery with Carol - 2026-08-24]]
   do zero: diagrama Mermaid copiado de [[Fluxo Agêntico diagram]]; tabela
   de 14 linhas (uma por agente) com descrição resumida de
   [[Fluxo Agêntico project instruction]], coluna "Luís acha" e coluna "Gabi
@@ -3184,7 +3184,7 @@ asked for both ingested directly.
 ## [2026-08-24] refactor | usar o diagrama original no prep da Carol
 - msilva: o diagrama deve ser o original (`sources/fluxo agêntico diagrama
   0.png`), não a recriação em Mermaid da passada anterior.
-- Updated: [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]
+- Updated: [[Meeting prep - Agent Flow discovery with Carol - 2026-08-24]]
   — bloco Mermaid trocado por embed direto do PNG original
   (`![[fluxo agêntico diagrama 0.png]]`), já usado como fonte por
   [[Fluxo Agêntico diagram]].
@@ -3194,7 +3194,18 @@ asked for both ingested directly.
 - msilva pediu para remover a ressalva de leitura (aviso sobre a
   transcrição da Gabi e sobre a conversa ainda não ter acontecido) e a
   seção "Perguntas pra levar" do prep.
-- Updated: [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]
+- Updated: [[Meeting prep - Agent Flow discovery with Carol - 2026-08-24]]
   — doc agora é só a introdução de uma linha, o diagrama, e a tabela dos
   14 agentes; fecha com a instrução de fold pós-conversa.
 - Updated: `index.md`.
+
+## [2026-08-24] refactor | renomear o prep da Carol pra data real da reunião
+- msilva vai se reunir com a Carol hoje (2026-08-24), não em 2026-08-19 —
+  a data original era só de quando o prep foi rascunhado, não da reunião.
+- Renomeado (git mv): `meetings/Meeting prep - Agent Flow discovery with
+  Carol - 2026-08-19.md` -> `meetings/Meeting prep - Agent Flow discovery
+  with Carol - 2026-08-24.md`. Título (H1) atualizado junto; `date:
+  2026-08-24` adicionado ao frontmatter (antes só tinha `updated:`).
+- Updated: todos os wikilinks pro nome antigo em `index.md` e neste log
+  (`decisions/2026-08-24 Deprioritize A5 Watcher as first-agent
+  candidate.md` também corrigido).

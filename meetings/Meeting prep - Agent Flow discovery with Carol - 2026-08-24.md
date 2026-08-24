@@ -2,10 +2,11 @@
 type: meeting-prep
 status: active
 updated: 2026-08-24
+date: 2026-08-24
 aliases: [carol prep, agent flow discovery carol, carol discovery]
 tags: [agents, carol, discovery, meeting-prep, a5, a6, a10, diagram]
 ---
-# Agent Flow discovery with Carol — 2026-08-19
+# Agent Flow discovery with Carol — 2026-08-24
 
 Artefato pra conduzir a conversa: o diagrama, o que cada agente faz segundo
 a instrução do projeto, e o que Luís e a Gabi já disseram sobre cada um.

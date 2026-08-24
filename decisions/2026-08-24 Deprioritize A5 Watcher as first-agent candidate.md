@@ -24,7 +24,7 @@ primeiro agente, nem como design ativo por ora.
   capítulo A5 em vez de deixá-lo em aberto por omissão.
 - **[[How to implement A5 Watcher]]**: plano de build concreto, mas não é
   trabalho ativo agora — marcado `status: deferred`.
-- **[[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]**: o
+- **[[Meeting prep - Agent Flow discovery with Carol - 2026-08-24]]**: o
   tema Watcher/A5 já tinha sido rebaixado a mais uma linha da tabela, não o
   item de abertura — esta decisão confirma essa mudança.
 
