@@ -1,7 +1,7 @@
 ---
 type: synthesis
-status: active
-updated: 2026-08-20
+status: superseded
+updated: 2026-08-24
 date: 2026-08-18
 aliases: [first agent comparison, candidate comparison, first agent doc, first agent trade-offs]
 tags: [agents, planning, decision, a1, a2, a5, a7, a4]
@@ -11,6 +11,12 @@ tags: [agents, planning, decision, a1, a2, a5, a7, a4]
 
 **A decision doc for [[Agent Flow]]'s deliverable: "one agent actually built", plus
 a proposal for which one and where its first version lives.**
+
+> [!danger] Superseded 2026-08-24 — msilva starts with A10 Portfolio
+> [[2026-08-24 Start Agent Flow with A10 Portfolio]]: msilva committed,
+> converging with Gabrielle, Luís and Carol. Everything below — the
+> comparison, "nothing is decided" included — is kept as the reasoning
+> record, not rewritten.
 
 > [!danger] A5 deprioritized entirely — msilva, 2026-08-24
 > [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]: A5 is

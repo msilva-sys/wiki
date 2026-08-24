@@ -1,13 +1,20 @@
 ---
 type: synthesis
-status: active
-updated: 2026-08-20
+status: superseded
+updated: 2026-08-24
 date: 2026-08-17
 aliases: [first agent, A5 first, which agent first]
 tags: [agents, planning, a5, a1, a7]
 ---
 
 # Which agent should be built first?
+
+> [!danger] Superseded 2026-08-24 — msilva starts with A10 Portfolio
+> [[2026-08-24 Start Agent Flow with A10 Portfolio]]: four independent
+> readings (Gabrielle, Luís, Carol, msilva's own pain) converged on A10, and
+> msilva committed. This page's comparison and open questions are kept
+> intact as the reasoning record, not rewritten — read everything below as
+> history, including the sections that predate this convergence.
 
 > [!danger] A5 deprioritized entirely — msilva, 2026-08-24
 > [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]: A5 is

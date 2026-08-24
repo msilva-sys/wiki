@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-08-18
+updated: 2026-08-24
 aliases: [Projeto Farol, farol]
 tags: [farol, data, gcp, finance, bigquery, medallion]
 ---
@@ -107,6 +107,18 @@ page reflects what was said then.
 - **The status-readout failure case.** Reported as having *no deliveries* while Luís
   and Yasmin had *"andaram bastante"*, because it was all inside one parent issue.
   The cleanest demonstration of subtask blindness on record.
+
+## An outside prioritization opinion (2026-08-24)
+
+Carolina Bezerra, giving msilva a worked example of feeling-based
+prioritization in [[2026-08-24 Agent Flow discovery with Carol]]: she does
+not think Farol should have been a priority project. It arrived from
+external demand pressure, never went through a prioritization queue, and
+had already grown large by the time she noticed —
+*"isso tá engasgado aqui na minha boca, na minha garganta"*. She rates it
+low importance against everything else the team could otherwise build.
+Recorded as her candid opinion, not a project-status change — Farol
+remains `active`, in development, per the rest of this page.
 
 ## Open questions
 

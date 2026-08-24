@@ -3364,3 +3364,36 @@ asked for both ingested directly.
   (`index.md`, `projects/Airtable Proxy.md`, `projects/Agent Flow.md`); as
   tensões já registradas (ex.: prazo do proxy vs. metas.md, retry de 429)
   continuam corretamente marcadas como não resolvidas em ambos os lugares.
+
+## [2026-08-24] ingest | Agent Flow discovery com a Carol (reunião das 15:00)
+- Lido `raw/Carol - Matheus.txt` — extração de leitor de tela de um corpo de
+  e-mail, sem timestamps, tags só `Speaker A`/`Speaker B`. Confiança de
+  transcrição marcada como `low`. Speaker A = Carolina Bezerra, Speaker B =
+  msilva (inferido pelo conteúdo: B pergunta sobre "meu 1:1" e "a Gabi"; A
+  se declara fora da autoria do desenho e delega pra Gabi).
+- Novo: [[2026-08-24 Agent Flow discovery with Carol]].
+- **Decisão nova**: [[2026-08-24 Start Agent Flow with A10 Portfolio]] —
+  msilva decide começar por A10 Portfolio, convergência direta de quatro
+  vozes (Gabrielle, Luís, Carol, a própria dor do msilva). Supersede
+  [[Which agent should be built first]] e [[Comparing the first-agent
+  candidates]] (ambas `status: superseded`, mantidas como registro de
+  raciocínio) e atualiza a tabela Settled de [[What should the Agent Flow
+  research phase study]].
+- Pergunta já aberta **respondida**: A12 Data Gov não é trabalho deste time,
+  segundo a Carol — atualizado em
+  [[What should the Agent Flow research phase study]].
+- Novas perguntas abertas: se A3=A9 ainda vale (trecho de baixa confiança
+  reabre a dúvida) e qual dos dois — Luís ou Carol — está certo sobre quais
+  agentes são de fato "transversais" (Luís: só A13; Carol: A10 sim, A11
+  não).
+- Reforço, não mudança: [[2026-08-24 Deprioritize A5 Watcher as first-agent
+  candidate]] ganha confirmação em primeira mão da Carol sobre agentes de
+  monitoramento serem menos prioritários.
+- Atualizado: [[Agent Flow]], [[Carolina Bezerra]] (vira o 1:1 do msilva
+  durante a licença da Gabrielle; framework de priorização em 3 variáveis;
+  opiniões sobre Farol/monitoramento/Teacher/Executor), [[Gabrielle
+  Ferreira]] (cobertura da licença), [[Maria Fernanda Lemos]] e [[João
+  Victor Andrade]] (lacunas reais de rastreamento pro A10), [[Farol]]
+  (opinião da Carol sobre priorização, registrada sem mudar o status do
+  projeto).
+- Atualizado: `index.md`.

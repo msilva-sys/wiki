@@ -21,6 +21,22 @@ tags: [agents, llm, automation, onboarding, research]
 > cost lever, Gabrielle/Luís tension) is preserved as history, not a
 > standing priority.
 
+> [!tip] Building starts with A10 Portfolio — msilva, 2026-08-24
+> [[2026-08-24 Start Agent Flow with A10 Portfolio]]: four independent
+> readings (Gabrielle, Luís, Carol, msilva's own pain) converge, and msilva
+> commits. Same conversation
+> ([[2026-08-24 Agent Flow discovery with Carol]]) surfaces real gaps in
+> A10's data sources — Maria Fernanda Lemos's day-to-day work and João
+> Victor Andrade's CRM backlog live in no shared system, only Linear covers
+> project-shaped work — and a genuine disagreement with Luís's 2026-08-20
+> verdict on which agents are "transversal": Carol thinks **A10
+> (prioritization) is transversal, A11 (usage analysis) is not** (needs a
+> shipped product, so it's post-launch not construction-phase), where Luís
+> found only **A13** transversal. Also new: Carol says **A12 Data Gov isn't
+> this team's job** at all (belongs to the data team); and a low-confidence
+> exchange where msilva's own words seem to reopen the A3=A9 merge rather
+> than confirm it — flagged, not treated as a real reversal.
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides

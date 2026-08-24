@@ -38,3 +38,12 @@ primeiro agente, nem como design ativo por ora.
 Não detalhado por msilva além de *"é só mais um agente, não precisamos
 focar nele"* — registrado como a razão dada, sem inferir motivação
 adicional.
+
+> [!tip] Reforçado pela Carol em primeira mão, mesmo dia
+> [[2026-08-24 Agent Flow discovery with Carol]]: a convergência citada
+> acima vinha até então de segunda mão (relatada por msilva). Nesta
+> conversa, Carol confirma diretamente sua própria opinião: tudo que é
+> "mais voltado para monitoramento" tende a ser menos prioritário pra ela,
+> porque os problemas normalmente ainda são alcançáveis e corrigíveis na
+> mão, rápido o suficiente, sem um watcher automatizado. Não muda a
+> decisão — só troca uma voz relatada por uma voz direta.

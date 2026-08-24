@@ -9,6 +9,13 @@ tags: [agents, research, planning, index]
 
 # What should the Agent Flow research phase study?
 
+> [!danger] "Which agent first" is answered — msilva, 2026-08-24
+> [[2026-08-24 Start Agent Flow with A10 Portfolio]]: four independent
+> readings (Gabrielle, Luís, Carol, msilva's own pain) converged on **A10
+> Portfolio**. [[Which agent should be built first]] and [[Comparing the
+> first-agent candidates]] are now `status: superseded` — read as history.
+> This page keeps routing what's still genuinely open.
+
 > [!danger] A5 deprioritized entirely — msilva, 2026-08-24
 > [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]: A5 is just one
 > of 14 agents and gets no special focus going forward, as a candidate or as
@@ -96,6 +103,8 @@ tags: [agents, research, planning, index]
 | **Monorepo layout, A5-only contents**; `contracts/bug-sistema.md` written first | [[How to implement A5 Watcher]] |
 | **Alert rules stay in the proxy repo**, versioned with the metrics they query | ⇧ |
 | **Limits**: files but never fixes; never quotes payloads or headers; silent unless it can say why | ⇧ |
+| **Start with A10 Portfolio** — four independent voices (Gabrielle, Luís, Carol, msilva) converge | [[2026-08-24 Start Agent Flow with A10 Portfolio]] |
+| **A12 Data Gov isn't this team's job** — belongs to the data team, per Carol | [[2026-08-24 Agent Flow discovery with Carol]] |
 
 ## The one open research question with no home yet
 
@@ -255,8 +264,22 @@ struck through, kept for the record — and the answers reshape the list.
   approach isn't visibly faster. Tension, not resolved either direction.
 - **Is UX/usage-pattern monitoring part of A5 Watcher, or a separate product
   concern?** New 2026-08-19, same source.
-- **Does this team own A12 Data Gov**, or does data-usage validation belong to
-  a platform/foundation layer? New 2026-08-19, Part 2.
+- ~~**Does this team own A12 Data Gov**, or does data-usage validation belong to
+  a platform/foundation layer?~~ **Answered 2026-08-24, Carol**: no —
+  *"isso aqui é com time de dados, isso não deveria estar com a gente."* See
+  [[2026-08-24 Agent Flow discovery with Carol]].
+- **Is A3 Executor the same agent as A9 Developer, or not?** New 2026-08-24,
+  same source, **low transcription confidence** — msilva's own words
+  ("esses dois talvez não sejam a mesma coisa") read as reopening
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]'s A3=A9
+  merge, but the exchange is unclear enough to need a direct check rather
+  than treating it as a real reversal.
+- **Which "transversal intelligences" actually are transversal — Luís's
+  answer or Carol's?** New 2026-08-24. Luís (2026-08-20): only A13. Carol
+  (2026-08-24): A10 (prioritization) is transversal, A11 (usage analysis)
+  is not — it needs a shipped product, so it's post-launch, not
+  construction-phase. Direct disagreement between two named people,
+  unresolved.
 - **Is A13 Deduplication the same agent as A10 Portfolio?** New 2026-08-19,
   Part 2 — redundancy detection shows up in both.
 - **Is A6 a 4-way split, not 2-way?** New 2026-08-19, Part 2 — its four named

@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-20
+updated: 2026-08-24
 aliases: [Gabrielle, Gabi]
 tags: [people, management]
 ---
@@ -13,7 +13,9 @@ meetings ([[2026-08-14 Recap da Semana]], [[2026-08-17 Weekly - Projetos e Taref
 On leave 2026-08-24 → ~2026-09-10 ([[2026-08-18 1-1 Matheus - Gabrielle]]).
 **Refined 2026-08-20**: reachable the first few days of leave (working from
 home), disconnecting more once actually traveling
-([[2026-08-20 1-1 Matheus - Gabrielle]]).
+([[2026-08-20 1-1 Matheus - Gabrielle]]). **Coverage confirmed 2026-08-24**:
+Carolina Bezerra takes over msilva's **1:1s** during the leave; Luís remains
+primary technical contact ([[2026-08-24 Agent Flow discovery with Carol]]).
 
 ## Owns / decides
 
