@@ -3508,3 +3508,20 @@ asked for both ingested directly.
   `index.md`.
 - Open: confirmar tudo isso na reunião de 2026-08-25 — nada aqui foi
   verificado com ela diretamente ainda.
+
+## [2026-08-24] decision | M1 = A10 Portfolio + A14 PM Agent juntos, PoC primeiro
+- Discussão em chat sobre o que seria a M1 do projeto Fluxo Agêntico
+  (Linear, PRO), depois de M0 - Discovery. msilva decide construir A10
+  Portfolio e A14 PM Agent juntos, não em sequência, com uma PoC antes de
+  qualquer build de produção — estendendo a comparação LangGraph vs. Claude
+  Code que o Luís já tinha tarefado num recorte só de A10.
+- Resolve a lacuna deixada em aberto por
+  [[2026-08-24 Start Agent Flow with A10 Portfolio]] (A10+A14 é um build ou
+  dois). Resposta: um build, duas specs (actor→input→output cada, per
+  método do Luís); A14 tem o escopo reduzido nessa fase porque sua spec
+  completa pressupõe um pipeline (A1/A2/A7/A8) que ainda não existe.
+- New: [[2026-08-24 Build A10 and A14 together, PoC first]].
+- Updated: [[Agent Flow]] (novo callout de M1), [[2026-08-24 Start Agent
+  Flow with A10 Portfolio]] (aponta pra resolução), `index.md`.
+- Linear: milestone **M1 - PoC A10 + A14** criada no projeto Fluxo Agêntico
+  (PRO), com issues pra especificar cada agente e rodar a PoC.

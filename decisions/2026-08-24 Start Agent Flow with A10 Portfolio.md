@@ -56,7 +56,9 @@ call msilva is making today.
 - **Whether A10 and A14 PM Agent are one build or two** is not addressed
   here — the syntheses below frame it as "A10+A14," this decision commits
   only to A10 itself, the piece msilva is actually about to touch (the
-  already-tasked LangGraph/Claude-Code prototype).
+  already-tasked LangGraph/Claude-Code prototype). **Answered same day**:
+  [[2026-08-24 Build A10 and A14 together, PoC first]] — one build, two
+  specs, gated by a PoC.
 - **This is not a claim that the other 13 agents are wrong or unimportant**
   — see [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]'s
   same caveat. It is a sequencing call.

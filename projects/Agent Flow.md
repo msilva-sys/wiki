@@ -37,6 +37,15 @@ tags: [agents, llm, automation, onboarding, research]
 > exchange where msilva's own words seem to reopen the A3=A9 merge rather
 > than confirm it — flagged, not treated as a real reversal.
 
+> [!tip] M1 scope settled — A10 + A14 together, PoC first — msilva, 2026-08-24
+> [[2026-08-24 Build A10 and A14 together, PoC first]]: answers the "one
+> build or two" question the A10 decision above left open. A10 Portfolio and
+> A14 PM Agent build together as **M1**, gated by a PoC that extends the
+> LangGraph-vs-Claude-Code prototype Luís already tasked to cover both
+> agents. Each still gets its own actor→input→output spec; A14's scope is
+> narrowed for this phase since its full spec presupposes a pipeline
+> (A1/A2/A7/A8) that doesn't exist yet.
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides
