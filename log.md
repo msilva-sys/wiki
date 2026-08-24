@@ -2981,3 +2981,88 @@ asked for both ingested directly.
   to pt-BR prose only when next touched for another reason. `log.md`'s past
   entries are never rewritten (append-only); only new ones follow pt-BR.
 - Updated: `CLAUDE.md`.
+
+## [2026-08-24] lint | Décimo segundo health check
+
+- Escopo: os 20 arquivos de conteúdo alterados desde o último lint (commit
+  `65c6a69`), lidos por dois agentes em paralelo, mais a varredura mecânica
+  de sempre no vault inteiro.
+- **Mecânico, vault inteiro**: 0 órfãs, 1 dead-end conhecido/aceito
+  ([[Zed Cheatsheet]]), 0 páginas `status: active` estagnadas (a mais antiga
+  tem 13 dias), 0 callouts `[!msilva]` pendentes, 0 wikilinks quebrados
+  novos — os hits de regex restantes são os mesmos falsos-positivos já
+  documentados no 9º/11º lints (`log.md` citando literalmente suas próprias
+  entradas passadas; `[[Page]]`/`[[people/]]` como exemplos do próprio
+  schema).
+- **Achado confirmado, sem mudança**: `raw/Clippings/How we built our
+  multi-agent research system.md` continua ausente — já flagado no 11º
+  lint, já documentado inline em [[How we built our multi-agent research
+  system]].
+- **Duas fontes em `raw/Clippings/` sem página em `sources/`**: `Harness
+  engineering for coding agent users.md` (Böckeler/Martin Fowler) e `How to
+  Build a Custom Agent Harness.md` (Runkle/LangChain), ambas capturadas
+  2026-08-21, mesmo tema (harness).
+- **Contradições reais, não corrigidas ainda** (quatro, relatadas a
+  msilva antes de qualquer mudança):
+  1. [[Proxy Environments]] ainda descrevia o patch de header `X-App-Id`
+     como implantado e necessário — foi revertido 2026-08-18 e toda a
+     abordagem por header foi substituída por roteamento via path
+     ([[2026-08-19 Identify proxy apps by URL path, not header]]).
+  2. [[How LiveScript sends the proxy X-App-Id header]] tinha um banner
+     dizendo "Not yet implemented", mas a identificação por path já estava
+     implementada e endurecida (commits de 2026-08-20/21).
+  3. [[2026-08-18 Bring options to Luís before deciding, communicate async and often]]
+     dizia que a decisão do SDK patch estava "aberta para revisão" — na
+     verdade foi extinta no dia seguinte pela decisão de path, não apenas
+     reaberta.
+  4. [[Agent Flow]] tinha contradição interna e cross-page sobre o status da
+     fusão A1+A2: "Open questions" tratava como posição não resolvida,
+     enquanto outro trecho da mesma página já tratava como fundida, e
+     [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]] já
+     registrava isso como decisão reconfirmada por Luís. [[Luís Fernandez]]
+     também omitia essa fusão na lista das outras da mesma reunião.
+- Não corrigido por decisão consciente: pergunta em aberto de
+  [[2026-08-20 1-1 Matheus - Luís]] respondida 90 min depois na reunião
+  seguinte — tratado como aceitável por serem notas de reunião (fotografia
+  no tempo), não uma contradição a corrigir.
+
+## [2026-08-24] refactor | Correção dos quatro achados do 12º lint
+
+- msilva pediu para aplicar os quatro achados de contradição do lint acima.
+- **[[Proxy Environments]]**: reescrito o callout "Uncommenting alone is not
+  enough" para registrar a linha do tempo completa — header shipado
+  2026-08-17, revertido 2026-08-18, todo o approach substituído por path em
+  2026-08-19 — em vez de descrever o header como solução atual.
+- **[[How LiveScript sends the proxy X-App-Id header]]**: banner corrigido
+  de "Not yet implemented" para "Implemented 2026-08-20/21", citando os
+  commits que endureceram o roteamento por path.
+- **[[2026-08-18 Bring options to Luís before deciding, communicate async and often]]**:
+  frase sobre a decisão do SDK patch estar "aberta para revisão" reescrita
+  para deixar claro que ela foi extinta no dia seguinte, não apenas
+  reaberta.
+- **[[Agent Flow]]**: "Is A1 + A2 one agent or two?" riscado e marcado como
+  fundido/reconfirmado 2026-08-20, citando a fala de Luís
+  ("Para mim eles são a mesma coisa"). **[[Luís Fernandez]]**: adicionada a
+  fusão A1+A2 à lista de vereditos da mesma reunião, que antes só citava
+  A6/A3-A9/A8-A9/transversais.
+- Updated: `systems/Proxy Environments.md`,
+  `syntheses/How LiveScript sends the proxy X-App-Id header.md`,
+  `decisions/2026-08-18 Bring options to Luís before deciding, communicate async and often.md`,
+  `projects/Agent Flow.md`, `people/Luís Fernandez.md`.
+
+## [2026-08-24] ingest | Duas fontes externas sobre harness (Böckeler, LangChain)
+
+- Lidas em full as duas clippings flagadas pelo lint acima, mesmo lote
+  (`raw/Clippings/`, capturadas 2026-08-21), ambas sobre harness de agentes.
+- New: [[Harness engineering for coding agent users]] — modelo mental de
+  Böckeler/Martin Fowler (guias/sensores × computacional/inferencial; três
+  categorias de harness, sendo "behaviour" a mais difícil). Complementa,
+  não repete, o [[Agent Harness Template]] de Luís — eixo de ciclo de
+  controle, não de composição.
+- New: [[How to Build a Custom Agent Harness]] — guia prático de
+  `create_agent`/middleware da LangChain (Runkle). `HumanInTheLoopMiddleware`
+  e `SubAgentMiddleware` mapeiam diretamente em duas perguntas em aberto do
+  [[Agent Flow]]: onde ficam os gates humanos, e como A3/A9 criam
+  sub-agentes sob demanda.
+- Updated: [[Agent Harness Template]] (nova seção citando as duas fontes),
+  `index.md`.

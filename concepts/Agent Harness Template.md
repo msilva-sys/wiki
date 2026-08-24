@@ -1,7 +1,7 @@
 ---
 type: concept
 status: draft
-updated: 2026-08-21
+updated: 2026-08-24
 aliases: [harness template, trigger input harness output, agent template (Luís)]
 tags: [agent-flow, architecture, harness, claude-agent-sdk]
 ---
@@ -55,6 +55,28 @@ This template resolves both into one consistent concept: **Harness = Soul.md + S
 **Not every agent gets its own standalone harness.** msilva ([!msilva] callout, 2026-08-21): some of the 14 agents don't need this template applied to them at all — they may instead be invoked as a Tool/Skill *inside* a parent agent's harness, with no standalone Trigger/Input/Output of their own. This confirms, rather than just echoes, the "maybe just a skill" flag already on A4 Teacher and the transversal group above: those agents may not be top-level entries in [[Agent Flow]] at all, but components nested inside another agent's Skills/Tools layer.
 
 **Trigger Channel sits alongside, not in place of, the four entry channels.** msilva ([!msilva] callout, 2026-08-21): Trigger Channel (Slack, Webhook, Cron, etc.) is a separate axis from [[Agent Flow]]'s four entry channels (`Bug sistema` · `Bug manual` · `Tarefa` · `Consultoria`) — both coexist in the model rather than one replacing the other.
+
+## Leituras externas relacionadas (ingeridas 2026-08-24)
+
+Duas clippings do mesmo lote (`raw/Clippings/`, capturadas 2026-08-21) usam
+"harness" de formas complementares a este template, não idênticas:
+
+- [[Harness engineering for coding agent users]] (Böckeler/Martin Fowler) —
+  descreve o *ciclo de controle* (guias feedforward + sensores feedback,
+  computacional vs. inferencial), não a composição do harness. Sua categoria
+  "behaviour harness" — o comportamento funcional do sistema — é o problema
+  mais difícil de todos, segundo a autora, e é onde A7→A8→A9 (o pipeline de
+  projetos) realmente vive.
+- [[How to Build a Custom Agent Harness]] (Runkle/LangChain) — descreve
+  **como construir** um harness via middleware plugável.
+  `HumanInTheLoopMiddleware` e `SubAgentMiddleware` são infraestrutura já
+  nomeada para duas coisas que o desenho de 14 agentes ainda trata como
+  questão em aberto: onde ficam os gates humanos, e como A3/A9 criam
+  sub-agentes sob demanda.
+
+Nenhuma das duas resolve qual substrato roda o Harness de Luís (Claude Agent
+SDK vs. LangChain `create_agent`) — ficam como vocabulário/comparação, não
+como resposta.
 
 ## Open questions
 
