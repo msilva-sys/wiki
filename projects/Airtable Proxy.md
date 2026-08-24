@@ -673,11 +673,14 @@ communicate async and often]].
       msilva, not yet built)**: a separate "Insights" dashboard on top of
       already-collected telemetry — validated readings so far: anti-pattern
       rate as a trend (not raw count), top tables by wasted bytes, per-base
-      rate-limit headroom with near-breach count, latency by `operation`
-      (dropped the with/without-filter comparison — `airtable_request_latency`
-      doesn't carry `hasFilter` as a metric attribute, only `appId`/`baseId`/
-      `operation`/`status` do; that comparison would need a heavier
-      log-based query), and a cache-candidate estimate scoped to the
+      rate-limit headroom with near-breach count, latency with/without
+      filter (`airtable_request_latency` has no `hasFilter` metric
+      attribute — only `appId`/`baseId`/`operation`/`status` do — so this is
+      LogQL, `quantile_over_time`/`unwrap durationMs`, not PromQL; kept as a
+      low-refresh/manual panel rather than live auto-refresh, since the cost
+      concern is about repeated execution, not the query itself — this
+      reading doesn't change minute to minute), and a cache-candidate
+      estimate scoped to the
       no-filter/no-projection case only (reliable with today's booleans; the
       filtered subset isn't — see `PRO-371` below).
 - [ ] `PRO-371` — detect duplicates among **filtered** Airtable calls
