@@ -3,46 +3,125 @@ type: meeting-prep
 status: active
 updated: 2026-08-24
 aliases: [carol prep, agent flow discovery carol, carol discovery]
-tags: [agents, carol, discovery, meeting-prep, a5, a6, a10]
+tags: [agents, carol, discovery, meeting-prep, a5, a6, a10, diagram]
 ---
-	
+
 # Agent Flow discovery with Carol — 2026-08-19
 
-Discovery geral sobre [[Agent Flow]], não uma reunião de decisão nem
-limitada a um agente.
+Artefato pra conduzir a conversa: o diagrama, o que cada agente faz segundo
+a instrução do projeto, e o que Luís e a Gabi já disseram sobre cada um.
 
-> [!warning] Lado da Gabi é evidência incerta
-> [[2026-08-19 1-1 Matheus - Gabrielle]] perdeu toda atribuição de fala —
-> trate como o próprio raciocínio do msilva, não como citação confirmada
-> dela.
+> [!warning] Duas ressalvas de leitura
+> **Gabi**: [[2026-08-19 1-1 Matheus - Gabrielle]] perdeu toda atribuição de
+> fala — trate a coluna "Gabi" como o raciocínio do próprio msilva, não
+> citação confirmada dela. **Esta conversa**: sem registro de que já
+> aconteceu (2026-08-24) — se já rolou, avisar.
 
-> [!info] Sem registro de que esta conversa já aconteceu (2026-08-24)
-> Se já rolou, avisar — trato o que segue como confirmação, não preparação.
+## Diagrama — [[Fluxo Agêntico diagram]]
 
-## Temas × o que já converge
+```mermaid
+%%{init: {'flowchart': {'nodeSpacing': 12, 'rankSpacing': 24, 'curve': 'basis'}, 'themeVariables': {'fontSize': '11px'}}}%%
+flowchart TD
+    BS["Bug sistema"]
+    BM["Bug manual"]
+    TA["Tarefa"]
+    CO["Consultoria"]
 
-Watcher/A5 é um tema entre outros aqui, não o foco — é só mais um dos 14
-agentes ([[Agent Flow]]).
+    BS --> A1
+    BM --> A1
+    TA --> A1
+    CO --> A1
 
-| Tema | Gabi | Luís | Carol |
+    A1["A1<br/>Receptor Universal"]
+    A2["A2<br/>Classificador &amp; Decisor"]
+    A1 --> A2
+
+    A2 -->|OPERACIONAL| A3
+    A2 -->|ENABLEMENT| A4
+    A2 -->|PROJETOS| A7
+
+    A3["A3<br/>Executor"]
+    A4["A4<br/>Teacher"]
+
+    A7["A7<br/>Discovery"]
+    A8["A8<br/>Orchestrator"]
+    A9["A9<br/>Developer"]
+    A7 --> A8 --> A9
+
+    A5["A5<br/>Watcher"]
+    A5 -.-> A3
+    A5 -.-> A10
+    A5 -.-> A11
+    A5 -.-> A12
+
+    A10["A10<br/>Portfolio"]
+    A11["A11<br/>Product"]
+    A12["A12<br/>Data Gov"]
+    A13["A13<br/>Deduplication"]
+    A14["A14<br/>PM Agent"]
+
+    A10 <--> A11
+    A11 <--> A12
+    A10 -.-> A9
+    A11 -.-> A9
+    A12 -.-> A9
+    A13 -.-> A1
+
+    A6["A6<br/>Curator"]
+    A2 -.-> A6
+    A9 -.-> A6
+    A14 -.-> A6
+
+    classDef channel fill:#F1EFE8,stroke:#5F5E5A,color:#5F5E5A
+    classDef intake fill:#EEEDFE,stroke:#534AB7,color:#3C3489
+    classDef ops fill:#E1F5EE,stroke:#0F6E56,color:#085041
+    classDef proj fill:#FAEEDA,stroke:#854F0B,color:#633806
+    classDef watch fill:#FCEBEB,stroke:#A32D2D,color:#791F1F
+    classDef transv fill:#FBEAF0,stroke:#993556,color:#72243E
+    classDef curator fill:#EAF3DE,stroke:#3B6D11,color:#27500A,stroke-width:3px
+
+    class BS,BM,TA,CO channel
+    class A1,A2 intake
+    class A3,A4 ops
+    class A7,A8,A9 proj
+    class A5 watch
+    class A10,A11,A12,A13,A14 transv
+    class A6 curator
+```
+
+Sólido = fluxo principal · pontilhado = contexto/feedback.
+
+## Os 14 agentes
+
+| Agente | Descrição ([[Fluxo Agêntico project instruction]]) | Luís acha | Gabi acha |
 |---|---|---|---|
-| Qual agente primeiro | 2 dores do msilva (sem backlog cross-project; sem discovery mínimo), ainda sem reação | Confirma dor de visibilidade; relata a mesma na Gabrielle → 3 vozes p/ **A10+A14** ([[2026-08-19 1-1 Matheus - Luís]], [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]) | |
-| A6 Curator vs. skills repo | 4 funções nomeadas; pode ser demais p/ 1 agente | **Veredito: A6 não é agente próprio, por ora**; memória continua crítica; esperar apetite de ritmo da Carol antes de desenhar estrutura ([[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]], [[2026-08-20 1-1 Matheus - Luís]]) | |
-| A10 / intranet tool | Escopo empresa-toda bate com A10 | A10 confirmado distinto de A13 Dedup | |
-| Minimalismo de contexto | Ela relata menos contexto → melhores resultados, vs. Luís mais pesado sem ganho claro | Já estava na própria conversa original (não é relato de segunda mão) | |
-| Escopo A5/Watcher (se surgir) | Caminho A (por projeto) vs. B (consolidador); msilva pende B | Objeção: não escopar no proxy — mais estreita do que parecia (2026-08-18→19, [[Agent Flow]]) | |
+| **A1** Receptor Universal | Captura de qualquer canal (Slack, Monday, email, formulário, webhook, alerta de sistema); normaliza; enriquece via A6/A13. Meta < 10s | **A1+A2 é um agente só** — "para mim eles são a mesma coisa" (2026-08-20). Tudo passa pelo classificador por ora, sem exceção por agente | Dúvida se precisa ser dois agentes ou um (2026-08-19) |
+| **A2** Classificador & Decisor | Análise multi-dimensional (tipo, escopo, complexidade, risco); roteia para um dos 3 ramos | Mesma fusão do A1 | Mesma dúvida do A1 |
+| **A3** Executor | Orquestra bugs/automações/manutenção; cria sub-agentes sob demanda; escala pra humano se falhar; recebe feedback do A5 | **A3 = A9, mesmo agente** (2026-08-20, reverte divisão anterior); sub-agentes de dev são escopo do harness do projeto, não da arquitetura (2026-08-19) | A3 é o rápido/operacional, A9 o de trás do discovery completo (2026-08-19) — divisão que o Luís depois reverteu |
+| **A4** Teacher | Ensina áreas a se virarem sozinhas; diagnostica maturidade L0–L3; tutoriais personalizados; acompanha execução | Reabre se é agente de verdade ou só skill, pelo teste **agir/informar** (2026-08-20); segue distinto do Discovery porque o output difere — resposta a uma pessoa vs. material bruto pra decisão | Padrão dela (2026-08-18): destravar → dar um passo atrás → ajudar sob demanda; sucesso = a pessoa andar sozinha |
+| **A5** Watcher | Saúde a cada 5min, uso a cada hora, relatório a cada 24h; detecta incidente e oportunidade; alimenta A3 | Não deveria ser escopado pelo proxy (2026-08-18, afinado 2026-08-19). **Despriorizado como candidato a primeiro agente, 2026-08-24** — [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]] | Alcance do proxy (Orca) era o argumento de utilidade mais forte (2026-08-18); dois caminhos propostos — A) por projeto, B) consolidador (2026-08-19) |
+| **A6** Curator | Memória institucional, aprendizado contínuo, corporatização (redundância entre áreas), inteligência estratégica — hub, todo agente se conecta | **Não é agente autônomo por ora** — se é só skill, é skill; se é só memória a serviço de outra parte, não precisa de agente dedicado (2026-08-20). Mas organizar bem a memória é "talvez a peça mais importante" do projeto | Nomeou as 4 funções ao vivo; sinalizou que pode ser demais pra um agente só (2026-08-19) |
+| **A7** Discovery | Discovery autônomo via chat; gera PRD completo (histórias, requisitos, arquitetura, estimativa, riscos, MVP-vs-completo); consulta A10/A11/A12; aprovação humana só no fim | "Convergir achados num PRD" pode ser etapa/agente separado do Discovery em si — não fechado (2026-08-20) | Precisa de contexto em vários níveis (produto, portfólio, empresa, Watch); A8 ganha papel de checar se o contexto já é suficiente (2026-08-19) |
+| **A8** Orchestrator | Roda o projeto aprovado — setup, monitoramento diário, riscos/bloqueios, escopo, status a stakeholders, replanejamento, go-live | **A8+A9 ≈ "o próprio Claude Code"** — orquestrador que sobe sub-agentes sob demanda já é isso (2026-08-20) | Novo papel: lê o BRD do A7 e julga se já há contexto suficiente antes de seguir (2026-08-19) |
+| **A9** Developer | Do PRD à produção; cria sub-agentes; stack controlada (React, Python, Node, APIs conhecidas, N8n, Vercel/Replit — sem Go); 3 tentativas, sempre entrega algo funcional | Mesmo agente que A3; sub-agentes de dev são escopo do harness do projeto (2026-08-19); A8+A9 ≈ Claude Code (2026-08-20) | "O revisor trabalhante de produção" — executor específico do pipeline de projetos, atrás do discovery completo, distinto do A3 (2026-08-19) |
+| **A10** Portfolio | Analisa backlog e capacidade; detecta itens travados, priorização desalinhada, gargalos, escopo descontrolado; colabora com A11/A12; "sugere, nunca executa" | É preocupação real e distinta, não "inteligência transversal" genérica (2026-08-20); relata que a própria Gabrielle começaria por aqui, pela dor de visibilidade dela; pediu protótipo em LangGraph pra comparar com Claude puro | Em aberto se a ferramenta de intranet da Carol já é isso (escopo empresa-toda, redundância/anomalia) (2026-08-19); dor dela (visibilidade entre projetos) é por que começaria aqui, relatado pelo Luís (2026-08-20) |
+| **A11** Product | Análise de uso real (DAU/WAU/MAU, features usadas, tempo por tela, erros, abandono); "investiga antes de recomendar" | Também "coisa realmente separada", não intel. transversal genérica (2026-08-20) | A10 alimenta o A11, que analisa uso real e produz os relatórios que o A10 mostra (2026-08-19) |
+| **A12** Data Gov | Soft enforcement (alerta, permite) pra dado sensível/formato errado/baixa qualidade; hard enforcement (bloqueia) pra API externa não autorizada, export de compliance crítico, deleção de base inteira | Trata A12 (com A13) como **"harness"** — camada de guardrail, não agente que raciocina (2026-08-20) | Resolvido como validação de uso de dado (ex.: fonte tem que vir do repositório de competições); dúvida se esse time é dono disso, ou se é da fundação/plataforma (2026-08-19) |
+| **A13** Deduplication | Detecta e bloqueia trabalho duplicado; alimenta contexto pro A1 antes de entrar no fluxo | **O único dos 5 que cabe como "inteligência transversal"** de fato (2026-08-20); tratado como harness junto com A12 | Em aberto se é o mesmo agente que A10 (sobreposição de detecção de redundância) (2026-08-19) |
+| **A14** PM Agent | Acompanha do pedido à entrega; garante visibilidade de status; comunica proativamente; ponto de contato automatizado | Linear já posta release note no Slack sozinho quando um projeto sobe de versão — infra que o A14 (ou algo mais simples) já poderia usar (2026-08-19); terceira voz (com Carol e Gabrielle) apontando **A10+A14** como ponto de partida (2026-08-20) | Camada de log/relatório observando a coluna do projeto, produzindo status a stakeholders pedindo aprovação (2026-08-19) |
 
-## Levar dessa conversa
-- Reação às 2 dores + eventual 3ª dor própria — fecha ou não a
-  convergência A10+A14 acima?
-- Onde termina o repositório de skills e onde entraria (se entrar) alguma
-  função do A6 — já sabendo que ele pode não existir como agente.
-- Intranet = A10 de propósito, ou coincidência?
-- Relato em 1ª mão sobre contexto mínimo.
-- **Apetite de ritmo para decisões de memória** — pedido explícito do Luís
-  antes de trazer opções de build.
-- Se ela mesma trouxer o Watch, comparar contra Caminho A/B — mas não
-  puxar o assunto como prioridade.
+## Perguntas pra levar
+
+- As duas dores do msilva (sem backlog cross-project; sem discovery mínimo)
+  batem com a dela? Fecha a convergência de 3 vozes (Carol/Luís/Gabrielle)
+  em A10+A14?
+- Ferramenta de intranet dela = A10 de propósito, ou coincidência?
+- Onde termina o repositório de skills dela e onde entraria (se entrar)
+  alguma função do A6 — já sabendo que ele pode não existir como agente.
+- Relato em 1ª mão sobre dar menos contexto aos agentes.
+- **Apetite de ritmo dela pra decisões de memória/estrutura** — pedido
+  explícito do Luís antes de trazer opções de build ([[2026-08-20 1-1
+  Matheus - Luís]]).
 
 Fold no [[Agent Flow]], sínteses e `index.md` depois — não durante.
 Divergência com Gabi/Luís → registrar, não escolher vencedor.

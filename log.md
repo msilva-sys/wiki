@@ -3160,3 +3160,23 @@ asked for both ingested directly.
   [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]] (linha do
   Watcher/A5 na tabela marcada "se surgir", não item de abertura).
 - Updated: `index.md` (entradas de todas as páginas acima).
+
+## [2026-08-24] refactor | reformular o prep da Carol como artefato de reunião
+- msilva pediu um formato diferente para o prep: o diagrama dos 14 agentes,
+  a descrição de cada um segundo a instrução do projeto, e o que o Luís e a
+  Gabi já acharam de cada um — para servir como substrato durante a
+  conversa em si, não só como lista de temas a perguntar.
+- Reescrito [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]
+  do zero: diagrama Mermaid copiado de [[Fluxo Agêntico diagram]]; tabela
+  de 14 linhas (uma por agente) com descrição resumida de
+  [[Fluxo Agêntico project instruction]], coluna "Luís acha" e coluna "Gabi
+  acha", cada uma citando a meeting de origem
+  ([[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]],
+  [[2026-08-19 1-1 Matheus - Gabrielle]], [[2026-08-18 1-1 Matheus -
+  Luís]], [[2026-08-19 1-1 Matheus - Luís]]). A tabela por-tema da versão
+  anterior foi retirada — a maior parte das perguntas (A6 vs. skills repo,
+  A10/intranet, qual agente primeiro) já fica embutida no contexto de cada
+  linha da tabela de agentes; sobrou só uma lista curta de "perguntas pra
+  levar" no fim. A5/Watcher permanece como uma linha normal, com nota de
+  que foi despriorizado em 2026-08-24.
+- Updated: `index.md`.
