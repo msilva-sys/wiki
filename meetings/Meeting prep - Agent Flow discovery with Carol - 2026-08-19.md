@@ -5,17 +5,10 @@ updated: 2026-08-24
 aliases: [carol prep, agent flow discovery carol, carol discovery]
 tags: [agents, carol, discovery, meeting-prep, a5, a6, a10, diagram]
 ---
-
 # Agent Flow discovery with Carol — 2026-08-19
 
 Artefato pra conduzir a conversa: o diagrama, o que cada agente faz segundo
 a instrução do projeto, e o que Luís e a Gabi já disseram sobre cada um.
-
-> [!warning] Duas ressalvas de leitura
-> **Gabi**: [[2026-08-19 1-1 Matheus - Gabrielle]] perdeu toda atribuição de
-> fala — trate a coluna "Gabi" como o raciocínio do próprio msilva, não
-> citação confirmada dela. **Esta conversa**: sem registro de que já
-> aconteceu (2026-08-24) — se já rolou, avisar.
 
 ## Diagrama — [[Fluxo Agêntico diagram]]
 
@@ -41,19 +34,6 @@ Sólido = fluxo principal · pontilhado = contexto/feedback.
 | **A12** Data Gov | Soft enforcement (alerta, permite) pra dado sensível/formato errado/baixa qualidade; hard enforcement (bloqueia) pra API externa não autorizada, export de compliance crítico, deleção de base inteira | Trata A12 (com A13) como **"harness"** — camada de guardrail, não agente que raciocina (2026-08-20) | Resolvido como validação de uso de dado (ex.: fonte tem que vir do repositório de competições); dúvida se esse time é dono disso, ou se é da fundação/plataforma (2026-08-19) |
 | **A13** Deduplication | Detecta e bloqueia trabalho duplicado; alimenta contexto pro A1 antes de entrar no fluxo | **O único dos 5 que cabe como "inteligência transversal"** de fato (2026-08-20); tratado como harness junto com A12 | Em aberto se é o mesmo agente que A10 (sobreposição de detecção de redundância) (2026-08-19) |
 | **A14** PM Agent | Acompanha do pedido à entrega; garante visibilidade de status; comunica proativamente; ponto de contato automatizado | Linear já posta release note no Slack sozinho quando um projeto sobe de versão — infra que o A14 (ou algo mais simples) já poderia usar (2026-08-19); terceira voz (com Carol e Gabrielle) apontando **A10+A14** como ponto de partida (2026-08-20) | Camada de log/relatório observando a coluna do projeto, produzindo status a stakeholders pedindo aprovação (2026-08-19) |
-
-## Perguntas pra levar
-
-- As duas dores do msilva (sem backlog cross-project; sem discovery mínimo)
-  batem com a dela? Fecha a convergência de 3 vozes (Carol/Luís/Gabrielle)
-  em A10+A14?
-- Ferramenta de intranet dela = A10 de propósito, ou coincidência?
-- Onde termina o repositório de skills dela e onde entraria (se entrar)
-  alguma função do A6 — já sabendo que ele pode não existir como agente.
-- Relato em 1ª mão sobre dar menos contexto aos agentes.
-- **Apetite de ritmo dela pra decisões de memória/estrutura** — pedido
-  explícito do Luís antes de trazer opções de build ([[2026-08-20 1-1
-  Matheus - Luís]]).
 
 Fold no [[Agent Flow]], sínteses e `index.md` depois — não durante.
 Divergência com Gabi/Luís → registrar, não escolher vencedor.

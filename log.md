@@ -3189,3 +3189,12 @@ asked for both ingested directly.
   (`![[fluxo agêntico diagrama 0.png]]`), já usado como fonte por
   [[Fluxo Agêntico diagram]].
 - Updated: `index.md`.
+
+## [2026-08-24] refactor | cortar ressalva e perguntas do prep da Carol
+- msilva pediu para remover a ressalva de leitura (aviso sobre a
+  transcrição da Gabi e sobre a conversa ainda não ter acontecido) e a
+  seção "Perguntas pra levar" do prep.
+- Updated: [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]
+  — doc agora é só a introdução de uma linha, o diagrama, e a tabela dos
+  14 agentes; fecha com a instrução de fold pós-conversa.
+- Updated: `index.md`.
