@@ -53,3 +53,12 @@ step nobody is performing.
 ## Open questions
 
 - What replaces this once the proxy reaches production? Undefined.
+
+> [!note] Concrete instance, 2026-08-24
+> [[2026-08-24 1-1 Matheus - Luís]]: rather than reading a diff, Luís reviewed
+> a piece of proxy work by watching msilva do a **live walkthrough** of the
+> metrics actually being captured in Grafana — explicitly to avoid the
+> overhead of standing up the environment himself. Same underlying decision
+> (deferred, not absent review), a different mechanism than "read the commit
+> history" described above. msilva also confirmed he still isn't opening PRs
+> for this branch of work, for the same pre-production reasoning.

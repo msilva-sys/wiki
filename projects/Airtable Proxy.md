@@ -385,6 +385,26 @@ procedure, and the production OTLP backend.
 > blocked on the network identifiers in the "before coding" list above, which
 > remain unresolved.
 
+> [!tip] Local integration confirmed under the path scheme, 2026-08-24
+> [[2026-08-24 1-1 Matheus - Luís]]: msilva confirms LiveScript and the proxy
+> run together locally with the URL-path identification scheme
+> ([[2026-08-19 Identify proxy apps by URL path, not header]]), and Grafana
+> shows the data flowing end-to-end — the first confirmation of this since the
+> header-based approach was retired. Metrics captured match the design doc
+> exactly (filter presence, operation, response bytes); **handler-level
+> tracing is still not possible** without a LiveScript-side change (this is
+> the "normalize `app.route`" item below, now confirmed still open, not just
+> unconfirmed).
+>
+> Also on this call: neither of them had actually opened Grafana's
+> pre-existing default **"antipatterns"** dashboard before — it was already
+> firing on msilva's own recent local tests (2× full table scan, 2× select
+> without field projection). Luís wants it turned into a **management-level**
+> view for decision-making (built via code — Claude Code can generate it),
+> distinct from the raw per-request panels. Reviewed this round via a live
+> walkthrough rather than a diff read — see
+> [[2026-08-14 No mandatory PR review while the proxy is pre-production]].
+
 ---
 
 ## The caching landmine (remember this)
@@ -647,6 +667,13 @@ communicate async and often]].
 
 ## Things to actually do
 
+- [ ] Turn Grafana's default "antipatterns" dashboard into a management-level
+      view for decision-making, via code (Claude Code) — 2026-08-24,
+      [[2026-08-24 1-1 Matheus - Luís]].
+- [ ] Commit whatever changed (msilva says env-only) to get LiveScript's
+      `feat/airtable-observability-local` branch working against the proxy;
+      confirm whether the REST-call path needs the same URL-sourcing fix as
+      the SDK path — same call.
 - [ ] Confirm the private-infra inputs in
       [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
 - [ ] Start the Go/Pulumi stack only after those inputs and ownership boundaries

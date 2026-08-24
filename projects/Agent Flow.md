@@ -862,6 +862,15 @@ with what has since been settled marked as such.
 > classifier (A1+A2) uniformly, rather than deciding per-agent whether it can
 > bypass it — *"acho que é precipitado tomar essa decisão."*
 
+> [!tip] Starting the LangGraph/Claude Code PoC, 2026-08-24
+> [[2026-08-24 1-1 Matheus - Luís]]: msilva confirms he's about to start the
+> LangGraph-vs-Claude-Code comparison task above, once the 15:00 meeting with
+> Carol is done. Same call, Luís's instruction for after that meeting: compile
+> **two things separately** — what msilva actually extracted from the various
+> conversations (not his own take), and his own direction/opinion on top of
+> it — then present both to the team. A discovery-methodology note, not yet
+> tied to a specific agent.
+
 > [!tip] The method gets a concrete shape — Luís, Slack message, 2026-08-21
 > [[Agent Harness Template]]: Trigger (Human|Machine) + Trigger Channel →
 > Input → **Harness** (Soul.md, Skills, Tools, MCP) → Output. Same

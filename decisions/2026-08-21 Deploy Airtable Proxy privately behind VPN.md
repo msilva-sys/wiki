@@ -124,8 +124,22 @@ to switch at once.
 - Whether the VPN routes directly into that VPC and how VPN clients resolve the
   private DNS zone.
 - Ownership of the `livemode.space` private DNS zone and TLS certificate.
-- Pulumi state backend (Pulumi Cloud or GCS).
+- Pulumi state backend (Pulumi Cloud or GCS). **2026-08-24**: currently Pulumi
+  Cloud. Luís floats testing GCS instead — never used it that way before,
+  expects less visibility as the trade-off, unsure the project is even big
+  enough to need what Pulumi Cloud gives for free. Still undecided; deferred
+  past 2026-08-24, not blocking. See [[2026-08-24 1-1 Matheus - Luís]].
 - ~~Secret-value delivery and rotation procedure.~~ **Settled for the first
   phase, 2026-08-24**: Pulumi secret config, not Secret Manager — see the
   correction under Secrets above.
 - Production OTLP backend and monitoring/notification destination.
+
+> [!warning] GCP account-tier risk, surfaced 2026-08-24
+> Per Luís ([[2026-08-24 1-1 Matheus - Luís]]): on Livemode's current (first
+> paid) GCP account tier, there is no per-user project isolation — anyone
+> added to the account can see every project, not just the ones they work on.
+> Luís believes only the **Enterprise** tier fixes this. That's a real risk
+> for a single shared GCP project (see "Central infrastructure" above): one
+> person's mistake in an unrelated project could affect this one, or vice
+> versa. Not resolved — flagged for when more people get account access, not
+> acted on yet.

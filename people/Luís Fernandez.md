@@ -66,3 +66,14 @@ sometimes builds directly, otherwise supports.
   Portfolio prototype in **LangGraph** and compare it against building the
   same thing directly in Claude, to settle whether a framework is even
   needed — same conversation.
+- Reviews pre-production proxy work by watching a **live walkthrough** of
+  captured metrics rather than reading a diff, when standing up the review
+  environment himself would cost more time than it's worth
+  ([[2026-08-24 1-1 Matheus - Luís]]).
+- Wants to build the GCP Cloud Run/Pulumi deploy step **together** with
+  msilva rather than solo, explicitly so msilva learns how Luís evaluates and
+  critiques that kind of setup — same call, 2026-08-24.
+- Flags a GCP account-tier risk: the current (first paid) plan has no
+  per-user project isolation, so anyone with account access can see every
+  project; he believes only the Enterprise tier fixes it — 2026-08-24, see
+  [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].

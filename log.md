@@ -3302,3 +3302,28 @@ asked for both ingested directly.
   [[2026-08-19 Identify proxy apps by URL path, not header]] não estava
   refletida no bloco de código), e novo callout documentando a cobertura
   parcial do SDK vs. REST hand-rolled.
+
+## [2026-08-24] ingest | 1:1 Matheus - Luís (14:43)
+- Lido raw/Luis _ Matheus - 2026_08_24 14_43 GMT-03_00 - Anotações do Gemini.md.
+- Novo: [[2026-08-24 1-1 Matheus - Luís]].
+- Confirmações: integração local LiveScript+proxy funcionando end-to-end sob
+  o esquema de identificação por URL path; rastreamento por Handler ainda
+  depende de mudança do lado do LiveScript, não feito. Achado o dashboard
+  padrão "antipatterns" do Grafana (nunca aberto antes) já disparando 2× full
+  table scan e 2× select sem projeção nos testes locais do msilva.
+- Novo item aberto: risco de isolamento por conta GCP (plano atual não isola
+  projetos entre usuários; só Enterprise resolveria, segundo Luís).
+- Reforçado, não substituído: [[2026-08-14 No mandatory PR review while the
+  proxy is pre-production]] — instância concreta via review por demo ao vivo.
+- Atualizado: [[2026-08-21 Deploy Airtable Proxy privately behind VPN]] —
+  pergunta do backend de estado do Pulumi (Cloud vs. GCS) detalhada, ainda
+  aberta; novo callout sobre o risco de tier da conta GCP.
+- Atualizado: [[Airtable Proxy]] — confirmação de integração local, item de
+  dashboard gerencial e commit da branch de observabilidade adicionados a
+  "Things to actually do".
+- Atualizado: [[Agent Flow]] — msilva confirma início do PoC LangGraph vs.
+  Claude Code (tarefa de 2026-08-20); instrução de Luís pra compilar extração
+  vs. opinião própria separadamente após a reunião com a Carol.
+- Atualizado: [[Luís Fernandez]] — preferência por review via demo ao vivo,
+  pareamento no deploy GCP, e o alerta sobre o tier de conta GCP.
+- Atualizado: `index.md`.
