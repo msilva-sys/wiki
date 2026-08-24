@@ -11,6 +11,12 @@ tags: [agents, carol, discovery, meeting-prep, a5, a6, a10, diagram]
 Artefato pra conduzir a conversa: o diagrama, o que cada agente faz segundo
 a instrução do projeto, e o que Luís e a Gabi já disseram sobre cada um.
 
+> [!tip] A reunião aconteceu — ver [[2026-08-24 Agent Flow discovery with Carol]]
+> Este artefato de preparo é mantido como estava, pra registrar o que já se
+> sabia entrando na conversa. O que de fato saiu dela — decisão de começar
+> por A10 Portfolio, opiniões da Carol, perguntas novas — está na página da
+> reunião real: [[2026-08-24 Agent Flow discovery with Carol]].
+
 ## Diagrama — [[Fluxo Agêntico diagram]]
 
 ![[fluxo agêntico diagrama 0.png]]

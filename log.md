@@ -3397,3 +3397,30 @@ asked for both ingested directly.
   (opinião da Carol sobre priorização, registrada sem mudar o status do
   projeto).
 - Atualizado: `index.md`.
+
+## [2026-08-24] lint | health check pós-ingest da reunião com a Carol
+- **Links**: zero quebrados — recontagem mecânica incluindo as páginas
+  novas (`decisions/2026-08-24 Start Agent Flow with A10 Portfolio.md`,
+  `meetings/2026-08-24 Agent Flow discovery with Carol.md`) confirma o
+  mesmo resultado do lint anterior; os dois "alvos" novos que apareceram
+  (`Gabrielle`, `João`) são quebras de linha suaves dentro do próprio
+  registro deste log, não links reais.
+- **Órfãos e dead-end**: sem mudança — nenhuma página nova ficou sem link
+  de entrada; `reference/Zed Cheatsheet.md` continua o único dead-end real,
+  já registrado.
+- **`updated:` de todo arquivo tocado hoje**: confirmado `2026-08-24` em
+  todos — sem repetição do defeito do lint anterior.
+- **Achado e corrigido**: `meetings/Meeting prep - Agent Flow discovery
+  with Carol - 2026-08-24.md` (o artefato de preparo) não apontava pra
+  reunião real depois que ela aconteceu — adicionado um callout curto
+  apontando pra [[2026-08-24 Agent Flow discovery with Carol]], mantendo o
+  resto do artefato como estava (registro do que já se sabia antes da
+  conversa). Linha correspondente em `index.md` também atualizada.
+- **`[!msilva]` pendentes**: nenhum novo.
+- Nenhuma contradição nova entre as três syntheses de "qual agente primeiro"
+  e a decisão nova — os banners de `superseded` em
+  [[Which agent should be built first]] e [[Comparing the first-agent
+  candidates]] apontam consistentemente pra
+  [[2026-08-24 Start Agent Flow with A10 Portfolio]], e a tabela Settled de
+  [[What should the Agent Flow research phase study]] reflete o mesmo
+  desfecho.
