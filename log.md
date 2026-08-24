@@ -3128,3 +3128,16 @@ asked for both ingested directly.
   Carol antes de desenhar estrutura de memória; (4) A10 confirmado distinto
   de A13 Deduplication.
 - Updated: `index.md`.
+
+## [2026-08-24] refactor | reescrever o prep da Carol bem mais enxuto
+- msilva: a passada anterior ficou text-heavy demais — meeting preps
+  precisam ser mais concisas. Feedback de processo, não específico desta
+  doc; guardado em memória para as próximas.
+- Reescrito [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]
+  do zero: os blocos de prosa "Da conversa com a Gabi" / "Da conversa com o
+  Luís" repetidos em cada seção de tema foram cortados; todo o conteúdo
+  informativo (o que cada um já disse, convergências) agora vive só na
+  tabela de comparação, uma linha por tema, três colunas (Gabi/Luís/Carol).
+  Perguntas viraram bullets de uma linha em vez de parágrafos. Nenhum fato
+  ou convergência removido do conteúdo anterior — só a verbosidade.
+- Updated: `index.md` (linha também encurtada).
