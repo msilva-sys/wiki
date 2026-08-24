@@ -3327,3 +3327,40 @@ asked for both ingested directly.
 - Atualizado: [[Luís Fernandez]] — preferência por review via demo ao vivo,
   pareamento no deploy GCP, e o alerta sobre o tier de conta GCP.
 - Atualizado: `index.md`.
+
+## [2026-08-24] lint | health check pós-ingest do 1:1 das 14:43
+- **Links**: zero wikilinks quebrados (recontagem mecânica confirma o
+  resultado do lint anterior — os únicos "alvos" que não batem com uma
+  página real são quebras de linha suaves dentro de `[[...]]` já
+  documentadas, mais o exemplo genérico `[[Page]]` do `CLAUDE.md` e citações
+  históricas dentro deste próprio log).
+- **Órfãos**: nenhum — toda página de conteúdo tem pelo menos um link de
+  entrada; só `AGENTS.md`/`CLAUDE.md`/`README.md`/`index.md` não têm, o que é
+  esperado e isento pelo schema.
+- **Dead-end** (zero link de saída): `reference/Zed Cheatsheet.md` — esperado
+  para um cheatsheet pessoal, não é um problema real, só registrado porque o
+  checklist do lint pede.
+- **`raw/` sem página correspondente**: nenhum de fato — todo arquivo
+  substancial em `raw/` (incluindo os dois `Clippings` do Gabriel Packer e os
+  quatro de harness/multi-agent) já tem página em `sources/` ou `meetings/`.
+  `raw/Novo(a) Documento de Texto.txt` é um placeholder de 0 bytes, sem
+  conteúdo pra ingerir.
+- **Achado, não é erro do wiki**: `raw/2026-06-14-Papo de Projetos  -
+  Anotações do Gemini.docx` tem data errada no nome do arquivo — o cabeçalho
+  interno do documento diz "ago. 14, 2026", batendo com
+  [[2026-08-14 Papo de Projetos]] (que já usa a data certa). Nome do arquivo
+  só é renomeado a pedido explícito do msilva, por regra.
+- **Páginas `status: active` desatualizadas (30+ dias)**: nenhuma — o vault
+  todo tem duas semanas, a página mais antiga sem toque é de 2026-08-11.
+- **Callouts `[!msilva]` pendentes**: nenhum — os dois encontrados
+  (`concepts/Agent Harness Template.md`, `decisions/2026-08-19 Identify proxy
+  apps by URL path, not header.md`) já são citações de callouts já resolvidos
+  e removidos, não blocos `> [!msilva]` ainda vivos.
+- **Defeito real encontrado e corrigido**: `decisions/2026-08-14 No mandatory
+  PR review while the proxy is pre-production.md` tinha `updated: 2026-08-17`
+  mesmo depois de eu ter editado essa página no ingest de hoje (adicionei a
+  nota do review por demo ao vivo) — `updated:` corrigido pra 2026-08-24.
+- Nenhuma contradição intra-página nova encontrada nas páginas mais editadas
+  (`index.md`, `projects/Airtable Proxy.md`, `projects/Agent Flow.md`); as
+  tensões já registradas (ex.: prazo do proxy vs. metas.md, retry de 429)
+  continuam corretamente marcadas como não resolvidas em ambos os lugares.
