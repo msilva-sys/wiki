@@ -3424,3 +3424,24 @@ asked for both ingested directly.
   [[2026-08-24 Start Agent Flow with A10 Portfolio]], e a tabela Settled de
   [[What should the Agent Flow research phase study]] reflete o mesmo
   desfecho.
+
+## [2026-08-24] refactor | PRO-371 criada — gap de duplicata em chamadas filtradas
+- Durante um brainstorm em chat (não uma sessão de ingest) sobre um novo
+  dashboard de "insights" no Grafana em cima da telemetria já coletada pelo
+  proxy, surgiu um gap real: `hasFilter`/`hasFieldProjection` no proxy
+  (`internal/proxy/telemetry.go`, `proxy.go emit()`) são só booleanos — o
+  conteúdo real do filtro/campos nunca é logado. Isso é suficiente pra
+  detectar duplicata/candidato-a-cache no caso sem filtro (full-table scan,
+  não tem parâmetro pra variar), mas não no subconjunto **com filtro**: duas
+  chamadas filtradas diferentes são indistinguíveis nos dados de hoje.
+- msilva pediu pra mapear isso no backlog do Linear em vez de resolver agora.
+  Delegado ao agente `pm-linear`: criou **`PRO-371`** ("Detectar duplicatas
+  entre chamadas filtradas ao Airtable"), projeto "Proxy em produção
+  validado c/ LiveScript", parent `PRO-74` (mesma milestone das irmãs
+  `PRO-75`/`76`/`77`), label `Task`, sem estimate (nenhuma irmã tem).
+  Descrição registra a direção discutida (hash do filtro/fields, não o
+  valor cru) como algo a explorar, não solução fechada.
+- Updated: [[Airtable Proxy]] (nova linha em "Things to actually do").
+- Open: o próprio dashboard de insights ainda não foi construído — essa
+  issue só destrava a fatia filtrada dele; o caso sem filtro (#5 original,
+  full-scan) já é construível com o dado atual.

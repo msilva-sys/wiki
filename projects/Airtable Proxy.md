@@ -669,7 +669,23 @@ communicate async and often]].
 
 - [ ] Turn Grafana's default "antipatterns" dashboard into a management-level
       view for decision-making, via code (Claude Code) — 2026-08-24,
-      [[2026-08-24 1-1 Matheus - Luís]].
+      [[2026-08-24 1-1 Matheus - Luís]]. **In design (2026-08-24, chat with
+      msilva, not yet built)**: a separate "Insights" dashboard on top of
+      already-collected telemetry — validated readings so far: anti-pattern
+      rate as a trend (not raw count), top tables by wasted bytes, per-base
+      rate-limit headroom with near-breach count, latency by `operation`
+      (dropped the with/without-filter comparison — `airtable_request_latency`
+      doesn't carry `hasFilter` as a metric attribute, only `appId`/`baseId`/
+      `operation`/`status` do; that comparison would need a heavier
+      log-based query), and a cache-candidate estimate scoped to the
+      no-filter/no-projection case only (reliable with today's booleans; the
+      filtered subset isn't — see `PRO-371` below).
+- [ ] `PRO-371` — detect duplicates among **filtered** Airtable calls
+      specifically (the no-filter case above is already solid). Proxy today
+      only logs `hasFilter`/`hasFieldProjection` as booleans, not the actual
+      filter/fields content, so two differently-filtered calls to the same
+      table are indistinguishable. Proposed direction (not decided): log a
+      hash of `filterByFormula`+`fields`, not the raw value.
 - [ ] Commit whatever changed (msilva says env-only) to get LiveScript's
       `feat/airtable-observability-local` branch working against the proxy;
       confirm whether the REST-call path needs the same URL-sourcing fix as
