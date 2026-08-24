@@ -3445,3 +3445,17 @@ asked for both ingested directly.
 - Open: o próprio dashboard de insights ainda não foi construído — essa
   issue só destrava a fatia filtrada dele; o caso sem filtro (#5 original,
   full-scan) já é construível com o dado atual.
+
+## [2026-08-24] decision | Base access via PAT scoping, not proxy logic
+- msilva decided in chat (no transcript) that [[Airtable Proxy]] will not
+  implement its own base-level authorization: no per-app base allow-list
+  enforced in the proxy's code. Which bases an app can reach is controlled
+  by how that app's Airtable PAT is scoped in Airtable itself.
+- New: [[2026-08-24 Control base access via PAT scoping, not proxy logic]].
+- Updated: [[Airtable Proxy]] (trust-model wording, resolves the "one base
+  or all bases in v1" open question), [[2026-08-21 Deploy Airtable Proxy
+  privately behind VPN]] (inline correction — the "base allow-list"
+  verification step and "per-app base allow-lists" mitigation described
+  there are not being built).
+- Open: no rationale captured beyond the decision itself — flagged
+  unverified on the new decision page in case msilva wants one recorded.

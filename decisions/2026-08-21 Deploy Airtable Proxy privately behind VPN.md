@@ -26,15 +26,22 @@ A caller uses an endpoint such as:
 https://proxy.livemode.space/livescript/v0/...
 ```
 
-The proxy resolves `livescript` in `PROXY_APPS`, verifies the configured base
-allow-list, removes the app-id segment, replaces any incoming authorization with
-the corresponding Airtable PAT, and forwards the canonical `/v0/...` request.
-The PAT is never returned to the caller or written to telemetry.
+The proxy resolves `livescript` in `PROXY_APPS`, removes the app-id segment,
+replaces any incoming authorization with the corresponding Airtable PAT, and
+forwards the canonical `/v0/...` request. The PAT is never returned to the
+caller or written to telemetry.
+
+> [!warning] Corrected 2026-08-24 — no base allow-list in the proxy
+> This originally described the proxy as verifying "the configured base
+> allow-list" as a request-path step. There is no such step — base access is
+> controlled by how each PAT is scoped in Airtable, not by proxy code. See
+> [[2026-08-24 Control base access via PAT scoping, not proxy logic]].
 
 In this phase, the app ID is an identifier, not proof of identity: any workload
 that can reach the proxy through the trusted network could claim another known
-app ID. This is an explicit first-phase trade-off, mitigated by private ingress,
-least-privilege PATs, and per-app base allow-lists.
+app ID. This is an explicit first-phase trade-off, mitigated by private
+ingress and least-privilege PATs scoped per app in Airtable — not by
+proxy-enforced base allow-lists, per the correction above.
 
 ## Planned private request path
 

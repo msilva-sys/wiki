@@ -16,7 +16,9 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > next production step is the Go/Pulumi private-infrastructure slice recorded in
 > [[2026-08-21 Deploy Airtable Proxy privately behind VPN]]. App-key
 > authentication remains a future layer; the first deployment trusts the VPN
-> and uses the app-id path for PAT selection, base authorization, and telemetry.
+> and uses the app-id path for PAT selection and telemetry. Base access is
+> controlled by PAT scoping in Airtable itself, not by proxy logic — see
+> [[2026-08-24 Control base access via PAT scoping, not proxy logic]].
 > msilva merges his own PRs
 > ([[2026-08-14 No mandatory PR review while the proxy is pre-production]]).
 > First confirmed anti-pattern found in the wild: an events-panel query returning
@@ -337,9 +339,11 @@ Internal apps -> VPN -> GCP VPC -> private DNS (proxy.livemode.space)
 ```
 
 **Trust model now.** Network reachability through the VPN gates access. The
-app-id path selects the PAT, base allow-list, and telemetry identity; it does
-not authenticate the caller. A future app key adds proof of identity without
-making the service public.
+app-id path selects the PAT and telemetry identity; it does not authenticate
+the caller. There is no base allow-list in the proxy — base access is
+controlled by how each PAT is scoped in Airtable, not by proxy code, see
+[[2026-08-24 Control base access via PAT scoping, not proxy logic]]. A future
+app key adds proof of identity without making the service public.
 
 **Central infrastructure supplied to the app stack:** existing GCP project,
 VPC/VPN and routes, frontend and proxy-only subnets, private DNS zone, and TLS
@@ -593,7 +597,9 @@ These remain open (design §14):
   communicate async and often]]. Matches msilva's stated lean (toolchain/CI
   consistency with the proxy).
 - Notification channel (Slack / PagerDuty / email); where the app API-key map
-  lives when that future layer ships; one base or all bases in v1.
+  lives when that future layer ships; ~~one base or all bases in v1~~
+  **resolved 2026-08-24**: no proxy-side base restriction at all — see
+  [[2026-08-24 Control base access via PAT scoping, not proxy logic]].
 - **Private-infra inputs** — GCP project/region; VPC, frontend subnet and
   proxy-only subnet IDs; VPN DNS forwarding; private-zone and certificate
   ownership; Pulumi state backend; whether egress must use a static IP/NAT.
