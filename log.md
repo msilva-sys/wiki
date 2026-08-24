@@ -3487,3 +3487,24 @@ asked for both ingested directly.
 - Updated: `index.md`.
 - Open: nenhum ainda — perguntas ficam pra reunião real; page fica como
   `meeting-prep` até a reunião acontecer e virar `meetings/2026-08-25 ...`.
+
+## [2026-08-24] refactor | Mafé é a instância humana do front de Enablement/A4
+- msilva colou no chat o cargo real de [[Maria Fernanda Lemos]], extraído do
+  Hub interno (`Brain`, `pessoas/maria-fernanda-mafe`): Analista Pleno,
+  Produto UX & Adoção de IA, camada **Habilitadores de IA** — apoio reativo
+  às áreas, escalado ao letramento de cada uma, sem construir por elas; PM
+  em projetos de produto à parte; segunda posição da cadeira vaga (Caio
+  recusou).
+- Achado central: essa descrição bate quase ponto a ponto com a
+  especificação de **A4 Teacher** e também cobre parte da função de
+  "corporatização" de **A6 Curator** ([[Fluxo Agêntico project instruction]]).
+  Muda a leitura do gap que a Carol tinha apontado (2026-08-24, reunião
+  anterior) — a hipótese agora é que o não-rastreado é especificamente o
+  registro de interações de apoio, não o trabalho de PM dela.
+- Updated: [[Maria Fernanda Lemos]] (reescrita com o cargo real),
+  [[Agent Flow]] (nota nos "três fronts" e no open question de A4 Teacher),
+  [[Meeting prep - Agent Flow discovery with Mafé and João Victor - 2026-08-25]]
+  (novo propósito da reunião, nova tabela de perguntas específicas pra A4),
+  `index.md`.
+- Open: confirmar tudo isso na reunião de 2026-08-25 — nada aqui foi
+  verificado com ela diretamente ainda.

@@ -89,6 +89,26 @@ The architecture mirrors how the area actually works today:
 3. **Quick execution** — pointed demands on things already built: production
    breakage, small fixes, a newly requested feature.
 
+> [!important] Front 2 already has a human occupant — [[Maria Fernanda Lemos]], 2026-08-24
+> Pasted by msilva from the internal `Brain`/Hub entry
+> (`pessoas/maria-fernanda-mafe`): Mafé's actual role, **Analista Pleno,
+> Produto, UX & Adoção de IA**, sits in a layer literally called
+> **Habilitadores de IA** — the same word this section uses. Her listed
+> responsibilities map closely onto two agents at once, not just one:
+> - **A4 Teacher** — reactive support scaled to each area's literacy level
+>   (product, UX, vibecoding, LLM use); the success shape Gabrielle
+>   described (*"destravar → passo atrás → ajudar sob demanda"*) matches
+>   Mafé's *"apoiar a construção das próprias soluções — não construir por
+>   elas"* almost word for word.
+> - **A6 Curator's "corporatização" function** — she's tasked with spotting
+>   when an individual solution should become a corporate one, i.e. exactly
+>   the cross-area redundancy detection A6 is specified to do.
+> This resolves part of the open "does A4 overlap the Claude Code training
+> programme" question differently than expected: the overlap risk isn't
+> with the training programme, it's with an **existing formal role**.
+> Understand her actual practice before designing A4 — see
+> [[Meeting prep - Agent Flow discovery with Mafé and João Victor - 2026-08-25]].
+
 ## Proposed shape — 14 agents
 
 Rewritten 2026-08-17 from the design diagram itself
@@ -1018,7 +1038,11 @@ consultant rather than validator.
   So A7 cannot be evaluated on utility at all — which is itself an argument for
   A1 + A2, the build that would produce the number.
 - **Is A4 Teacher actually a standalone agent, or a skill nested inside
-  another agent?** New 2026-08-20, from
+  another agent?** **New context 2026-08-24**: [[Maria Fernanda Lemos]]'s
+  actual job (*Habilitadores de IA*) is the human version of this front —
+  the agir/informar test below should be run against her real practice,
+  not just the instruction's abstract spec, once the 2026-08-25 meeting
+  happens. New 2026-08-20, from
   [[2026-08-20 1-1 Matheus - Luís]] — the first concrete test case for
   msilva's own agir/informar heuristic (act/reason vs. purely inform). The
   table entry above predates the heuristic and hasn't been re-checked
