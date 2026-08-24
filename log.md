@@ -3099,3 +3099,32 @@ asked for both ingested directly.
   — só tradução. `updated:` avançado para 2026-08-24.
 - Updated: `index.md` (linha reescrita em pt-BR, nota de tradução
   adicionada).
+
+## [2026-08-24] refactor | explicitar convergências com Luís e Gabi no prep da Carol
+- msilva pediu para explicitar, no mesmo prep, pontos já conversados com o
+  Luís e a Gabi e onde eles convergem — a doc original (2026-08-19) só
+  comparava contra a conversa com a Gabi, e quatro conversas com o Luís
+  desde então ([[2026-08-18 1-1 Matheus - Luís]],
+  [[2026-08-19 1-1 Matheus - Luís]], [[2026-08-20 1-1 Matheus - Luís]],
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]) tinham
+  material direto para os mesmos cinco temas, nunca cruzado com esta doc.
+- Sem registro de que a conversa com a Carol já tenha efetivamente
+  acontecido — sinalizado explicitamente na própria doc em vez de assumido
+  silenciosamente, já que o material acrescentado é cronologicamente
+  posterior à data no título da página (2026-08-19).
+- Atualizado: [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]
+  — novo callout e seção "Convergências já mapeadas antes desta conversa";
+  coluna extra na tabela de comparação rápida; bloco "Da conversa com o
+  Luís" acrescentado em cada uma das quatro seções de tema que tinham
+  material correspondente (qual agente primeiro, A6 vs. repositório de
+  skills, A10/intranet, minimalismo de contexto — este último já incluía o
+  Luís na conversa original, só não estava explícito); checklist final
+  ajustada. Principais convergências registradas: (1) dor de visibilidade
+  cross-project agora em três vozes independentes — Carol, Luís, e
+  Gabrielle relatada pelo Luís — apontando para A10 Portfolio + A14 PM
+  Agent; (2) A6 Curator não existe como agente autônomo por ora (veredito
+  do Luís), o que muda a pergunta sobre onde termina o repositório de
+  skills; (3) instrução direta do Luís para entender o apetite de ritmo da
+  Carol antes de desenhar estrutura de memória; (4) A10 confirmado distinto
+  de A13 Deduplication.
+- Updated: `index.md`.
