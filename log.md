@@ -3085,3 +3085,17 @@ asked for both ingested directly.
   `infra/pulumi/`: API enablement, Artifact Registry repo, runtime service
   account, Cloud Run v2 service; NEG/LB/DNS left for a later `PRO-90`
   sibling); `index.md`.
+
+## [2026-08-24] refactor | traduzir o prep de discovery com a Carol para pt-BR
+- msilva pediu a tradução do meeting prep da Carol para pt-BR, seguindo a
+  convenção "Idioma" decidida em 2026-08-24 no `CLAUDE.md`. Página tocada
+  pela primeira vez desde a decisão, então migra nesta mesma passada em vez
+  de esperar por outro motivo.
+- Atualizado: [[Meeting prep - Agent Flow discovery with Carol - 2026-08-19]]
+  — prosa inteira traduzida para pt-BR; frontmatter, wikilinks, nomes de
+  agente (A1–A14, Watcher, Curator) e a citação verbatim em português
+  (*"a ideia é não ser só o nosso time... a empresa toda"*) mantidos como
+  estão, conforme a regra de idioma. Sem mudança de conteúdo ou de estrutura
+  — só tradução. `updated:` avançado para 2026-08-24.
+- Updated: `index.md` (linha reescrita em pt-BR, nota de tradução
+  adicionada).
