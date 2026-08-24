@@ -2936,3 +2936,22 @@ asked for both ingested directly.
   (`CHANGE_HISTORY_ADMIN_EMAILS`), unrelated to the service domain, not
   touched.
 - Updated: `index.md`.
+
+## [2026-08-24] ingest | Fluxo Agêntico diagram v0 (earlier PNG render)
+- Read `sources/fluxo agêntico diagrama 0.png` in full (resized earlier this
+  session, 2050x2450 -> 643x768, at msilva's request, purely for on-screen
+  display — no content change).
+- Compared node-by-node against the already-ingested
+  [[Fluxo Agêntico diagram]] (from `raw/fluxo_agentico_ajustado (2).html`).
+  Found no structural or content differences — same 14 agents, roles, three
+  branches, four entry channels, colors, and both named dashed context-edges.
+- Discussed with msilva before writing: confirmed this PNG is an **earlier**
+  version of the already-ingested HTML source, not an independent or later
+  one, and confirmed the two extra side-annotation labels visible in this
+  render (`Desenvolvimento` next to A8, `Sub-agentes` next to A9) are real
+  and should be folded into the existing page rather than duplicated.
+- New: `sources/Fluxo Agêntico diagram v0.md` — provenance record, flags that
+  the underlying PNG is filed at `sources/` rather than `raw/` (not moved,
+  per the rule against touching the raw layer on my own initiative).
+- Updated: `sources/Fluxo Agêntico diagram.md` (table gained the two missing
+  side-labels, callout documenting why), `index.md`.

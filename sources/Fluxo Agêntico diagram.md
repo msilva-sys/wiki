@@ -1,7 +1,7 @@
 ---
 type: source
 status: active
-updated: 2026-08-20
+updated: 2026-08-24
 date: 2026-08-17
 aliases: [fluxo agentico, 14 agentes, agent flow diagram]
 source: "raw/fluxo_agentico_ajustado (2).html"
@@ -134,8 +134,8 @@ stays in the table below):
 | **A5** Watcher | Monitors continuously | "Detecção proativa" — see below |
 | **A6** Curator | Institutional memory, central knowledge hub | See below |
 | **A7** Discovery | **Generates a complete PRD** | "Novos sistemas" |
-| **A8** Orchestrator | Orchestrates projects | |
-| **A9** Developer | Develops systems | *Creates sub-agents on demand* |
+| **A8** Orchestrator | Orchestrates projects | "Desenvolvimento" |
+| **A9** Developer | Develops systems | *Creates sub-agents on demand*; "Sub-agentes" |
 | **A10** Portfolio | Suggests prioritization | Transversal |
 | **A11** Product | Analyses usage | Transversal |
 | **A12** Data Gov | Data quality | Transversal |
@@ -144,6 +144,14 @@ stays in the table below):
 
 Legend, verbatim from the diagram: **solid lines = main flow, dotted lines =
 context feeding**.
+
+> [!note] "Desenvolvimento" / "Sub-agentes" labels added 2026-08-24
+> [[Fluxo Agêntico diagram v0]] — an earlier PNG render of this same
+> diagram, confirmed by msilva — made visible two side-annotation labels this
+> page hadn't called out individually: `Desenvolvimento` next to A8 and
+> `Sub-agentes` next to A9, alongside the already-recorded `Novos sistemas`
+> next to A7. Folded into the table above rather than duplicated on a
+> separate page.
 
 ## Four things the diagram says that the transcript didn't
 
