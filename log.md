@@ -3474,3 +3474,16 @@ asked for both ingested directly.
   não removido nesta passada.
 - Open: nenhum novo — a decisão em si já estava registrada; isso só preenche
   o "Why" que tinha ficado marcado como unverified.
+
+## [2026-08-24] refactor | Meeting prep — Agent Flow discovery com Mafé e João Victor (2026-08-25)
+- msilva avisou que a reunião de amanhã com [[Maria Fernanda Lemos]] e
+  [[João Victor Andrade]] existe pra coletar como as demandas chegam até
+  eles — os dois atuam como primeiro contato.
+- New: `meetings/Meeting prep - Agent Flow discovery with Mafé and João Victor - 2026-08-25.md`
+  — liga a reunião aos dois action items de
+  [[2026-08-24 Agent Flow discovery with Carol]] (mapear fontes de dado do
+  A10 Portfolio) e ao mapeamento de canal de intake do A1 Receptor Universal;
+  perguntas separadas por objetivo (A10 vs. A1), formato tabela.
+- Updated: `index.md`.
+- Open: nenhum ainda — perguntas ficam pra reunião real; page fica como
+  `meeting-prep` até a reunião acontecer e virar `meetings/2026-08-25 ...`.
