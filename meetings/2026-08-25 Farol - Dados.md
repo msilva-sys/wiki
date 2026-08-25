@@ -105,13 +105,16 @@ already on record from a different conversation, not just a stance guess:
 uncertain**, filed as "someone on the data side" rather than assigned to
 a name:
 
-- **Four external data sources feed Farol**: two by REST API (Uber, and
-  one more likely OnFly/Expresso judging by [[Farol]]'s existing "Uber,
-  OnFly, Expresso" list), one SFTP with XML, and **Itaú** via a "reverse"
-  SFTP — the bank pushes files to Livemode rather than the usual
-  direction. Expresso is mid-migration to API. A separate "programa de
-  parceiros" integration uses a REST API, still being worked out with
-  *Mariana* (see Open questions).
+- **Four external data sources feed Farol** — confirmed and corrected
+  against [[Farol pipeline whiteboard diagram]] (a photo, no attribution
+  problem, trusted over this transcript): **OnFly via REST (API),
+  Expresso via REST, Uber via SFTP, Itaú's method left an open
+  question** on the board itself, not confidently "reverse SFTP" the way
+  the transcript alone suggested. Expresso is mid-migration to API. A
+  separate "programa de parceiros" integration uses a REST API, still
+  being worked out with *Mariana* (see Open questions). The diagram also
+  confirms an **unlabeled processing step** and an **unlabeled storage
+  layer** are both genuinely open, not just unrecorded here.
 - **Volume**: full-year data lands around 612k–750k records once you
   multiply out the daily row count (cited as ~17 rows/day for at least
   one source, times 365) — this is what ruled out Airtable (see

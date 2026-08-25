@@ -3741,3 +3741,25 @@ asked for both ingested directly.
   correção, seção de fatos reestruturada em "evidência real" vs.
   "alguém do lado de dados"), [[Luís Fernandez]], [[Carolina Bezerra]],
   [[Arthur Tavares]] (presença confirmada), `index.md`.
+
+## [2026-08-25] ingest | Foto do quadro do Farol
+- Fonte: `raw/foto quadro farol 2026_08_25.JPG` — foto de um quadro
+  branco, quase certamente desenhado durante a mesma
+  [[2026-08-25 Farol - Dados]] (mesmas quatro fontes, mesmas perguntas
+  abertas). Sem problema de atribuição — é uma imagem, não fala.
+- New: `sources/Farol pipeline whiteboard diagram.md`.
+- **Corrige o método de ingestão por fonte**, que a transcrição garantida
+  só por texto tinha deixado ambíguo: OnFly via REST (API), Expresso via
+  REST, Uber via SFTP, **Itaú deixado como "?" no próprio quadro** — não
+  confirmado como "SFTP reverso" do jeito que a transcrição sozinha
+  sugeria.
+- **Confirma que duas perguntas abertas são reais, desenhadas como
+  incógnita por quem fez o quadro** — não só algo que ficou de fora do
+  registro: a etapa de processamento entre fonte crua e armazenamento
+  (uma caixa sem rótulo, batendo com a fala da transcrição sobre "essa
+  caixinha que a gente não sabe o que que é"), e a própria camada de
+  armazenamento (um cilindro sem rótulo, reforçando a pergunta aberta já
+  registrada em [[Farol]] sobre qual banco).
+- Atualizado: [[2026-08-25 Farol - Dados]] (correção do método de
+  ingestão por fonte), [[Farol]] (duas perguntas abertas novas/
+  reforçadas), `index.md`.

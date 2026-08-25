@@ -142,7 +142,17 @@ remains `active`, in development, per the rest of this page.
 - **What database?** BigQuery is the obvious guess given the GCP work, but it was
   never named. *(unverified.)* **Partially narrowed 2026-08-25**: Airtable is
   ruled out on volume (see the note above) — still doesn't name the actual
-  GCP product.
+  GCP product. [[Farol pipeline whiteboard diagram]], sketched the same day,
+  draws the storage layer as an explicit, unlabeled "?" — confirming this is
+  a genuinely open design question, not just something nobody told msilva.
+- **What happens in the ingestion/processing step between raw source and
+  storage?** New 2026-08-25, from the same whiteboard — drawn as a second
+  unlabeled box, matching [[2026-08-25 Farol - Dados]]'s own line about "essa
+  caixinha aqui que a gente em teoria não sabe o que que é." Validation,
+  dedup, normalization — unspecified.
+- **Itaú's ingestion method** — the transcript implied "reverse SFTP," but
+  the whiteboard leaves it an open "?" rather than confirming that. Unclear
+  if genuinely undecided or just not drawn.
 - **Is V2 scheduled**, or is it a stated intention? No date was given.
 - **Does the conversational layer have an owner or a design?** If it is unassigned,
   it is the most natural place for msilva's agent work to meet real demand — and
