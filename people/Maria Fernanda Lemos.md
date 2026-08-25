@@ -1,15 +1,15 @@
----
+﻿---
 type: person
 status: active
-updated: 2026-08-24
-aliases: [Maria Fernanda, Mafé]
+updated: 2026-08-25
+aliases: [Maria Fernanda, Mafê]
 tags: [people, agents, enablement, a4]
 ---
 
 # Maria Fernanda Lemos
 
 **Analista Pleno, Produto, UX & Adoção de IA.** Attendee,
-[[2026-08-14 Recap da Semana]]. Referred to as **"Mafé"** by Carol and
+[[2026-08-14 Recap da Semana]]. Referred to as **"Mafê"** by Carol and
 msilva.
 
 > [!important] Ela é a instância humana do front de Enablement/A4 Teacher
@@ -56,7 +56,7 @@ como **PM em projetos de produto** sob sua responsabilidade.
 
 ## Estrutura do cargo
 
-Cadeira com **duas posições**: a de Mafé, ocupada; uma segunda, **vaga**
+Cadeira com **duas posições**: a de Mafê, ocupada; uma segunda, **vaga**
 — Caio recusou a proposta, vaga reaberta, sem nome ainda (2026-08-24).
 
 ## Facts
@@ -69,4 +69,4 @@ Cadeira com **duas posições**: a de Mafé, ocupada; uma segunda, **vaga**
   registro de interações de apoio (responsabilidade listada acima) que
   não está sendo feito centralmente — a confirmar.
 - Reunião marcada para 2026-08-25 para mapear isso diretamente — ver
-  [[Meeting prep - Agent Flow discovery with Mafé and João Victor - 2026-08-25]].
+  [[Meeting prep - Agent Flow discovery with Mafê and João Victor - 2026-08-25]].

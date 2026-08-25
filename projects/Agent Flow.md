@@ -1,8 +1,8 @@
----
+﻿---
 type: project
 status: active
 phase: research
-updated: 2026-08-24
+updated: 2026-08-25
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -100,14 +100,14 @@ The architecture mirrors how the area actually works today:
 
 > [!important] Front 2 already has a human occupant — [[Maria Fernanda Lemos]], 2026-08-24
 > Pasted by msilva from the internal `Brain`/Hub entry
-> (`pessoas/maria-fernanda-mafe`): Mafé's actual role, **Analista Pleno,
+> (`pessoas/maria-fernanda-mafe`): Mafê's actual role, **Analista Pleno,
 > Produto, UX & Adoção de IA**, sits in a layer literally called
 > **Habilitadores de IA** — the same word this section uses. Her listed
 > responsibilities map closely onto two agents at once, not just one:
 > - **A4 Teacher** — reactive support scaled to each area's literacy level
 >   (product, UX, vibecoding, LLM use); the success shape Gabrielle
 >   described (*"destravar → passo atrás → ajudar sob demanda"*) matches
->   Mafé's *"apoiar a construção das próprias soluções — não construir por
+>   Mafê's *"apoiar a construção das próprias soluções — não construir por
 >   elas"* almost word for word.
 > - **A6 Curator's "corporatização" function** — she's tasked with spotting
 >   when an individual solution should become a corporate one, i.e. exactly
@@ -116,7 +116,7 @@ The architecture mirrors how the area actually works today:
 > programme" question differently than expected: the overlap risk isn't
 > with the training programme, it's with an **existing formal role**.
 > Understand her actual practice before designing A4 — see
-> [[Meeting prep - Agent Flow discovery with Mafé and João Victor - 2026-08-25]].
+> [[Meeting prep - Agent Flow discovery with Mafê and João Victor - 2026-08-25]].
 
 ## Proposed shape — 14 agents
 

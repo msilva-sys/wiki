@@ -3525,3 +3525,12 @@ asked for both ingested directly.
   Flow with A10 Portfolio]] (aponta pra resolução), `index.md`.
 - Linear: milestone **M1 - PoC A10 + A14** criada no projeto Fluxo Agêntico
   (PRO), com issues pra especificar cada agente e rodar a PoC.
+
+## [2026-08-25] refactor | Correção de grafia: apelido é "Mafê", não "Mafé"
+- msilva corrigiu: o apelido de [[Maria Fernanda Lemos]] se escreve **Mafê**.
+  Entradas anteriores deste log com "Mafé" ficam como estão (append-only),
+  mas todo o resto do vault foi corrigido.
+- Renamed: `meetings/Meeting prep - Agent Flow discovery with Mafé and João
+  Victor - 2026-08-25.md` → `meetings/Meeting prep - Agent Flow discovery
+  with Mafê and João Victor - 2026-08-25.md`.
+- Updated: [[Maria Fernanda Lemos]] (alias e corpo), [[Agent Flow]], `index.md`.
