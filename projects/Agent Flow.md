@@ -55,6 +55,22 @@ tags: [agents, llm, automation, onboarding, research]
 > is a concrete instance of Carol's own 2026-08-24 argument that usage
 > analysis is post-launch, not construction-phase.
 
+> [!tip] Mafê 1:1 leans A4 Teacher toward standalone, not nested skill — 2026-08-25
+> [[2026-08-25 Agent Flow discovery with Mafê]] (only Mafê — the planned
+> joint session with João Victor split; his half is deferred). Every
+> worked example of her real support practice is a judgment call (how far
+> to break a task down, when to redirect to the technical layer, when a
+> pattern is institutional-scale) — reasoning toward a decision, not
+> plain relay of information. Leans the agir/informar heuristic toward
+> **A4 staying a standalone agent**, addressing the reopened warning
+> below, though not fully confirmed (only structured Granola notes so
+> far, not the full transcript). Also reinforces the A6 Curator overlap
+> with two concrete examples (Google Earth Studio tooling gap, scattered
+> Instagram/Twitter search), and **partially answers** the A10
+> data-source gap: her demand intake does live in a shared system
+> (Airtable), though the specific untracked piece Carol flagged — skill
+> progression / support-interaction logging — is still unconfirmed.
+
 > [!tip] M1 scope settled — A10 + A14 together, PoC first — msilva, 2026-08-24
 > [[2026-08-24 Build A10 and A14 together, PoC first]]: answers the "one
 > build or two" question the A10 decision above left open. A10 Portfolio and
@@ -374,6 +390,10 @@ and as a fifteenth entity it "dies."
 > informational rather than acting or reasoning. Not resolved; the table
 > entry above (*"A4 Teacher — teaches areas. A single agent, not a
 > pipeline"*) predates this heuristic and hasn't been re-tested against it.
+> **Leaning resolved, 2026-08-25**: [[2026-08-25 Agent Flow discovery with
+> Mafê]] tests it against her real practice and every example is a
+> judgment call, not a relay — leans toward A4 clearing the bar. See the
+> tip near the top of this page.
 
 > [!note] Luís: don't design memory yet — you don't know your team's shape
 > Same call: msilva had started thinking about memory structure (per-agent
@@ -1064,12 +1084,16 @@ consultant rather than validator.
 - **How often does the area start a new project?** **msilva has no metric (2026-08-18).**
   So A7 cannot be evaluated on utility at all — which is itself an argument for
   A1 + A2, the build that would produce the number.
-- **Is A4 Teacher actually a standalone agent, or a skill nested inside
-  another agent?** **New context 2026-08-24**: [[Maria Fernanda Lemos]]'s
-  actual job (*Habilitadores de IA*) is the human version of this front —
-  the agir/informar test below should be run against her real practice,
-  not just the instruction's abstract spec, once the 2026-08-25 meeting
-  happens. New 2026-08-20, from
+- ~~**Is A4 Teacher actually a standalone agent, or a skill nested inside
+  another agent?**~~ **Leaning resolved, 2026-08-25** —
+  [[2026-08-25 Agent Flow discovery with Mafê]] ran the agir/informar test
+  against [[Maria Fernanda Lemos]]'s real practice (her actual job,
+  *Habilitadores de IA*, being the human version of this front) and every
+  worked example is a judgment call, not a plain relay — leans toward A4
+  clearing the bar as its own agent. Not fully confirmed: only Granola's
+  structured notes so far, not the full transcript, and only Mafê's half
+  of the originally-planned joint session with João Victor happened. New
+  2026-08-20, from
   [[2026-08-20 1-1 Matheus - Luís]] — the first concrete test case for
   msilva's own agir/informar heuristic (act/reason vs. purely inform). The
   table entry above predates the heuristic and hasn't been re-checked

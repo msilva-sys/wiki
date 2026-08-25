@@ -68,6 +68,10 @@ não é um gap por acidente, é ausência de pressão até agora.
 | Alguém pede pra vocês sem querer que "vire tarefa" — só uma dúvida, um "destrava isso rápido"? | Testa se existe uma classe de demanda que nem deveria virar item de backlog (relevante pro corte trivial/complexo do A2) |
 | Quando uma demanda chega errada/incompleta, o que vocês fazem — voltam a pergunta, tentam adivinhar, escalam? | Insumo real pro critério de classificação do A2 (tipo/escopo/complexidade/risco) |
 | Existe uma demanda que "sumiu" ou foi esquecida por não ter ficado registrada em lugar nenhum? Exemplo concreto ajuda | Casos reais de custo do não-rastreamento — força argumentativa pro A1+A10 |
+> [!tip] Ver [[2026-08-25 Agent Flow discovery with Mafê]] para o que de fato saiu
+> A reunião rodou só com Mafê — a metade com João Victor não aconteceu
+> junto, ficou para uma conversa separada.
+
 ## Depois da reunião
 
 - Atualizar [[Maria Fernanda Lemos]] e [[João Victor Andrade]] com o que saiu.

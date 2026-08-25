@@ -61,12 +61,34 @@ Cadeira com **duas posições**: a de Mafê, ocupada; uma segunda, **vaga**
 
 ## Facts
 
-- **Seu trabalho de habilitação (não o de PM) vive em nenhum sistema
-  rastreado** — per Carol, surfaced enquanto se buscavam fontes de dado
-  para o [[Agent Flow]]'s A10 Portfolio
-  ([[2026-08-24 Agent Flow discovery with Carol]]). Com o cargo agora
-  conhecido, a hipótese mais provável é que seja especificamente o
-  registro de interações de apoio (responsabilidade listada acima) que
-  não está sendo feito centralmente — a confirmar.
-- Reunião marcada para 2026-08-25 para mapear isso diretamente — ver
-  [[Meeting prep - Agent Flow discovery with Mafê and João Victor - 2026-08-25]].
+- **A demanda de suporte que ela recebe vive, sim, em um sistema
+  compartilhado — Airtable, "a fonte de verdade do time"** — confirmado
+  por ela mesma em [[2026-08-25 Agent Flow discovery with Mafê]]. Isso
+  refina a hipótese anterior (abaixo): não é que nada é rastreado, é que
+  o registro de **evolução das pessoas** (quem já anda sozinho) continua
+  não confirmado como rastreado em lugar nenhum — pergunta ainda aberta.
+- **Hipótese original, per Carol** ([[2026-08-24 Agent Flow discovery with
+  Carol]]): seu trabalho de habilitação (não o de PM) vive em nenhum
+  sistema rastreado. Com o cargo conhecido, a hipótese era de que fosse
+  especificamente o registro de interações de apoio — parcialmente
+  testada pela reunião de 2026-08-25 acima, ainda sem resposta completa.
+- **Método de suporte, descrito por ela mesma (2026-08-25)**: primeiro
+  entende contexto/complexidade; pede que a pessoa dê o primeiro passo
+  sozinha; quando falta contexto, senta junto (ex: Ana); em demandas
+  complexas, quebra em etapas e guia passo a passo (ex: Jorge, que
+  terminou rodando tudo sozinho com uma chave da Anthropic); quando
+  extrapola seu entendimento, redireciona para a camada técnica (ex:
+  Osmar → Arthur, por tocar a matriz) e a tarefa é reatribuída no
+  Airtable.
+- **Detecta padrões e escala para institucionalização** — dois exemplos
+  concretos: uso independente de Google Earth Studio por 36 contatos →
+  proposta de ambiente unificado; busca dispersa de conteúdo no
+  Instagram/Twitter → projeto em andamento com o time de sistemas. Leva
+  para Gabi quando identifica um padrão de escala institucional. Reforça
+  concretamente a sobreposição com a função de corporatização do A6
+  Curator já registrada acima.
+- Cada exemplo acima é uma decisão de julgamento (quanto quebrar, quando
+  redirecionar, quando um padrão é institucional), não uma relay de
+  informação — evidência a favor de A4 Teacher passar o teste
+  agir/informar como agente próprio, não skill aninhada; ver
+  [[Agent Flow]].

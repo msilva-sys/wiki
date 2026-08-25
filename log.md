@@ -3594,3 +3594,44 @@ asked for both ingested directly.
 - Item de ação novo: msilva confirmar, se lembrar, quem disse o quê —
   principalmente o framework de priorização e as opiniões sobre Farol/
   monitoramento, que ficam sem atribuição confiável por ora.
+
+## [2026-08-25] ingest | Agent Flow discovery com Mafê (Granola)
+- Fonte: link de notas compartilhadas do Granola
+  (`https://notes.granola.ai/t/3df40d40-04bd-4a4e-b4c7-40086f928fbd-008umkv4`,
+  compartilhado por Maria Fernanda Lemos) — sem arquivo em `raw/`, é notas
+  estruturadas geradas por IA, não transcrição verbatim (sem timestamps
+  nem citações diretas). `transcription_confidence: medium` na página,
+  mais alto que uma máquina-transcrição ruim mas mais baixo que o padrão
+  de uma transcrição real.
+- A reunião planejada era conjunta com [[João Victor Andrade]]
+  ([[Meeting prep - Agent Flow discovery with Mafê and João Victor -
+  2026-08-25]]); rodou só com Mafê. A metade do João fica para conversa
+  separada — novo action item.
+- New: `meetings/2026-08-25 Agent Flow discovery with Mafê.md`.
+- **Refina (não fecha) o gap de fonte de dados do A10 Portfolio**: a
+  demanda de suporte de Mafê vive sim em sistema compartilhado (Airtable,
+  "fonte de verdade do time") — contrário à leitura inicial de "nenhum
+  sistema". O que continua sem confirmação é o registro específico de
+  evolução das pessoas (quem já anda sozinho), a peça que Carol
+  originalmente flagou como não rastreada.
+- **Testa o teste agir/informar contra a prática real dela** — cada
+  exemplo (quebrar demanda complexa em etapas, redirecionar pra camada
+  técnica, reconhecer padrão institucional) é uma decisão de julgamento,
+  não relay de informação. Inclina o A4 Teacher a passar como agente
+  próprio, não skill aninhada — resolve provisoriamente o warning já
+  registrado em [[Agent Flow]], sem fechar de vez (só notas estruturadas
+  até aqui, não a transcrição completa).
+- Reforça concretamente a sobreposição com A6 Curator (corporatização) já
+  registrada em [[Maria Fernanda Lemos]] — dois exemplos reais (Google
+  Earth Studio, Instagram/Twitter). Reforça também o risco de
+  fragmentação de canal do A1 — ela recebe demanda por três canais
+  diferentes.
+- Atualizado: [[Maria Fernanda Lemos]] (método de suporte, Airtable como
+  fonte de intake, exemplos de padrão→institucionalização), [[Agent
+  Flow]] (tip novo, warning do A4 endereçado, open question fechada com
+  ressalva), [[Meeting prep - Agent Flow discovery with Mafê and João
+  Victor - 2026-08-25]] (ponteiro pra reunião real), `index.md`.
+- Aberto: as perguntas específicas de diagnóstico A4 (L0–L3, se "camada
+  técnica" é grupo fixo ou ad hoc) não foram todas respondidas nas notas
+  estruturadas — conferir contra a transcrição completa quando Mafê
+  compartilhar.
