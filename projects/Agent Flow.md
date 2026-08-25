@@ -37,20 +37,23 @@ tags: [agents, llm, automation, onboarding, research]
 > exchange where msilva's own words seem to reopen the A3=A9 merge rather
 > than confirm it — flagged, not treated as a real reversal.
 
-> [!info] A third, independent channel names the same pains — Carol, to a vendor, 2026-08-25
-> [[2026-08-25 Bossabox AI transformation discovery]]: msilva wasn't
-> present. Carol, pitching Livemode's needs to external vendor
-> [[Bossabox Engagement]] with no stake in Agent Flow's outcome, names
+> [!info] Same pain named to a vendor, 2026-08-25 — attribution corrected
+> [[2026-08-25 Bossabox AI transformation discovery]]: msilva and Luís were
+> both on this call, picked up on Carolina's mic — the transcript can't
+> reliably tell the three of them apart (corrected 2026-08-25, downgrading
+> an earlier "independent third channel" reading). Someone on the Livemode
+> side, pitching to external vendor [[Bossabox Engagement]], names
 > *"nada atuando no grande [...] de olhar para a área como um todo"* —
 > A10 Portfolio's exact gap — the day after msilva committed to it
-> ([[2026-08-24 Start Agent Flow with A10 Portfolio]]). Two pains surface
-> that aren't yet designed for anywhere in the 14 agents: **predictability
-> of AI-assisted delivery** as a metric (a team shipping a constant N per
-> period, not raw tokens/commit size), and **post-launch usage-
-> effectiveness** — did a prioritized, shipped feature actually get used —
-> which overlaps with A11 Product and is a concrete instance of Carol's
-> own 2026-08-24 argument that usage analysis is post-launch, not
-> construction-phase.
+> ([[2026-08-24 Start Agent Flow with A10 Portfolio]]). If that was msilva
+> or Luís, it's restating the case rather than corroborating it from
+> outside. Two pains surface either way that aren't yet designed for
+> anywhere in the 14 agents: **predictability of AI-assisted delivery** as
+> a metric (a team shipping a constant N per period, not raw tokens/commit
+> size), and **post-launch usage-effectiveness** — did a prioritized,
+> shipped feature actually get used — which overlaps with A11 Product and
+> is a concrete instance of Carol's own 2026-08-24 argument that usage
+> analysis is post-launch, not construction-phase.
 
 > [!tip] M1 scope settled — A10 + A14 together, PoC first — msilva, 2026-08-24
 > [[2026-08-24 Build A10 and A14 together, PoC first]]: answers the "one

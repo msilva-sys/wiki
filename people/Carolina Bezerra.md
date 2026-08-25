@@ -53,9 +53,11 @@ elsewhere in the wiki.
   thinks **A12 Data Gov belongs to the data team**, not this one. Converges
   with Gabrielle and Luís on starting with **A10 Portfolio** — see
   [[2026-08-24 Start Agent Flow with A10 Portfolio]].
-- **Runs the [[Bossabox Engagement]] discovery** — not msilva's track.
-  In [[2026-08-25 Bossabox AI transformation discovery]], unprompted and
-  to an outside vendor, names close to the same pains as above:
-  prioritization at two layers, fragmented tooling, no area-wide view,
-  AI usage that's individual not standardized. Prefers Bossabox meetings
-  in the afternoon specifically so Luís can attend.
+- **On the [[Bossabox Engagement]] discovery call** — alongside msilva and
+  Luís, all three picked up on her microphone, so the transcript can't
+  actually distinguish which of the three said what
+  ([[2026-08-25 Bossabox AI transformation discovery]], corrected
+  2026-08-25 by msilva). The pains named to the vendor there (prioritization
+  at two layers, fragmented tooling, no area-wide view, individual AI
+  usage) may be hers, but may equally be msilva's or Luís's own words —
+  not confirmed as specifically hers.

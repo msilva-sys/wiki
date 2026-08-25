@@ -3570,3 +3570,27 @@ asked for both ingested directly.
   corrigido de 2026-08-24 pra 2026-08-25 — datas ficaram desalinhadas com
   o estado real do vault (`index.md` e `projects/Agent Flow.md` já
   estavam em 2026-08-25 por edições concorrentes de outra sessão).
+
+## [2026-08-25] refactor | Correção: msilva e Luís estavam na call da Bossabox
+- msilva corrigiu: ele e o Luís estavam presentes fisicamente na
+  [[2026-08-25 Bossabox AI transformation discovery]] — não só a
+  Carolina. Os três foram captados pelo microfone da Carolina, então o
+  "Speaker A" único do export do tl;dv na verdade mistura os três; não dá
+  pra saber quem falou o quê.
+- `attendees` da página corrigido pra incluir Matheus Silva e Luís
+  Fernandez; `transcription_confidence` rebaixado de `high` pra `low`
+  (a transcrição da palavra em si continua confiável, a atribuição de
+  quem fala não).
+- Rebaixado em cascata: a leitura de "canal terceiro, independente,
+  confirmando a dor do A10 Portfolio" não se sustenta se quem falou foi o
+  próprio msilva ou o Luís — pode ser eco da própria posição deles, não
+  validação de fora. Deixado como pergunta aberta, não decidido num
+  sentido ou outro.
+- Atualizado: [[2026-08-25 Bossabox AI transformation discovery]]
+  (banner de correção, attendees, todas as atribuições "Carolina"
+  trocadas por "lado da Livemode, não distinguível"), [[Bossabox
+  Engagement]], [[Agent Flow]], [[Carolina Bezerra]], [[Luís Fernandez]],
+  `index.md`.
+- Item de ação novo: msilva confirmar, se lembrar, quem disse o quê —
+  principalmente o framework de priorização e as opiniões sobre Farol/
+  monitoramento, que ficam sem atribuição confiável por ora.
