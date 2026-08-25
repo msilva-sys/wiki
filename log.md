@@ -3677,3 +3677,43 @@ asked for both ingested directly.
   especificamente; se o histórico do ClickUp é importável; se a ideia de
   auto-sincronizar o arquivo da Claude via agente (N8N ou MCP) vira algo
   real ou fica só como ideia solta.
+
+## [2026-08-25] ingest | Farol | Dados, 17:39
+- Fonte: `raw/Farol _ Dados - 2026_08_25 17_39 GMT-03_00 - Anotações do
+  Gemini.md`. **Transcrição de baixa confiança**: Gemini atribuiu a call
+  inteira a "Carolina Bezerra", mesmo padrão de falha já visto no
+  onboarding de 2026-08-10. Conteúdo é claramente duas vozes; msilva
+  nunca fala e é referenciado em terceira pessoa uma vez — presença dele
+  na call não confirmada.
+- New: `meetings/2026-08-25 Farol - Dados.md`, `people/Marina.md`,
+  `people/Bruno.md`.
+- **Atribuição por conteúdo, não diarização** — marcada como inferida em
+  todo lugar: a voz que explica arquitetura e defende entregar
+  código+banco pra Marina bate com a postura já registrada do Luís
+  (2026-08-17, "a parte de dados pela gente, o resto por eles"); a voz
+  que questiona prioridade bate com a opinião já registrada da Carolina
+  sobre o Farol (2026-08-24) — **repetida quase verbatim numa conversa
+  independente**, o que dá mais peso à atribuição do que um palpite cego
+  daria.
+- **Decisão concreta**: Airtable descartado como storage do dado bruto —
+  por volume (~612–750k registros/ano vs. cap do plano Enterprise do
+  Airtable, ~500k por base), não por preferência. Ingestão e dedup
+  continuam com o time de dados; Marina recebe repo do GitHub + cópia do
+  banco (3–5 tabelas) + alertas fortes, constrói o que quiser por cima.
+  Uma tabela de controle marca o último job completo, exposto via views
+  — corrige uma tentativa anterior de merge/modelagem que "ficou
+  complexo pra caramba."
+- Atualizado: [[Farol]] (seção "Ownership is split by layer" ganhou o
+  mecanismo concreto; open question do banco de dados parcialmente
+  restringida — Airtable descartado, produto específico do GCP ainda não
+  nomeado), [[Luís Fernandez]], [[Carolina Bezerra]] (ambos com o fato
+  novo marcado como voz inferida), `index.md`.
+- Pessoas novas, sem página em nenhum outro lugar do vault ainda:
+  **Marina** (financeiro, consumidora do Farol), **Bruno** (financeiro,
+  caso antigo do mesmo padrão estrutural). **Raira** e **Letícia**
+  mencionadas de passagem, sem página própria — não há substância
+  suficiente ainda.
+- Aberto: se "Marina" e "Mariana" (mencionada uma vez, sobre outra
+  integração via API) são a mesma pessoa; qual produto específico do GCP
+  guarda o dado (BigQuery ainda não confirmado); se o time do Bruno
+  algum dia ganha uma pessoa de banco de dados própria.

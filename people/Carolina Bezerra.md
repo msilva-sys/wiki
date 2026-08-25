@@ -53,6 +53,14 @@ elsewhere in the wiki.
   thinks **A12 Data Gov belongs to the data team**, not this one. Converges
   with Gabrielle and Luís on starting with **A10 Portfolio** — see
   [[2026-08-24 Start Agent Flow with A10 Portfolio]].
+- **Probably (voice inferred, not diarized) the priority-skeptic voice on
+  [[2026-08-25 Farol - Dados]]** — Gemini mislabeled the whole call as her
+  alone; the attribution is trusted mainly because she **independently
+  restates her 2026-08-24 Farol-low-priority opinion almost verbatim**,
+  in a separate conversation the next day. Also questions storing Farol's
+  raw data in Airtable (abandoned once volume ruled it out) and names a
+  recurring pattern — integration work defaulting to the data team,
+  citing a prior case with Bruno (financeiro) lacking his own DB person.
 - **On the [[Bossabox Engagement]] discovery call** — alongside msilva and
   Luís, all three picked up on her microphone, so the transcript can't
   actually distinguish which of the three said what

@@ -77,6 +77,13 @@ sometimes builds directly, otherwise supports.
   per-user project isolation, so anyone with account access can see every
   project; he believes only the Enterprise tier fixes it — 2026-08-24, see
   [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
+- **Probably (voice inferred, not diarized) the technical-explainer voice
+  on [[2026-08-25 Farol - Dados]]** — Gemini mislabeled the whole call as
+  Carolina Bezerra alone, but the ownership argument matches his own
+  2026-08-17 stance exactly: proposes handing Marina (finance) a GitHub
+  repo + DB copy + heavy alerting, while the data team keeps ingestion
+  and dedup logic. States the boundary directly — *"a gente não cria
+  banco de dados para outras áreas."*
 - **Was physically on the [[Bossabox Engagement]] discovery call**
   alongside msilva and Carolina — all three picked up on Carolina's mic,
   so the transcript's single "Speaker A" isn't reliably any one of them

@@ -90,6 +90,23 @@ This settled a grey zone that [[2026-08-14 Papo de Projetos]] had left to the ar
 manager's discretion, and it does so with a third option the governance framing did
 not anticipate: not "this team owns it" or "it transfers", but **split by layer**.
 
+> [!note] The handoff mechanism, made concrete — 2026-08-25
+> [[2026-08-25 Farol - Dados]] (low-confidence transcription, speaker
+> attribution inferred, not diarized): **Marina** (finance, Farol's
+> consumer) gets a GitHub repo, a copy of the resulting database (3–5
+> tables), and room to build her own transformations on top, with heavy
+> alerting if she breaks something. The **ingestion and dedup logic stay
+> with the data team** — a control table tracks the last complete job run
+> so only that snapshot is exposed via views, replacing an earlier,
+> unwanted attempt at merging/modeling records that made the pipeline
+> "complexo pra caramba." **Airtable was considered and ruled out for the
+> raw layer specifically on volume**: ~612–750k records/year against an
+> Airtable Enterprise cap around 500k per base — not a preference call.
+> Also: Carolina's 2026-08-24 view that Farol shouldn't have been a
+> priority project ([[2026-08-24 Agent Flow discovery with Carol]])
+> resurfaces independently in this second conversation, near-verbatim —
+> worth weighting as more than a one-off remark.
+
 It also **contradicts** [[2026-08-14 Papo de Projetos]]'s record of Farol as *"being
 built by the finance team themselves"*. Luís and Yasmin are visibly building it.
 The contradiction is left standing rather than resolved, per the schema — the earlier
@@ -123,7 +140,9 @@ remains `active`, in development, per the rest of this page.
 ## Open questions
 
 - **What database?** BigQuery is the obvious guess given the GCP work, but it was
-  never named. *(unverified.)*
+  never named. *(unverified.)* **Partially narrowed 2026-08-25**: Airtable is
+  ruled out on volume (see the note above) — still doesn't name the actual
+  GCP product.
 - **Is V2 scheduled**, or is it a stated intention? No date was given.
 - **Does the conversational layer have an owner or a design?** If it is unassigned,
   it is the most natural place for msilva's agent work to meet real demand — and
