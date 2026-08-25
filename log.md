@@ -3717,3 +3717,27 @@ asked for both ingested directly.
   integração via API) são a mesma pessoa; qual produto específico do GCP
   guarda o dado (BigQuery ainda não confirmado); se o time do Bruno
   algum dia ganha uma pessoa de banco de dados própria.
+
+## [2026-08-25] refactor | Correção: eram quatro na reunião do Farol | Dados
+- msilva corrigiu: **ele, Luís, Carolina e Arthur Tavares** estavam
+  todos na reunião — não só Luís e Carolina como eu tinha assumido.
+  Gemini atribuiu a call inteira a "Carolina Bezerra" sozinha; o problema
+  é mais grave do que eu tinha registrado (não são duas vozes coladas
+  numa etiqueta, são até quatro).
+- **As duas atribuições com evidência real continuam de pé** — a regra de
+  fronteira de dados ("a gente não cria banco de dados para outras
+  áreas") bate com a posição já registrada do Luís em 2026-08-17; a
+  opinião de baixa prioridade do Farol repete quase verbatim o que
+  Carolina disse numa conversa *diferente* em 2026-08-24. Essas duas
+  seguem atribuídas com confiança acima da média, porque a evidência é
+  independente da contagem de presentes.
+- **Todo o resto do conteúdo técnico voltou a "alguém do lado de dados,"
+  sem nome** — a moldura anterior de "são só duas vozes, A ou B" estava
+  errada; qualquer trecho sem evidência específica pode ser do Arthur ou
+  do próprio msilva, não só do Luís ou da Carolina.
+- Removida a pergunta aberta "msilva estava mesmo nessa reunião?" —
+  confirmado que sim.
+- Atualizado: [[2026-08-25 Farol - Dados]] (attendees, banner de
+  correção, seção de fatos reestruturada em "evidência real" vs.
+  "alguém do lado de dados"), [[Luís Fernandez]], [[Carolina Bezerra]],
+  [[Arthur Tavares]] (presença confirmada), `index.md`.

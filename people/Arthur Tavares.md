@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-18
+updated: 2026-08-25
 aliases: [Arthur]
 tags: [people]
 ---
@@ -20,3 +20,7 @@ tags: [people]
 - In the **TES** vendor-trial WhatsApp group, with [[Bianca (Bia)]] and
   [[Kauan]].
 - Excused from the 2026-08-18 Hub-correction ask.
+- **Confirmed present on [[2026-08-25 Farol - Dados]]**, alongside msilva,
+  Luís and Carolina — a fourth voice Gemini's transcript collapsed into
+  a single mislabeled speaker. Consistent with his central-de-dados work
+  above; nothing in that meeting's content is confidently his specifically.
