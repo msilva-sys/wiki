@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-08-24
+updated: 2026-08-25
 ---
 
 # Log
@@ -3534,3 +3534,39 @@ asked for both ingested directly.
   Victor - 2026-08-25.md` → `meetings/Meeting prep - Agent Flow discovery
   with Mafê and João Victor - 2026-08-25.md`.
 - Updated: [[Maria Fernanda Lemos]] (alias e corpo), [[Agent Flow]], `index.md`.
+
+## [2026-08-25] ingest | Bossabox AI transformation discovery (vendor)
+- Lido `raw/bossabox.txt` — export HTML do tl;dv (3MB, uma linha só, cada
+  palavra num `<span>` com timestamp). Extraído o conteúdo de
+  `transcript-container` com um script perl ad-hoc (61 falas), não com as
+  ferramentas usuais de leitura de arquivo.
+- **msilva não estava na call.** Attendees: Carolina Bezerra (Livemode) +
+  três reps da **Bossabox**, vendor de transformação com IA (Pedro
+  Arantes, JV Abreu, Camila Sande) — nome novo neste vault.
+- Data não confirmada: nem cabeçalho nem nome do arquivo trazem data; usado
+  o mtime do arquivo (2026-08-25) como aproximação, com uma pista interna
+  (Carol hesitando se o feriado é dia 1 ou dia 7 do mês seguinte — quase
+  certamente 7 de setembro) que aponta pra final de agosto de 2026,
+  consistente com o mtime. Marcado como unverified na própria página.
+- Novo: [[2026-08-25 Bossabox AI transformation discovery]],
+  [[Bossabox Engagement]], [[Pedro Arantes]], [[JV Abreu]], [[Camila Sande]].
+- **Achado principal**: Carol, sem saber que isso alimentaria este vault,
+  nomeia pra um vendor externo quase as mesmas dores que
+  [[Agent Flow]] já existe pra resolver — priorização em duas camadas,
+  ferramentas fragmentadas, "nada atuando no grande" (o buraco exato do
+  A10 Portfolio), um dia depois de msilva ter decidido começar por ali
+  ([[2026-08-24 Start Agent Flow with A10 Portfolio]]). Terceiro canal
+  independente confirmando a mesma dor, sem nenhum interesse no resultado
+  do Agent Flow.
+- Duas dores novas, ainda não desenhadas em nenhum dos 14 agentes:
+  previsibilidade de entrega assistida por IA como métrica (não tokens/
+  tamanho de commit), e medição de efetividade pós-lançamento (sobrepõe
+  A11 Product — e é um exemplo concreto do próprio argumento da Carol de
+  2026-08-24 de que análise de uso é pós-produto, não fase de construção).
+- Atualizado: [[Agent Flow]], [[Carolina Bezerra]], [[Luís Fernandez]]
+  (confirmação independente do padrão de disponibilidade só à tarde),
+  `index.md`.
+- `updated:` de `people/Carolina Bezerra.md` e `people/Luís Fernandez.md`
+  corrigido de 2026-08-24 pra 2026-08-25 — datas ficaram desalinhadas com
+  o estado real do vault (`index.md` e `projects/Agent Flow.md` já
+  estavam em 2026-08-25 por edições concorrentes de outra sessão).

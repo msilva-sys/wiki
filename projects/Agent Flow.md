@@ -37,6 +37,21 @@ tags: [agents, llm, automation, onboarding, research]
 > exchange where msilva's own words seem to reopen the A3=A9 merge rather
 > than confirm it — flagged, not treated as a real reversal.
 
+> [!info] A third, independent channel names the same pains — Carol, to a vendor, 2026-08-25
+> [[2026-08-25 Bossabox AI transformation discovery]]: msilva wasn't
+> present. Carol, pitching Livemode's needs to external vendor
+> [[Bossabox Engagement]] with no stake in Agent Flow's outcome, names
+> *"nada atuando no grande [...] de olhar para a área como um todo"* —
+> A10 Portfolio's exact gap — the day after msilva committed to it
+> ([[2026-08-24 Start Agent Flow with A10 Portfolio]]). Two pains surface
+> that aren't yet designed for anywhere in the 14 agents: **predictability
+> of AI-assisted delivery** as a metric (a team shipping a constant N per
+> period, not raw tokens/commit size), and **post-launch usage-
+> effectiveness** — did a prioritized, shipped feature actually get used —
+> which overlaps with A11 Product and is a concrete instance of Carol's
+> own 2026-08-24 argument that usage analysis is post-launch, not
+> construction-phase.
+
 > [!tip] M1 scope settled — A10 + A14 together, PoC first — msilva, 2026-08-24
 > [[2026-08-24 Build A10 and A14 together, PoC first]]: answers the "one
 > build or two" question the A10 decision above left open. A10 Portfolio and

@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-24
+updated: 2026-08-25
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
@@ -77,3 +77,8 @@ sometimes builds directly, otherwise supports.
   per-user project isolation, so anyone with account access can see every
   project; he believes only the Enterprise tier fixes it — 2026-08-24, see
   [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
+- **Afternoon-only availability independently reconfirmed** in a context
+  that has nothing to do with msilva: Carolina schedules
+  [[Bossabox Engagement]] meetings for the afternoon specifically because
+  he isn't there every morning ([[2026-08-25 Bossabox AI transformation
+  discovery]]).

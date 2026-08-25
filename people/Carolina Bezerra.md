@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-24
+updated: 2026-08-25
 aliases: [Carolina, Carol]
 tags: [people, governance]
 ---
@@ -53,3 +53,9 @@ elsewhere in the wiki.
   thinks **A12 Data Gov belongs to the data team**, not this one. Converges
   with Gabrielle and Luís on starting with **A10 Portfolio** — see
   [[2026-08-24 Start Agent Flow with A10 Portfolio]].
+- **Runs the [[Bossabox Engagement]] discovery** — not msilva's track.
+  In [[2026-08-25 Bossabox AI transformation discovery]], unprompted and
+  to an outside vendor, names close to the same pains as above:
+  prioritization at two layers, fragmented tooling, no area-wide view,
+  AI usage that's individual not standardized. Prefers Bossabox meetings
+  in the afternoon specifically so Luís can attend.
