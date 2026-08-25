@@ -27,7 +27,10 @@ tags: [agents, llm, automation, onboarding, research]
 > commits. Same conversation
 > ([[2026-08-24 Agent Flow discovery with Carol]]) surfaces real gaps in
 > A10's data sources — Maria Fernanda Lemos's day-to-day work and João
-> Victor Andrade's CRM backlog live in no shared system, only Linear covers
+> Victor Andrade's CRM backlog live in no system shared with the team
+> (**refined 2026-08-25**: João Victor's own system, ClickUp + a Claude
+> roadmap file, turns out more tracked than the original "personal
+> spreadsheet" framing — see the tip further down), only Linear covers
 > project-shaped work — and a genuine disagreement with Luís's 2026-08-20
 > verdict on which agents are "transversal": Carol thinks **A10
 > (prioritization) is transversal, A11 (usage analysis) is not** (needs a
@@ -70,6 +73,24 @@ tags: [agents, llm, automation, onboarding, research]
 > data-source gap: her demand intake does live in a shared system
 > (Airtable), though the specific untracked piece Carol flagged — skill
 > progression / support-interaction logging — is still unconfirmed.
+
+> [!tip] João Victor 1:1 — CRM backlog is more tracked than thought, macro-visibility gap confirmed — 2026-08-25
+> [[2026-08-25 1-1 Matheus - João Victor]] (second half of the joint session
+> planned in [[Meeting prep - Agent Flow discovery with Mafê and João
+> Victor - 2026-08-25]]). **Corrects the "personal spreadsheet" framing**:
+> his CRM backlog actually lives in a defined ClickUp pipeline, fed by a
+> Claude-hosted roadmap file, with an N8N+Slack automation already
+> running — more tracked than the secondhand description suggested, just
+> not shared with the team. He relays (secondhand) that Gabrielle
+> specifically named a **macro/aggregate-view gap** despite his automation
+> giving good micro (per-card) visibility — a concrete, independent
+> restatement of A10 Portfolio's exact purpose. Same-day parallel to the
+> Mafê 1:1 above: another live human precedent for A2's complexity
+> classification (his baixa/média/alta triage of walk-up requests) and
+> another instance of A1's channel-fragmentation pattern (people
+> approaching him directly, no formal channel). He's decided to raise a
+> ClickUp→Linear migration with Carol this week — a third individual-tool
+> migration candidate alongside the proxy, not yet decided.
 
 > [!tip] M1 scope settled — A10 + A14 together, PoC first — msilva, 2026-08-24
 > [[2026-08-24 Build A10 and A14 together, PoC first]]: answers the "one

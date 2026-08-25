@@ -3635,3 +3635,45 @@ asked for both ingested directly.
   técnica" é grupo fixo ou ad hoc) não foram todas respondidas nas notas
   estruturadas — conferir contra a transcrição completa quando Mafê
   compartilhar.
+
+## [2026-08-25] ingest | 1:1 Matheus - João Victor, 16:30
+- Fonte: `raw/João _ Matheus - 2026_08_25 16_30 GMT-03_00 - Anotações do
+  Gemini.md` — transcrição real, os dois falantes bem atribuídos pelo
+  Gemini (sem os problemas de atribuição de transcrições anteriores).
+  Segunda metade da reunião conjunta planejada com Mafê, rodou separada,
+  mesmo dia.
+- New: `meetings/2026-08-25 1-1 Matheus - João Victor.md`.
+- **Corrige a descrição do backlog do CRM de João Victor.** Carol
+  descreveu de segunda mão como "planilha pessoal"
+  ([[2026-08-24 Agent Flow discovery with Carol]]); na real é **ClickUp
+  com pipeline definido** (Backlog → Qualificação → Em progresso →
+  Atrasado → Concluído), alimentado por um arquivo de roadmap na Claude e
+  com automação N8N+Slack já rodando (resumo segunda de manhã, ping em
+  tempo real, overview sexta à tarde). Mais rastreado, não menos, do que
+  a descrição original sugeria — mas ainda não é compartilhado com o
+  time, que é o gap real pro A10 Portfolio.
+- **Corrige a data de início de João Victor**: registrada como
+  "2026-08-17" (na real, a data em que foi *discutido* numa weekly, não
+  quando começou). Pelas próprias palavras dele (quarta semana em
+  2026-08-25, completa um mês em 2026-09-03), o início real é por volta
+  de **2026-08-03**.
+- **Validação concreta, de segunda mão, do A10 Portfolio**: ele relata
+  que a Gabrielle, dias antes de sair de férias, disse que a automação
+  dele dá boa visão micro (status por card) mas falta visão macro/do
+  todo — exatamente o gap que A10 existe para fechar.
+- Mais dois precedentes humanos do mesmo padrão já visto na reunião com
+  Mafê no mesmo dia: julgamento de complexidade (baixa/média/alta) em
+  demanda ad hoc, precedente pra A2; abordagem direta sem canal formal,
+  precedente pro problema de fragmentação de canal do A1.
+- João Victor decide levantar com Carol, ainda essa semana, se o backlog
+  do CRM deveria migrar do ClickUp pro Linear — terceiro candidato a
+  migração de ferramenta individual, ao lado do proxy. Não decidido.
+- Atualizado: [[João Victor Andrade]] (correção do backlog e da data de
+  início, método de triagem, automação, dor da Gabrielle relatada),
+  [[Agent Flow]] (tip novo, correção inline no tip do A10 de 2026-08-24),
+  [[Meeting prep - Agent Flow discovery with Mafê and João Victor -
+  2026-08-25]] (ponteiro), `index.md`.
+- Aberto: se Carol/Gabi confirmam Linear como o caminho certo pro CRM
+  especificamente; se o histórico do ClickUp é importável; se a ideia de
+  auto-sincronizar o arquivo da Claude via agente (N8N ou MCP) vira algo
+  real ou fica só como ideia solta.

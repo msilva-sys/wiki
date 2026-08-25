@@ -70,7 +70,8 @@ não é um gap por acidente, é ausência de pressão até agora.
 | Existe uma demanda que "sumiu" ou foi esquecida por não ter ficado registrada em lugar nenhum? Exemplo concreto ajuda | Casos reais de custo do não-rastreamento — força argumentativa pro A1+A10 |
 > [!tip] Ver [[2026-08-25 Agent Flow discovery with Mafê]] para o que de fato saiu
 > A reunião rodou só com Mafê — a metade com João Victor não aconteceu
-> junto, ficou para uma conversa separada.
+> junto, ficou para uma conversa separada:
+> [[2026-08-25 1-1 Matheus - João Victor]], mesmo dia.
 
 ## Depois da reunião
 
