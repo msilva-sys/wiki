@@ -108,3 +108,9 @@ para bugs críticos em "Pedidos".
 - Isso será a modalidade gratuita (leitura inicial) ou já a aprofundada
   paga? Não dito no e-mail nem no deck.
 - Qual escopo — um squad, múltiplos, ou a área inteira?
+
+## Ver também
+
+[[What Bossabox's Assessment suggests for Agent Flow]] — leitura cruzada
+completa contra o planejamento do [[Agent Flow]], pedida por msilva
+2026-08-26.

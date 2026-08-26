@@ -92,6 +92,14 @@ tags: [agents, llm, automation, onboarding, research]
 > ClickUp→Linear migration with Carol this week — a third individual-tool
 > migration candidate alongside the proxy, not yet decided.
 
+> [!tip] Bossabox's Assessment method cross-read, 2026-08-26
+> [[What Bossabox's Assessment suggests for Agent Flow]]: confirms the
+> automated-QA gap below isn't just deliberate; offers DORA/VSM as a
+> ready metric vocabulary for A10; independently validates the
+> [[Agents read primary sources]] design call; and names an unowned
+> bus-factor risk pattern (Luís on GCP, Arthur on the matriz schema)
+> nobody currently tracks.
+
 > [!tip] M1 scope settled — A10 + A14 together, PoC first — msilva, 2026-08-24
 > [[2026-08-24 Build A10 and A14 together, PoC first]]: answers the "one
 > build or two" question the A10 decision above left open. A10 Portfolio and
@@ -685,6 +693,9 @@ Also worth noting from part 1: **QA is a first-class stage there** (a `qa-tester
 agent driving Chrome via DevTools) and **the loop closes on observability**
 (AppSignal for traces, PostHog for adoption, adoption feeding the next round).
 Nothing among the 14 covers automated QA — possibly a gap, possibly deliberate.
+**2026-08-26**: [[What Bossabox's Assessment suggests for Agent Flow]] —
+an unrelated vendor's production Método gives QA two explicit named
+stages with gates, leaning this toward "gap."
 
 > [!warning] Counterpoint — heavy orchestration and PRD-as-source-of-truth, both challenged externally (2026-08-20)
 > [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]], registered as a

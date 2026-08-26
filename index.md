@@ -257,6 +257,7 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 - [[Claude capabilities map - accounting data scope]] — Claude capabilities by layer for large-data/accounting work, cheapest-to-adopt first. **Moved from `reference/` 2026-08-24**: it's domain reasoning (open, not yet settled), not personal/tool scratch.
 - [[Sharing the accounting automation with the team]] — distribution options for getting one person's workflow to a team. Bears directly on [[Agent Flow]]'s sharing problem. **Moved from `reference/` 2026-08-24**, same reason.
 - [[Sharing via Projects - the accounting project]] — Projects as a sharing mechanism; what belongs in one. **Moved from `reference/` 2026-08-24**, same reason.
+- [[What Bossabox's Assessment suggests for Agent Flow]] — leitura cruzada pedida por msilva: reforça o gap de QA automatizado, oferece DORA/VSM como vocabulário de métrica pro A10, valida de forma independente a regra de [[Agents read primary sources]], e nomeia um risco de bus-factor não rastreado (Luís no GCP, Arthur no schema da matriz).
 
 ## Reference
 - [[AIRTABLEGC-34]] — ticket notes (legacy Jira).

@@ -9,6 +9,12 @@ tags: [agents, research, planning, index]
 
 # What should the Agent Flow research phase study?
 
+> [!tip] External cross-read added, 2026-08-26
+> [[What Bossabox's Assessment suggests for Agent Flow]]: a vendor's
+> production methodology (Bossabox) cross-read against this page's open
+> items — reinforces the automated-QA gap, offers DORA/VSM as a metric
+> vocabulary for A10, and names an unowned bus-factor risk pattern.
+
 > [!danger] "Which agent first" is answered — msilva, 2026-08-24
 > [[2026-08-24 Start Agent Flow with A10 Portfolio]]: four independent
 > readings (Gabrielle, Luís, Carol, msilva's own pain) converged on **A10

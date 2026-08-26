@@ -76,7 +76,10 @@ sometimes builds directly, otherwise supports.
 - Flags a GCP account-tier risk: the current (first paid) plan has no
   per-user project isolation, so anyone with account access can see every
   project; he believes only the Enterprise tier fixes it — 2026-08-24, see
-  [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
+  [[2026-08-21 Deploy Airtable Proxy privately behind VPN]]. **Named as a
+  bus-factor risk, 2026-08-26** — he's the sole owner of GCP/Cloud
+  Run/Pulumi structuring, cross-read against Bossabox's Team Topologies
+  instrument in [[What Bossabox's Assessment suggests for Agent Flow]].
 - **On [[2026-08-25 Farol - Dados]]**, alongside msilva, Carolina and
   Arthur Tavares — Gemini mislabeled the whole four-person call as
   Carolina Bezerra alone (corrected 2026-08-25). One line matches his own

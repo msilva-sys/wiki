@@ -3793,6 +3793,34 @@ asked for both ingested directly.
 - Aberto: se a proposta de terça-feira é a modalidade gratuita ou já a
   paga; qual escopo (um squad, múltiplos, ou a área inteira).
 
+## [2026-08-26] synthesis | O que o método da Bossabox sugere pro Agent Flow
+- msilva perguntou diretamente como o e-mail e o deck de assessment
+  enriquecem o planejamento do [[Agent Flow]]. New:
+  `syntheses/What Bossabox's Assessment suggests for Agent Flow.md`.
+- **Sete pontos, do mais concreto ao mais estratégico**: (1) confirma o
+  gap de QA automatizado já registrado — o Método deles dá QA duas
+  etapas próprias com gate; (2) sugere um segundo eixo de decomposição
+  (por etapa de pipeline, não só por agente) pra checar cobertura dos 14
+  contra os 12 estágios do Método; (3) valida de forma independente e
+  convergente a regra já assentada em [[Agents read primary sources]] —
+  o motor de Assessment deles também lê Jira/GitHub/Linear/Confluence
+  direto, sem camada intermediária; (4) oferece DORA+VSM como
+  vocabulário de métrica pronto pro A10 Portfolio, resolvendo o "msilva
+  has no metric" já registrado; (5) o AI Readiness (0–4, 7 dimensões) é
+  uma versão concreta do L0–L3 ainda vago do A4 Teacher; (6) nomeia um
+  padrão de risco de bus-factor já espalhado no vault mas nunca unificado
+  (Luís no GCP, Arthur no schema da matriz); (7) levanta uma pergunta de
+  build-vs-buy nunca feita — vale deixar a Bossabox rodar o assessment
+  gratuito pra acelerar a pesquisa do próprio Agent Flow? — temperada
+  pelo ceticismo já registrado da Carolina e pelo problema de
+  corroboração ainda não resolvido do [[2026-08-25 Bossabox AI
+  transformation discovery]].
+- Atualizado: [[Agent Flow]] (tip novo, nota no gap de QA),
+  [[What should the Agent Flow research phase study]] (ponteiro),
+  [[Bossabox Assessment - institutional deck]] (ponteiro), [[Luís
+  Fernandez]] e [[Arthur Tavares]] (risco de bus-factor nomeado),
+  `index.md`.
+
 ## [2026-08-26] refactor | Schema: `Action items` → `Commitments`, sai o checkbox
 - msilva: não usa a seção `Action items` das notas de reunião como task
   tracker — os checkboxes só acumulavam, sem ninguém marcar `- [x]`, e o
