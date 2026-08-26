@@ -182,11 +182,11 @@ contratos tipados e um task runner — encaixe, não mudança de direção:
   `langgraph` (Pydantic v2), agora declarado explícito. Dois usos
   distintos: os modelos que espelham o shape do GraphQL do Linear (`Issue`,
   `Project`, `Milestone`) ficam dentro de `linear_client.py`, junto do único
-  código que fala com a API; os modelos de **saída** dos agentes
-  (`SugestaoA10`, `RelatorioA14`) ficam em `contracts.py`, na raiz — são o
-  que dá pra forçar como `response_format` do `create_agent`, então cada
-  agente devolve um objeto validado, não texto livre, e `main.py` consome
-  isso direto pra montar o HTML.
+  código que fala com a API; os modelos de **saída** dos agentes ficam
+  dentro de cada agente (ver "Ports and adapters", abaixo) — são o que dá
+  pra forçar como `response_format` do `create_agent`, então cada agente
+  devolve um objeto validado, não texto livre, e `main.py` consome isso
+  direto pra montar o HTML.
 - **`poethepoet` (comando `poe`) para task management** — só task runner,
   não substitui `pip`+`venv` como gerenciador de dependência (opção
   considerada e descartada: trocar tudo por Poetry). Precisa de um
@@ -195,11 +195,55 @@ contratos tipados e um task runner — encaixe, não mudança de direção:
   `pip` já entende via `pip install -e .`), em vez de um `requirements.txt`
   separado.
 - **Cada agente roda sozinho** — `a10/agent.py` e `a14/agent.py` ganham um
-  bloco `if __name__ == "__main__":` que chama a própria função
-  (`rodar_a10()`/`rodar_a14()`) e despeja o contrato em JSON
-  (`.model_dump_json()`) no stdout. `main.py` fica só o orquestrador do
-  pipeline completo (A10 + A14 + HTML final) — rodar um agente isolado não
-  gera HTML, só o contrato bruto: o ponto é depurar um sem esperar o outro.
+  bloco `if __name__ == "__main__":` que monta a própria `Entrada` (ver
+  abaixo) e despeja a `Saída` em JSON (`.model_dump_json()`) no stdout.
+  `main.py` fica só o orquestrador do pipeline completo (A10 + A14 + HTML
+  final) — rodar um agente isolado não gera HTML, só o contrato bruto: o
+  ponto é depurar um sem esperar o outro.
+
+## Ports and adapters — cada agente define a própria interface (2026-08-26)
+
+Ideia de msilva, registrada e adotada: cada agente é uma fronteira
+`Entrada → Saída` que ele mesmo define — não um shape imposto de fora. É
+o padrão **ports and adapters** (arquitetura hexagonal) aplicado aos
+agentes: tools, `linear_client.py`, o modelo — tudo isso é "adapter",
+escondido atrás do "port" (o contrato). Motivação: agente testável isolado
+(dá pra chamar com uma `Entrada` fabricada na mão, sem Linear de verdade),
+portável (reusar a lógica em outro lugar só exige entender o contrato, não
+o shape do GraphQL do Linear), e verdadeiramente modular.
+
+Isso corrigiu algo que a decisão de escopo (acima) tinha deixado errado: o
+`team_id` do time `Projetos-livemode` ia ficar **embutido dentro do
+agente** — o que contradiz "agnóstico". Agora ele é campo da `Entrada`; o
+agente não sabe de cor qual time analisa, só recebe o que a `Entrada`
+mandar.
+
+Isso força uma linha entre dois tipos de parâmetro que antes estavam
+misturados:
+
+| Tipo | Onde mora | Exemplo |
+|---|---|---|
+| Parâmetro de domínio (o que o agente analisa) | Campo da `Entrada` | `team_id`, `project_id`, `filtros?` |
+| Infra/segredo (como o agente funciona por baixo) | Continua env var, carregado por `linear_client.py`/cliente do modelo | `OPENAI_API_KEY`, `LINEAR_API_KEY`, Langfuse |
+
+Contratos por agente, cada um na própria pasta (não mais um `contracts.py`
+único na raiz):
+
+- **`a10/contracts.py`** — `EntradaA10(team_id: str, filtros: dict | None)`,
+  `SaidaA10(sugestoes: list[SugestaoA10])`.
+- **`a14/contracts.py`** — `EntradaA14(project_id: str)`, `RelatorioA14`
+  (saída já desenhada antes).
+
+`main.py` é quem sabe que o time é `Projetos-livemode` (via env var
+`LINEAR_TEAM_ID`, não constante hardcoded), descobre os `project_id`s
+chamando `linear_client.listar_projetos(team_id)`, monta cada `Entrada` e
+chama `rodar_a10(entrada)`/`rodar_a14(entrada)` — sem nunca olhar pra
+dentro de `a10/`/`a14/` além do contrato.
+
+**Em aberto** (baixo risco, decidir na hora de codar): como o `__main__`
+standalone do A14 recebe um `project_id` pra montar sua própria `Entrada`
+— provável candidato é argumento de CLI (`python -m a14.agent
+<project_id>`), já que não existe um "projeto default" razoável.
 
 ## Gap-check 2026-08-26 — cinco lacunas fechadas
 
@@ -245,14 +289,15 @@ livemode-fluxo-agentico/
                            # compartilhado entre A10 e A14; não fere "uma
                            # frente não chama a outra", isso vale entre
                            # LangGraph/Skill/Agent SDK, não dentro da mesma frente
-  contracts.py            # modelos Pydantic de saída: SugestaoA10, RelatorioA14
   a10/
-    agent.py               # create_agent + bloco __main__ p/ rodar isolado
+    contracts.py            # EntradaA10, SaidaA10 — porta pública do agente
+    agent.py                # create_agent + bloco __main__ p/ rodar isolado
     tools.py
   a14/
-    agent.py               # create_agent + bloco __main__ p/ rodar isolado
+    contracts.py            # EntradaA14, RelatorioA14 — porta pública do agente
+    agent.py                # create_agent + bloco __main__ p/ rodar isolado
     tools.py
-  main.py                  # orquestrador: A10 + A14 (loop por projeto) + HTML
+  main.py                  # orquestrador: monta as Entradas, chama os agentes, gera HTML
 ```
 
 Tasks do `poe`:

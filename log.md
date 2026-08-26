@@ -4277,3 +4277,25 @@ asked for both ingested directly.
 - Fora da wiki, mesmo repo (`livemode-fluxo-agentico`, branch `langgraph`):
   `.venv` criado (gitignored); `HANDOFF.md` atualizado com as mesmas
   cinco resoluções — ainda não commitado.
+
+## [2026-08-26] synthesis | Agentes A10+A14 como ports-and-adapters
+- msilva propôs que cada agente defina a própria interface (Entrada/Saída)
+  em vez de depender do shape externo (Linear, `linear_client.py`) — pediu
+  minha opinião antes de registrar.
+- Concordei e nomeei o padrão: ports and adapters (arquitetura hexagonal).
+  Isso expôs um problema na decisão de escopo anterior — `team_id` do time
+  `Projetos-livemode` ia ficar embutido dentro do agente, contradizendo
+  "agnóstico". Fechado: `team_id` (A10) e `project_id` (A14) viram campo
+  da própria `Entrada` de cada agente, não constante interna; `main.py`
+  é quem sabe o valor (env var `LINEAR_TEAM_ID`) e monta a Entrada.
+  Distinção nova: parâmetro de domínio (campo da Entrada) vs infra/segredo
+  (continua env var, carregado por dentro do agente/client).
+- Estrutural: `contracts.py` deixa de ser único na raiz — cada agente
+  ganha o seu (`a10/contracts.py`, `a14/contracts.py`), reforçando que a
+  interface é do agente, não compartilhada.
+- Updated: `syntheses/Desenho do agente LangGraph para A10+A14.md` (nova
+  seção "Ports and adapters", árvore de pastas revisada), `index.md`.
+- Fora da wiki, mesmo repo: `HANDOFF.md` atualizado com a mesma mudança —
+  ainda não commitado.
+- Aberto, baixo risco: como o `__main__` standalone do A14 recebe um
+  `project_id` (provável: argumento de CLI).
