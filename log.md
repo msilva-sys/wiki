@@ -4126,3 +4126,29 @@ asked for both ingested directly.
 - Updated: `syntheses/Como implementar a PoC do A10+A14 (LangGraph, Skill,
   Agent SDK).md` (pendência do repositório marcada resolvida),
   `projects/Agent Flow.md` (pointer no callout da PoC).
+
+## [2026-08-26] lint | Décimo quarto health check — confirmatório
+- Rodado a pedido de msilva, independente do 13º lint (mesma data, sessão
+  paralela) — sem ler aquele resultado antes de terminar a checagem
+  mecânica própria, só depois para comparar.
+- **Mecânico**: mesmo resultado do 13º — 0 órfãs, 1 dead-end aceito
+  ([[Zed Cheatsheet]]), 0 `status: active` estagnada (impossível havendo
+  <30 dias de vault), 0 wikilinks quebrados reais (mesmos falsos-positivos
+  documentados: `[[Page]]`/`[[people/]]`/`[[log]]` como exemplo do schema,
+  auto-citação do próprio `log.md`, o embed `[[fluxo agêntico diagrama
+  0.png]]`, e a citação histórica `[[...Mafé...]]` num log entry de antes
+  da correção de grafia — mesma categoria, texto histórico append-only).
+  0 callouts `[!msilva]` pendentes (os dois hits de `[!msilva]` no vault
+  são citações em prosa de callouts já resolvidos, não blocos vivos).
+- **Achado novo, menor**: `sources/How we built our multi-agent research
+  system.md` cita `source: "raw/Clippings/How we built our multi-agent
+  research system.md"`, mas esse arquivo não existe mais em
+  `raw/Clippings/` (confirmado por listagem direta do diretório — só os 6
+  clippings esperados estão lá). A página já tem um callout `[!warning]`
+  avisando que a clipping só trouxe frontmatter/título e que o conteúdo
+  real veio de um WebFetch ao vivo, então não é um gap de conteúdo — é só
+  o `source:` do frontmatter apontando pra um arquivo que não está mais no
+  disco. Não mexi em `raw/`; sinalizando pra msilva confirmar se apagou
+  esse clipping de propósito.
+- Sem contradições novas, sem checagem cruzada de threads em aberto além
+  da já feita no 13º lint hoje. Vault segue limpo.
