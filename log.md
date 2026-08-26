@@ -4299,3 +4299,35 @@ asked for both ingested directly.
   ainda não commitado.
 - Aberto, baixo risco: como o `__main__` standalone do A14 recebe um
   `project_id` (provável: argumento de CLI).
+
+## [2026-08-26] synthesis | Memoria do A14, testes simples, revisao de proposta hexagonal (GPT)
+- msilva perguntou como a memoria dos agentes persiste e pediu suite de
+  testes por agente + benchmark Langfuse, "pode ser simples"; trouxe tambem
+  uma proposta de arquitetura hexagonal completa escrita por outro
+  assistente (GPT) pra eu avaliar.
+- Memoria: distingui execucao (efemera, ja resolvida pelo create_agent, sem
+  desenho necessario) de dominio entre execucoes (real, ja implicita na
+  saida do A14 - "o que mudou desde a ultima vez" - mas sem lugar pra
+  persistir). Fechado: `a14/memoria.py`, port simples
+  ler_ultimo_relatorio/salvar_relatorio, adapter de arquivo em `.state/`
+  (gitignored). A10 nao precisa - sua saida nao tem delta.
+- Testes: 3 niveis (calculo puro em regras.py, agente com PortfolioReader
+  fake, Farol como aceitacao). Langfuse: Datasets + Experiments nativos,
+  dataset pequeno com o Farol, avaliacao visual na UI, sem scorer
+  automatizado.
+- Revisao da proposta GPT: adotado DTO-do-Linear != tipo de dominio com
+  mapper explicito, calculo puro separado do wrapper de tool (`regras.py`),
+  `PortfolioReader` como `typing.Protocol`. Rejeitado: arvore completa
+  domain/application/adapters (pesada demais pra PoC); `A10Analyzer`/
+  `A14Reporter` como Protocol que o agente LangChain implementaria - reabre
+  o padrao ja descartado em [[Como implementar a PoC do A10+A14 (LangGraph,
+  Skill, Agent SDK)]] de uma interface compartilhada entre frentes, que
+  colapsaria as tres numa so; classes Run*/RunPipeline (cerimonia sem
+  ganho em Python); suite de 4 niveis (mais do que "pode ser simples"
+  pedia).
+- Updated: `syntheses/Desenho do agente LangGraph para A10+A14.md` (novas
+  secoes "Memoria entre execucoes..." e "Revisao de uma analise externa
+  (GPT)...", arvore de pastas revisada com `regras.py`/`memoria.py`/
+  `tests/`), `index.md`.
+- Fora da wiki, mesmo repo: `HANDOFF.md` atualizado com as mesmas decisoes
+  - ainda nao commitado.

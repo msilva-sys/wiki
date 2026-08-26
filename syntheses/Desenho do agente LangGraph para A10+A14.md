@@ -291,12 +291,17 @@ livemode-fluxo-agentico/
                            # LangGraph/Skill/Agent SDK, não dentro da mesma frente
   a10/
     contracts.py            # EntradaA10, SaidaA10 — porta pública do agente
-    agent.py                # create_agent + bloco __main__ p/ rodar isolado
+    regras.py                # cálculo puro: dias_sem_atualizacao, carga_por_assignee
     tools.py
+    agent.py                # create_agent + bloco __main__ p/ rodar isolado
+    tests/
   a14/
     contracts.py            # EntradaA14, RelatorioA14 — porta pública do agente
-    agent.py                # create_agent + bloco __main__ p/ rodar isolado
+    regras.py                # cálculo puro: progresso_por_milestone
+    memoria.py                # snapshot store: ler/salvar último RelatorioA14 por projeto
     tools.py
+    agent.py                # create_agent + bloco __main__ p/ rodar isolado
+    tests/
   main.py                  # orquestrador: monta as Entradas, chama os agentes, gera HTML
 ```
 
@@ -308,6 +313,78 @@ a10 = "python -m a10.agent"     # roda só o A10, imprime as sugestões (JSON)
 a14 = "python -m a14.agent"     # roda o A14 (loop por projeto), imprime os relatórios
 run = "python main.py"          # pipeline completo: A10 + A14 + HTML final
 ```
+
+## Memória entre execuções (A14) e testes/benchmark (2026-08-26)
+
+msilva perguntou como a memória dos agentes persiste, e pediu suíte de
+testes por agente + benchmark no Langfuse — "pode ser simples".
+
+**Memória — só existe uma lacuna real, e é do A14.** Dois tipos de
+"memória" diferentes, que não devem ser confundidos:
+
+- **Memória de execução** (histórico de mensagens/tool-calls dentro de um
+  `.invoke()`) — já resolvida pelo próprio `create_agent`, efêmera por
+  natureza. Não precisa de desenho: isso só importaria se houvesse um
+  humano conversando com o agente em várias rodadas (checkpointer,
+  `thread_id`), e não é o caso — é CLI single-shot.
+- **Memória de domínio entre execuções** — real e já estava implícita na
+  saída do A14 ("o que mudou desde a última vez", seção "Saída" acima),
+  só ninguém tinha notado que isso exige guardar o relatório anterior em
+  algum lugar. Fechado: `a14/memoria.py` — um port simples
+  (`ler_ultimo_relatorio(project_id)` / `salvar_relatorio(project_id,
+  relatorio)`), adapter de arquivo pra essa fase (`.state/` local,
+  gitignored — sem banco). **O A10 não precisa disso** — sua saída é
+  sugestão fresca a cada rodada, sem delta na spec.
+
+**Testes por agente** — três níveis, deliberadamente simples:
+1. Cálculo puro (`regras.py`) — testado direto, sem rede/LLM.
+2. Agente com um `PortfolioReader` fake — sem bater no Linear de verdade.
+3. Caso do Farol como teste de aceitação único.
+
+**Benchmark no Langfuse** — Datasets + Experiments (recurso nativo do
+Langfuse, não um framework de eval à parte): um dataset pequeno (Farol +
+1–2 casos), roda o agente contra cada item, trace linkado ao dataset,
+avaliação visual na UI do Langfuse — sem scorer automatizado nessa fase.
+
+## Revisão de uma análise externa (GPT) sobre arquitetura hexagonal
+
+msilva trouxe uma proposta de arquitetura escrita por outro assistente
+(GPT) — `src/fluxo_agentico/{domain,application,adapters}/` completo,
+`bootstrap.py` como composition root, `Protocol`s pra tudo, classes
+`RunA10`/`RunA14`/`RunPipeline`, suíte de 4 níveis. Avaliada e só
+parcialmente adotada:
+
+**Adotado:**
+- DTO do Linear ≠ tipo de domínio, com mapper explícito — o cálculo e o
+  julgamento do agente trabalham em cima de `Issue`/`Project`/`Milestone`
+  estáveis, não do shape cru do GraphQL.
+- Cálculo determinístico como função pura, separada do wrapper de tool
+  (`regras.py`) — inclui a dica de injetar `agora` explicitamente em vez
+  de `datetime.now()`, evita teste não-determinístico.
+- `PortfolioReader` como `typing.Protocol` — formaliza o port que já
+  existia informalmente.
+
+**Rejeitado:**
+- **A árvore `domain/application/adapters/` completa** — hexagonal "de
+  livro-texto", pesada demais pro tamanho desta PoC; contradiz o padrão
+  que a gente vem seguindo a cada rodada (cortar pra estrutura mínima).
+  `a10/`/`a14/` continuam pastas simples, sem 4 níveis de profundidade.
+- **`A10Analyzer`/`A14Reporter` como `Protocol` que o agente LangChain
+  implementaria** — o ponto mais importante rejeitado, não é só peso:
+  isso reabre exatamente o padrão que
+  [[Como implementar a PoC do A10+A14 (LangGraph, Skill, Agent SDK)]] já
+  descartou — uma interface compartilhada que implementações LangGraph e
+  Claude/Agent SDK poderiam ambas satisfazer colapsaria as três frentes
+  numa só, com portas de entrada diferentes, destruindo o ponto real da
+  PoC (ter opções de verdade). "Agente define a própria interface" é
+  `Entrada → Saída` do agente — não mais uma camada por cima pra trocar o
+  framework por baixo.
+- **Classes `RunA10`/`RunA14`/`RunPipeline`** — cerimônia sem ganho em
+  Python pra empacotar uma chamada de função; `rodar_a10(entrada)` como
+  função já é testável e substituível sozinha.
+- **Suíte de 4 níveis** (unit/integration/acceptance/smoke) — mais do que
+  "pode ser simples" pedia; os 3 níveis acima (cálculo puro, agente+fake,
+  Farol) cobrem o mesmo território sem a cerimônia extra.
 
 ## O que isso resolve na página-mãe
 
