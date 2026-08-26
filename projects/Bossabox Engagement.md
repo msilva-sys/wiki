@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-08-25
+updated: 2026-08-26
 aliases: [bossabox, bossabox assessment]
 tags: [bossabox, vendor, ai-transformation, agent-flow]
 ---
@@ -41,7 +41,14 @@ Two axes:
 - **Build mode**: **default** (their own pre-built solutions, inherited
   from the AI Framework) vs. **custom** (bespoke to the client).
 
-Both sit under **"design build."** Before any of it, they run an
+Both sit under **"design build"** — Bossabox's name for the whole
+engagement journey (design/diagnose *and* implement, bundled as one
+journey rather than separate consulting-then-delivery phases), not a
+distinct product step. The assessment lives *inside* this journey, not as
+a pre-sale gate before it — per JV/Pedro (unattributed between the two)
+on the 2026-08-25 call, *"a gente tem uma jornada que a gente chama de
+design build [...] isso fica dentro dessa jornada de design build."*
+Before any of it, they run an
 **assessment**: a **readiness** score (AI-maturity by category) plus a
 **VSM/DORA**-based flow diagnostic, runnable per-squad and comparable
 across squads — sometimes surfacing a bottleneck common to all of them

@@ -117,12 +117,21 @@ address.
   vocabulary ("sistema de inteligência") layered under whatever tools a
   team already uses (Jira, GitHub, Linear, Notion...), rather than
   replacing them.
-- **Two engagement shapes, crossed with two build modes.** Shape:
-  **módulos** (narrow, faster to prove value) vs. **modelo operacional**
-  (holistic, slower, only viable for a team building from zero). Build
-  mode: **default** (their own pre-built solutions, inherited from the AI
-  Framework) vs. **custom** (bespoke for the client's context). All of it
-  sits under one umbrella they call **"design build."**
+- **"Design build"** is Bossabox's name for the whole engagement journey,
+  not a separate product step — *"a gente tem uma jornada que a gente
+  chama de design build. Todo o coração daquilo que a gente tá fazendo é
+  desenhar uma solução e implementar ela para vocês."* Design (diagnose +
+  plan) plus build (implement), bundled as one journey rather than a
+  consulting phase handed off to a separate delivery phase. The
+  **assessment lives inside it**, not as a pre-sale gate before it: *"isso
+  fica dentro dessa jornada de design build [...] por isso que eu quis
+  colocar isso dentro aqui do design build."*
+- **Two engagement shapes, crossed with two build modes**, both under that
+  design-build umbrella. Shape: **módulos** (narrow, faster to prove
+  value) vs. **modelo operacional** (holistic, slower, only viable for a
+  team building from zero). Build mode: **default** (their own pre-built
+  solutions, inherited from the AI Framework) vs. **custom** (bespoke for
+  the client's context).
 - **The diagnostic product**: an **assessment** combining a **readiness**
   score (AI-maturity by category) and a **VSM/DORA**-based flow diagnostic.
   Can run per-squad and compare squads against each other — sometimes

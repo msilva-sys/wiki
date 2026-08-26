@@ -4050,3 +4050,17 @@ asked for both ingested directly.
 - Updated: `projects/Airtable Proxy.md` (checklist corrigido, `PRO-62` →
   `PRO-96`), `meetings/2026-08-24 1-1 Matheus - Luís.md` (compromisso e
   pergunta em aberto resolvidos), `index.md`.
+
+## [2026-08-26] query | O que é "design build" na Bossabox
+- Pergunta de msilva: o que significa o termo "design build", usado nas
+  páginas sobre a Bossabox só como rótulo, sem explicação.
+- Wiki não tinha a resposta — só citava o termo. Voltei ao raw
+  (`raw/bossabox.txt`, transcript word-by-word) e extraí o trecho falado
+  por JV/Pedro (~13:55–16:49) que explica: "design build" é o nome da
+  jornada inteira de engajamento da Bossabox — desenhar a solução +
+  implementar, como um pacote só, não uma fase de consultoria separada
+  de uma fase de entrega. O assessment (diagnóstico) fica *dentro* dessa
+  jornada, não como gate de pré-venda antes dela.
+- Updated: `projects/Bossabox Engagement.md`, `meetings/2026-08-25
+  Bossabox AI transformation discovery.md` (citação verbatim adicionada
+  em ambas, atribuição lado-Bossabox não distinguível entre JV e Pedro).
