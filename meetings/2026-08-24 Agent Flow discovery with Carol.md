@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-24
+updated: 2026-08-26
 date: 2026-08-24
 attendees: [Carolina Bezerra, Matheus Silva]
 source: "raw/Carol - Matheus.txt"
@@ -39,15 +39,19 @@ sent by Carolina Bezerra at 15:35 the same afternoon.
   leave** (2026-08-24 → ~2026-09-10). Confirmed explicitly at the end of the
   call — msilva asked, Carol confirmed.
 
-## Action items
+## Commitments
 
-- [ ] msilva — talk to **Maria Fernanda Lemos** about how to map her
-      day-to-day work, which currently lives in no system at all (per Carol).
-- [ ] msilva — talk to **João Victor Andrade** about his CRM demand backlog,
-      which he tracks in his own personal spreadsheet, not centrally.
-- [ ] msilva — start implementing A10 Portfolio; figure out data sources
-      beyond Linear, since a meaningful share of real work isn't tracked
-      there at all.
+- msilva — talk to **Maria Fernanda Lemos** about how to map her
+  day-to-day work, which currently lives in no system at all (per Carol).
+  *(done — see [[2026-08-25 Agent Flow discovery with Mafê]].)*
+- msilva — talk to **João Victor Andrade** about his CRM demand backlog,
+  which he tracks in his own personal spreadsheet, not centrally. *(done —
+  see [[2026-08-25 1-1 Matheus - João Victor]]; corrected there: not a
+  spreadsheet, it's ClickUp with a defined pipeline.)*
+- msilva — start implementing A10 Portfolio; figure out data sources
+  beyond Linear, since a meaningful share of real work isn't tracked
+  there at all. *(already has Linear issues — `PRO-374` through `PRO-377`,
+  Fluxo Agêntico project, all in Backlog.)*
 
 ## Open questions
 

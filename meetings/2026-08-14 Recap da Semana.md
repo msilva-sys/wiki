@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-18
+updated: 2026-08-26
 date: 2026-08-14
 attendees: [Gabrielle Ferreira, Maria Fernanda Lemos, Yasmin Macedo, Matheus Silva]
 source: "raw/Recap da Semana - 2026_08_14 14_01 GMT-03_00 - Anotações do Gemini.txt"
@@ -67,15 +67,15 @@ The direction of travel is the same as msilva's arrangement, but it's a separate
 instance with a different reviewer. [[2026-08-14 No mandatory PR review while the
 proxy is pre-production]] has been corrected accordingly.
 
-## Practical items for msilva
+## Commitments
 
-- [ ] **Add tasks to the team board** — noted in passing that he hadn't yet.
-      Worth closing alongside
-      [[2026-08-14 Migrate project management from Jira to Linear]].
-- [ ] **Gabriel's request was routed to msilva by Gabrielle** as a good match for
-      his knowledge — the Monday meeting in
-      [[2026-08-14 1-1 Matheus - Gabrielle]]. It arrives as a formal request, not
-      just a chat.
+- **Add tasks to the team board** — noted in passing that he hadn't yet.
+  Worth closing alongside
+  [[2026-08-14 Migrate project management from Jira to Linear]].
+- **Gabriel's request was routed to msilva by Gabrielle** as a good match for
+  his knowledge — the Monday meeting in
+  [[2026-08-14 1-1 Matheus - Gabrielle]]. It arrives as a formal request, not
+  just a chat.
 - External requests now flow **Slack form → Airtable base → team board**, so
   work arrives as a tracked item. Requests go in the *projetos* channel, not IT.
 

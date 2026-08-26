@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-18
+updated: 2026-08-26
 date: 2026-08-18
 attendees: [Gabrielle Ferreira, Matheus Silva]
 source: "raw/Matheus _ Gabrielle - 2026_08_18 11_04 GMT-03_00 - Anotações do Gemini.md"
@@ -59,21 +59,21 @@ stated preference at
 [[2026-08-18 Product feedback in Linear, code review in Git]], which was **demoted
 from a decision** on this basis.
 
-## Action items
+## Commitments
 
-- [ ] **Gabrielle** — send the Linear project link **and** the folder of `.md`
-      templates/docs, zipped if needed: *"vou te mandar tanto o link do projeto que
-      ele tá, mas também te passo a pasta."* msilva asked for the PRDs or access.
-- [ ] **msilva** — migrate everything off Jira **today**. His own commitment:
-      *"eu vou então hoje eu vou pegar tudo lá do [Jira] e botar para ele[s] para
-      vocês terem uma ideia melhor das coisas."* Fourth time this has been recorded.
-- [ ] **msilva** — turn on execution saving on the remaining `RR*` flows
-      ([[2026-08-18 Save n8n execution logs for audit]]).
-- [ ] **msilva** — ask Luís what he dislikes about his own templates before adopting
-      them: *"Vai também depois perguntar a ele o que que ele achou que tá ficando
-      ruim."*
-- [ ] **msilva** — connect the proxy's Linear project to the existing proxy Slack
-      channel (offered, not assigned).
+- **Gabrielle** — send the Linear project link **and** the folder of `.md`
+  templates/docs, zipped if needed: *"vou te mandar tanto o link do projeto que
+  ele tá, mas também te passo a pasta."* msilva asked for the PRDs or access.
+- **msilva** — migrate everything off Jira **today**. His own commitment:
+  *"eu vou então hoje eu vou pegar tudo lá do [Jira] e botar para ele[s] para
+  vocês terem uma ideia melhor das coisas."* Fourth time this has been recorded.
+- **msilva** — turn on execution saving on the remaining `RR*` flows
+  ([[2026-08-18 Save n8n execution logs for audit]]).
+- **msilva** — ask Luís what he dislikes about his own templates before adopting
+  them: *"Vai também depois perguntar a ele o que que ele achou que tá ficando
+  ruim."*
+- **msilva** — connect the proxy's Linear project to the existing proxy Slack
+  channel (offered, not assigned).
 
 ## Open questions
 

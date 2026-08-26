@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-20
+updated: 2026-08-26
 date: 2026-08-20
 attendees: [Gabrielle Ferreira, Matheus Silva]
 source: "raw/1_1 Matheus _ Gabrielle - 2026_08_20 15_17 GMT-03_00 - Anotações do Gemini.md"
@@ -31,19 +31,21 @@ decisions made.
 
 None — a check-in, not a working session.
 
-## Action items
+## Commitments
 
-- [ ] **Luís** — decide the Pulumi program language for the proxy (`PRO-94`,
-      Go vs. TypeScript per this conversation — matches the existing open
-      question, not a new one). Still pending as of this call; Luís's
-      bandwidth this week was reduced (see below).
-- [ ] **Gabrielle** — has a doctor's appointment tomorrow morning
-      (2026-08-21); asked msilva to relay something to the team at the recap
-      meeting in her place. **What exactly is to be relayed was not stated in
-      the transcript** — she says she'll send it in the team group chat.
-- [ ] **msilva / Luís** — revisit the [[Fluxo Agêntico diagram]] approach
-      after msilva's upcoming time off (see below) — not scheduled, just
-      flagged as wanting a follow-up conversation.
+- **Luís** — decide the Pulumi program language for the proxy (`PRO-94`,
+  Go vs. TypeScript per this conversation — matches the existing open
+  question, not a new one). Still pending as of this call; Luís's
+  bandwidth this week was reduced (see below). *(resolved later the same
+  day — see [[2026-08-18 Bring options to Luís before deciding, communicate
+  async and often]].)*
+- **Gabrielle** — has a doctor's appointment tomorrow morning
+  (2026-08-21); asked msilva to relay something to the team at the recap
+  meeting in her place. **What exactly is to be relayed was not stated in
+  the transcript** — she says she'll send it in the team group chat.
+- **msilva / Luís** — revisit the [[Fluxo Agêntico diagram]] approach
+  after msilva's upcoming time off (see below) — not scheduled, just
+  flagged as wanting a follow-up conversation.
 
 ## Open questions
 

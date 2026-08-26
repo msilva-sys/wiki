@@ -276,10 +276,25 @@ either way it's the same procedure:
 Transcripts are long, noisy, and speaker-attributed. Extract, don't summarize:
 
 1. **Write `meetings/<YYYY-MM-DD> <Topic>.md`** with, in this order:
-   `Decisions` · `Action items` (owner + date, `- [ ]`) · `Open questions` ·
-   `Facts stated` (who said it) · `Notable quotes` (verbatim, sparingly).
-   Attendees and date go in frontmatter. Don't paraphrase the whole meeting —
-   the raw file is still there for that; link to it.
+   `Decisions` · `Commitments` · `Open questions` · `Facts stated` (who said
+   it) · `Notable quotes` (verbatim, sparingly). Attendees and date go in
+   frontmatter. Don't paraphrase the whole meeting — the raw file is still
+   there for that; link to it.
+
+   **`Commitments`, not `Action items`.** This isn't a task tracker — msilva
+   doesn't check these boxes, and Linear is the actual system of record for
+   his own work (decided 2026-08-26, after `- [ ]` items piled up unchecked
+   across a dozen+ meeting notes with no way to tell stale from done).
+   - Plain prose/bullets, **no `- [ ]` checkboxes.** Record who committed to
+     what — e.g. "Luís vai decidir a linguagem do Pulumi."
+   - If a commitment is **msilva's own and worth tracking to completion**,
+     don't just log it here: create or update the Linear issue for it (team/
+     project/labels per `linear-issue-conventions.md`) and reference the
+     issue key in this section instead of leaving a bare commitment. The
+     note stays the record of *why*; Linear is where it's tracked and closed.
+   - **Third-party commitments** (what others said they'd do) stay as plain
+     record here — msilva isn't the one tracking those to done, there's
+     nothing to route anywhere.
 2. **Fan out** — this is where the value is:
    - answers to questions currently marked open → update the entity page and
      **delete the open question there**, noting the meeting that settled it

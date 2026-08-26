@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-17
+updated: 2026-08-26
 date: 2026-08-10
 attendees: [Gabrielle Ferreira, Matheus Silva, "(a second colleague, referred to as Gabi)"]
 source: "raw/2026-08-10 Onboarding Técnico - Matheus - Anotações do Gemini.txt"
@@ -41,18 +41,18 @@ msilva's first weeks are split between them.
   monitoring/watch agent is the suggested first build, pointed at one project
   (LiveScript or "Orca") rather than at everything.
 
-## Action items
+## Commitments
 
-- [ ] Advance the [[Airtable Proxy]] as the primary track — Gabrielle estimated
-      *"uma, duas semanas"* to done. Owner: msilva.
-- [ ] In parallel, build context on [[Agent Flow]]: produce an understanding of
-      each proposed agent, and **build one agent**. Owner: msilva.
-- [ ] Propose which agent to build first and where its first version will live.
-      Owner: msilva. Gabrielle's suggestion: the monitoring agent, scoped to one
-      project.
-- [ ] Share the [[Agent Flow]] design documentation and the recorded design
-      conversations. Owner: Gabrielle. Delivery: via the shared cloud project —
-      msilva's account access was confirmed in the meeting.
+- Advance the [[Airtable Proxy]] as the primary track — Gabrielle estimated
+  *"uma, duas semanas"* to done. Owner: msilva.
+- In parallel, build context on [[Agent Flow]]: produce an understanding of
+  each proposed agent, and **build one agent**. Owner: msilva.
+- Propose which agent to build first and where its first version will live.
+  Owner: msilva. Gabrielle's suggestion: the monitoring agent, scoped to one
+  project.
+- Share the [[Agent Flow]] design documentation and the recorded design
+  conversations. Owner: Gabrielle. Delivery: via the shared cloud project —
+  msilva's account access was confirmed in the meeting.
 
 ## Open questions
 

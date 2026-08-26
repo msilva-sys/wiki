@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-18
+updated: 2026-08-26
 date: 2026-08-17
 attendees: [Gabrielle Ferreira, Luis Fernandez, João Victor Andrade, Yasmin Macedo, Arthur Tavares, Matheus Silva]
 source: "raw/Weekly - Projetos e Tarefas  - 2026_08_17 14_03 GMT-03_00 - Anotações do Gemini.txt"
@@ -57,28 +57,28 @@ Genuinely concluded here — most of the meeting is status, not decisions.
   dados pela gente, o restante todo por eles. A gente só entrega dados para eles no
   final das contas."*
 
-## Action items
+## Commitments
 
-- [ ] **Check your own entry in the internal Hub and report corrections — by
-      2026-08-18.** Owner: msilva (asked of everyone). Explicitly time-boxed to
-      *"entre hoje e amanhã"* because Gabrielle leaves after that. **Today is the
-      deadline.** The Hub was broken only because a deploy had been forgotten; it
-      works again. Arthur was excused. Someone reported theirs was empty; the link
-      is in the projects group.
-- [ ] **Migrate his Jira items to Linear.** Owner: msilva — he restated it himself
-      as part of integrating with the team. Also tracked on
-      [[2026-08-14 Migrate project management from Jira to Linear]].
-- [ ] **Decide whether the Fronte automated test suite goes live this week** — a
-      suite *isolated from Airtable*. Owner: Luís, with Gabrielle.
-- [ ] **Present Ultra Code to the team** and agree when it is the right mode of
-      work. Owner: Luís, no date.
-- [ ] **Send the Airtable documentation standard** (tables, fields, meaning, owner,
-      who fills) so the CRM map follows the same pattern. Owner: Gabrielle, to João
-      Victor.
-- [ ] **Formalize TES feedback to the vendor** — targeted for the week of
-      2026-08-24. Owner: Gabrielle (speaker inferred).
-- [ ] **Re-present Fronte de Negócios 2.0** to Cristian, Ribon and Zoca in the week
-      of 2026-08-24.
+- **Check your own entry in the internal Hub and report corrections — by
+  2026-08-18.** Owner: msilva (asked of everyone). Explicitly time-boxed to
+  *"entre hoje e amanhã"* because Gabrielle leaves after that. **Today is the
+  deadline.** The Hub was broken only because a deploy had been forgotten; it
+  works again. Arthur was excused. Someone reported theirs was empty; the link
+  is in the projects group.
+- **Migrate his Jira items to Linear.** Owner: msilva — he restated it himself
+  as part of integrating with the team. Also tracked on
+  [[2026-08-14 Migrate project management from Jira to Linear]].
+- **Decide whether the Fronte automated test suite goes live this week** — a
+  suite *isolated from Airtable*. Owner: Luís, with Gabrielle.
+- **Present Ultra Code to the team** and agree when it is the right mode of
+  work. Owner: Luís, no date.
+- **Send the Airtable documentation standard** (tables, fields, meaning, owner,
+  who fills) so the CRM map follows the same pattern. Owner: Gabrielle, to João
+  Victor.
+- **Formalize TES feedback to the vendor** — targeted for the week of
+  2026-08-24. Owner: Gabrielle (speaker inferred).
+- **Re-present Fronte de Negócios 2.0** to Cristian, Ribon and Zoca in the week
+  of 2026-08-24.
 
 ## msilva's own status, as he gave it
 

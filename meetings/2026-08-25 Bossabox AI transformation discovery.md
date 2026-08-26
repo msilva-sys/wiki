@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-25
+updated: 2026-08-26
 date: 2026-08-25
 attendees: [Carolina Bezerra, Matheus Silva, Luís Fernandez, Pedro Arantes, JV Abreu, Camila Sande]
 source: "raw/bossabox.txt"
@@ -76,17 +76,17 @@ address.
   preferia fazer um assessment do que ter uma visão talvez contaminada do
   que a gente acha da gente mesmo."*
 
-## Action items
+## Commitments
 
-- [ ] **Bossabox (JV)** — prepare and bring a tailored assessment/journey
-      proposal for Livemode by next Tuesday, informed by this
-      conversation and the (non-)squad structure discussed.
-- [ ] **Bossabox** — send assessment reference material (a PDF pitch deck)
-      ahead of the meeting if ready early; the Livemode side offered to
-      have their own LLMs help review it in advance.
-- [ ] msilva — confirm, if he remembers, which of himself/Carolina/Luís
-      actually said the substantive opinions below (prioritization
-      framework, Farol, monitoring priority) — currently unattributable.
+- **Bossabox (JV)** — prepare and bring a tailored assessment/journey
+  proposal for Livemode by next Tuesday, informed by this
+  conversation and the (non-)squad structure discussed.
+- **Bossabox** — send assessment reference material (a PDF pitch deck)
+  ahead of the meeting if ready early; the Livemode side offered to
+  have their own LLMs help review it in advance.
+- msilva — confirm, if he remembers, which of himself/Carolina/Luís
+  actually said the substantive opinions below (prioritization
+  framework, Farol, monitoring priority) — currently unattributable.
 
 ## Open questions
 

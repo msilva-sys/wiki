@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-21
+updated: 2026-08-26
 date: 2026-08-20
 attendees: [Luis Fernandez, Matheus Silva]
 source: "raw/Luis _ Matheus - 2026_08_20 18_22 GMT-03_00 - Anotações do Gemini.md"
@@ -80,24 +80,26 @@ architecture-validator role ([[Luís Fernandez]]):
   all agents uniformly for now and revisit only when a real need shows up.
   *"Acho que é precipitado tomar essa decisão."*
 
-## Action items
+## Commitments
 
-- [ ] **msilva** — build a small **Portfolio (A10) prototype in LangGraph**
-      and compare it against building the same thing directly in Claude —
-      Luís's proposed validation experiment for whether a framework is even
-      needed, or Claude alone is faster and just as good. Continues the
-      standing tension with
-      [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]]
-      already tracked on [[Agent Flow]].
-- [ ] **msilva** — inventory where memory actually lives / what the
-      information sources are: message history (not currently registered
-      anywhere), the **"team brand"** — the actual body of work Cal/Claude is
-      building, described as needing real maintenance as its own artifact —
-      and **Linear**, already functioning as project memory.
-- [ ] **msilva** — figure out what capabilities/tool access each surviving
-      agent needs (Slack, Grafana, LogRocket, etc.) — flagged as tempting and
-      risky: *"você vai ter um monte de coisa que você resolve tudo isso com
-      [Lang]Graph[...] é perigoso."*
+- **msilva** — build a small **Portfolio (A10) prototype in LangGraph**
+  and compare it against building the same thing directly in Claude —
+  Luís's proposed validation experiment for whether a framework is even
+  needed, or Claude alone is faster and just as good. Continues the
+  standing tension with
+  [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]]
+  already tracked on [[Agent Flow]]. *(this is Linear issue `PRO-377`,
+  Fluxo Agêntico project.)*
+- **msilva** — inventory where memory actually lives / what the
+  information sources are: message history (not currently registered
+  anywhere), the **"team brand"** — the actual body of work Cal/Claude is
+  building, described as needing real maintenance as its own artifact —
+  and **Linear**, already functioning as project memory. *(no Linear issue
+  yet.)*
+- **msilva** — figure out what capabilities/tool access each surviving
+  agent needs (Slack, Grafana, LogRocket, etc.) — flagged as tempting and
+  risky: *"você vai ter um monte de coisa que você resolve tudo isso com
+  [Lang]Graph[...] é perigoso."* *(no Linear issue yet.)*
 
 ## Open questions
 

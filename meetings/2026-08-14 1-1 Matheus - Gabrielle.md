@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-17
+updated: 2026-08-26
 date: 2026-08-14
 attendees: [Gabrielle Ferreira, Matheus Silva]
 source: "raw/1_1 Matheus _ Gabrielle - 2026_08_14 15_55 GMT-03_00 - Anotações do Gemini.txt"
@@ -50,19 +50,19 @@ replaces the wiki's project-tracking assumptions.
   A Slack channel with msilva, Gabrielle, and Luís was proposed so updates
   don't have to be repeated.
 
-## Action items
+## Commitments
 
-- [ ] Set deadlines for both projects — meeting with msilva, Gabrielle, and Luís
-      at the **end of the week beginning 2026-08-17**, before Gabrielle's leave.
-      Deliberately deferred until msilva could estimate with confidence.
-- [ ] Migrate the proxy project to Linear and restructure the issues as msilva
-      sees fit. Owner: msilva. The project shell already exists there.
-- [ ] Share the agent-orchestration example Luís passed on (a model posted on
-      Twitter/LinkedIn; the author reportedly used **Orca**). Owner: Gabrielle.
-- [ ] Send a list of key people to meet — support, IT, operations, engineering,
-      systems. Owner: Gabrielle.
-- [ ] Go deeper on Claude, since most of the company uses it. Owner: msilva.
-- [ ] Meet Gabriel on Monday about his automation. Owner: msilva.
+- Set deadlines for both projects — meeting with msilva, Gabrielle, and Luís
+  at the **end of the week beginning 2026-08-17**, before Gabrielle's leave.
+  Deliberately deferred until msilva could estimate with confidence.
+- Migrate the proxy project to Linear and restructure the issues as msilva
+  sees fit. Owner: msilva. The project shell already exists there.
+- Share the agent-orchestration example Luís passed on (a model posted on
+  Twitter/LinkedIn; the author reportedly used **Orca**). Owner: Gabrielle.
+- Send a list of key people to meet — support, IT, operations, engineering,
+  systems. Owner: Gabrielle.
+- Go deeper on Claude, since most of the company uses it. Owner: msilva.
+- Meet Gabriel on Monday about his automation. Owner: msilva.
 
 ## Facts stated
 

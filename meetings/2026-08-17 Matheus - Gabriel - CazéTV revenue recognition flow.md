@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-18
+updated: 2026-08-26
 date: 2026-08-17
 attendees: [Matheus Silva, Gabriel]
 source:
@@ -217,21 +217,21 @@ The most consequential finding for [[Agent Flow]]:
 So a workflow *was* handed to a team, using skills plus a shared n8n. See the
 correction on [[Agent Flow]].
 
-## Action items
+## Commitments
 
-- [x] **Gabriel** — reset the stuck *fechamento em andamento* and re-trigger.
-      Done; executions observed at ~15:32–15:34.
-- [ ] **Gabriel** — keep running it and watch executions; take the execution
-      output and hand it to Claude to analyse (*"pega aquele output e joga pro
-      Claude, fala: analisa isso aqui"*).
-- [ ] **Gabriel** — work the business rules through with Claude, separately from
-      the cost problem. The revenue figure is still wrong.
-- [ ] **Gabriel** — request the token-consumption dashboard access.
-- [ ] **msilva** — review the `RR*` automations for loops and redundant
-      operations, starting with **`simplificado`** and why two workflows ran
-      concurrently.
-- [ ] **msilva** — propose a fetch-only-what's-needed skill to replace bulk
-      loading of the Airtable table and the Excel.
+- **Gabriel** — reset the stuck *fechamento em andamento* and re-trigger.
+  Done; executions observed at ~15:32–15:34.
+- **Gabriel** — keep running it and watch executions; take the execution
+  output and hand it to Claude to analyse (*"pega aquele output e joga pro
+  Claude, fala: analisa isso aqui"*).
+- **Gabriel** — work the business rules through with Claude, separately from
+  the cost problem. The revenue figure is still wrong.
+- **Gabriel** — request the token-consumption dashboard access.
+- **msilva** — review the `RR*` automations for loops and redundant
+  operations, starting with **`simplificado`** and why two workflows ran
+  concurrently.
+- **msilva** — propose a fetch-only-what's-needed skill to replace bulk
+  loading of the Airtable table and the Excel.
 
 ## Why this matters to [[Agent Flow]]
 

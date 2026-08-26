@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-25
+updated: 2026-08-26
 date: 2026-08-25
 attendees: [João Victor Andrade, Matheus Silva]
 source: "raw/João _ Matheus - 2026_08_25 16_30 GMT-03_00 - Anotações do Gemini.md"
@@ -24,15 +24,17 @@ anteriores.
 Nenhuma decisão formal — João Victor decide **levantar** a questão do
 Linear com Carol ainda essa semana, não decide migrar.
 
-## Action items
+## Commitments
 
-- [ ] João Victor: levantar com Carol (reunião já agendada, logo depois
+- João Victor: levantar com Carol (reunião já agendada, logo depois
   desta) se o time deveria centralizar o backlog do CRM no Linear em vez
   do ClickUp.
-- [ ] msilva: reunião separada com João Victor para um overview do
+- msilva: reunião separada com João Victor para um overview do
   CRM/processo comercial (o que é um "vendedor", o funil, etc.) —
-  adiada por falta de tempo aqui.
-- [ ] (ideia levantada, não compromissada) conectar o arquivo de roadmap
+  adiada por falta de tempo aqui. *(sem issue no Linear ainda — o Linear
+  já marca "Conversa com João" como Done, então isso pode já ter sido
+  coberto por outro caminho; conferir antes de abrir issue nova.)*
+- (ideia levantada, não compromissada) conectar o arquivo de roadmap
   do João Victor (hoje na Claude) a um agente via N8N ou MCP que crie
   cards automaticamente numa etapa "reserva" do tracker escolhido.
 

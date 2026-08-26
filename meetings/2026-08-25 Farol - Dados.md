@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-25
+updated: 2026-08-26
 date: 2026-08-25
 attendees: [Matheus Silva, Luís Fernandez, Carolina Bezerra, Arthur Tavares]
 source: "raw/Farol _ Dados - 2026_08_25 17_39 GMT-03_00 - Anotações do Gemini.md"
@@ -51,13 +51,13 @@ tags: [farol, data, gcp, airtable, bigquery, governance]
   modeled dataset, walked back because it made the pipeline logic
   "complexo pra caramba."
 
-## Action items
+## Commitments
 
-- [ ] Luís (or whoever owns the "programa de parceiros" API integration):
+- Luís (or whoever owns the "programa de parceiros" API integration) —
   talk to **Mariana** about how the partner-program REST API should be
   wired in. *(Possibly the same person as "Marina" below — see Open
   questions.)*
-- [ ] Confirm with Marina/finance whether they're comfortable with the
+- Confirm with Marina/finance whether they're comfortable with the
   repo + DB-copy handoff model once it's actually built.
 
 ## Open questions

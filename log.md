@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-08-25
+updated: 2026-08-26
 ---
 
 # Log
@@ -3763,3 +3763,29 @@ asked for both ingested directly.
 - Atualizado: [[2026-08-25 Farol - Dados]] (correção do método de
   ingestão por fonte), [[Farol]] (duas perguntas abertas novas/
   reforçadas), `index.md`.
+
+## [2026-08-26] refactor | Schema: `Action items` → `Commitments`, sai o checkbox
+- msilva: não usa a seção `Action items` das notas de reunião como task
+  tracker — os checkboxes só acumulavam, sem ninguém marcar `- [x]`, e o
+  `/day` chegou a reportar como "pendente" um item que já tinha sido feito
+  (falar com João Victor).
+- `CLAUDE.md`: seção renomeada para `Commitments`, sem `- [ ]`/`- [x]`
+  — vira registro em prosa, não rastreador. Compromisso acionável e
+  próprio de msilva deve virar issue no Linear em vez de viver só aqui.
+- Reescritas todas as 17 notas em `meetings/` que tinham `## Action items`
+  (mais uma com o mesmo padrão sob outro título,
+  [[2026-08-14 Recap da Semana]]): cabeçalho renomeado, checkboxes
+  removidos, prosa preservada. Onde o item já tinha issue correspondente
+  no Linear ou já foi feito por outra reunião, anotado inline (ex.:
+  `PRO-374`–`PRO-377` para o PoC LangGraph vs. Claude Code; conversas com
+  Mafê e João Victor marcadas como feitas).
+- Não foi feita auditoria retroativa completa contra o Linear — anotado
+  só o que já era óbvio pelo contexto já lido. Uma varredura completa
+  criando issues para o resto fica para quando msilva pedir.
+- Idioma de cada nota preservado como estava (a decisão de pt-BR do
+  vault, 2026-08-24, não força retradução de página só por causa deste
+  refactor estrutural).
+- Atualizado também: `.claude/skills/day/SKILL.md` — não lê mais
+  checkbox de `meetings/` como pendência de msilva; Linear passa a ser a
+  fonte de verdade para isso, a wiki só contribui prep faltando e
+  compromissos de terceiros.

@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-25
+updated: 2026-08-26
 date: 2026-08-25
 attendees: [Maria Fernanda Lemos, Matheus Silva]
 source: https://notes.granola.ai/t/3df40d40-04bd-4a4e-b4c7-40086f928fbd-008umkv4
@@ -15,7 +15,7 @@ tags: [agents, discovery, a4, a6, a1, a10, intake, granola]
 Prepared by [[Meeting prep - Agent Flow discovery with Mafê and João Victor - 2026-08-25]],
 which planned a **joint** session with [[João Victor Andrade]]. This one ran
 as **just Mafê and msilva** — João's mapping is deferred to a separate
-conversation (see Action items). No raw transcript file: source is a
+conversation (see Commitments). No raw transcript file: source is a
 Granola shared-notes link (AI-generated structured notes, not a verbatim
 transcript — no timestamped quotes available, so `transcription_confidence`
 is downgraded from the usual meeting-page default, but the content is a
@@ -26,11 +26,12 @@ issue).
 
 None — pure discovery, as planned.
 
-## Action items
+## Commitments
 
-- [ ] msilva: falar com [[João Victor Andrade]] separadamente para mapear o
+- msilva: falar com [[João Victor Andrade]] separadamente para mapear o
   fluxo dele (a metade da reunião conjunta original que não aconteceu aqui).
-- [ ] Maria Fernanda: compartilhar a transcrição completa e as anotações do
+  *(feito no mesmo dia — ver [[2026-08-25 1-1 Matheus - João Victor]].)*
+- Maria Fernanda: compartilhar a transcrição completa e as anotações do
   Granola com msilva (pode conter detalhe que as notas estruturadas
   omitem).
 

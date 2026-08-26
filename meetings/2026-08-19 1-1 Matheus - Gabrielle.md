@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-19
+updated: 2026-08-26
 date: 2026-08-19
 attendees: [Gabrielle Ferreira, Matheus Silva]
 source:
@@ -43,7 +43,7 @@ None. This was a working/thinking-out-loud session, not a decision meeting —
 no line reads as settled, and nothing here overrides or confirms
 [[2026-08-18 1-1 Matheus - Luís]]'s open discovery-conversations plan.
 
-## Action items
+## Commitments
 
 None stated explicitly. Implicitly open: resolve the A1/A2 split question and
 the A5 Watcher design-path question below before more of [[Agent Flow]] gets
