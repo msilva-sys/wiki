@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: research
-updated: 2026-08-25
+updated: 2026-08-26
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -116,6 +116,9 @@ tags: [agents, llm, automation, onboarding, research]
 > mãos". Três implementações leves, nenhuma "principal": LangGraph, Skill do
 > Claude Code (uso pessoal/interativo), Claude Agent SDK (serviço autônomo).
 > Caso de teste: o Farol, não a reunião inteira com a Carol.
+> **Repositório definido, mesmo dia**: as três frentes moram num repo só —
+> local `C:\Users\msilva\projects\livemode-fluxo-agentico`, remoto
+> `git@github.com:tech-livemode/livemode-fluxo-agentico.git`.
 
 ## Philosophy and build strategy
 

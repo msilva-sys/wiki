@@ -140,7 +140,10 @@ uma validação exaustiva.
 ## Pendências operacionais (não mudam o desenho, resolver antes de codar)
 
 - De onde vem a API key da Anthropic pro LangGraph — pessoal ou da Livemode.
-- Onde o código de cada frente vai morar (repositório).
+- ~~Onde o código de cada frente vai morar (repositório).~~ **Resolvido
+  2026-08-26**: um repositório único pras três frentes — pasta local
+  `C:\Users\msilva\projects\livemode-fluxo-agentico`, remoto
+  `git@github.com:tech-livemode/livemode-fluxo-agentico.git`.
 - Quem paga o uso da API key.
 
 ## O que isso muda em outros lugares

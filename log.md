@@ -4101,3 +4101,28 @@ asked for both ingested directly.
   `projects/Pulse.md` (nova seção "External mention — Bossabox call"),
   `meetings/2026-08-25 Bossabox AI transformation discovery.md` (open
   question marcada como confirmada).
+
+## [2026-08-26] query | Local do repositório da PoC A10+A14 (três frentes)
+- msilva definiu onde o código das três frentes do PoC vai morar: repo
+  único, pasta local `C:\Users\msilva\projects\livemode-fluxo-agentico`,
+  remoto `git@github.com:tech-livemode/livemode-fluxo-agentico.git`. Resolve
+  uma das três pendências operacionais deixadas em aberto na síntese do
+  design da PoC ([[Como implementar a PoC do A10+A14 (LangGraph, Skill,
+  Agent SDK)]], sessão anterior no mesmo dia). Seguem abertas: origem da
+  API key da Anthropic pro LangGraph (pessoal vs. Livemode) e quem paga o
+  uso.
+- Antes disso, montei em chat um guia de estudo (sem código, só leitura)
+  pras três frentes, calibrado ao que msilva já sabe (LangGraph) vs. o que
+  é novo (Skills do Claude Code, Agent SDK): auth via API key crua no
+  GraphQL do Linear (`api.linear.app/graphql`, sem SDK Python oficial,
+  histórico de mudanças de issue não é exposto pela API — staleness tem
+  que ser derivada de `createdAt`/`updatedAt`); estrutura de `SKILL.md`
+  (frontmatter, herança automática de MCP já conectado na sessão,
+  `allowed-tools` pra pré-aprovar sem prompt); e o Agent SDK (`query()`,
+  MCP remoto via HTTP+Bearer em `mcp_servers`, `permission_mode: "dontAsk"`
+  pra travar em modo sugestão-só, execução single-shot agendada por fora
+  do SDK). Não persistido como página — é material de estudo pontual, não
+  uma síntese/decisão nova.
+- Updated: `syntheses/Como implementar a PoC do A10+A14 (LangGraph, Skill,
+  Agent SDK).md` (pendência do repositório marcada resolvida),
+  `projects/Agent Flow.md` (pointer no callout da PoC).
