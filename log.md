@@ -4064,3 +4064,21 @@ asked for both ingested directly.
 - Updated: `projects/Bossabox Engagement.md`, `meetings/2026-08-25
   Bossabox AI transformation discovery.md` (citação verbatim adicionada
   em ambas, atribuição lado-Bossabox não distinguível entre JV e Pedro).
+
+## [2026-08-26] query | Aprofundando os dois eixos (módulos/modelo operacional, default/custom)
+- Pedido de msilva: mergulhar mais fundo nos dois eixos de engajamento da
+  Bossabox, já registrados como rótulo em `projects/Bossabox
+  Engagement.md`.
+- Voltei ao raw (`raw/bossabox.txt`, ~13:55–17:30) e extraí o racional
+  por trás de cada eixo: módulos vs. modelo operacional nasce da
+  dificuldade de mudar uma operação já rodando de uma vez só (modelo
+  operacional só viável para squad do zero); default vs. custom vive
+  dentro de cada escolha de escopo, com o custom justificado por
+  contextos regulatórios/de qualidade distintos — mesma lógica citada
+  como motivação para o OSV2 (ontologia agnóstica de ferramenta).
+- Novo: um segundo nome não identificado do lado da Bossabox, "Edu",
+  endereçado diretamente no fechamento da explicação — mesmo padrão do
+  "Davi"/"Divi" já registrado; não investigado.
+- Updated: `projects/Bossabox Engagement.md` (seção "How they engage"
+  expandida com racional + exemplo do módulo Slack; open question sobre
+  "Edu" adicionada).

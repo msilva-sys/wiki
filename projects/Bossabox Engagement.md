@@ -33,13 +33,46 @@ GitHub, Linear, Notion...), not a replacement for them.
 
 ## How they engage
 
-Two axes:
+Two axes, both explained in more depth on the 2026-08-25 call
+(`raw/bossabox.txt`, ~13:55–17:30) than the deck alone gives:
 
-- **Scope**: **módulos** (narrow slice, faster to prove value) vs.
-  **modelo operacional** (the whole thing — viable mainly for a team
-  starting from zero).
-- **Build mode**: **default** (their own pre-built solutions, inherited
-  from the AI Framework) vs. **custom** (bespoke to the client).
+- **Scope: módulos vs. modelo operacional.** Not a menu choice — a
+  response to something they learned building the product: *"vai ser
+  muito difícil a gente conseguir transformar, principalmente numa
+  operação que já existe, que já tá, que tem várias pessoas, a gente
+  mudar o modelo operacional de uma vez só [...] vai demorar bastante."*
+  **Modelo operacional** (the whole picture, adopted at once) is viable
+  mainly for a team starting a squad from zero — nothing existing to
+  reconcile. **Módulos** (the same picture sliced into addressable
+  pieces) is what they call the "**caminho mais natural**" for an
+  operation already running, like Livemode's — faster to prove value,
+  easier to align on whether it worked. What's constant across both:
+  the same three-way premise — **software + método + IA embutida em
+  tudo** — is guaranteed regardless of which path is taken. Concrete
+  example they gave (a different client): a Slack-based module for
+  ticket generation/prioritization used by a non-technical CX team — the
+  user-facing flow is a chat with a context-aware agent, but a full agent
+  layer sits behind it, built for that one value stream only. That's what
+  a "módulo" looks like in practice.
+- **Build mode: default vs. custom** — this axis lives *inside* each
+  scope choice (a módulo or the whole modelo operacional can each be
+  default or custom). **Default** = solutions they've already built,
+  inherited from the AI Framework, "nível de customização pequeno."
+  **Custom** = they take what's already built and evolve/adapt it to the
+  client's specific context — the more customized form. Their stated
+  rationale isn't just commercial: different contexts genuinely need
+  different bars — *"eu vou entrar num contexto mais regulatório [...]
+  tem uma outra régua [...] uma outra suíte de teste [...] eu deveria ter
+  mais liberdade para poder customizar."* This same reasoning is what
+  they cite as the motivation for **OSV2** (the ontology layer) — any
+  tool (Linear, Jira, paper, Notion) biases the flow in some way, and
+  they want a tool-agnostic "sustentação" underneath.
+
+**Where the assessment fits both axes**: it's what decides *which*
+módulo to address and *how customized* it needs to be — not a separate
+upfront step, but the input to both choices: *"a gente roda esse
+diagnóstico, entende de fato onde que estão esses gargalos e depois
+[decide o resto]."*
 
 Both sit under **"design build"** — Bossabox's name for the whole
 engagement journey (design/diagnose *and* implement, bundled as one
@@ -118,6 +151,14 @@ Assessment deck attached — see the note above.
 
 ## Open questions
 
+- **Who is "Edu"?** A second unidentified name on the Bossabox side,
+  addressed directly at the close of the axes explanation (~17:20) —
+  *"Beleza, acho que deu para entender um pouquinho aqui, Edu."* Not in
+  the attendee list (Pedro Arantes, JV Abreu, Camila Sande). Same shape
+  of problem as the "Davi"/"Divi" mistranscription already flagged on
+  [[2026-08-25 Bossabox AI transformation discovery]] — could be a
+  garbled name of someone already on the call, or a fourth participant.
+  Not investigated further.
 - **Who actually said what on the Livemode side?** See the attribution
   caveat — determines whether the pains above are outside corroboration
   or msilva/Luís hearing themselves back.
