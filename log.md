@@ -4082,3 +4082,22 @@ asked for both ingested directly.
 - Updated: `projects/Bossabox Engagement.md` (seção "How they engage"
   expandida com racional + exemplo do módulo Slack; open question sobre
   "Edu" adicionada).
+
+## [2026-08-26] query | Camada de sustentação (OSV2) + Pulso confirmado como Pulse
+- Continuei o mergulho no raw (`raw/bossabox.txt`) e extraí a explicação
+  completa da "camada de sustentação"/OSV2 (Camila, Bossabox): sistemas de
+  registro vs. sistema de inteligência, contexto acoplado antes mesmo do
+  Linear/Jira, skills agnósticas editáveis fora da ferramenta, job to be
+  done de visibilidade de uso de IA.
+- Achado: o trecho sobre "o outro projeto" (já registrado como open
+  question) menciona um projeto "Pulso" — bateu com `projects/Pulse.md`
+  já existente (aliases Pulso, esteira de negócios). Pedi confirmação a
+  msilva por causa da ambiguidade de atribuição no raw; ele confirmou:
+  (1) a direção do "outro projeto" é Bossabox demonstrando metodologia
+  para a Livemode (não o contrário), (2) Pulso = Pulse, mesmo projeto.
+- Updated: `projects/Bossabox Engagement.md` (seção "What Bossabox is"
+  expandida com a camada de sustentação; "Relationship history" com a
+  confirmação de direção + link para Pulse; open questions ajustadas),
+  `projects/Pulse.md` (nova seção "External mention — Bossabox call"),
+  `meetings/2026-08-25 Bossabox AI transformation discovery.md` (open
+  question marcada como confirmada).

@@ -31,6 +31,26 @@ client's process differs — the goal is a common vocabulary ("sistema de
 inteligência") layered under whichever tools a team already uses (Jira,
 GitHub, Linear, Notion...), not a replacement for them.
 
+**The "camada de sustentação" concept, in Camila's own words** (2026-08-25
+call): *"Uma empresa tem os seus sistemas de registros [...] o que a gente
+quer construir na verdade é um sistema de inteligência para todos esses
+registros."* The pitch isn't to replace Jira/Linear/GitHub — it's to be
+"a camada de baixo sustentando essas ferramentas," so a Linear ticket
+"vire contexto certo para quando entrar para desenvolvimento," and that
+context can originate even *before* the tracked tool — e.g. a Notion doc
+from a strategy meeting that defined the initiative in the first place.
+The layer is meant to be editable directly (adjust an agnostic skill
+rather than a tool-specific one) rather than locked inside whichever tool
+happens to hold it. Their own stated rationale for why this matters:
+every tool biases the process somehow — *"quantas vezes mexendo no Jira
+você quer mudar alguma coisa, ah, não pode porque o Jira não deixa"* —
+and framed this as the same shape of problem that made Livemode leave
+Airtable once already (see below). The **job to be done** they named for
+this layer: give management visibility into whether AI usage is actually
+effective — *"o pessoal tá usando certo? [...] o que que eu posso fazer
+para eles usarem mais certo?"* — not just orchestration, usage
+observability.
+
 ## How they engage
 
 Two axes, both explained in more depth on the 2026-08-25 call
@@ -106,11 +126,25 @@ rather than squad-specific.
 
 ## Relationship history
 
-- **A prior, unidentified engagement exists.** Both Pedro and the Livemode
-  side refer to "the other project" where Bossabox already demoed their
-  methodology to Livemode — not named in
-  [[2026-08-25 Bossabox AI transformation discovery]], not otherwise on
-  record in this wiki. *(unverified — worth asking directly.)*
+- **A prior, unidentified engagement exists — direction confirmed by
+  msilva (2026-08-26).** Both Pedro and the Livemode side refer to "the
+  other project," where **Bossabox demoed their own methodology to
+  Livemode** (not the reverse — msilva confirmed this directly after the
+  raw transcript read ambiguously on this point). The project itself is
+  still not named anywhere in this wiki.
+- **[[Pulse]] ("Pulso") confirmed as the same project** referenced in
+  that same exchange (msilva, 2026-08-26). The Livemode side, comparing
+  Bossabox's demoed methodology against their own day-to-day work, named
+  Pulso as the exception rather than the norm: *"o pulso, né, que agora
+  tem nome, né, aquele projeto da esteira do comercial, é assim uma das
+  soluções mais robustas que a gente tem aqui dentro [...] as nossas
+  soluções, o que a gente de fato trabalha aqui no dia a dia, são
+  projetos que vão ser mais simples do que aquilo."* Two things this adds
+  to [[Pulse]]: independent confirmation that "Pulso" is the name in
+  active use (bearing on that page's open question about the
+  *Fronte de Negócios 2.0* naming lineage), and that it's regarded
+  internally as unusually robust/complex relative to Livemode's typical
+  project.
 - **Livemode already moved off Airtable once for something in this
   space** — *"esse foi o motivo da gente ter saído do Airtable."*
   Distinct from [[Airtable Proxy]]/[[LiveScript]]'s own Airtable usage;
@@ -164,6 +198,7 @@ Assessment deck attached — see the note above.
   or msilva/Luís hearing themselves back.
 - Is this engagement something [[Agent Flow]] should coordinate with,
   track as a parallel effort, or treat as fully independent?
-- What was "the other project"?
+- What was "the other project" — direction confirmed (Bossabox demoed to
+  Livemode), but the project itself still isn't named anywhere.
 - Does msilva need visibility into future Bossabox conversations, given
   the overlap with his own work?

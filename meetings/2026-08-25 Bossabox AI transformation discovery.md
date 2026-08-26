@@ -97,9 +97,11 @@ address.
   "Livemode side" below could be Carolina, msilva, or Luís.
 - **What was "the other project"** Bossabox already worked with Livemode
   on, where they first demoed their methodology? Referenced by both Pedro
-  and the Livemode side as already-happened, not identified in this
-  transcript or elsewhere in this wiki. *(unverified — worth asking
-  directly.)*
+  and the Livemode side as already-happened. **Direction confirmed by
+  msilva 2026-08-26**: it was Bossabox who demoed to Livemode (the
+  transcript read ambiguously on this point). The project itself is still
+  not named anywhere in this wiki — see [[Bossabox Engagement]] for the
+  related "Pulso"/[[Pulse]] confirmation from the same exchange.
 - **Who is "Davi"/"Divi"?** See the transcription-quality note above.
 - Is this Bossabox engagement something [[Agent Flow]] should track as a
   parallel/competing effort, coordinate with, or stay independent from?

@@ -1,7 +1,7 @@
 ---
 type: project
 status: deferred
-updated: 2026-08-18
+updated: 2026-08-26
 aliases: [Pulso, esteira de negócios, business pipeline]
 tags: [pulse, frontend, immersion, outsourced]
 ---
@@ -101,6 +101,20 @@ estar comprado em fazer ele acontecer"* — because the project's central challe
 - Scope-definition sessions with every area are the fastest available map of who
   owns what — which feeds both [[Agent Flow]]'s classification design and the
   list of people to meet.
+
+## External mention — Bossabox call (2026-08-25)
+
+Came up unprompted in [[Bossabox Engagement]]'s 2026-08-25 discovery call
+(`raw/bossabox.txt`), comparing Bossabox's demoed methodology against
+Livemode's typical work: *"o pulso, né, que agora tem nome, né, aquele
+projeto da esteira do comercial, é assim uma das soluções mais robustas
+que a gente tem aqui dentro [...] as nossas soluções, o que a gente de
+fato trabalha aqui no dia a dia, são projetos que vão ser mais simples do
+que aquilo."* msilva confirmed 2026-08-26 that "Pulso" here is this
+project. Two takeaways: **"Pulso" is the name actively in use**
+internally (independent confirmation, bearing on the *Fronte de Negócios
+2.0* question below), and it's regarded as **unusually robust/complex**
+relative to Livemode's typical project — not the norm.
 
 ## Open questions
 
