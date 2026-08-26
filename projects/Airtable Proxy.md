@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-08-24
+updated: 2026-08-26
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -673,22 +673,33 @@ communicate async and often]].
 
 ## Things to actually do
 
-- [ ] Turn Grafana's default "antipatterns" dashboard into a management-level
+- [x] Turn Grafana's default "antipatterns" dashboard into a management-level
       view for decision-making, via code (Claude Code) — 2026-08-24,
-      [[2026-08-24 1-1 Matheus - Luís]]. **In design (2026-08-24, chat with
-      msilva, not yet built)**: a separate "Insights" dashboard on top of
-      already-collected telemetry — validated readings so far: anti-pattern
-      rate as a trend (not raw count), top tables by wasted bytes, per-base
-      rate-limit headroom with near-breach count, latency with/without
-      filter (`airtable_request_latency` has no `hasFilter` metric
-      attribute — only `appId`/`baseId`/`operation`/`status` do — so this is
-      LogQL, `quantile_over_time`/`unwrap durationMs`, not PromQL; kept as a
-      low-refresh/manual panel rather than live auto-refresh, since the cost
-      concern is about repeated execution, not the query itself — this
-      reading doesn't change minute to minute), and a cache-candidate
-      estimate scoped to the
-      no-filter/no-projection case only (reliable with today's booleans; the
-      filtered subset isn't — see `PRO-371` below).
+      [[2026-08-24 1-1 Matheus - Luís]]. **Correction, 2026-08-26**: this page
+      previously said the "Insights" dashboard was "in design, not yet
+      built" — wrong. Checked the repo directly
+      (`grafana/dashboards/airtable-insights.json`): it's already built, 5
+      panels — anti-pattern rate as a trend (%, not raw count), per-base
+      rate-limit headroom (count of peaks above 80% of the limit), an
+      estimated-avoidable-calls figure scoped to the no-filter/no-projection
+      case only (the filtered subset isn't reliable yet — see `PRO-371`
+      below), latency p95 with-filter vs. without-filter per table, and top
+      tables by no-projection bytes.
+      **Also found, same pass**: an unpushed local branch
+      `msilva/airtable-proxy-dashboard-telemetry-fixes` (commit `c8f1941`,
+      1 ahead of `main`) already fixes real problems a dashboard review
+      caught — "Total de chamadas" was double-counting the app-log and
+      proxy-log streams instead of splitting by `service_name`; the N+1
+      panels were misreading empty `trace_id` as the biggest offender
+      (rescoped to `roteiros-nextjs`, the only side with valid trace
+      correlation); several panel titles/descriptions stated estimates or
+      heuristics as fact (softened, with the `hasFilter`-only-catches-
+      `filterByFormula` caveat extended everywhere it applies); the 429
+      alert no longer implies per-base rate-limiting is the only possible
+      cause (Airtable also 429s on the monthly plan cap). Proxy-side: async
+      telemetry emission now reattaches the request's span context, so log
+      lines finally carry a `trace_id`/`span_id` — verified live against a
+      real request's Tempo span. Opening a PR to `main` for this branch.
 - [ ] `PRO-371` — detect duplicates among **filtered** Airtable calls
       specifically (the no-filter case above is already solid). Proxy today
       only logs `hasFilter`/`hasFieldProjection` as booleans, not the actual

@@ -3789,3 +3789,18 @@ asked for both ingested directly.
   checkbox de `meetings/` como pendência de msilva; Linear passa a ser a
   fonte de verdade para isso, a wiki só contribui prep faltando e
   compromissos de terceiros.
+
+## [2026-08-26] refactor | Airtable Proxy — correção do status do dashboard "Insights"
+- Checado o repo `livemode-airtable-proxy` direto (não só a wiki): o
+  dashboard gerencial "Insights" que o Luís pediu em 2026-08-24 já estava
+  construído (`grafana/dashboards/airtable-insights.json`, 5 painéis),
+  não "em desenho" como a página registrava.
+- Updated: `projects/Airtable Proxy.md` (item da checklist marcado feito,
+  nota de correção adicionada, `updated:` para 2026-08-26), `index.md`.
+- Mesma checagem encontrou uma branch local não enviada,
+  `msilva/airtable-proxy-dashboard-telemetry-fixes` (commit `c8f1941`),
+  corrigindo dupla contagem em "Total de chamadas", falso positivo de N+1
+  por `trace_id` vazio, e correlação de trace ausente em logs emitidos de
+  forma assíncrona. PR aberta para `main` no mesmo momento.
+- Also: montado o artefato "Sinais do Proxy Airtable" (catálogo de
+  métricas em linguagem de negócio) para a conversa de msilva com o Luís.
