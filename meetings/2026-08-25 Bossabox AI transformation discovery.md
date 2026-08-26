@@ -87,6 +87,8 @@ address.
 - msilva — confirm, if he remembers, which of himself/Carolina/Luís
   actually said the substantive opinions below (prioritization
   framework, Farol, monitoring priority) — currently unattributable.
+  *(deixado em aberto por escolha, 2026-08-26 — msilva optou por não
+  perseguir isso.)*
 
 ## Open questions
 

@@ -71,13 +71,17 @@ proxy is pre-production]] has been corrected accordingly.
 
 - **Add tasks to the team board** — noted in passing that he hadn't yet.
   Worth closing alongside
-  [[2026-08-14 Migrate project management from Jira to Linear]].
+  [[2026-08-14 Migrate project management from Jira to Linear]]. *(feito —
+  coberto pela migração e pelo uso extensivo do Linear desde então.)*
 - **Gabriel's request was routed to msilva by Gabrielle** as a good match for
   his knowledge — the Monday meeting in
   [[2026-08-14 1-1 Matheus - Gabrielle]]. It arrives as a formal request, not
-  just a chat.
-- External requests now flow **Slack form → Airtable base → team board**, so
-  work arrives as a tracked item. Requests go in the *projetos* channel, not IT.
+  just a chat. *(não é um compromisso à parte — mesmo pedido do item já
+  marcado feito em [[2026-08-14 1-1 Matheus - Gabrielle]].)*
+
+Fato de processo, não compromisso: external requests now flow **Slack form →
+Airtable base → team board**, so work arrives as a tracked item. Requests go
+in the *projetos* channel, not IT.
 
 ## Meeting rhythm at Livemode
 

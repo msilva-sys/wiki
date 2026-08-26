@@ -66,14 +66,19 @@ from a decision** on this basis.
   ele tá, mas também te passo a pasta."* msilva asked for the PRDs or access.
 - **msilva** — migrate everything off Jira **today**. His own commitment:
   *"eu vou então hoje eu vou pegar tudo lá do [Jira] e botar para ele[s] para
-  vocês terem uma ideia melhor das coisas."* Fourth time this has been recorded.
+  vocês terem uma ideia melhor das coisas."* Fourth time this has been
+  recorded. *(duplicata — já marcado feito em
+  [[2026-08-14 1-1 Matheus - Gabrielle]] e
+  [[2026-08-17 Weekly - Projetos e Tarefas]].)*
 - **msilva** — turn on execution saving on the remaining `RR*` flows
-  ([[2026-08-18 Save n8n execution logs for audit]]).
+  ([[2026-08-18 Save n8n execution logs for audit]]). *(não feito,
+  descartado 2026-08-26 por msilva.)*
 - **msilva** — ask Luís what he dislikes about his own templates before adopting
   them: *"Vai também depois perguntar a ele o que que ele achou que tá ficando
-  ruim."*
+  ruim."* *(não feito, confirmado por msilva 2026-08-26.)*
 - **msilva** — connect the proxy's Linear project to the existing proxy Slack
-  channel (offered, not assigned).
+  channel (offered, not assigned). *(feito, confirmado por msilva
+  2026-08-26.)*
 
 ## Open questions
 

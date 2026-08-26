@@ -64,10 +64,13 @@ Genuinely concluded here — most of the meeting is status, not decisions.
   *"entre hoje e amanhã"* because Gabrielle leaves after that. **Today is the
   deadline.** The Hub was broken only because a deploy had been forgotten; it
   works again. Arthur was excused. Someone reported theirs was empty; the link
-  is in the projects group.
+  is in the projects group. *(não feito, confirmado por msilva 2026-08-26 —
+  ficou pra trás.)*
 - **Migrate his Jira items to Linear.** Owner: msilva — he restated it himself
   as part of integrating with the team. Also tracked on
-  [[2026-08-14 Migrate project management from Jira to Linear]].
+  [[2026-08-14 Migrate project management from Jira to Linear]]. *(duplicata
+  do mesmo item já marcado feito em
+  [[2026-08-14 1-1 Matheus - Gabrielle]] — resolvido junto.)*
 - **Decide whether the Fronte automated test suite goes live this week** — a
   suite *isolated from Airtable*. Owner: Luís, with Gabrielle.
 - **Present Ultra Code to the team** and agree when it is the right mode of

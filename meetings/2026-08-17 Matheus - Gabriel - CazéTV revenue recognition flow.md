@@ -223,15 +223,20 @@ correction on [[Agent Flow]].
   Done; executions observed at ~15:32–15:34.
 - **Gabriel** — keep running it and watch executions; take the execution
   output and hand it to Claude to analyse (*"pega aquele output e joga pro
-  Claude, fala: analisa isso aqui"*).
+  Claude, fala: analisa isso aqui"*). *(fora do escopo de msilva — per
+  msilva 2026-08-26, "acho que o Gabriel seguiu sozinho": encaixa no padrão
+  de enablement, unblock-then-step-back, não algo pra msilva acompanhar.)*
 - **Gabriel** — work the business rules through with Claude, separately from
-  the cost problem. The revenue figure is still wrong.
-- **Gabriel** — request the token-consumption dashboard access.
+  the cost problem. The revenue figure is still wrong. *(fora do escopo de
+  msilva — mesma nota acima.)*
+- **Gabriel** — request the token-consumption dashboard access. *(fora do
+  escopo de msilva — mesma nota acima.)*
 - **msilva** — review the `RR*` automations for loops and redundant
   operations, starting with **`simplificado`** and why two workflows ran
-  concurrently.
+  concurrently. *(não feito, descartado 2026-08-26 por msilva.)*
 - **msilva** — propose a fetch-only-what's-needed skill to replace bulk
-  loading of the Airtable table and the Excel.
+  loading of the Airtable table and the Excel. *(não feito, descartado
+  2026-08-26 por msilva.)*
 
 ## Why this matters to [[Agent Flow]]
 

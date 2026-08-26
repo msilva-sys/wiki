@@ -31,9 +31,10 @@ Linear com Carol ainda essa semana, não decide migrar.
   do ClickUp.
 - msilva: reunião separada com João Victor para um overview do
   CRM/processo comercial (o que é um "vendedor", o funil, etc.) —
-  adiada por falta de tempo aqui. *(sem issue no Linear ainda — o Linear
-  já marca "Conversa com João" como Done, então isso pode já ter sido
-  coberto por outro caminho; conferir antes de abrir issue nova.)*
+  adiada por falta de tempo aqui. *(ainda não aconteceu, confirmado por
+  msilva 2026-08-26 — distinto do `PRO-373` "Conversa com João" (Done),
+  que é a conversa de discovery do CRM já registrada. Sem issue no
+  Linear por ora, fica só como registro.)*
 - (ideia levantada, não compromissada) conectar o arquivo de roadmap
   do João Victor (hoje na Claude) a um agente via N8N ou MCP que crie
   cards automaticamente numa etapa "reserva" do tracker escolhido.

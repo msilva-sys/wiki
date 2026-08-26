@@ -45,7 +45,8 @@ None — a check-in, not a working session.
   the transcript** — she says she'll send it in the team group chat.
 - **msilva / Luís** — revisit the [[Fluxo Agêntico diagram]] approach
   after msilva's upcoming time off (see below) — not scheduled, just
-  flagged as wanting a follow-up conversation.
+  flagged as wanting a follow-up conversation. *(feito — no mesmo dia, ver
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]].)*
 
 ## Open questions
 

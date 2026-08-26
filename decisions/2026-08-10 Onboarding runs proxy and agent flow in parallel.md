@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-17
+updated: 2026-08-26
 date: 2026-08-10
 decided_by: Gabrielle Ferreira, with msilva
 source: "[[2026-08-10 Onboarding Técnico - Matheus]]"
@@ -56,3 +56,12 @@ Three reasons parallel beat sequential:
 
 Active as of 2026-08-17. Revisit if the proxy overruns the one-to-two week
 estimate, since the parallel plan assumes it lands quickly.
+
+> [!warning] Revisit trigger fired — 2026-08-26
+> The proxy did overrun the 1-2 week estimate — still pre-production as of
+> 2026-08-26 (building the IaC/Pulumi slice). Per msilva, in practice the two
+> tracks weren't run as strictly primary/secondary either: he alternated
+> between the proxy and [[Agent Flow]] week to week, closer to genuinely
+> parallel than "proxy first, agent flow for context only." The original
+> plan's *shape* (parallel, no delivery pressure on Agent Flow) held; the
+> *primary/secondary framing* is the part that didn't match practice.

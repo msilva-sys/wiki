@@ -44,15 +44,29 @@ msilva's first weeks are split between them.
 ## Commitments
 
 - Advance the [[Airtable Proxy]] as the primary track — Gabrielle estimated
-  *"uma, duas semanas"* to done. Owner: msilva.
+  *"uma, duas semanas"* to done. Owner: msilva. *(descartado 2026-08-26 —
+  orientação genérica do dia 1, não uma tarefa rastreável; o trabalho real
+  já vive no board do Linear. Ver também a correção em
+  [[2026-08-10 Onboarding runs proxy and agent flow in parallel]]: o
+  proxy estourou a estimativa e não foi tocado estritamente como
+  "primário", msilva alternou com o Agent Flow.)*
 - In parallel, build context on [[Agent Flow]]: produce an understanding of
-  each proposed agent, and **build one agent**. Owner: msilva.
+  each proposed agent, and **build one agent**. Owner: msilva. *(revisado
+  2026-08-26 — "produce an understanding" superado, foi muito além do
+  pedido original: inventário completo dos 14 agentes, múltiplos
+  walkthroughs, heurística agir/informar. "Build one agent" segue vivo —
+  é o mesmo fio que hoje é `PRO-374`–`PRO-377`, Backlog.)*
 - Propose which agent to build first and where its first version will live.
   Owner: msilva. Gabrielle's suggestion: the monitoring agent, scoped to one
-  project.
+  project. *(feito — resolvido em
+  [[2026-08-24 Start Agent Flow with A10 Portfolio]]: msilva decide começar
+  pelo A10 Portfolio, não pelo agente de monitoramento sugerido aqui — ver
+  [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]].)*
 - Share the [[Agent Flow]] design documentation and the recorded design
   conversations. Owner: Gabrielle. Delivery: via the shared cloud project —
-  msilva's account access was confirmed in the meeting.
+  msilva's account access was confirmed in the meeting. *(feito — ver
+  [[Fluxo Agêntico project instruction]] e [[Fluxo Agêntico diagram]],
+  ambos já ingeridos e citados na wiki desde cedo.)*
 
 ## Open questions
 

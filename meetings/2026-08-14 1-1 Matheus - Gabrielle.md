@@ -55,14 +55,25 @@ replaces the wiki's project-tracking assumptions.
 - Set deadlines for both projects — meeting with msilva, Gabrielle, and Luís
   at the **end of the week beginning 2026-08-17**, before Gabrielle's leave.
   Deliberately deferred until msilva could estimate with confidence.
+  *(não aconteceu — confirmado por msilva 2026-08-26: "ainda não trabalho
+  com datas." Explica os `dueDate` do Linear que ficaram parados/stale —
+  ver [[Airtable Proxy]] e a calibração em `.claude/skills/day/SKILL.md`.)*
 - Migrate the proxy project to Linear and restructure the issues as msilva
-  sees fit. Owner: msilva. The project shell already exists there.
+  sees fit. Owner: msilva. The project shell already exists there. *(feito —
+  ver [[2026-08-14 Migrate project management from Jira to Linear]] e a
+  reestruturação registrada em [[Airtable Proxy]] e
+  [[Linear Project Structure]].)*
 - Share the agent-orchestration example Luís passed on (a model posted on
   Twitter/LinkedIn; the author reportedly used **Orca**). Owner: Gabrielle.
+  *(feito — ver [[Gabriel Packer - DAG-driven agent orchestration]].)*
 - Send a list of key people to meet — support, IT, operations, engineering,
-  systems. Owner: Gabrielle.
+  systems. Owner: Gabrielle. *(não aconteceu, confirmado por msilva
+  2026-08-26 — segue pendente do lado dela, sem cobrança feita.)*
 - Go deeper on Claude, since most of the company uses it. Owner: msilva.
-- Meet Gabriel on Monday about his automation. Owner: msilva.
+  *(descartado 2026-08-26 — virou hábito de rotina, sem estado de "feito"
+  a rastrear; ver [[Claude Code Working Habits]].)*
+- Meet Gabriel on Monday about his automation. Owner: msilva. *(feito — ver
+  [[2026-08-17 Matheus - Gabriel - CazéTV revenue recognition flow]].)*
 
 ## Facts stated
 

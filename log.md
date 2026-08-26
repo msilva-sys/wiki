@@ -1,6 +1,8 @@
 ---
 type: log
 updated: 2026-08-26
+
+
 ---
 
 # Log
@@ -3870,3 +3872,60 @@ asked for both ingested directly.
   marcada com a correção; PR #11 → merged), `decisions/2026-08-18 Proxy
   first, defer LiveScript-side SDK changes.md` (novo bullet `PRO-62`,
   `updated:` para 2026-08-26).
+
+## [2026-08-26] callout | Revisão completa dos Commitments — status de cada um
+- Revisão item a item, com msilva, de todo compromisso próprio dele nas 18
+  notas de reunião reescritas no refactor `Action items` → `Commitments`
+  mais cedo hoje. Terceiros (Luís, Gabrielle, Gabriel, João Victor, Maria
+  Fernanda, Bossabox) ficaram de fora por decisão de msilva — não são dele
+  pra fechar, ficam só como registro.
+- Achados/decisões ao longo da revisão:
+  - **Correção**: [[2026-08-10 Onboarding runs proxy and agent flow in
+    parallel]] tinha um gatilho de revisão disparado (proxy estourou a
+    estimativa de 1-2 semanas, ainda pre-produção 2026-08-26) — msilva
+    também corrigiu que a divisão nunca foi estritamente
+    primário/secundário, ele alternou com o Agent Flow. Banner de
+    correção adicionado à decisão.
+  - **Marcados feitos** (resolvidos por outra reunião/decisão/issue já
+    existente, sem novidade): avançar o entendimento dos 14 agentes;
+    propor qual agente construir primeiro (→
+    [[2026-08-24 Start Agent Flow with A10 Portfolio]]); compartilhar
+    doc de design do Agent Flow; migração Jira→Linear (citada 3x em
+    reuniões diferentes); reunião com Gabriel sobre a automação dele;
+    dashboard "antipatterns" virar visão de gestão; conectar projeto
+    Linear do proxy ao canal Slack; revisitar o diagrama Fluxo Agêntico
+    (resolvido no mesmo dia, outra call); restructurar o projeto F3 no
+    Linear; conversa de discovery com Carol.
+  - **Marcados superados/moot**: itens do A5/Watcher (despriorizado
+    inteiro 2026-08-24); itens do header `X-App-Id` (aposentados pela
+    migração pra URL path, 2026-08-19); o inventário formal de agentes
+    e a apresentação ao time (os vereditos saíram direto do walkthrough
+    com Luís no mesmo dia, nunca existiu apresentação formal); compilar
+    extração+opinião pós-Carol (msilva decidiu apresentar o PoC ao time
+    em vez disso).
+  - **Descartados / confirmados não-feitos** (ficam registrados como tal,
+    sem ação): "avançar Claude" e "Claude Agent SDK" (viraram hábito/
+    página de conceito, sem estado de conclusão); mapear capacidades/
+    acesso por agente (msilva: não é prioridade agora); vários itens de
+    18/08 com Luís (comparar skills Linear, instalar VS Code, fixar
+    instrução de verbosidade); Hub interno (18/08); lista de pessoas-
+    chave da Gabrielle; pergunta do campo de status de homologação
+    (ainda solta, ninguém cobrou); atribuição das opiniões na call da
+    Bossabox (deixado passar por escolha).
+  - **Achado durante a revisão, não sobre um item específico**: msilva
+    "ainda não trabalha com datas" — explica por que tantos `dueDate` do
+    Linear ficam stale sem uso real.
+  - **Handoff criado e depois corrigido**: abri uma tarefa em background
+    pra confirmar se o caminho REST do LiveScript usa a mesma env var do
+    SDK — só depois descobri, por uma sessão paralela também editando
+    esta wiki, que msilva já tinha resolvido isso por outro caminho
+    (deferido, comentário no `PRO-62`). A tarefa já tinha sido iniciada
+    por msilva antes de eu tentar cancelar, e acabou concluindo de
+    verdade: SDK lê `AIRTABLE_ENDPOINT_URL` nativamente, mas 7 chamadas
+    REST manuais em 4 arquivos estão hardcoded pra `api.airtable.com` —
+    filed em `PRO-96`. A nota em
+    [[2026-08-24 1-1 Matheus - Luís]] reflete esse achado final, não a
+    minha correção intermediária (que apontava, errado, pra `PRO-62`).
+- Updated: as 18 notas de `meetings/` do refactor de mais cedo (novas
+  anotações inline de status), `decisions/2026-08-10 Onboarding runs
+  proxy and agent flow in parallel.md` (banner de correção).

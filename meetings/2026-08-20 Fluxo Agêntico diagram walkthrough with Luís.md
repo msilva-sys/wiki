@@ -94,12 +94,15 @@ architecture-validator role ([[Luís Fernandez]]):
   information sources are: message history (not currently registered
   anywhere), the **"team brand"** — the actual body of work Cal/Claude is
   building, described as needing real maintenance as its own artifact —
-  and **Linear**, already functioning as project memory. *(no Linear issue
-  yet.)*
+  and **Linear**, already functioning as project memory. *(status não
+  confirmado por msilva em 2026-08-26 — não ficou claro se foi feito;
+  revisado sem resolução definitiva.)*
 - **msilva** — figure out what capabilities/tool access each surviving
   agent needs (Slack, Grafana, LogRocket, etc.) — flagged as tempting and
   risky: *"você vai ter um monte de coisa que você resolve tudo isso com
-  [Lang]Graph[...] é perigoso."* *(no Linear issue yet.)*
+  [Lang]Graph[...] é perigoso."* *(descartado 2026-08-26 — msilva: "acho que
+  não precisamos mapear isso agora." Sem issue no Linear, não prioritário
+  no momento.)*
 
 ## Open questions
 
