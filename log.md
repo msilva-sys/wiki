@@ -4152,3 +4152,13 @@ asked for both ingested directly.
   esse clipping de propósito.
 - Sem contradições novas, sem checagem cruzada de threads em aberto além
   da já feita no 13º lint hoje. Vault segue limpo.
+
+## [2026-08-26] refactor | Corrigida referência morta em How we built our multi-agent research system
+- msilva confirmou que não apagou o clipping de propósito — não sabia que
+  tinha sumido — e pediu para remover a referência.
+- Updated: `sources/How we built our multi-agent research system.md` —
+  `source:` do frontmatter trocado de `raw/Clippings/...` (arquivo
+  inexistente) para descrever a fonte real (live WebFetch, 2026-08-20);
+  callout de aviso no corpo atualizado para registrar que o arquivo sumiu
+  de `raw/Clippings/`, não só que a captura original veio incompleta.
+  `raw/` não foi tocado — só a citação na wiki.

@@ -1,10 +1,10 @@
 ---
 type: source
 status: active
-updated: 2026-08-20
+updated: 2026-08-26
 date: 2025-06-13
 aliases: [anthropic multi-agent research, orchestrator-worker, anthropic research system]
-source: "raw/Clippings/How we built our multi-agent research system.md"
+source: "live WebFetch — raw/Clippings/ copy no longer on disk, see note below"
 url: "https://www.anthropic.com/engineering/multi-agent-research-system"
 tags: [agents, orchestration, prior-art, anthropic, context-engineering]
 ---
@@ -16,12 +16,13 @@ Zhang, Kenneth Lien, Florian Scholz, Jeremy Fox, and Daniel Ford
 (Acknowledgements section).
 
 > [!warning] Sourcing note
-> `raw/Clippings/How we built our multi-agent research system.md` captured
-> only the frontmatter and title — the clipping tool didn't pull the body.
-> This page's content comes from a **live WebFetch** of the URL above
-> (2026-08-20), not from the raw file. Re-clip the raw file properly if a
-> verbatim local copy is ever needed; until then this page is sourced
-> directly from the live page, cited as such rather than as `raw/`.
+> The original `raw/Clippings/How we built our multi-agent research system.md`
+> captured only the frontmatter and title — the clipping tool didn't pull the
+> body — and as of the 2026-08-26 lint, the file is gone from `raw/Clippings/`
+> entirely (msilva: not deleted on purpose, just missing). This page's
+> content has always come from a **live WebFetch** of the URL above
+> (2026-08-20), not from the raw file, so nothing here relies on it. Re-clip
+> properly if a verbatim local copy is ever wanted.
 
 Cited **second-hand** already, before this ingest: [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]]
 uses this post's caveats (15x tokens, coding is a poor fit, 80% of gains from
