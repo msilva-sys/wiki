@@ -3929,3 +3929,29 @@ asked for both ingested directly.
 - Updated: as 18 notas de `meetings/` do refactor de mais cedo (novas
   anotações inline de status), `decisions/2026-08-10 Onboarding runs
   proxy and agent flow in parallel.md` (banner de correção).
+
+## [2026-08-26] query | Confirmado: caminho REST do LiveScript não usa a env var do proxy
+- Respondida a metade pendente do compromisso do 1:1 de 24/08: se as
+  chamadas REST manuais do LiveScript (não via SDK) leem `AIRTABLE_ENDPOINT_URL`
+  como o caminho SDK lê. Investigado direto no repo `livemode-roteiros-nextjs`,
+  branch `feature/airtable-proxy-observability`.
+- Achado: não leem. 7 pontos de chamada REST hand-rolled em 4 arquivos
+  (`lib/services/airtable-helpers.ts:76,226,335`,
+  `lib/services/airtable.service.ts:298`,
+  `lib/services/script/script-base.service.ts:82,115`,
+  `lib/services/config.service.ts:45`) estão cravados em `api.airtable.com`.
+  Todos passam pelos mesmos dois wrappers compartilhados
+  (`fetchAirtableWithMonitoring` / `requestAirtableJsonWithMonitoring` em
+  `lib/services/airtable-monitoring.ts`), o que dá um único ponto de fix em
+  vez de 7.
+- **Correção**: a passada anterior ("Duas correções, faladas por msilva",
+  acima) tinha registrado essa metade do compromisso sob `PRO-62` por
+  engano — esse issue é sobre comitar a branch, sem relação com a questão
+  SDK-vs-REST. O achado foi registrado em `PRO-96` (já o issue certo para
+  o roteamento LiveScript↔proxy, Cenário A), que segue em Backlog — só
+  documenta o gap, não agenda o fix (mesma regra de adiamento do `PRO-62`,
+  via [[2026-08-18 Proxy first, defer LiveScript-side SDK changes]]).
+- Updated no Linear: `PRO-96` (descrição reescrita com o achado).
+- Updated: `projects/Airtable Proxy.md` (checklist corrigido, `PRO-62` →
+  `PRO-96`), `meetings/2026-08-24 1-1 Matheus - Luís.md` (compromisso e
+  pergunta em aberto resolvidos), `index.md`.

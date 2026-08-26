@@ -720,7 +720,20 @@ communicate async and often]].
       the SDK path — same call.~~ **Deferred, 2026-08-26**: msilva confirms
       this isn't happening for now — no LiveScript-side change was made. A
       fresh instance of [[2026-08-18 Proxy first, defer LiveScript-side SDK
-      changes]], not a dropped commitment; tracked as `PRO-62` (Backlog).
+      changes]], not a dropped commitment. **Correction, same day**: the
+      earlier note here pointed at `PRO-62` — wrong issue, that one is about
+      committing the observability branch work, unrelated to this
+      SDK-vs-REST question. The confirm-REST-path half of this commitment
+      was investigated separately (repo `livemode-roteiros-nextjs`, branch
+      `feature/airtable-proxy-observability`): SDK calls read
+      `AIRTABLE_ENDPOINT_URL` natively and are confirmed working locally;
+      7 hand-rolled REST call sites across 4 files
+      (`airtable-helpers.ts`, `airtable.service.ts`,
+      `script-base.service.ts`, `config.service.ts`) are hardcoded to
+      `api.airtable.com` and don't read the var — need their own fix.
+      Finding filed onto `PRO-96` (already the right issue for LiveScript
+      proxy routing, Cenário A), which stays in Backlog per the deferral
+      above — this only documents the gap, doesn't schedule the fix.
 - [ ] Confirm the private-infra inputs in
       [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
 - [ ] Start the Go/Pulumi stack only after those inputs and ownership boundaries
