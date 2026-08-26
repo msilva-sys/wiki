@@ -4222,3 +4222,22 @@ asked for both ingested directly.
 - Achado, confirmado por msilva: Python instalado e no PATH (3.14.7);
   `LINEAR_API_KEY` adicionada ao `.env` — as duas pendências operacionais
   do handoff anterior estão resolvidas.
+
+## [2026-08-26] synthesis | Escopo do backlog do A10+A14 fechado
+- Revisão de gap-check pedida por msilva ("há algo que nos escapou?") sobre
+  o desenho de [[Desenho do agente LangGraph para A10+A14]] — identifiquei
+  que `listar_issues()`/`listar_projetos()` nunca tiveram escopo definido
+  (um projeto só? o time inteiro?), o que travava até a assinatura das
+  tools. msilva decidiu: **backlog inteiro do time** `Projetos-livemode`,
+  não um projeto só — bate com a spec do A10 ("analyses full backlog") em
+  [[Fluxo Agêntico project instruction]].
+- Updated: `syntheses/Desenho do agente LangGraph para A10+A14.md` (nova
+  seção "Escopo: backlog inteiro, não um projeto só").
+- Fora da wiki, mesmo repo (`livemode-fluxo-agentico`, branch `langgraph`):
+  `HANDOFF.md` atualizado com o mesmo escopo — ainda não commitado.
+- Outras lacunas levantadas no mesmo gap-check, ainda em aberto (não
+  bloqueiam começar a codar): `load_dotenv()` precisa rodar em cada
+  entrypoint (não só `main.py`, agora que os agentes rodam isolados);
+  paginação por cursor do Linear GraphQL não coberta; versões dos pacotes
+  não pinadas no `pyproject.toml`; modelo OpenAI exato não escolhido;
+  Python 3.14.7 é recente o bastante pra valer testar o `pip install` cedo.

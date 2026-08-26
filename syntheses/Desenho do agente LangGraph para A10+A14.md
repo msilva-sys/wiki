@@ -90,6 +90,20 @@ Todas as tools são **só leitura** nessa fase — nada escreve de volta no Line
 o que bate com "sugere, nunca executa" (A10) e "sem entrega automática em canal
 real" (A14), já fechados na página-mãe.
 
+### Escopo: backlog inteiro, não um projeto só
+
+Lacuna identificada revisando o desenho (nenhuma sessão anterior tinha
+decidido isso) e fechada por msilva, 2026-08-26: `listar_issues()` cobre o
+**backlog inteiro do time** `Projetos-livemode` — todos os projetos, não um
+`project_id` fixo — batendo com a spec do A10 em
+[[Fluxo Agêntico project instruction]] ("analyses **full** backlog and
+capacity"). `filtros?` continua opcional em cima disso (por estado, label,
+assignee etc.), não troca escopo por projeto.
+
+Isso também fecha a mesma pergunta pro A14: `listar_projetos()` lista todos
+os projetos do mesmo time — é a lista que o loop por projeto ("A14 roda por
+projeto", acima) percorre.
+
 ### `calcular_progresso_do_projeto` é por milestone, não por issue/subtask
 
 Achado direto e relevante: a área já rodou um sistema de status reporting sobre
