@@ -139,12 +139,16 @@ uma validação exaustiva.
 
 ## Pendências operacionais (não mudam o desenho, resolver antes de codar)
 
-- De onde vem a API key da Anthropic pro LangGraph — pessoal ou da Livemode.
+- ~~De onde vem a API key da Anthropic pro LangGraph — pessoal ou da
+  Livemode.~~ ~~Quem paga o uso da API key.~~ **Resolvidas 2026-08-26**: a
+  frente LangGraph usa **OpenAI, não Anthropic** — chave já existente, já
+  configurada no `.env` do repo. Ver
+  [[Desenho do agente LangGraph para A10+A14]] pro resto do desenho técnico
+  dessa frente (padrão agent/`create_agent`, toolset, Langfuse, etc.).
 - ~~Onde o código de cada frente vai morar (repositório).~~ **Resolvido
   2026-08-26**: um repositório único pras três frentes — pasta local
   `C:\Users\msilva\projects\livemode-fluxo-agentico`, remoto
   `git@github.com:tech-livemode/livemode-fluxo-agentico.git`.
-- Quem paga o uso da API key.
 
 ## O que isso muda em outros lugares
 
@@ -154,3 +158,4 @@ uma validação exaustiva.
 | [[Agent Flow]] | Novo callout apontando pra este design |
 | Linear — PRO-375, PRO-376 | Atualizadas com critérios de detecção compartilhados e o caso de teste (Farol) |
 | Linear — PRO-377 | Retitulada e reescrita pra refletir três frentes, não duas; ganhou 4 sub-issues: PRO-392 (LangGraph), PRO-393 (Skill), PRO-394 (Agent SDK), PRO-395 (validação com Luís/Carol, bloqueada pelas três) |
+| [[Desenho do agente LangGraph para A10+A14]] (2026-08-26) | Nova página — desenho técnico do interior da frente LangGraph (agent vs. workflow, toolset, Langfuse, OpenAI), mapeado também em PRO-392 |

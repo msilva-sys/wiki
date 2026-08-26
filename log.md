@@ -4162,3 +4162,41 @@ asked for both ingested directly.
   callout de aviso no corpo atualizado para registrar que o arquivo sumiu
   de `raw/Clippings/`, não só que a captura original veio incompleta.
   `raw/` não foi tocado — só a citação na wiki.
+
+## [2026-08-26] query | Desenho do agente LangGraph para A10+A14 (PRO-392)
+- Sessão de discovery em chat, antes de qualquer código, sobre o interior
+  da frente LangGraph da PoC A10+A14 — não uma pergunta pontual, um
+  brainstorm conduzido perguntando as opiniões e dúvidas de msilva em
+  cada passo.
+- Query na wiki antes de desenhar: [[Fluxo Agêntico project instruction]],
+  as duas decisões de 2026-08-24, [[Agent Harness Template]],
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]],
+  [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]],
+  [[Gabriel Packer - DAG-driven agent orchestration]],
+  [[Linear Project Structure]], [[AI status reporting on Linear]],
+  [[Farol]].
+- Decisões: padrão "agent" (`create_agent`, não `StateGraph` à mão — a
+  ramificação real do Fluxo Agêntico só existe no sistema inteiro, não
+  dentro do A10/A14 isolados); A10 e A14 como agentes independentes, A14
+  despachado por projeto via loop simples; toolset determinístico pros
+  critérios computáveis do A10 (evita erro de aritmética de data) e livre
+  pros de julgamento; `calcular_progresso_do_projeto` do A14 por
+  milestone, não issue/subtask, especificamente pra não repetir a subtask
+  blindness já documentada em [[AI status reporting on Linear]];
+  validação contra o Farol como pergunta simples ao agente A10;
+  `recursion_limit` como trava mecânica + Langfuse Cloud só observabilidade;
+  **modelo OpenAI** (não Anthropic), resolvendo as duas pendências de API
+  key que ficaram em aberto na síntese-mãe; trigger só CLI, saída em HTML;
+  `pip`+`venv`.
+- Achado fora do desenho: `.env` do repo `livemode-fluxo-agentico` (branch
+  `langgraph`) não tinha `.gitignore` — `OPENAI_API_KEY`/Langfuse keys
+  expostos pro próximo `git add` amplo. Criado `.gitignore` cobrindo
+  `.env`/`.venv`/`__pycache__`.
+- New: `syntheses/Desenho do agente LangGraph para A10+A14.md`.
+- Updated: `syntheses/Como implementar a PoC do A10+A14 (LangGraph, Skill,
+  Agent SDK).md` (pendências de API key resolvidas), `projects/Agent
+  Flow.md`, `index.md`.
+- Linear: `PRO-392` — seção "Como (decisões de desenho, 2026-08-26)"
+  adicionada à descrição, checklist "Pronto quando" atualizado (API key
+  resolvida).
+- Fora da wiki, mesmo repo: `.gitignore` criado (não commitado ainda).

@@ -120,6 +120,18 @@ tags: [agents, llm, automation, onboarding, research]
 > local `C:\Users\msilva\projects\livemode-fluxo-agentico`, remoto
 > `git@github.com:tech-livemode/livemode-fluxo-agentico.git`.
 
+> [!tip] Desenho técnico da frente LangGraph fechado — msilva, 2026-08-26
+> [[Desenho do agente LangGraph para A10+A14]]: padrão **"agent"**, não
+> "workflow" (`create_agent`, não grafo desenhado à mão — a ramificação real
+> do Fluxo Agêntico só existe no sistema inteiro, não dentro do A10/A14
+> isolados); A10 e A14 como agentes independentes, A14 despachado por projeto;
+> toolset determinístico pros critérios computáveis (evita erro de aritmética
+> de data) e livre pros de julgamento; progresso do A14 calculado por
+> milestone, não issue/subtask, pra não repetir a subtask blindness já
+> documentada em [[AI status reporting on Linear]]; **modelo OpenAI**,
+> resolvendo as pendências de API key da síntese-mãe. Mapeado em
+> [PRO-392](https://linear.app/projetos-livemode/issue/PRO-392/implementar-poc-em-langgraph).
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides
