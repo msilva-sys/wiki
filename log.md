@@ -4241,3 +4241,39 @@ asked for both ingested directly.
   paginação por cursor do Linear GraphQL não coberta; versões dos pacotes
   não pinadas no `pyproject.toml`; modelo OpenAI exato não escolhido;
   Python 3.14.7 é recente o bastante pra valer testar o `pip install` cedo.
+
+## [2026-08-26] synthesis | Cinco lacunas do gap-check fechadas (A10+A14 LangGraph)
+- Continuação de [[Desenho do agente LangGraph para A10+A14]] — msilva pediu
+  pra resolver as lacunas levantadas no gap-check anterior.
+- Fechadas: `load_dotenv()` no nível de módulo de cada entrypoint (não só
+  `main.py`, pela decisão de rodar agentes isolados); paginação por cursor
+  do Linear GraphQL feita dentro de `linear_client.py` (necessária agora
+  que o escopo é o backlog inteiro); versões pinadas testando de verdade —
+  `.venv` criado no repo, `pip install langchain langgraph langchain-openai
+  langfuse python-dotenv poethepoet` rodou limpo no Python 3.14.7, sem
+  risco de wheel ausente; modelo OpenAI exato pesquisado ao vivo (pós-cutoff
+  de conhecimento) na doc oficial — família `gpt-5.6-{sol,terra,luna}`,
+  `-terra` escolhido pro equilíbrio custo/capacidade dessa PoC.
+- Updated: `syntheses/Desenho do agente LangGraph para A10+A14.md` (seções
+  "Modelo e empacotamento" e nova "Gap-check 2026-08-26").
+- Fora da wiki, mesmo repo (`livemode-fluxo-agentico`, branch `langgraph`):
+  `.venv` criado (gitignored); `HANDOFF.md` atualizado com as mesmas
+  cinco resoluções — ainda não commitado.
+
+## [2026-08-26] synthesis | Cinco lacunas do gap-check fechadas (A10+A14 LangGraph)
+- Continuação de [[Desenho do agente LangGraph para A10+A14]] — msilva pediu
+  pra resolver as lacunas levantadas no gap-check anterior.
+- Fechadas: `load_dotenv()` no nível de módulo de cada entrypoint (não só
+  `main.py`, pela decisão de rodar agentes isolados); paginação por cursor
+  do Linear GraphQL feita dentro de `linear_client.py` (necessária agora
+  que o escopo é o backlog inteiro); versões pinadas testando de verdade —
+  `.venv` criado no repo, `pip install langchain langgraph langchain-openai
+  langfuse python-dotenv poethepoet` rodou limpo no Python 3.14.7, sem
+  risco de wheel ausente; modelo OpenAI exato pesquisado ao vivo (pós-cutoff
+  de conhecimento) na doc oficial — família `gpt-5.6-{sol,terra,luna}`,
+  `-terra` escolhido pro equilíbrio custo/capacidade dessa PoC.
+- Updated: `syntheses/Desenho do agente LangGraph para A10+A14.md` (seções
+  "Modelo e empacotamento" e nova "Gap-check 2026-08-26").
+- Fora da wiki, mesmo repo (`livemode-fluxo-agentico`, branch `langgraph`):
+  `.venv` criado (gitignored); `HANDOFF.md` atualizado com as mesmas
+  cinco resoluções — ainda não commitado.

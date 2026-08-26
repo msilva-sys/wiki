@@ -161,6 +161,15 @@ Sources: [GRAPH_RECURSION_LIMIT — Docs by LangChain](https://docs.langchain.co
 - **OpenAI, não Anthropic** — `langchain-openai`. Resolve as duas pendências
   que ficaram em aberto na página-mãe (origem da key, quem paga): a chave já
   existe e já está configurada no `.env` do repo.
+- **Modelo exato: `gpt-5.6-terra`** — checado na doc oficial da OpenAI
+  (2026-08-26, pós-cutoff de conhecimento, pesquisado ao vivo): a família
+  atual pra tool-calling agêntico tem três variantes, `gpt-5.6-sol`
+  (frontier), `gpt-5.6-terra` (equilíbrio custo/capacidade), `gpt-5.6-luna`
+  (alto volume/eficiência). `-terra` escolhido pra essa PoC — critérios de
+  julgamento reais (priorização desalinhada, escopo descontrolado) mas
+  volume baixo, não precisa do topo de linha `-sol`. Recomendação, não
+  testada ainda contra o caso do Farol — ajustar se a qualidade da sugestão
+  não convencer.
 - **`pip` + `venv`** — sem convenção prévia da Livemode pra Python (o
   [[Airtable Proxy]] é Go); escolha livre de msilva.
 
@@ -191,6 +200,41 @@ contratos tipados e um task runner — encaixe, não mudança de direção:
   (`.model_dump_json()`) no stdout. `main.py` fica só o orquestrador do
   pipeline completo (A10 + A14 + HTML final) — rodar um agente isolado não
   gera HTML, só o contrato bruto: o ponto é depurar um sem esperar o outro.
+
+## Gap-check 2026-08-26 — cinco lacunas fechadas
+
+msilva pediu uma revisão do desenho ("há algo que nos escapou?") antes de
+começar a codar. Cinco pontos identificados, todos fechados na mesma sessão:
+
+- **Escopo do backlog** — ver a seção "Escopo: backlog inteiro, não um
+  projeto só", acima.
+- **`load_dotenv()` por entrypoint** — a decisão de rodar cada agente
+  isolado (`python -m a10.agent`) abriu essa lacuna: se só `main.py`
+  carregasse o `.env`, `poe a10` sozinho rodaria sem nenhuma env var.
+  Fechado: `load_dotenv()` é chamado no **nível de módulo** dos três
+  entrypoints (`a10/agent.py`, `a14/agent.py`, `main.py`) — é idempotente,
+  chamar mais de uma vez (quando `main.py` importa os dois) não tem efeito
+  colateral.
+- **Paginação do Linear GraphQL** — a API pagina por cursor
+  (`pageInfo.hasNextPage`/`endCursor`); como "backlog inteiro" virou
+  escopo explícito (acima), isso deixou de ser opcional. Fechado: as
+  funções de query dentro de `linear_client.py` fazem o loop de paginação
+  internamente, devolvendo a lista já completa pros callers — quem chama
+  `listar_issues()`/`listar_projetos()` nunca vê cursor nem página parcial.
+- **Versões dos pacotes não pinadas** — testado de verdade, não só
+  decidido: `.venv` criado no repo, `pip install langchain langgraph
+  langchain-openai langfuse python-dotenv poethepoet` rodou limpo no
+  Python 3.14.7. Versões resolvidas por esse install, a pinar em
+  `[project.dependencies]` do `pyproject.toml`:
+  `langchain==1.3.17`, `langgraph==1.2.11`, `langchain-openai==1.6.0`,
+  `langfuse==4.14.5`, `python-dotenv==1.2.3`, `poethepoet==0.48.0`,
+  `pydantic==2.13.4`.
+- **Risco do Python 3.14** — descartado pelo mesmo teste acima: instalação
+  limpa, sem erro de wheel ausente pra nenhum pacote (incluindo
+  `pydantic-core`, que é a parte em Rust mais provável de atrasar suporte
+  a uma versão nova do Python).
+
+Sources: [GPT-5.6 model guidance — OpenAI API docs](https://developers.openai.com/api/docs/guides/latest-model).
 
 ```
 livemode-fluxo-agentico/
