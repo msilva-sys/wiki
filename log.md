@@ -3792,6 +3792,46 @@ asked for both ingested directly.
   fonte de verdade para isso, a wiki só contribui prep faltando e
   compromissos de terceiros.
 
+## [2026-08-26] lint | Décimo terceiro health check
+- Escopo: vault inteiro (109 páginas incluindo raiz), mecânico completo mais
+  leitura de corpo das páginas mais editadas e checagem cruzada dos threads
+  em aberto mais recentes (desde o 12º lint, 2026-08-24).
+- **Mecânico**: 0 órfãs, 1 dead-end conhecido/aceito ([[Zed Cheatsheet]]),
+  0 páginas `status: active` estagnadas (mais antiga sem toque: 15 dias —
+  [[Zed Cheatsheet]]/`AIRTABLEGC-34`), 0 wikilinks quebrados reais — os
+  únicos hits residuais são os mesmos falsos-positivos já documentados
+  (`[[Page]]`/`[[people/]]` como exemplo do schema em `CLAUDE.md`,
+  auto-citação de achados antigos dentro do próprio `log.md`, e um embed de
+  imagem `![[fluxo agêntico diagrama 0.png]]` que resolve normalmente — só
+  não é uma página `.md`), 0 callouts `[!msilva]` pendentes (busca por
+  `> [!msilva]` literal, zero hits).
+- **Cobertura `raw/`**: completa — todo arquivo substancial tem página em
+  `sources/` ou `meetings/` (confirmado pelo campo `source:` de cada uma,
+  não por grep de nome no log). Única lacuna: `Novo(a) Documento de
+  Texto.txt` (0 bytes), já sinalizado em lints anteriores, sem conteúdo pra
+  ingerir.
+- **Achado novo, cosmético, sem correção aplicada**: 4 arquivos têm BOM
+  UTF-8 no início (`projects/Agent Flow.md`, `people/Maria Fernanda
+  Lemos.md`, a `meeting-prep` do Mafê/João Victor, `index.md`) — o resto do
+  vault não tem. Inofensivo para o Obsidian, só quebrou minha primeira
+  tentativa de extração mecânica de frontmatter (script corrigido). Não
+  vale a pena corrigir a não ser que msilva queira uniformidade.
+- **Checagem cruzada de threads em aberto recentes** (Pulumi state backend
+  Cloud vs. GCS, A3=A9 reaberto com baixa confiança): ambos consistentes
+  entre todas as páginas que os citam — nenhuma contradição.
+- **Corpo das páginas mais editadas** (`projects/Agent Flow.md` — 49
+  commits, `projects/Airtable Proxy.md` — 36, mais as duas alteradas hoje):
+  nenhuma contradição intra-página nova. O 12º lint (2026-08-24) já tinha
+  zerado as duas; os pontos em aberto genuinamente não resolvidos (prazo do
+  proxy vs. `metas.md`, atribuição da call da Bossabox, migração ClickUp→
+  Linear do CRM) continuam corretamente marcados como abertos em todo lugar
+  que aparecem, não como contradição.
+- **Corrigido en passant**: `index.md` tinha `updated: 2026-08-25` mesmo
+  após três edições minhas hoje — bumped para 2026-08-26.
+- Sem contradições novas encontradas. Vault seguiu limpo desde o 12º lint —
+  o hábito de fan-out/correção same-day already registrado nos logs de
+  2026-08-24/25 está se sustentando.
+
 ## [2026-08-26] refactor | Airtable Proxy — correção do status do dashboard "Insights"
 - Checado o repo `livemode-airtable-proxy` direto (não só a wiki): o
   dashboard gerencial "Insights" que o Luís pediu em 2026-08-24 já estava
