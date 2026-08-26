@@ -101,6 +101,14 @@ tags: [agents, llm, automation, onboarding, research]
 > narrowed for this phase since its full spec presupposes a pipeline
 > (A1/A2/A7/A8) that doesn't exist yet.
 
+> [!tip] Desenho da PoC fechado em três frentes leves — msilva, 2026-08-26
+> [[Como implementar a PoC do A10+A14 (LangGraph, Skill, Agent SDK)]]: a PoC
+> deixou de ser "framework é necessário" (essa pergunta só se resolve nos
+> agentes de pipeline, tipo A7→A8→A9) e virou "ter algo palpável + opções em
+> mãos". Três implementações leves, nenhuma "principal": LangGraph, Skill do
+> Claude Code (uso pessoal/interativo), Claude Agent SDK (serviço autônomo).
+> Caso de teste: o Farol, não a reunião inteira com a Carol.
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides

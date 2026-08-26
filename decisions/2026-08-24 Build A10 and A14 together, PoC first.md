@@ -64,3 +64,8 @@ prioritization view (A10) and no proactive status/delivery communication
 - [[Agent Flow]] — noted as the concrete shape of the next build.
 - [[2026-08-24 Start Agent Flow with A10 Portfolio]] — its open "A10+A14, one
   build or two" question is answered here: **one build, two specs.**
+- [[Como implementar a PoC do A10+A14 (LangGraph, Skill, Agent SDK)]]
+  (2026-08-26) — elabora o *como* desta decisão: a PoC virou três frentes
+  leves de validação (LangGraph, Skill, Agent SDK), não mais LangGraph vs.
+  Claude Code, e o objetivo deixou de ser "framework é necessário" pra virar
+  "ter algo palpável + opções em mãos".

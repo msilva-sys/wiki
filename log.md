@@ -3804,3 +3804,35 @@ asked for both ingested directly.
   forma assíncrona. PR aberta para `main` no mesmo momento.
 - Also: montado o artefato "Sinais do Proxy Airtable" (catálogo de
   métricas em linguagem de negócio) para a conversa de msilva com o Luís.
+
+## [2026-08-26] synthesis | Desenho da PoC do A10+A14 em três frentes
+- Sessão de brainstorm em chat sobre como implementar a PoC de
+  [[2026-08-24 Build A10 and A14 together, PoC first]]. O desenho evoluiu
+  bastante: começou como LangGraph vs. "Claude direto", virou LangGraph vs.
+  Skill do Claude Code vs. Claude Agent SDK — três frentes leves, nenhuma
+  "principal" — depois que ficou claro que Skill (uso pessoal/interativo) e
+  Agent SDK (serviço autônomo) testam coisas genuinamente diferentes.
+- Mudança de enquadramento: a pergunta do Luís ("framework é necessário")
+  era provocativa sobre o Fluxo Agêntico como um todo (multi-etapa,
+  multi-agente); A10/A14 no recorte do M1 são passo único, então não
+  respondem essa pergunta mais ampla — isso só se resolve nos agentes de
+  pipeline (A7→A8→A9). O valor real da PoC virou "ter algo palpável +
+  opções em mãos", não "decidir se framework compensa".
+- Caso de teste definido: o Farol (Carolina Bezerra avaliou, em discovery,
+  que não deveria ter sido prioritário) — não a reunião inteira com a
+  Carol, que é discovery/estratégia, sem exercício de priorização real.
+- Confirmado via web: `langchain-mcp-adapters` existe e é oficial da
+  LangChain (cogitado, depois descartado em favor de acesso direto por API
+  key do Linear pro LangGraph); o MCP do Linear é remoto (Streamable HTTP,
+  `mcp.linear.app/mcp`, não stdio); o Claude Agent SDK funciona com
+  assinatura Pro/Max via crédito mensal separado a partir de 15/06/2026,
+  mas só pra uso individual — produção compartilhada precisa de API key
+  (fonte: support.claude.com/en/articles/15036540).
+- New: [[Como implementar a PoC do A10+A14 (LangGraph, Skill, Agent SDK)]].
+- Updated: [[2026-08-24 Build A10 and A14 together, PoC first]] (pointer
+  pro novo desenho), [[Agent Flow]] (novo callout), `index.md`.
+- Linear: PRO-375 e PRO-376 atualizadas com critérios de detecção
+  compartilhados e o caso de teste (Farol). PRO-377 retitulada e reescrita
+  pra refletir três frentes; ganhou 4 sub-issues: PRO-392 (LangGraph),
+  PRO-393 (Skill), PRO-394 (Agent SDK), PRO-395 (validação com Luís/Carol,
+  bloqueada pelas três).
