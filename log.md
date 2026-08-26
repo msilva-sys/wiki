@@ -4200,3 +4200,25 @@ asked for both ingested directly.
   adicionada à descrição, checklist "Pronto quando" atualizado (API key
   resolvida).
 - Fora da wiki, mesmo repo: `.gitignore` criado (não commitado ainda).
+
+## [2026-08-26] synthesis | Tooling do agente LangGraph A10+A14 (pydantic, poethepoet)
+- Continuação, mesma sessão de [[Desenho do agente LangGraph para A10+A14]] —
+  msilva pediu Pydantic pros contratos e "poe" pra task management; a
+  ambiguidade poe/Poetry foi resolvida perguntando: poethepoet só como task
+  runner, sem substituir pip+venv.
+- Decisões: Pydantic explícito, dois lugares — modelos do shape do Linear
+  dentro de `linear_client.py`, contratos de saída (`SugestaoA10`,
+  `RelatorioA14`) em `contracts.py` novo; `poethepoet` precisa de
+  `pyproject.toml`, que também passa a declarar as dependências (PEP 621),
+  substituindo o `requirements.txt` cogitado antes; cada agente roda
+  isolado via bloco `__main__` (`python -m a10.agent`/`a14.agent`),
+  despejando o contrato em JSON — `main.py` fica só o orquestrador do
+  pipeline completo (A10+A14+HTML).
+- Updated: `syntheses/Desenho do agente LangGraph para A10+A14.md` (seção
+  "Estrutura de pastas" reescrita), `index.md`.
+- Fora da wiki, mesmo repo (`livemode-fluxo-agentico`, branch `langgraph`):
+  `HANDOFF.md` atualizado pra refletir a estrutura nova — não commitado
+  ainda, msilva decide quando.
+- Achado, confirmado por msilva: Python instalado e no PATH (3.14.7);
+  `LINEAR_API_KEY` adicionada ao `.env` — as duas pendências operacionais
+  do handoff anterior estão resolvidas.

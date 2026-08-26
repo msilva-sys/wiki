@@ -150,23 +150,60 @@ Sources: [GRAPH_RECURSION_LIMIT — Docs by LangChain](https://docs.langchain.co
 - **`pip` + `venv`** — sem convenção prévia da Livemode pra Python (o
   [[Airtable Proxy]] é Go); escolha livre de msilva.
 
-## Estrutura de pastas (rascunho, ainda não construído)
+## Estrutura de pastas e tooling (fechada em sessão de continuação, mesmo dia)
+
+Depois do desenho inicial, mais uma rodada de brainstorm em chat acrescentou
+contratos tipados e um task runner — encaixe, não mudança de direção:
+
+- **Pydantic para contratos** — já vem transitivamente via `langchain`/
+  `langgraph` (Pydantic v2), agora declarado explícito. Dois usos
+  distintos: os modelos que espelham o shape do GraphQL do Linear (`Issue`,
+  `Project`, `Milestone`) ficam dentro de `linear_client.py`, junto do único
+  código que fala com a API; os modelos de **saída** dos agentes
+  (`SugestaoA10`, `RelatorioA14`) ficam em `contracts.py`, na raiz — são o
+  que dá pra forçar como `response_format` do `create_agent`, então cada
+  agente devolve um objeto validado, não texto livre, e `main.py` consome
+  isso direto pra montar o HTML.
+- **`poethepoet` (comando `poe`) para task management** — só task runner,
+  não substitui `pip`+`venv` como gerenciador de dependência (opção
+  considerada e descartada: trocar tudo por Poetry). Precisa de um
+  `pyproject.toml`; já que ele vai existir mesmo, as dependências passam a
+  ser declaradas ali também (`[project.dependencies]`, PEP 621, que o
+  `pip` já entende via `pip install -e .`), em vez de um `requirements.txt`
+  separado.
+- **Cada agente roda sozinho** — `a10/agent.py` e `a14/agent.py` ganham um
+  bloco `if __name__ == "__main__":` que chama a própria função
+  (`rodar_a10()`/`rodar_a14()`) e despeja o contrato em JSON
+  (`.model_dump_json()`) no stdout. `main.py` fica só o orquestrador do
+  pipeline completo (A10 + A14 + HTML final) — rodar um agente isolado não
+  gera HTML, só o contrato bruto: o ponto é depurar um sem esperar o outro.
 
 ```
 livemode-fluxo-agentico/
   .env                    # gitignored
   .gitignore
-  linear_client.py        # GraphQL cru, compartilhado entre A10 e A14 —
-                           # não fere "uma frente não chama a outra", isso
-                           # vale entre LangGraph/Skill/Agent SDK, não entre
-                           # A10/A14 dentro da mesma frente
+  pyproject.toml          # deps (PEP 621) + [tool.poe.tasks]
+  linear_client.py        # GraphQL cru + modelos Pydantic do shape do Linear —
+                           # compartilhado entre A10 e A14; não fere "uma
+                           # frente não chama a outra", isso vale entre
+                           # LangGraph/Skill/Agent SDK, não dentro da mesma frente
+  contracts.py            # modelos Pydantic de saída: SugestaoA10, RelatorioA14
   a10/
-    agent.py
+    agent.py               # create_agent + bloco __main__ p/ rodar isolado
     tools.py
   a14/
-    agent.py
+    agent.py               # create_agent + bloco __main__ p/ rodar isolado
     tools.py
-  main.py                  # CLI: roda A10, roda A14 (loop por projeto), gera o HTML
+  main.py                  # orquestrador: A10 + A14 (loop por projeto) + HTML
+```
+
+Tasks do `poe`:
+
+```
+[tool.poe.tasks]
+a10 = "python -m a10.agent"     # roda só o A10, imprime as sugestões (JSON)
+a14 = "python -m a14.agent"     # roda o A14 (loop por projeto), imprime os relatórios
+run = "python main.py"          # pipeline completo: A10 + A14 + HTML final
 ```
 
 ## O que isso resolve na página-mãe
