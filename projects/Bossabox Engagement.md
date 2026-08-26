@@ -47,6 +47,23 @@ Both sit under **"design build."** Before any of it, they run an
 across squads — sometimes surfacing a bottleneck common to all of them
 rather than squad-specific.
 
+> [!note] Método and Assessment, in concrete detail — 2026-08-26
+> [[Bossabox Assessment - institutional deck]] (their sales deck,
+> emailed as a follow-up — [[LiveMode e Bossabox Services - email
+> thread]]): the **Método** is a fixed 12-stage pipeline (Backlog →
+> Protot. → Design Critique → Epic Spec → DoD Approval → Tech Refining →
+> Ready to Dev → In Dev → QA(Dev) → QA(Stage) → Ready to Prod → Prod
+> Validate), upstream/downstream split at the Ready-to-Dev boundary,
+> **+40 agents and 8 quality gates** embedded throughout, MCP connectors
+> to whatever tools a client already uses. The **Assessment** itself
+> reads directly from **Jira, GitHub, Linear, Confluence, and
+> interviews** — nearly Livemode's exact toolset — and comes in a
+> **free entry tier** (hypothesis-level, no cost) and a **paid, scoped
+> deep tier** (validated root cause, AI Readiness score, executable
+> plan). The proposal expected next ([[2026-08-25 Bossabox AI
+> transformation discovery]]'s "Tuesday, 15:00") is probably the free
+> tier — not confirmed.
+
 ## Relationship history
 
 - **A prior, unidentified engagement exists.** Both Pedro and the Livemode
@@ -70,7 +87,10 @@ to close, said the day after msilva committed to building it
 ([[2026-08-24 Start Agent Flow with A10 Portfolio]]).
 
 **Next**: Bossabox brings a tailored assessment proposal next Tuesday,
-15:00 (afternoon, scheduled around Luís's availability).
+15:00 (afternoon, scheduled around Luís's availability). **Confirmed
+2026-08-26**: Pedro Arantes opened a dedicated email thread ([[LiveMode
+e Bossabox Services - email thread]]) to centralize this, with the
+Assessment deck attached — see the note above.
 
 ## Relevance to Agent Flow
 

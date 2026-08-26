@@ -99,7 +99,7 @@ adiado pela mesma regra do `PRO-62`).
 - [[Orca Next Version]] — roadmap/backlog planning workspace for [[Orca (CDE)]]'s next version (repo `orca-produto`, access gained 2026-08-18). Not msilva's, tracked for context. 7 milestones, ~28 issues, approved by stakeholders 2026-08-07; nothing deployed to production yet as of the 2026-08-17 weekly.
 - [[Pulse]] — outsourced front-end for the business pipeline. Not msilva's, but he joins the immersion week for context. **Now `deferred` (2026-08-18)**: approval failed, DOR stood down, delay ≥1 month, Copinha window lost.
 - [[Farol]] — travel-data consolidation (Uber, OnFly, Expresso, Itaú) for finance; Luís + Yasmin. Not msilva's. **V2 adds bronze/prata/ouro layers and a conversational AI layer** — the area's second user-facing AI system. Resolves the *farol* name collision with the status readout. **2026-08-25**: ownership handoff to Marina (finance) made concrete — repo + DB copy + alerting, data team keeps ingestion; Airtable ruled out on volume (~750k records/year vs. ~500k Enterprise cap), not preference. A whiteboard photo from the same day confirms the ingestion-processing step and the storage layer are both genuine open design questions, drawn as unlabeled boxes.
-- [[Bossabox Engagement]] — Carolina's discovery track with an external AI-transformation vendor, not previously in this wiki. msilva and Luís were both on the 2026-08-25 call, mic-conflated with Carolina in the transcript (corrected 2026-08-25); tracked because it names close to the same pains [[Agent Flow]] exists to address — see [[2026-08-25 Bossabox AI transformation discovery]].
+- [[Bossabox Engagement]] — Carolina's discovery track with an external AI-transformation vendor, not previously in this wiki. msilva and Luís were both on the 2026-08-25 call, mic-conflated with Carolina in the transcript (corrected 2026-08-25); tracked because it names close to the same pains [[Agent Flow]] exists to address — see [[2026-08-25 Bossabox AI transformation discovery]]. **2026-08-26**: follow-up email thread + assessment deck confirm the Método (12-stage pipeline, +40 agents, 8 gates) and that the Assessment reads from Jira/GitHub/Linear/Confluence — near-exact match to Livemode's own toolset.
 
 ## Systems
 - [[LiveScript]] — collaborative script editor, heaviest Airtable consumer, the reason the proxy exists. Also called *roteiros*.
@@ -177,7 +177,8 @@ transcript content; see each meeting page for that.
 - [[Júlia]] — co-created the CRM Slack channel.
 - [[Sérgio]] · [[Ribon]] · [[Zoca]] · [[Cristian]] — leadership approval
   chain that stalled [[Pulse]]'s immersion week.
-- [[Pedro Arantes]] · [[JV Abreu]] · [[Camila Sande]] — external, **not
+- [[Pedro Arantes]] · [[JV Abreu]] · [[Camila Sande]] ·
+  [[Alexandre Brito]] · [[André Cabral]] — external, **not
   Livemode**; [[Bossabox Engagement]] vendor reps.
 - [[Marina]] — financeiro, consumer of [[Farol]]'s output; slated to get a
   GitHub repo + DB copy, not the ingestion pipeline itself (2026-08-25).
@@ -216,6 +217,8 @@ _(next candidates, extractable from [[Airtable Proxy]]: token-terminating auth, 
 - [[Harness engineering for coding agent users]] — Birgitta Böckeler/Martin Fowler (2026-04-02). Modelo mental guias (feedforward) + sensores (feedback), cruzado com computacional vs. inferencial; três categorias de harness (maintainability, architecture fitness, behaviour — a mais difícil). Complementa, não repete, o [[Agent Harness Template]] de Luís: descreve o ciclo de controle, não a composição.
 - [[How to Build a Custom Agent Harness]] — Sydney Runkle/LangChain (2026-06-03). Guia prático de `create_agent` + middleware (`HumanInTheLoopMiddleware`, `SubAgentMiddleware`, etc.) — infraestrutura já nomeada para duas perguntas em aberto do [[Agent Flow]]: gates humanos e sub-agentes sob demanda.
 - [[Farol pipeline whiteboard diagram]] — foto de quadro, mesma reunião de [[2026-08-25 Farol - Dados]], sem problema de atribuição (é uma foto, não fala). Corrige o método de ingestão dos quatro dados (OnFly REST/API, Expresso REST, Uber SFTP, Itaú deixado como "?" no próprio quadro) e confirma que a etapa de processamento intermediária e a camada de armazenamento são perguntas abertas de verdade, não só algo que não foi registrado.
+- [[LiveMode e Bossabox Services - email thread]] — Pedro Arantes (Bossabox) abre thread dedicada em 2026-08-26 para centralizar os próximos passos; traz o deck de assessment em anexo e confirma a próxima reunião já agendada.
+- [[Bossabox Assessment - institutional deck]] — deck de vendas anexo ao e-mail acima. Método fixo de 12 etapas (Backlog → ... → Prod Validate), +40 agentes, 8 quality gates; Assessment lê direto de Jira/GitHub/Linear/Confluence/entrevistas — quase o toolset exato da Livemode; entrada gratuita vs. aprofundada paga por escopo; case anonimizado com métricas DORA/VSM reais.
 
 _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 

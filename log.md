@@ -3766,6 +3766,33 @@ asked for both ingested directly.
   ingestão por fonte), [[Farol]] (duas perguntas abertas novas/
   reforçadas), `index.md`.
 
+## [2026-08-26] ingest | E-mail e deck de assessment da Bossabox
+- Fonte 1: e-mail colado direto no chat (o link do Gmail não resolveu via
+  API — `FMfcgz...` é o formato de permalink, não o ID que a API aceita).
+  Pedro Arantes (Bossabox), 2026-08-26 12:38, assunto "LiveMode &
+  Bossabox Services" — abre thread dedicada para centralizar os próximos
+  passos pós-[[2026-08-25 Bossabox AI transformation discovery]].
+- Fonte 2: `raw/Material Institucional - Assessment.pptx.pdf` — o anexo
+  do e-mail, caminho local fornecido por msilva.
+- New: `sources/LiveMode e Bossabox Services - email thread.md`,
+  `sources/Bossabox Assessment - institutional deck.md`,
+  `people/Alexandre Brito.md`, `people/André Cabral.md` (cc'd no e-mail,
+  sem outra fala registrada ainda).
+- **Detalha concretamente o "Modelo Operacional Digital"** que
+  [[Bossabox Engagement]] já registrava de forma vaga: Método fixo de 12
+  etapas (Backlog → ... → Prod Validate, upstream/downstream na fronteira
+  do Ready to Dev), +40 agentes, 8 quality gates, conectores MCP.
+- **O Assessment lê direto de Jira, GitHub, Linear, Confluence e
+  entrevistas** — quase o toolset exato da Livemode — com uma modalidade
+  de entrada gratuita e uma aprofundada paga, por escopo. Case anonimizado
+  citado usa métricas DORA/VSM reais (lead time, flow efficiency,
+  concentração de risco por squad).
+- Atualizado: [[Bossabox Engagement]] (seção "How they engage" ganhou o
+  Método concreto; "Next" atualizado com a thread de e-mail),
+  `index.md`.
+- Aberto: se a proposta de terça-feira é a modalidade gratuita ou já a
+  paga; qual escopo (um squad, múltiplos, ou a área inteira).
+
 ## [2026-08-26] refactor | Schema: `Action items` → `Commitments`, sai o checkbox
 - msilva: não usa a seção `Action items` das notas de reunião como task
   tracker — os checkboxes só acumulavam, sem ninguém marcar `- [x]`, e o
