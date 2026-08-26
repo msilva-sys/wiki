@@ -699,13 +699,20 @@ communicate async and often]].
       cause (Airtable also 429s on the monthly plan cap). Proxy-side: async
       telemetry emission now reattaches the request's span context, so log
       lines finally carry a `trace_id`/`span_id` — verified live against a
-      real request's Tempo span. Opening a PR to `main` for this branch.
+      real request's Tempo span. PR opened:
+      [#11](https://github.com/livemode-org/livemode-airtable-proxy/pull/11).
+      **Tracked in Linear, 2026-08-26**: this whole item (no issue existed
+      before) is now `PRO-396`, filed `Done` under the `PRO-74` epic.
 - [ ] `PRO-371` — detect duplicates among **filtered** Airtable calls
       specifically (the no-filter case above is already solid). Proxy today
       only logs `hasFilter`/`hasFieldProjection` as booleans, not the actual
       filter/fields content, so two differently-filtered calls to the same
       table are indistinguishable. Proposed direction (not decided): log a
       hash of `filterByFormula`+`fields`, not the raw value.
+      **New sibling issue, 2026-08-26**: `PRO-397` — filtering by Airtable
+      `view` isn't detected at all (`hasFilter` only looks at
+      `filterByFormula`), a distinct gap from telling two `filterByFormula`
+      filters apart. Found while documenting `PRO-396`'s caveats.
 - [ ] Commit whatever changed (msilva says env-only) to get LiveScript's
       `feat/airtable-observability-local` branch working against the proxy;
       confirm whether the REST-call path needs the same URL-sourcing fix as

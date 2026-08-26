@@ -3836,3 +3836,20 @@ asked for both ingested directly.
   pra refletir três frentes; ganhou 4 sub-issues: PRO-392 (LangGraph),
   PRO-393 (Skill), PRO-394 (Agent SDK), PRO-395 (validação com Luís/Carol,
   bloqueada pelas três).
+
+## [2026-08-26] refactor | Airtable Proxy — dois compromissos passam a ter issue no Linear
+- Revisão do que faltava rastrear no Linear depois do trabalho de dashboard
+  desta sessão. Achado: o compromisso do 1:1 de 24/08 (dashboard "Insights"
+  gerencial) nunca teve issue — a página de reunião registrava
+  explicitamente "no Linear issue yet". Já estava entregue (5 painéis +
+  PR #11), então virou issue direto em Done.
+- New no Linear: PRO-396 (dashboard "Insights", Done, sob o épico PRO-74,
+  com o PR #11 anexado); PRO-397 (Backlog) — gap novo, achado ao documentar
+  as ressalvas do PR #11: filtro por `view` do Airtable não é detectado
+  (`hasFilter` só olha `filterByFormula`), distinto do PRO-371 (que é sobre
+  diferenciar um `filterByFormula` de outro). PRO-397 relacionada ao
+  PRO-371.
+- Confirmado que PRO-371 e PRO-76 (`app.route`/tracing por handler) já
+  refletiam o estado real (abertas) — nenhuma mudança necessária ali.
+- Updated: `projects/Airtable Proxy.md` (checklist aponta agora para
+  PRO-396 e PRO-397, link do PR #11 adicionado).
