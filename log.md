@@ -3853,3 +3853,20 @@ asked for both ingested directly.
   refletiam o estado real (abertas) — nenhuma mudança necessária ali.
 - Updated: `projects/Airtable Proxy.md` (checklist aponta agora para
   PRO-396 e PRO-397, link do PR #11 adicionado).
+
+## [2026-08-26] refactor | Duas correções, faladas por msilva
+- **PR #11 mergeado** (`f530530`, verificado em `origin/main`) — a página do
+  projeto e o log anterior ainda diziam "PR opened". Corrigido para
+  "merged" em `projects/Airtable Proxy.md`.
+- **O commit do lado do LiveScript não foi feito, e não vai ser por
+  enquanto** — msilva corrigiu diretamente. Esse era o compromisso do 1:1
+  de 24/08 de comitar `feat/airtable-observability-local` e confirmar a
+  fonte da URL no caminho REST. Registrado como mais uma instância de
+  [[2026-08-18 Proxy first, defer LiveScript-side SDK changes]] (que já
+  bloqueia `PRO-76`), não como compromisso abandonado.
+- Linear: comentário em `PRO-62` confirmando o adiamento, mantido em
+  Backlog (não cancelado).
+- Updated: `projects/Airtable Proxy.md` (checklist do item LiveScript
+  marcada com a correção; PR #11 → merged), `decisions/2026-08-18 Proxy
+  first, defer LiveScript-side SDK changes.md` (novo bullet `PRO-62`,
+  `updated:` para 2026-08-26).

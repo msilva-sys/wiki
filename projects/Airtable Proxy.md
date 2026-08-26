@@ -699,8 +699,9 @@ communicate async and often]].
       cause (Airtable also 429s on the monthly plan cap). Proxy-side: async
       telemetry emission now reattaches the request's span context, so log
       lines finally carry a `trace_id`/`span_id` — verified live against a
-      real request's Tempo span. PR opened:
-      [#11](https://github.com/livemode-org/livemode-airtable-proxy/pull/11).
+      real request's Tempo span. **Merged 2026-08-26**:
+      [PR #11](https://github.com/livemode-org/livemode-airtable-proxy/pull/11)
+      (`f530530`, on top of `c8f1941`) — live on `main`.
       **Tracked in Linear, 2026-08-26**: this whole item (no issue existed
       before) is now `PRO-396`, filed `Done` under the `PRO-74` epic.
 - [ ] `PRO-371` — detect duplicates among **filtered** Airtable calls
@@ -713,10 +714,13 @@ communicate async and often]].
       `view` isn't detected at all (`hasFilter` only looks at
       `filterByFormula`), a distinct gap from telling two `filterByFormula`
       filters apart. Found while documenting `PRO-396`'s caveats.
-- [ ] Commit whatever changed (msilva says env-only) to get LiveScript's
+- [x] ~~Commit whatever changed (msilva says env-only) to get LiveScript's
       `feat/airtable-observability-local` branch working against the proxy;
       confirm whether the REST-call path needs the same URL-sourcing fix as
-      the SDK path — same call.
+      the SDK path — same call.~~ **Deferred, 2026-08-26**: msilva confirms
+      this isn't happening for now — no LiveScript-side change was made. A
+      fresh instance of [[2026-08-18 Proxy first, defer LiveScript-side SDK
+      changes]], not a dropped commitment; tracked as `PRO-62` (Backlog).
 - [ ] Confirm the private-infra inputs in
       [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
 - [ ] Start the Go/Pulumi stack only after those inputs and ownership boundaries

@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-20
+updated: 2026-08-26
 date: 2026-08-18
 decided_by: Luís Fernandez
 source: "[[2026-08-18 1-1 Matheus - Luís]]"
@@ -44,6 +44,12 @@ problema? Não [...] é uma necessidade identificada."*
   worst case is direct config in the base, per [[2026-08-18 Bring options to
   Luís before deciding, communicate async and often]]. No longer blocked by
   this scope rule; see [[Airtable Proxy]] for the resolution.
+- **`PRO-62`** (commit LiveScript's `feat/airtable-observability-local`
+  branch so it talks to the proxy, plus confirming the REST-call path's
+  base-URL source) — committed to by msilva in the 2026-08-24 1:1
+  ([[2026-08-24 1-1 Matheus - Luís]]), **confirmed deferred 2026-08-26**: no
+  LiveScript-side change made, not happening for now. Still Backlog, not
+  canceled — this is the same scope line, not a change of plan.
 
 ## What's still open
 
