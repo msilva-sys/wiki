@@ -4258,6 +4258,19 @@ asked for both ingested directly.
 - `concepts/Vocabulário do Fluxo Agêntico.md` atualizada com o pointer pro
   espelho no Linear.
 
+## [2026-08-27] synthesis | Roster de contratos fechado (11 de 11)
+- A12 Data Governance fechado, último agente do mapeamento. Dono em
+  aberto mais forte que qualquer outro caso do roster: levantado que
+  A12 talvez não seja função deste time, e sim do time de dados
+  (Carolina Bezerra, 2026-08-24) — contrato documentado como "como
+  seria", independente de quem constrói.
+- Ponto 4 da lista pendente (aplicar detalhe de Saída aos 12 agentes
+  restantes) fechado. A6 fora do escopo (infraestrutura, não agente).
+- Updated (Linear): Document "Contratos dos Agentes" com A12 e status
+  final; artifact externo "Contratos dos Agentes" também atualizado.
+- Ainda pendente: confirmar com Luís a reversão do A7 (ticket graph vs.
+  dois agentes separados); dono do A12.
+
 ## [2026-08-26] synthesis | Tooling do agente LangGraph A10+A14 (pydantic, poethepoet)
 - Continuação, mesma sessão de [[Desenho do agente LangGraph para A10+A14]] —
   msilva pediu Pydantic pros contratos e "poe" pra task management; a
