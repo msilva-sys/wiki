@@ -4291,6 +4291,22 @@ asked for both ingested directly.
 - Updated (Linear): Document "Contratos dos Agentes", nota do A7.
   Artifact externo também atualizado.
 
+## [2026-08-27] query | Resposta do Luís sobre "conversacional" (Slack)
+- Puxado o DM de hoje com o Luís (Slack, não reunião): confirmou que a
+  pergunta original era a leitura 2 (memória dentro de uma mesma
+  conversa), não a 1 (múltiplos triggers). Posição dele, verbatim: *"é
+  desejável não travarmos a solução para inviabilizar, mas se for mais
+  simples não pensar nisso, pode seguir sem isso."*
+- Fecha a open question que ficava em [[2026-08-26 1-1 Matheus - Luís
+  (agentes A10-A14)]] e em [[Desenho do agente LangGraph para A10+A14]] —
+  a ideia de `thread_id`/`chat_id` por adapter (já registrada como
+  "possível caminho") cumpre a condição do Luís: não trava, não precisa
+  ser construída agora.
+- Updated: `meetings/2026-08-26 1-1 Matheus - Luís (agentes A10-A14).md`
+  (open question fechada, commitment do envio atualizado — foi enviado,
+  não estava mais pendente), `syntheses/Desenho do agente LangGraph para
+  A10+A14.md` (open question fechada com a citação).
+
 ## [2026-08-26] synthesis | Tooling do agente LangGraph A10+A14 (pydantic, poethepoet)
 - Continuação, mesma sessão de [[Desenho do agente LangGraph para A10+A14]] —
   msilva pediu Pydantic pros contratos e "poe" pra task management; a

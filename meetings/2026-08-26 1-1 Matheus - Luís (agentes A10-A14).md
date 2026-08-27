@@ -50,10 +50,9 @@ Todos de Matheus, roteados para o Linear por serem dele e caberem no time
   (descrição de
   [PRO-392](https://linear.app/projetos-livemode/issue/PRO-392/implementar-poc-em-langgraph),
   escrita mais tarde no mesmo dia, ver [[Desenho do agente LangGraph para
-  A10+A14]]). **Confirmado por msilva, 2026-08-27: ainda não foi enviado.**
-  A reflexão sobre o cenário conversacional agora tem uma resposta melhor —
-  ver a seção "Discussão de continuação" abaixo — que deveria entrar no
-  envio quando ele acontecer.
+  A10+A14]]). **Feito, 2026-08-27**: enviado por Slack como artifact visual
+  ("Agent, não workflow"), com a reflexão sobre conversacional incluída.
+  Luís já respondeu — ver "Discussão de continuação" abaixo.
 - **Desenhar arquitetura mínima dos agentes, começando pelo de portfólio, e
   compartilhar com Luís** — já rastreado em
   [PRO-375](https://linear.app/projetos-livemode/issue/PRO-375/especificar-a10-portfolio)
@@ -67,12 +66,14 @@ Todos de Matheus, roteados para o Linear por serem dele e caberem no time
 
 ## Open questions
 
-- **Se o agente precisar ser conversacional** (Slack, chat interno,
-  Telegram), a escolha LangGraph vs. agente autônomo ainda faz sentido?
-  Luís levantou; Matheus reconheceu não saber e Luís pediu reflexão antes da
-  próxima conversa. Não respondida em
-  [[Desenho do agente LangGraph para A10+A14]] — aquela página assume uso
-  CLI single-shot, não conversacional.
+- ~~**Se o agente precisar ser conversacional** (Slack, chat interno,
+  Telegram), a escolha LangGraph vs. agente autônomo ainda faz sentido?~~
+  **Respondida 2026-08-27**: a pergunta tinha dois sentidos (ver "Discussão
+  de continuação" abaixo); a parte de múltiplos triggers já estava
+  resolvida por design, e Luís confirmou por Slack que a parte de memória
+  de conversa é *"desejável não travar[...] mas se for mais simples não
+  pensar nisso, pode seguir sem isso"* — não bloqueia, não precisa construir
+  agora. Ver [[Desenho do agente LangGraph para A10+A14]].
 - **Formato de saída do agente de portfólio** — dashboard, mensagem no
   Slack, ou relatório semanal — ainda em aberto nesta reunião. *(Parcialmente
   respondida depois, no mesmo dia: [[Desenho do agente LangGraph para

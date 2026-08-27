@@ -426,7 +426,16 @@ está de fato ignorado. Não é uma decisão de desenho, mas fica registrado por
   está resolvido por design — é exatamente pra isso que serve o port
   `Entrada → Saída` da seção "Ports and adapters" abaixo, que não sabe nem
   se importa quem chamou. **Memória dentro de uma mesma conversa** (várias
-  mensagens seguidas, contexto acumulado) é uma pergunta diferente e
-  continua em aberto — este desenho assume CLI single-shot, sem
-  `thread_id`/checkpointer (ver "Memória entre execuções" acima), e isso
-  não muda sozinho.
+  mensagens seguidas, contexto acumulado) é uma pergunta diferente — este
+  desenho assume CLI single-shot, sem `thread_id`/checkpointer (ver
+  "Memória entre execuções" acima).
+
+  **Respondida por Luís, 2026-08-27** (Slack, DM, não uma reunião): era essa
+  segunda leitura que ele tinha em mente. Resposta dele, verbatim: *"O 2
+  diria que é desejável não travarmos a solução para inviabilizar, mas se
+  for mais simples não pensar nisso, pode seguir sem isso."* Ou seja: não
+  precisa construir agora, mas o desenho não pode fechar a porta pra isso
+  depois. A ideia de `thread_id`/`chat_id` por adapter (proposta por
+  msilva no mesmo dia, ver acima) já cumpre essa condição — nenhum adapter
+  atual precisa de memória, e um futuro adapter conversacional poderia
+  ganhar sem redesenhar o agente. Fechado.
