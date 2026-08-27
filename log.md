@@ -4549,3 +4549,21 @@ asked for both ingested directly.
   escrevendo ao mesmo tempo).
 - Updated: `decisions/2026-08-27 Implementar PRO-392 em waves, mas em
   pair programming.md` (seções "Resolvido"/"Reconfirmado").
+
+## [2026-08-27] lint | Fixes aplicados apos relatorio
+- Corrigido: systems/LiveScript.md ainda descrevia X-App-Id como mecanismo
+  de auth vigente; atualizado para refletir a decisao de identificacao por
+  URL path (2026-08-19), com o header reclassificado como historico.
+- Corrigido: 3 wikilinks quebrados — [[I'll study X = self-study]] em
+  decisions/2026-08-27 Implementar PRO-392 em waves...md (nao e pagina do
+  vault, virou prosa); [[Fluxo Agêntico]] e [[Projetos-livemode]] em
+  meetings/2026-08-26 1-1 Matheus - Luis (agentes A10-A14).md (nomes
+  proprios do Linear, viraram crase).
+- Cosmetico: bullet "conversacional" em syntheses/Desenho do agente
+  LangGraph para A10+A14.md riscada e movida para o padrao de fechamento
+  usado na pagina da reuniao (ja estava respondida, so nao tinha o
+  tachado).
+- Updated: systems/LiveScript.md, decisions/2026-08-27 Implementar PRO-392
+  em waves, mas em pair programming.md, meetings/2026-08-26 1-1 Matheus -
+  Luis (agentes A10-A14).md, syntheses/Desenho do agente LangGraph para
+  A10+A14.md.

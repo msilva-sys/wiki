@@ -24,8 +24,9 @@ não só entregar `PRO-392`.
 
 Isso **substitui, só para esta frente de execução**, a instrução gravada
 em `HANDOFF.md`: *"msilva quer estudar e construir isso ele mesmo, sem
-escrever código por ele"*. [[I'll study X = self-study]] continua
-valendo como preferência padrão — esta página é o registro de que, para
+escrever código por ele"*. Essa preferência padrão ("estudar" = estudo
+próprio, sem Claude construindo por ele) continua valendo — esta página
+é o registro de que, para
 `PRO-392` especificamente, "estudar" virou "estudar construindo em
 dupla", não "estudar sozinho lendo o que Claude escreve".
 

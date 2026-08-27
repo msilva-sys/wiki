@@ -38,7 +38,7 @@ exatamente a resposta ao pedido de Luís aqui (ver seção própria abaixo).
 ## Commitments
 
 Todos de Matheus, roteados para o Linear por serem dele e caberem no time
-[[Projetos-livemode]]/[[Fluxo Agêntico]]:
+`Projetos-livemode`/`Fluxo Agêntico`:
 
 - **Documentar e compartilhar a arquitetura dos agentes com o time**
   (conceito de trigger vs. input, arquitetura modular, direção geral) — sem

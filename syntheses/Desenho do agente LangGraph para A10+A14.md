@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-08-26
+updated: 2026-08-27
 date: 2026-08-26
 tags: [agents, agent-flow, a10, a14, poc, langgraph, langchain, linear-api, langfuse]
 aliases: [desenho do LangGraph, agent vs workflow A10+A14, PRO-392 design]
@@ -428,26 +428,23 @@ está de fato ignorado. Não é uma decisão de desenho, mas fica registrado por
   estudar ele mesmo.
 - Estimativa de esforço (Estimate) da issue `PRO-392` não foi definida nesta
   sessão.
-- **Se o agente precisar ser conversacional** (Slack, chat interno,
+- ~~**Se o agente precisar ser conversacional** (Slack, chat interno,
   Telegram), a escolha "agent" via `create_agent`/LangGraph ainda se
-  sustenta? Pergunta de Luís em
+  sustenta?~~ **Fechada 2026-08-27.** Pergunta de Luís em
   [[2026-08-26 1-1 Matheus - Luís (agentes A10-A14)]], anterior a esta
-  sessão. **Parcialmente respondida 2026-08-27** (ver a seção "Discussão de
-  continuação" naquela página): a pergunta tinha dois sentidos diferentes.
-  **Múltiplos triggers/adapters** (Slack, cron, outro agente chamando) já
-  está resolvido por design — é exatamente pra isso que serve o port
-  `Entrada → Saída` da seção "Ports and adapters" abaixo, que não sabe nem
-  se importa quem chamou. **Memória dentro de uma mesma conversa** (várias
-  mensagens seguidas, contexto acumulado) é uma pergunta diferente — este
-  desenho assume CLI single-shot, sem `thread_id`/checkpointer (ver
-  "Memória entre execuções" acima).
-
-  **Respondida por Luís, 2026-08-27** (Slack, DM, não uma reunião): era essa
-  segunda leitura que ele tinha em mente. Resposta dele, verbatim: *"O 2
-  diria que é desejável não travarmos a solução para inviabilizar, mas se
-  for mais simples não pensar nisso, pode seguir sem isso."* Ou seja: não
-  precisa construir agora, mas o desenho não pode fechar a porta pra isso
-  depois. A ideia de `thread_id`/`chat_id` por adapter (proposta por
-  msilva no mesmo dia, ver acima) já cumpre essa condição — nenhum adapter
-  atual precisa de memória, e um futuro adapter conversacional poderia
-  ganhar sem redesenhar o agente. Fechado.
+  sessão; tinha dois sentidos diferentes. **Múltiplos triggers/adapters**
+  (Slack, cron, outro agente chamando) já está resolvido por design — é
+  exatamente pra isso que serve o port `Entrada → Saída` da seção "Ports
+  and adapters" abaixo, que não sabe nem se importa quem chamou.
+  **Memória dentro de uma mesma conversa** (várias mensagens seguidas,
+  contexto acumulado) é uma pergunta diferente — este desenho assume CLI
+  single-shot, sem `thread_id`/checkpointer (ver "Memória entre execuções"
+  acima). **Respondida por Luís, 2026-08-27** (Slack, DM, não uma reunião):
+  era essa segunda leitura que ele tinha em mente. Resposta dele, verbatim:
+  *"O 2 diria que é desejável não travarmos a solução para inviabilizar,
+  mas se for mais simples não pensar nisso, pode seguir sem isso."* Ou
+  seja: não precisa construir agora, mas o desenho não pode fechar a porta
+  pra isso depois. A ideia de `thread_id`/`chat_id` por adapter (proposta
+  por msilva no mesmo dia, ver acima) já cumpre essa condição — nenhum
+  adapter atual precisa de memória, e um futuro adapter conversacional
+  poderia ganhar sem redesenhar o agente.

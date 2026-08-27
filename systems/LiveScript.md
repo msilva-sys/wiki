@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-08-17
+updated: 2026-08-27
 aliases: [live script, livescript, roteiros, roteiros app, live stre]
 tags: [airtable, livescript, realtime, frontend]
 ---
@@ -75,13 +75,21 @@ Nothing was said about which data, which engine, or when.
 ## Wiring to the proxy (auth) — GC-5
 
 Repointing LiveScript at the [[Airtable Proxy]] is **not** a pure config change.
+**Current mechanism: identification by URL path**, not header — decided
+[[2026-08-19 Identify proxy apps by URL path, not header]], implemented and
+hardened 2026-08-20/21 (repo commits `8e4297b`/`bf5e681`/`12d1423`). The
+`X-App-Id` header approach described below was the investigated-and-shipped
+predecessor, superseded by that decision; kept here as historical record, not
+as the live mechanism.
+
 Investigated 2026-08-17 against the app's `airtable` SDK (v0.12.2) —
-[[How LiveScript sends the proxy X-App-Id header]] has the full evidence:
+[[How LiveScript sends the proxy X-App-Id header]] (`status: superseded`) has
+the full evidence:
 
 - `AIRTABLE_ENDPOINT_URL` repoints traffic (the SDK reads it natively), but the
-  proxy now requires an `X-App-Id: livescript` header, and the SDK **cannot carry
-  it via `customHeaders`** as shipped — every op the app uses goes through the
-  SDK's deprecated `runAction`, which ignores custom headers.
+  proxy **used to require** an `X-App-Id: livescript` header, and the SDK
+  **could not carry it via `customHeaders`** as shipped — every op the app uses
+  goes through the SDK's deprecated `runAction`, which ignores custom headers.
 - **Shipped 2026-08-17, reverted 2026-08-18** (commits `754896b` / `d565c26` on
   `feature/airtable-proxy-observability`, dropped via `git reset --hard
   c9cc711`): a `pnpm patch` on `airtable@0.12.2` made `runAction` honour
@@ -89,13 +97,15 @@ Investigated 2026-08-17 against the app's `airtable` SDK (v0.12.2) —
   header injection on the REST path. Reverted so alternatives could be brought
   to Luís first, per
   [[2026-08-18 Bring options to Luís before deciding, communicate async and often]].
-  `X-App-Id` is **not currently sent** by either transport. See
-  [[How LiveScript sends the proxy X-App-Id header]] for the live options
-  comparison.
+  That comparison led to the URL-path decision above, not to `X-App-Id`
+  shipping — see [[How LiveScript sends the proxy X-App-Id header]] for the
+  full options comparison that was superseded.
 - The SDK always sends `Authorization: Bearer`, so the app keeps a **dummy PAT**;
-  the proxy overwrites it. `X-Api-Key` is deferred — `X-App-Id` only for now.
-- **Rollout order matters:** the header shipped before `AIRTABLE_ENDPOINT_URL`
-  flips (it's inert against Airtable), so it can't 401 anything until the flip.
+  the proxy overwrites it. `X-Api-Key` is deferred.
+- **Rollout order mattered while the header approach was live:** the header
+  shipped before `AIRTABLE_ENDPOINT_URL` flips (it's inert against Airtable),
+  so it couldn't 401 anything until the flip. Moot now that identification is
+  by URL path.
 
 ## Next.js caching — intentional on the events page, not a bug
 
