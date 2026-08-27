@@ -4307,6 +4307,18 @@ asked for both ingested directly.
   não estava mais pendente), `syntheses/Desenho do agente LangGraph para
   A10+A14.md` (open question fechada com a citação).
 
+## [2026-08-27] synthesis | Langfuse Prompt Management adotado
+- msilva decidiu usar o Prompt Management do Langfuse (prompts
+  versionados, labels, sem redeploy pra trocar versão), mesmo em fase de
+  PoC — julgado "bom demais pra não usar". Expande o escopo do Langfuse
+  além de "só observabilidade", framing original da mesma sessão de
+  design; decisão explícita, não descuido.
+- Alternativa mais simples (prompt como arquivo no git) considerada e
+  descartada.
+- Updated: `syntheses/Desenho do agente LangGraph para A10+A14.md`.
+  Ainda pendente propagar pro `HANDOFF.md` do repo de código e pro
+  PRO-392.
+
 ## [2026-08-26] synthesis | Tooling do agente LangGraph A10+A14 (pydantic, poethepoet)
 - Continuação, mesma sessão de [[Desenho do agente LangGraph para A10+A14]] —
   msilva pediu Pydantic pros contratos e "poe" pra task management; a

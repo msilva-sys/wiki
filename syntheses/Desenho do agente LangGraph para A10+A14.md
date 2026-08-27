@@ -147,22 +147,34 @@ o dado, sem interpretação. Mesma trava de design contra o mesmo erro.
   cron, sem Slack, sem cadência automática nessa fase) — msilva quer algo que
   dê pra apresentar.
 
-## Segurança contra loop e observabilidade
+## Segurança contra loop, observabilidade e prompts
 
-Dois mecanismos complementares, não concorrentes:
+Três mecanismos complementares, não concorrentes:
 
 - **`recursion_limit`** — teto de passos nativo do LangGraph/`create_agent`,
   default **25**, configurável via `config={"recursion_limit": N}` no
   `.invoke()`. Levanta `GraphRecursionError` e para a execução — trava
   mecânica, funciona mesmo sem ninguém observando.
-- **Langfuse Cloud** — só para observabilidade (trace de tool-call, prompt,
-  tokens), decisão explícita de msilva, não como mecanismo de trava. Setup:
-  `pip install langfuse`, três env vars (`LANGFUSE_PUBLIC_KEY`,
+- **Langfuse Cloud — observabilidade**: trace de tool-call, prompt, tokens.
+  Setup: `pip install langfuse`, três env vars (`LANGFUSE_PUBLIC_KEY`,
   `LANGFUSE_SECRET_KEY`, `LANGFUSE_BASE_URL`, já configuradas no `.env` do
   repo), um `CallbackHandler()` passado no mesmo `config` do `.invoke()`.
+- **Langfuse — Prompt Management** (decisão 2026-08-27, mesmo dia,
+  discussão em chat separada): prompts vivem no Langfuse, versionados
+  (cada edição vira versão imutável), com **labels** apontando pra qual
+  versão está ativa (ex.: `production`). O código busca o prompt em
+  runtime pelo nome+label via SDK — trocar de versão é trocar o label na
+  UI, sem redeploy, e cada execução no trace fica linkada à versão exata
+  do prompt que a gerou. Decisão explícita de msilva: expande o escopo do
+  Langfuse além de "só observabilidade" (framing original desta mesma
+  página), julgado como valendo a pena mesmo em fase de PoC — ajuda
+  diretamente a iterar o prompt do A10 contra o caso do Farol sem
+  redeploy a cada tentativa. Alternativa mais simples que foi descartada:
+  prompt como arquivo versionado no git.
 
 Sources: [GRAPH_RECURSION_LIMIT — Docs by LangChain](https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT),
-[Open Source Observability for LangGraph — Langfuse](https://langfuse.com/guides/cookbook/integration_langgraph).
+[Open Source Observability for LangGraph — Langfuse](https://langfuse.com/guides/cookbook/integration_langgraph),
+[Open Source Prompt Management — Langfuse](https://langfuse.com/docs/prompt-management/overview).
 
 ## Modelo e empacotamento
 
