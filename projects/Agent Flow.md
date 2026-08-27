@@ -134,7 +134,9 @@ tags: [agents, llm, automation, onboarding, research]
 >   pra esse sentido.
 >
 > Mesmo padrão de colisão de nome já resolvido antes pro [[Farol]] vs.
-> [[AI status reporting on Linear]].
+> [[AI status reporting on Linear]]. Termos técnicos de desenho (sinal,
+> contrato, ticket graph, ports and adapters...) ficam num glossário à
+> parte: [[Vocabulário do Fluxo Agêntico]].
 
 > [!tip] Desenho técnico da frente LangGraph fechado — msilva, 2026-08-26
 > [[Desenho do agente LangGraph para A10+A14]]: padrão **"agent"**, não

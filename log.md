@@ -4215,6 +4215,40 @@ asked for both ingested directly.
 - Também salvo em memória automática (fora da wiki) pra aplicar
   proativamente em escrita futura, mesmo fora de uma sessão de wiki.
 
+## [2026-08-27] synthesis | Contrato Entrada/Saída mapeado agente a agente
+- Ponto 4 pendente da sessão anterior (aplicar o nível de detalhe de
+  "Saída" do A10/A14 aos outros 12 agentes) — trabalhado em chat,
+  informal, sem virar issue no Linear; artifact externo "Contratos dos
+  Agentes" como registro de trabalho, compartilhado com o time no fim.
+- A1+A2 fundidos num contrato só (já eram o mesmo agente, Luís
+  2026-08-20). A3+A9 também fundidos (mesma razão). A6 fora do
+  mapeamento (não é agente standalone).
+- A7 Discovery: saída redesenhada como **ticket graph** (dependências
+  explícitas, `blockedBy`), não PRD monolítico — contraponto direto ao
+  risco de spec-as-source já registrado contra o Agent Flow
+  ([[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]]).
+  Reverte, sem confirmar com Luís ainda, a leitura dele de 2026-08-20 de
+  que Discovery e conversão-em-PRD seriam agentes separados.
+- A8 Orchestrator: executa o ticket graph em ondas, modelo direto do
+  [[Gabriel Packer - DAG-driven agent orchestration]].
+- **Achado de sessão**: Triage Intelligence, feature nativa do Linear
+  (sugestão de time/projeto/labels/relacionadas + duplicata, já exposta
+  via MCP), sobrepõe parte real do trabalho desenhado pro A1+A2 e A13 —
+  mesmo padrão de "parte disso já existe" já visto antes (Claude autora
+  backlog, status readout). A13 mantém razão de existir: Triage
+  Intelligence só sugere, A13 tem autoridade de **bloquear**.
+- Erro recorrente corrigido nesta sessão, duas vezes: contrato definido
+  por **quem chama** ("vem do A8") em vez de por **formato** — mesma
+  regra que já tinha sido fixada pro A5 (fonte adapter-agnóstica), vazou
+  de novo em A7/A8/A9 e foi corrigida.
+- **Novo**: `concepts/Vocabulário do Fluxo Agêntico.md` — glossário dos
+  termos técnicos que emergiram (sinal, contrato, ticket graph, etc.),
+  puxado pra wiki em vez de ficar só no artifact.
+- Updated: `projects/Agent Flow.md`, `index.md`.
+- Ainda pendente: A12 Data Governance (falta mapear); confirmar com Luís
+  a reversão do A7 (ticket graph vs. dois agentes separados); Document no
+  Linear a partir do artifact, ainda não gerado.
+
 ## [2026-08-26] synthesis | Tooling do agente LangGraph A10+A14 (pydantic, poethepoet)
 - Continuação, mesma sessão de [[Desenho do agente LangGraph para A10+A14]] —
   msilva pediu Pydantic pros contratos e "poe" pra task management; a
