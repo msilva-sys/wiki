@@ -132,6 +132,21 @@ tags: [agents, llm, automation, onboarding, research]
 > resolvendo as pendências de API key da síntese-mãe. Mapeado em
 > [PRO-392](https://linear.app/projetos-livemode/issue/PRO-392/implementar-poc-em-langgraph).
 
+> [!note] Luís pede capacidades específicas por agente e documentação compartilhada — 1:1, 2026-08-26
+> [[2026-08-26 1-1 Matheus - Luís (agentes A10-A14)]]: antes da sessão de
+> design técnico acima, Luís questiona o argumento de msilva pra pular
+> LangGraph (ele também suporta zero-determinismo) e pede uma referência
+> resumida da decisão com critérios claros — provavelmente o gatilho direto
+> da pesquisa `workflows-agents` que aparece na síntese acima, mesmo dia.
+> Reforça de novo a distinção trigger/input ([[Agent Harness Template]]) e
+> nomeia o problema central dos 14 agentes: descritos de forma macro, sem
+> capacidades específicas listadas — analogia de "agente como funcionário
+> novo," precisa de objetivo claro e entrega de valor definida. **Questão
+> em aberto, ainda não resolvida em nenhuma síntese**: se o agente precisar
+> ser conversacional (Slack, chat interno, Telegram), a escolha LangGraph
+> vs. agente autônomo ainda se sustenta? A síntese acima assume uso CLI
+> single-shot, não conversacional — não é a mesma pergunta.
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides

@@ -4331,3 +4331,29 @@ asked for both ingested directly.
   `tests/`), `index.md`.
 - Fora da wiki, mesmo repo: `HANDOFF.md` atualizado com as mesmas decisoes
   - ainda nao commitado.
+
+## [2026-08-27] ingest | 1:1 Matheus - Luís sobre A10/A14 (Granola, 2026-08-26)
+- Fonte: link de notas estruturadas do Granola (sem transcrição verbatim),
+  lido ao vivo via browser — sem arquivo em `raw/`.
+- Novo: `meetings/2026-08-26 1-1 Matheus - Luís (agentes A10-A14).md` —
+  Luís questiona ao vivo o argumento de msilva pra pular LangGraph (também
+  suporta zero-determinismo) e pede referência resumida com critérios
+  claros antes de fechar; reforça a distinção trigger/input; nomeia o
+  problema central dos 14 agentes (descritos macro, sem capacidades
+  específicas — analogia "agente como funcionário novo"); pede
+  documentação compartilhada com o time. Questão em aberto: a escolha
+  LangGraph/agente autônomo se sustenta se o agente precisar ser
+  conversacional? Seção "Testes e Fluxo de Desenvolvimento" (versão
+  liberada pra Carol, triagem de bugs via LLM) não foi atribuída a nenhum
+  projeto — sistema não identificado nas notas.
+- Linear: criada [PRO-430](https://linear.app/projetos-livemode/issue/PRO-430/documentar-e-compartilhar-arquitetura-dos-agentes-com-o-time)
+  pro commitment de documentar/compartilhar arquitetura (sem issue prévia
+  cobrindo). Os outros três commitments de Matheus já tinham issue
+  (PRO-375 "Especificar A10 Portfolio", PRO-392 cujo texto já cobre a
+  referência LangGraph pedida) — nenhuma issue nova pra esses.
+- Updated: `concepts/Agent Harness Template.md` (reforço ao vivo da
+  distinção trigger/input), `projects/Agent Flow.md` (novo callout),
+  `syntheses/Desenho do agente LangGraph para A10+A14.md` (esta reunião
+  como provável origem do pedido de referência, nova open question sobre
+  cenário conversacional), `people/Luís Fernandez.md` (nova linha de
+  atividade), `index.md`.

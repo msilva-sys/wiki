@@ -26,6 +26,14 @@ contraponto do [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]
 Graph Engineering só compensa quando o fluxo **genuinamente ramifica** — a
 maioria dos projetos é uma linha reta com um `if` no meio.
 
+Mais direto ainda: [[2026-08-26 1-1 Matheus - Luís (agentes A10-A14)]], mais
+cedo no mesmo dia, tem Luís questionando ao vivo o argumento de msilva ("não
+determinístico" não justifica sozinho pular LangGraph — ele também suporta
+zero-determinismo) e pedindo uma referência resumida com critérios claros
+antes de fechar o lado. A distinção **"agent" vs. "workflow"** abaixo lê como
+a resposta direta a esse pedido — não confirmado explicitamente como entregue
+a Luís (ver Commitments naquela página).
+
 **Resolvido nesta sessão**: a ramificação real do Fluxo Agêntico só existe no
 **sistema inteiro** (A2 roteando pra A3/A4/A7...), não dentro do A10/A14
 isolados — msilva, 2026-08-26. Isso significa que desenhar um grafo à mão
@@ -408,3 +416,10 @@ está de fato ignorado. Não é uma decisão de desenho, mas fica registrado por
   estudar ele mesmo.
 - Estimativa de esforço (Estimate) da issue `PRO-392` não foi definida nesta
   sessão.
+- **Se o agente precisar ser conversacional** (Slack, chat interno,
+  Telegram), a escolha "agent" via `create_agent`/LangGraph ainda se
+  sustenta? Pergunta de Luís em
+  [[2026-08-26 1-1 Matheus - Luís (agentes A10-A14)]], anterior a esta
+  sessão — não respondida aqui. Este desenho assume CLI single-shot, sem
+  `thread_id`/checkpointer (ver "Memória entre execuções" acima), então a
+  resposta pode não se transferir direto se o agente virar conversacional.

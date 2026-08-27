@@ -56,6 +56,8 @@ This template resolves both into one consistent concept: **Harness = Soul.md + S
 
 **Trigger Channel sits alongside, not in place of, the four entry channels.** msilva ([!msilva] callout, 2026-08-21): Trigger Channel (Slack, Webhook, Cron, etc.) is a separate axis from [[Agent Flow]]'s four entry channels (`Bug sistema` · `Bug manual` · `Tarefa` · `Consultoria`) — both coexist in the model rather than one replacing the other.
 
+**Reforçado ao vivo, não só por escrito.** [[2026-08-26 1-1 Matheus - Luís (agentes A10-A14)]]: Luís levanta a mesma distinção trigger/input de novo, em conversa, especificamente sobre A10/A14 — não é um conceito isolado do Slack de 2026-08-21, é como ele pensa sobre agentes de forma consistente.
+
 ## Leituras externas relacionadas (ingeridas 2026-08-24)
 
 Duas clippings do mesmo lote (`raw/Clippings/`, capturadas 2026-08-21) usam

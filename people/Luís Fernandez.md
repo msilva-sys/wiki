@@ -95,3 +95,16 @@ sometimes builds directly, otherwise supports.
   call, referring to him in the third person and so **not** spoken by him,
   reconfirms his afternoon-only availability as the reason those meetings
   get scheduled for the afternoon.
+- **Pushes back on msilva's LangGraph-skip argument, live** — 2026-08-26
+  ([[2026-08-26 1-1 Matheus - Luís (agentes A10-A14)]]): "não determinístico"
+  alone doesn't justify skipping LangGraph, since it supports zero-determinism
+  architectures too; asks for a summarized decision reference (hypothesis +
+  criteria + reference) before he'll settle either side. Reinforces the
+  trigger-vs-input distinction again, live, on A10/A14 specifically (see
+  [[Agent Harness Template]]). Names the 14-agent design's central problem:
+  agents described macro, without specific listed capabilities — "agent as
+  new employee" analogy, needs a clear objective and defined value delivery.
+  Open question he raised, unresolved: does the LangGraph/agent choice still
+  hold if the agent needs to be conversational (Slack, internal chat,
+  Telegram)? Also: general feedback that the process is going well, and that
+  the intensity of his corrections is part of the process, not a bad sign.
