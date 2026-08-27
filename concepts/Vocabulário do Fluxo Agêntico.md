@@ -58,8 +58,11 @@ o nome do projeto com um deles.
 ## Onde isso é usado
 
 Aplicado nos contratos mapeados agente-a-agente — ver o artifact
-"Contratos dos Agentes" (compartilhado com o time, referência externa) e o
-Document que sai dele no Linear, projeto Fluxo Agêntico.
+"Contratos dos Agentes" (compartilhado com o time, referência externa).
+Espelhado no Linear como Document próprio, "Glossário do Fluxo Agêntico"
+(projeto Fluxo Agêntico), pra não duplicar a definição em cada Document
+que usa esses termos ("Arquitetura dos Agentes A10 + A14", "Contratos dos
+Agentes").
 
 ## Open questions
 

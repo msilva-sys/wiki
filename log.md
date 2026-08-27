@@ -4246,8 +4246,17 @@ asked for both ingested directly.
   puxado pra wiki em vez de ficar só no artifact.
 - Updated: `projects/Agent Flow.md`, `index.md`.
 - Ainda pendente: A12 Data Governance (falta mapear); confirmar com Luís
-  a reversão do A7 (ticket graph vs. dois agentes separados); Document no
-  Linear a partir do artifact, ainda não gerado.
+  a reversão do A7 (ticket graph vs. dois agentes separados).
+
+## [2026-08-27] refactor | Docs do Fluxo Agêntico no Linear: glossário separado
+- Dois Documents já existentes ("Arquitetura dos Agentes A10 + A14",
+  "Contratos dos Agentes") tinham cada um sua cópia parcial do
+  vocabulário técnico, duplicada e fragmentada.
+- Criado Document próprio "Glossário do Fluxo Agêntico" (projeto Fluxo
+  Agêntico) com todos os termos num lugar só; os outros dois docs editados
+  pra linkar em vez de repetir a definição.
+- `concepts/Vocabulário do Fluxo Agêntico.md` atualizada com o pointer pro
+  espelho no Linear.
 
 ## [2026-08-26] synthesis | Tooling do agente LangGraph A10+A14 (pydantic, poethepoet)
 - Continuação, mesma sessão de [[Desenho do agente LangGraph para A10+A14]] —
