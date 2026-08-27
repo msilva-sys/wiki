@@ -4509,3 +4509,28 @@ asked for both ingested directly.
 - Updated: `meetings/2026-08-26 1-1 Matheus - Luís (agentes A10-A14).md`
   (nova seção "Discussão de continuação"), `syntheses/Desenho do agente
   LangGraph para A10+A14.md` (open question atualizada).
+
+## [2026-08-27] decision | PRO-392 roda em waves, mas por pair programming
+- msilva perguntou se dá pra trabalhar em "waves" como
+  [[Gabriel Packer - DAG-driven agent orchestration]] descreve — o modelo
+  do post são agentes de implementação autônomos, um por ticket,
+  worktree isolado, humano só revisando PR.
+- Primeira leitura (minha, confirmada por escolha explícita de msilva
+  numa pergunta de esclarecimento): adotar o modelo ao pé da letra —
+  agente escreve sozinho, msilva só revisa PR.
+- **Corrigido pelo próprio msilva, mesma sessão**: *"eu não quero
+  construir sozinho / iremos construir juntos por pair programming / eu
+  queria era estudar antes as 3 soluções"*. Nem "msilva sozinho" (a regra
+  original do `HANDOFF.md`) nem "agente sozinho" (minha primeira leitura)
+  — **pair programming**.
+- O que sobrevive do modelo do Packer: a estrutura de waves vinda do DAG
+  nativo das sub-issues (`blockedBy`) — wave 1 `PRO-475` (feita), wave 2
+  `PRO-476`, wave 3 `PRO-477`+`PRO-478` (paralelas entre si), wave 4
+  `PRO-479`. O que não sobrevive: worktree isolado por agente autônomo,
+  dispatch sem o msilva no teclado.
+- Decidido continuar agora na wave 2 (`PRO-476`) em pair programming,
+  sem pausar antes pra estudar as 3 frentes comparativamente — essa
+  pergunta ficou em aberto e msilva escolheu seguir.
+- New: `decisions/2026-08-27 Implementar PRO-392 em waves, mas em pair
+  programming.md`.
+- Updated: `index.md`.
