@@ -4357,3 +4357,25 @@ asked for both ingested directly.
   como provável origem do pedido de referência, nova open question sobre
   cenário conversacional), `people/Luís Fernandez.md` (nova linha de
   atividade), `index.md`.
+
+## [2026-08-27] synthesis | Key-points da reunião com Luís revisitados
+- Discussão em chat sobre os 4 key-points de
+  [[2026-08-26 1-1 Matheus - Luís (agentes A10-A14)]].
+- Confirmado: referência LangGraph ainda não foi enviada ao Luís (commitment
+  seguia pendente).
+- **Resolvido**: a pergunta "e se precisar ser conversacional?" tinha duas
+  perguntas diferentes dentro. Múltiplos triggers/adapters (Slack, cron,
+  outro agente) já é resolvido pelo port `Entrada → Saída` (ports-and-
+  adapters, reformulação de msilva) — não precisa desenho novo. Memória
+  dentro de uma mesma conversa (thread_id/checkpointer) é pergunta
+  diferente e continua em aberto — desenho atual é CLI single-shot.
+- **Esclarecido**: a crítica "capacidades específicas" (analogia do
+  funcionário novo) já tem resposta prática pro A10/A14 — é a seção "Saída"
+  do desenho técnico (sugestão + critério + justificativa). O gap real
+  continua nos outros 12 agentes do diagrama, ainda descritos numa frase
+  só, sem especificação de entrega.
+- Confirmado: PRO-430 é a issue certa pro pedido de documentação
+  compartilhada, sem mudança.
+- Updated: `meetings/2026-08-26 1-1 Matheus - Luís (agentes A10-A14).md`
+  (nova seção "Discussão de continuação"), `syntheses/Desenho do agente
+  LangGraph para A10+A14.md` (open question atualizada).

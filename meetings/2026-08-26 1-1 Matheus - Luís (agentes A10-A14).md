@@ -50,8 +50,10 @@ Todos de Matheus, roteados para o Linear por serem dele e caberem no time
   (descrição de
   [PRO-392](https://linear.app/projetos-livemode/issue/PRO-392/implementar-poc-em-langgraph),
   escrita mais tarde no mesmo dia, ver [[Desenho do agente LangGraph para
-  A10+A14]]), mas **o envio a Luís e a reflexão sobre o cenário
-  conversacional não estão confirmados como feitos**.
+  A10+A14]]). **Confirmado por msilva, 2026-08-27: ainda não foi enviado.**
+  A reflexão sobre o cenário conversacional agora tem uma resposta melhor —
+  ver a seção "Discussão de continuação" abaixo — que deveria entrar no
+  envio quando ele acontecer.
 - **Desenhar arquitetura mínima dos agentes, começando pelo de portfólio, e
   compartilhar com Luís** — já rastreado em
   [PRO-375](https://linear.app/projetos-livemode/issue/PRO-375/especificar-a10-portfolio)
@@ -117,6 +119,44 @@ Todos de Matheus, roteados para o Linear por serem dele e caberem no time
   foi construído nesta data; possivelmente [[Farol]] ou outro projeto do
   time, mas as notas não nomeiam. Não fanned out para nenhuma project page
   até confirmar.)*
+
+## Discussão de continuação — 2026-08-27
+
+msilva revisitou os key-points com Claude no dia seguinte. Duas conclusões
+que resolvem (parcialmente) as open questions acima:
+
+**A pergunta "e se precisar ser conversacional?" tinha duas perguntas
+diferentes escondidas dentro.** msilva reformulou o problema como
+**ports-and-adapters**: os agentes precisam funcionar isoladamente, fora do
+sistema Fluxo Agêntico, e ser conectáveis/invocáveis de várias formas. Isso
+separa a pergunta original do Luís em duas:
+
+1. **Múltiplos triggers/adapters** (CLI, Slack, cron, outro agente chamando
+   direto) — **já resolvido por design**, sem precisar mudar nada: o port
+   `Entrada → Saída` de cada agente (ver "Ports and adapters" em
+   [[Desenho do agente LangGraph para A10+A14]]) não sabe nem se importa
+   quem chamou. Cada canal vira só mais um adapter traduzindo pra `Entrada`
+   e reagindo à `Saída`.
+2. **Memória de conversa dentro de uma mesma sessão** (alguém trocando
+   várias mensagens seguidas com o A10 no Slack, contexto acumulado) — isso
+   é uma coisa **diferente**, ortogonal ao ponto 1, e continua **não
+   resolvida**: exigiria um adapter com memória de curto prazo
+   (`thread_id`/checkpointer do LangGraph), que o desenho atual descarta
+   deliberadamente por assumir CLI single-shot.
+
+**Antes de responder ao Luís, vale confirmar qual das duas ele estava
+perguntando** — a resposta muda dependendo. Provavelmente é a 1 (o
+"conectar de várias formas" que ele já vinha puxando com trigger vs.
+input), mas não está confirmado.
+
+**O ponto da "capacidade específica" (funcionário novo) já tem resposta
+prática, só não tinha sido conectado de volta à fala dele.** A seção
+"Saída" de [[Desenho do agente LangGraph para A10+A14]] — sugestão com
+issue, critério(s) disparado(s), justificativa curta — **é** o nível de
+detalhe que ele estava pedindo, só que aplicado apenas a A10/A14. O gap
+real que ele apontou continua aberto pros outros 12 agentes do
+[[Fluxo Agêntico diagram]], que ainda são descrições de uma frase, sem
+especificação de entrega.
 
 ## Notable quotes
 

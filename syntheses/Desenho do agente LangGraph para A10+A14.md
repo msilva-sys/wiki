@@ -420,6 +420,13 @@ está de fato ignorado. Não é uma decisão de desenho, mas fica registrado por
   Telegram), a escolha "agent" via `create_agent`/LangGraph ainda se
   sustenta? Pergunta de Luís em
   [[2026-08-26 1-1 Matheus - Luís (agentes A10-A14)]], anterior a esta
-  sessão — não respondida aqui. Este desenho assume CLI single-shot, sem
-  `thread_id`/checkpointer (ver "Memória entre execuções" acima), então a
-  resposta pode não se transferir direto se o agente virar conversacional.
+  sessão. **Parcialmente respondida 2026-08-27** (ver a seção "Discussão de
+  continuação" naquela página): a pergunta tinha dois sentidos diferentes.
+  **Múltiplos triggers/adapters** (Slack, cron, outro agente chamando) já
+  está resolvido por design — é exatamente pra isso que serve o port
+  `Entrada → Saída` da seção "Ports and adapters" abaixo, que não sabe nem
+  se importa quem chamou. **Memória dentro de uma mesma conversa** (várias
+  mensagens seguidas, contexto acumulado) é uma pergunta diferente e
+  continua em aberto — este desenho assume CLI single-shot, sem
+  `thread_id`/checkpointer (ver "Memória entre execuções" acima), e isso
+  não muda sozinho.
