@@ -137,6 +137,17 @@ low importance against everything else the team could otherwise build.
 Recorded as her candid opinion, not a project-status change — Farol
 remains `active`, in development, per the rest of this page.
 
+## Progress — 2026-08-27
+
+[[2026-08-27 Recap da Semana]] (attributed to Maria Fernanda with high
+confidence, per that page's warning): met with **Marina** Tuesday
+(2026-08-25), walked her through BigQuery access and which tables she
+can see. **Expresso's data is now in the database and delivered to
+her**, along with two "skills" to help her read the table structures.
+**Only Uber remains** — Luís tried to get ahead on it but progress was
+minimal since the week's focus was closing Expresso first. No update on
+OnFly or Itaú in this meeting.
+
 ## Open questions
 
 - **What database?** BigQuery is the obvious guess given the GCP work, but it was

@@ -3821,6 +3821,48 @@ asked for both ingested directly.
   Fernandez]] e [[Arthur Tavares]] (risco de bus-factor nomeado),
   `index.md`.
 
+## [2026-08-27] ingest | Recap da Semana, 15:06
+- Fonte: `raw/Recap da Semana - 2026_08_27 15_06 GMT-03_00 - Anotações
+  do Gemini.md` — **mesma falha de transcrição** do
+  [[2026-08-25 Farol - Dados]] e do onboarding de 2026-08-10: Gemini
+  atribuiu a call inteira a "Maria Fernanda Lemos" sozinha.
+- **Perguntei os presentes antes de escrever a página**, em vez de
+  adivinhar de novo (já corrigido duas vezes nesta sessão por
+  transcrições parecidas) — confirmado por msilva: **Mafê, Yasmin
+  Macedo, msilva e Carolina Bezerra**, quatro pessoas.
+- New: `meetings/2026-08-27 Recap da Semana.md`, `people/Talisa.md`
+  (nova na área, onboarding).
+- **Dois blocos atribuídos com confiança acima da média, por
+  correspondência temática, não diarização**: a atualização extensa da
+  Mafê (Farol, LiveScript, documentação low-code, Talisa, acesso ao
+  Airtable, suporte a Jorge/Valesca, Taxonomia — tudo já estabelecido
+  como dela em outras páginas) e a atualização do msilva (proxy, Fluxo
+  Agêntico/A14, reflexão sobre disciplina no Linear — áreas que só ele
+  possui). **O resto (perguntas de esclarecimento, coaching sobre
+  documentação vs. comunicação) fica como "Yasmin ou Carolina," sem
+  distinguir.**
+- **Farol**: reunião com Marina terça-feira, dados da Expresso
+  entregues, só falta Uber.
+- **LiveScript**: bug histórico registrado pela primeira vez — roteiros
+  de teste do Brasileirão sobreviveram a uma migração e precisaram ser
+  apagados/regenerados; Luís já mapeou e corrigiu.
+- **Achado mais relevante pro [[Agent Flow]]**: msilva propõe uma
+  distinção nova — monitoramento interno de build/qualidade (nosso) vs.
+  priorização por usabilidade (dos usuários) — como input direto pra um
+  dos agentes que o Fluxo Agêntico precisa construir, disparado por uma
+  dúvida real e não resolvida da Mafê sobre o LiveScript. Também
+  descreve sua própria prática de conectar Linear ao Claude Code pra
+  ser avisado de prazos em risco — precedente vivo do que A10/A14
+  pretendem formalizar pro time todo.
+- Atualizado: [[Maria Fernanda Lemos]] (semana ativa, dúvida sobre
+  LiveScript), [[Farol]] e [[Marina]] (Expresso entregue), [[LiveScript]]
+  (bug histórico), [[Agent Flow]] (tip novo), [[Yasmin Macedo]] e
+  [[Carolina Bezerra]] (presença confirmada, conteúdo não distinguido
+  entre as duas), `index.md`.
+- Aberto: se Taxonomia merece página própria como [[Pulse]] e
+  [[LiveScript]]; o que de fato é o projeto "Live Mansion"/redes —
+  história confusa mesmo pra quem falou dela.
+
 ## [2026-08-26] refactor | Schema: `Action items` → `Commitments`, sai o checkbox
 - msilva: não usa a seção `Action items` das notas de reunião como task
   tracker — os checkboxes só acumulavam, sem ninguém marcar `- [x]`, e o

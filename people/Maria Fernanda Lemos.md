@@ -92,3 +92,20 @@ Cadeira com **duas posições**: a de Mafê, ocupada; uma segunda, **vaga**
   informação — evidência a favor de A4 Teacher passar o teste
   agir/informar como agente próprio, não skill aninhada; ver
   [[Agent Flow]].
+- **Semana de 2026-08-27, muito ativa** ([[2026-08-27 Recap da
+  Semana]] — transcrição de baixa confiança, ver ressalva na página):
+  toca o [[Farol]] junto com Yasmin/Luís (reunião com [[Marina]], dados
+  da Expresso entregues, só falta Uber); teve overview técnico do
+  [[LiveScript]] com Luís após ~40 dias afastada; está documentando
+  todas as soluções low-code que já construiu, repassando as de Monday
+  para [[João Victor Andrade]]; mentora **[[Talisa]]**, nova na área;
+  gerencia acesso ao Airtable (só um owner/admin, acesso por área via
+  e-mail geral coletivo); dá suporte em paralelo para Valesca (hub de
+  produção executiva) e Jorge (agente de transmissão da matriz); revisa
+  a Taxonomia (marca/produto/submarca, tier de jogo) e assume o
+  fechamento do "depara" como tarefa própria.
+- **Levanta uma dúvida real e não resolvida sobre o LiveScript**: é
+  responsabilidade do time abordar áreas proativamente sobre
+  funcionalidades pouco usadas e complexas de manter (ex: "congelar
+  espelho"), ou isso é puramente reativo? Ver
+  [[2026-08-27 Recap da Semana]] e [[Agent Flow]].

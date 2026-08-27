@@ -62,6 +62,12 @@ elsewhere in the wiki.
   ruled out on volume; the "integration work defaults to us" pattern
   citing Bruno) is plausibly hers but could equally be Luís's or
   Arthur's — not confidently attributed further.
+- **Attended [[2026-08-27 Recap da Semana]]**, alongside Yasmin, Maria
+  Fernanda and msilva — Gemini collapsed all four into one label. Some
+  documentation-vs-communication coaching directed at msilva plausibly
+  hers (matches her governance/process-feedback role), but not
+  confidently distinguished from Yasmin's voice — see that page's
+  warning.
 - **On the [[Bossabox Engagement]] discovery call** — alongside msilva and
   Luís, all three picked up on her microphone, so the transcript can't
   actually distinguish which of the three said what

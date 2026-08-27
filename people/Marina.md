@@ -17,6 +17,13 @@ transformations, with heavy alerting if she breaks something. Not
 expected to build or maintain the ingestion/dedup pipeline itself — that
 stays with the data team.
 
+## Progress
+
+Met with Maria Fernanda Tuesday (2026-08-25): walked through BigQuery
+access and which tables she can see. Expresso's data is now delivered to
+her, plus two "skills" to help her read the table structures. Only Uber
+remains outstanding ([[2026-08-27 Recap da Semana]]).
+
 ## Open questions
 
 - Is she the same person as "Mariana," mentioned once in the same

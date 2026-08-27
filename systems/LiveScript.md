@@ -130,6 +130,16 @@ validating it via the REST-transport traffic alone is an accepted stopping point
 not a gap to close urgently. See the *Scope of the current work* section on that
 meeting page.
 
+## A historical bug — test roteiros surviving a migration
+
+Recorded 2026-08-27, per Maria Fernanda's recap of a 2026-08-26 overview
+call with Luís ([[2026-08-27 Recap da Semana]], low transcription
+confidence): early in the year, someone ran tests that created several
+Brasileirão *roteiros*; when everything was migrated into LiveScript's
+own infrastructure, those test roteiros had to be deleted and
+regenerated to clear the problem. Luís already mapped and fixed it —
+doesn't recur once regenerated.
+
 ## Open questions
 
 - Which data is in scope for the dedicated database, and on what engine?

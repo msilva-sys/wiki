@@ -92,6 +92,23 @@ tags: [agents, llm, automation, onboarding, research]
 > ClickUp→Linear migration with Carol this week — a third individual-tool
 > migration candidate alongside the proxy, not yet decided.
 
+> [!tip] A product-watching agent's scope, sketched in a real discussion — 2026-08-27
+> [[2026-08-27 Recap da Semana]] (low transcription confidence, four
+> attendees collapsed into one Gemini label): Maria Fernanda raises a
+> genuinely unresolved question about [[LiveScript]] — should the team
+> proactively prune complex, barely-used features, or stay purely
+> reactive? msilva's response (his content, high confidence) draws a new
+> line not yet in this wiki: **internal build/code-quality monitoring**
+> (noticing disproportionate complexity for actual usage — the team's own
+> job) versus **user-facing usability prioritization** (primarily the
+> users' job to raise, unless feedback volume becomes overwhelming). He
+> names this explicitly as input toward **one of the agents Agent Flow
+> needs to build** — a product-watching agent, bearing on A5 Watcher/A11
+> Product's still-unsettled scope. Also: msilva describes his own ad hoc
+> practice of connecting Linear to Claude Code so it proactively flags
+> at-risk dates — a live precedent for exactly what A10/A14 are meant to
+> formalize for the whole team, not just himself.
+
 > [!tip] Bossabox's Assessment method cross-read, 2026-08-26
 > [[What Bossabox's Assessment suggests for Agent Flow]]: confirms the
 > automated-QA gap below isn't just deliberate; offers DORA/VSM as a
