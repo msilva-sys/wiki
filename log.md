@@ -4318,6 +4318,18 @@ asked for both ingested directly.
 - Updated: `syntheses/Desenho do agente LangGraph para A10+A14.md`.
   Ainda pendente propagar pro `HANDOFF.md` do repo de código e pro
   PRO-392.
+- Propagado: `HANDOFF.md` do repo `livemode-fluxo-agentico` (junto com
+  mudanças acumuladas e não commitadas da outra sessão — ports-and-
+  adapters, gap-check, memória do A14) e PRO-392.
+
+## [2026-08-27] decision | Sub-issues de implementação do PRO-392
+- Passos de construção discutidos em chat, aplicando o próprio padrão de
+  ticket graph desenhado pro A7 na issue-mãe. Granularidade escolhida pra
+  clareza de progresso (msilva constrói sozinho, não é execução paralela
+  por vários agentes) — 5 sub-issues, não mais.
+- Criadas no Linear, `blockedBy` nativo: PRO-475 (setup) → PRO-476
+  (cliente do Linear) → PRO-477 (A10) e PRO-478 (A14, em paralelo entre
+  si) → PRO-479 (orquestração, depende dos dois agentes).
 
 ## [2026-08-26] synthesis | Tooling do agente LangGraph A10+A14 (pydantic, poethepoet)
 - Continuação, mesma sessão de [[Desenho do agente LangGraph para A10+A14]] —
