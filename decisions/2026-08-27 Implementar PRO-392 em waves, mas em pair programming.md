@@ -50,11 +50,22 @@ branch `langgraph`, uma issue de cada vez (mesmo as paralelas da wave 3
 — "paralelo" aqui é sobre dependência, não sobre execução simultânea por
 múltiplos agentes).
 
-## Em aberto — ordem real do trabalho
+## Resolvido — ordem real do trabalho
 
-Não resolvido ainda nesta sessão: se "estudar as 3 soluções" significa
-pausar as waves de `PRO-392` e primeiro fazer uma passada comparativa
-pelas três frentes (`PRO-392` LangGraph, `PRO-393` Skill, `PRO-394` Agent
-SDK) antes de aprofundar qualquer uma, ou se o estudo acontece já
-construindo `PRO-476` em pair programming e comparando depois. A
-perguntar a msilva antes de continuar.
+msilva escolheu seguir direto na wave 2 (`PRO-476`) em pair programming,
+sem pausar antes pra estudar as 3 frentes comparativamente. A pergunta
+"estudar antes de construir" continua em pé como preferência de fundo,
+só não bloqueia o início desta wave.
+
+## Reconfirmado — sem sub-agent nem na wave 3
+
+msilva perguntou explicitamente se, seguindo "waves", um sub-agent podia
+implementar sozinho as issues que não se bloqueiam entre si (`PRO-477` +
+`PRO-478`, únicas paralelas de verdade no DAG). Opções levantadas: (a)
+pair programming numa, sub-agent sozinho na outra; (b) sub-agent nas
+duas, msilva só revisa os PRs; (c) só planejar a mecânica antes de
+decidir. **Escolhido**: nenhuma das três — pair programming também na
+wave 3, sem paralelismo de execução por sub-agents por enquanto. Reforça
+o que a seção acima já previa: "paralelo" nas waves é sobre a ordem que
+o DAG permite, não sobre múltiplos agentes escrevendo código ao mesmo
+tempo.

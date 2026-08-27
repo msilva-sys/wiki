@@ -4534,3 +4534,18 @@ asked for both ingested directly.
 - New: `decisions/2026-08-27 Implementar PRO-392 em waves, mas em pair
   programming.md`.
 - Updated: `index.md`.
+
+## [2026-08-27] decision | Sem sub-agent nem na wave 3 (PRO-477+478)
+- msilva perguntou se, seguindo "waves", eu podia spawnar sub-agents pra
+  implementar sozinhas as issues que não se bloqueiam (`PRO-477`+`PRO-478`,
+  as únicas paralelas de verdade no DAG de `PRO-392`) — pediu pra
+  planejar antes de decidir.
+- Três opções levantadas: pair programming numa + sub-agent sozinho na
+  outra; sub-agent nas duas com msilva revisando os PRs; só planejar a
+  mecânica sem decidir ainda.
+- **Escolhido**: nenhuma — pair programming também na wave 3, sem
+  paralelismo de execução por enquanto. Confirma o que a decisão de
+  waves já previa (paralelo é sobre o DAG, não sobre múltiplos agentes
+  escrevendo ao mesmo tempo).
+- Updated: `decisions/2026-08-27 Implementar PRO-392 em waves, mas em
+  pair programming.md` (seções "Resolvido"/"Reconfirmado").
