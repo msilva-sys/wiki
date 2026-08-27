@@ -120,6 +120,22 @@ tags: [agents, llm, automation, onboarding, research]
 > local `C:\Users\msilva\projects\livemode-fluxo-agentico`, remoto
 > `git@github.com:tech-livemode/livemode-fluxo-agentico.git`.
 
+> [!tip] Vocabulário — três termos, três usos, sem sobreposição — msilva, 2026-08-27
+> Percebido escrevendo uma mensagem pro time: **"Fluxo Agêntico"** e o termo
+> técnico "fluxo"/workflow colidiam na mesma frase. Resolvido sem renomear o
+> projeto (custo alto pra um problema só de vocabulário):
+> - **"Fluxo Agêntico"** — nome próprio, só quando aponta pro projeto/
+>   iniciativa em si (links do Linear, títulos).
+> - **"sistema agêntico"** — como nos referimos à arquitetura toda (os 14
+>   agentes) em prosa, no dia a dia.
+> - **"workflow"** (inglês, não traduzido) — o termo técnico pro padrão de
+>   passos fixos dentro de um agente, contraposto a "agent"
+>   ([[Desenho do agente LangGraph para A10+A14]]). Nunca "fluxo" sozinho
+>   pra esse sentido.
+>
+> Mesmo padrão de colisão de nome já resolvido antes pro [[Farol]] vs.
+> [[AI status reporting on Linear]].
+
 > [!tip] Desenho técnico da frente LangGraph fechado — msilva, 2026-08-26
 > [[Desenho do agente LangGraph para A10+A14]]: padrão **"agent"**, não
 > "workflow" (`create_agent`, não grafo desenhado à mão — a ramificação real

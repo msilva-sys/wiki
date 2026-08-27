@@ -4201,6 +4201,20 @@ asked for both ingested directly.
   resolvida).
 - Fora da wiki, mesmo repo: `.gitignore` criado (não commitado ainda).
 
+## [2026-08-27] refactor | Vocabulário padronizado: Fluxo Agêntico / sistema agêntico / workflow
+- Percebido escrevendo uma mensagem pro time (rascunho de Slack, ainda não
+  enviada): "Fluxo Agêntico" (nome próprio do projeto) e "fluxo" (termo
+  técnico, sequência fixa de passos dentro de um agente) colidiam na mesma
+  frase.
+- msilva decidiu não renomear o projeto — resolvido como convenção de
+  vocabulário: "Fluxo Agêntico" só como nome próprio (links/títulos do
+  Linear); "sistema agêntico" pra arquitetura toda em prosa; "workflow"
+  (inglês, não traduzido) pro termo técnico. Mesmo padrão de colisão já
+  resolvido antes pro [[Farol]] vs. [[AI status reporting on Linear]].
+- Updated: `projects/Agent Flow.md` (novo callout), `index.md`.
+- Também salvo em memória automática (fora da wiki) pra aplicar
+  proativamente em escrita futura, mesmo fora de uma sessão de wiki.
+
 ## [2026-08-26] synthesis | Tooling do agente LangGraph A10+A14 (pydantic, poethepoet)
 - Continuação, mesma sessão de [[Desenho do agente LangGraph para A10+A14]] —
   msilva pediu Pydantic pros contratos e "poe" pra task management; a
