@@ -4271,6 +4271,26 @@ asked for both ingested directly.
 - Ainda pendente: confirmar com Luís a reversão do A7 (ticket graph vs.
   dois agentes separados); dono do A12.
 
+## [2026-08-27] synthesis | A7: um agente só, por ora (pensado em voz alta)
+- msilva revisitou a pendência do A7 pensando em voz alta em chat — não
+  decisão nova baseada em fala do Luís, raciocínio próprio antes de levar
+  pra ele.
+- Corrigido um ângulo que eu tinha trazido errado: a referência do
+  [[Gabriel Packer - DAG-driven agent orchestration]] mantém a
+  decomposição em ticket manual (ele mesmo escreve), só automatizou o
+  despacho — isso não é o que o Luís defenderia; msilva: ele defende
+  automatizar a decomposição em DAG também, não deixar pra um humano.
+  Reformulado a pergunta pra "um agente de IA fazendo os dois, ou dois
+  agentes de IA" (não mais "IA vs. humano").
+- Pesados os dois lados: separar testa a decomposição isolada e permite
+  reuso por outros fluxos; juntar evita mais uma peça/modo de falha
+  (decompor bem geralmente exige reinterpretar o achado, não é um
+  repasse limpo numa direção só).
+- **Decidido, por ora**: um agente só. Ainda precisa ser confirmado com
+  o Luís, que em 2026-08-20 vinha pendendo pra separar.
+- Updated (Linear): Document "Contratos dos Agentes", nota do A7.
+  Artifact externo também atualizado.
+
 ## [2026-08-26] synthesis | Tooling do agente LangGraph A10+A14 (pydantic, poethepoet)
 - Continuação, mesma sessão de [[Desenho do agente LangGraph para A10+A14]] —
   msilva pediu Pydantic pros contratos e "poe" pra task management; a
