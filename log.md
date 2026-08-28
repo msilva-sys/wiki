@@ -4673,3 +4673,21 @@ asked for both ingested directly.
   pós-PoC.
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
   first.md` (seção "Reforçado 2026-08-28"), `index.md`.
+
+## [2026-08-28] callout | Aprofundado: saúde do portfólio (A10) e desvio de escopo (A14)
+- Continuação da discussão acima, agora lendo o artefato original
+  completo dos 11 contratos (não só o resumo do Luís), a pedido de
+  msilva.
+- "Saúde do portfólio" do A10: msilva confirma que é papel do A10, não
+  do A14. Achado: `/api/a14/overview` já faz um rollup parecido — vale
+  considerar consumir esse agregado em vez de recalcular, quando a
+  frente for retomada.
+- "Desvio de escopo" do A14: eu tinha registrado como bloqueado até o
+  A7 Discovery existir (precisaria de um "grafo aprovado" formal).
+  msilva corrigiu — o mesmo julgamento por inferência que o A10 já usa
+  em `escopo_descontrolado` (evidência, não prova) resolve isso sem
+  precisar do A7. Decisão: "cabe agora, depois ajustamos quando existir
+  o A7" — sai do backlog pós-PoC, vira candidata real pro
+  `contracts.py` do A14 (ainda não implementada, sessão é wiki).
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
+  first.md` (seção "Aprofundado 2026-08-28"), `index.md`.

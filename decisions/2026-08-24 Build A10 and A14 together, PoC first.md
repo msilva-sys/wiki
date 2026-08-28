@@ -93,6 +93,33 @@ expandir o escopo do A10/A14 no meio do caminho. As sugestões do Luís
 ficam registradas aqui como backlog pra depois da PoC, nenhuma delas
 entra no `contracts.py` atual.
 
+## Aprofundado 2026-08-28, mesma sessão — duas sugestões esclarecidas
+
+Discussão continuou lendo o artefato original completo (todos os 11
+contratos, não só o resumo do Luís) — duas conclusões que revisam o
+"backlog indiferenciado" acima:
+
+- **"Saúde do portfólio" (A10) é papel do A10 mesmo, não do A14** —
+  msilva confirmou. Achado relevante: `/api/a14/overview` (construído
+  nesta mesma sessão pro frontend) já faz um rollup parecido
+  (`total_projects`/`projects_with_alerts`) — vale considerar se o A10
+  deveria consumir esse agregado do A14 em vez de recalcular do zero,
+  quando essa frente for retomada.
+- **"Desvio de escopo com evidência" (A14) — corrigida uma leitura
+  errada minha.** Cheguei a registrar isso como *bloqueado* até o A7
+  Discovery existir (por não haver um "grafo aprovado" formal pra
+  comparar). msilva corrigiu: o mesmo julgamento por inferência que o
+  A10 já usa no critério `escopo_descontrolado` (ler sinais — data de
+  criação, vínculo com milestone, menção em comentário — e formar um
+  julgamento evidenciado, não uma prova) serve igual pro A14. Não é
+  bloqueio estrutural, é escolha de desenho: **julgamento do LLM agora,
+  ajustável pra diff mecânico contra o grafo aprovado quando o A7
+  existir.** `msilva`: **"cabe agora, depois podemos ajustar quando
+  existir o A7"** — essa sugestão específica sai do backlog pós-PoC e
+  vira candidata a entrar no `contracts.py` do A14 quando essa frente
+  for retomada (ainda não implementada nesta sessão — sessão é wiki,
+  não código).
+
 ## What this changes elsewhere
 
 - [[Agent Flow]] — noted as the concrete shape of the next build.
