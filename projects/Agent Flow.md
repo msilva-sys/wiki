@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: research
-updated: 2026-08-26
+updated: 2026-08-28
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -576,6 +576,17 @@ That flow was diagnosed on 2026-08-17 —
 >
 > A **token-consumption dashboard exists** and is obtainable on request — the
 > measurement instrument this constraint always needed.
+
+> [!tip] Instância concreta do lever no A10, achada e corrigida no mesmo dia — 2026-08-28
+> [[2026-08-28 Remover list_issues do toolset de chat do A10]]: dois traces do
+> Langfuse (~$1,60 cada, contra ~$0,002 do normal) — a causa era `list_issues()`
+> devolvendo o backlog inteiro do time (~281 mil tokens) como resultado de tool
+> call, cobrado por inteiro na primeira vez que aparece no contexto (sem cache
+> possível). `chat_a10` corria esse risco a cada pergunta, não só uma vez por
+> dia como `run_a10`. Resolvido tirando `list_issues` do toolset do chat.
+> **A mesma "narrow fetching" nomeada como lever logo abaixo**, desta vez
+> auto-diagnosticada via a instrumentação Langfuse da própria PoC, não por
+> reconstituição posterior.
 
 > [!note] The instrument has two halves, and both had to be switched on — 2026-08-18
 > From [[2026-08-18 1-1 Matheus - Gabrielle]]:

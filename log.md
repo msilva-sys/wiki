@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-08-26
+updated: 2026-08-28
 
 
 ---
@@ -4627,3 +4627,24 @@ asked for both ingested directly.
   domínio)**.
 - Updated: `concepts/Vocabulário do Fluxo Agêntico.md` (novo termo
   "Gateway", com a correção registrada inline), `index.md`.
+
+## [2026-08-28] decision | Remover list_issues do toolset de chat do A10
+- msilva perguntou se já havíamos investigado um custo alto sem apontar
+  qual operação; investigação via API pública do Langfuse (traces +
+  observations) achou dois traces fora da curva sozinha (~$1,60 cada
+  contra ~$0,002 do normal).
+- Causa raiz: `list_issues()` (`a10/tools.py`) devolve o backlog inteiro
+  do time (~281 mil tokens) como resultado de tool call — cobrado por
+  inteiro na primeira vez que entra no contexto (sem prompt caching
+  possível nessa passada). O loop determinístico que roda depois já se
+  beneficia do caching automático da OpenAI, isso não precisou de
+  mudança.
+- `chat_a10` corria esse risco a cada pergunta (nunca passa pelo cache
+  do app antes de chamar o LLM, por design), não só uma vez por dia como
+  `run_a10`.
+- Resolvido no repo `livemode-fluxo-agentico`: `create_tools` ganhou
+  `include_list_issues` (default `True`); `chat_a10` passa `False`,
+  ficando só com as duas tools de cálculo pontual.
+- New: `decisions/2026-08-28 Remover list_issues do toolset de chat do
+  A10.md`. Updated: `projects/Agent Flow.md` (callout na seção de custo
+  de token), `index.md`.
