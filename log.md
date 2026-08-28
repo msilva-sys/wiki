@@ -4609,3 +4609,21 @@ asked for both ingested directly.
   em waves, mas em pair programming.md, meetings/2026-08-26 1-1 Matheus -
   Luis (agentes A10-A14).md, syntheses/Desenho do agente LangGraph para
   A10+A14.md.
+
+## [2026-08-28] synthesis | Gateway vs sistema agêntico — onde fica a fronteira
+- Discussão em chat, durante pair programming do PRO-479 (main.py):
+  msilva perguntou sobre como expor os agentes a triggers de canais
+  diferentes (Slack, CLI etc.) no longo prazo.
+- Confirmado: ports-and-adapters já resolve isso por design — nenhuma
+  mudança de código necessária quando um canal novo chegar.
+- msilva propôs: centralizar recepção de trigger num canal
+  especializado, em vez de "contaminar" o sistema agêntico com essa
+  função (ex.: não construir uma FastAPI por agente).
+- **Primeira leitura minha, errada**: equiparei o gateway ao A1 Receptor
+  Universal. **Segunda leitura, também errada**: tentei traçar a
+  fronteira entre A1 e A2. **Corrigido por msilva**: A1 já é lógica de
+  domínio (interpreta a demanda), não infra. A fronteira real é
+  **gateway (infra pura, fora do sistema) vs. A1 em diante (tudo já é
+  domínio)**.
+- Updated: `concepts/Vocabulário do Fluxo Agêntico.md` (novo termo
+  "Gateway", com a correção registrada inline), `index.md`.

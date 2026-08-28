@@ -1,8 +1,8 @@
 ---
 type: concept
 status: active
-updated: 2026-08-27
-aliases: [glossário do Fluxo Agêntico, sinal, contrato de agente, ticket graph]
+updated: 2026-08-28
+aliases: [glossário do Fluxo Agêntico, sinal, contrato de agente, ticket graph, gateway]
 tags: [agents, agent-flow, vocabulary, architecture]
 ---
 
@@ -23,6 +23,19 @@ explícita em vários lugares ao mesmo tempo.
 - **Adapter** — o componente que traduz um canal específico (Slack, CLI,
   webhook...) pro formato da Entrada. O agente não sabe nem precisa saber
   qual adapter o chamou.
+- **Gateway** — a camada de infra pura que recebe o trigger bruto de
+  qualquer canal (webhook do Slack, payload de cron, chamada HTTP) e
+  normaliza antes de entregar pro sistema agêntico. Não é um agente, não
+  tem lógica de negócio — só transporte e normalização, exatamente pra
+  não "contaminar" o sistema agêntico com preocupação de infra (parsing
+  de payload, assinatura, autenticação). A fronteira do sistema agêntico
+  começa em **A1 Receptor Universal**, não no gateway: A1 já interpreta a
+  demanda como conceito de domínio (o que é, quem pediu, que forma tem) —
+  isso é raciocínio, não infra. **Correção registrada aqui** (msilva,
+  2026-08-28): duas leituras erradas foram cogitadas e descartadas na
+  mesma conversa — equiparar A1 ao gateway, e traçar a linha entre A1 e
+  A2. A linha real é **gateway (fora do sistema, puro transporte) vs. A1
+  em diante (tudo já é domínio)**.
 - **Sinal** — observação bruta ou semi-processada que ainda não é decisão;
   entra como parte da Entrada, o agente aplica julgamento em cima dela, e o
   que sai (Saída) é o veredito, com o sinal como evidência anexada — não o
