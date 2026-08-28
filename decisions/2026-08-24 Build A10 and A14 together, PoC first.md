@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-24
+updated: 2026-08-28
 date: 2026-08-24
 decided_by: Matheus Silva
 source: "chat with Claude, 2026-08-24"
@@ -58,6 +58,32 @@ prioritization view (A10) and no proactive status/delivery communication
 - **Production timeline isn't set.** The PoC is the gate; if it doesn't
   validate the approach, M1 doesn't roll into a production build as scoped
   here.
+
+## Reforçado 2026-08-28 — revisão de contratos do Luís, escopo mantido em A10+A14
+
+Luís revisou 5 dos 11 contratos de agente (A1+A2, A10, A14, A4, A5) num
+arquivo compartilhado por DM (Slack, 2026-08-28, respondendo ao artefato
+que msilva enviou um dia antes mapeando input→output de cada agente).
+msilva confirma aqui: a atenção agora fica só nos comentários sobre **A10**
+e **A14** — os de A1+A2, A4 e A5 ficam registrados como feedback pra
+quando esses agentes entrarem em escopo, não acionados agora. Mantém a
+mesma lógica desta decisão (M1 é só A10+A14).
+
+- **A10**: deixar explícito que a entrada é backlog de *projetos* (visão
+  macro, não issue a issue), e considerar uma dimensão de "saúde do
+  portfólio como um todo" além do item-a-item — Luís sugere pesquisar
+  gestão de portfólio de projetos pra embasar quais dimensões entram aí.
+- **A14**: entrada "um projeto do Linear" é genérica demais; saída deveria
+  cobrir mais do papel de PM — desvio de escopo com evidência, desvio de
+  prazo com causa, bloqueios ativos com dono, decisões pendentes sem
+  resposta, riscos com idade (novo vs. recorrente), um veredito explícito
+  (`no_trilho`/`atenção`/`em_risco`), e recorte por audiência (time vs.
+  stakeholder). Reforça o que **não** é papel do A14: repriorizar, mudar
+  escopo, cobrar pessoas.
+
+**Em aberto**: se essas sugestões entram nos `contracts.py` atuais da PoC
+(`a10/contracts.py`/`a14/contracts.py`, repo `livemode-fluxo-agentico`) ou
+ficam só como direção pra versão de produção — não decidido ainda.
 
 ## What this changes elsewhere
 

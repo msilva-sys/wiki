@@ -4648,3 +4648,22 @@ asked for both ingested directly.
 - New: `decisions/2026-08-28 Remover list_issues do toolset de chat do
   A10.md`. Updated: `projects/Agent Flow.md` (callout na seção de custo
   de token), `index.md`.
+
+## [2026-08-28] callout | Revisão de contratos do Luís — foco em A10/A14
+- Buscado no Slack a pedido de msilva: DM do Luís respondendo o artefato
+  de contratos que msilva mandou um dia antes, com um arquivo revisando
+  5 dos 11 agentes (A1+A2, A10, A14, A4, A5 — os outros 6 ainda não
+  vistos por ele).
+- msilva confirmou: foco agora é só nos comentários de A10 e A14 (o
+  resto fica registrado, não acionado, até esses agentes entrarem em
+  escopo).
+- Resumo das sugestões: A10 precisa deixar explícito que a entrada é
+  backlog de projetos (macro) e ganhar uma dimensão de "saúde do
+  portfólio"; A14 precisa de entrada menos genérica e saída mais rica
+  (desvio de escopo/prazo com evidência, bloqueios com dono, decisões
+  pendentes, riscos com idade, veredito explícito, recorte por
+  audiência) — com limites explícitos do que não é papel dele.
+- Em aberto: se isso vira mudança nos `contracts.py` da PoC agora ou só
+  direção pra produção.
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
+  first.md` (seção "Reforçado 2026-08-28"), `index.md`.
