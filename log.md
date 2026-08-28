@@ -4663,7 +4663,13 @@ asked for both ingested directly.
   (desvio de escopo/prazo com evidência, bloqueios com dono, decisões
   pendentes, riscos com idade, veredito explícito, recorte por
   audiência) — com limites explícitos do que não é papel dele.
-- Em aberto: se isso vira mudança nos `contracts.py` da PoC agora ou só
-  direção pra produção.
+- Discutido em chat: separado o que era ajuste de redação do contrato
+  (grátis) do que era feature nova (custo variável — veredito
+  explícito e riscos com idade seriam baratos, desvio de escopo e
+  recorte por audiência seriam trabalho novo de verdade).
+- **Resolvido, mesma sessão**: msilva decidiu não mexer em nada disso
+  agora — prioridade é fechar a PoC (framework) primeiro, não expandir
+  escopo do A10/A14 no meio do caminho. Sugestões do Luís viram backlog
+  pós-PoC.
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
   first.md` (seção "Reforçado 2026-08-28"), `index.md`.

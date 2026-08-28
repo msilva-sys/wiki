@@ -81,9 +81,17 @@ mesma lógica desta decisão (M1 é só A10+A14).
   stakeholder). Reforça o que **não** é papel do A14: repriorizar, mudar
   escopo, cobrar pessoas.
 
-**Em aberto**: se essas sugestões entram nos `contracts.py` atuais da PoC
-(`a10/contracts.py`/`a14/contracts.py`, repo `livemode-fluxo-agentico`) ou
-ficam só como direção pra versão de produção — não decidido ainda.
+**Resolvido 2026-08-28, mesma sessão**: discutido em chat (separando o que
+era só ajuste de redação do que era feature nova, e o quanto cada feature
+custava — ex. veredito explícito e riscos com idade seriam baratos por já
+reaproveitar `memory.py`/`rules.py`; desvio de escopo e recorte por
+audiência seriam trabalho novo de verdade). **msilva decidiu não mexer em
+nada disso agora** — a prioridade é fechar a PoC primeiro (framework
+LangGraph vs. Skill vs. Agent SDK, per
+[[Como implementar a PoC do A10+A14 (LangGraph, Skill, Agent SDK)]]), não
+expandir o escopo do A10/A14 no meio do caminho. As sugestões do Luís
+ficam registradas aqui como backlog pra depois da PoC, nenhuma delas
+entra no `contracts.py` atual.
 
 ## What this changes elsewhere
 
