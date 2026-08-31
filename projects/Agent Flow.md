@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: research
-updated: 2026-08-28
+updated: 2026-08-31
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -136,6 +136,12 @@ tags: [agents, llm, automation, onboarding, research]
 > **Repositório definido, mesmo dia**: as três frentes moram num repo só —
 > local `C:\Users\msilva\projects\livemode-fluxo-agentico`, remoto
 > `git@github.com:tech-livemode/livemode-fluxo-agentico.git`.
+>
+> **Corrigido 2026-08-31**: o repo foi transferido pra
+> `github.com/livemode-org/livemode-fluxo-agentico` — `livemode-org` é a
+> organization já conectada à integração GitHub do Linear, ao contrário
+> da conta pessoal `tech-livemode` onde o repo vivia antes. Motivo e
+> contexto completo: [[2026-08-24 Build A10 and A14 together, PoC first]].
 
 > [!tip] Vocabulário — três termos, três usos, sem sobreposição — msilva, 2026-08-27
 > Percebido escrevendo uma mensagem pro time: **"Fluxo Agêntico"** e o termo

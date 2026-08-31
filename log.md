@@ -4827,3 +4827,21 @@ asked for both ingested directly.
   conectado**; precisa ser feito do zero.
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
   first.md` (mesma seção, addendum).
+
+## [2026-08-31] refactor | Repo transferido pra livemode-org, contorna a conexão de conta
+- msilva transferiu `livemode-fluxo-agentico` pra
+  `github.com/livemode-org/livemode-fluxo-agentico` — a organization já
+  conectada ao GitHub App do Linear — em vez de conectar `tech-livemode`
+  do zero.
+- Ajustes: remote local (`git remote set-url origin git@github.com:
+  livemode-org/livemode-fluxo-agentico.git`, confirmado via `gh api`);
+  link do repo nos resources do projeto Fluxo Agêntico no Linear
+  (`save_project`, novo link apontando pra `livemode-org`). O link
+  antigo (`tech-livemode`) não pôde ser removido — `delete_attachment`
+  não reconheceu o ID do resource tipo `link` de projeto — fica como
+  entrada morta duplicada, remoção manual pendente na UI do Linear.
+- Ainda sem PR real aberto no repo, então a verificação ponta a ponta
+  contra `Issue.attachments` no Linear continua pendente.
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
+  first.md` (seção "Resolvido 2026-08-31"), `projects/Agent Flow.md`
+  (correção inline no callout do repositório), `index.md`.

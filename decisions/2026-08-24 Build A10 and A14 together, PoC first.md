@@ -260,6 +260,18 @@ autorização do GitHub App junto. Ou seja, nenhuma evidência de que
 `tech-livemode` já esteja conectado — precisa ser feito do zero, por
 alguém logado como `tech@livemode`.
 
+**Resolvido 2026-08-31, mesma sessão**: em vez de conectar `tech-livemode`,
+msilva **transferiu o repo** — `livemode-fluxo-agentico` agora mora em
+`github.com/livemode-org/livemode-fluxo-agentico`, a organization que já
+tinha a integração GitHub ativa no Linear. Contorna o passo de conectar
+uma conta nova. Ajustado: remote local (`git remote set-url`) e o link do
+repo nos resources do projeto Fluxo Agêntico no Linear (o link antigo,
+apontando pra `tech-livemode`, ficou morto — tentei removê-lo via
+`delete_attachment`, a API não reconheceu o ID; sobrou como entrada
+duplicada nos resources, precisa remoção manual na UI do Linear). Ainda
+sem PR real no repo pra testar `attachments` ponta a ponta contra o
+Linear.
+
 ## Corrigido 2026-08-28 — hallucination de `issue_id`, via `agent` (não `workflow`)
 
 Sessão de frontend achou inconsistência real: tabela de sugestões do A10
