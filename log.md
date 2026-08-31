@@ -4712,3 +4712,12 @@ asked for both ingested directly.
 - Nada implementado em código ainda — sessão é wiki. Updated:
   `decisions/2026-08-24 Build A10 and A14 together, PoC first.md`
   (mesma seção "Aprofundado"), `index.md`.
+
+## [2026-08-28] decision | Implementação das duas candidatas iniciada
+- Fechada a inconsistência entre "nenhuma sugestão entra agora" e "essa
+  sai do backlog": msilva confirmou que as duas promovidas (portfolio
+  health do A10, desvio de escopo do A14) entram em implementação agora,
+  no repo `livemode-fluxo-agentico` — resto do feedback do Luís continua
+  no backlog pós-PoC, sem mudança.
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
+  first.md` (nova seção "Implementação iniciada"), `index.md`.

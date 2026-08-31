@@ -148,6 +148,23 @@ contratos, não só o resumo do Luís) — duas conclusões que revisam o
   for retomada (ainda não implementada nesta sessão — sessão é wiki,
   não código).
 
+## Implementação iniciada 2026-08-28 — as duas candidatas promovidas
+
+Fecha a tensão entre as duas seções acima ("nenhuma entra agora" vs.
+"essa sai do backlog"): msilva confirma que, terminada a análise, **as
+duas sugestões promovidas em "Aprofundado" entram no código agora**:
+
+1. `portfolio_health` no A10 (`projects_with_alerts`, `risk_by_project`,
+   `workload_by_project`, `trend` — puro `rules.py`, zero custo de LLM).
+2. "Desvio de escopo" no A14, como julgamento do LLM evidenciado (mesmo
+   padrão do `escopo_descontrolado` do A10).
+
+O restante do feedback do Luís (desvio de prazo com causa, bloqueios com
+dono, decisões pendentes, riscos com idade, veredito explícito, recorte
+por audiência, e o item de A10 sobre redação "backlog de projetos")
+continua no backlog pós-PoC, sem mudança — só essas duas saem daí.
+Implementação segue no repo `livemode-fluxo-agentico`, não nesta wiki.
+
 ## What this changes elsewhere
 
 - [[Agent Flow]] — noted as the concrete shape of the next build.
