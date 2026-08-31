@@ -4765,3 +4765,17 @@ asked for both ingested directly.
   de base registrada, comparação pendente pra depois do fix). Updated:
   `decisions/2026-08-24 Build A10 and A14 together, PoC first.md`
   (seção "Corrigido 2026-08-28"), `index.md`.
+
+## [2026-08-28] decision | Registra a trava de domínio, retroativo
+- A trava de domínio (Google OAuth, `middleware.js`, `auth_gate.py`)
+  foi implementada nesta mesma sessão, mais cedo, mas nunca tinha sido
+  registrada na wiki pessoal — só ficou nos commits do repo. Registrado
+  agora, a pedido implícito de msilva ao perguntar sobre recuperar
+  `thread_id` por e-mail (o que expôs o gap).
+- Também registrado: msilva quer que o `thread_id` do chat siga a
+  pessoa por e-mail, não por `localStorage`/UUID aleatório — precisa do
+  middleware repassar o e-mail verificado pro backend (header
+  `x-lm-user-email`, endpoint `GET /api/me` novo). **Adiado
+  explicitamente** ("depois fazemos isso"), sem prazo.
+- New: `decisions/2026-08-28 Trava de domínio no Fluxo Agêntico via
+  Google OAuth.md`. Updated: `index.md`.
