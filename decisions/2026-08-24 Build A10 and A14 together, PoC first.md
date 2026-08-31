@@ -216,6 +216,31 @@ linha a mais na query GraphQL que `linear_client.py` já faz
 (`attachments { nodes { sourceType metadata } }`), zero sistema
 externo novo.
 
+## Corrigido 2026-08-28 — hallucination de `issue_id`, via `agent` (não `workflow`)
+
+Sessão de frontend achou inconsistência real: tabela de sugestões do A10
+mostrando mais linhas que a soma de `risk_by_project`. Causa: hallucination
+de `issue_id` já documentada no `PRO-480` (~29%), nunca corrigida — ver
+[[Taxa de hallucination de issue_id no A10]] pra medição completa (linha
+de base + comparação depois do fix).
+
+**Discussão de arquitetura**: msilva cogitou migrar de `agent`
+(`create_agent`) pra `workflow` (`StateGraph`) por causa desse bug —
+comparado três opções (per-issue em Python, índice de posição, workflow).
+Concluído: o bug é de **fidelidade de geração de string**, não de
+controle de fluxo — um nó de `workflow` pedindo pro LLM digitar o mesmo
+`issue_id` teria o mesmo problema. `workflow` só resolveria combinado com
+a técnica do índice/identifier, que já resolve sozinha dentro do `agent`
+atual, sem reabrir a decisão "agent, não workflow" de 2026-08-26 (tomada
+por um motivo diferente — branching, não fidelidade de output) e sem
+custo de LLM extra (restrição explícita de msilva).
+
+**Fix escolhido**: `A10Suggestion` passa a pedir `issue_identifier`
+(ex. "PRO-343", curto) em vez de `issue_id` (UUID) — resolução em Python
+depois do `agent.invoke()`, suggestions não resolvidas marcadas
+`unresolved: True` em vez de sumirem silenciosamente. Mesma chamada de
+LLM de hoje, zero chamada extra.
+
 ## What this changes elsewhere
 
 - [[Agent Flow]] — noted as the concrete shape of the next build.

@@ -4743,3 +4743,25 @@ asked for both ingested directly.
   mapeamento projeto→repo deixa de ser problema (é por issue).
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
   first.md` (seção "Ideia registrada", refinada), `index.md`.
+
+## [2026-08-28] synthesis | Hallucination de issue_id no A10: agent vs. workflow, fix escolhido
+- Sessão de frontend achou tabela de sugestões do A10 divergindo da
+  soma de `risk_by_project` — investigado e confirmado contra o cache
+  real: 21 sugestões, 6 com `issue_id` inválido (28,6%), batendo com o
+  ~29% já documentado no `PRO-480` (nunca corrigido).
+- msilva cogitou migrar `agent` → `workflow` por causa disso. Discutido
+  em chat: comparadas três opções (per-issue em Python, índice de
+  posição, workflow) — concluído que o bug é de fidelidade de geração
+  de string, não de controle de fluxo; `workflow` sozinho não resolve,
+  só combinado com a mesma técnica de índice/identifier que já resolve
+  dentro do `agent` atual, sem reabrir a decisão "agent, não workflow"
+  de 2026-08-26 nem custar chamada de LLM extra (restrição explícita
+  de msilva).
+- Fix escolhido: `A10Suggestion` passa a pedir `issue_identifier`
+  (curto, ex. "PRO-343") em vez de `issue_id` (UUID) — resolução em
+  Python depois do `agent.invoke()`, suggestions não resolvidas
+  marcadas `unresolved: True`.
+- New: `syntheses/Taxa de hallucination de issue_id no A10.md` (linha
+  de base registrada, comparação pendente pra depois do fix). Updated:
+  `decisions/2026-08-24 Build A10 and A14 together, PoC first.md`
+  (seção "Corrigido 2026-08-28"), `index.md`.
