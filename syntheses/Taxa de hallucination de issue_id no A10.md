@@ -54,6 +54,22 @@ ficam marcadas `unresolved: True` em vez de caírem em `None` silencioso.
 Detalhe completo da decisão (por que não virou `workflow`/`StateGraph`,
 as opções comparadas) em [[2026-08-24 Build A10 and A14 together, PoC first]].
 
-### Depois do fix
+### Depois do fix — 2026-08-28, mesmo dia
 
-*(preencher na próxima rodada real, comparando contra os 28,6% acima)*
+Primeira rodada real depois da troca pra `issue_identifier`: **14
+sugestões, 0 não resolvidas — 0%** (contra 28,6% da linha de base).
+`portfolio_health.unresolved_count = 0`, soma de `risk_by_project` = 14,
+batendo exatamente com o total — o bug de inconsistência visual
+(tabela vs. métrica) também some, de graça, pelo mesmo fix.
+
+**Achado colateral na mesma rodada**: `response_format=A10Output`
+expunha `summary`/`portfolio_health` pro LLM tentar preencher — ele
+alucinou valores qualitativos (`"alto"`) num campo tipado `int`,
+quebrando a validação inteira (crash, não só dado errado). Corrigido
+junto: LLM agora produz só `A10ModelOutput` (`suggestions`), e
+`summary`/`portfolio_health` são montados em Python depois, nunca
+expostos ao schema do LLM.
+
+**Ressalva**: uma rodada só não é conclusivo — pode ser sorte da vez.
+Vale acumular mais rodadas reais ao longo do tempo antes de declarar a
+taxa "resolvida" de verdade.
