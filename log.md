@@ -4721,3 +4721,17 @@ asked for both ingested directly.
   no backlog pós-PoC, sem mudança.
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
   first.md` (nova seção "Implementação iniciada"), `index.md`.
+
+## [2026-08-28] callout | Ideia: A14 ler repositórios de código
+- msilva propôs, à parte do feedback do Luís: A14 acessar os
+  repositórios dos projetos pra enxergar evolução real de código, não
+  só o que o Linear registra.
+- Diferença notada: é fonte de dado nova (Git/GitHub), não campo novo
+  em cima do que já lemos — categoria diferente das duas promovidas
+  antes. Ressalvas: mapeamento projeto→repo não é trivial (nem todo
+  projeto tem repo 1:1); risco de virar métrica de vaidade (contagem de
+  commits) se não for bem desenhado.
+- Registrado como item próprio do backlog pós-PoC, não aprofundado além
+  disso.
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
+  first.md` (nova seção "Ideia registrada"), `index.md`.

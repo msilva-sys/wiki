@@ -165,6 +165,29 @@ por audiência, e o item de A10 sobre redação "backlog de projetos")
 continua no backlog pós-PoC, sem mudança — só essas duas saem daí.
 Implementação segue no repo `livemode-fluxo-agentico`, não nesta wiki.
 
+## Ideia registrada 2026-08-28 — A14 ler repositórios de código
+
+msilva propôs, à parte do feedback do Luís: **A14 ter acesso aos
+repositórios dos projetos**, pra enxergar evolução real de código (não
+só o que o Linear registra) — resolveria o ponto cego de um projeto
+marcado "em andamento" há semanas sem nenhum commit, ou o inverso.
+
+Diferente de todo o resto do backlog acima: não é campo novo em cima do
+que o A14 já lê do Linear, é uma **fonte de dado inteiramente nova**
+(acesso a Git/GitHub, autenticação própria). Ressalvas levantadas em
+chat:
+- **Mapeamento projeto→repo não é trivial** — nem todo projeto do Linear
+  tem repo 1:1; um repo pode servir vários projetos; alguns projetos
+  (ex. iniciativas de processo) podem não ter repo nenhum.
+- **Risco de virar métrica de vaidade** se reduzir a "contagem de
+  commits" — mesma cautela já aplicada a "dias sem atualização" e à
+  "subtask blindness" que este projeto já evitou antes.
+
+**Registrado como item próprio do backlog pós-PoC**, separado das duas
+promovidas acima (é categoria diferente — fonte de dado nova, não
+julgamento novo sobre dado que já existe). Não aprofundado além disso
+nesta sessão.
+
 ## What this changes elsewhere
 
 - [[Agent Flow]] — noted as the concrete shape of the next build.
