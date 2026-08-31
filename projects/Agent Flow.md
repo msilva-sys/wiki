@@ -188,6 +188,19 @@ tags: [agents, llm, automation, onboarding, research]
 > vs. agente autônomo ainda se sustenta? A síntese acima assume uso CLI
 > single-shot, não conversacional — não é a mesma pergunta.
 
+> [!tip] A10/A14 caminham pra proatividade real — msilva, 2026-08-31
+> [[2026-08-24 Build A10 and A14 together, PoC first]] (seção "Proatividade
+> decidida 2026-08-31"): de "publica quando alguém roda" pra "o agente
+> notou sozinho e avisou o time". Três eixos separados — gatilho, publicação,
+> julgamento (o terceiro já resolvido antes). Decidido: **Vercel Cron
+> diário** como gatilho; **publicação sem gate de pré-aprovação** (A14 no
+> status update nativo do projeto no Linear, A10 em comentário na issue),
+> correção acontece depois, publicamente; regras de anonimização/pergunta
+> no conteúdo do A10; controle de ruído (skip-se-nada-mudou no A14,
+> dedupe/cooldown no A10) virando requisito por causa do cron diário.
+> Handoff de implementação ficou só na conversa, por pedido de msilva —
+> não virou arquivo no repo.
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides

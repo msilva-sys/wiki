@@ -297,6 +297,65 @@ depois do `agent.invoke()`, suggestions não resolvidas marcadas
 `unresolved: True` em vez de sumirem silenciosamente. Mesma chamada de
 LLM de hoje, zero chamada extra.
 
+## Proatividade decidida 2026-08-31 — de "publica quando eu rodo" pra "o agente notou sozinho e avisou o time"
+
+Discussão em chat, mesma sessão da correção de repo acima. Ponto de
+partida: hoje A10/A14 só produzem saída quando alguém chama manualmente
+(CLI ou `/run`), virando um artefato HTML que precisa ser aberto — zero
+proatividade. msilva quer ir na direção de "o agente notou sozinho e
+avisou o time", não só "quando eu rodo, ele publica sem eu revisar
+antes".
+
+Proatividade quebrada em três eixos (linguagem nova, útil daqui pra
+frente, não é jargão do Linear nem do código):
+
+1. **Gatilho** — quando o agente roda.
+2. **Publicação** — o que acontece com o resultado depois de calculado.
+3. **Julgamento** — o agente só responde o que foi perguntado, ou nota e
+   sinaliza algo que ninguém pediu? (Já resolvido nos dois — os critérios
+   do A10 e os `alerts`/`code_signals` do A14 já fazem isso.)
+
+Decisões, eixo a eixo:
+
+- **Gatilho**: **Vercel Cron, diário** — o deploy já é Vercel
+  (`vercel.json`/`gateway:app`), sem infraestrutura nova. Cadência diária,
+  não event-driven: os sinais que os dois usam (`dias_sem_update`, PR
+  aberto há N dias) são deriva ao longo do tempo, não eventos pontuais —
+  não existe webhook natural do Linear/GitHub pra isso.
+- **Publicação**: **sem gate de pré-aprovação** — o agente publica
+  sozinho, a correção acontece depois, publicamente (status update de
+  projeto no Linear já posta automaticamente no Slack, então "depois" já
+  é visível pro time). A14 usa o status update nativo do projeto
+  (`projectUpdateCreate`); A10 comenta na issue (`commentCreate`).
+  **Confirmado nesta sessão**: status update de projeto no Linear não tem
+  estado de rascunho — é criado e já fica visível na hora, diferente de
+  Document (que tem draft/publish na própria UI do Linear). Ou seja,
+  "sem gate" é literalmente a única opção que esse objeto oferece, não
+  uma escolha contra um recurso nativo que existiria.
+- **Conteúdo do A10** (reduz o custo social de errar em público, já que
+  não há gate): nunca citar o assignee — `gargalo_de_capacidade` descreve
+  a situação, não a pessoa; os dois critérios de julgamento
+  (`priorizacao_desalinhada`, `gargalo_de_capacidade`) viram pergunta, não
+  veredito; os dois factuais (`item_estagnado`, `escopo_descontrolado`)
+  continuam diretos.
+- **Controle de ruído** (vira requisito com cron diário rodando sozinho,
+  não é mais refinamento opcional): A14 só publica se algo mudou de fato
+  (`changes_since_last_run`/`alerts`/`code_signals` não todos vazios); A10
+  precisa de dedupe/cooldown por `(issue_id, criterio)` — **número de dias
+  ainda não confirmado por msilva** (proposto 7).
+
+**Handoff de implementação discutido em chat, não escrito como arquivo no
+repo.** Por pedido explícito de msilva: o desenho técnico (mutations
+novas em `linear_client.py`, `a10/formatting.py`/`a10/memory.py` novos,
+tabela `a10_posted_suggestions`, entrada de `crons` no `vercel.json`) fica
+só na conversa — não virou `HANDOFF_*.md` em `livemode-fluxo-agentico`.
+Esta seção registra a decisão e o raciocínio; os detalhes de
+implementação não estão duplicados aqui.
+
+**Em aberto**: cooldown de dedupe do A10 (dias); nome exato dos campos
+GraphQL de `commentCreate`/`projectUpdateCreate` (não verificado contra o
+schema real); onde vive a rota de cron (`gateway.py` vs `main.py`).
+
 ## What this changes elsewhere
 
 - [[Agent Flow]] — noted as the concrete shape of the next build.

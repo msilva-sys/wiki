@@ -4845,3 +4845,32 @@ asked for both ingested directly.
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
   first.md` (seção "Resolvido 2026-08-31"), `projects/Agent Flow.md`
   (correção inline no callout do repositório), `index.md`.
+
+## [2026-08-31] decision | A10/A14 caminham pra proatividade real (gatilho + publicação sem gate)
+- Discussão em chat: proatividade quebrada em três eixos — gatilho
+  (quando roda), publicação (o que acontece com o resultado), julgamento
+  (já resolvido antes nos dois agentes).
+- Decidido: **gatilho** por Vercel Cron diário (sem infra nova, deploy já
+  é Vercel); **publicação** sem gate de pré-aprovação — A14 no status
+  update nativo do projeto no Linear, A10 em comentário na issue;
+  correção acontece depois, publicamente (Linear já posta status update
+  no Slack).
+- Confirmado ao vivo (schema da tool + tentativa de leitura): status
+  update de projeto no Linear não tem estado de rascunho — sem gate é a
+  única opção que o objeto oferece, não uma escolha contra um recurso
+  nativo existente.
+- Regras de conteúdo pro A10 (reduzir custo social de errar em público,
+  já que não há gate): nunca citar o assignee; critérios de julgamento
+  viram pergunta, não veredito; critérios factuais continuam diretos.
+  Controle de ruído (skip-se-nada-mudou no A14, dedupe/cooldown no A10)
+  vira requisito com cron diário.
+- Handoff de implementação (mutations novas em `linear_client.py`,
+  módulos novos `a10/formatting.py`/`a10/memory.py`, tabela
+  `a10_posted_suggestions`, `crons` no `vercel.json`) discutido em chat,
+  **não escrito como arquivo no repo** — por pedido explícito de msilva.
+- Em aberto: cooldown de dedupe do A10 (dias); nomes exatos dos campos
+  GraphQL de `commentCreate`/`projectUpdateCreate`; onde vive a rota de
+  cron.
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
+  first.md` (seção "Proatividade decidida 2026-08-31"), `projects/Agent
+  Flow.md` (novo tip), `index.md`.
