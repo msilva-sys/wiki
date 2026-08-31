@@ -4779,3 +4779,29 @@ asked for both ingested directly.
   explicitamente** ("depois fazemos isso"), sem prazo.
 - New: `decisions/2026-08-28 Trava de domínio no Fluxo Agêntico via
   Google OAuth.md`. Updated: `index.md`.
+
+## [2026-08-31] refactor | A14 já lê PRs do GitHub — corrige backlog "pós-PoC" como já feito
+- Pergunta de msilva: o projeto Fluxo Agêntico tem repositório vinculado
+  no Linear? Não tinha nenhum — nem attachment, nem link. Registrado um
+  link (`links` do projeto, via `save_project`) apontando pro repo
+  `github.com/tech-livemode/livemode-fluxo-agentico` no projeto Fluxo
+  Agêntico.
+- Esclarecido que esse link é só decorativo — não é o mecanismo que dá
+  aos agentes "acesso ao repo". Esse mecanismo é a integração GitHub
+  nativa do Linear via `Issue.attachments` (`sourceType: "github"`), já
+  investigada e confirmada em 2026-08-28.
+- Lendo o repo `livemode-fluxo-agentico` direto (não relatado em
+  nenhuma sessão de wiki até agora): a implementação dessa ideia,
+  registrada como backlog pós-PoC em 2026-08-28, **já existe no
+  código**. `linear_client.py` busca `attachments { nodes { sourceType
+  metadata } }` nas duas queries de issues (`list_issues`,
+  `list_project_issues`), parseia num modelo `GithubPR`, e
+  `a14/rules.py::detect_code_signals()` já consome isso — sinaliza
+  `pr_aberto_ha_muito_tempo` e `concluida_sem_merge`.
+- O que ainda falta não é código: é o GitHub App instalado na org
+  (`tech-livemode`) cobrir os repos que se quer que o A14 enxergue —
+  configuração de admin (`github.com/organizations/tech-livemode/
+  settings/installations`), fora do alcance de qualquer sessão de
+  código ou de wiki.
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
+  first.md` (seção "Corrigido 2026-08-31"), `index.md`.

@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-28
+updated: 2026-08-31
 date: 2026-08-24
 decided_by: Matheus Silva
 source: "chat with Claude, 2026-08-24"
@@ -215,6 +215,29 @@ inferir nada. Implementação (quando essa frente for retomada): uma
 linha a mais na query GraphQL que `linear_client.py` já faz
 (`attachments { nodes { sourceType metadata } }`), zero sistema
 externo novo.
+
+## Corrigido 2026-08-31 — já implementado, não é mais backlog pós-PoC
+
+A seção acima registrou isso como algo pra fazer "quando essa frente for
+retomada". **Já foi feito** — lendo o repo `livemode-fluxo-agentico`
+direto (não relatado aqui antes): `linear_client.py` já busca
+`attachments { nodes { sourceType metadata } }` nas duas queries de
+issues (`list_issues`, `list_project_issues`), parseia num modelo
+`GithubPR`, e `a14/rules.py::detect_code_signals()` já consome isso —
+sinaliza `pr_aberto_ha_muito_tempo` e `concluida_sem_merge`. Não sabemos
+em qual commit/wave isso entrou; não foi registrado em nenhuma sessão
+de wiki até agora.
+
+**O que ainda falta não é código, é infraestrutura do lado do GitHub**:
+o campo `attachments` só vem preenchido pra issues cujo repo está
+coberto pelo GitHub App instalado na org (`github.com/organizations/
+tech-livemode/settings/installations`) — confirmado 2026-08-28 que
+67/409 issues do time já têm isso (`livemode-farol`,
+`livemode-airtable-proxy`, `livemode-n1/livemode`, `tasks-projetos`,
+`livemode-roteiros-nextjs`). Se `livemode-fluxo-agentico` (ou qualquer
+outro repo) não estiver nessa lista, `detect_code_signals()` simplesmente
+não vê nada dele — é uma configuração de conta/admin, fora do alcance de
+qualquer sessão de código ou de wiki.
 
 ## Corrigido 2026-08-28 — hallucination de `issue_id`, via `agent` (não `workflow`)
 
