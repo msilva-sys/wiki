@@ -4805,3 +4805,25 @@ asked for both ingested directly.
   código ou de wiki.
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
   first.md` (seção "Corrigido 2026-08-31"), `index.md`.
+
+## [2026-08-31] refactor | Conta certa pra conectar é `tech-livemode`, não a org já ativa
+- Tentei verificar se msilva já tinha conectado o GitHub App sob
+  `tech-livemode`: `gh` (autenticado como essa conta) não tem escopo
+  pra listar installations (precisa de auth como o App, não PAT);
+  browser não estava logado; `livemode-fluxo-agentico` tem zero PRs
+  abertos, então não há attachment real pra testar contra o Linear.
+- **Corrigido o link dado antes**: `tech-livemode` é conta de usuário
+  (`gh api users/tech-livemode` → `"type":"User"`), não Organization —
+  `github.com/organizations/.../settings/installations` estava errado.
+  Certo: `github.com/settings/installations`, logado como `tech@livemode`.
+- **msilva corrigiu**: `livemode-fluxo-agentico` está na conta pessoal
+  `tech-livemode`, que **não** é a mesma já conectada ao Linear — essa
+  é uma organization separada (`livemode-org`, confirmado real Org via
+  API). Reconcilia um dado estranho: `livemode-roteiros-nextjs` (um dos
+  repos com PR vinculado no teste de 2026-08-28) hoje também pertence a
+  `tech-livemode`, mas provavelmente foi transferido pra lá depois do
+  teste — transferência de repo não carrega a autorização do App
+  junto. **Nenhuma evidência de que `tech-livemode` já esteja
+  conectado**; precisa ser feito do zero.
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
+  first.md` (mesma seção, addendum).

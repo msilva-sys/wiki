@@ -230,14 +230,35 @@ de wiki até agora.
 
 **O que ainda falta não é código, é infraestrutura do lado do GitHub**:
 o campo `attachments` só vem preenchido pra issues cujo repo está
-coberto pelo GitHub App instalado na org (`github.com/organizations/
-tech-livemode/settings/installations`) — confirmado 2026-08-28 que
-67/409 issues do time já têm isso (`livemode-farol`,
-`livemode-airtable-proxy`, `livemode-n1/livemode`, `tasks-projetos`,
-`livemode-roteiros-nextjs`). Se `livemode-fluxo-agentico` (ou qualquer
-outro repo) não estiver nessa lista, `detect_code_signals()` simplesmente
-não vê nada dele — é uma configuração de conta/admin, fora do alcance de
-qualquer sessão de código ou de wiki.
+coberto pelo GitHub App do Linear — confirmado 2026-08-28 que 67/409
+issues do time já têm isso (`livemode-farol`, `livemode-airtable-proxy`,
+`livemode-n1/livemode`, `tasks-projetos`, `livemode-roteiros-nextjs`).
+Se `livemode-fluxo-agentico` (ou qualquer outro repo) não estiver
+coberto, `detect_code_signals()` simplesmente não vê nada dele — é uma
+configuração de conta/admin, fora do alcance de qualquer sessão de
+código ou de wiki.
+
+**Corrigido de novo, 2026-08-31, mesma sessão** — a conta certa é
+outra: `tech-livemode` (dono de `livemode-fluxo-agentico`,
+`git@github.com:tech-livemode/...`) é uma **conta de usuário pessoal do
+GitHub** (`gh api users/tech-livemode` → `"type":"User"`), não uma
+Organization — o link `github.com/organizations/.../settings/
+installations` acima estava errado por assumir que era uma org. A
+página certa, acessível só logado como essa conta (`tech@livemode`), é
+`github.com/settings/installations`.
+
+Mais importante: **`tech-livemode` não é a conta já conectada ao
+Linear.** msilva confirmou que é uma conta pessoal separada da
+organização (`livemode-org`, confirmado real Org via API) que já tem a
+integração ativa. Isso reconcilia um dado estranho: `livemode-
+roteiros-nextjs` — um dos repos com PR real vinculado no teste de
+2026-08-28 — hoje também pertence a `tech-livemode`
+(`gh api repos/tech-livemode/livemode-roteiros-nextjs` confirma), mas
+provavelmente foi **transferido pra essa conta depois** do teste, vindo
+de um owner já conectado; transferência de repo não carrega a
+autorização do GitHub App junto. Ou seja, nenhuma evidência de que
+`tech-livemode` já esteja conectado — precisa ser feito do zero, por
+alguém logado como `tech@livemode`.
 
 ## Corrigido 2026-08-28 — hallucination de `issue_id`, via `agent` (não `workflow`)
 
