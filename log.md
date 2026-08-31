@@ -4731,7 +4731,15 @@ asked for both ingested directly.
   antes. Ressalvas: mapeamento projeto→repo não é trivial (nem todo
   projeto tem repo 1:1); risco de virar métrica de vaidade (contagem de
   commits) se não for bem desenhado.
-- Registrado como item próprio do backlog pós-PoC, não aprofundado além
-  disso.
+- Registrado como item próprio do backlog pós-PoC.
+- **Confirmado com query real contra a API do Linear** (a pedido de
+  msilva, "quero que você comprove sua teoria"): introspecção do tipo
+  `Attachment` + query real na `PRO-16` (zero attachments — nomear
+  branch certo não basta) + varredura das 409 issues do time (67, 16%,
+  têm PR do GitHub vinculado de verdade, em 5 repos diferentes) + full
+  metadata de um caso real (`PRO-481`: `status`, `mergedAt`, `closedAt`,
+  `createdAt`/`updatedAt`, `repoName`). Confirma: Linear já expõe o
+  vínculo issue↔PR nativamente, zero acesso a repositório necessário,
+  mapeamento projeto→repo deixa de ser problema (é por issue).
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
-  first.md` (nova seção "Ideia registrada"), `index.md`.
+  first.md` (seção "Ideia registrada", refinada), `index.md`.

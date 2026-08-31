@@ -185,8 +185,36 @@ chat:
 
 **Registrado como item próprio do backlog pós-PoC**, separado das duas
 promovidas acima (é categoria diferente — fonte de dado nova, não
-julgamento novo sobre dado que já existe). Não aprofundado além disso
-nesta sessão.
+julgamento novo sobre dado que já existe).
+
+**Refinado e confirmado com query real contra a API do Linear, mesma
+sessão**: a premissa de "A14 precisa de acesso a repositório" estava
+errada — o Linear já expõe isso pelo próprio `Issue.attachments`
+(`sourceType: "github"`), sem precisar de nenhuma credencial ou sistema
+novo. Testado ao vivo:
+- `issue(id: "PRO-16")` (a issue cuja branch vimos no Slack) veio com
+  `attachments: []` — nomear a branch certo não basta, precisa da
+  integração conectada nesse repo específico e/ou um PR aberto de
+  verdade.
+- Varredura das 409 issues do time: **67 (16%) têm PR do GitHub
+  vinculado de verdade**, em vários repos (`livemode-farol`,
+  `livemode-airtable-proxy`, `livemode-n1/livemode`, `tasks-projetos`,
+  `livemode-roteiros-nextjs`) — confirma que a integração está ativa e
+  o dado é real, só não universal (depende de cada repo ter a
+  integração ligada).
+- `metadata` de um attachment real (`PRO-481`) tem `status`
+  (open/merged/closed), `mergedAt`/`closedAt`, `createdAt`/`updatedAt`,
+  `draft`, `hasConflicts`, `reviews`, `repoName`/`repoLogin` — rico o
+  bastante pra evidência real (PR aberto há muito tempo = gargalo de
+  código; issue "Concluída" com PR ainda `open` = inconsistência) sem
+  cair em contagem de commit.
+
+**Mapeamento projeto→repo deixa de ser problema**: é por issue, não por
+projeto — `repoName`/`repoLogin` já vêm no metadata, sem precisar
+inferir nada. Implementação (quando essa frente for retomada): uma
+linha a mais na query GraphQL que `linear_client.py` já faz
+(`attachments { nodes { sourceType metadata } }`), zero sistema
+externo novo.
 
 ## What this changes elsewhere
 
