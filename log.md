@@ -4691,3 +4691,24 @@ asked for both ingested directly.
   `contracts.py` do A14 (ainda não implementada, sessão é wiki).
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
   first.md` (seção "Aprofundado 2026-08-28"), `index.md`.
+
+## [2026-08-28] synthesis | Desenho final de "saúde do portfólio" pro A10
+- msilva corrigiu uma sugestão minha (A10 consumir o agregado do A14)
+  citando o "anarchic first" já decidido em `Agent Flow.md` — nenhum
+  agente deve depender de outro, entradas agnósticas. Redesenhado pra
+  A10 recalcular tudo por conta própria.
+- Pesquisa via WebSearch de frameworks de PMO (Tempo, Epicflow, P3M3)
+  pra fundamentar dimensões, a pedido de msilva, em vez de eu inventar.
+- Desenho final: 4 campos (`projects_with_alerts`, `risk_by_project`,
+  `workload_by_project`, `trend`), todos deriváveis do que o A10 já
+  busca (`Issue.project_id` + `linear_client.list_projects()`, sem
+  query nova no Linear) — zero custo de LLM, puro `rules.py`, mesmo
+  padrão de `summarize_backlog` que já existe. Validado por msilva
+  ("faz sentido") depois de eu explicar concretamente o que cada campo
+  contribui pra leitura gerencial (cobertura, concentração de risco,
+  concentração de carga por projeto, tendência).
+- Conferido contra `linear_client.py`/`a10/rules.py`/`a10/contracts.py`
+  reais antes de desenhar, não por suposição.
+- Nada implementado em código ainda — sessão é wiki. Updated:
+  `decisions/2026-08-24 Build A10 and A14 together, PoC first.md`
+  (mesma seção "Aprofundado"), `index.md`.

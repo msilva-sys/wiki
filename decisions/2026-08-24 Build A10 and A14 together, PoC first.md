@@ -100,11 +100,39 @@ contratos, não só o resumo do Luís) — duas conclusões que revisam o
 "backlog indiferenciado" acima:
 
 - **"Saúde do portfólio" (A10) é papel do A10 mesmo, não do A14** —
-  msilva confirmou. Achado relevante: `/api/a14/overview` (construído
-  nesta mesma sessão pro frontend) já faz um rollup parecido
-  (`total_projects`/`projects_with_alerts`) — vale considerar se o A10
-  deveria consumir esse agregado do A14 em vez de recalcular do zero,
-  quando essa frente for retomada.
+  msilva confirmou. **Correção da mesma sessão**: cheguei a sugerir o
+  A10 consumir o agregado que `/api/a14/overview` já calcula
+  (`total_projects`/`projects_with_alerts`) — msilva corrigiu, isso
+  violaria o "anarchic first" já decidido em [[Agent Flow]] (*"each
+  agent built independently... no cross-dependency"*). Redesenhado pra
+  A10 recalcular tudo por conta própria a partir só do backlog que já é
+  sua entrada, mesmo que o resultado se pareça com o que o A14 também
+  calcula — redundância aceitável, dependência não.
+
+  **Desenho final, validado ("faz sentido" — msilva)**: pesquisa rápida
+  de frameworks de PMO (Tempo, Epicflow, P3M3) convergiu em poucas
+  dimensões — semáforo de status, risco (+ tendência), utilização de
+  recurso; financeiro e "benefit realization" ficam de fora (Linear não
+  tem esse dado, isso é papel do A11 que nem existe). Mapeado pro que o
+  A10 já tem disponível **sem query nova no Linear** — `Issue.project_id`
+  já vem em todo `list_issues()`, `linear_client.list_projects()` já
+  existe:
+  - `projects_with_alerts` / `projects_clean` — reagrupar as sugestões
+    (que já existem) por `project_id` em vez de por issue.
+  - `risk_by_project` — mesma reagrupação, granularidade de contagem por
+    projeto (concentrado num só vs. espalhado).
+  - `workload_by_project` — mesma lógica de `assignee_workload`, trocando
+    a chave de pessoa pra projeto (pega desequilíbrio que a visão por
+    pessoa não vê).
+  - `trend` — compara contagem de alertas desta rodada com a última,
+    usando o **próprio** `cache.py` do A10 (não o `memory.py` do A14).
+  **Custo: zero chamada nova de LLM** — tudo isso é `rules.py` puro,
+  computado depois que o agente já rodou, mesmo padrão de
+  `summarize_backlog`/`BacklogSummary` que já existe hoje. Único ajuste
+  de fluxo necessário: `run_a10` hoje só lê o cache antigo pra decidir
+  early-return; pra ter tendência, precisa também ler o valor antigo no
+  caminho de recálculo, sem tocar no early-return em si (que é o que
+  controla custo).
 - **"Desvio de escopo com evidência" (A14) — corrigida uma leitura
   errada minha.** Cheguei a registrar isso como *bloqueado* até o A7
   Discovery existir (por não haver um "grafo aprovado" formal pra
