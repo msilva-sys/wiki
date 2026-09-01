@@ -5067,3 +5067,63 @@ asked for both ingested directly.
   o lugar certo pra memória antes da pergunta ser respondida).
 - Updated: `syntheses/Como deve funcionar o molde de agente.md`,
   `projects/Agent Flow.md`, `index.md`.
+
+## [2026-09-01] lint | Correção dos 12 achados de contradição interna
+- msilva confirmou ("sim") pra aplicar as correções do lint anterior. BOM
+  UTF-8 removido de `projects/Agent Flow.md`, `people/Maria Fernanda
+  Lemos.md` e a meeting-prep de Mafê/João Victor 2026-08-25.
+- Corrigidas 10 das 12 contradições internas reportadas (2 revisadas e
+  descartadas como falso-positivo, já coerentes na leitura completa):
+  [[Agent Flow]] (`phase: research` → `build`, abstract atualizado — nota:
+  esta mesma correção acabou também dentro do commit anterior
+  `decision | Atacar a lacuna de memória...`, feito por uma sessão paralela
+  no mesmo working tree enquanto esta correção estava em andamento — sem
+  perda de conteúdo, só um commit com escopo misto); [[Airtable Proxy]]
+  (checklist `[x]` reconciliado com o que o resto da página já confirma:
+  `hasFilter`/`hasFieldProjection`/`bytes` capturados, `recordCount` ainda
+  genuinely aberto); [[Como deve funcionar o molde de agente]] (disclaimer
+  de escopo da Soul datado, não mais contradizendo a seção SOUL V1 —
+  também capturada no commit misto acima); duas 1:1s com [[Gabrielle
+  Ferreira]] (2026-08-14: pergunta de deadline fechada por prática, não
+  por reunião; 2026-08-20: `PRO-94` marcado resolvido no mesmo dia,
+  espelhando o Commitments); a decisão de `PRO-392` em waves (linguagem
+  "objetivo real" reescrita como superada pela seção Resolvido);
+  `concepts/Packaging as skills.md` (frase sobre logs "crowded out" riscada,
+  apontando pra nota que já retratava isso); [[LiveScript]] (seção de
+  escopo do `X-App-Id` marcada como terminologia desatualizada, conteúdo
+  ainda válido); a synthesis do header `X-App-Id` (pergunta sobre overwrite
+  de Authorization marcada respondida por [[Airtable Proxy]]/[[LiveScript]];
+  seções Open Questions/Rollout marcadas como histórico, não mais gate
+  vivo); [[Farol]] (database "nunca nomeado" corrigido — já nomeado BigQuery
+  na seção Progress; sinalizados, sem resolver, o aparecimento não
+  explicado de Itaú no escopo e a divergência entre "cópia do banco" vs.
+  "acesso ao BigQuery" como mecanismo de handoff); a meeting de discovery
+  da Bossabox (pergunta "quem falou o quê" marcada como fechada por
+  escolha, não por resposta, 2026-08-26); status da meeting-prep
+  `Meeting prep - Agent Flow discovery with Carol - 2026-08-24.md`
+  alinhado pra `superseded` (a reunião já aconteceu, mesma situação de
+  `Meeting prep - first agent decision.md`).
+- **Descartados como falso-positivo**: a suposta contradição no rate-limit
+  do Linear na 1:1 de 2026-08-18 com Gabrielle (é sequência cronológica
+  coerente: já bateu o teto uma vez, hoje sem bater graças ao trial); a
+  suposta contradição em `people/Carolina Bezerra.md` entre recusar um
+  ranking formal dos 14 agentes e dar opiniões pontuais sobre projetos
+  específicos (são coisas diferentes, não contradição).
+- Achado do lint anterior **não corrigido, por regra do schema**: o `.txt`
+  vazio em `raw/` (`Novo(a) Documento de Texto.txt`) não foi apagado —
+  `raw/` só é tocado sob direção explícita de msilva.
+- **Efeito colateral observado**: duas sessões Claude Code paralelas
+  (`work-98`, `work-8c`, via `ListAgents`) estão ativas no mesmo working
+  tree; uma delas commitou `decision | Atacar a lacuna de memória do
+  sistema agêntico primeiro` no meio desta correção, capturando de
+  carona as edições já feitas em [[Agent Flow]] e [[Como deve funcionar o
+  molde de agente]]. Sinalizado a msilva; nenhuma edição foi perdida.
+- Updated: `concepts/Packaging as skills.md`, `decisions/2026-08-27
+  Implementar PRO-392 em waves, mas em pair programming.md`,
+  `meetings/2026-08-14 1-1 Matheus - Gabrielle.md`, `meetings/2026-08-20
+  1-1 Matheus - Gabrielle.md`, `meetings/2026-08-25 Bossabox AI
+  transformation discovery.md`, `meetings/Meeting prep - Agent Flow
+  discovery with Carol - 2026-08-24.md`, `projects/Airtable Proxy.md`,
+  `projects/Farol.md`, `syntheses/How LiveScript sends the proxy X-App-Id
+  header.md`, `systems/LiveScript.md`, plus BOM-only touches on
+  `people/Maria Fernanda Lemos.md` and the Mafê/João Victor meeting-prep.

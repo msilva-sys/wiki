@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-26
+updated: 2026-09-01
 date: 2026-08-25
 attendees: [Carolina Bezerra, Matheus Silva, Luís Fernandez, Pedro Arantes, JV Abreu, Camila Sande]
 source: "raw/bossabox.txt"
@@ -92,9 +92,11 @@ address.
 
 ## Open questions
 
-- **Who said what on the Livemode side?** The central open question from
-  this ingest — see the correction banner above. Everything tagged
-  "Livemode side" below could be Carolina, msilva, or Luís.
+- ~~**Who said what on the Livemode side?**~~ **Fechado por escolha, não por
+  resposta, 2026-08-26**: msilva optou por não perseguir a atribuição (ver
+  Commitments acima). Everything tagged "Livemode side" below stays
+  permanently unattributable between Carolina, msilva, and Luís — this is
+  the accepted final state, not a pending item.
 - **What was "the other project"** Bossabox already worked with Livemode
   on, where they first demoed their methodology? Referenced by both Pedro
   and the Livemode side as already-happened. **Direction confirmed by

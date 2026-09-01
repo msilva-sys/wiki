@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-08-24
+updated: 2026-09-01
 aliases: [Projeto Farol, farol]
 tags: [farol, data, gcp, finance, bigquery, medallion]
 ---
@@ -148,14 +148,25 @@ her**, along with two "skills" to help her read the table structures.
 minimal since the week's focus was closing Expresso first. No update on
 OnFly or Itaú in this meeting.
 
+> [!warning] Duas tensões não resolvidas nesta seção — sinalizadas, não corrigidas
+> 1. **Itaú aparece aqui pela primeira vez** na página — o escopo original
+>    (seção "What it is", acima) só lista Uber/OnFly/Expresso. Não está
+>    registrado quando ou por que Itaú entrou; tratar como vendor real até
+>    confirmar a origem, não como erro de digitação.
+> 2. **Mecanismo de handoff conflitante**: a nota "The handoff mechanism, made
+>    concrete" (2026-08-25, acima) descreve Marina recebendo **uma cópia** do
+>    banco resultante; este parágrafo (2026-08-27) descreve Luís passando
+>    **acesso ao BigQuery** e às tabelas. Pode ser a mesma coisa descrita de
+>    forma imprecisa em uma das duas reuniões, ou os dois mecanismos podem
+>    coexistir — não confirmado.
+
 ## Open questions
 
-- **What database?** BigQuery is the obvious guess given the GCP work, but it was
-  never named. *(unverified.)* **Partially narrowed 2026-08-25**: Airtable is
-  ruled out on volume (see the note above) — still doesn't name the actual
-  GCP product. [[Farol pipeline whiteboard diagram]], sketched the same day,
-  draws the storage layer as an explicit, unlabeled "?" — confirming this is
-  a genuinely open design question, not just something nobody told msilva.
+- ~~**What database?** BigQuery is the obvious guess given the GCP work, but it was
+  never named.~~ **Nomeado 2026-08-27**: a seção "Progress" acima já fala
+  diretamente em "BigQuery access" — não é mais um design question em aberto,
+  ainda que o "Partially narrowed 2026-08-25" abaixo (Airtable descartado por
+  volume) tenha ficado registrado por ordem cronológica.
 - **What happens in the ingestion/processing step between raw source and
   storage?** New 2026-08-25, from the same whiteboard — drawn as a second
   unlabeled box, matching [[2026-08-25 Farol - Dados]]'s own line about "essa

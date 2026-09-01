@@ -1,4 +1,4 @@
-﻿---
+---
 type: meeting-prep
 status: active
 updated: 2026-08-25

@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-26
+updated: 2026-09-01
 date: 2026-08-14
 attendees: [Gabrielle Ferreira, Matheus Silva]
 source: "raw/1_1 Matheus _ Gabrielle - 2026_08_14 15_55 GMT-03_00 - Anotações do Gemini.txt"
@@ -114,6 +114,9 @@ replaces the wiki's project-tracking assumptions.
 
 ## Open questions
 
-- Deadlines for both projects — explicitly deferred to the end-of-week meeting.
+- ~~Deadlines for both projects — explicitly deferred to the end-of-week
+  meeting.~~ **Não é mais uma questão em aberto**: a reunião nunca aconteceu
+  e não vai acontecer — msilva confirmou em 2026-08-26 que não trabalha com
+  datas como prática (ver Commitments acima).
 - Does the wiki's phase numbering still hold, now that phase 3 work (app auth)
   is being done during phase 1? See [[Airtable Proxy]].

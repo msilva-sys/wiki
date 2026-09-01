@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: active
-updated: 2026-08-26
+updated: 2026-09-01
 date: 2026-08-20
 attendees: [Gabrielle Ferreira, Matheus Silva]
 source: "raw/1_1 Matheus _ Gabrielle - 2026_08_20 15_17 GMT-03_00 - Anotações do Gemini.md"
@@ -50,8 +50,11 @@ None — a check-in, not a working session.
 
 ## Open questions
 
-- **Pulumi language for the proxy** (`PRO-94`) — still open, gated on Luís,
-  who was unavailable part of this week (sick Tue–Thu, per this call).
+- **Pulumi language for the proxy** (`PRO-94`) — open as of this call, gated
+  on Luís, who was unavailable part of this week (sick Tue–Thu, per this
+  call). *(resolvido no mesmo dia — Luís escolheu Go, ver
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and
+  often]].)*
 - **Is the current Fluxo Agêntico diagram/approach the right one?** msilva is
   reconsidering it — leaning toward starting simpler and letting it evolve,
   rather than a complete design that risks being obsolete in a few months.

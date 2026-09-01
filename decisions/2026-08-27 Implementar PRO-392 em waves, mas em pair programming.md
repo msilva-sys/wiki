@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-27
+updated: 2026-09-01
 date: 2026-08-27
 aliases: [waves, packer waves, implementação em waves, pair programming A10/A14]
 tags: [agents, agent-flow, a10, a14, langgraph, linear, orchestration]
@@ -18,9 +18,11 @@ quero construir sozinho / iremos construir juntos por pair programming
 escreve tudo sozinho" (a leitura original do `HANDOFF.md`), nem "agente
 escreve tudo sozinho" (a primeira leitura desta decisão) — **pair
 programming**, os dois construindo junto em tempo real. E antes de
-qualquer wave de implementação, o objetivo real é **estudar as três
-frentes** (LangGraph, Skill do Claude Code, Agent SDK) comparativamente,
-não só entregar `PRO-392`.
+qualquer wave de implementação, o objetivo colocado nesta correção era
+**estudar as três frentes** (LangGraph, Skill do Claude Code, Agent SDK)
+comparativamente, não só entregar `PRO-392` — **superado pela seção
+"Resolvido" abaixo**, onde msilva optou por não pausar para essa
+comparação antes de começar.
 
 Isso **substitui, só para esta frente de execução**, a instrução gravada
 em `HANDOFF.md`: *"msilva quer estudar e construir isso ele mesmo, sem

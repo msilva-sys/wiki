@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-08-27
+updated: 2026-09-01
 aliases: [live script, livescript, roteiros, roteiros app, live stre]
 tags: [airtable, livescript, realtime, frontend]
 ---
@@ -129,6 +129,13 @@ the current job. The current job is the [[Airtable Proxy]] working correctly;
 validating it via the REST-transport traffic alone is an accepted stopping point,
 not a gap to close urgently. See the *Scope of the current work* section on that
 meeting page.
+
+**Terminologia desatualizada, conteúdo ainda válido**: esta seção fala em
+`X-App-Id` porque é como identificação de app era feita em 2026-08-18; a
+identificação virou URL-path em [[2026-08-19 Identify proxy apps by URL path,
+not header]] (ver seção acima). O limite de escopo em si — SDK fora, só
+REST-transport dentro — continua de pé, só que hoje é "identificação por
+URL-path em todo o tráfego", não "`X-App-Id` em todo o tráfego".
 
 ## A historical bug — test roteiros surviving a migration
 

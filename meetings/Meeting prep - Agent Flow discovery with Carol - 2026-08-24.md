@@ -1,7 +1,7 @@
 ---
 type: meeting-prep
-status: active
-updated: 2026-08-24
+status: superseded
+updated: 2026-09-01
 date: 2026-08-24
 aliases: [carol prep, agent flow discovery carol, carol discovery]
 tags: [agents, carol, discovery, meeting-prep, a5, a6, a10, diagram]

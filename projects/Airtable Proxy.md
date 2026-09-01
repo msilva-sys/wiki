@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-08-26
+updated: 2026-09-01
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -476,6 +476,11 @@ telemetry*, not enforcement:
       **Progress 2026-08-18**: `hasFilter`, operation, page size and bytes now
       captured in the proxy per the callout above. `hasFieldProjection`/`recordCount`
       not confirmed either way — verify in the repo before marking fully done.
+      **Resolved 2026-08-26**: `hasFilter`/`hasFieldProjection` confirmed captured
+      as booleans (see `PRO-371`/`PRO-397` below, filed against exactly this pair).
+      `recordCount` is still not confirmed anywhere in this page — the `[x]` above
+      covers `hasFilter`/`hasFieldProjection`/`bytes` only; `recordCount` remains
+      genuinely open, not just unconfirmed prose.
 - [ ] **Normalize `app.route`** into logs/spans (from Next.js
       `getRequestContext()`) for proxy↔app correlation, then add a "Top app
       routes by Airtable calls" panel.

@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: superseded
-updated: 2026-08-24
+updated: 2026-09-01
 date: 2026-08-17
 aliases: [x-app-id, app auth header, livescript proxy auth, GC-5 client side]
 tags: [airtable, proxy, auth, sdk, livescript, opentelemetry]
@@ -255,22 +255,23 @@ the SDK, both need qualifying:
 > is native, `customHeaders` looks native but is a no-op for this app's traffic
 > without the patch — see [Options for Luís](#options-for-luís--2026-08-18).
 
-## Open questions for the proxy (gate the endpoint flip)
+## Open questions for the proxy (gate the endpoint flip) — histórico
 
-Both must be answered by the proxy owner before `AIRTABLE_ENDPOINT_URL` flips:
+Esta seção descrevia o gate para a flip via header, superada pela decisão de
+URL-path acima; mantida como registro do raciocínio, não como pendência viva.
 
-1. **Does the proxy overwrite/ignore the incoming `Authorization`?** Required for
-   the dummy-PAT approach to be safe. If it does, the data plane runs on a
-   throwaway key; if not, the app must keep a real PAT on the data plane too.
+1. ~~**Does the proxy overwrite/ignore the incoming `Authorization`?**~~
+   **Respondida** — [[Airtable Proxy]] e [[LiveScript]] confirmam que sim, o
+   proxy sobrescreve/remove o `Authorization` recebido antes de chamar o
+   Airtable.
 2. **Does the proxy serve the Metadata API** (`/v0/meta/bases/.../tables`) or only
-   the data plane (`/v0/{baseId}/...`)? Until this is confirmed, metadata calls
-   are **pinned to Airtable direct** (`AIRTABLE_METADATA_BASE_URL`), which also
-   means those calls **still need a real PAT** even after the flip. If the proxy
-   does serve `/v0/meta`, point `AIRTABLE_METADATA_BASE_URL` at
-   `airtableApiBaseUrl()` to route them too.
+   the data plane (`/v0/{baseId}/...`)? Ainda não confirmado em nenhuma outra
+   página do vault — se essa pergunta ainda importar fora do contexto do
+   header (a proxy real usa URL-path, não este mecanismo), o gate seria o
+   mesmo.
 
-## Rollout
+## Rollout — histórico
 
-Ship the header **before** flipping `AIRTABLE_ENDPOINT_URL` to the proxy — or
-every proxied call 401s. See the incomplete "uncomment one variable" note in
-[[Proxy Environments]].
+Esta seção descrevia o rollout do header (*"ship the header before flipping
+`AIRTABLE_ENDPOINT_URL`"*), obsoleto desde que a identificação virou
+URL-path. Mantida como registro, sem ação pendente.
