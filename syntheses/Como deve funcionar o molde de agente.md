@@ -235,6 +235,34 @@ commitar cada frente fica com msilva.
 `a14/memoria.py` — o arquivo real é `a14/memory.py`. Corrigido aqui; ver
 nota equivalente no `log.md`, que não é reescrito por ser append-only.
 
+## Generalização: workflow autônomo guiado pelo vocabulário interno, adapters também na escrita — msilva, 2026-09-01
+
+Msilva reformulou, em chat, a mesma lacuna acima como princípio arquitetural
+mais amplo, não restrito ao molde do A14: qualquer agente do [[Agent Flow]]
+deveria ter um **fluxo de trabalho autônomo guiado pelo vocabulário/ontologia
+interna** (issue, milestone, PR, projeto...), não pela API nativa da
+ferramenta em que grava. O contrato/ports-and-adapters já resolve isso do
+lado da entrada (Trigger/Input); a peça nomeada aqui é o mesmo padrão do lado
+da **saída** — um adapter por plataforma de destino traduzindo o modelo de
+domínio interno pro formato nativo dela.
+
+Exemplo de trabalho dele: enviar ao A14 um arquivo detalhando um projeto, e o
+agente gerar toda a configuração (projeto, milestones, issues) em **qualquer
+plataforma de gerenciamento de projeto**, usando a linguagem interna e um
+adapter específico da plataforma-alvo. Jira foi citado como exemplo mais
+familiar de "outra plataforma", **não como alvo real** — confirmado por
+msilva: o `AIRTABLEGC` no Jira é legado, em migração pro Linear (ver
+[[Agent Flow]]).
+
+Não é capacidade nova a construir agora — é a mesma "Lacuna 1" que hoje só
+está resolvida pro Linear (`linear_client.py`) e ainda precisa generalizar,
+já listada em "Caminho prático de replicar" acima. O que essa reformulação
+confirma explicitamente é o **escopo**: vale pra todo agente que escreve num
+sistema externo (A14 no Linear, A10 idem), não só um recurso específico do
+A14. Ainda não desenhado — mesmas questões em aberto abaixo: se o molde
+carrega esse vocabulário compartilhado ou se é camada separada da ontologia
+do agente.
+
 ## Questões em aberto
 
 - Qual problema concreto o molde precisa resolver primeiro: criação de novos

@@ -5159,3 +5159,22 @@ asked for both ingested directly.
   `projects/Farol.md`, `syntheses/How LiveScript sends the proxy X-App-Id
   header.md`, `systems/LiveScript.md`, plus BOM-only touches on
   `people/Maria Fernanda Lemos.md` and the Mafê/João Victor meeting-prep.
+
+## [2026-09-01] synthesis | Workflow autônomo guiado por vocabulário interno, adapters na escrita
+- msilva trouxe em chat uma reformulação da "Lacuna 1" (DTO≠domínio só
+  resolvido pro Linear) como princípio arquitetural geral: qualquer agente
+  do Fluxo Agêntico deveria ter um fluxo de trabalho autônomo guiado pelo
+  vocabulário/ontologia interna (issue, milestone, PR), não pela API nativa
+  da ferramenta em que grava — o mesmo padrão ports-and-adapters já usado
+  na entrada (Trigger/Input), agora nomeado explicitamente pro lado da
+  saída, um adapter por plataforma-alvo.
+- Exemplo dele: mandar ao A14 um arquivo detalhando um projeto e o agente
+  gerar toda a config (projeto, milestones, issues) em qualquer plataforma
+  de PM. Confirmado em perguntas de esclarecimento: escopo é geral (todo
+  agente que escreve externamente, não só A14); Jira é só exemplo
+  ilustrativo, sem alvo real hoje (AIRTABLEGC é legado, migrando pro
+  Linear).
+- Não é capacidade nova — é a mesma lacuna já registrada e ainda não
+  desenhada com Luís. Sem decisão tomada; registrado como refinamento.
+- Updated: `syntheses/Como deve funcionar o molde de agente.md`,
+  `index.md`.
