@@ -5012,3 +5012,41 @@ asked for both ingested directly.
   pointers cronológicos, cobrindo molde + SOUL + o cruzamento com a
   [[Bossabox Engagement]].
 - Updated: `projects/Agent Flow.md`, `index.md`.
+
+## [2026-09-01] lint | Auditoria completa do vault
+- Health check só de leitura, dois agentes em paralelo (estrutural +
+  conteúdo), reportado a msilva antes de qualquer alteração — nenhuma página
+  foi tocada nesta entrada.
+- **Frontmatter/staleness/links/raw**: nenhum campo obrigatório faltando,
+  nenhuma página `active` desatualizada >30 dias, zero orfãs, zero link
+  quebrado vivo (as strings sem match são citações históricas dentro do
+  próprio `log.md` ou o exemplo ilustrativo em `CLAUDE.md`), zero raw sem
+  cobertura exceto um `.txt` vazio (`Novo(a) Documento de Texto.txt`, lixo do
+  Explorer, sem conteúdo pra ingerir). Achado à parte: BOM UTF-8 antes do
+  `---` de frontmatter em `projects/Agent Flow.md`, `people/Maria Fernanda
+  Lemos.md` e a meeting-prep de Mafê/João Victor 2026-08-25 — não quebra o
+  parsing hoje, mas vale normalizar na próxima passada por esses arquivos.
+- **`[!msilva]` sem tratar**: nenhum — os únicos 4 hits de `[!msilva]` no
+  vault são citações em prosa de callouts já resolvidos e apagados
+  ([[Agent Harness Template]], [[2026-08-19 Identify proxy apps by URL path,
+  not header]]), confirmando o lint anterior de 2026-08-27.
+- **Contradições internas** (páginas com 3+ commits, lidas por inteiro) — 12
+  achados reais, entre eles: [[Agent Flow]] com `phase: research` no
+  frontmatter contra callouts recentes de PoC/produção; checklist marcado
+  `[x]` em [[Airtable Proxy]] contradizendo prosa "não confirmado" ao lado;
+  [[Como deve funcionar o molde de agente]] com o disclaimer "Soul não é o
+  escopo desta página" já defasado pela própria seção de SOUL V1 adicionada
+  no mesmo dia; duas 1:1s com Gabrielle (2026-08-14, 2026-08-20) com
+  "Questões em aberto" desatualizado frente a "Commitments" mais recente na
+  mesma página; [[Farol]] com "engine nunca foi nomeado" apesar de seção
+  posterior já nomear BigQuery; [[LiveScript]] e a synthesis do header
+  `X-App-Id` com seções "em aberto" que outras páginas (inclusive a própria
+  [[Airtable Proxy]]) já responderam. Lista completa com os 12 arquivos e
+  trechos no transcript da sessão — não reproduzida aqui por tamanho.
+- **Decisão aberta numa página, resolvida noutra**: confirmado um caso real —
+  `syntheses/How LiveScript sends the proxy X-App-Id header.md` (status
+  `superseded`) ainda lista "o proxy sobrescreve o Authorization?" como
+  questão aberta, mas [[Airtable Proxy]] e [[LiveScript]] já respondem que sim
+  (confiança: provável).
+- Nenhuma correção aplicada ainda — decisão de quais achados corrigir agora
+  fica com msilva.
