@@ -4875,6 +4875,40 @@ asked for both ingested directly.
   first.md` (seção "Proatividade decidida 2026-08-31"), `projects/Agent
   Flow.md` (novo tip), `index.md`.
 
+## [2026-08-31] refactor | A10/A14 proativos implementados via subagente em pairing
+- Criado um subagente (Agent tool) primed com o handoff completo da
+  decisão acima, seguindo a mesma regra do `HANDOFF.md` do repo
+  (`livemode-fluxo-agentico`): mostrar código, esperar confirmação antes
+  de cada arquivo, nunca implementar sozinho.
+- Ao longo da sessão, três itens que estavam em aberto na decisão foram
+  fechados em chat: cooldown do A10 em 7 dias; schema real de
+  `commentCreate`/`projectUpdateCreate` confirmado por introspecção ao
+  vivo; rota de cron virou `cron.py` novo, não `gateway.py`/`main.py`
+  como cogitado antes (`main.py` não é mais o orquestrador — isso migrou
+  pra `report.py::main()` em algum commit não registrado nesta wiki até
+  agora).
+- Nova decisão de escopo, no meio da sessão: publicação proativa restrita
+  a uma constante `PROACTIVE_SCOPE_PROJECT_IDS` em `cron.py` (só o
+  Project Fluxo Agêntico por enquanto) — msilva não queria afetar
+  projetos de colegas antes de validar. A10 continua analisando o
+  backlog do time inteiro, só o comentário é filtrado; A14 filtra
+  cálculo e publicação juntos. Cogitou-se resolver via a Linear
+  Initiative de mesmo nome (existe, id `24fa95ef-...`), descartado a
+  favor do filtro arbitrário simples — expansão fica manual.
+- Achado no caminho: `middleware.js` (trava de domínio) bloquearia o
+  próprio cron sem uma exceção pra `/api/cron/` — corrigido junto.
+- Implementação completa: novos `a10/formatting.py`, `a14/formatting.py`,
+  `a10/memory.py`, `cron.py`; editados `linear_client.py`, `a14/rules.py`,
+  `db.py`, `a10/seed_prompt.py`, `gateway.py`, `middleware.js`,
+  `vercel.json`. Todos compilando limpo, nada testado em runtime, nada
+  commitado no repo do código.
+- Pendências fora de código, só msilva resolve: `CRON_SECRET`; promover
+  label `production` no Langfuse (sem isso a regra de anonimização/
+  pergunta do A10 não entra em vigor); checar limite de cron do plano
+  Vercel; testes (adiados pra depois da validação manual).
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
+  first.md` (seção "Implementado 2026-08-31"), `index.md`.
+
 ## [2026-09-01] decision | A10 e A14 ganham acesso real ao GitHub
 - Retroativo: cobre trabalho de código feito em 2026-08-31 no repo
   `livemode-fluxo-agentico` (commits `8b6059d`, `e376031`) — só agora

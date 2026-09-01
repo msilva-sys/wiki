@@ -356,6 +356,48 @@ implementação não estão duplicados aqui.
 GraphQL de `commentCreate`/`projectUpdateCreate` (não verificado contra o
 schema real); onde vive a rota de cron (`gateway.py` vs `main.py`).
 
+## Implementado 2026-08-31, mesma sessão — pairing com subagente no repo
+
+Os três itens em aberto acima ficaram resolvidos ao longo da própria
+sessão: cooldown fechado em **7 dias**; schema real de `commentCreate`/
+`projectUpdateCreate` confirmado por introspecção ao vivo contra
+`api.linear.app/graphql`; rota de cron virou `cron.py` novo (não
+`gateway.py` nem `main.py` — `main.py` não é mais o orquestrador, isso
+migrou pra `report.py::main()` num commit não registrado nesta wiki
+antes de agora), registrado em `gateway.py` com `prefix="/api"`.
+
+**Escopo restrito, decisão nova de msilva no meio da sessão**: durante a
+validação, a publicação proativa (comentário do A10, status update do
+A14) fica limitada a uma constante `PROACTIVE_SCOPE_PROJECT_IDS` em
+`cron.py` (hoje só o id do Project Fluxo Agêntico) — "não quero bagunçar
+o projeto dos meus colegas de time" enquanto isso não foi validado. A10
+continua analisando o backlog do time inteiro (é o que "Portfolio"
+significa); só o comentário é filtrado. A14 filtra cálculo e publicação
+juntos, sem sentido gastar LLM num projeto fora do escopo. Expansão do
+escopo é manual (editar a constante), não automática — cogitou-se
+resolver por uma Linear Initiative de mesmo nome (existe uma, id
+`24fa95ef-...`, hoje com só esse projeto dentro), mas msilva preferiu o
+filtro arbitrário simples em vez da resolução dinâmica.
+
+Toda a implementação foi feita por um subagente em pairing (mostrando
+código, esperando confirmação antes de cada arquivo — mesma regra do
+`HANDOFF.md`), não por esta sessão de wiki diretamente. Arquivos novos:
+`a10/formatting.py`, `a14/formatting.py`, `a10/memory.py`, `cron.py`.
+Arquivos editados: `linear_client.py`, `a14/rules.py`, `db.py`,
+`a10/seed_prompt.py`, `gateway.py`, `middleware.js`, `vercel.json`.
+**Nada commitado ainda** — fica no working tree local até msilva revisar.
+
+Achado no caminho, não previsto no desenho original: `middleware.js`
+(trava de domínio por Google OAuth) protegia todo path exceto
+`/api/auth/` — sem uma exceção pra `/api/cron/`, o próprio cron seria
+redirecionado pro login e nunca executaria. Corrigido junto.
+
+**Pendências fora de código, só msilva resolve**: `CRON_SECRET` (env var,
+local + Vercel); promover a label `production` no Langfuse (sem isso a
+regra de anonimização/pergunta do A10 não entra em vigor, o cron
+continua lendo o prompt antigo); checar limite de cron do plano Vercel;
+testes (adiados pra depois da validação manual, decisão explícita).
+
 ## What this changes elsewhere
 
 - [[Agent Flow]] — noted as the concrete shape of the next build.
