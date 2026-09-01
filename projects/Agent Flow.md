@@ -215,6 +215,21 @@ tags: [agents, llm, automation, onboarding, research]
 > **Correção 2026-09-01**: wiring de acesso a repo extraída pra
 > `repo_tools.py`, separada dos tools de domínio de cada agente.
 
+> [!tip] Molde de agente e SOUL ganham desenho próprio, cruzado com a ontologia da Bossabox — msilva, 2026-09-01
+> [[Como deve funcionar o molde de agente]]: conversa com Luís levanta duas
+> questões — dashboard não-programático pra configurar a Soul, e um **molde
+> de agente** reutilizável/instanciável, generalizando o [[Agent Harness
+> Template]] (Trigger/Trigger Channel → Input → Harness → Output) em contrato
+> configurável. **SOUL resolvida em V1** como fonte comportamental
+> independente do `system_prompt`, persistida em tabelas com composição
+> plana — ver [[2026-09-01 Modelar SOUL em tabelas com composição plana]].
+> Mesmo dia, cruzado com a camada de ontologia que a [[Bossabox Engagement]]
+> chegou na OS V2: peças equivalentes já existem no Fluxo Agêntico (contrato/
+> ports-and-adapters, o próprio Harness Template), mas faltam generalizar o
+> mapeamento DTO≠domínio além do Linear e dar dono à "memória do sistema
+> agêntico" — a mesma lacuna sem dono desde 2026-08-20 (ver [[Vocabulário do
+> Fluxo Agêntico]]).
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides

@@ -5000,3 +5000,15 @@ asked for both ingested directly.
   pergunta já tinha lugar natural ali, entre as questões em aberto), não como
   synthesis separada — reasoning curto o suficiente para caber na página-mãe.
 - Updated: `syntheses/Como deve funcionar o molde de agente.md`, `index.md`.
+
+## [2026-09-01] refactor | Pointer do molde de agente / SOUL / ontologia Bossabox em Agent Flow
+- msilva perguntou se o cruzamento com a ontologia da Bossabox merecia mais
+  registro; confirmado que era só wiki (nenhuma issue no Linear). Revisando
+  [[Agent Flow]] pra decidir onde, achado um gap real: a página-mãe não tinha
+  nenhum callout apontando pro trabalho de [[Como deve funcionar o molde de
+  agente]] nem pra [[2026-09-01 Modelar SOUL em tabelas com composição
+  plana]], apesar de ambos serem do mesmo dia e do mesmo projeto.
+- Adicionado callout `[!tip]` em [[Agent Flow]], seguindo o padrão dos demais
+  pointers cronológicos, cobrindo molde + SOUL + o cruzamento com a
+  [[Bossabox Engagement]].
+- Updated: `projects/Agent Flow.md`, `index.md`.
