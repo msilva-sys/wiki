@@ -185,6 +185,56 @@ Ver também o ponto 7 de [[What Bossabox's Assessment suggests for Agent
 Flow]]: ainda em aberto se compensa usar o tier gratuito da Bossabox para
 validar/acelerar essa camada em vez de reconstruí-la do zero.
 
+**Lacuna 1 auditada e corrigida no código real, 2026-09-01** — lida
+`linear_client.py`, `repo_tools.py`, `github_client.py` e `a10/tools.py` no
+repo `livemode-fluxo-agentico` (não só hipótese de wiki):
+
+- **Não é um silo completo.** `linear_client.Issue` já tem um campo
+  `github_pr: GithubPR | None` — um PR vinculado a uma issue do Linear já
+  entra como parte do domínio da própria issue. Esse ponto de integração
+  está certo.
+- **Fora desse ponto, o GitHub não tem vocabulário de domínio — e está
+  certo assim.** `repo_tools.py`/`github_client.py` devolvem dicts crus
+  (arquivos, commits, branches, métricas de repo) direto como tool output
+  pro LLM em `a10/tools.py`/`a14/tools.py`. Isso bate com o padrão de
+  **"sinal"** já definido em [[Vocabulário do Fluxo Agêntico]] — dado bruto
+  que o agente julga, não precisa de tipo Pydantic pra isso. Não é gap.
+- **Achado real: duplicação, não silo.** Um Pull Request era modelado
+  **duas vezes**, sem relação entre si — `GithubPR` (dentro de `Issue`:
+  `status, url, repo_name, created_at, updated_at, merged_at, closed_at`) e
+  o dict solto de `get_pr_status`/`repo_pr_status` (`number, title, url,
+  author, created_at, updated_at, draft, review_status, ci_status`). Mesma
+  coisa do mundo real, dois shapes, zero cross-check.
+- **`Issue`/`Project`/`Milestone` não precisam de trabalho nenhum agora.**
+  Os tipos já são genéricos (sem nome nem shape do Linear vazando) — a
+  tradução específica do GraphQL fica isolada nas funções de
+  `linear_client.py`. Se uma segunda ferramenta de tickets aparecer um dia,
+  o trabalho é só escrever um novo mapper pros mesmos tipos, não redesenhar
+  nada. Não há hoje uma segunda fonte competindo por esses conceitos —
+  GitHub tem PR/commit/branch, que são coisas diferentes, não um Project ou
+  Milestone alternativo.
+- **Detalhe pra guardar, não pra agir agora**: `a10/tools.py` tem
+  `CLOSED_STATE_TYPES = {"completed", "canceled", "duplicate"}` — hardcoda
+  os valores específicos que o *Linear* usa pro campo `state_type`. O tipo
+  `Issue` é genérico, mas esse ponto de consumo assume o vocabulário do
+  Linear como universal. Só vira problema se uma segunda fonte de tickets
+  entrar com categorias diferentes; não vale generalizar preventivamente.
+
+**Fix aplicado, mesma sessão**: `GithubPR` ganhou os campos que só existiam
+no dict solto (`number, title, author, draft, review_status, ci_status`,
+todos opcionais); `github_client.get_pr_status` passa a devolver
+`list[GithubPR]` em vez de `list[dict]`; `repo_tools.repo_pr_status`
+serializa pra dict só na borda (`model_dump(mode="json")`), mesmo padrão que
+`linear_client.list_issues()` já usa em `a10/tools.py`. Testado: imports OK,
+suite `a10.test_agent` (`unittest`) passa. **Ainda não commitado** — o repo
+já tinha bastante trabalho pendente de outras sessões (SOUL, `db.py`,
+frontend) não relacionado a esta mudança; a decisão de como/quando
+commitar cada frente fica com msilva.
+
+**Correção de nome, mesma passada**: esta página e o [[log]] citavam
+`a14/memoria.py` — o arquivo real é `a14/memory.py`. Corrigido aqui; ver
+nota equivalente no `log.md`, que não é reescrito por ser append-only.
+
 ## Questões em aberto
 
 - Qual problema concreto o molde precisa resolver primeiro: criação de novos

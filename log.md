@@ -5068,6 +5068,38 @@ asked for both ingested directly.
 - Updated: `syntheses/Como deve funcionar o molde de agente.md`,
   `projects/Agent Flow.md`, `index.md`.
 
+## [2026-09-01] refactor | Unificar as duas representações de PR (Lacuna 1)
+- Auditoria pedida por msilva sobre a Lacuna 1 (DTO≠domínio só existe pro
+  Linear), desta vez lendo o código real do repo `livemode-fluxo-agentico`
+  (`linear_client.py`, `repo_tools.py`, `github_client.py`, `a10/tools.py`),
+  não só a hipótese registrada antes na wiki.
+- Achado: não é silo completo — `linear_client.Issue.github_pr: GithubPR`
+  já é um ponto de integração real. O problema concreto era outro: PR
+  modelado duas vezes sem relação — `GithubPR` (status/url/repo_name/datas)
+  vs. o dict solto de `get_pr_status`/`repo_pr_status`
+  (number/title/author/draft/review_status/ci_status).
+- `Issue`/`Project`/`Milestone` confirmados como já corretamente genéricos
+  (sem shape do Linear vazando no tipo) — não precisam de trabalho agora;
+  não há hoje uma segunda fonte de tickets competindo por esses conceitos.
+  O resto do dado do GitHub (arquivos, commits, branches) fica cru de
+  propósito — é "sinal" pro LLM julgar, não domínio, per [[Vocabulário do
+  Fluxo Agêntico]].
+- Fix aplicado no repo `livemode-fluxo-agentico`: `GithubPR` ganhou os
+  campos que só existiam no dict solto (todos opcionais);
+  `github_client.get_pr_status` devolve `list[GithubPR]`;
+  `repo_tools.repo_pr_status` serializa pra dict só na borda
+  (`model_dump(mode="json")`), mesmo padrão de `list_issues()` em
+  `a10/tools.py`. Imports verificados, suite `a10.test_agent` (unittest)
+  passa. **Não commitado no repo de código** — já havia bastante trabalho
+  pendente de outras sessões (SOUL, `db.py`, frontend) sem relação com esta
+  mudança; decisão de commit fica com msilva.
+- Correção de nome encontrada de passagem: a wiki citava `a14/memoria.py`;
+  o arquivo real é `a14/memory.py`. Corrigido em
+  `syntheses/Como deve funcionar o molde de agente.md` (este `log.md` é
+  append-only, mantém a citação antiga como estava).
+- Updated: `syntheses/Como deve funcionar o molde de agente.md`,
+  `projects/Agent Flow.md`, `index.md`.
+
 ## [2026-09-01] lint | Correção dos 12 achados de contradição interna
 - msilva confirmou ("sim") pra aplicar as correções do lint anterior. BOM
   UTF-8 removido de `projects/Agent Flow.md`, `people/Maria Fernanda

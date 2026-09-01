@@ -236,6 +236,13 @@ tags: [agents, llm, automation, onboarding, research]
 > memória não tem nenhum); como Luís pediu em 2026-08-20 pra não desenhar
 > memória antes de assentar as entidades, o passo criado não é desenho —
 > é revisitar com ele se essa objeção ainda se aplica. Spike PRO-517.
+> **Lacuna 1 auditada no código real, mesmo dia**: não é silo completo — só
+> o Pull Request era modelado duas vezes sem relação entre si (`GithubPR`
+> dentro de `Issue` vs. dict solto de `get_pr_status`), já unificado.
+> `Issue`/`Project`/`Milestone` não precisam de generalização agora — já são
+> tipos genéricos, só não têm uma segunda fonte competindo por eles ainda. O
+> resto do dado do GitHub (arquivos, commits) fica cru de propósito — é
+> "sinal" pro LLM, não domínio.
 
 ## Philosophy and build strategy
 
