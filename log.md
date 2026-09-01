@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-08-28
+updated: 2026-09-01
 
 
 ---
@@ -5050,3 +5050,20 @@ asked for both ingested directly.
   (confiança: provável).
 - Nenhuma correção aplicada ainda — decisão de quais achados corrigir agora
   fica com msilva.
+
+## [2026-09-01] decision | Atacar a lacuna de memória do sistema agêntico primeiro
+- msilva decide, entre as duas lacunas de ontologia identificadas no query
+  anterior, priorizar "memória do sistema agêntico sem dono" sobre
+  "DTO≠domínio só existe pro Linear" — a primeira não tem nem padrão nem dono,
+  a segunda já tem `linear_client.py` como modelo pra copiar.
+- Como Luís já havia pedido explicitamente, em 2026-08-20, para não desenhar
+  memória antes de assentar quais entidades existem (ver [[Vocabulário do
+  Fluxo Agêntico]]), o trabalho criado não é desenho direto — é revisitar com
+  ele se essa objeção ainda se sustenta, agora que A10/A14 estão em construção
+  e o molde de agente está sendo fechado.
+- Criado spike [PRO-517](https://linear.app/projetos-livemode/issue/PRO-517/revisitar-se-ja-da-pra-desenhar-a-memoria-compartilhada-dos-agentes)
+  no projeto Fluxo Agêntico (team Projetos-livemode): Priority High, Estimate
+  XS, assignee msilva, sem parent/blocked-by (evita presumir se o molde/SOUL é
+  o lugar certo pra memória antes da pergunta ser respondida).
+- Updated: `syntheses/Como deve funcionar o molde de agente.md`,
+  `projects/Agent Flow.md`, `index.md`.

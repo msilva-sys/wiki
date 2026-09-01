@@ -1,7 +1,7 @@
-﻿---
+---
 type: project
 status: active
-phase: research
+phase: build
 updated: 2026-09-01
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
 tags: [agents, llm, automation, onboarding, research]
@@ -9,10 +9,13 @@ tags: [agents, llm, automation, onboarding, research]
 
 # Agent Flow
 
-> [!abstract] Currently in the **research phase** (as of 2026-08-17)
+> [!abstract] Research phase (2026-08-17) → **build phase** (as of 2026-09-01)
 > Authoritative spec: [[Fluxo Agêntico project instruction]] (per-agent detail for
-> all 14). Architecture: [[Fluxo Agêntico diagram]]. Agenda and open questions:
-> [[What should the Agent Flow research phase study]].
+> all 14). Architecture: [[Fluxo Agêntico diagram]]. Agenda and open questions
+> from the research phase: [[What should the Agent Flow research phase study]].
+> A10 Portfolio + A14 PM Agent moved into a live PoC (three parallel fronts),
+> already with real GitHub/Linear access and a proactive digest running on a
+> Vercel Cron in pairing — see the chronological callouts below.
 
 > [!danger] A5 Watcher deprioritized — msilva, 2026-08-24
 > [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]: it's one
@@ -228,7 +231,11 @@ tags: [agents, llm, automation, onboarding, research]
 > ports-and-adapters, o próprio Harness Template), mas faltam generalizar o
 > mapeamento DTO≠domínio além do Linear e dar dono à "memória do sistema
 > agêntico" — a mesma lacuna sem dono desde 2026-08-20 (ver [[Vocabulário do
-> Fluxo Agêntico]]).
+> Fluxo Agêntico]]). **Priorizada e rastreada, mesmo dia**: msilva decide
+> atacar a lacuna de memória primeiro (DTO≠domínio já tem padrão pra copiar,
+> memória não tem nenhum); como Luís pediu em 2026-08-20 pra não desenhar
+> memória antes de assentar as entidades, o passo criado não é desenho —
+> é revisitar com ele se essa objeção ainda se aplica. Spike PRO-517.
 
 ## Philosophy and build strategy
 

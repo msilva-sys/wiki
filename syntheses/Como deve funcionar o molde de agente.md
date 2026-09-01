@@ -19,8 +19,10 @@ msilva relatou em 2026-09-01 dois pontos levantados numa conversa com
    configurar atributos da Soul;
 2. ter uma forma de **molde de agente**.
 
-Esta página registra somente a segunda questão. A Soul é a próxima investigação
-e não está definida aqui por antecipação.
+Esta página registrava inicialmente só a segunda questão — a Soul seria a
+próxima investigação, não definida aqui por antecipação. **Isso mudou no
+mesmo dia**: a Soul V1 foi decidida horas depois (ver seção abaixo) e acabou
+registrada aqui mesmo, por estar diretamente ligada ao desenho do molde.
 
 ## Relação com o modelo existente
 
@@ -168,6 +170,16 @@ ontologia, não só contratos de agente:**
 - Dar dono explícito à "memória do sistema agêntico" — a lacuna que mais se
   parece com o que falta para replicar a lógica da Bossabox, mais do que os
   contratos por agente (que já andam bem).
+
+**Atacada primeiro, 2026-09-01**: msilva decidiu priorizar a lacuna de
+memória sobre a de DTO≠domínio — o padrão DTO já tem modelo pra copiar
+(`linear_client.py`), a memória não tem nem padrão nem dono. Como Luís já
+havia pedido explicitamente, em 2026-08-20, para **não desenhar memória
+ainda** (assentar as entidades primeiro — ver [[Vocabulário do Fluxo
+Agêntico]]), o primeiro passo não é desenho, é revisitar com ele se essa
+objeção ainda se sustenta agora que A10/A14 estão em construção e o molde
+está sendo fechado. Rastreado como spike:
+[PRO-517](https://linear.app/projetos-livemode/issue/PRO-517/revisitar-se-ja-da-pra-desenhar-a-memoria-compartilhada-dos-agentes).
 
 Ver também o ponto 7 de [[What Bossabox's Assessment suggests for Agent
 Flow]]: ainda em aberto se compensa usar o tier gratuito da Bossabox para
