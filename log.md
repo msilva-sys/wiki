@@ -4947,3 +4947,20 @@ asked for both ingested directly.
   atributos devem virar comportamento observável.
 - New: `syntheses/Como deve funcionar o molde de agente.md`.
 - Updated: `concepts/Agent Harness Template.md`, `index.md`.
+
+## [2026-09-01] decision | Modelar SOUL em tabelas com composição plana
+- SOUL separada do `system_prompt` da tarefa e do Prompt Management do
+  Langfuse; o harness combina as fontes somente no contexto de execução.
+- V1 decidido com duas tabelas: `soul_versions` (conteúdo textual direto,
+  versões imutáveis, `fragment` ou `profile`) e `soul_composition` (join table
+  ordenada por `position`).
+- Composição plana; fragments não herdam de outros fragments; atualização não
+  propaga silenciosamente para profiles ou agentes.
+- YAML descartado como fonte de verdade e campos comportamentais aninhados
+  adiados. Langfuse recebe versão/metadados para tracing, não guarda a entidade
+  canônica.
+- A instrução posterior de implementar em A10/A14 foi corrigida por msilva:
+  esta operação registra somente a decisão na wiki, sem mudança no código.
+- New: `decisions/2026-09-01 Modelar SOUL em tabelas com composição plana.md`.
+- Updated: `concepts/Agent Harness Template.md`, `syntheses/Como deve funcionar
+  o molde de agente.md`, `index.md`.

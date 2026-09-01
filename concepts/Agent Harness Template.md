@@ -100,6 +100,14 @@ O molde não substitui este template: ele transforma a anatomia conceitual acima
 em um contrato configurável. A fronteira entre aquilo que pertence ao molde, à
 instância, à Soul e ao runtime ainda precisa ser fechada.
 
+**SOUL ganhou um desenho próprio em 2026-09-01.** A
+[[2026-09-01 Modelar SOUL em tabelas com composição plana|decisão da SOUL]]
+estabelece que ela é uma fonte comportamental
+independente do `system_prompt` da tarefa, persistida em `soul_versions` e
+composta de forma plana por `soul_composition`. O `Soul.md` deste template
+continua representando uma camada conceitual do Harness; não implica que a
+fonte de verdade precise ser um arquivo Markdown.
+
 ## Leituras externas relacionadas (ingeridas em 2026-08-24)
 
 Duas clippings do mesmo lote (`raw/Clippings/`, capturadas em 2026-08-21) usam
@@ -125,5 +133,7 @@ resposta.
 - Quais dos 14 agentes ficam no primeiro nível, com Trigger/Input/Harness/Output
   próprios, e quais ficam aninhados como Tool/Skill no harness de outro agente?
   Para os aninhados, a qual harness pertencem? Ainda não discutido com Luís.
-- Qual é a fronteira exata entre molde, instância, Soul e runtime? Ver [[Como
-  deve funcionar o molde de agente]].
+- A fronteira da Soul foi parcialmente fechada na
+  [[2026-09-01 Modelar SOUL em tabelas com composição plana|decisão da SOUL]];
+  continuam abertas as fronteiras completas
+  entre molde, instância e runtime em [[Como deve funcionar o molde de agente]].

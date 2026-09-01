@@ -98,9 +98,20 @@ versionada e testável.
 
 [[Desenho do agente LangGraph para A10+A14]] já adotou Langfuse Prompt
 Management para versionar prompts, promover versões por label e ligar cada
-trace à versão executada. Isso pode ser parte do mecanismo, mas ainda não
-responde se o Langfuse representa a Soul inteira, apenas o prompt compilado ou
-somente uma saída gerada a partir de atributos mantidos em outro lugar.
+trace à versão executada. A
+[[2026-09-01 Modelar SOUL em tabelas com composição plana|decisão da SOUL]]
+respondeu a fronteira: a SOUL é fonte independente, persistida em
+tabelas próprias; o Langfuse pode receber a SOUL efetiva e seus identificadores
+para observabilidade, mas não é sua fonte de verdade.
+
+## Decisão V1 da SOUL — 2026-09-01
+
+msilva escolheu um modelo simples e composable: `soul_versions` guarda um bloco
+de texto direto por versão e `soul_composition` é a join table ordenada entre um
+profile e seus fragments. A composição é plana, sem YAML como fonte de verdade,
+sem campos comportamentais aninhados e sem propagação automática de mudanças.
+Ver [[2026-09-01 Modelar SOUL em tabelas com composição plana]] para o schema e
+as regras.
 
 ## Questões em aberto
 
@@ -113,5 +124,7 @@ somente uma saída gerada a partir de atributos mantidos em outro lugar.
 - Como versões de molde e de instância se relacionam quando o molde evolui?
 - Quais invariantes não podem ser sobrescritas por uma instância?
 - Como o molde representa componentes que não são agentes independentes?
-- O que exatamente compõe a Soul e como seus atributos viram comportamento
-  observável? Esta é a próxima questão a investigar.
+- ~~O que exatamente compõe a Soul e como seus atributos viram comportamento
+  observável?~~ **Parcialmente respondida em 2026-09-01:** o V1 abandona
+  atributos estruturados em favor de texto direto, composição plana e versões
+  rastreáveis; o conteúdo real dos fragments ainda precisa ser definido.
