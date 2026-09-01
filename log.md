@@ -4874,3 +4874,31 @@ asked for both ingested directly.
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC
   first.md` (seção "Proatividade decidida 2026-08-31"), `projects/Agent
   Flow.md` (novo tip), `index.md`.
+
+## [2026-09-01] decision | A10 e A14 ganham acesso real ao GitHub
+- Retroativo: cobre trabalho de código feito em 2026-08-31 no repo
+  `livemode-fluxo-agentico` (commits `8b6059d`, `e376031`) — só agora
+  documentado na wiki.
+- A14 respondia "não tenho acesso ao repositório" no chat; só existia
+  sinal de PR via citação de identifier. Decisão: quatro capacidades
+  novas pros dois agentes (arquivos, commits, PRs/CI, métricas).
+- Mapeamento projeto→repo via `Project.externalLinks` nativo do Linear,
+  não dict manual; link do Linear é fonte de verdade completa
+  (org/repo). Sem Checks API (não existe pra fine-grained PAT nesse
+  contexto) — CI só via Commit Status legado. `ref` opcional como
+  escape hatch pra branch padrão desatualizada (`main` quase vazio,
+  trabalho real em `langgraph`).
+- `list_branches` faltou na primeira passada — achado inspecionando um
+  trace real do Langfuse via API pública (sem tool dedicado no
+  ambiente), não por teste unitário.
+- Discutido em pair programming (mostrar trecho, aguardar aprovação,
+  então escrever+testar), por pedido de msilva.
+- **Mesma sessão, 2026-09-01**: revisão apontou `a10/tools.py` e
+  `a14/tools.py` misturando tools de domínio genuíno com a wiring de
+  acesso a repo (formatação de resposta do `github_client` duplicada
+  quase idêntica nos dois arquivos). Extraída pra `repo_tools.py`
+  (módulo compartilhado, raiz do repo) — commit `4968e20`, testado
+  ponta a ponta contra dados reais antes de commitar.
+- Tracked em Linear como PRO-488 (Done).
+- New: `decisions/2026-08-31 A10 e A14 ganham acesso real ao GitHub.md`.
+- Updated: `projects/Agent Flow.md` (novo tip), `index.md`.

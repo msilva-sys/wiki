@@ -201,6 +201,14 @@ tags: [agents, llm, automation, onboarding, research]
 > Handoff de implementação ficou só na conversa, por pedido de msilva —
 > não virou arquivo no repo.
 
+> [!tip] A10/A14 ganham acesso real ao GitHub — msilva, 2026-08-31
+> [[2026-08-31 A10 e A14 ganham acesso real ao GitHub]]: testando o A14 no
+> chat, "não tenho acesso ao repositório" era literalmente verdade. Agora
+> os dois navegam arquivos, commits, PRs/CI e métricas do repo mapeado via
+> `Project.externalLinks` do Linear (fonte de verdade, sem dict manual).
+> **Correção 2026-09-01**: wiring de acesso a repo extraída pra
+> `repo_tools.py`, separada dos tools de domínio de cada agente.
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides
