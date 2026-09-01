@@ -4936,3 +4936,14 @@ asked for both ingested directly.
 - Tracked em Linear como PRO-488 (Done).
 - New: `decisions/2026-08-31 A10 e A14 ganham acesso real ao GitHub.md`.
 - Updated: `projects/Agent Flow.md` (novo tip), `index.md`.
+
+## [2026-09-01] synthesis | Como deve funcionar o molde de agente
+- Registrada a questão trazida por msilva após conversa com Luís: ter um molde
+  reutilizável de agente que também sustente configuração não programática.
+- Hipótese inicial, ainda não decidida: separar molde, instância e runtime; o
+  molde descreve contrato, capabilities, permissões, memória, critérios de
+  sucesso e schema da Soul, não apenas um prompt-base.
+- Mantida em aberto a investigação seguinte: o que compõe a Soul e como seus
+  atributos devem virar comportamento observável.
+- New: `syntheses/Como deve funcionar o molde de agente.md`.
+- Updated: `concepts/Agent Harness Template.md`, `index.md`.

@@ -1,16 +1,16 @@
 ---
 type: concept
 status: draft
-updated: 2026-08-24
+updated: 2026-09-01
 aliases: [harness template, trigger input harness output, agent template (Luís)]
 tags: [agent-flow, architecture, harness, claude-agent-sdk]
 ---
 
 # Agent Harness Template
 
-A generic shape for specifying any agent, proposed by Luís Fernandez in a
-Slack message to msilva, 2026-08-21 (no `raw/` file — pasted directly into
-the working chat, not a transcript):
+Formato genérico para especificar qualquer agente, proposto por Luís Fernandez
+em uma mensagem no Slack para msilva, em 2026-08-21 (sem arquivo em `raw/` —
+colado diretamente no chat de trabalho, não veio de uma transcrição):
 
 ```
 Trigger (Human | Machine)
@@ -28,58 +28,102 @@ AGENT PROCESS
 Output (result, changed systems, etc)
 ```
 
-## How this connects to what's already in the wiki
+## Como se conecta ao que já existe na wiki
 
-**Refines the actor→input→output method.** [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]] has Luís proposing that every entity in [[Agent Flow]] be specified only as actor → input → output, and to stop designing the inter-agent graph. This template is the same idea with more resolution: the "actor" side splits into **Trigger type** (Human vs. Machine) and **Trigger Channel** (Slack, Webhook, Cron, etc.) — a distinction the earlier method didn't carry. Between input and output sits the part the earlier method deliberately left as a black box: the **Harness**.
+**Refina o método actor→input→output.** Em [[2026-08-20 Fluxo Agêntico diagram
+walkthrough with Luís]], Luís propõe que cada entidade do [[Agent Flow]] seja
+especificada somente como actor → input → output, sem desenhar antecipadamente
+o grafo entre agentes. Este template é a mesma ideia com mais resolução: o lado
+do “actor” se divide em **tipo de Trigger** (Human ou Machine) e **Trigger
+Channel** (Slack, Webhook, Cron etc.). Entre Input e Output fica a parte que o
+método anterior deixava deliberadamente como caixa-preta: o **Harness**.
 
-**Gives "harness" a concrete shape for the first time.** The word had shown up twice before this, in two different senses:
+**Dá um formato concreto a “harness” pela primeira vez.** A palavra havia
+aparecido antes em dois sentidos diferentes:
 
-- [[2026-08-19 1-1 Matheus - Luís]]: dev-subagent design is *"100% harness de projeto"* — the target project's own setup (CLAUDE.md, skills, tooling), decided per-project, not something [[Agent Flow]]'s 14-agent diagram needs to specify.
-- [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]: A12 (Data Gov) and A13 (Deduplication) are each called a *"harness"* — a rule-enforcement/guardrail layer, closer to an automated gate than to something that reasons.
+- [[2026-08-19 1-1 Matheus - Luís]]: o desenho dos subagentes de desenvolvimento
+  é *“100% harness de projeto”* — configuração do próprio projeto-alvo
+  (`CLAUDE.md`, Skills, tooling), decidida por projeto, não algo que o diagrama
+  dos 14 agentes precisa especificar.
+- [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]: A12 (Data Gov) e
+  A13 (Deduplication) são chamados de *“harness”* — uma camada de aplicação de
+  regras/guardrails, mais próxima de um gate automatizado do que de algo que
+  raciocina.
 
-This template resolves both into one consistent concept: **Harness = Soul.md + Skills + Tools + MCP**, the substrate any agent (or project) runs on, regardless of who or what triggers it. The first usage was this concept applied at the project level; this message generalizes it to every agent in the architecture.
+O template reconcilia os dois usos num conceito: **Harness = Soul.md + Skills +
+Tools + MCP**, o substrato em que qualquer agente ou projeto roda,
+independentemente de quem ou do que o dispara. O primeiro uso aplicava o
+conceito ao projeto; a mensagem o generaliza para cada agente da arquitetura.
 
-> [!tip] A candidate reading of the A12/A13 "harness" call — msilva's own synthesis, not confirmed with Luís
-> If Harness = Soul.md + Skills + Tools + MCP, then calling A12/A13 a "harness"
-> rather than an agent may not be loose language — it may mean they run mostly
-> on Skills + Tools, with little or no Soul.md (no autonomous
-> reasoning/behavior layer). That would line up with msilva's own
-> **agir/informar** heuristic ([[2026-08-20 1-1 Matheus - Luís]]): something
-> that only enforces a rule, rather than acting or reasoning over it, reads as
-> a skill/harness component, not a standalone agent. Not tested against the
-> rest of the 14-agent list, and not run past Luís as a reading of his own
-> word choice.
+> [!tip] Leitura candidata de A12/A13 como “harness” — síntese de msilva, não confirmada com Luís
+> Se Harness = Soul.md + Skills + Tools + MCP, chamar A12/A13 de “harness” em
+> vez de agente pode não ser apenas linguagem imprecisa: talvez rodem
+> principalmente sobre Skills + Tools, com pouca ou nenhuma Soul.md — sem uma
+> camada autônoma de raciocínio/comportamento. Isso combina com a heurística
+> **agir/informar** de msilva ([[2026-08-20 1-1 Matheus - Luís]]): algo que
+> apenas aplica uma regra, em vez de agir ou raciocinar sobre ela, parece um
+> componente Skill/Harness, não um agente independente. A leitura ainda não foi
+> testada contra os 14 agentes nem confirmada com Luís.
 
-**Substrate this would presumably run on**: [[Claude Agent SDK]], introduced by Luís on 2026-08-19 as running Claude Code via API/CLI without an IDE — the mechanism an agent would use to *invoke* a harness programmatically. Not yet tied together explicitly by either of them.
+**Substrato provável:** [[Claude Agent SDK]], apresentado por Luís em 2026-08-19
+como forma de rodar Claude Code via API/CLI sem IDE — mecanismo pelo qual um
+agente poderia invocar o harness programaticamente. Essa ligação ainda não foi
+feita explicitamente por nenhum dos dois.
 
-**Not every agent gets its own standalone harness.** msilva ([!msilva] callout, 2026-08-21): some of the 14 agents don't need this template applied to them at all — they may instead be invoked as a Tool/Skill *inside* a parent agent's harness, with no standalone Trigger/Input/Output of their own. This confirms, rather than just echoes, the "maybe just a skill" flag already on A4 Teacher and the transversal group above: those agents may not be top-level entries in [[Agent Flow]] at all, but components nested inside another agent's Skills/Tools layer.
+**Nem todo agente ganha um harness independente.** msilva (`[!msilva]` de
+2026-08-21): alguns dos 14 agentes talvez não precisem receber este template;
+podem ser chamados como Tool/Skill dentro do harness de um agente-pai, sem
+Trigger/Input/Output próprios. Isso confirma o sinal de “talvez seja só uma
+Skill” já presente no A4 Teacher e no grupo transversal: eles talvez não sejam
+entradas de primeiro nível em [[Agent Flow]], e sim componentes aninhados na
+camada Skills/Tools de outro agente.
 
-**Trigger Channel sits alongside, not in place of, the four entry channels.** msilva ([!msilva] callout, 2026-08-21): Trigger Channel (Slack, Webhook, Cron, etc.) is a separate axis from [[Agent Flow]]'s four entry channels (`Bug sistema` · `Bug manual` · `Tarefa` · `Consultoria`) — both coexist in the model rather than one replacing the other.
+**Trigger Channel convive com os quatro canais de entrada.** msilva
+(`[!msilva]` de 2026-08-21): Trigger Channel (Slack, Webhook, Cron etc.) é um
+eixo distinto dos quatro canais de entrada de [[Agent Flow]] (`Bug sistema` ·
+`Bug manual` · `Tarefa` · `Consultoria`); ambos coexistem no modelo.
 
-**Reforçado ao vivo, não só por escrito.** [[2026-08-26 1-1 Matheus - Luís (agentes A10-A14)]]: Luís levanta a mesma distinção trigger/input de novo, em conversa, especificamente sobre A10/A14 — não é um conceito isolado do Slack de 2026-08-21, é como ele pensa sobre agentes de forma consistente.
+**Reforçado ao vivo, não só por escrito.** Em [[2026-08-26 1-1 Matheus - Luís
+(agentes A10-A14)]], Luís retoma a distinção trigger/input especificamente
+sobre A10/A14. Não é um conceito isolado da mensagem de 2026-08-21, mas uma
+forma consistente de pensar os agentes.
 
-## Leituras externas relacionadas (ingeridas 2026-08-24)
+## Molde e instância
 
-Duas clippings do mesmo lote (`raw/Clippings/`, capturadas 2026-08-21) usam
-"harness" de formas complementares a este template, não idênticas:
+A conversa de msilva com Luís em 2026-09-01 acrescenta uma questão de produto:
+além de usar este template para descrever um agente, deveria existir um **molde
+reutilizável** a partir do qual novas instâncias de agentes possam ser criadas e
+configuradas. O desenho inicial, ainda não decidido, está em [[Como deve
+funcionar o molde de agente]].
 
-- [[Harness engineering for coding agent users]] (Böckeler/Martin Fowler) —
-  descreve o *ciclo de controle* (guias feedforward + sensores feedback,
-  computacional vs. inferencial), não a composição do harness. Sua categoria
-  "behaviour harness" — o comportamento funcional do sistema — é o problema
-  mais difícil de todos, segundo a autora, e é onde A7→A8→A9 (o pipeline de
-  projetos) realmente vive.
-- [[How to Build a Custom Agent Harness]] (Runkle/LangChain) — descreve
-  **como construir** um harness via middleware plugável.
-  `HumanInTheLoopMiddleware` e `SubAgentMiddleware` são infraestrutura já
-  nomeada para duas coisas que o desenho de 14 agentes ainda trata como
-  questão em aberto: onde ficam os gates humanos, e como A3/A9 criam
-  sub-agentes sob demanda.
+O molde não substitui este template: ele transforma a anatomia conceitual acima
+em um contrato configurável. A fronteira entre aquilo que pertence ao molde, à
+instância, à Soul e ao runtime ainda precisa ser fechada.
 
-Nenhuma das duas resolve qual substrato roda o Harness de Luís (Claude Agent
-SDK vs. LangChain `create_agent`) — ficam como vocabulário/comparação, não
-como resposta.
+## Leituras externas relacionadas (ingeridas em 2026-08-24)
 
-## Open questions
+Duas clippings do mesmo lote (`raw/Clippings/`, capturadas em 2026-08-21) usam
+“harness” de formas complementares a este template, não idênticas:
 
-- Which of the 14 agents are top-level (their own Trigger/Input/Harness/Output) vs. nested inside another agent's harness as a Tool/Skill — and for the nested ones, whose harness do they belong to? Not yet run past Luís.
+- [[Harness engineering for coding agent users]] (Böckeler/Martin Fowler)
+  descreve o *ciclo de controle* — guias feedforward + sensores feedback,
+  computacional vs. inferencial —, não a composição do harness. Sua categoria
+  “behaviour harness”, o comportamento funcional do sistema, é o problema mais
+  difícil e é onde A7→A8→A9 realmente vive.
+- [[How to Build a Custom Agent Harness]] (Runkle/LangChain) descreve **como
+  construir** um harness via middleware plugável. `HumanInTheLoopMiddleware` e
+  `SubAgentMiddleware` são infraestrutura já nomeada para duas perguntas ainda
+  abertas no desenho dos 14 agentes: onde ficam os gates humanos e como A3/A9
+  cria subagentes sob demanda.
+
+Nenhuma das duas resolve qual substrato roda o Harness de Luís — Claude Agent
+SDK ou LangChain `create_agent`. Servem como vocabulário e comparação, não como
+resposta.
+
+## Questões em aberto
+
+- Quais dos 14 agentes ficam no primeiro nível, com Trigger/Input/Harness/Output
+  próprios, e quais ficam aninhados como Tool/Skill no harness de outro agente?
+  Para os aninhados, a qual harness pertencem? Ainda não discutido com Luís.
+- Qual é a fronteira exata entre molde, instância, Soul e runtime? Ver [[Como
+  deve funcionar o molde de agente]].
