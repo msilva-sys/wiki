@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-31
+updated: 2026-09-01
 date: 2026-08-24
 decided_by: Matheus Silva
 source: "chat with Claude, 2026-08-24"
@@ -397,6 +397,48 @@ local + Vercel); promover a label `production` no Langfuse (sem isso a
 regra de anonimização/pergunta do A10 não entra em vigor, o cron
 continua lendo o prompt antigo); checar limite de cron do plano Vercel;
 testes (adiados pra depois da validação manual, decisão explícita).
+
+## Revertido 2026-09-01 — A10 para de comentar em issue, publica status update agregado
+
+Luís (relatado por msilva em chat, sem transcript): comentário automático do A10
+por issue **polui a issue**. Reverte só o "onde" da publicação do A10 decidida em
+"Proatividade decidida 2026-08-31" acima — gatilho (cron diário) e julgamento
+(critérios) continuam iguais; A14 (status update nativo de projeto) não muda,
+nunca foi alvo da reclamação.
+
+**Novo desenho**: A10 para de usar `commentCreate` por `(issue, critério)` e passa
+a usar `projectUpdateCreate` — a mesma mutation que o A14 já usa —, um post
+agregado por projeto por rodada, agrupado por critério, linkando cada issue em vez
+de comentar nela. Cooldown/dedupe continua por `(issue_id, criterio)`: só entram
+no digest as sugestões fora do cooldown de 7 dias; se nenhuma sugestão do projeto
+estiver fora do cooldown, nada é publicado naquela rodada (mesmo controle de ruído
+de antes, só que a decisão de publicar passa a ser por projeto, não por sugestão).
+
+**Implementado na mesma sessão** (`livemode-fluxo-agentico`): `linear_client.py`
+perde `create_comment`/`_COMMENT_CREATE_MUTATION` (órfã depois da troca);
+`create_project_update` passa a devolver `(id, url)` (faltava `url` na seleção).
+`a10/formatting.py` troca `format_suggestion_comment` por
+`format_portfolio_digest` (agrupa por critério, uma seção por critério, uma linha
+por issue). `a10/contracts.py` remove `comment_preview` (só existia pra montar o
+corpo do comentário individual, nunca era lido em nenhum outro lugar — nem no
+frontend, conferido por grep) e renomeia `posted_comment_url` →
+`posted_update_url`. `cron.py` troca o loop por-sugestão
+(`_publish_a10_suggestion`) por agrupamento por projeto
+(`_partition_a10_by_project` + `_publish_a10_project`); stats do cron renomeadas
+(`a10_comments_published`→`a10_suggestions_published` + novo
+`a10_digests_published`; `a10_failed_comments`→`a10_failed_suggestions`).
+Frontend (`a10-page.tsx`, `cron-run-summary.tsx`, `types.ts`) segue os mesmos
+renomes; rótulo "Comentário na issue" vira "Atualização do projeto". Tabela/coluna
+`a10_posted_comments`/`comment_url` no Postgres **não foram renomeadas** — ficou
+como detalhe interno de armazenamento (a coluna agora guarda a URL do status
+update, não de um comentário; documentado inline no código, não vale migração de
+schema só por nome). Testes (`test_agent.py`) e `npx tsc --noEmit` passam depois
+da mudança.
+
+**Ainda não commitado** — fica no working tree local do repo
+`livemode-fluxo-agentico` até msilva revisar e rodar contra o Linear de verdade
+(nenhuma execução real do novo `format_portfolio_digest`/`projectUpdateCreate`
+via A10 foi testada ainda).
 
 ## What this changes elsewhere
 

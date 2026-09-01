@@ -4964,3 +4964,25 @@ asked for both ingested directly.
 - New: `decisions/2026-09-01 Modelar SOUL em tabelas com composição plana.md`.
 - Updated: `concepts/Agent Harness Template.md`, `syntheses/Como deve funcionar
   o molde de agente.md`, `index.md`.
+
+## [2026-09-01] decision | A10 para de comentar em issue, publica status update agregado
+- Luís (relatado por msilva em chat): comentário automático do A10 por issue
+  polui a issue. Reverte só o "onde" da publicação decidida em 2026-08-31 —
+  gatilho (cron diário) e julgamento (critérios) continuam iguais; A14 (status
+  update nativo de projeto) não muda, nunca foi alvo da reclamação.
+- Novo desenho: A10 troca `commentCreate` por `(issue, critério)` por um post
+  agregado por projeto via `projectUpdateCreate` (mesma mutation que o A14 já
+  usa), agrupado por critério, linkando cada issue em vez de comentar nela.
+  Cooldown/dedupe de 7 dias continua por `(issue_id, criterio)`.
+- Implementado em `livemode-fluxo-agentico` na mesma sessão: `linear_client.py`
+  perde `create_comment`; `create_project_update` passa a devolver `(id, url)`;
+  `a10/formatting.py` ganha `format_portfolio_digest` (substitui
+  `format_suggestion_comment`); `cron.py` agrupa por projeto em vez de por
+  sugestão; stats renomeadas (`a10_comments_published` →
+  `a10_suggestions_published`/`a10_digests_published`); frontend
+  (`a10-page.tsx`, `cron-run-summary.tsx`, `types.ts`) segue o mesmo renome.
+  Tabela/coluna Postgres `a10_posted_comments`/`comment_url` mantidas por nome
+  (detalhe interno). Testes e `tsc --noEmit` passam; ainda não commitado no
+  repo, nem testado contra o Linear de verdade.
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC first.md`,
+  `projects/Agent Flow.md`.

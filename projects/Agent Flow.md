@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: research
-updated: 2026-08-31
+updated: 2026-09-01
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -200,6 +200,12 @@ tags: [agents, llm, automation, onboarding, research]
 > dedupe/cooldown no A10) virando requisito por causa do cron diário.
 > Handoff de implementação ficou só na conversa, por pedido de msilva —
 > não virou arquivo no repo.
+>
+> **Revertido 2026-09-01**: Luís reclamou que comentário automático por issue
+> polui a issue. A10 para de usar `commentCreate` e passa a publicar, como o
+> A14, um status update agregado por projeto (`projectUpdateCreate`) — mesmo
+> gatilho e julgamento, só o "onde" da publicação do A10 muda. Detalhe
+> completo na mesma seção da decisão.
 
 > [!tip] A10/A14 ganham acesso real ao GitHub — msilva, 2026-08-31
 > [[2026-08-31 A10 e A14 ganham acesso real ao GitHub]]: testando o A14 no
