@@ -4986,3 +4986,17 @@ asked for both ingested directly.
   repo, nem testado contra o Linear de verdade.
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC first.md`,
   `projects/Agent Flow.md`.
+
+## [2026-09-01] query | Replicar a camada de ontologia da Bossabox no Fluxo Agêntico
+- msilva perguntou como replicar a lógica de "camada de ontologia" (OS V2,
+  vocabulário comum tool-agnostic) a que a [[Bossabox Engagement]] chegou.
+- Resposta cruzou três peças já existentes no Fluxo Agêntico que são a mesma
+  lógica em miniatura — contrato/ports-and-adapters ([[Vocabulário do Fluxo
+  Agêntico]]), [[Agent Harness Template]], e o próprio [[Como deve funcionar
+  o molde de agente]] — contra duas lacunas reais: o mapeamento DTO≠domínio
+  só existe para o Linear, e "sinal"/"memória do sistema agêntico" não tem
+  dono.
+- Filed como seção nova em [[Como deve funcionar o molde de agente]] (a
+  pergunta já tinha lugar natural ali, entre as questões em aberto), não como
+  synthesis separada — reasoning curto o suficiente para caber na página-mãe.
+- Updated: `syntheses/Como deve funcionar o molde de agente.md`, `index.md`.
