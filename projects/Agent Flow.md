@@ -282,19 +282,30 @@ tags: [agents, llm, automation, onboarding, research]
 >   consultando o que A5/A10/A11/A12 já observaram) — segue sem dono,
 >   sem mudança aqui.
 
-> [!warning] Aberto — onde fica a fronteira PM vs. Portfolio? — Luís, 2026-09-02
+> [!tip] A10 para de expor detalhe de issue, encaminha pro A14 — Luís, 2026-09-02, implementado mesmo dia
 > [[2026-09-02 1-1 Matheus - Luís]]: Luís deu feedback sobre o dashboard de
 > portfólio do A10 (18 itens, critérios: item estagnado, gargalo de
 > capacidade, priorização desalinhada, escopo descontrolado) — **portfólio
 > não deveria descer a nível de tarefa**. Gestão de portfólio é visão
 > gerencial (métricas, o todo); gestão de produto é granular (nível de
 > tarefa e detalhe). Misturar os dois deixa os agentes "capengas," na palavra
-> dele. Saída do A14 (PM) já especificada por msilva; saída do A10
-> (Portfolio) ainda tem estrutura fixa só no próprio dashboard — capacidade
-> genérica de listar tarefas fica como evolução futura, não prioridade agora.
-> **Em aberto**: msilva pediu que Luís trouxesse fontes e argumentos
-> (inclusive resposta de IA "crua," sem viés) pra embasar essa fronteira
-> antes de fechar a direção de produto do A10/A14 — ainda não recebido.
+> dele.
+>
+> **Implementado e testado no mesmo dia**: digest publicado, dashboard e chat
+> do A10 pararam de expor issue específica — só agregado (contagem por
+> critério, tendência, concentração de carga); pergunta de issue específica
+> no chat é redirecionada pro A14. A leitura interna de issues cruas não
+> mudou, só o que é exposto. Detalhe completo, arquivos mexidos e teste ao
+> vivo do redirecionamento:
+> [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro A14]].
+>
+> **Nuance que essa implementação não fecha**: msilva ainda tinha pedido que
+> Luís trouxesse fontes e argumentos (inclusive resposta de IA "crua," sem
+> viés) pra embasar a fronteira PM vs. Portfolio antes de fechar a **direção
+> de produto** do A10/A14 — isso ainda não foi recebido. O que foi
+> implementado é a regra de interação mais estreita que Luís já tinha dado
+> como exemplo, não necessariamente a versão final e mais ampla da
+> fronteira.
 
 ## Philosophy and build strategy
 

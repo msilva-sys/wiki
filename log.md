@@ -5281,3 +5281,32 @@ asked for both ingested directly.
   opções de telemetria/SDK no "Questions still genuinely open"),
   `projects/Agent Flow.md` (callout novo sobre o debate PM vs. Portfolio),
   `people/Luís Fernandez.md` (nova linha de atividade), `index.md`.
+
+## [2026-09-02] decision | A10 para de expor detalhe de issue, encaminha pro A14
+
+Continuação, mesma sessão, do debate PM vs. Portfolio registrado no ingest
+acima. Discutido em chat com msilva até fechar o exemplo concreto de Luís
+("A10 olha o portfólio como um todo; detalhe de issue é com o A14") e
+implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
+`aa8d89a`), não só planejado.
+
+- Código: `a10/formatting.py` (digest conta por critério, não lista mais
+  issue por issue), `a10/contracts.py` (`A10PublicOutput`, sem
+  `suggestions`), `a10/api.py` (`/a10/run` devolve a forma pública),
+  `a10/tools.py` (`include_list_issues` → `include_issue_detail`, chat perde
+  tools de repo por issue), `a10/agent.py` (cache injetado no chat exclui
+  `suggestions`), `a10/seed_prompt.py` (regra de redirecionamento pro A14),
+  `frontend/src/pages/a10-page.tsx` + `overview-page.tsx` +
+  `frontend/src/api/types.ts` (tabela de issues removida do dashboard).
+- Testado ao vivo: subiu API+frontend locais, confirmou tabela sumida do
+  dashboard, publicou o prompt novo no Langfuse (label `development` —
+  `production` ainda pendente) e testou o chat conversando de verdade —
+  pergunta de issue específica foi redirecionada pro A14, pergunta agregada
+  respondeu normal. `eval_datasets.py` apareceu modificado no working tree
+  (processo dev já rodava antes da sessão, provavelmente outra janela de
+  msilva) — não tocado, deixado de fora do commit.
+- New: `decisions/2026-09-02 A10 para de expor detalhe de issue, encaminha
+  pro A14.md`.
+- Updated: `projects/Agent Flow.md` (callout de aberto → resolvido, linkando
+  a decisão), `people/Luís Fernandez.md` (fecho da linha de atividade),
+  `index.md`.

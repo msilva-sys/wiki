@@ -117,3 +117,7 @@ sometimes builds directly, otherwise supports.
   managerial/aggregate, product management is granular, and mixing the two
   makes the agents "capengas." Asked by msilva to bring sources and arguments
   (including unbiased "raw AI" input) before that product boundary is settled.
+  His narrower interaction rule — A10 never discusses a specific issue,
+  route those questions to A14 — was implemented and tested same day, see
+  [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro A14]]. The
+  broader boundary he was asked to argue for is still outstanding.
