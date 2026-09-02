@@ -5248,3 +5248,16 @@ asked for both ingested directly.
   sistema agêntico" corrigida — só a fatia de sinal entre agentes segue sem
   dono), `index.md`.
 - Updated: `syntheses/Como deve funcionar o molde de agente.md`, `index.md`.
+
+## [2026-09-02] refactor | Prep do 1:1 Matheus × Carol
+- msilva tem 1:1 hoje com Carol Bezerra (evento "Matheus x Carol", 15h). Achada
+  na DM do Slack a mensagem dela de 2026-08-28 pedindo os combinados do
+  onboarding em 4 categorias (em andamento/Setembro, não iniciado mas
+  prioridade, novo a cobrir, perdeu o sentido) mais feedback positivo/negativo
+  das primeiras semanas e do gerenciamento.
+- New: `meetings/Meeting prep - 1-1 Matheus - Carol - 2026-09-02.md` —
+  rascunho das 4 categorias puxado do estado atual de [[Airtable Proxy]] e
+  [[Agent Flow]] (índice já auditado no código nesta mesma sessão, ver entrada
+  acima). Seção de feedback deixada como prompts em aberto, não preenchida —
+  é reflexão do msilva, não algo a inventar.
+- Updated: `index.md`.
