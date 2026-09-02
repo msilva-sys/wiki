@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-09-01
+updated: 2026-09-02
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -10,6 +10,21 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 
 > Related: [[Proxy Environments]] · [[AIRTABLEGC-34]] · [[LiveScript]] ·
 > [[Airtable Rate Limits]] · [[Agent Flow]]
+
+> [!warning] Alvo de deploy reaberto para análise — 1:1 com Luís, 2026-09-02
+> [[2026-09-02 1-1 Matheus - Luís]]: Luís pediu uma análise crítica **VM vs.
+> Cloud Run** antes de seguir com o deploy em produção (`PRO-84`). Caminho
+> cogitado, sem análise de custo-benefício ainda: VM única (Grafana + banco +
+> proxy juntos) como primeiro passo, mais simples de operar mas mais chata de
+> manter; evoluir só se engargalar. Isso reabre
+> [[2026-08-21 Deploy Airtable Proxy privately behind VPN]], que este documento
+> trata abaixo como já decidido — **não é mais definitivo**. Mesma conversa:
+> Grafana hospedado entrou como opção pro backend de telemetria (ver "Questions
+> still genuinely open" abaixo), e o config de novas apps (env var com nome +
+> PAT, prefixado) segue como caminho prático, sem mudança à decisão de manter
+> secrets no código antes do Secret Manager
+> ([[2026-08-24 Manage Airtable Proxy secrets in the codebase before Secret
+> Manager]]).
 
 > [!tip] Current state, 2026-08-21
 > Path-based app identification is implemented and hardened in the repo. The
@@ -593,6 +608,13 @@ Most of my original "questions to ask" are already answered by the design doc.
 These remain open (design §14):
 
 - **Telemetry backend for prod** — Cloud Monitoring vs Datadog vs New Relic?
+  **2026-09-02**: Grafana hospedado (self-hosted, junto com uma VM que
+  hospedaria tudo) entrou como quarta opção — ver
+  [[2026-09-02 1-1 Matheus - Luís]]. msilva está aprofundando a análise de
+  custo Grafana vs. Cloud Monitoring especificamente ([PRO-87](https://linear.app/projetos-livemode/issue/PRO-87/apontar-otlp-para-backend-de-producao-sem-mudar-codigo-do-proxy)).
+- **Compatibilidade do proxy com SDKs fora do Node** (ex.: Python) — alerta
+  levantado 2026-09-02, ainda não verificado. Rastreado em
+  [PRO-518](https://linear.app/projetos-livemode/issue/PRO-518/verificar-se-o-proxy-funciona-com-sdks-fora-do-node-ex-python).
 - **Retain queryable raw records for usage analysis?** (Log Analytics / BigQuery
   / SaaS query language) — cheap to decide now, hard to backfill later.
 - **Caching freshness tolerance** per table/operation — still the right question,

@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-25
+updated: 2026-09-02
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
@@ -108,3 +108,12 @@ sometimes builds directly, otherwise supports.
   hold if the agent needs to be conversational (Slack, internal chat,
   Telegram)? Also: general feedback that the process is going well, and that
   the intensity of his corrections is part of the process, not a bad sign.
+- **Reopened the proxy's deploy target and the telemetry backend, 2026-09-02**
+  ([[2026-09-02 1-1 Matheus - Luís]]): asked msilva for a critical VM-vs-Cloud-Run
+  analysis before proceeding with the already-in-progress Cloud Run deploy
+  (`PRO-84`), and to deepen the cost analysis between self-hosted Grafana and
+  Cloud Monitoring (`PRO-87`). Same conversation: pushed back on the A10
+  Portfolio dashboard descending to task-level detail — portfolio is
+  managerial/aggregate, product management is granular, and mixing the two
+  makes the agents "capengas." Asked by msilva to bring sources and arguments
+  (including unbiased "raw AI" input) before that product boundary is settled.

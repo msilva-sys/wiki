@@ -1,7 +1,7 @@
 ---
 type: decision
 status: stable
-updated: 2026-08-24
+updated: 2026-09-02
 date: 2026-08-21
 decided_by: Matheus Silva
 source: "Planning discussion with msilva, 2026-08-21"
@@ -10,6 +10,15 @@ aliases: [private Airtable Proxy infrastructure, proxy.livemode.space]
 ---
 
 # Deploy Airtable Proxy privately behind VPN
+
+> [!warning] Reaberto para análise, 2026-09-02 — não mais tratar como definitivo
+> [[2026-09-02 1-1 Matheus - Luís]]: Luís pediu que msilva trouxesse uma
+> análise crítica **VM vs. Cloud Run** para o deploy do proxy antes de seguir
+> com a implementação atual (`PRO-84`). Caminho cogitado na conversa, ainda
+> sem análise de custo-benefício: VM única (Grafana + banco + proxy juntos)
+> como primeiro passo, evoluindo só se engargalar. Esta página descreve o
+> alvo Cloud Run como já decidido — isso está em reavaliação, não confirmado
+> nem descartado.
 
 **Decision.** [[Airtable Proxy]] will be deployed as a private service reachable
 through Livemode's VPN at `https://proxy.livemode.space`. The VPN/network is the

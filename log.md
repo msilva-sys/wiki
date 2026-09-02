@@ -5261,3 +5261,23 @@ asked for both ingested directly.
   acima). Seção de feedback deixada como prompts em aberto, não preenchida —
   é reflexão do msilva, não algo a inventar.
 - Updated: `index.md`.
+
+## [2026-09-02] ingest | 1:1 Matheus - Luís (Granola)
+- Ingerido `https://notes.granola.ai/t/1507add0-8198-46aa-bbe2-009dc860a684-009c2hma`
+  (data confirmada via metadata `og:image` da própria página: 2026-09-02).
+  Notas estruturadas do Granola, sem transcrição verbatim.
+- Correção de atribuição feita por msilva ao revisar: as notas descreviam os
+  dois primeiros itens de "próximos passos" como tarefas do Luís; na real,
+  foi Luís quem pediu que msilva fizesse essas análises.
+- Linear: novos comentários em `PRO-84` (Deploy em produção Cloud Run — VM
+  vs. Cloud Run reaberto) e `PRO-87` (backend de telemetria — Grafana
+  hospedado vs. Cloud Monitoring); nova issue
+  [PRO-518](https://linear.app/projetos-livemode/issue/PRO-518/verificar-se-o-proxy-funciona-com-sdks-fora-do-node-ex-python)
+  pra compatibilidade do proxy com SDKs fora do Node (Task, time
+  Projetos-livemode, projeto Proxy do Airtable, atribuída a msilva).
+- New: `meetings/2026-09-02 1-1 Matheus - Luís.md`.
+- Updated: `decisions/2026-08-21 Deploy Airtable Proxy privately behind VPN.md`
+  (callout de reabertura), `projects/Airtable Proxy.md` (callout de topo +
+  opções de telemetria/SDK no "Questions still genuinely open"),
+  `projects/Agent Flow.md` (callout novo sobre o debate PM vs. Portfolio),
+  `people/Luís Fernandez.md` (nova linha de atividade), `index.md`.
