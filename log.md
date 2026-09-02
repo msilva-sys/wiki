@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-09-01
+updated: 2026-09-02
 
 
 ---
@@ -5218,4 +5218,33 @@ asked for both ingested directly.
   compartilham a metodologia de estruturação de demanda (não confirmado com
   Luís); se vale migrar `CLOSED_STATE_TYPES` pra campo computado agora ou só
   quando uma segunda fonte de tickets entrar.
+
+## [2026-09-02] ingest | Estado real de A10/A14, auditado direto no repo `livemode-fluxo-agentico`
+- msilva perguntou "como está a arquitetura dos agentes A10 e A14?" e depois
+  pediu explicitamente pra buscar no código, não só na wiki. Lido o repo
+  (`C:\Users\msilva\projects\livemode-fluxo-agentico`, branch `langgraph`):
+  `domain.py`, `linear_adapter.py`, `a10/`+`a14/` (`contracts.py`,
+  `agent.py`, `rules.py`), `soul/` (`contracts.py`, `render.py`, `store.py`,
+  `api.py`), `db.py`, `gateway.py`, `cron.py`, `HANDOFF.md`, `git log`.
+- Achado central: o código está bem à frente do último ponto que a wiki
+  registrava (SOUL "desenhada, não implementada", 2026-09-01). Nenhuma
+  síntese ou decisão cobria: SOUL em produção com dashboard admin e trava de
+  confirmação pra `production` (histórico de promoção com rollback);
+  anticorruption layer formalizada (`domain.py`+`linear_adapter.py`, mais
+  explícita do que a Lacuna 1 tinha auditado); chat com memória real via
+  `PostgresSaver` pros dois agentes (não estava previsto — virou dashboard
+  interativo, não só CLI/relatório); troca de modelo pra `gpt-5.6-luna` via
+  API Responses; digest por projeto do A10 confirmado publicando de verdade
+  (`cron.py`), não só decidido; harness de avaliação real no Langfuse
+  (Datasets/Experiments, `soul/eval_*.py`).
+- Sem `[!msilva]` callouts pendentes encontrados na varredura inicial desta
+  sessão (os 4 hits de `[!msilva]` no vault continuam sendo citações de
+  callouts já resolvidos e apagados, mesmo achado do lint de 2026-09-01).
+- Updated: `decisions/2026-09-01 Modelar SOUL em tabelas com composição
+  plana.md` (seção "Implementação" nova, itens de "Consequências e questões
+  restantes" resolvidos), `projects/Agent Flow.md` (callout novo),
+  `concepts/Vocabulário do Fluxo Agêntico.md` (termos SOUL/fragment/profile/
+  promoção adicionados ao glossário; open question sobre "memória do
+  sistema agêntico" corrigida — só a fatia de sinal entre agentes segue sem
+  dono), `index.md`.
 - Updated: `syntheses/Como deve funcionar o molde de agente.md`, `index.md`.

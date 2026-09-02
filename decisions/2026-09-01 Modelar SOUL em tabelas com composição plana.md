@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-09-01
+updated: 2026-09-02
 date: 2026-09-01
 aliases: [SOUL relacional, soul_versions, soul_composition]
 tags: [agent-flow, agents, soul, database, composition]
@@ -107,16 +107,64 @@ composição num array ou JSON.
 
 ## Consequências e questões restantes
 
-- O dashboard precisa permitir escolher fragments, ordenar a composição,
-  editar o texto específico do profile e visualizar a SOUL efetiva.
-- Ainda falta decidir a tecnologia concreta do banco e onde o renderer roda.
-- Ainda falta definir como uma versão é promovida para uso por um agente.
+- ~~O dashboard precisa permitir escolher fragments, ordenar a composição,
+  editar o texto específico do profile e visualizar a SOUL efetiva.~~
+  **Implementado** — ver seção abaixo.
+- ~~Ainda falta decidir a tecnologia concreta do banco e onde o renderer
+  roda.~~ **Resolvido**: Postgres (`POSTGRES_URL_NON_POOLING`), mesmo banco
+  do checkpointer de chat (`langgraph.checkpoint.postgres.PostgresSaver`);
+  renderer roda dentro do próprio backend FastAPI (`soul/render.py`),
+  chamado pelos agentes em runtime, não um serviço separado.
+- ~~Ainda falta definir como uma versão é promovida para uso por um
+  agente.~~ **Resolvido**: `soul/store.py::promote()`. Ver seção abaixo.
 - Ainda falta decidir quais fragments iniciais existirão e escrever seu
-  conteúdo real.
-- A eventual aplicação em A10/A14 é trabalho futuro, não parte desta decisão.
+  conteúdo real — `soul/seed.py` semeia um bootstrap idempotente em
+  `development` (não decide o conteúdo definitivo de produção).
+- ~~A eventual aplicação em A10/A14 é trabalho futuro, não parte desta
+  decisão.~~ **Feito**: `a10/agent.py` e `a14/agent.py` chamam
+  `load_active_soul(agent_key, environment)` e compõem `<soul>`+`<task>`
+  antes de cada invocação (analítica e de chat).
+
+## Implementação — auditada diretamente no código, 2026-09-02
+
+Não fazia parte desta decisão original; registrado aqui porque é o
+desdobramento direto dela, achado revisando o repo `livemode-fluxo-agentico`
+(branch `langgraph`) a pedido de msilva, sem sessão de chat própria — ver
+[[Agent Flow]] pro callout equivalente na página-mãe.
+
+- **Schema V1 saiu como desenhado**, com reforços que a decisão não
+  antecipava: `soul_versions` é imutável por **trigger de banco**
+  (`soul_versions_no_update`, não só convenção de código); `soul_composition`
+  e `soul_bindings` têm **trigger de checagem de `kind`** (profile só compõe
+  fragment, binding só aponta pra profile) — a integridade referencial que a
+  decisão descrevia em prosa virou constraint de banco.
+- **`soul_composition_set`** — tabela adicional não prevista aqui: marca uma
+  composição como finalizada mesmo quando vazia, distinguindo "nunca
+  configurada" de "configurada sem fragments". Um profile só pode ser
+  promovido depois de finalizado — impede mutar a composição de uma SOUL já
+  ativa por baixo dos panos.
+- **Dashboard existe** (`frontend/src/pages/soul-page.tsx` + `soul/api.py`),
+  atrás do mesmo login `@livemode.com` do resto do produto
+  (`auth_gate.py`). Leitura (`list_versions`, `get_composition`,
+  `list_bindings`, `preview`) exige só sessão; escrita (`create_version`,
+  `set_composition`, `promote`) exige `require_admin`.
+- **Promoção** (`soul/store.py::promote`) troca o binding ativo e grava uma
+  linha em `soul_promotions` (quem, quando, versão anterior/nova) — rollback
+  é o mesmo endpoint apontando pra uma versão anterior, não uma operação
+  separada. Promover para `environment="production"` exige
+  `confirm_production=true` explícito no request — trava que a decisão
+  original não previa.
+- **Runtime**: `compose_system_prompt` (`soul/render.py`) junta `<soul>` (a
+  SOUL efetiva) com `<task>` (o prompt do Langfuse) em texto simples, com
+  precedência explícita documentada em docstring — guardrails de código
+  sempre vencem, a SOUL só governa tom/postura, nunca os critérios da tarefa.
+  Cada trace do Langfuse carrega `soul_profile`/`soul_profile_version`/
+  `soul_fragment_versions` como metadata, cumprindo o requisito de
+  observabilidade que a decisão original já pedia.
 
 ## Relacionado
 
 - [[Como deve funcionar o molde de agente]]
 - [[Agent Harness Template]]
 - [[Desenho do agente LangGraph para A10+A14]]
+- [[Agent Flow]]

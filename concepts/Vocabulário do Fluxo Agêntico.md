@@ -1,8 +1,8 @@
 ---
 type: concept
 status: active
-updated: 2026-08-28
-aliases: [glossário do Fluxo Agêntico, sinal, contrato de agente, ticket graph, gateway]
+updated: 2026-09-02
+aliases: [glossário do Fluxo Agêntico, sinal, contrato de agente, ticket graph, gateway, soul, profile, fragment]
 tags: [agents, agent-flow, vocabulary, architecture]
 ---
 
@@ -59,6 +59,19 @@ explícita em vários lugares ao mesmo tempo.
 - **Contrato** — a especificação Entrada→Saída de um agente. Regra
   central: definido por **formato**, nunca por **quem chama** — "vem do
   A8" não é contrato, é nota de uso típico.
+- **SOUL** — fonte comportamental de um agente, independente do prompt de
+  tarefa (que continua vivendo no Langfuse). Não é "sinal" nem "memória do
+  sistema agêntico" no sentido em aberto abaixo — é config de como o agente
+  se porta entre tarefas/canais, versionada e implementada em A10/A14. Ver
+  [[2026-09-01 Modelar SOUL em tabelas com composição plana]].
+- **Fragment / Profile** — vocabulário interno da SOUL. Fragment é um
+  bloco de comportamento reutilizável (ex. um tom, uma postura); profile é
+  a composição ordenada de fragments + texto próprio que um agente de fato
+  usa. Um agente aponta pra uma versão exata de um profile, nunca "pro
+  profile" em geral.
+- **Promoção** — trocar qual versão de profile está ativa pra um
+  `agent_key`+`environment`; é também o mecanismo de rollback (promover de
+  volta uma versão anterior), não uma operação separada.
 
 ## Como isso se relaciona com o vocabulário de nomes de projeto
 
@@ -79,8 +92,12 @@ Agentes").
 
 ## Open questions
 
-- "Sinal" e "memória do sistema agêntico" ainda não foram desenhados a
-  fundo — onde essa memória mora, como é indexada/buscada. Mesma lacuna já
-  registrada em [[Agent Flow]] (Luís, 2026-08-20: organizar memória bem é
-  "talvez a coisa mais importante do projeto todo", mas ninguém é dono
-  disso ainda).
+- "Sinal" e a **acumulação de sinal entre agentes diferentes** (A7
+  consultando o que A5/A10/A11/A12 já observaram, sem refazer discovery do
+  zero) ainda não foram desenhados a fundo — onde essa memória mora, como é
+  indexada/buscada. Mesma lacuna registrada em [[Agent Flow]] (Luís,
+  2026-08-20), ainda sem dono. **Corrigido, auditado no código, 2026-09-02**:
+  isso não é mais toda a "memória do sistema agêntico" em aberto — SOUL
+  (memória comportamental/config) e a memória de domínio por agente
+  (snapshot do A14, histórico do A10) já existem e estão implementadas; só
+  a acumulação de sinal *entre* agentes segue sem desenho.

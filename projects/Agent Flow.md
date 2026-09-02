@@ -244,6 +244,44 @@ tags: [agents, llm, automation, onboarding, research]
 > resto do dado do GitHub (arquivos, commits) fica cru de propósito — é
 > "sinal" pro LLM, não domínio.
 
+> [!tip] Estado real do código auditado direto no repo, bem à frente do que a wiki registrava — 2026-09-02
+> msilva pediu uma leitura do repo `livemode-fluxo-agentico` (branch
+> `langgraph`) pra responder "como está a arquitetura de A10/A14" — achado:
+> o código está bem além do último ponto registrado aqui (SOUL "desenhada,
+> não implementada", 2026-09-01). Direto do código, não de conversa:
+>
+> - **SOUL em produção**, com dashboard admin e trava de confirmação
+>   explícita pra promover em `production` — ver
+>   [[2026-09-01 Modelar SOUL em tabelas com composição plana]] (seção
+>   "Implementação" adicionada nesta mesma auditoria).
+> - **Anticorruption layer mais avançada que a Lacuna 1 sugeria**:
+>   `domain.py` (vocabulário puro: `Issue`/`Project`/`Milestone`) +
+>   `linear_adapter.py` (único tradutor `linear_client.py` → domínio) —
+>   `a10/rules.py`/`a14/rules.py` não conhecem mais o shape do Linear.
+> - **Chat com memória real** — `chat_a10`/`chat_a14` usam
+>   `PostgresSaver` (checkpointer do LangGraph) com `thread_id` por
+>   conversa, expostos no frontend (`chat-panel.tsx`). Isso não era
+>   necessidade prevista no desenho original ("CLI single-shot, sem
+>   thread_id") — virou produto (dashboard interativo), não só relatório.
+> - **Modelo trocado para `gpt-5.6-luna`** via API Responses
+>   (`ChatOpenAI(..., use_responses_api=True)`), não mais `gpt-5.4` — não
+>   documentado em nenhuma síntese existente.
+> - **Digest por projeto do A10 confirmado implementado**, não só
+>   decidido: `cron.py::_publish_a10_project` publica um
+>   `projectUpdateCreate` agregado por projeto, com dedupe e cooldown de
+>   7 dias via `a10/memory.py` — bate com o "Revertido 2026-09-01" acima.
+> - **Harness de avaliação real**: `soul/eval_datasets.py` +
+>   `soul/eval_experiment.py`, Langfuse Datasets/Experiments — não
+>   registrado em nenhuma síntese.
+> - **Parcialmente resolve a lacuna de "memória do sistema agêntico"**
+>   nomeada em [[Vocabulário do Fluxo Agêntico]] (Luís, 2026-08-20) — mas
+>   só a fatia de **memória comportamental/config** (SOUL: como o agente
+>   se porta) e **memória de domínio entre execuções** (snapshot do
+>   último relatório do A14, histórico de sugestões do A10). A fatia que
+>   ainda falta — **acumular "sinal" entre agentes diferentes** (A7
+>   consultando o que A5/A10/A11/A12 já observaram) — segue sem dono,
+>   sem mudança aqui.
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides
