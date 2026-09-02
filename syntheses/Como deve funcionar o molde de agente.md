@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-09-01
+updated: 2026-09-02
 date: 2026-09-01
 aliases: [molde de agente, agent blueprint, agent template configurável]
 tags: [agent-flow, agents, harness, soul, configuration]
@@ -161,12 +161,18 @@ ontologia, não só contratos de agente:**
 
 **Caminho prático de replicar, ainda não decidido com Luís:**
 
-- Quando o molde for fechado, garantir que ele carregue não só o contrato
+- ~~Quando o molde for fechado, garantir que ele carregue não só o contrato
   comportamental do agente, mas também um vocabulário de domínio
   compartilhado — hoje não está claro se essas são a mesma peça ou duas
-  questões distintas sendo tratadas como uma.
+  questões distintas sendo tratadas como uma.~~ **Resolvido em 2026-09-02**,
+  ver seção "Vocabulário de domínio: três camadas separadas" abaixo — molde
+  (contrato comportamental) e vocabulário/processo de domínio são eixos
+  diferentes; nenhum dos dois vive dentro do outro.
 - Estender o padrão DTO-vs-domínio do `linear_client.py` para os demais
-  sistemas de registro conforme forem entrando.
+  sistemas de registro conforme forem entrando — **confirmado dormente em
+  2026-09-02**: hoje não existe um segundo sistema de registro real (a
+  auditoria da Lacuna 1 já havia achado isso pro GitHub); nada a estender até
+  um aparecer de fato.
 - Dar dono explícito à "memória do sistema agêntico" — a lacuna que mais se
   parece com o que falta para replicar a lógica da Bossabox, mais do que os
   contratos por agente (que já andam bem).
@@ -263,6 +269,71 @@ A14. Ainda não desenhado — mesmas questões em aberto abaixo: se o molde
 carrega esse vocabulário compartilhado ou se é camada separada da ontologia
 do agente.
 
+## Vocabulário de domínio: três camadas separadas — msilva, 2026-09-02
+
+Discussão em chat resolve a questão em aberto deixada pela generalização
+acima ("o molde carrega o vocabulário compartilhado, ou é camada separada?")
+— e no processo revela que "vocabulário de domínio" vinha cobrindo duas
+coisas diferentes sob um nome só, o que travava a resposta.
+
+**1. Molde (contrato comportamental) e vocabulário/processo de domínio são
+eixos diferentes.** O molde é sobre *como um agente opera* — Trigger/Trigger
+Channel → Input → Harness → Output, invariantes por instância. Vocabulário de
+domínio é sobre *o que as coisas significam*, independente de qual agente
+consome — mais parecido com um módulo compartilhado (`domain/`, no sentido de
+`linear_client.py` hoje) do que com um campo dentro do contrato de uma
+instância. Colocar vocabulário dentro do molde faria cada instância carregar
+sua própria cópia da ontologia, repetindo o problema que a Lacuna 1 já
+resolveu pro GitHub (não tipar o que é sinal).
+
+**2. "Vocabulário de domínio" partido em duas peças que precisam de solução
+diferente:**
+
+- **Semântica mecânica de campo** — o que `Issue`, `state_type`, `Milestone`
+  significam estruturalmente. **Não precisa de fragment nem skill dedicados**
+  se o agente recebe o adapter como uma **Tool**: o próprio schema da tool
+  (nomes de parâmetro, tipos, descriptions) já entrega esse vocabulário ao
+  modelo via tool-calling, sem duplicar em prosa em outro lugar. Regra de
+  negócio hoje escondida em código — `a10/tools.py`:
+  `CLOSED_STATE_TYPES = {"completed", "canceled", "duplicate"}` — deveria
+  idealmente virar **campo computado no próprio tipo** (ex.: `Issue.is_closed:
+  bool`) em vez de exigir um texto à parte explicando a regra: uma fonte só
+  (o tipo/adapter), sem risco de duas fontes divergirem.
+- **Metodologia de estruturação de demanda** — como decompor uma demanda em
+  project/milestones/issues, que forma um bom issue deve ter, que critérios
+  usar. **Isso não é redutível a um campo de tipo** e precisa mesmo de um
+  fragment (ou skill, dependendo de tamanho/frequência) — é a parte que
+  msilva queria dizer com "vocabulário de domínio" desde o início do
+  exemplo original (mandar ao A14 um arquivo de projeto e o agente gerar
+  toda a configuração). Ponto central, confirmado por msilva: essa camada é
+  **deliberadamente independente de qualquer adapter** — o agente estrutura a
+  demanda inteira em vocabulário interno antes de, e sem depender de, qual
+  adapter vai escrever o resultado depois. Mesma separação ports-and-adapters
+  aplicada à lógica de domínio em si: se o conteúdo de um fragment só faz
+  sentido no contexto de uma ferramenta específica, é vocabulário vazado, não
+  metodologia. Candidato natural a **fragment compartilhado** entre agentes
+  que estruturam demanda (A7 Discovery, A14, possivelmente A2 Classificador)
+  — `soul_composition` já suporta reuso de um mesmo fragment em múltiplos
+  profiles, sem trabalho de infra novo; decisão de compartilhar fica por
+  fragment, não é regra fixa. O "ticket template" de [[Gabriel Packer -
+  DAG-driven agent orchestration]] (escopo, critério de aceite, `blockedBy`,
+  rollout/kill switch) é candidato a base concreta pro conteúdo desse
+  fragment.
+
+**Critério pra escolher fragment vs. skill**, aplicável a qualquer conteúdo
+dessa segunda categoria: sempre relevante e pequeno → fragment (composto
+sempre, custo desprezível); às vezes relevante ou grande → skill (carregada
+só quando a tarefa pede — mesmo lever de narrow fetching já validado no A10,
+ver [[Agent Flow]]).
+
+**Nome a evitar**: "vocabulário de domínio" sozinho é ambíguo o bastante pra
+ter travado esta própria discussão — cobre tanto semântica de campo (resolvida
+por tooling) quanto metodologia de processo (que precisa de fragment). Ao
+nomear esse fragment/skill concretamente, preferir algo como
+"metodologia de estruturação de demanda" ou equivalente, não "vocabulário",
+para não recriar a mesma colisão — mesmo cuidado já aplicado ao nome do
+projeto em [[Vocabulário do Fluxo Agêntico]].
+
 ## Questões em aberto
 
 - Qual problema concreto o molde precisa resolver primeiro: criação de novos
@@ -278,6 +349,17 @@ do agente.
   observável?~~ **Parcialmente respondida em 2026-09-01:** o V1 abandona
   atributos estruturados em favor de texto direto, composição plana e versões
   rastreáveis; o conteúdo real dos fragments ainda precisa ser definido.
-- **Novo, 2026-09-01**: o molde deve incluir vocabulário de domínio
-  compartilhado entre sistemas de registro (Linear, GitHub, futuros), ou essa
-  é uma camada separada da ontologia do agente em si? Ver seção acima.
+- ~~O molde deve incluir vocabulário de domínio compartilhado entre sistemas
+  de registro (Linear, GitHub, futuros), ou essa é uma camada separada da
+  ontologia do agente em si?~~ **Resolvido em 2026-09-02** — ver seção acima:
+  camada separada, e partida em duas peças (semântica mecânica via adapter/
+  tool schema; metodologia de processo via fragment/skill).
+- **Novo, 2026-09-02**: quais agentes de fato compartilham a mesma metodologia
+  de estruturação de demanda (A7, A14, A2?) — ainda não confirmado com Luís
+  nem testado contra os specs reais de cada um.
+- **Novo, 2026-09-02**: vale a pena migrar `CLOSED_STATE_TYPES` (e regras
+  hardcoded parecidas) de constante Python pra campo computado no tipo
+  (`Issue.is_closed`) agora, ou só quando um segundo sistema de tickets
+  entrar e a regra precisar variar por fonte? Não decidido — ver a nota
+  equivalente na auditoria da Lacuna 1 acima ("só vira problema se uma
+  segunda fonte entrar com categorias diferentes").

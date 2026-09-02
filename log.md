@@ -5178,3 +5178,44 @@ asked for both ingested directly.
   desenhada com Luís. Sem decisão tomada; registrado como refinamento.
 - Updated: `syntheses/Como deve funcionar o molde de agente.md`,
   `index.md`.
+
+## [2026-09-02] synthesis | Vocabulário de domínio partido em três camadas
+- Discussão em chat, puxada por msilva questionando os próximos passos do
+  Agent Flow, resolve a questão em aberto que a generalização de 2026-09-01
+  ("adapters também na escrita") tinha deixado pendente: o molde carrega o
+  vocabulário de domínio compartilhado, ou é camada separada?
+- **Resolvido**: molde (contrato comportamental — Trigger/Input/Harness/
+  Output, invariantes por instância) e vocabulário de domínio são eixos
+  diferentes; nenhum vive dentro do outro.
+- **"Vocabulário de domínio" estava cobrindo duas coisas sob um nome só**,
+  travando a resposta — partido em chat, com msilva testando e corrigindo
+  cada hipótese:
+  1. Semântica mecânica de campo (o que `Issue`/`state_type` significam) —
+     **não precisa de fragment nem skill dedicados** se o adapter for
+     exposto como Tool: o schema da tool (nomes, tipos, descriptions) já
+     entrega o vocabulário ao modelo via tool-calling. Regra de negócio hoje
+     hardcoded (`a10/tools.py: CLOSED_STATE_TYPES`) deveria idealmente virar
+     campo computado no tipo (`Issue.is_closed`) em vez de exigir texto à
+     parte — uma fonte só, sem risco de divergência.
+  2. Metodologia de estruturação de demanda (como decompor em project/
+     milestones/issues) — **essa sim precisa de fragment/skill**, e
+     msilva confirmou o ponto chave: deliberadamente **independente de
+     qualquer adapter**, mesma separação ports-and-adapters aplicada à
+     lógica de domínio em si. Candidata a fragment compartilhado entre
+     agentes que estruturam demanda (A7, A14, possivelmente A2) —
+     `soul_composition` já suporta reuso n:n de um fragment entre profiles,
+     sem infra nova; msilva confirmou que fragments compartilhados são
+     aceitáveis quando fizer sentido, não é regra fixa contra
+     compartilhamento.
+- Critério geral registrado pra fragment-vs-skill: sempre relevante e
+  pequeno → fragment; às vezes relevante ou grande → skill (mesmo lever de
+  narrow fetching já validado no A10).
+- Confirmado, de passagem: hoje não existe segundo sistema de registro além
+  do Linear — o item "estender DTO-vs-domínio pros demais sistemas" (do
+  "Caminho prático" registrado em 2026-09-01) fica dormente até um aparecer
+  de fato.
+- Duas novas questões em aberto registradas na página: quais agentes de fato
+  compartilham a metodologia de estruturação de demanda (não confirmado com
+  Luís); se vale migrar `CLOSED_STATE_TYPES` pra campo computado agora ou só
+  quando uma segunda fonte de tickets entrar.
+- Updated: `syntheses/Como deve funcionar o molde de agente.md`, `index.md`.
