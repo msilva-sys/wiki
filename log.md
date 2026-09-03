@@ -5337,6 +5337,39 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC first.md`
   — dois callouts novos com os achados.
 
+## [2026-09-03] decision | Cron do A10/A14 falhava em silêncio quando o Postgres caía — achado, corrigido e validado
+- Origem: msilva reportou um erro de login pontual (`auth_gate.py`, loop
+  reproduzível de 5 tentativas, autorresolvido, causa não confirmada).
+  Investigando os logs da Vercel no caminho, achado algo mais sério: o cron
+  diário das 07:00 UTC de hoje tinha falhado de verdade —
+  `psycopg.errors.ConnectionTimeout` contra o Postgres (Supabase) derrubava
+  o app inteiro no lifespan (`init_db()` sem try/except, sem
+  `connect_timeout` explícito) — nenhum digest publicado, nenhum rastro
+  além dos logs brutos (o histórico do dashboard também depende do
+  Postgres).
+- Causa raiz (fundamentada no código, não confirmada do lado do Supabase):
+  sem timeout de conexão; `init_db()` roda toda a migração (DDL completo +
+  setup do PostgresSaver + seed da SOUL) em todo cold start, não só na
+  primeira vez; region mismatch (function em `iad1`, pooler em
+  `sa-east-1`).
+- Corrigido (commit `9587d9a`, branch `langgraph`, local): `db.py` ganha
+  `connect_timeout=10`; `gateway.py` não derruba mais o app se `init_db()`
+  falhar (`app.state.db_ready`/`db_error`); `cron.py::run_all()` confere
+  `db_ready` e publica um alerta no Linear (`offTrack`, projeto Fluxo
+  Agêntico, que posta automático no Slack) em vez de falhar em silêncio —
+  qualquer exceção inesperada durante a execução real também dispara o
+  mesmo alerta.
+- Validado: `test_cron.py` ganha 2 testes novos (5/5 + `test_auth_gate.py`
+  3/3 passam); timeout medido em 10.0s exatos contra host inalcançável,
+  mesma classe de erro da produção; app local sobrevivendo a DB quebrado
+  com `/api/auth/login` funcionando; teste ao vivo publicando o alerta real
+  no Linear, confirmado por query direta na API e visível no Slack do
+  time. **Decisão explícita de msilva**: não postar esclarecimento de que
+  o alerta real era um teste.
+- New: `decisions/2026-09-03 Cron do A10-A14 parava em silêncio quando o
+  Postgres caía.md`.
+- Updated: `projects/Agent Flow.md` (callout novo), `index.md`.
+
 ## [2026-09-03] query | PRO-518, compatibilidade do proxy com SDKs Python
 - Pesquisado (docs + código-fonte) se `pyairtable` — sucessor mantido do
   antigo `airtable-python-wrapper`, mesmo projeto renomeado na v1.0.0 —

@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: build
-updated: 2026-09-02
+updated: 2026-09-03
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -306,6 +306,20 @@ tags: [agents, llm, automation, onboarding, research]
 > implementado é a regra de interação mais estreita que Luís já tinha dado
 > como exemplo, não necessariamente a versão final e mais ampla da
 > fronteira.
+
+> [!danger] Cron falhava em silêncio quando o Postgres caía — achado e corrigido, 2026-09-03
+> [[2026-09-03 Cron do A10-A14 parava em silêncio quando o Postgres caía]]:
+> investigando um erro de login pontual, achado que **o cron das 07:00 UTC
+> desse dia tinha falhado de verdade** — `ConnectionTimeout` contra o
+> Postgres (Supabase) derrubava o app inteiro na inicialização, sem publicar
+> nenhum digest e sem deixar rastro nenhum além dos logs brutos da Vercel
+> (o próprio histórico do dashboard depende do Postgres). Corrigido:
+> timeout de conexão explícito (10s), o app não cai mais inteiro se o DB
+> falhar, e o cron agora publica um alerta no Linear (visível no Slack) em
+> vez de morrer em silêncio. Validado com unit tests, um teste de timeout
+> isolado e um teste ao vivo que publicou o alerta real. Commit `9587d9a`
+> na branch `langgraph`, ainda local. Fecha o "gap de silêncio" apontado nas
+> pendências de [[2026-08-24 Build A10 and A14 together, PoC first]].
 
 ## Philosophy and build strategy
 
