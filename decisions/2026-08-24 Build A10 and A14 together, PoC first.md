@@ -406,7 +406,7 @@ testes (adiados pra depois da validação manual, decisão explícita).
 > pendências desta lista: label `production` no Langfuse e o limite de
 > cron do plano Vercel.
 
-> [!warning] Label `production` no Langfuse — ainda pendente, confirmado 2026-09-03 direto na API
+> [!warning] Label `production` no Langfuse — estava pendente, confirmado 2026-09-03 direto na API
 > Query ao vivo em `api/public/v2/prompts/<nome>` (usando as credenciais do
 > `.env`) pros dois prompts:
 > - `a10-portfolio`: label `production` aponta pra **versão 3**; `development`/
@@ -422,6 +422,11 @@ testes (adiados pra depois da validação manual, decisão explícita).
 > A14]] (redirecionamento pro A14), que só existe na versão de
 > desenvolvimento. Promover o label é uma ação manual no dashboard do
 > Langfuse (ou via API) — ainda não feita.
+>
+> **Resolvido, mesmo dia**: msilva promoveu o label pelo dashboard do
+> Langfuse. Reconferido direto na API — os dois prompts agora têm
+> `production` na **versão 6**, igual `development`/`latest`. Última
+> pendência desta lista fechada.
 
 > [!tip] Limite de cron do plano Vercel — não é um risco real, verificado 2026-09-03
 > `vercel.json` define **um único cron** (`/api/cron/run-all`, diário às

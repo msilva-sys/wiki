@@ -5370,6 +5370,17 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   Postgres caía.md`.
 - Updated: `projects/Agent Flow.md` (callout novo), `index.md`.
 
+## [2026-09-03] decision | Label `production` do Langfuse promovido — última pendência do cron fechada
+- msilva promoveu o label `production` pelo dashboard do Langfuse pros dois
+  prompts (`a10-portfolio`, `a14-pm-agent`). Reconferido direto na API:
+  ambos agora na versão 6 (igual `development`/`latest`), antes travados na
+  versão 3. Fecha a última pendência da lista original de
+  [[2026-08-24 Build A10 and A14 together, PoC first]] — todas as três
+  (`CRON_SECRET`, label do Langfuse, limite de cron do plano Vercel) agora
+  resolvidas.
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC first.md`,
+  `index.md`.
+
 ## [2026-09-03] query | PRO-518, compatibilidade do proxy com SDKs Python
 - Pesquisado (docs + código-fonte) se `pyairtable` — sucessor mantido do
   antigo `airtable-python-wrapper`, mesmo projeto renomeado na v1.0.0 —
