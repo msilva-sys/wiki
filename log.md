@@ -5381,6 +5381,27 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC first.md`,
   `index.md`.
 
+## [2026-09-03] refactor | Auditoria e organização do projeto A10 & A14 (Fluxo Agêntico) no Linear
+- msilva pediu pra "organizar o projeto do Linear". Levantamento completo do
+  board (33 issues) cruzado com o código real (`livemode-fluxo-agentico`,
+  80 commits) via agente pm-linear: só 2/33 issues com Estimate, 11 sem
+  label de tipo, 6 issues + 2 documentos com nome de colega no título
+  (viola a convenção de anonimização), status updates do projeto todos
+  arquivados (incluindo o de hoje), M1 em 44% real (não 50% que a barra do
+  Linear mostrava) com target date estourado.
+- msilva renomeou o projeto "Fluxo Agêntico" → **"A10 & A14"** (Initiative
+  continua "Fluxo agêntico") e setou **M1 target date pra 2026-09-15**.
+- Achado principal: cluster de 9 issues da SOUL (PRO-503–511, criadas em
+  bloco 2026-09-01) preso em Triage sem milestone, apesar do módulo já
+  implementado. Confirmado contra o código issue a issue (`soul/render.py`,
+  integração nos 4 entrypoints de `a10/agent.py`/`a14/agent.py`, gate de
+  produção, 25/25 testes passando) — todas as 9 movidas pra Done dentro de
+  M1; PRO-503 reparentada de PRO-377 pra PRO-374.
+- Restante do plano (cancelar PRO-393/394/395/377, renomear títulos com
+  nome de colega, Estimate/label em massa, novo status update) fica pra
+  depois — pausado por decisão de msilva, não descartado.
+- Updated: `projects/Agent Flow.md` (aliases, callout novo).
+
 ## [2026-09-03] query | PRO-518, compatibilidade do proxy com SDKs Python
 - Pesquisado (docs + código-fonte) se `pyairtable` — sucessor mantido do
   antigo `airtable-python-wrapper`, mesmo projeto renomeado na v1.0.0 —

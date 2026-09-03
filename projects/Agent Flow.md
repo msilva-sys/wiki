@@ -3,7 +3,7 @@ type: project
 status: active
 phase: build
 updated: 2026-09-03
-aliases: [fluxo, fluxo de agentes, agent architecture, the agent project]
+aliases: [fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
 tags: [agents, llm, automation, onboarding, research]
 ---
 
@@ -306,6 +306,28 @@ tags: [agents, llm, automation, onboarding, research]
 > implementado é a regra de interação mais estreita que Luís já tinha dado
 > como exemplo, não necessariamente a versão final e mais ampla da
 > fronteira.
+
+> [!tip] Organização do projeto no Linear — renomeado, M1 replanejado, cluster SOUL fechado, 2026-09-03
+> msilva renomeou o **projeto** do Linear de "Fluxo Agêntico" pra **"A10 & A14"**
+> — a **Initiative** continua se chamando "Fluxo agêntico" (o guarda-chuva dos
+> 14 agentes); o projeto agora nomeia especificamente o escopo do M1. **M1
+> ganhou target date novo, 2026-09-15** (o antigo, 31/08, tinha estourado).
+> Auditoria completa do board (33 issues) cruzada com o código real
+> (`livemode-fluxo-agentico`, 80 commits) achou o cluster de 9 issues da SOUL
+> (PRO-503 a PRO-511, criadas em bloco 2026-09-01) preso em Triage sem
+> milestone, apesar do módulo já estar implementado — confirmado issue a
+> issue contra o código (`soul/render.py`, integração em `a10/agent.py`/
+> `a14/agent.py`, gate de confirmação pra `production`, 25/25 testes do
+> módulo passando) e movidas todas pra **Done, dentro de M1**; PRO-503
+> (a mãe) reparentada de PRO-377 (comparação de abordagens de PoC, onde não
+> fazia sentido) pra **PRO-374** (o guarda-chuva de construção do M1).
+> Restam no board: cancelar as vias alternativas abandonadas (PRO-393 Skill,
+> PRO-394 Agent SDK, PRO-395, e o próprio PRO-377), renomear 6 issues com
+> nome de colega no título, preencher Estimate/label em massa, e postar um
+> status update novo (os 4 existentes, incluindo o de hoje, foram arquivados
+> — o projeto está sem status ativo visível). Pausado aqui por decisão de
+> msilva ("acho que tá de boa") — não é uma decisão de não fazer, só parou
+> por ora.
 
 > [!danger] Cron falhava em silêncio quando o Postgres caía — achado e corrigido, 2026-09-03
 > [[2026-09-03 Cron do A10-A14 parava em silêncio quando o Postgres caía]]:
