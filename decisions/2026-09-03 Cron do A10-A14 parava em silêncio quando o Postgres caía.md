@@ -101,6 +101,13 @@ Vercel.
    Slack, mas não precisamos postar esclarecimento." O alerta de teste
    ficou no histórico do projeto sem contexto adicional.
 
+## Em produção
+
+**Mesmo dia**: commit pushed pra `origin/langgraph` e promovido a Production
+na Vercel por msilva (`livemode-fluxo-agentico-n3f3ozljo`) — logs pós-deploy
+sem erro. A correção vale antes do próximo disparo do cron (~07:00 UTC do
+dia seguinte).
+
 ## Em aberto
 
 - **Causa raiz não confirmada do lado do Supabase** — a hipótese (sem
@@ -111,8 +118,6 @@ Vercel.
 - **Login loop do `auth_gate.py`** — autorresolvido no mesmo dia, causa não
   confirmada (suspeita de cold-start race). Não tratado neste fix; fica pra
   observar se recorre.
-- **Commit ainda não subiu pro remoto** — fica local até msilva revisar,
-  mesmo padrão das sessões de pairing anteriores neste projeto.
 
 ## Ligação com o resto do projeto
 
