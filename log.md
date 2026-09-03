@@ -5402,3 +5402,40 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   ainda não feita), `index.md`.
 - **Não testado ponta a ponta** com uma app Python real — só verificado
   contra documentação/código-fonte do `pyairtable` e do proxy.
+
+## [2026-09-03] refactor | Auditoria e limpeza de datas/status do proxy no Linear
+- Pedido de msilva: "validar as datas e algumas coisas relacionadas ao proxy
+  no Linear". Auditoria via agente `pm-linear` (sem edições nessa etapa) nos
+  dois projetos — `Proxy do Airtable` e `Proxy em produção validado c/
+  LiveScript` — cobrindo due dates, status/estimate de ~13 issues, e
+  estrutura (milestones/parent/labels), depois correções aplicadas em
+  conversa, uma de cada vez.
+- Corrigido: `PRO-518` tinha o nome de um colega na descrição — trocado por
+  referência neutra de papel (violava a convenção de anonimização do
+  Linear).
+- Due dates residuais removidos: 25 issues (13 em `Proxy do Airtable` — todo
+  o backlog F1/F2 ainda aberto, herdando 17/07 ou 24/07 da criação em lote
+  de 2026-07-27; 12 em `Proxy em produção validado c/ LiveScript` — as
+  ainda abertas herdando 31/07) tiveram o `dueDate` limpo. Issues já `Done`
+  foram deixadas como estavam (data ali é histórico, não uma promessa em
+  aberto). `startDate`/`targetDate` do projeto `Proxy do Airtable`
+  (13/07–28/08), o `targetDate` dos milestones `F1`/`F2`, e o milestone `F3`
+  vazio (casca de quando F3 virou o projeto irmão, sem nenhuma issue)
+  também removidos — os dois últimos manualmente por msilva, direto na UI,
+  já que as ferramentas de edição de projeto/milestone usadas não suportam
+  limpar `startDate`/`targetDate` de projeto nem excluir milestone.
+- Status/estrutura corrigidos: `PRO-87` avançado de `Backlog` para
+  `In Progress` (trabalho já em andamento, registrado em comentário de
+  2026-09-02); `PRO-396`/`PRO-397` ganharam o milestone `Proxy
+  funcionalmente completo`, que faltava (a issue-irmã `PRO-371`, mesmo pai
+  `PRO-74`, já tinha).
+- Achado, não corrigido: `PRO-371` e `PRO-397` já estavam `Done` (fechadas
+  hoje às 16:02, antes desta sessão) — a wiki ainda as listava como
+  abertas.
+- Deixado como está, por decisão explícita de msilva: `PRO-74` (epic
+  "Observabilidade completa") continua `Backlog` apesar de 5 de 6 filhas já
+  `Done` — sem previsão de quando o trabalho restante (`PRO-76`) será
+  retomado.
+- Updated: `projects/Airtable Proxy.md` (novo callout do achado/limpeza,
+  `PRO-371`/`PRO-397` marcadas feitas, status do `PRO-87` atualizado),
+  `index.md`.

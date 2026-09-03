@@ -11,6 +11,34 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > Related: [[Proxy Environments]] · [[AIRTABLEGC-34]] · [[LiveScript]] ·
 > [[Airtable Rate Limits]] · [[Agent Flow]]
 
+> [!tip] Auditoria e limpeza de datas/status no Linear — 2026-09-03
+> Pedido de msilva: "validar as datas e algumas coisas relacionadas ao proxy
+> no Linear". Achados e correções nos dois projetos (`Proxy do Airtable`,
+> `Proxy em produção validado c/ LiveScript`):
+>
+> - **Due dates residuais removidos.** ~25 issues carregavam `dueDate`
+>   herdado do planejamento em lote de 2026-07-27 (17/07, 24/07 ou 31/07 —
+>   todas vencidas), inclusive issues ainda abertas. Limpo nos dois
+>   projetos. `startDate`/`targetDate` do projeto "Proxy do Airtable"
+>   (13/07–28/08) e o milestone `F3` vazio (casca de quando F3 virou projeto
+>   próprio, sem nenhuma issue) também removidos, manualmente por msilva.
+> - **`PRO-371` e `PRO-397` fechadas no mesmo dia** (2026-09-03, 16:02) — ver
+>   correção na seção "Things to actually do" abaixo, que ainda as listava
+>   como abertas.
+> - **`PRO-87`** (backend de telemetria de produção) avançado de `Backlog`
+>   para `In Progress` no campo nativo, refletindo o trabalho já em
+>   andamento — ver "Questions still genuinely open" abaixo.
+> - **`PRO-396`/`PRO-397`** ganharam o milestone `Proxy funcionalmente
+>   completo`, que faltava (a issue-irmã `PRO-371`, mesmo pai `PRO-74`, já
+>   tinha).
+> - **`PRO-518`** tinha o nome de um colega citado na descrição —
+>   corrigido para referência neutra de papel, por violar a convenção de
+>   anonimização do Linear.
+> - **Deixado como está, por decisão explícita de msilva**: `PRO-74` (epic
+>   "Observabilidade completa") continua `Backlog` apesar de 5 de 6 filhas
+>   já `Done` — sem previsão de quando o trabalho restante (`PRO-76`) será
+>   retomado, então não faz sentido marcar como "em andamento".
+
 > [!warning] Alvo de deploy reaberto para análise — 1:1 com Luís, 2026-09-02
 > [[2026-09-02 1-1 Matheus - Luís]]: Luís pediu uma análise crítica **VM vs.
 > Cloud Run** antes de seguir com o deploy em produção (`PRO-84`). Caminho
@@ -612,6 +640,8 @@ These remain open (design §14):
   hospedaria tudo) entrou como quarta opção — ver
   [[2026-09-02 1-1 Matheus - Luís]]. msilva está aprofundando a análise de
   custo Grafana vs. Cloud Monitoring especificamente ([PRO-87](https://linear.app/projetos-livemode/issue/PRO-87/apontar-otlp-para-backend-de-producao-sem-mudar-codigo-do-proxy)).
+  **2026-09-03**: status nativo da issue atualizado de `Backlog` pra
+  `In Progress`, pra bater com o trabalho já em andamento.
 - ~~Compatibilidade do proxy com SDKs fora do Node~~ **Verificado 2026-09-03,
   para Python**: `pyairtable` (sucessor mantido do antigo
   `airtable-python-wrapper`) tem um parâmetro `endpoint_url` que substitui
@@ -743,7 +773,7 @@ communicate async and often]].
       (`f530530`, on top of `c8f1941`) — live on `main`.
       **Tracked in Linear, 2026-08-26**: this whole item (no issue existed
       before) is now `PRO-396`, filed `Done` under the `PRO-74` epic.
-- [ ] `PRO-371` — detect duplicates among **filtered** Airtable calls
+- [x] `PRO-371` — detect duplicates among **filtered** Airtable calls
       specifically (the no-filter case above is already solid). Proxy today
       only logs `hasFilter`/`hasFieldProjection` as booleans, not the actual
       filter/fields content, so two differently-filtered calls to the same
@@ -753,6 +783,9 @@ communicate async and often]].
       `view` isn't detected at all (`hasFilter` only looks at
       `filterByFormula`), a distinct gap from telling two `filterByFormula`
       filters apart. Found while documenting `PRO-396`'s caveats.
+      **Resolvidas ambas, 2026-09-03**: `PRO-371` e `PRO-397` fechadas no
+      mesmo dia (16:02), via PR `#14` — telemetria passa a capturar sinais
+      de view-filter e um hash do filtro, cobrindo os dois gaps de uma vez.
 - [x] ~~Commit whatever changed (msilva says env-only) to get LiveScript's
       `feat/airtable-observability-local` branch working against the proxy;
       confirm whether the REST-call path needs the same URL-sourcing fix as
