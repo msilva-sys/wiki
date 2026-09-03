@@ -406,6 +406,33 @@ testes (adiados pra depois da validação manual, decisão explícita).
 > pendências desta lista: label `production` no Langfuse e o limite de
 > cron do plano Vercel.
 
+> [!warning] Label `production` no Langfuse — ainda pendente, confirmado 2026-09-03 direto na API
+> Query ao vivo em `api/public/v2/prompts/<nome>` (usando as credenciais do
+> `.env`) pros dois prompts:
+> - `a10-portfolio`: label `production` aponta pra **versão 3**; `development`/
+>   `latest` já está na **versão 6**.
+> - `a14-pm-agent`: mesmo padrão — `production` na versão 3, `development`/
+>   `latest` na versão 6.
+>
+> Ou seja, o cron em produção (`ENVIRONMENT=production` na Vercel, lido por
+> `Langfuse().get_prompt(PROMPT_NAME, label=os.environ["ENVIRONMENT"])` em
+> `a10/agent.py`/`a14/agent.py`) está rodando a versão 3 do prompt — sem a
+> regra de anonimização/pergunta consolidada depois, e sem a regra mais
+> recente de [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro
+> A14]] (redirecionamento pro A14), que só existe na versão de
+> desenvolvimento. Promover o label é uma ação manual no dashboard do
+> Langfuse (ou via API) — ainda não feita.
+
+> [!tip] Limite de cron do plano Vercel — não é um risco real, verificado 2026-09-03
+> `vercel.json` define **um único cron** (`/api/cron/run-all`, diário às
+> 10:00 UTC). O projeto vive no team `livemodes-projects` (Vercel Teams
+> exige plano Pro ou superior — Hobby não suporta contas de time), e mesmo
+> no limite mais restrito que a Vercel oferece (Hobby: até 2 crons por
+> projeto, cadência mínima diária) um cron diário só já estaria dentro do
+> limite. Não verificado direto na página de billing (sem acesso via CLI),
+> mas a folga é grande o suficiente pra não tratar como bloqueio. Pendência
+> pode ser considerada fechada.
+
 ## Revertido 2026-09-01 — A10 para de comentar em issue, publica status update agregado
 
 Luís (relatado por msilva em chat, sem transcript): comentário automático do A10

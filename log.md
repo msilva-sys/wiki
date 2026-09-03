@@ -5321,3 +5321,18 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   — callout inline corrigindo o item da lista de pendências, sem apagar o
   registro original. Restam as outras duas: label `production` no
   Langfuse e limite de cron do plano Vercel.
+
+## [2026-09-03] query | Checando as outras duas pendências do cron (label Langfuse, limite Vercel)
+- Query ao vivo na API pública do Langfuse (`/api/public/v2/prompts/<nome>`)
+  pros dois prompts: `a10-portfolio` e `a14-pm-agent` têm label `production`
+  preso na **versão 3**, enquanto `development`/`latest` já está na
+  **versão 6** — o cron em produção roda uma versão defasada, sem a regra
+  de redirecionamento pro A14 de
+  [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro A14]].
+  Pendência confirmada real, ainda em aberto.
+- Limite de cron do plano Vercel: `vercel.json` só define um cron diário;
+  o projeto vive num team (`livemodes-projects`, exige Pro+), folga grande
+  o suficiente pra não ser risco. Considerado fechado (sem confirmar
+  billing direto, só por dedução).
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC first.md`
+  — dois callouts novos com os achados.
