@@ -5336,3 +5336,25 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   billing direto, só por dedução).
 - Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC first.md`
   — dois callouts novos com os achados.
+
+## [2026-09-03] query | PRO-518, compatibilidade do proxy com SDKs Python
+- Pesquisado (docs + código-fonte) se `pyairtable` — sucessor mantido do
+  antigo `airtable-python-wrapper`, mesmo projeto renomeado na v1.0.0 —
+  suporta o mesmo mecanismo de apontamento do SDK Node (`endpointUrl`).
+  Confirmado: `endpoint_url` substitui `https://api.airtable.com` na
+  construção de toda URL de request, dados e meta/schema sem exceção —
+  sem o caveat que o Node teve com `customHeaders` não chegando nas
+  chamadas de meta.
+- Verificado contra o proxy real: `internal/proxy/proxy.go:145-155`
+  sempre descarta e sobrescreve o header `Authorization` recebido, então
+  o `api_key` (obrigatório no construtor do `pyairtable`) pode ser um
+  placeholder, igual ao truque já usado pro SDK Node.
+- Updated (repo `livemode-airtable-proxy`): `doc/INTEGRATION-GUIDE.md` —
+  nova seção D com o padrão Python, e o grep do Passo 1 estendido pra
+  `*.py`.
+- Updated: `projects/Airtable Proxy.md` (item da lista de perguntas em
+  aberto resolvido pra Python, permanece aberto o levantamento de quais
+  apps não-Node consomem o proxy — depende de conversa com o Pedro,
+  ainda não feita), `index.md`.
+- **Não testado ponta a ponta** com uma app Python real — só verificado
+  contra documentação/código-fonte do `pyairtable` e do proxy.

@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-09-02
+updated: 2026-09-03
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -612,8 +612,20 @@ These remain open (design §14):
   hospedaria tudo) entrou como quarta opção — ver
   [[2026-09-02 1-1 Matheus - Luís]]. msilva está aprofundando a análise de
   custo Grafana vs. Cloud Monitoring especificamente ([PRO-87](https://linear.app/projetos-livemode/issue/PRO-87/apontar-otlp-para-backend-de-producao-sem-mudar-codigo-do-proxy)).
-- **Compatibilidade do proxy com SDKs fora do Node** (ex.: Python) — alerta
-  levantado 2026-09-02, ainda não verificado. Rastreado em
+- ~~Compatibilidade do proxy com SDKs fora do Node~~ **Verificado 2026-09-03,
+  para Python**: `pyairtable` (sucessor mantido do antigo
+  `airtable-python-wrapper`) tem um parâmetro `endpoint_url` que substitui
+  `https://api.airtable.com` na construção de toda URL de request — dados e
+  meta/schema, sem exceção, sem o caveat que o SDK Node teve com
+  `customHeaders`. Confirmado contra documentação e código-fonte do
+  `pyairtable`, e contra o proxy real (`internal/proxy/proxy.go:145-155`
+  sempre sobrescreve `Authorization`, então a chave passada ao SDK pode ser
+  um placeholder) — mas **não testado ponta a ponta** com uma app Python
+  real ainda. Documentado no repo `livemode-airtable-proxy`, em
+  `doc/INTEGRATION-GUIDE.md` (seção D). **Ainda em aberto**: o levantamento
+  de quais apps não-Node já
+  são ou serão consumidoras do proxy — precisa da conversa com o Pedro,
+  levantada como possibilidade mas ainda não feita. Rastreado em
   [PRO-518](https://linear.app/projetos-livemode/issue/PRO-518/verificar-se-o-proxy-funciona-com-sdks-fora-do-node-ex-python).
 - **Retain queryable raw records for usage analysis?** (Log Analytics / BigQuery
   / SaaS query language) — cheap to decide now, hard to backfill later.
