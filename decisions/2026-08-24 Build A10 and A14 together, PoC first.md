@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-09-01
+updated: 2026-09-03
 date: 2026-08-24
 decided_by: Matheus Silva
 source: "chat with Claude, 2026-08-24"
@@ -397,6 +397,14 @@ local + Vercel); promover a label `production` no Langfuse (sem isso a
 regra de anonimização/pergunta do A10 não entra em vigor, o cron
 continua lendo o prompt antigo); checar limite de cron do plano Vercel;
 testes (adiados pra depois da validação manual, decisão explícita).
+
+> [!important] `CRON_SECRET` resolvido — corrigido 2026-09-03, verificado direto no repo/Vercel
+> A wiki nunca registrou quando isso foi feito, mas já está setado nos dois
+> lugares: `.env` local do repo (`livemode-fluxo-agentico`) e Vercel
+> production (`vercel env ls production` mostra a var adicionada
+> ~2026-09-01, junto da sessão de pairing acima). Restam só duas
+> pendências desta lista: label `production` no Langfuse e o limite de
+> cron do plano Vercel.
 
 ## Revertido 2026-09-01 — A10 para de comentar em issue, publica status update agregado
 

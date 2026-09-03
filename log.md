@@ -5310,3 +5310,14 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `projects/Agent Flow.md` (callout de aberto → resolvido, linkando
   a decisão), `people/Luís Fernandez.md` (fecho da linha de atividade),
   `index.md`.
+
+## [2026-09-03] refactor | Pendência `CRON_SECRET` corrigida, verificada direto no repo
+- msilva perguntou como gerar a secret; antes de dar o script, conferi
+  `livemode-fluxo-agentico` (branch `langgraph`) e `vercel env ls
+  production` — `CRON_SECRET` já está setado nos dois lugares (`.env`
+  local e Vercel production, adicionado ~2026-09-01). A wiki registrava
+  como pendente sem nunca ter capturado a resolução.
+- Updated: `decisions/2026-08-24 Build A10 and A14 together, PoC first.md`
+  — callout inline corrigindo o item da lista de pendências, sem apagar o
+  registro original. Restam as outras duas: label `production` no
+  Langfuse e limite de cron do plano Vercel.
