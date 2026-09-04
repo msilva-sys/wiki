@@ -1,12 +1,19 @@
 ---
 type: meeting-prep
-status: active
+status: superseded
 updated: 2026-09-04
 date: 2026-09-04
 attendees: [Matheus Silva, Carolina Bezerra]
 tags: [agent-flow, a10, a14, métricas]
 ---
 # Prep — Carolina × Matheus (2026-09-04)
+
+**A reunião "Carolina / Matheus" das 17h foi cancelada.** As mesmas dúvidas
+foram reformatadas (segunda pessoa, sem checklist de reunião ao vivo, sem a
+seção de contexto interno sobre a Carol) num HTML pra msilva enviar a ela de
+forma assíncrona pelo Slack. Esta página fica como o registro do prep
+original — se a Carol responder de fato, as respostas entram como fan-out
+normal (decisions/concepts/pages afetadas), igual sairia de uma reunião.
 
 Prep pontual para a reunião "Carolina / Matheus" às 17h (Sala Handebol). Pauta:
 métricas de saúde de portfólio (A10), métricas de progresso de projeto (A14), e

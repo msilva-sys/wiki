@@ -5606,3 +5606,25 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `concepts/Fronteira A10×A14 (informação e métricas).md` (nova
   seção sob N0-N4, granularidade do A14 detalhada em "O que cada um
   possui"), `index.md`.
+
+## [2026-09-04] refactor | Reunião com Carol cancelada, dúvidas viram HTML pra Slack
+- A reunião "Carolina / Matheus" das 17h foi cancelada; msilva decide mandar
+  as mesmas dúvidas pra Carol de forma assíncrona pelo Slack, como anexo
+  HTML em vez de link de artifact (mesmo padrão já usado com o Luís).
+- Reescrita completa do doc pra esse novo público: de "roteiro de reunião
+  ao vivo" (primeira pessoa, checkboxes de progresso salvos em
+  localStorage) para "mensagem endereçada à Carol" (segunda pessoa, sem
+  checklist interativo). **Removida inteiramente a seção "Contexto de
+  fundo"** — continha leitura interna de msilva sobre o viés provável da
+  Carol (divergência dela com o Luís sobre "transversalidade"), inadequada
+  pra mandar pra ela mesma. Removida também a nota de auto-lembrete
+  "verificar antes" sobre o formato de publicação do A14 — vira pergunta
+  neutra em vez de ressalva interna exposta.
+- `meetings/Meeting prep - Carolina - Matheus - 2026-09-04.md` marcada
+  `status: superseded` — reunião não aconteceu, mas o conteúdo sobrevive
+  reformatado; se a Carol responder pelo Slack, o fan-out das respostas
+  segue o fluxo normal de decisions/concepts.
+- New: arquivo local (fora da wiki) `A10-A14-duvidas-metricas.html`,
+  entregue a msilva pra anexar no Slack manualmente.
+- Updated: `meetings/Meeting prep - Carolina - Matheus - 2026-09-04.md`,
+  `index.md`.
