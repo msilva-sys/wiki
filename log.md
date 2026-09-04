@@ -5539,3 +5539,22 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - New: `syntheses/Grafana hospedado vs Cloud Monitoring para telemetria de
   produção.md`. Updated: `projects/Airtable Proxy.md` (dois callouts),
   `index.md`.
+
+## [2026-09-04] query | Como o A10 calcula "capacidade" e "prioridade média" no status de portfólio
+- msilva trouxe o status do A10 pra iniciativa Airtable GC ("consome 15,4%
+  da capacidade... prioridade média 0") e perguntou como esses dois
+  números são calculados.
+- Auditado direto em `initiative_summaries()`,
+  `C:\Users\msilva\projects\livemode-fluxo-agentico\a10\rules.py:87-118`:
+  `capacity_share` é contagem de issues ativas da iniciativa sobre o total
+  de issues ativas de todo o backlog do time (não usa Estimate/story
+  points); `avg_priority` é média aritmética simples do campo `priority`
+  bruto do Linear (`linear_client.py:178`, sem tratamento), escala nativa
+  `0=No priority, 1=Urgent, 2=High, 3=Medium, 4=Low`.
+- Achado relevante: `0` no Linear significa "sem prioridade definida", não
+  "prioridade mínima" — uma `avg_priority` de 0 pode refletir descuido de
+  preenchimento (bate com o outro sinal do mesmo report, 28/35 issues com
+  descrição curta) em vez de despriorização deliberada. Sinal
+  "priorização desalinhada" do A10 herda essa ambiguidade.
+- Updated: `concepts/Fronteira A10×A14 (informação e métricas).md` (nova
+  seção "Cálculo real de capacidade e prioridade"), `index.md`.

@@ -107,6 +107,33 @@ mudança de escopo após o aceite · tempo bloqueado por dependência ·
 retrabalho após a entrega · adoção pela área solicitante · **efeito medido
 na área** (horas economizadas, chamados reduzidos, erros evitados).
 
+## Cálculo real de "capacidade" e "prioridade média" (auditado no código, 2026-09-04)
+
+msilva perguntou como o status de portfólio do A10 chega em números como
+"consome 15,4% da capacidade" e "prioridade média 0" — auditado direto em
+`initiative_summaries()`, `C:\Users\msilva\projects\livemode-fluxo-agentico\a10\rules.py:87-118`.
+
+- **`capacity_share`** (linha 111): `active_count / total_active` — contagem
+  de **issues ativas** (não `completed`/`canceled`/`duplicate`) da
+  iniciativa, dividida pelo total de issues ativas em **todo o backlog do
+  time** `Projetos-livemode` (todas as iniciativas, não só um projeto).
+  **Não usa o campo Estimate** — "capacidade" aqui é contagem de issues, não
+  esforço/story points.
+- **`avg_priority`** (linha 115): média aritmética simples do campo
+  `priority` das issues ativas da iniciativa. `priority` é o valor **bruto do
+  Linear**, sem tratamento (`linear_client.py:178`, `priority=node["priority"]`
+  direto do GraphQL) — escala nativa `0=No priority, 1=Urgent, 2=High,
+  3=Medium, 4=Low`.
+
+**Ambiguidade real no dado**: no Linear, `0` significa "sem prioridade
+definida", não "prioridade mínima". Uma `avg_priority` de 0 pode ser só que a
+maioria das issues ativas nunca teve o campo Priority preenchido — não uma
+decisão real de despriorizar. No caso do Airtable GC (status de 2026-09-04),
+isso é plausível: o mesmo report já sinalizava 28/35 issues com descrição
+muito curta, indicando descuido de preenchimento em geral, não só de
+Priority. O sinal "priorização desalinhada" do A10 herda essa ambiguidade —
+vale checar se é descuido de dado antes de tratar como decisão deliberada.
+
 **Métricas que não servem em contexto interno** — parecem rigorosas e não
 são: velocity/story points reportado ao A10 (mede capacidade do time, não
 valor entregue); NPS de ferramenta interna com poucas dezenas de usuários
