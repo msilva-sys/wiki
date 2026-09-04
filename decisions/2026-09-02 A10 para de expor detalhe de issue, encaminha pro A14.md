@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-09-02
+updated: 2026-09-04
 date: 2026-09-02
 aliases: [fronteira PM vs Portfolio, A10 não vê issue, A10 fala só de portfólio]
 tags: [agents, agent-flow, a10, a14, langgraph, product-scope]
@@ -66,6 +66,27 @@ A10/A14 — isso ainda não foi recebido. O que foi implementado aqui é a
 exemplo (A10 nunca fala de issue específica), não necessariamente a versão
 final e mais ampla da fronteira. Se a análise mais ampla de Luís chegar e
 apontar pra outra direção, essa implementação pode precisar de revisão.
+
+## Atualização 2026-09-04 — o doc pedido chegou
+
+O material que msilva pediu ao Luís ("fontes e argumentos, inclusive
+resposta de IA crua, sem viés") chegou —
+`raw/2026-09-02 A10 A14 fronteira - resposta IA trazida por Luís.html`,
+data pelo próprio nome do arquivo. Fanned-out em
+[[Fronteira A10×A14 (informação e métricas)]] e
+[[A10 A14 Fronteira, Informação e Métricas]].
+
+Não é opinião do Luís — é resposta de IA genérica, ainda não adotada como
+decisão. Mas ela **confirma** a regra já implementada aqui (A10 nunca
+issue-específica) como o caso mais estreito de um modelo mais amplo de
+níveis de informação (N0–N4: A10 nunca recebe item abaixo de N1, só
+agregado) — não a contradiz. O que o doc adiciona, e que ainda não existe
+no código nem foi decidido: painel de métrica próprio por agente, permissão
+de escrita por nível, e — o achado mais concreto — a falta de um **loop de
+retorno A14→A10** (o efeito medido de uma entrega nunca sobe para o A10
+decidir o próximo ciclo). Isso é trabalho de design novo, ainda não
+começado; a nuance abaixo ("não é a resposta final") segue parcialmente em
+aberto até esse desenho acontecer.
 
 ## Trade-off e conexão com decisão anterior
 

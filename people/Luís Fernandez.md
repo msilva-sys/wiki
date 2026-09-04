@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-09-02
+updated: 2026-09-04
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
@@ -119,5 +119,11 @@ sometimes builds directly, otherwise supports.
   (including unbiased "raw AI" input) before that product boundary is settled.
   His narrower interaction rule — A10 never discusses a specific issue,
   route those questions to A14 — was implemented and tested same day, see
-  [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro A14]]. The
-  broader boundary he was asked to argue for is still outstanding.
+  [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro A14]].
+- **Entregou o material pedido sobre a fronteira A10×A14** — arquivo
+  `raw/2026-09-02 A10 A14 fronteira - resposta IA trazida por Luís.html`.
+  Não é opinião própria; é uma resposta de IA genérica que ele trouxe como
+  "fonte crua, sem viés", conforme pedido. Fanned-out em
+  [[Fronteira A10×A14 (informação e métricas)]]. A fronteira ampla ainda
+  não está formalmente adotada — o doc é material de referência, não
+  decisão fechada.

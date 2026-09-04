@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: build
-updated: 2026-09-03
+updated: 2026-09-04
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -342,6 +342,22 @@ tags: [agents, llm, automation, onboarding, research]
 > isolado e um teste ao vivo que publicou o alerta real. Commit `9587d9a`
 > na branch `langgraph`, ainda local. Fecha o "gap de silêncio" apontado nas
 > pendências de [[2026-08-24 Build A10 and A14 together, PoC first]].
+
+> [!tip] Doc de fronteira A10×A14 chega, pedido cumprido — Luís, 2026-09-04
+> [[Fronteira A10×A14 (informação e métricas)]]: material que msilva pediu
+> ao Luís em [[2026-09-02 1-1 Matheus - Luís]] — resposta de IA "crua, sem
+> viés" sobre a fronteira PM (A14) vs. Portfolio (A10). Não contradiz a
+> regra já implementada ([[2026-09-02 A10 para de expor detalhe de issue,
+> encaminha pro A14]]); confirma ela como o caso mais estreito de um modelo
+> mais amplo (níveis de informação N0–N4, painel de métrica próprio por
+> agente, permissões de escrita por nível). **Achado mais concreto**: o
+> doc nomeia uma lacuna real, e a auditoria direta no código confirma que
+> ela existe — falta um **loop de retorno A14→A10**. Hoje `run_a10` só lê
+> o backlog do Linear; o efeito medido de uma entrega do A14 nunca sobe
+> para o A10 decidir o próximo ciclo de portfólio. Fonte completa:
+> [[A10 A14 Fronteira, Informação e Métricas]]. Ainda não é decisão —
+> desenho de como fechar esse loop (definição de "efeito medido", contrato
+> de dado, cadência) segue como próximo passo, não iniciado.
 
 ## Philosophy and build strategy
 

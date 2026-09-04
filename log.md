@@ -5460,3 +5460,24 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `projects/Airtable Proxy.md` (novo callout do achado/limpeza,
   `PRO-371`/`PRO-397` marcadas feitas, status do `PRO-87` atualizado),
   `index.md`.
+
+## [2026-09-04] ingest | A10 A14 Fronteira, Informação e Métricas
+- Read `raw/2026-09-02 A10 A14 fronteira - resposta IA trazida por Luís.html`
+  — resposta de IA que Luís trouxe a pedido de msilva em
+  [[2026-09-02 1-1 Matheus - Luís]], sobre a fronteira PM (A14) vs.
+  Portfolio (A10) das entregas. Discutido em chat antes de escrever.
+- New: `sources/A10 A14 Fronteira, Informação e Métricas.md`,
+  `concepts/Fronteira A10×A14 (informação e métricas).md` (teste de
+  pergunta, o que cada agente possui, níveis de informação N0–N4, painel
+  de métrica por agente, faça/não-faça, roteamento pro A2, heurísticas de
+  eval, e a lacuna do loop de retorno A14→A10).
+- Updated: `decisions/2026-09-02 A10 para de expor detalhe de issue,
+  encaminha pro A14.md` (seção "Atualização 2026-09-04" — o doc pedido
+  chegou, confirma a regra implementada como caso mais estreito do modelo
+  N0–N4, não a contradiz), `people/Luís Fernandez.md` (bullet novo — doc
+  entregue), `projects/Agent Flow.md` (callout novo), `index.md`.
+- Cruzado com auditoria direta do código (mesma sessão, sem novo arquivo):
+  confirma que o loop de retorno A14→A10 nomeado pelo doc não existe hoje
+  em `livemode-fluxo-agentico` — `run_a10` só lê o backlog do Linear, sem
+  consumir nada do A14. Fica registrado como lacuna aberta, não como
+  decisão de como fechá-la.
