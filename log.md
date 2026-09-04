@@ -5557,7 +5557,7 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   descrição curta) em vez de despriorização deliberada. Sinal
   "priorização desalinhada" do A10 herda essa ambiguidade.
 - Updated: `concepts/Fronteira A10×A14 (informação e métricas).md` (nova
-  entrada), `index.md`.
+  entrada na seção "Cálculo real de capacidade e prioridade"), `index.md`.
 
 ## [2026-09-04] query | Prep pra reunião com Carol sobre métricas A10/A14
 - msilva pediu prep pra reunião "Carolina / Matheus" (17h, Sala Handebol,
@@ -5585,4 +5585,24 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   capacidade, prioridade média 0) — e um exemplo numérico ilustrativo pra
   cada item do painel A10/A14 ainda não implementado, marcados
   explicitamente como hipotéticos pra não confundir com o dado real.
-  seção "Cálculo real de capacidade e prioridade"), `index.md`.
+- Updated: `meetings/Meeting prep - Carolina - Matheus - 2026-09-04.md`.
+
+## [2026-09-04] query | Onde "Projeto" do Linear entra na granularidade do A14
+- msilva perguntou, olhando o artifact da prep: a descrição do A14 ("escopo,
+  sequência, dependências, prazo... desce ao nível de entrega/tarefa") nunca
+  menciona "Projeto" do Linear — ele é pulado, ou é o nível operado?
+- Auditado no código real (`livemode-fluxo-agentico`): não é pulado — é o
+  nível de despacho. `A14Input.project_id`; `cron.py` chama o A14 uma vez
+  por `Project` do Linear (`_run_a14_for_project`); dentro do projeto, o
+  relatório agrega por **Milestone** (`a14/rules.py::progress_by_milestone`),
+  não por issue crua (evita a "subtask blindness" já documentada em
+  [[AI status reporting on Linear]]); Issue é lida sempre como insumo e só
+  exposta seletivamente (sinais de código, alertas).
+- Achado: a página de fronteira N0-N4 nunca usa a palavra "Projeto" do
+  Linear — amarração entre o framework abstrato e a hierarquia real
+  (Iniciativa→Projeto→Milestone→Issue) nunca tinha sido escrita. Fechada
+  nesta entrada: N2 (entrega/épico) = Projeto (despacho) + Milestone
+  (agregação); N3 (tarefa) = Issue.
+- Updated: `concepts/Fronteira A10×A14 (informação e métricas).md` (nova
+  seção sob N0-N4, granularidade do A14 detalhada em "O que cada um
+  possui"), `index.md`.

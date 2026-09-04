@@ -2,7 +2,7 @@
 type: concept
 status: draft
 updated: 2026-09-04
-aliases: [fronteira A10 A14, N0-N4, niveis de informacao A10 A14, painel de métricas A10 A14, teste da pergunta A10 A14, efeito medido, acoplamento A10 A14]
+aliases: [fronteira A10 A14, N0-N4, niveis de informacao A10 A14, painel de métricas A10 A14, teste da pergunta A10 A14, efeito medido, acoplamento A10 A14, projeto milestone A14]
 tags: [agents, agent-flow, a10, a14, product-scope, metrics]
 ---
 
@@ -55,7 +55,10 @@ iniciativa, nunca desce a tarefa.
 **A14 (PM Agent, perfil entrega interna)** — decide como entregar uma
 iniciativa já aprovada: escopo, sequência, dependências e prazo, com a área
 solicitante como cliente. Granularidade = entrega e tarefa, dentro de uma
-iniciativa.
+iniciativa — concretamente, no vocabulário do Linear, isso é **Projeto**
+(unidade de despacho: um `A14Report` por projeto) agregado por **Milestone**,
+com **Issue** como dado bruto lido sempre e exposto só quando há sinal
+específico. Ver detalhe na seção N0-N4 abaixo.
 - Recebe: iniciativa aprovada (objetivo + capacidade definidos), necessidade
   declarada da área solicitante, dependências técnicas e de terceiros,
   **uso real da entrega depois que ela sobe**, a carteira como contexto em
@@ -89,6 +92,23 @@ nunca fala de issue específica) — essa implementação é o caso mais estreit
 da regra N1/N2 acima, não a regra completa. A permissão de leitura de N0 e,
 principalmente, a leitura do **resultado agregado do A14 pelo A10** ainda
 não estão desenhadas nem implementadas.
+
+**Lacuna de terminologia, notada 2026-09-04**: esta tabela usa o vocabulário
+abstrato do doc original (iniciativa/entrega-épico/tarefa/evento) e nunca usa
+a palavra "Projeto" do Linear — a amarração entre N0-N4 e a hierarquia real
+(Iniciativa → Projeto → Milestone → Issue, ver [[Linear Project Structure]])
+nunca foi escrita explicitamente aqui. Auditado no código real
+(`livemode-fluxo-agentico`) pra fechar essa amarração: **N2 (entrega/épico)
+corresponde a Projeto como unidade de despacho** — `A14Input.project_id`,
+`cron.py` chama o A14 uma vez por `Project` do Linear — **agregado por
+Milestone dentro do projeto** (`a14/rules.py::progress_by_milestone`), com
+**N3 (tarefa) = Issue**, lida sempre como insumo e exposta seletivamente
+(sinais de código, alertas), nunca como unidade padrão de relatório. Ou
+seja, N2 não é um nível único no Linear — é Projeto (despacho) + Milestone
+(agregação) tratados como a mesma "camada de entrega" pelo framework
+abstrato. Continua em aberto: se algum dia isso precisar virar guardrail de
+prompt, vale decidir se N2 deveria ser dois níveis (Projeto e Milestone)
+em vez de um.
 
 ## Painel de métricas — cada agente só argumenta com o seu
 
