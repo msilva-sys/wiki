@@ -227,25 +227,37 @@ propõe dois pontos de dono para essa pergunta:
    o A10 decidir o próximo passo. Sem esse retorno, o A10 aprova o ciclo
    seguinte às cegas e a carteira vira registro cartorial.
 
-**Estado real, auditado direto no código em 2026-09-04**: esse loop não
-existe. `run_a10` lê só o backlog do Linear via `linear_adapter.list_issues`;
-as sugestões do A10 (critérios `item_estagnado`/`priorizacao_desalinhada`/
+**Estado auditado na manhã de 2026-09-04**: esse loop não existia. `run_a10`
+lia só o backlog do Linear via `linear_adapter.list_issues`; as sugestões do
+A10 (critérios `item_estagnado`/`priorizacao_desalinhada`/
 `gargalo_de_capacidade`/`escopo_descontrolado`, em `a10/contracts.py`) não
-dependem de nada do A14; as únicas menções a "A14" dentro do módulo `a10/`
-são texto de redirecionamento de chat (`a10/formatting.py`), não dado.
-`run_a14` roda em paralelo, por projeto, sem expor nenhum resultado
-consumível pelo A10.
+dependiam de nada do A14; as únicas menções a "A14" dentro do módulo `a10/`
+eram texto de redirecionamento de chat (`a10/formatting.py`), não dado.
+`run_a14` rodava em paralelo, por projeto, sem expor nenhum resultado
+consumível pelo A10. **Isso já não é mais verdade** — ver correção abaixo.
 
-**Em aberto para desenhar**:
-- o que conta como "efeito medido" no nosso contexto — o painel acima já
-  propõe uma definição (lead time, aderência a prazo, retrabalho, adoção,
-  efeito na área), mas nada disso é coletado ou persistido hoje;
-- o contrato de dado (`A14Outcome`?), persistido reaproveitando o padrão de
-  `a10/memory.py` (Postgres) em vez de mecanismo novo;
-- como o A10 consome isso — provavelmente um campo novo em
-  `PortfolioHealth`, computado em `a10/rules.py::portfolio_health()`;
-- a cadência — o cron hoje é diário, mas efeito medido de uma entrega
-  provavelmente não muda dia a dia.
+**Correção, tarde do mesmo dia — implementado em `eafa28c` (12:34h)**:
+msilva fechou o loop exatamente pela direção 1+2 desenhada na seção
+seguinte, antes mesmo dessa página ser lida numa preparação de reunião.
+`outcomes.py` (módulo neutro, raiz do repo) define `DeliveryOutcome` +
+`save_outcome`/`read_outcomes_by_project` sobre uma tabela Postgres nova
+(`delivery_outcomes`). `a14/agent.py::run_a14` grava um outcome assim que um
+milestone chega a 100% de progresso, com **aderência ao prazo calculada
+deterministicamente** (sem LLM). `a10/rules.py::outcome_summary()` agrega
+isso por iniciativa em `OutcomeSummary` (`deliveries_measured`,
+`effect_confirmed_rate`, `chronic_no_effect`), consumido dentro de
+`portfolio_health()`.
+
+**O que continua em aberto, mesmo com o loop fechado**: `effect` e
+`adoption` — as duas colunas que captariam "resolveu o problema de
+verdade" e "a área está usando" — nascem sempre `nao_avaliado`/`sem_dado`.
+O commit é explícito: julgar isso exige um sinal que hoje não existe
+(comentário da área solicitante, por exemplo), e fica pra um incremento
+futuro de escopo maior (provavelmente via LLM). Ou seja: o loop estrutural
+existe, mas hoje só carrega o sinal mais barato (prazo), não o "efeito
+medido" completo que o painel acima propõe — a pergunta de negócio que
+motivou a lacuna (*"a solução resolveu o problema, ou só foi entregue como
+combinado?"*) segue sem resposta automática.
 
 ## Acoplamento: como o outcome entraria sem virar dependência de código
 
@@ -290,7 +302,10 @@ real — a redundância que resolveu o caso anterior não se aplica aqui.
 **Direção escolhida por msilva: 1+2.** É acoplamento real (não a
 redundância que salvou o caso de 2026-08-28), mas a versão mais barata que
 ainda fecha o loop — leitura assíncrona, sem código compartilhado entre os
-módulos dos dois agentes.
+módulos dos dois agentes. **Implementado nesses termos exatos em `eafa28c`
+(2026-09-04, mesma tarde)** — `outcomes.py` é o módulo neutro da opção 2;
+nenhum import cruzado `a10`↔`a14` foi introduzido, confirmado no mesmo
+commit.
 
 ## Onde o outcome se encaixa entre as fontes reais do A10
 

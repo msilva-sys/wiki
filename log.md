@@ -5628,3 +5628,33 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   entregue a msilva pra anexar no Slack manualmente.
 - Updated: `meetings/Meeting prep - Carolina - Matheus - 2026-09-04.md`,
   `index.md`.
+
+## [2026-09-04] ingest | Loop de retorno A14→A10 foi implementado no meio do dia
+- msilva perguntou por que o loop A14→A10 (nomeado como lacuna em
+  [[Fronteira A10×A14 (informação e métricas)]], auditado como inexistente
+  na mesma manhã) ainda não existia, no contexto da pergunta que estava
+  formulando pra Carol sobre isso.
+- Ao explicar o motivo (problema estruturalmente mais difícil + restrição
+  "anarchic first" + desenho de acoplamento só fechado em chat mais cedo no
+  dia), msilva pediu pra olhar o repo de novo — **e o loop já tinha sido
+  implementado**, num commit posterior ao audit da manhã:
+  `eafa28c` (2026-09-04 12:34, "A14 registra outcome de entrega, A10 le
+  como sinal de portfolio").
+- Confirmado lendo o código real: `outcomes.py` (módulo neutro, raiz) —
+  `DeliveryOutcome` + `save_outcome`/`read_outcomes_by_project` sobre tabela
+  Postgres nova `delivery_outcomes`; `a14/agent.py::run_a14` grava outcome
+  com aderência-ao-prazo determinística quando um milestone chega a 100%;
+  `a10/rules.py::outcome_summary()` agrega por iniciativa
+  (`deliveries_measured`, `effect_confirmed_rate`, `chronic_no_effect`),
+  consumido em `portfolio_health()`. Sem import cruzado `a10`↔`a14` —
+  exatamente a direção 1+2 desenhada mais cedo no dia.
+- **Lacuna real que sobra**: `effect`/`adoption` nascem sempre
+  `nao_avaliado`/`sem_dado` — o commit já diz que julgar isso exige um sinal
+  que não existe hoje (comentário da área), fica pra incremento futuro
+  maior. A pergunta "resolveu o problema de verdade?" segue sem resposta
+  automática, só "entregou no prazo?" ficou automático.
+- Lição prática: a wiki tinha ficado defasada em poucas horas dentro do
+  mesmo dia — código como fonte de verdade valeu mesmo num intervalo curto.
+- Updated: `concepts/Fronteira A10×A14 (informação e métricas).md`
+  (correção inline, não sobrescrita — estado antigo mantido com nota de
+  correção), `index.md`.
