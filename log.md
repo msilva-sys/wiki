@@ -5573,4 +5573,10 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   dedicado vs. status update do Linear).
 - New: `meetings/Meeting prep - Carolina - Matheus - 2026-09-04.md`.
 - Updated: `index.md`.
+- **Mesmo dia, revisão pedida por msilva**: doc achado pouco informativo —
+  termos como "capacidade" e "prioridade média" apareciam só como fórmula
+  (`capacity_share`, `avg_priority`), sem explicar o que significam. Reescrito
+  com uma explicação em linguagem simples antes de cada fórmula, e cada item
+  do painel A10/A14 proposto (concentração de risco, lead time, retrabalho,
+  etc.) ganhou uma linha dizendo o que é, não só o nome.
   seção "Cálculo real de capacidade e prioridade"), `index.md`.
