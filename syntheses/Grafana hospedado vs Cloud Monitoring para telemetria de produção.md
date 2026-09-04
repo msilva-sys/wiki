@@ -1,10 +1,17 @@
 ---
 type: synthesis
-status: active
+status: superseded
 updated: 2026-09-04
 aliases: [grafana vs cloud monitoring, telemetria de produção do proxy, PRO-87]
 tags: [airtable-proxy, observability, grafana, cloud-monitoring, gcp, otel]
 ---
+
+> [!warning] Resolvida 2026-09-04 — ver [[2026-09-04 Use Grafana Cloud for Airtable Proxy production telemetry]]
+> Luís respondeu: Grafana Cloud (free tier), nem Cloud Monitoring puro nem
+> self-hosted. O levantamento abaixo (GMP, GCS, as três opções de
+> hospedagem, os prós/contras de cada backend) continua válido como
+> referência técnica — arquivada aqui, não apagada, por ser densa demais
+> para dobrar dentro da decisão.
 
 # Grafana hospedado vs Cloud Monitoring para telemetria de produção
 

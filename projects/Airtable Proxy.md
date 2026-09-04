@@ -62,7 +62,24 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > compartilhável com outro serviço privado) que se conecta direto com a
 > análise de hospedagem do Grafana — ver
 > [[Grafana hospedado vs Cloud Monitoring para telemetria de produção]].
-> Ainda sem resposta do Luís sobre VM vs. Cloud Run.
+>
+> **Respondido por Luís, 2026-09-04** ([[Direcionamento PRO-84 PRO-87]]):
+> nem VM nem Cloud Run+LB — **Cloud Run público**, sem LB/VPN/VM, com API
+> key por app como fronteira de segurança. O que encarecia não era HA, era
+> a exigência de rede privada; sem ela, o LB desaparece. Ver
+> [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API
+> keys]] (supersede
+> [[2026-08-21 Deploy Airtable Proxy privately behind VPN]]). Telemetria:
+> Grafana Cloud free tier, não Cloud Monitoring nem self-hosted — ver
+> [[2026-09-04 Use Grafana Cloud for Airtable Proxy production
+> telemetry]] (resolve a síntese acima, agora `status: superseded`).
+>
+> **Ajuste de tickets ainda pendente no Linear** — o memo pede fechar/adiar
+> `PRO-90` e `PRO-93` e abrir um ticket novo de API key, mas `PRO-90` no
+> Linear é o épico inteiro de IaC (Pulumi), não um ticket específico de LB;
+> fechá-lo cancelaria trabalho ainda válido (`PRO-91`, `PRO-92`). Ver a
+> ressalva em [[Direcionamento PRO-84 PRO-87]]. Discutido com msilva antes
+> de mexer no Linear.
 
 > [!tip] Current state, 2026-08-21
 > Path-based app identification is implemented and hardened in the repo. The
@@ -645,20 +662,17 @@ mais criar."* He committed in the 1:1 to moving everything off Jira **today**
 Most of my original "questions to ask" are already answered by the design doc.
 These remain open (design §14):
 
-- **Telemetry backend for prod** — Cloud Monitoring vs Datadog vs New Relic?
-  **2026-09-02**: Grafana hospedado (self-hosted, junto com uma VM que
-  hospedaria tudo) entrou como quarta opção — ver
-  [[2026-09-02 1-1 Matheus - Luís]]. msilva está aprofundando a análise de
-  custo Grafana vs. Cloud Monitoring especificamente ([PRO-87](https://linear.app/projetos-livemode/issue/PRO-87/apontar-otlp-para-backend-de-producao-sem-mudar-codigo-do-proxy)).
-  **2026-09-03**: status nativo da issue atualizado de `Backlog` pra
-  `In Progress`, pra bater com o trabalho já em andamento.
-  **2026-09-04**: aprofundamento completo em
-  [[Grafana hospedado vs Cloud Monitoring para telemetria de produção]] —
-  três opções de hospedagem do Grafana mapeadas contra o custo real de
-  `PRO-84`; durabilidade decidida (GMP pras métricas, GCS pra Loki/Tempo,
-  dashboards como código); e a descoberta de que GMP é tecnicamente parte
-  do Cloud Monitoring, o que reabre a pergunta original do Luís em termos
-  mais precisos. Ainda em aberto, bloqueado por `PRO-84`.
+- ~~Telemetry backend for prod~~ **Resolvido 2026-09-04**: Grafana Cloud
+  free tier, não Cloud Monitoring nem self-hosted — ver
+  [[2026-09-04 Use Grafana Cloud for Airtable Proxy production telemetry]].
+  Histórico da investigação: **2026-09-02** Grafana hospedado entrou como
+  quarta opção em [[2026-09-02 1-1 Matheus - Luís]]; **2026-09-04**
+  aprofundamento completo (três opções de hospedagem, durabilidade via GMP+
+  GCS, achado de que GMP é tecnicamente parte do Cloud Monitoring) em
+  [[Grafana hospedado vs Cloud Monitoring para telemetria de produção]],
+  agora arquivada como `status: superseded` pela decisão. Exige trocar
+  exporters gRPC→HTTP (`autoexport`) — mudança de código que contradiz o
+  título atual da `PRO-87`, ajuste ainda pendente no Linear.
 - ~~Compatibilidade do proxy com SDKs fora do Node~~ **Verificado 2026-09-03,
   para Python**: `pyairtable` (sucessor mantido do antigo
   `airtable-python-wrapper`) tem um parâmetro `endpoint_url` que substitui

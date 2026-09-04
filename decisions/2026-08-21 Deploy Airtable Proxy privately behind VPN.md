@@ -1,7 +1,7 @@
 ---
 type: decision
-status: stable
-updated: 2026-09-02
+status: superseded
+updated: 2026-09-04
 date: 2026-08-21
 decided_by: Matheus Silva
 source: "Planning discussion with msilva, 2026-08-21"
@@ -10,6 +10,14 @@ aliases: [private Airtable Proxy infrastructure, proxy.livemode.space]
 ---
 
 # Deploy Airtable Proxy privately behind VPN
+
+> [!warning] Superseded 2026-09-04 — ver [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API keys]]
+> A reabertura abaixo (2026-09-02) terminou em decisão de Luís: o proxy vai
+> para produção **público** no Cloud Run, sem LB/VPN/VM — a fronteira de
+> segurança passa a ser uma API key por app, não a rede. Todo o desenho de
+> rede privada desta página (VPN, LB interno, DNS privado, split-horizon)
+> está descartado, não apenas reaberto. Mantida como histórico da
+> arquitetura que existiu antes disso.
 
 > [!warning] Reaberto para análise, 2026-09-02 — não mais tratar como definitivo
 > [[2026-09-02 1-1 Matheus - Luís]]: Luís pediu que msilva trouxesse uma

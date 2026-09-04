@@ -10,6 +10,29 @@ updated: 2026-09-04
 Append-only. Newest at the bottom. Never rewrite an entry.
 Prefixes: `ingest` | `callout` | `query` | `synthesis` | `lint` | `refactor` | `decision`.
 
+## [2026-09-04] ingest | Direcionamento PRO-84 PRO-87 (Luís)
+- Read `raw/2026-09-04 Direcionamento PRO-84 PRO-87.html` (copied in from
+  Downloads, dated-filename convention).
+- New: `sources/Direcionamento PRO-84 PRO-87.md`,
+  `decisions/2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with
+  per-app API keys.md`,
+  `decisions/2026-09-04 Use Grafana Cloud for Airtable Proxy production
+  telemetry.md`.
+- Updated: `decisions/2026-08-21 Deploy Airtable Proxy privately behind
+  VPN.md` (→ `status: superseded`),
+  `syntheses/Grafana hospedado vs Cloud Monitoring para telemetria de
+  produção.md` (→ `status: superseded`, kept as archived reference),
+  `decisions/2026-08-19 Identify proxy apps by URL path, not header.md`
+  (app-key layer activated, no longer future), `projects/Airtable
+  Proxy.md`, `people/Luís Fernandez.md`.
+- Flagged, not yet acted on: the memo maps `PRO-90` to "Load Balancer
+  interno", but Linear's real `PRO-90` is the whole IaC (Pulumi) epic,
+  still holding live work (`PRO-91`, `PRO-92`) — closing it as the memo
+  literally says would cancel valid work. No open ticket matching
+  "X-Api-Key backlog item" was found either (closest is the already-Done
+  `PRO-79`). Linear changes (PRO-84/87 comments, PRO-90/93 disposition, new
+  API-key ticket, PRO-87 title/scope correction) held pending msilva's call.
+
 ## [2026-08-17] refactor | LLM-wiki setup
 - Initialized git in the vault; snapshot commit taken before any changes.
 - Added `CLAUDE.md` (schema), `index.md`, `log.md`.

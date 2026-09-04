@@ -127,3 +127,11 @@ sometimes builds directly, otherwise supports.
   [[Fronteira A10×A14 (informação e métricas)]]. A fronteira ampla ainda
   não está formalmente adotada — o doc é material de referência, não
   decisão fechada.
+- **Respondeu as duas análises que pediu em 2026-09-02** ([[Direcionamento
+  PRO-84 PRO-87]], 2026-09-04): descarta rede privada/VM, decide Cloud Run
+  público com API key por app como fronteira de segurança
+  ([[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app
+  API keys]]), e decide Grafana Cloud para telemetria de produção
+  ([[2026-09-04 Use Grafana Cloud for Airtable Proxy production
+  telemetry]]), fechando a investigação de
+  [[Grafana hospedado vs Cloud Monitoring para telemetria de produção]].

@@ -54,11 +54,14 @@ page now points here instead of continuing to carry the comparison as live.
 - ~~**Routing detail beyond "path."**~~ **Resolved in code 2026-08-20**: callers
   use `/{appId}/v0/...`; the proxy removes the leading app segment before its
   authorization/parser/director pipeline sees the canonical `/v0/...` path.
-- **`X-Api-Key` / app-key authentication remains a future layer.** Identification
-  and authentication stay decoupled. The first private deployment deliberately
-  trusts the VPN/network and uses the path only for PAT selection, base
-  authorization, and telemetry; see
-  [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
+- ~~**`X-Api-Key` / app-key authentication remains a future layer.**~~
+  **Activated 2026-09-04**: identification (this page, by path) and
+  authentication (API key) stay decoupled mechanisms, but the key layer is
+  no longer future — it's a go-live prerequisite for the public Cloud Run
+  deployment. See [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run
+  with per-app API keys]], which supersedes the private-network deployment
+  this bullet originally pointed to
+  ([[2026-08-21 Deploy Airtable Proxy privately behind VPN]]).
 - ~~**Whether `X-App-Id` is retained as a redundant check.**~~ **Resolved in code**:
   it is removed from identity handling and stripped before forwarding upstream.
 - ~~**Not yet implemented.**~~ **Implemented and hardened** by repo commits
