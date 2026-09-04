@@ -53,6 +53,16 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > secrets no código antes do Secret Manager
 > ([[2026-08-24 Manage Airtable Proxy secrets in the codebase before Secret
 > Manager]]).
+>
+> **2026-09-04**: análise de custo VM vs. Cloud Run publicada como comentário
+> na `PRO-84` — números reais do GCP Pricing Calculator (`southamerica-east1`):
+> VM `e2-small` sem HA, US$ 20,91/mês; Cloud Run `min=1 max=3` com HA,
+> US$ 15,00/mês de compute + US$ 55,84/mês de Load Balancer interno = US$
+> 70,84/mês. Termina com uma pergunta em aberto (o LB seria dedicado ou
+> compartilhável com outro serviço privado) que se conecta direto com a
+> análise de hospedagem do Grafana — ver
+> [[Grafana hospedado vs Cloud Monitoring para telemetria de produção]].
+> Ainda sem resposta do Luís sobre VM vs. Cloud Run.
 
 > [!tip] Current state, 2026-08-21
 > Path-based app identification is implemented and hardened in the repo. The
@@ -642,6 +652,13 @@ These remain open (design §14):
   custo Grafana vs. Cloud Monitoring especificamente ([PRO-87](https://linear.app/projetos-livemode/issue/PRO-87/apontar-otlp-para-backend-de-producao-sem-mudar-codigo-do-proxy)).
   **2026-09-03**: status nativo da issue atualizado de `Backlog` pra
   `In Progress`, pra bater com o trabalho já em andamento.
+  **2026-09-04**: aprofundamento completo em
+  [[Grafana hospedado vs Cloud Monitoring para telemetria de produção]] —
+  três opções de hospedagem do Grafana mapeadas contra o custo real de
+  `PRO-84`; durabilidade decidida (GMP pras métricas, GCS pra Loki/Tempo,
+  dashboards como código); e a descoberta de que GMP é tecnicamente parte
+  do Cloud Monitoring, o que reabre a pergunta original do Luís em termos
+  mais precisos. Ainda em aberto, bloqueado por `PRO-84`.
 - ~~Compatibilidade do proxy com SDKs fora do Node~~ **Verificado 2026-09-03,
   para Python**: `pyairtable` (sucessor mantido do antigo
   `airtable-python-wrapper`) tem um parâmetro `endpoint_url` que substitui

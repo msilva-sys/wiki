@@ -5509,3 +5509,33 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   natureza).
 - Updated: `concepts/Fronteira A10×A14 (informação e métricas).md`
   (seções novas "Acoplamento" e "Onde o outcome se encaixa"), `index.md`.
+
+## [2026-09-04] synthesis | Grafana hospedado vs. Cloud Monitoring para telemetria de produção
+- Aprofundamento pedido por Luís (`PRO-87`, 1:1 de 2026-09-02): custo real
+  entre Grafana self-hosted e Cloud Monitoring. Construído em conversa,
+  passo a passo, com números reais em vez de estimativa de cabeça.
+- Achados: os números de `PRO-84` (VM `e2-small` sem HA, US$ 20,91/mês vs.
+  Cloud Run `min=1 max=3` com HA, US$ 70,84/mês incluindo Load Balancer
+  interno) mapeiam três opções de hospedagem do Grafana (VM do proxy, VM
+  própria, Cloud Run) — cada uma presa a uma combinação diferente da
+  decisão ainda pendente de `PRO-84`. Cloud SQL verificado ao vivo
+  (`cloud.google.com/sql/pricing`) como custo real caso o banco interno do
+  Grafana precise ficar externo (só necessário na opção Cloud Run).
+- Durabilidade resolvida à parte da hospedagem: dashboards/alertas como
+  código (padrão já existente, `PRO-93`), Loki/Tempo em GCS (nativamente
+  suportado), métricas no Google Cloud Managed Service for Prometheus
+  (GMP) em vez de Prometheus self-hosted ou Mimir — decisão de msilva.
+- Achado central: GMP é tecnicamente parte do Cloud Monitoring (mesmo
+  backend, Monarch) — esvazia a dicotomia original "qual backend é mais
+  barato" e reabre a pergunta certa: vale pagar a infra extra do Grafana
+  pra manter dashboards/UX existentes, ou usar o console nativo? Prós/
+  contras de cada lado verificados contra documentação oficial ao vivo
+  (import de painéis Grafana→Cloud Monitoring, PromQL nativo no Metrics
+  Explorer, dashboard-as-code via Terraform, Log Analytics, Cloud Trace,
+  alerting policies) — corrige um exagero inicial de que Cloud Monitoring
+  seria menos configurável.
+- Ainda bloqueado por `PRO-84`: resposta do Luís sobre VM vs. Cloud Run do
+  proxy segue pendente.
+- New: `syntheses/Grafana hospedado vs Cloud Monitoring para telemetria de
+  produção.md`. Updated: `projects/Airtable Proxy.md` (dois callouts),
+  `index.md`.
