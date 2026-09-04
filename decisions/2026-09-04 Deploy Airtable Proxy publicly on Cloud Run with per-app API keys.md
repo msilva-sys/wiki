@@ -38,6 +38,18 @@ proxy-only, DNS privado, certificado) sem contrapartida em disponibilidade.
 Sem VPN, a VM perde sua única vantagem (IP interno de graça) e vira ponto
 único de falha na frente de todos os apps — descartada também.
 
+> [!important] Rede privada nunca teria funcionado para o LiveScript de qualquer forma — Luís, [[2026-09-04 1-1 Matheus - Luís]]
+> Confirmado na call que discutiu este memo: ninguém usa VPN para acessar
+> as aplicações internas da Livemode — nem o próprio LiveScript, cujos
+> usuários trabalham de casa sem VPN. *"O que eu tenho certeza é as
+> pessoas não usam VPN para acessar as nossas aplicações."* Isso reforça
+> a decisão além do argumento de custo do memo: o desenho de rede privada
+> de [[2026-08-21 Deploy Airtable Proxy privately behind VPN]] não era só
+> mais caro, seria **inviável na prática** para o consumidor real do
+> proxy. Pode existir VPN pra alguma outra finalidade na empresa — Luís
+> não tem certeza — mas nunca foi usada para estas aplicações, e vale
+> confirmar com o time de infra só se isso um dia importar.
+
 ## Por que abrir para a internet é aceitável agora
 
 Hoje, sem proxy, as PATs do Airtable já estão espalhadas nos 3 apps: uma

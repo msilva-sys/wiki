@@ -80,6 +80,28 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > fechá-lo cancelaria trabalho ainda válido (`PRO-91`, `PRO-92`). Ver a
 > ressalva em [[Direcionamento PRO-84 PRO-87]]. Discutido com msilva antes
 > de mexer no Linear.
+>
+> **Confirmado ao vivo com Luís, mesmo dia** ([[2026-09-04 1-1 Matheus -
+> Luís]]): sem reabrir nada — msilva concorda com o memo por escrito antes
+> da call. Fato novo que reforça a decisão: ninguém usa VPN pra acessar as
+> aplicações internas, nem o próprio LiveScript (usuários trabalham de
+> casa) — a rede privada não seria só mais cara, seria inviável na
+> prática. Cronograma: data oficial pra Carol continua **15/09**
+> ("validado com LiveScript" em produção), mas alvo **interno** puxado pra
+> **10/09** — pelo menos uma aplicação (LiveScript ou o front novo,
+> indiferente) apontando pro proxy em staging antes disso, validando ali
+> primeiro. Tensão não resolvida: essa data de "dia 11" citada na call
+> pode contradizer a decisão de 2026-08-19 de não colocar due dates no
+> Linear (reforçada pela limpeza de 2026-09-03) — não ficou claro se é
+> campo nativo ou compromisso verbal com a Carol.
+
+> [!tip] Git workflow ajustado, 2026-09-04 ([[2026-09-04 1-1 Matheus - Luís]])
+> Duas pessoas editando o mesmo repo agora exige mais disciplina de
+> branch. Luís rebase sua branch de dashboards (separada, atrás do merge
+> de `PRO-371`/`PRO-397`) em cima da `main`; msilva revisa/aprova a PR do
+> Luís em vez de resolver conflito do próprio lado. Branches de msilva
+> (`PRO-518`, `PRO-397`) ficam paradas até a branch do Luís landar,
+> esperado antes de terça (08/09).
 
 > [!tip] Current state, 2026-08-21
 > Path-based app identification is implemented and hardened in the repo. The

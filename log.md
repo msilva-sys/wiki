@@ -33,6 +33,22 @@ Prefixes: `ingest` | `callout` | `query` | `synthesis` | `lint` | `refactor` | `
   `PRO-79`). Linear changes (PRO-84/87 comments, PRO-90/93 disposition, new
   API-key ticket, PRO-87 title/scope correction) held pending msilva's call.
 
+## [2026-09-04] ingest | 1-1 Matheus - Luís (confirmação PRO-84/87 + cronograma)
+- Read `raw/Luis _ Matheus - 2026_09_04 17_45 GMT-03_00 - Anotações do
+  Gemini.md` in full.
+- New: `meetings/2026-09-04 1-1 Matheus - Luís.md`.
+- Updated: `decisions/2026-09-04 Deploy Airtable Proxy publicly on Cloud
+  Run with per-app API keys.md` (new fact: no VPN is used to reach
+  internal apps, reinforcing why private networking was never viable, not
+  just costlier), `projects/Airtable Proxy.md` (internal Sept-10 staging
+  target vs. Carol's official Sept-15 date, flagged tension with the
+  2026-08-19 no-due-dates decision; git workflow adjustment), `people/Luís
+  Fernandez.md` (product-boundary stance with Carol, pending 2026-09-08),
+  `index.md`.
+- Not decided in this meeting, just confirmed: the deploy/telemetry
+  architecture from [[Direcionamento PRO-84 PRO-87]] — msilva had already
+  agreed in writing before the call.
+
 ## [2026-08-17] refactor | LLM-wiki setup
 - Initialized git in the vault; snapshot commit taken before any changes.
 - Added `CLAUDE.md` (schema), `index.md`, `log.md`.

@@ -135,3 +135,15 @@ sometimes builds directly, otherwise supports.
   ([[2026-09-04 Use Grafana Cloud for Airtable Proxy production
   telemetry]]), fechando a investigação de
   [[Grafana hospedado vs Cloud Monitoring para telemetria de produção]].
+  **Confirma ao vivo o mesmo dia** ([[2026-09-04 1-1 Matheus - Luís]]) e
+  acrescenta um fato novo: ninguém usa VPN pra acessar as aplicações
+  internas, nem o LiveScript — reforça que a rede privada nunca teria
+  funcionado na prática, não só que ficaria mais cara. Puxa o alvo
+  interno de "pelo menos um app apontando pro proxy" pra 10/09, mantendo
+  15/09 como data oficial pra Carol.
+- **Postura sobre fronteira de produto com Carol/Gabi, 2026-09-04**
+  ([[2026-09-04 1-1 Matheus - Luís]]): não vai se meter em definição de
+  produto a menos que a própria Carol peça — prefere centralizar essas
+  decisões nela e na Gabi, ficando só na parte técnica com msilva. Se ela
+  quiser Luís envolvido, ele passa a cobrar msilva em produto do mesmo
+  jeito que já cobra em técnica. A decidir com a Carol em 08/09.
