@@ -5481,3 +5481,31 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   em `livemode-fluxo-agentico` — `run_a10` só lê o backlog do Linear, sem
   consumir nada do A14. Fica registrado como lacuna aberta, não como
   decisão de como fechá-la.
+
+## [2026-09-04] synthesis | Acoplamento do outcome A14→A10, sem virar dependência de código
+- Discussão em chat: quão acoplado o A10 ficaria do A14 ao consumir o
+  efeito medido de uma entrega. Achado um precedente direto no próprio
+  projeto — [[2026-08-24 Build A10 and A14 together, PoC first]] já
+  rejeitou A10 depender de um agregado calculado pelo A14, em nome do
+  "anarchic first"; confirmado no código real que hoje não existe nenhum
+  import cruzado entre `a10/` e `a14/`.
+- Diferença nomeada: aquele caso tinha saída por redundância (A10
+  recalcula do Linear); "efeito medido" não tem fonte primária pra
+  recalcular, então fechar o loop cria dependência real, não redundância.
+- Espectro de acoplamento levantado (tabela Postgres própria + tipo em
+  módulo neutro → chamada síncrona → import direto de código); msilva
+  escolheu a combinação mais solta (tabela + tipo neutro).
+- Mapeadas as fontes reais do A10 no código (`linear_adapter` via
+  `PortfolioReader`/`SourceType`, GitHub de carona pelo Linear,
+  `cache.py`, `a10/memory.py`, Langfuse, SOUL) — outcome do A14 não entra
+  como novo `SourceType` (isso responde "de onde vem o backlog"), entra
+  como quinta fonte na família memória, paralela a `a10/memory.py`.
+- Nota lateral confirmada, sem mudança de desenho: A10 lê issues cruas
+  internamente (`run_a10` direto + tool `list_issues` do próprio LLM,
+  fora só no `chat_a10`) — a regra de
+  [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro A14]] é
+  sobre o que ele expõe, não o que lê; mais frouxa que a leitura estrita
+  do N0-N4, lacuna já registrada, não afeta o outcome (que é agregado por
+  natureza).
+- Updated: `concepts/Fronteira A10×A14 (informação e métricas).md`
+  (seções novas "Acoplamento" e "Onde o outcome se encaixa"), `index.md`.

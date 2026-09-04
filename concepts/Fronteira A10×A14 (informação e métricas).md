@@ -2,7 +2,7 @@
 type: concept
 status: draft
 updated: 2026-09-04
-aliases: [fronteira A10 A14, N0-N4, niveis de informacao A10 A14, painel de métricas A10 A14, teste da pergunta A10 A14, efeito medido]
+aliases: [fronteira A10 A14, N0-N4, niveis de informacao A10 A14, painel de métricas A10 A14, teste da pergunta A10 A14, efeito medido, acoplamento A10 A14]
 tags: [agents, agent-flow, a10, a14, product-scope, metrics]
 ---
 
@@ -199,6 +199,88 @@ consumível pelo A10.
   `PortfolioHealth`, computado em `a10/rules.py::portfolio_health()`;
 - a cadência — o cron hoje é diário, mas efeito medido de uma entrega
   provavelmente não muda dia a dia.
+
+## Acoplamento: como o outcome entraria sem virar dependência de código
+
+Discutido em chat, 2026-09-04, antes de desenhar o contrato de dado de
+verdade.
+
+**O precedente**: essa exata tensão (A10 depender do A14) já apareceu uma
+vez e foi rejeitada. Em
+[[2026-08-24 Build A10 and A14 together, PoC first]] (seção "Aprofundado
+2026-08-28"), msilva cogitou o A10 consumir o agregado que o A14 já
+calculava (`/api/a14/overview`) — corrigido na hora: violaria o **"anarchic
+first"** já decidido em [[Agent Flow]] (*"each agent built independently...
+no cross-dependency"*). Saída escolhida: A10 recalcula `portfolio_health`
+por conta própria, direto do Linear — redundância aceita, dependência não.
+**Confirmado no código real, 2026-09-04**: hoje não existe nenhum import
+cruzado entre `a10/` e `a14/` — cada módulo só importa infraestrutura
+compartilhada (`db`, `domain`, `ports`, `linear_adapter`, `cache`, `soul`);
+o único lugar que conhece os dois é `cron.py`, a camada de orquestração.
+
+**Por que o loop de retorno é um caso diferente**: a saída de 2026-08-28
+funcionou porque "saúde do portfólio" é derivável do Linear puro — A10
+recalcula em vez de confiar no número do A14 (padrão
+[[Agents read primary sources]]). "Efeito medido" não tem essa saída:
+horas economizadas, adoção pela área, retrabalho não estão no Linear, são
+julgamento que só existe porque o A14 o produziu. Não tem fonte primária
+pra recalcular. Fechar esse loop **necessariamente** cria uma dependência
+real — a redundância que resolveu o caso anterior não se aplica aqui.
+
+**Espectro de acoplamento, do mais solto ao mais apertado**:
+1. Tabela Postgres própria do A14 (outcome), lida pelo A10 como fonte
+   externa best-effort — mesmo nível de confiança que hoje dá ao Linear;
+   sem linha disponível, A10 só vê "sem dado" e degrada normalmente.
+2. O tipo do contrato (`A14Outcome`) mora num módulo neutro (ao lado de
+   `domain.py`), não em `a14/contracts.py` — evita que ler a tabela
+   exija `from a14 import ...`.
+3. Chamada síncrona A10→A14 — reabriria a dependência rejeitada em
+   2026-08-28, sem motivo: o próprio doc já diz que efeito medido não
+   muda dia a dia, então acoplar em tempo real não compra nada.
+4. Import direto de código (`a10/rules.py` chamando `a14.rules`) — quebra
+   o ports-and-adapters do projeto pra nenhum ganho sobre a opção 1.
+
+**Direção escolhida por msilva: 1+2.** É acoplamento real (não a
+redundância que salvou o caso de 2026-08-28), mas a versão mais barata que
+ainda fecha o loop — leitura assíncrona, sem código compartilhado entre os
+módulos dos dois agentes.
+
+## Onde o outcome se encaixa entre as fontes reais do A10
+
+Auditado no código, 2026-09-04. O A10 hoje tem duas famílias de fonte:
+
+- **Dado de domínio**: Linear via `linear_adapter`, único adapter real
+  atrás do Protocol `PortfolioReader` (`a10/ports.py`) — `list_issues`,
+  `list_projects`, `get_project_repos` — registrado num dict pluggable
+  (`READERS`, `SourceType = Literal["linear"]` em `ports.py` raiz, já
+  pensado pra crescer). GitHub chega de carona por dentro do Linear
+  (`Issue.attachments`, `repo_tools`), não é uma fonte própria.
+- **Memória própria**: `cache.py` (execução, Redis) e `a10/memory.py`
+  (Postgres — `a10_posted_comments`, histórico do que o próprio A10 já
+  publicou, usado pra dedupe/cooldown e recorrência).
+- Config, não dado: Langfuse (prompt) e SOUL (comportamento).
+
+**O outcome do A14 não é um novo `SourceType`** — essa abstração responde
+"de onde vem o backlog" (Linear hoje, Excel um dia, mesma forma de dado).
+Efeito medido não é uma versão alternativa do backlog, é conhecimento sobre
+como ciclos anteriores se saíram — estruturalmente mais parecido com
+`a10/memory.py` do que com `linear_adapter`. Desenho: um módulo paralelo
+(`a10/outcomes.py`?), lido depois do `reader.list_issues`/`list_projects`,
+do mesmo jeito que `memory.recent_history()` já é consultado hoje — sem
+tocar no Protocol `PortfolioReader` nem no dispatch por `SourceType`.
+
+**Nota à parte, sem relação com o desenho do outcome**: confirmado que o
+A10 **lê issues cruas de duas formas** — direto em `run_a10()`
+(`reader.list_issues`, pra montar `portfolio_health`/`summary`) e como
+tool do próprio LLM (`list_issues()` em `a10/tools.py`, disponível quando
+`include_issue_detail=True`, que é o padrão em `run_a10` — só
+`chat_a10` desliga isso). A regra de
+[[2026-09-02 A10 para de expor detalhe de issue, encaminha pro A14]] é
+sobre o que ele **expõe**, não o que **lê** — mais frouxa que a leitura
+estrita do N0-N4 acima ("A10 nunca recebe item abaixo de N1"), lacuna já
+registrada, sem mudança nesta sessão. Não afeta o desenho do outcome: por
+natureza ele é agregado (por iniciativa/entrega), já nasce compatível com
+a versão estrita.
 
 ## Linhas de guardrail (candidatas para o system prompt)
 
