@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-09-02
+updated: 2026-09-04
 
 
 ---
@@ -5557,4 +5557,20 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   descrição curta) em vez de despriorização deliberada. Sinal
   "priorização desalinhada" do A10 herda essa ambiguidade.
 - Updated: `concepts/Fronteira A10×A14 (informação e métricas).md` (nova
+  entrada), `index.md`.
+
+## [2026-09-04] query | Prep pra reunião com Carol sobre métricas A10/A14
+- msilva pediu prep pra reunião "Carolina / Matheus" (17h, Sala Handebol,
+  confirmada via calendário) — dúvidas sobre métricas de saúde de
+  portfólio (A10), métricas de progresso de projeto (A14), e onde essas
+  entregas de insight acontecem hoje (Linear? Slack?).
+- Cruzado com o achado já auditado no código (`a10/rules.py:87-118`,
+  mesmo dia, entrada acima) e com as decisions de publicação
+  (`projectUpdateCreate`) de 2026-09-01/02/03 — separado o que já está
+  resolvido do que é pergunta real pra levar à Carol (confiabilidade da
+  `avg_priority` bruta, se o painel amplo ainda bate com a visão dela de
+  "priorização transversa", loop de retorno A14→A10, canal do Slack
+  dedicado vs. status update do Linear).
+- New: `meetings/Meeting prep - Carolina - Matheus - 2026-09-04.md`.
+- Updated: `index.md`.
   seção "Cálculo real de capacidade e prioridade"), `index.md`.
