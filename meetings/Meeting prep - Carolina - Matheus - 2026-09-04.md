@@ -30,36 +30,36 @@ de 2026-09-01/02/03.
 
 | Termo | O que quer dizer | Como é calculado hoje |
 |---|---|---|
-| **Capacidade** (`capacity_share`) | A fatia da atenção/esforço do time que uma iniciativa está consumindo — o sinal que existe pra dizer "essa iniciativa está tomando um pedaço desproporcional do time" quando várias disputam a mesma equipe ao mesmo tempo. | Na prática, é uma **contagem de issues**, não de esforço: nº de issues ativas da iniciativa ÷ nº total de issues ativas do backlog do time inteiro. Uma issue de 1 ponto conta igual a uma de 8 — não usa Estimate/story points. Código: `a10/rules.py:87-118`. |
-| **Prioridade média** (`avg_priority`) | Tentativa de resumir num número só se as issues de uma iniciativa estão sendo tratadas como urgentes pelo time, pra detectar "priorização desalinhada" (iniciativa importante recebendo tratamento de baixa prioridade, ou vice-versa). | Média aritmética simples do campo `priority` bruto do Linear: `0=Sem prioridade, 1=Urgente, 2=Alta, 3=Média, 4=Baixa`. Sem nenhum tratamento — um `0` entra na conta como se fosse a prioridade mais baixa, quando na real quer dizer "ninguém preencheu esse campo". Isso pode gerar falso alarme de "iniciativa despriorizada" quando o problema é só descuido de preenchimento (bate com outro achado do mesmo levantamento: 28 de 35 issues do Airtable GC com descrição curta, sinal de higiene de dados ruim). |
-| Onde o A10 publica hoje? | — | Status update nativo do projeto no Linear (`projectUpdateCreate`) — um post agregado por projeto, não comentário em issue individual. Foi revertido de comentário-por-issue em 2026-09-01 por reclamação do Luís (poluía a issue). |
+| **Capacidade** (`capacity_share`) | A fatia da atenção/esforço do time que uma iniciativa está consumindo — o sinal que existe pra dizer "essa iniciativa está tomando um pedaço desproporcional do time" quando várias disputam a mesma equipe ao mesmo tempo. | Na prática, é uma **contagem de issues**, não de esforço: nº de issues ativas da iniciativa ÷ nº total de issues ativas do backlog do time inteiro. Uma issue de 1 ponto conta igual a uma de 8 — não usa Estimate/story points. Código: `a10/rules.py:87-118`. **Exemplo real (2026-09-04)**: a iniciativa *Airtable GC* apareceu no status do A10 com 15,4% de capacidade — ou seja, das issues ativas de todo o time, 15,4% são dessa iniciativa. Numa conta de brinquedo: time com 50 issues ativas ao todo, 8 delas de uma iniciativa → `8/50 = 16%`. |
+| **Prioridade média** (`avg_priority`) | Tentativa de resumir num número só se as issues de uma iniciativa estão sendo tratadas como urgentes pelo time, pra detectar "priorização desalinhada" (iniciativa importante recebendo tratamento de baixa prioridade, ou vice-versa). | Média aritmética simples do campo `priority` bruto do Linear: `0=Sem prioridade, 1=Urgente, 2=Alta, 3=Média, 4=Baixa`. Sem nenhum tratamento — um `0` entra na conta como se fosse a prioridade mais baixa, quando na real quer dizer "ninguém preencheu esse campo". **Exemplo real (2026-09-04)**: a mesma iniciativa *Airtable GC* apareceu com prioridade média **0** — não porque o time decidiu que é baixa prioridade, e sim porque nenhuma issue dela tinha o campo Priority preenchido no Linear (bate com outro achado do mesmo levantamento: 28 de 35 issues dessa iniciativa com descrição curta — sinal de higiene de dados ruim, não de despriorização real). |
+| Onde o A10 publica hoje? | — | Status update nativo do projeto no Linear (`projectUpdateCreate`) — um post agregado por projeto, não comentário em issue individual. Foi revertido de comentário-por-issue em 2026-09-01 por reclamação do Luís (poluía a issue). **Exemplo**: foi assim que os 15,4%/prioridade 0 da Airtable GC chegaram até o msilva — como uma atualização de status do projeto, não um comentário numa issue específica. |
 | Onde o A14 publica hoje? | — | Também via `projectUpdateCreate` — mas o log de 2026-08-31 registrava "A14 em comentário na issue", que parece defasado; **confirmar contra o código antes de afirmar isso pra ela**. |
-| O Slack já recebe algo hoje? | — | Só indiretamente: projetos do Linear podem ser plugados a canais do Slack, e quando o cron do A10/A14 falha ele publica um alerta no Linear que aparece automaticamente lá (confirmado ao vivo em 2026-09-03). Não existe hoje um push de insight (digest, status) dedicado ao Slack — só esse alerta de erro. |
+| O Slack já recebe algo hoje? | — | Só indiretamente: projetos do Linear podem ser plugados a canais do Slack, e quando o cron do A10/A14 falha ele publica um alerta no Linear que aparece automaticamente lá (confirmado ao vivo em 2026-09-03). Não existe hoje um push de insight (digest, status) dedicado ao Slack — só esse alerta de erro. **Exemplo real**: em 2026-09-03, um teste do cron gerou um alerta de verdade (`health="offTrack"`, projeto Fluxo Agêntico) que apareceu automaticamente no Slack do time — inclusive sem aviso de que era teste. |
 
 ## Perguntas reais para a Carol
 
 **A10 — saúde de portfólio**
 - A `avg_priority` bruta (sem tratar `0 = sem prioridade` como "indefinido", e não "baixa prioridade") é confiável pra ela decidir algo hoje, ou é um viés que ela já compensa mentalmente pelas issues mal preenchidas?
-- Existe um painel mais amplo desenhado, ainda não implementado, com estas ideias — vale confirmar se ainda é isso que ela esperaria ver:
-  - *capacidade alocada por iniciativa* — a mesma métrica de capacidade acima, olhada lado a lado entre iniciativas;
-  - *custo acumulado vs. previsto* — quanto já foi gasto numa iniciativa comparado ao que foi orçado;
-  - *concentração de risco* — quanto do portfólio depende de poucas iniciativas (ou poucas pessoas): se uma travar, quanto do todo trava junto;
-  - *iniciativas sem entrega há N ciclos* — iniciativas "paradas", sem nenhuma issue fechada em N sprints;
-  - *fila de demandas não atendidas* — quantas iniciativas já aprovadas ainda nem começaram;
-  - *taxa de encerramento por ciclo* — quantas iniciativas realmente fecham por ciclo, como indicador de vazão do time.
+- Existe um painel mais amplo desenhado, ainda não implementado, com estas ideias (exemplos abaixo são hipotéticos, só pra ilustrar o mecanismo — não são dados reais) — vale confirmar se ainda é isso que ela esperaria ver:
+  - *capacidade alocada por iniciativa* — a mesma métrica de capacidade acima, olhada lado a lado entre iniciativas (ex.: iniciativa A com 40%, B com 15,4%, C com 5% — mostra onde o time está concentrado);
+  - *custo acumulado vs. previsto* — quanto já foi gasto numa iniciativa comparado ao que foi orçado (ex.: orçado 20 issues pra entregar, já consumiu 35 — estourou 75%);
+  - *concentração de risco* — quanto do portfólio depende de poucas iniciativas (ou poucas pessoas): se uma travar, quanto do todo trava junto (ex.: 60% da capacidade do time está em só 2 das 15 iniciativas ativas);
+  - *iniciativas sem entrega há N ciclos* — iniciativas "paradas", sem nenhuma issue fechada em N sprints (ex.: iniciativa sem nenhum fechamento nos últimos 3 ciclos);
+  - *fila de demandas não atendidas* — quantas iniciativas já aprovadas ainda nem começaram (ex.: 5 iniciativas aprovadas, zero issues abertas nelas ainda);
+  - *taxa de encerramento por ciclo* — quantas iniciativas realmente fecham por ciclo, como indicador de vazão do time (ex.: de 10 iniciativas ativas, 2 fecharam nesse ciclo → 20%).
   
   Isso ainda bate com o que ela disse em 2026-08-24 sobre priorização ser "inteligência transversa" — ou a visão dela mudou o que faria sentido aqui?
 - Falta um **loop de retorno A14→A10**: o efeito real de uma entrega (economizou tempo? reduziu erro?) não volta pro A10 pra influenciar a próxima decisão de alocação — hoje é uma via de mão única. Ela já sente falta disso na prática, ou ainda não chegou nesse ponto de maturidade?
 
 **A14 — progresso de projeto**
-- Métricas propostas (ainda não implementadas) — fazem sentido pra ela, falta ou sobra alguma?
-  - *lead time* — tempo entre a iniciativa ser aprovada e a entrega estar realmente em uso (não só "pronta");
-  - *aderência à data combinada* — entregou no prazo que foi acordado ou não;
-  - *mudança de escopo pós-aceite* — quanto o escopo mudou depois que a entrega já tinha sido aceita/iniciada;
-  - *tempo bloqueado* — quanto tempo a entrega passou travada esperando outra coisa (pessoa, decisão, dependência);
-  - *retrabalho* — quanto do que foi feito precisou ser refeito;
-  - *adoção pela área* — a entrega está realmente sendo usada por quem pediu, não só "encerrada" no Linear;
-  - *efeito medido na área* — o ganho real e concreto (horas economizadas, chamados reduzidos, erros evitados), não só "entregamos".
+- Métricas propostas (ainda não implementadas; exemplos abaixo também são hipotéticos) — fazem sentido pra ela, falta ou sobra alguma?
+  - *lead time* — tempo entre a iniciativa ser aprovada e a entrega estar realmente em uso, não só "pronta" (ex.: aprovada em 01/08, time começou a usar de fato em 20/08 → ~19 dias de lead time);
+  - *aderência à data combinada* — entregou no prazo que foi acordado ou não (ex.: prazo combinado 15/09, entregou 22/09 → não aderiu);
+  - *mudança de escopo pós-aceite* — quanto o escopo mudou depois que a entrega já tinha sido aceita/iniciada (ex.: escopo aceito era "relatório mensal", virou "relatório + dashboard" sem reaprovação formal);
+  - *tempo bloqueado* — quanto tempo a entrega passou travada esperando outra coisa, pessoa, decisão, dependência (ex.: dos 20 dias corridos da entrega, 6 foram esperando aprovação de outra área → 30% do tempo total foi bloqueio, não trabalho);
+  - *retrabalho* — quanto do que foi feito precisou ser refeito (ex.: 3 de 10 issues marcadas "Done" tiveram que ser reabertas depois);
+  - *adoção pela área* — a entrega está realmente sendo usada por quem pediu, não só "encerrada" no Linear (ex.: entrega fechada há 3 semanas, mas ninguém na área começou a usar);
+  - *efeito medido na área* — o ganho real e concreto, não só "entregamos" (ex.: depois de automatizar um relatório, a área reportou 5h/semana economizadas e queda de 10 pra 2 chamados de suporte por mês).
 - Granularidade do A14 é entrega/tarefa dentro da iniciativa — é o nível que ela acompanha, ou ela olha mais fino (subtarefa) ou mais grosso (a iniciativa como um todo)?
 
 **Entrega dos insights**

@@ -5579,4 +5579,10 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   com uma explicação em linguagem simples antes de cada fórmula, e cada item
   do painel A10/A14 proposto (concentração de risco, lead time, retrabalho,
   etc.) ganhou uma linha dizendo o que é, não só o nome.
+- **Mesmo dia, segunda revisão**: msilva pediu exemplos. Adicionado exemplo
+  real pra capacidade e prioridade média — reaproveitando o status real do
+  A10 pra iniciativa Airtable GC citado na entrada de log acima (15,4% de
+  capacidade, prioridade média 0) — e um exemplo numérico ilustrativo pra
+  cada item do painel A10/A14 ainda não implementado, marcados
+  explicitamente como hipotéticos pra não confundir com o dado real.
   seção "Cálculo real de capacidade e prioridade"), `index.md`.
