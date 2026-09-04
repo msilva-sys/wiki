@@ -42,7 +42,11 @@ Cinco perguntas-diagnóstico para saber de quem é uma decisão:
 
 **A10 (Portfolio)** — decide onde a empresa coloca capacidade, comparando
 demandas e iniciativas que disputam os mesmos times. Granularidade =
-iniciativa, nunca desce a tarefa.
+iniciativa, nunca desce a tarefa. **Só ficou assim no código a partir de
+2026-09-04**: até de manhã o A10 julgava e publicava por projeto (herança
+de quando a unidade era issue); dois commits na tarde (`3f8bdc1` issue→
+projeto, `7fcb354` projeto→iniciativa) fecharam a distância entre o
+princípio já escrito aqui e o que o código realmente fazia.
 - Recebe: carteira de iniciativas (custo/dono/status), capacidade disponível
   por time, fila de demandas não aprovadas, direcionador estratégico do
   ciclo, **resultado agregado reportado pelo A14**.
@@ -258,6 +262,21 @@ existe, mas hoje só carrega o sinal mais barato (prazo), não o "efeito
 medido" completo que o painel acima propõe — a pergunta de negócio que
 motivou a lacuna (*"a solução resolveu o problema, ou só foi entregue como
 combinado?"*) segue sem resposta automática.
+
+**Segunda lacuna, achada auditando de novo (2026-09-04, mesma tarde): o
+outcome não aparece em lugar nenhum visível.** `outcome_by_initiative`/
+`OutcomeSummary` chegam até o payload da API e o tipo TypeScript do
+frontend (`frontend/src/api/types.ts`), mas **nenhum componente `.tsx`
+renderiza isso** — grep vazio. O texto publicado no Linear
+(`a10/formatting.py::format_portfolio_digest`) também não menciona outcome
+algum, só as 4 sugestões de risco de sempre
+(`iniciativa_estagnada`/`priorizacao_desalinhada`/`gargalo_de_capacidade`/
+`escopo_descontrolado`). E `chronic_no_effect` — o sinal mais óbvio pra
+virar alerta ("entregando no prazo mas sem efeito, cronicamente") — **não
+alimenta nenhuma das 4 sugestões**; fica calculado e parado dentro de
+`portfolio_health()`, sem rota até uma saída que alguém leria. Resultado
+prático: o loop existe como dado, mas ainda não existe como informação —
+ninguém (nem a Carol, nem o msilva fora do código) vê isso hoje.
 
 ## Acoplamento: como o outcome entraria sem virar dependência de código
 

@@ -5658,3 +5658,34 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `concepts/Fronteira A10×A14 (informação e métricas).md`
   (correção inline, não sobrescrita — estado antigo mantido com nota de
   correção), `index.md`.
+
+## [2026-09-04] ingest | Segunda auditoria: A10 mudou de unidade hoje, outcome não é visível
+- msilva perguntou "há algo que deixamos de fora?" sobre o material pra
+  Carol. Auditoria de código de novo, já que o repo estava mudando durante
+  a própria conversa.
+- **Achado 1 — A10 mudou de unidade de julgamento/publicação duas vezes
+  hoje à tarde**: `3f8bdc1` (13h12, issue→projeto: A10 para de julgar
+  issue por issue) e `7fcb354` (13h49, projeto→iniciativa: A10 agrupa
+  projetos por iniciativa e julga/publica nesse nível). Resultado: A10
+  agora publica via `publish_initiative_update`, não mais
+  `publish_project_update` — a prep pra Carol e a `Meeting prep` tinham
+  "A10 publica no projeto", que ficou errado a partir das 13h49 (estava
+  certo antes disso). `capacity_share`/`avg_priority` em
+  `initiative_summaries()` continuam nas mesmas linhas (`a10/rules.py:
+  87-118`), lógica intacta — só o nível de despacho/publicação mudou.
+- **Achado 2 — o outcome (loop A14→A10 fechado mais cedo, `eafa28c`) não
+  aparece em lugar nenhum visível**: `outcome_by_initiative`/
+  `OutcomeSummary` chegam até `frontend/src/api/types.ts`, mas nenhum
+  componente `.tsx` renderiza isso (grep vazio); `a10/formatting.py::
+  format_portfolio_digest` (o texto publicado no Linear) também não
+  menciona outcome, só as 4 sugestões de risco de sempre.
+  `chronic_no_effect` — o sinal mais óbvio pra virar um quinto tipo de
+  alerta — não alimenta nenhuma das 4 sugestões, fica calculado e parado.
+- **Achado 3 (confirmação, não descoberta)**: `commentCreate` não existe
+  em lugar nenhum do repo — resolve de vez a dúvida antiga sobre o A14
+  publicar via comentário vs. status update (é status update, sempre foi
+  desde 01/09).
+- Updated: `concepts/Fronteira A10×A14 (informação e métricas).md` (nova
+  seção sobre outcome invisível, nota sobre A10 mudar de unidade hoje),
+  `meetings/Meeting prep - Carolina - Matheus - 2026-09-04.md` (tabela
+  "Já resolvido" corrigida e ampliada), `index.md`.
