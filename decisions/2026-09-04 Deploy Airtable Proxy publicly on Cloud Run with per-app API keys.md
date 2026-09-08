@@ -112,6 +112,13 @@ Pricing Calculator em 2026-09-04, a validar contra billing real.
   de fora do time.
 - Revisar depois de semanas de uso real: volume, custo, cardinalidade de
   séries — só então decidir domínio próprio, LB, Cloud Armor ou `min=2`.
-- Ajuste dos tickets `PRO-90`/`PRO-93` e criação do ticket de API key no
-  Linear — ver a ressalva de mapeamento em [[Direcionamento PRO-84
-  PRO-87]], ainda não executado.
+- Implementação em si — ver
+  [PRO-553](https://linear.app/projetos-livemode/issue/PRO-553/adicionar-autenticacao-por-api-key-nas-requisicoes-ao-proxy)
+  (API key por app, criada 2026-09-08).
+
+## Linear (feito 2026-09-08)
+
+`PRO-84` ganhou comentário registrando esta decisão; `PRO-90` (IaC Pulumi)
+não foi fechado, só comentário de nota de escopo; `PRO-553` criada como
+sub-issue de `PRO-84` pra API key por app. Ver [[Direcionamento PRO-84
+PRO-87]].

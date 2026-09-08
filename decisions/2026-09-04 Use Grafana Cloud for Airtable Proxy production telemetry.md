@@ -55,14 +55,15 @@ Dois pontos de atenção aceitos:
 - O gateway OTLP do Grafana Cloud é **OTLP/HTTP**; os exporters do proxy
   são gRPC fixos no código.
 
-> [!warning] Mudança de código necessária — contradiz o título atual da `PRO-87`
+> [!warning] Mudança de código necessária — contradizia o título original da `PRO-87`
 > O comentário no código diz que o protocolo vem de env var, mas os
 > exporters atuais ignoram `OTEL_EXPORTER_OTLP_PROTOCOL` — é preciso trocar
 > para `autoexport` para falar HTTP com o Grafana Cloud, mantendo gRPC no
 > ambiente local. Isso é **mudança de código**, não só configuração — a
-> `PRO-87` está titulada "Apontar OTLP para backend de produção (sem mudar
-> código do proxy)". Ticket precisa de correção de escopo/título; ainda não
-> feito no Linear.
+> `PRO-87` estava titulada "Apontar OTLP para backend de produção (sem
+> mudar código do proxy)". **Corrigido no Linear, 2026-09-08**: título
+> ajustado para "Apontar OTLP para o Grafana Cloud (troca de exporters
+> gRPC → HTTP)", comentário com a decisão completa.
 
 ## Ainda em aberto
 
@@ -71,4 +72,4 @@ Dois pontos de atenção aceitos:
   gatilho definido ainda.
 - Execução: criar a stack Grafana Cloud (região US East), importar os 2
   dashboards via API, recriar o alerta 429 com contact point no Slack,
-  trocar os exporters para `autoexport`.
+  trocar os exporters para `autoexport` (`PRO-87`).

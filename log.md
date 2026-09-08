@@ -49,6 +49,25 @@ Prefixes: `ingest` | `callout` | `query` | `synthesis` | `lint` | `refactor` | `
   architecture from [[Direcionamento PRO-84 PRO-87]] — msilva had already
   agreed in writing before the call.
 
+## [2026-09-08] refactor | Ajuste dos tickets do Linear (PRO-84/87/90/92/93)
+- Executa o ajuste de Linear que ficara pendente desde o ingest do
+  [[Direcionamento PRO-84 PRO-87]] (2026-09-04): comentários de decisão em
+  `PRO-84` (deploy público, Cloud Run) e `PRO-87` (Grafana Cloud); título
+  da `PRO-87` corrigido ("sem mudar código" não era mais verdade);
+  comentário de nota de escopo em `PRO-90` (sem fechar — ainda é o épico
+  de IaC/Pulumi, `PRO-91` segue válido); `PRO-92` e `PRO-93` canceladas
+  com comentário explicando o motivo (presas ao Cloud Monitoring,
+  abandonado); ticket novo
+  [PRO-553](https://linear.app/projetos-livemode/issue/PRO-553/adicionar-autenticacao-por-api-key-nas-requisicoes-ao-proxy)
+  criado (Story, sub-issue de `PRO-84`) para a API key por app.
+- Updated: `sources/Direcionamento PRO-84 PRO-87.md`, `decisions/2026-09-04
+  Deploy Airtable Proxy publicly on Cloud Run with per-app API keys.md`,
+  `decisions/2026-09-04 Use Grafana Cloud for Airtable Proxy production
+  telemetry.md`, `projects/Airtable Proxy.md`.
+- Nenhuma issue nova precisou de Estimate: nenhuma das ~34 issues do
+  projeto tem esse campo preenchido, então `PRO-553` seguiu a prática real
+  do time em vez do checklist da convenção ao pé da letra.
+
 ## [2026-08-17] refactor | LLM-wiki setup
 - Initialized git in the vault; snapshot commit taken before any changes.
 - Added `CLAUDE.md` (schema), `index.md`, `log.md`.

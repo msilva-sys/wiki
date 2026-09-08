@@ -74,12 +74,17 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > [[2026-09-04 Use Grafana Cloud for Airtable Proxy production
 > telemetry]] (resolve a síntese acima, agora `status: superseded`).
 >
-> **Ajuste de tickets ainda pendente no Linear** — o memo pede fechar/adiar
-> `PRO-90` e `PRO-93` e abrir um ticket novo de API key, mas `PRO-90` no
-> Linear é o épico inteiro de IaC (Pulumi), não um ticket específico de LB;
-> fechá-lo cancelaria trabalho ainda válido (`PRO-91`, `PRO-92`). Ver a
-> ressalva em [[Direcionamento PRO-84 PRO-87]]. Discutido com msilva antes
-> de mexer no Linear.
+> **Ajuste de tickets no Linear, feito 2026-09-08** — o memo pedia
+> fechar/adiar `PRO-90` e `PRO-93`, mas `PRO-90` no Linear é o épico
+> inteiro de IaC (Pulumi), não um ticket específico de LB; fechá-lo
+> cancelaria trabalho ainda válido (`PRO-91`). Resolvido: `PRO-90` ganhou
+> só um comentário de nota de escopo, não foi fechado; `PRO-92` e `PRO-93`
+> (as duas issues reais presas ao Cloud Monitoring) foram canceladas com
+> comentário explicando o motivo; comentários de decisão registrados em
+> `PRO-84` e `PRO-87`; título da `PRO-87` corrigido; ticket novo
+> [PRO-553](https://linear.app/projetos-livemode/issue/PRO-553/adicionar-autenticacao-por-api-key-nas-requisicoes-ao-proxy)
+> criado (Story, sub-issue de `PRO-84`) para a API key por app. Ver a
+> ressalva original em [[Direcionamento PRO-84 PRO-87]].
 >
 > **Confirmado ao vivo com Luís, mesmo dia** ([[2026-09-04 1-1 Matheus -
 > Luís]]): sem reabrir nada — msilva concorda com o memo por escrito antes
@@ -693,8 +698,8 @@ These remain open (design §14):
   GCS, achado de que GMP é tecnicamente parte do Cloud Monitoring) em
   [[Grafana hospedado vs Cloud Monitoring para telemetria de produção]],
   agora arquivada como `status: superseded` pela decisão. Exige trocar
-  exporters gRPC→HTTP (`autoexport`) — mudança de código que contradiz o
-  título atual da `PRO-87`, ajuste ainda pendente no Linear.
+  exporters gRPC→HTTP (`autoexport`) — mudança de código; título da
+  `PRO-87` corrigido no Linear em 2026-09-08 pra refletir isso.
 - ~~Compatibilidade do proxy com SDKs fora do Node~~ **Verificado 2026-09-03,
   para Python**: `pyairtable` (sucessor mantido do antigo
   `airtable-python-wrapper`) tem um parâmetro `endpoint_url` que substitui

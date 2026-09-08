@@ -52,19 +52,24 @@ real mostrar necessidade.
 - `PRO-87` → Grafana Cloud.
 - Ticket novo: API key por app, "substituindo o item X-Api-Key do backlog".
 
-> [!warning] Mapeamento de tickets do memo não bate com o Linear real
+> [!warning] Mapeamento de tickets do memo não batia com o Linear real
 > Conferido em 2026-09-04: `PRO-90` no Linear é o épico **"IaC (Pulumi)"**
-> inteiro (inclui `PRO-91` Cloud Run+Secret Manager, ainda necessário, e
-> `PRO-92` alertas em Pulumi) — não um ticket específico de "Load Balancer
-> interno". O trecho do LB nunca virou issue própria; ficou registrado como
-> escopo adiado dentro do `PRO-90` em
-> [[2026-08-21 Deploy Airtable Proxy privately behind VPN]] ("Still out of
-> scope, left for a later PRO-90 sibling"). Fechar o `PRO-90` de verdade
-> cancelaria trabalho ainda válido. Também não existe, hoje, um ticket aberto
-> literalmente chamado "X-Api-Key" no backlog — o mais próximo é a `PRO-79`
-> (Done, "Validar app por X-App-Id (X-Api-Key adiado)"). Ajuste no Linear
-> ainda não feito — pendente de decisão do msilva sobre como tratar essas
-> duas discrepâncias.
+> inteiro (inclui `PRO-91` Cloud Run+Secret Manager, ainda necessário) —
+> não um ticket específico de "Load Balancer interno". O trecho do LB
+> nunca virou issue própria; ficou registrado como escopo adiado dentro do
+> `PRO-90` em [[2026-08-21 Deploy Airtable Proxy privately behind VPN]]
+> ("Still out of scope, left for a later PRO-90 sibling"). Também não
+> existia um ticket aberto literalmente chamado "X-Api-Key" no backlog — o
+> mais próximo era a `PRO-79` (Done, "Validar app por X-App-Id (X-Api-Key
+> adiado)").
+>
+> **Resolvido no Linear, 2026-09-08**: `PRO-90` não foi fechado (só ganhou
+> um comentário de nota de escopo); `PRO-92` e `PRO-93` — as duas issues
+> reais que dependiam de Cloud Monitoring — foram canceladas com
+> comentário explicando o motivo; ticket novo
+> [PRO-553](https://linear.app/projetos-livemode/issue/PRO-553/adicionar-autenticacao-por-api-key-nas-requisicoes-ao-proxy)
+> criado para a API key por app, sub-issue de `PRO-84`; título da `PRO-87`
+> corrigido (não dizia mais a verdade sobre "sem mudar código").
 
 ## Referências
 
