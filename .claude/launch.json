@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "frontend-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "C:\\Users\\msilva\\projects\\livemode-fluxo-agentico\\frontend", "run", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "fluxo-agentico-api",
+      "runtimeExecutable": "C:\\Users\\msilva\\projects\\livemode-fluxo-agentico\\.venv\\Scripts\\python.exe",
+      "runtimeArgs": ["C:\\Users\\msilva\\projects\\livemode-fluxo-agentico\\main.py"],
+      "port": 8000
+    }
+  ]
+}
