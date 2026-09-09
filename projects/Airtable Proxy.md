@@ -11,6 +11,38 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > Related: [[Proxy Environments]] · [[AIRTABLEGC-34]] · [[LiveScript]] ·
 > [[Airtable Rate Limits]] · [[Agent Flow]]
 
+> [!danger] O painel de portfólio não está vendo este trabalho — 2026-09-08
+> Descoberto ao vivo pela Mafê na [[2026-09-08 Weekly - Projetos e
+> Tarefas]]: o painel interno de portfólio lê o projeto **`Proxy do
+> Airtable`**, não o **`Proxy em produção validado c/ LiveScript`**, que é
+> onde as issues são gerenciadas desde a promoção de 2026-08-19.
+>
+> **O progresso real do proxy não aparece pra Carol e Gabrielle.** Ela se
+> comprometeu a avisar a Gabi, dona da ferramenta — não é ação de msilva,
+> apesar de a ata do Gemini ter atribuído a ele. Efeito colateral não
+> previsto da promoção milestone→projeto; ver [[Linear Project Structure]].
+>
+> Dois pontos correlatos da mesma reunião:
+> - **Carol quer os projetos de proxy unificados** — *"esses três aí
+>   deveriam ser uma coisa só"*, o que conflita com a estrutura de projetos
+>   irmãos que veio do Luís. Ele estava ausente. Não decidido.
+> - **O nome do projeto está errado, por admissão de msilva** — *"seria
+>   validado com algum projeto"*, já que ainda não se sabe se a aplicação
+>   será o [[LiveScript]] ou o front novo. Renomear resolveria boa parte da
+>   confusão de nomes que a Carol levantou.
+
+> [!note] 15/09 reafirmado em fórum público — 2026-09-08
+> Na mesma weekly, msilva confirmou a meta de o proxy estar **integrado ao
+> projeto do portfólio até 15/09**, com alguma aplicação apontando pra ele.
+> A meta interna de 10/09 (staging primeiro), combinada com Luís em
+> [[2026-09-04 1-1 Matheus - Luís]], não foi mencionada ali — a data que a
+> área ouviu é a de 15/09.
+>
+> **Qual aplicação vai apontar segue em aberto, e é decisão do Luís** —
+> *"o Luiz ainda não decidiu qual vai ser o aplicativo que vai estar
+> apontando para ele"*. Terceiro registro consecutivo dessa mesma pendência
+> (04/09, 08/09), sem dono se movendo.
+
 > [!tip] Auditoria e limpeza de datas/status no Linear — 2026-09-03
 > Pedido de msilva: "validar as datas e algumas coisas relacionadas ao proxy
 > no Linear". Achados e correções nos dois projetos (`Proxy do Airtable`,

@@ -329,6 +329,107 @@ qualified in words.
 > rascunho por causa do bloqueio (ex.: PRO-517 em [[Airtable Proxy]]) podem
 > ser criadas normalmente agora.
 
+## Revisão de 2026-09-08 — a estrutura foi contestada, e o painel lê o projeto errado
+
+Duas reuniões no mesmo dia mexeram com o que está registrado acima:
+[[2026-09-08 Weekly - Projetos e Tarefas]] e
+[[2026-09-08 Overview de Linear com João Victor]].
+
+> [!danger] Carol quer os projetos de proxy unificados — conflito direto com a estrutura do Luís
+> Na Weekly, olhando a lista de projetos da iniciativa *Airtable GC —
+> Governança e Confiabilidade*, **Carolina Bezerra**: *"eu acho que esses
+> três aí deveriam ser uma coisa só."* [[Maria Fernanda Lemos]] concordou:
+> *"é a mesma coisa pelo que eu tô entendendo."* Os três em questão são
+> `Proxy do Airtable`, `Proxy expandido para outros apps` e `Proxy em
+> produção validado c/ LiveScript`.
+>
+> Isso contradiz tudo o que esta página registra sobre a estrutura: os
+> três projetos originais foram criados pelo **Luís**, e o quarto (`Proxy
+> em produção validado c/ LiveScript`) foi promovido por msilva em
+> 2026-08-19 **seguindo instrução explícita do Luís** — *"Isso é um
+> projeto, cara"*, *"vai virar em algum momento projeto irmão desse aqui
+> dentro da iniciativa."*
+>
+> **Não decidido.** O Luís estava ausente da Weekly (indisposto), então a
+> pessoa que desenhou a estrutura não estava lá pra defendê-la. Registrado
+> como tensão entre duas leituras, não como reversão. Verificado no Linear
+> em 2026-09-09: os quatro projetos continuam separados.
+>
+> Vale notar que as duas posições podem ser sobre coisas diferentes. Carol
+> parecia estar olhando redundância de *nome* ("é a mesma coisa"), num
+> painel onde três linhas parecidas confundem quem lê. O Luís desenhou por
+> *segmento de entrega* — a lógica que esta página registra. Se for isso,
+> o problema é de legibilidade do painel, não de modelagem, e a correção é
+> renomear, não fundir.
+
+> [!danger] O painel de portfólio está lendo o projeto errado
+> Descoberto ao vivo pela **Mafê** na Weekly: o painel interno puxa do
+> projeto **`Proxy do Airtable`**, não do `Proxy em produção validado c/
+> LiveScript`, que é onde msilva de fato gerencia as issues desde a
+> promoção de 2026-08-19.
+>
+> > *"O nosso sisteminha ele tá pegando do proxy do table e não pegando
+> > desse que você tá falando."*
+>
+> **Consequência**: o progresso real do proxy não aparece no painel que
+> Carol e Gabrielle usam pra acompanhar a área. A Mafê se comprometeu a
+> avisar a Gabi, que é a dona da ferramenta.
+>
+> Isso é o custo, não previsto aqui, da quarta convenção ("uma milestone
+> ativa pode virar projeto irmão"): promover a milestone move o trabalho
+> pra um projeto que o painel não estava configurado pra ler. A convenção
+> continua válida — mas quem promove precisa avisar o dono do painel.
+>
+> **Não confunde com a pergunta aberta abaixo** sobre o painel ler
+> Airtable: isso aqui é sobre *qual projeto do Linear* ele aponta, e não
+> diz nada sobre a fonte de dados dele.
+
+**O nome do projeto está errado, por admissão de msilva.** Na mesma call:
+*"o nome tá errado. Seria validado com algum projeto."* `Proxy em produção
+validado c/ LiveScript` presume que o LiveScript é a aplicação que vai
+apontar pro proxy — decisão que ainda não foi tomada e que é do Luís (ver
+[[2026-09-04 1-1 Matheus - Luís]]). Renomear resolveria de uma vez esse
+ponto e boa parte da confusão de nomes que a Carol levantou acima.
+
+### A skill de Linear, e um segundo caminho de distribuição
+
+O overview com João Victor registrou um fato novo sobre as ferramentas
+desta página: além dos **templates** do Luís (documentados acima), existe
+uma **skill de Linear que a Carol compartilhou com o time** — *"a skill
+ela te ajuda bem ali a criar as coisas no linear"*, *"já cria no
+formatinho direitinho"*. msilva já usava **uma versão anterior dela,
+obtida com o Luís**, antes da distribuição da Carol.
+
+Duas coisas saem daí. Primeiro, é a resposta parcial ao que
+[[2026-08-18 1-1 Matheus - Luís]] deixou aberto — *"no team standard yet
+for Linear skills, and Carol is building the real one"*: ela construiu e
+distribuiu. Segundo, é um caso concreto de distribuição de skill dentro do
+time acontecendo por **dois caminhos independentes** (pessoa a pessoa via
+Luís, e broadcast via Carol) — evidência direta para
+[[Packaging as skills]].
+
+### msilva está ensinando a hierarquia sem ter a fonte
+
+No overview, msilva ensinou a João Victor que **cada demanda ou entregável
+vira um projeto**. A definição registrada nesta página, da Gabrielle, é
+mais estreita: projeto como *"um pedaço, uma parte daquela iniciativa"* —
+segmento de entrega de valor.
+
+Ele mesmo reconheceu não ter a fonte: *"inclusive naquele doc que a Carol
+compartilhou tinha uma distinção mais formal, né, do conceito de
+iniciativa e projeto […] eu não tenho esse conceito escrito, não lembro
+como é que ela escreveu."*
+
+**A convenção já foi propagada antes de verificada** — João Victor
+executou no mesmo dia. Se as duas leituras divergem de fato, agora
+divergem em duas cabeças. Rastreado como pendência de msilva; ver os
+*Commitments* em [[2026-09-08 Overview de Linear com João Victor]].
+
+Na prática a regra pegou: a iniciativa **Monday - CRM** de João Victor
+existe com três projetos, incluindo *Fragmentação dos fluxos de n8n* — que
+é a segunda decisão do overview aplicada ao pé da letra (trabalho de N8N
+que esbarra no Monday entra na iniciativa do Monday, não numa própria).
+
 ## Open questions
 
 - ~~**What is a `Release`, and how does it map to milestones?**~~ **Answered

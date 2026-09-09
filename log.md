@@ -5748,6 +5748,90 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   `meetings/Meeting prep - Carolina - Matheus - 2026-09-04.md` (tabela
   "Já resolvido" corrigida e ampliada), `index.md`.
 
+## [2026-09-09] ingest | Duas reuniões de 2026-09-08: Overview de Linear (João Victor) e Weekly de Projetos
+- Fontes lidas do **Google Drive**, não de `raw/` — os docs do Gemini de
+  08/09 nunca chegaram ao `raw/` local (o arquivo mais recente lá é de
+  04/09, e não havia nada em `raw/Clippings/` nem em `~/Downloads`).
+  msilva confirmou que estão no Drive e mandou buscar lá. As duas páginas
+  citam o `fileId` do Drive e carregam nota explícita de que o arquivo em
+  `raw/` está pendente. Sem página em `sources/`: o schema dispensa para
+  transcrição, satisfeita pela página em `meetings/`.
+  - *Overview de linear - 2026/09/08 15:12 GMT-03:00 - Anotações do Gemini*
+    (`1hxqgWF375FzEvpcIMCRaQb2Env0RY1V4KSbHCzMuUSg`)
+  - *Weekly - Projetos e Tarefas | Remarcação - 2026/09/08 13:59 GMT-03:00 -
+    Anotações do Gemini* (`1L-bbmK9YV-bv8nAjTGAyDGy70CsB28Jzz2urI4-xxkw`)
+- New: `meetings/2026-09-08 Overview de Linear com João Victor.md`,
+  `meetings/2026-09-08 Weekly - Projetos e Tarefas.md`
+- Updated: `concepts/Linear Project Structure.md`,
+  `projects/Airtable Proxy.md`, `people/João Victor Andrade.md`,
+  `people/Maria Fernanda Lemos.md`, `index.md`
+- Linear: criada
+  [PRO-567](https://linear.app/projetos-livemode/issue/PRO-567) (Task, XS,
+  `dueDate` 2026-09-09, `Todo`) para o único commitment de msilva das duas
+  reuniões — localizar o documento de definições formais de "iniciativa" e
+  "projeto" da Carol. Prazo escolhido por msilva; a skill
+  `linear-abrir-trabalho` bloqueia criação priorizada sem data.
+
+**Achados que mudam páginas existentes:**
+
+- **O painel de portfólio lê o projeto errado.** Mafê descobriu ao vivo que
+  o painel interno puxa de `Proxy do Airtable`, não de `Proxy em produção
+  validado c/ LiveScript`, onde msilva gerencia as issues desde a promoção
+  de 2026-08-19 — logo, o progresso real do proxy não aparece pra Carol e
+  Gabrielle. É o custo não previsto da quarta convenção de
+  [[Linear Project Structure]] ("milestone ativa pode virar projeto
+  irmão"): promover move o trabalho pra um projeto que o painel não lê.
+  A convenção segue válida, mas quem promove precisa avisar o dono do
+  painel. Ação é da Mafê, não de msilva — a ata do Gemini atribuiu errado
+  ("[Mateus] Validar Proxy"), corrigido nas duas páginas.
+- **Carol contesta a estrutura de projetos do proxy** — *"esses três aí
+  deveriam ser uma coisa só"*, com Mafê concordando. Conflita frontalmente
+  com a estrutura que veio do Luís e que msilva executou em 2026-08-19 sob
+  instrução explícita dele. Luís estava ausente. Registrado como tensão,
+  não como reversão; verificado que os quatro projetos seguem separados.
+  Hipótese registrada na página: as duas posições podem ser sobre coisas
+  diferentes — Carol olhando redundância de *nome* num painel, Luís tendo
+  desenhado por *segmento de entrega*. Se for isso, a correção é renomear,
+  não fundir — e msilva já admitiu que o nome está errado.
+- **msilva propagou uma convenção sem ter a fonte.** Ensinou a João Victor
+  que "cada demanda ou entregável vira um projeto"; a definição registrada
+  da Gabrielle é mais estreita (projeto = segmento de entrega de valor).
+  Ele mesmo reconheceu na call: *"não tenho esse conceito escrito, não
+  lembro como é que ela escreveu."* João Victor executou no mesmo dia, então
+  a leitura não verificada já está em duas cabeças e numa estrutura real.
+  Origem da PRO-567.
+- **A skill de Linear da Carol existe e foi distribuída** — responde
+  parcialmente o que [[2026-08-18 1-1 Matheus - Luís]] deixou aberto
+  ("no team standard yet for Linear skills, and Carol is building the real
+  one"). msilva já usava uma versão anterior obtida com o Luís: dois
+  caminhos independentes de distribuição da mesma skill, evidência direta
+  pra [[Packaging as skills]].
+- **João Victor migrou do ClickUp pro Linear** e a iniciativa `Monday - CRM`
+  existe com três projetos. Fecha na prática a lacuna de "backlog em
+  sistema não compartilhado" registrada na página dele desde 2026-08-25 —
+  e é uma fonte de dados a menos pro A10 Portfolio ter que integrar por
+  fora.
+
+**Ressalvas da passada:**
+
+- **Migração de idioma parcial, deliberada.** O schema manda a prosa de uma
+  página virar pt-BR quando ela é tocada. Feito integralmente em
+  `people/João Victor Andrade.md` (~60 linhas). **Não feito** em
+  `concepts/Linear Project Structure.md` (~400 linhas) nem em
+  `projects/Airtable Proxy.md` (~875 linhas): retraduzir wholesale duas
+  páginas densas e cheias de citação verbatim, como efeito colateral de
+  acrescentar uma seção, é exatamente o trabalho em lote que a política diz
+  não fazer — e o risco de corromper registro probatório é real. As seções
+  novas dessas duas páginas estão em pt-BR; a migração completa fica como
+  operação própria, a pedido de msilva.
+- **Trial do Linear expira hoje (2026-09-09)** segundo
+  [[Linear Project Structure]], com o cap de ~250 issues atrás dele, e
+  nenhuma compra registrada. Não confirmável pela API (o endpoint de
+  workspace do MCP devolve só `id`/`name`/`url`). A criação da PRO-567
+  funcionou normalmente, o que **descarta bloqueio imediato** mas não prova
+  compra. Gabrielle, que autoriza, volta 10/09. Registrado em
+  `index.md` e na página do conceito.
+
 ## [2026-09-10] refactor | Registrar rascunho de issue do Linear bloqueada por trial expirado
 - Sessão no repo `livemode-roteiros-nextjs` (branch
   `feature/airtable-proxy-observability`): identificado gap não coberto por
