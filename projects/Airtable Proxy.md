@@ -23,9 +23,14 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > previsto da promoção milestone→projeto; ver [[Linear Project Structure]].
 >
 > Dois pontos correlatos da mesma reunião:
-> - **Carol quer os projetos de proxy unificados** — *"esses três aí
->   deveriam ser uma coisa só"*, o que conflita com a estrutura de projetos
->   irmãos que veio do Luís. Ele estava ausente. Não decidido.
+> - **Carol quis os projetos de proxy unificados** — *"esses três aí
+>   deveriam ser uma coisa só"*, o que conflitava com a estrutura de
+>   projetos irmãos que veio do Luís (ausente na reunião).
+>   **Resolvido 2026-09-09: ficam separados** —
+>   [[2026-09-09 Manter os projetos de proxy separados no Linear]]. Luís
+>   separou por frente de trabalho; Carol leu redundância de nome. O que
+>   endereça a objeção dela é renomear, não fundir. Carol ainda não sabe da
+>   decisão.
 > - **O nome do projeto está errado, por admissão de msilva** — *"seria
 >   validado com algum projeto"*, já que ainda não se sabe se a aplicação
 >   será o [[LiveScript]] ou o front novo. Renomear resolveria boa parte da

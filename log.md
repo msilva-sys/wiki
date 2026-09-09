@@ -5832,6 +5832,33 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   compra. Gabrielle, que autoriza, volta 10/09. Registrado em
   `index.md` e na página do conceito.
 
+## [2026-09-09] decision | Manter os projetos de proxy separados no Linear
+- msilva confirmou a hipótese levantada ao registrar a
+  [[2026-09-08 Weekly - Projetos e Tarefas]]: Carol e Luís falavam de
+  coisas diferentes. *"O ponto do Luís é mantermos frentes de trabalhos
+  diferentes, enquanto a Carol acha que são a mesma coisa."* Decisão:
+  **ficam separados, nada é fundido.**
+- O raciocínio que sustenta: Luís separou por **frente de trabalho**
+  (a definição de projeto registrada em [[Linear Project Structure]]);
+  Carol leu **redundância de nome** numa lista de painel. Como respondem
+  perguntas diferentes, fundir resolveria o problema dela destruindo a
+  estrutura dele — o custo cairia todo de um lado.
+- **A objeção da Carol continua legítima no que ela é de fato**:
+  legibilidade. Registrados os dois caminhos que a endereçam sem fundir —
+  renomear `Proxy em produção validado c/ LiveScript` (msilva já admitiu
+  na weekly que o nome está errado; depende de saber qual app vai apontar,
+  decisão do Luís) e corrigir o projeto que o painel de portfólio lê (ação
+  da Mafê). Nenhum dos dois decidido aqui.
+- **Pendência de comunicação registrada**: Carol levantou a proposta em
+  fórum, não teve resposta na hora (Luís ausente) e não sabe da decisão.
+  Próxima weekly é 10/09 15:00.
+- New: `decisions/2026-09-09 Manter os projetos de proxy separados no Linear.md`
+- Updated: `concepts/Linear Project Structure.md` (tensão vira resolvida),
+  `projects/Airtable Proxy.md`, `meetings/2026-09-08 Weekly - Projetos e
+  Tarefas.md` (open question apontando pra decisão, mantida como registro
+  do que estava aberto na hora), `index.md`
+- Nada mexido no Linear: manter separado é ausência de ação.
+
 ## [2026-09-10] refactor | Registrar rascunho de issue do Linear bloqueada por trial expirado
 - Sessão no repo `livemode-roteiros-nextjs` (branch
   `feature/airtable-proxy-observability`): identificado gap não coberto por

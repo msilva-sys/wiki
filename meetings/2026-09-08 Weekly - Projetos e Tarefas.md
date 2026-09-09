@@ -76,8 +76,10 @@ gente.
   produção validado c/ LiveScript*. **Conflita com a estrutura vigente**,
   que veio do Luís — ver [[Linear Project Structure]] para a tensão
   completa. Não decidido na reunião; o Luís, que criou a estrutura, estava
-  ausente. Verificado em 2026-09-09: os quatro projetos da iniciativa
-  *Airtable GC — Governança e Confiabilidade* continuam separados.
+  ausente. **Resolvido depois, em 2026-09-09**:
+  [[2026-09-09 Manter os projetos de proxy separados no Linear]] — as duas
+  partes falavam de coisas diferentes (frente de trabalho × nome confuso), e
+  prevalece a separação.
 - **Qual aplicação vai apontar pro proxy** — LiveScript ou o front novo.
   Segue em aberto e **é decisão do Luís**, reafirmado aqui em fórum
   público. Mesma questão aberta de [[2026-09-04 1-1 Matheus - Luís]].

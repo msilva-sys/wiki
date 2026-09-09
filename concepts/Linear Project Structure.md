@@ -350,17 +350,21 @@ Duas reuniões no mesmo dia mexeram com o que está registrado acima:
 > projeto, cara"*, *"vai virar em algum momento projeto irmão desse aqui
 > dentro da iniciativa."*
 >
-> **Não decidido.** O Luís estava ausente da Weekly (indisposto), então a
-> pessoa que desenhou a estrutura não estava lá pra defendê-la. Registrado
-> como tensão entre duas leituras, não como reversão. Verificado no Linear
-> em 2026-09-09: os quatro projetos continuam separados.
+> O Luís estava ausente da Weekly (indisposto), então a pessoa que desenhou
+> a estrutura não estava lá pra defendê-la.
 >
-> Vale notar que as duas posições podem ser sobre coisas diferentes. Carol
-> parecia estar olhando redundância de *nome* ("é a mesma coisa"), num
-> painel onde três linhas parecidas confundem quem lê. O Luís desenhou por
-> *segmento de entrega* — a lógica que esta página registra. Se for isso,
-> o problema é de legibilidade do painel, não de modelagem, e a correção é
-> renomear, não fundir.
+> **Resolvido no mesmo dia em que foi registrado —
+> [[2026-09-09 Manter os projetos de proxy separados no Linear]].** A
+> hipótese levantada aqui (as duas partes falam de coisas diferentes) foi
+> confirmada por msilva: o Luís separou por **frente de trabalho**, a Carol
+> leu **redundância de nome** numa lista. Como as duas leituras respondem
+> perguntas diferentes, fundir resolveria o problema da Carol destruindo a
+> estrutura do Luís. **Prevalece a separação; nada é fundido.**
+>
+> A objeção da Carol segue legítima no que ela é de fato — legibilidade —, e
+> o caminho para endereçá-la é **renomear** `Proxy em produção validado c/
+> LiveScript` (msilva já admitiu que o nome está errado) e corrigir o
+> projeto que o painel lê, não fundir projetos.
 
 > [!danger] O painel de portfólio está lendo o projeto errado
 > Descoberto ao vivo pela **Mafê** na Weekly: o painel interno puxa do

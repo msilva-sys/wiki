@@ -263,6 +263,8 @@ _(msilva himself has no page — this vault already is the record of his work.)_
 
 _(next candidates, extractable from [[Airtable Proxy]]: token-terminating auth, OTel/OTLP over BigQuery, Cloud Run min=1)_
 
+- [[2026-09-09 Manter os projetos de proxy separados no Linear]] — a proposta da Carol de fundir os projetos de proxy (*"esses três aí deveriam ser uma coisa só"*, [[2026-09-08 Weekly - Projetos e Tarefas]]) não é adotada. As duas partes falavam de coisas diferentes, confirmado por msilva: Luís separou por **frente de trabalho**, Carol leu **redundância de nome** numa lista. Fundir resolveria o problema dela destruindo a estrutura dele. Segue em aberto o que de fato endereça a objeção da Carol — **renomear** `Proxy em produção validado c/ LiveScript` (depende de saber qual app vai apontar, decisão do Luís) e corrigir o projeto que o painel de portfólio lê. Carol ainda não foi comunicada.
+
 ## Sources
 - [[Fluxo Agêntico project instruction]] — **authoritative spec** for Agent Flow: AI-First philosophy, anarchic-then-integrated build strategy, per-agent detail for all 14.
 - [[Fluxo Agêntico diagram]] — the 14-agent architecture diagram; A6 Curator is the hub, A13 blocks, `Bug (sistema)` is machine-fed. **2026-08-20**: now rendered as an inline Mermaid diagram (colored to match the original SVG's groupings), replacing the earlier ASCII sketch. **2026-08-24**: table gained "Desenvolvimento"/"Sub-agentes" side-labels for A8/A9, found on `sources/fluxo agêntico diagrama 0.png` — an earlier PNG render of the same diagram, no separate page.
