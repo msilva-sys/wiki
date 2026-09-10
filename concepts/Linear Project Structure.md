@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-08-19
+updated: 2026-09-10
 aliases: [Linear structure, initiatives and projects, milestones, Liner]
 tags: [linear, process, project-management]
 ---
@@ -321,6 +321,15 @@ qualified in words.
 >
 > And it is not theoretical: Gabrielle to msilva, *"você tomou um rate limit, né? […] não
 > podia mais criar."* He hit the ceiling already, before the migration.
+
+> [!warning] Trial expirado, confirmado 2026-09-10 — time ainda sem upgrade
+> msilva: *"o free trial do linear acabou e minha equipe ainda não fez o
+> upgrade"* (2026-09-10). Confirmado na prática: `save_issue` (criação) falha
+> com `"You've exceeded the free issue limit for this workspace."` Não é algo
+> resolvível por aqui — precisa de upgrade ou trial novo por alguém do time.
+> Enquanto isso, issues novas ficam registradas em rascunho na página do
+> projeto relevante até o plano ser resolvido — primeiro caso em
+> [[Airtable Proxy]].
 
 ## Open questions
 

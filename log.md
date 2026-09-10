@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-09-04
+updated: 2026-09-10
 
 
 ---
@@ -5747,3 +5747,22 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   seção sobre outcome invisível, nota sobre A10 mudar de unidade hoje),
   `meetings/Meeting prep - Carolina - Matheus - 2026-09-04.md` (tabela
   "Já resolvido" corrigida e ampliada), `index.md`.
+
+## [2026-09-10] refactor | Registrar rascunho de issue do Linear bloqueada por trial expirado
+- Sessão no repo `livemode-roteiros-nextjs` (branch
+  `feature/airtable-proxy-observability`): identificado gap não coberto por
+  nenhuma issue existente — `PRO-96` (roteamento do LiveScript pelo proxy,
+  `Done`) não previa a exigência de app-key que `PRO-553` (em andamento) está
+  adicionando ao proxy; o lado consumidor (LiveScript) ainda manda o PAT no
+  `Authorization: Bearer`. Implementação (`resolveAirtableAuthHeaders`/
+  `requireAirtableProxyAppKey`, `AIRTABLE_PROXY_APP_KEY`) já existe no repo,
+  não commitada.
+- Tentativa de criar a issue (Task, Projetos-livemode / Proxy em produção
+  validado c/ LiveScript, blocked by `PRO-553`) via `save_issue` falhou:
+  "You've exceeded the free issue limit for this workspace." msilva confirma
+  que o trial gratuito do Linear expirou e o time ainda não fez upgrade.
+- Rascunho completo da issue registrado em `projects/Airtable Proxy.md` para
+  colar manualmente quando o plano for resolvido.
+- Updated: `projects/Airtable Proxy.md` (novo tip + item em "Things to
+  actually do"), `concepts/Linear Project Structure.md` (confirmação do
+  trial expirado em "Plan constraints"), `index.md`.

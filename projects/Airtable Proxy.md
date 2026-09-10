@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-09-03
+updated: 2026-09-10
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -85,6 +85,36 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > [PRO-553](https://linear.app/projetos-livemode/issue/PRO-553/adicionar-autenticacao-por-api-key-nas-requisicoes-ao-proxy)
 > criado (Story, sub-issue de `PRO-84`) para a API key por app. Ver a
 > ressalva original em [[Direcionamento PRO-84 PRO-87]].
+
+> [!tip] Gap novo mapeado, 2026-09-10 — LiveScript ainda não manda app-key ao proxy
+> Sessão de trabalho no repo `livemode-roteiros-nextjs`, branch
+> `feature/airtable-proxy-observability`: `PRO-553` (autenticação por API key
+> no proxy, em andamento) cobre só o lado do servidor. O lado consumidor
+> (LiveScript) ainda manda o PAT do Airtable no `Authorization: Bearer` em vez
+> da chave do app — gap que nenhuma issue cobria (`PRO-96`, que roteou o
+> LiveScript pelo proxy, já estava `Done` antes da exigência de chave
+> existir). A implementação já existe no repo, ainda não commitada:
+> `resolveAirtableAuthHeaders`/`requireAirtableProxyAppKey` em
+> `lib/services/airtable-monitoring.ts` trocam o PAT pela env var nova
+> `AIRTABLE_PROXY_APP_KEY` quando `AIRTABLE_ENDPOINT_URL` está setada.
+>
+> **Issue não criada no Linear** — `save_issue` recusou com "exceeded the
+> free issue limit for this workspace": o trial gratuito expirou (ver
+> [[Linear Project Structure]]) e o time ainda não fez upgrade. Rascunho
+> pronto pra colar assim que o plano voltar:
+>
+> - **Título**: Adaptar o LiveScript para autenticar no proxy do Airtable
+>   com chave própria
+> - **Team/Projeto**: Projetos-livemode / Proxy em produção validado c/
+>   LiveScript · **Label**: Task · **Estimate**: XS (1) · **Blocked by**:
+>   `PRO-553`
+> - **O que fazer**: adaptar as chamadas via SDK e via REST manual pra
+>   mandar a chave do app no lugar do PAT quando o proxy passar a exigir.
+> - **Pronto quando**: chamadas usando a chave nova; erro claro se ela
+>   faltar; variável documentada no guia de setup local; testes cobrindo o
+>   comportamento.
+> - **Pedido original**: surgiu internamente ao notar o gap entre `PRO-96`
+>   (Done) e `PRO-553` (em andamento) durante a sessão acima.
 >
 > **Confirmado ao vivo com Luís, mesmo dia** ([[2026-09-04 1-1 Matheus -
 > Luís]]): sem reabrir nada — msilva concorda com o memo por escrito antes
@@ -864,6 +894,8 @@ communicate async and often]].
       Finding filed onto `PRO-96` (already the right issue for LiveScript
       proxy routing, Cenário A), which stays in Backlog per the deferral
       above — this only documents the gap, doesn't schedule the fix.
+- [ ] Criar no Linear a issue de app-key do LiveScript, bloqueada por
+      trial expirado — rascunho completo no tip 2026-09-10 acima.
 - [ ] Confirm the private-infra inputs in
       [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
 - [ ] Start the Go/Pulumi stack only after those inputs and ownership boundaries
