@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-09-02
+updated: 2026-09-10
 date: 2026-09-01
 aliases: [molde de agente, agent blueprint, agent template configurável]
 tags: [agent-flow, agents, harness, soul, configuration]
@@ -9,42 +9,30 @@ tags: [agent-flow, agents, harness, soul, configuration]
 
 # Como deve funcionar o molde de agente
 
-## Origem da questão
+## Origem
 
-msilva relatou em 2026-09-01 dois pontos levantados numa conversa com
-[[Luís Fernandez]]:
+msilva, 2026-09-01, de uma conversa com [[Luís Fernandez]]: faltam (a) editar
+o comportamento dos agentes sem programar — dashboard tipo Langfuse pra
+atributos da Soul — e (b) um **molde de agente** reutilizável. A Soul V1 foi
+decidida no mesmo dia e ficou registrada aqui por estar ligada ao molde.
 
-1. permitir adicionar ou editar o comportamento dos agentes de forma não
-   programática — com um dashboard semelhante ao Langfuse no qual seja possível
-   configurar atributos da Soul;
-2. ter uma forma de **molde de agente**.
+## Anatomia: molde, instância, runtime
 
-Esta página registrava inicialmente só a segunda questão — a Soul seria a
-próxima investigação, não definida aqui por antecipação. **Isso mudou no
-mesmo dia**: a Soul V1 foi decidida horas depois (ver seção abaixo) e acabou
-registrada aqui mesmo, por estar diretamente ligada ao desenho do molde.
+[[Agent Harness Template]] já define a anatomia: Trigger + Trigger Channel →
+Input → Harness (`Soul`, Skills, Tools, MCP) → Output. O molde transforma
+essa anatomia num **contrato reutilizável e instanciável**, não um segundo
+modelo concorrente:
 
-## Relação com o modelo existente
-
-[[Agent Harness Template]] já descreve a anatomia genérica proposta por Luís:
-Trigger + Trigger Channel → Input → Harness (`Soul.md`, Skills, Tools, MCP) →
-Output. O molde parece ser a transformação dessa anatomia em um **contrato
-reutilizável e instanciável**, não um segundo modelo concorrente.
-
-A distinção inicial é:
-
-- **molde** — define quais partes existem, quais campos são obrigatórios, quais
-  variações são permitidas e quais invariantes toda instância deve preservar;
-- **instância** — escolhe valores concretos para um agente, como objetivo,
-  entradas, saídas, Soul e capabilities;
-- **runtime** — executa a instância e conecta adapters, Tools, MCPs, memória e
+- **molde** — quais partes existem, campos obrigatórios, variações
+  permitidas, invariantes que toda instância preserva;
+- **instância** — valores concretos de um agente (objetivo, Input/Output,
+  Soul, capabilities);
+- **runtime** — executa a instância, conecta adapters/Tools/MCP/memória/
   observabilidade.
 
-Essa separação é uma hipótese de trabalho, não uma decisão tomada com Luís.
+Hipótese de trabalho, ainda não fechada com Luís.
 
-## Hipótese inicial de estrutura
-
-Um molde poderia declarar, no mínimo:
+## Hipótese de estrutura
 
 ```yaml
 kind:
@@ -62,304 +50,351 @@ success_criteria:
 evaluation_dataset:
 ```
 
-O ponto central é que o molde não contém apenas um prompt-base. Ele contém o
-**contrato de produto e operação** do agente: o que o dispara, o que aceita, o
-que entrega, o que pode fazer e como sua qualidade será verificada.
+O molde não é um prompt-base — é o **contrato de produto e operação**: o que
+dispara o agente, o que ele aceita, o que entrega, o que pode fazer, como a
+qualidade é verificada.
 
-## Um molde universal ou uma família de moldes
+## Molde único, sem família de arquétipos — resolvido 2026-09-10
 
-Uma base comum pode coexistir com arquétipos mais específicos, por exemplo:
+Cogitado: base comum + arquétipos específicos (leitor/analista, consultor,
+operador com permissão de escrita, monitor disparado por eventos,
+orquestrador), pra evitar dois extremos — molde genérico demais (sem contrato
+real) ou molde por agente (sem reaproveitamento). [[Harness engineering for
+coding agent users]] registra ideia próxima (bundles por topologia de
+serviço), sem validar que esses sejam os arquétipos certos aqui.
 
-- leitor/analista;
-- consultor;
-- operador com permissão de escrita;
-- monitor disparado por eventos;
-- orquestrador.
+**Decisão** (sessão de código em `livemode-fluxo-agentico`, 2026-09-10):
+molde-base único por ora. As duas instâncias reais (A10, A14) são o mesmo
+arquétipo; não há evidência de um segundo. Revisitar quando um agente
+estruturalmente diferente (escrita com aprovação, disparado por evento) for
+construído de fato.
 
-Isso evita dois extremos ainda não avaliados: um molde universal tão genérico
-que não impõe contrato nenhum, ou um molde diferente para cada agente que não
-gera reaproveitamento real. [[Harness engineering for coding agent users]] já
-registra ideia próxima — bundles de guias e sensores por topologia de serviço —,
-mas não valida que esses sejam os arquétipos corretos para [[Agent Flow]].
+## Componente pode não ser agente independente
 
-## Restrição importante
+Parte dos 14 candidatos de [[Agent Flow]] pode existir como Skill ou Tool
+dentro do harness de outro agente, sem Trigger/Input/Output próprios
+([[Agent Harness Template]]). Primeiro campo conceitual do molde talvez seja
+a natureza do componente: `standalone_agent`, `skill`, `tool` ou `guardrail`.
+Ainda não discutido com Luís quais dos 14 se enquadram em qual.
 
-O molde não deve transformar automaticamente toda capacidade em agente
-independente. [[Agent Harness Template]] registra que parte dos 14 candidatos
-pode existir como Skill ou Tool dentro do harness de outro agente. Portanto, o
-primeiro campo conceitual talvez seja a própria natureza do componente:
-`standalone_agent`, `skill`, `tool` ou `guardrail`.
+## Configuração não programática e a Soul
 
-## Relação com configuração não programática
+O molde é o schema que torna um dashboard de config possível — sem ele,
+"editar sem código" vira editor de prompt livre; com ele, vira configuração
+estruturada, versionada, testável.
 
-O molde fornece o schema que torna um dashboard possível: a interface sabe
-quais campos expor, quais valores validar e qual configuração materializar para
-uma instância. Sem molde, “editar o agente sem código” tende a virar apenas um
-editor de prompt livre; com molde, pode virar configuração estruturada,
-versionada e testável.
+[[Desenho do agente LangGraph para A10+A14]] usa Langfuse Prompt Management
+pro prompt de tarefa. A Soul (fonte comportamental, independente desse
+prompt) fechou sua própria fronteira em 2026-09-01: `soul_versions` guarda
+texto direto por versão, `soul_composition` compõe profile+fragments de
+forma plana — sem YAML, sem campos aninhados, sem propagação automática. Ver
+[[2026-09-01 Modelar SOUL em tabelas com composição plana]] pro schema. V1 já
+implementado (PRO-503, Done); conteúdo real dos fragments segue em aberto.
 
-[[Desenho do agente LangGraph para A10+A14]] já adotou Langfuse Prompt
-Management para versionar prompts, promover versões por label e ligar cada
-trace à versão executada. A
-[[2026-09-01 Modelar SOUL em tabelas com composição plana|decisão da SOUL]]
-respondeu a fronteira: a SOUL é fonte independente, persistida em
-tabelas próprias; o Langfuse pode receber a SOUL efetiva e seus identificadores
-para observabilidade, mas não é sua fonte de verdade.
+## Vocabulário de domínio vs. molde — resolvido 2026-09-02
 
-## Decisão V1 da SOUL — 2026-09-01
+Pergunta de origem (msilva, comparando com a camada de ontologia da
+[[Bossabox Engagement]]): o molde deveria carregar vocabulário de domínio
+compartilhado entre sistemas de registro (Linear, GitHub, futuros)? Resolvido
+em duas partes:
 
-msilva escolheu um modelo simples e composable: `soul_versions` guarda um bloco
-de texto direto por versão e `soul_composition` é a join table ordenada entre um
-profile e seus fragments. A composição é plana, sem YAML como fonte de verdade,
-sem campos comportamentais aninhados e sem propagação automática de mudanças.
-Ver [[2026-09-01 Modelar SOUL em tabelas com composição plana]] para o schema e
-as regras.
+**1. Molde e vocabulário de domínio são eixos diferentes.** Molde é sobre
+*como o agente opera*; vocabulário de domínio é sobre *o que as coisas
+significam*, e mora num módulo compartilhado (padrão de `linear_client.py`),
+não dentro do contrato de cada instância.
 
-## Paralelo com a camada de ontologia da Bossabox — 2026-09-01
+**2. "Vocabulário de domínio" misturava duas peças sob um nome só:**
 
-msilva perguntou, em chat, como replicar a lógica de "camada de ontologia" a
-que a [[Bossabox Engagement]] chegou com a OS V2: uma camada de sustentação
-tool-agnostic — um vocabulário comum ("sistema de inteligência") por baixo de
-qualquer ferramenta que o time já use (Jira, GitHub, Linear, Notion), em vez de
-travar a lógica dentro de uma delas. Cruzando essa pergunta com o que já existe
-nesta página e em páginas vizinhas:
+- **Semântica mecânica de campo** (`Issue`, `state_type`, `Milestone`) —
+  resolvida pelo schema da própria Tool via tool-calling, sem fragment. Regra
+  hoje escondida em código (`a10/tools.py`:
+  `CLOSED_STATE_TYPES = {"completed", "canceled", "duplicate"}`) deveria
+  idealmente virar campo computado no tipo (`Issue.is_closed`) — não decidido
+  se vale migrar já ou só quando um segundo sistema de tickets aparecer.
+- **Metodologia de estruturação de demanda** (como decompor projeto →
+  milestone → issue) — não é campo de tipo, precisa de fragment/skill,
+  deliberadamente independente de qual adapter escreve o resultado depois.
+  Candidato a fragment compartilhado entre A7/A14/A2 (não confirmado com
+  Luís); base de conteúdo candidata: o "ticket template" de [[Gabriel Packer
+  - DAG-driven agent orchestration]] (escopo, critério de aceite,
+  `blockedBy`, rollout/kill switch). Critério fragment-vs-skill: sempre
+  relevante e pequeno → fragment; às vezes relevante ou grande → skill (mesmo
+  narrow fetching já validado no A10).
 
-**Peças que já são essa lógica, em miniatura:**
+**Nome a evitar**: "vocabulário de domínio" sozinho, ambíguo entre as duas
+peças acima — nomear como "metodologia de estruturação de demanda" ou
+equivalente.
 
-- **Contrato / ports-and-adapters** ([[Vocabulário do Fluxo Agêntico]],
-  [[Desenho do agente LangGraph para A10+A14]]) — regra central já registrada:
-  *"Contrato: definido por formato, nunca por quem chama."* O `team_id` foi
-  tirado de dentro do agente e virou campo de `Entrada` justamente para o
-  agente não precisar saber qual ferramenta o alimenta. Hoje existe só para o
-  Linear.
-- **Agent Harness Template** ([[Agent Harness Template]]) — Trigger/Trigger
-  Channel (Slack, Webhook, Cron) separado do Input generaliza o mesmo
-  princípio para qualquer canal.
-- **O próprio molde** (esta página) é o candidato mais direto: um contrato
-  reutilizável e instanciável, independente da implementação — a mesma
-  ambição da ontologia da Bossabox, hoje ainda com escopo mais estreito
-  (comportamento/contrato do agente, não vocabulário de domínio entre
-  sistemas de registro).
+Mesmo padrão vale do lado da **escrita**, generalização de msilva a partir do
+mesmo gap: qualquer agente que grava num sistema externo (A10, A14, não só
+A14) deveria ter um adapter por plataforma-alvo traduzindo do modelo de
+domínio interno pro formato nativo dela. Não é capacidade nova a construir
+agora — é o mesmo gap de hoje (só resolvido pro Linear), generalizar quando
+um segundo sistema de registro real aparecer.
 
-**Duas lacunas concretas que faltam para virar de fato uma camada de
-ontologia, não só contratos de agente:**
+**Auditoria de código relacionada** (2026-09-01, `linear_client.py`/
+`repo_tools.py`/`github_client.py`): GitHub não precisa de vocabulário de
+domínio próprio (dado bruto = "sinal", correto como está); achado real foi
+**duplicação** de modelo de PR (`GithubPR` dentro de `Issue` vs. dict solto
+de `get_pr_status`) — corrigido: `GithubPR` ganhou os campos que faltavam,
+`get_pr_status` passa a devolver `list[GithubPR]`. `Issue`/`Project`/
+`Milestone` já genéricos, sem trabalho pendente.
 
-1. **O mapeamento DTO≠domínio só existe para o Linear.** `linear_client.py`
-   já separa o shape cru do GraphQL de um modelo de domínio estável
-   (`Issue`, `Project`, `Milestone`). A Bossabox generaliza exatamente esse
-   padrão para Jira/GitHub/Confluence/Notion ao mesmo tempo. O GitHub já foi
-   integrado ([[2026-08-31 A10 e A14 ganham acesso real ao GitHub]]), mas via
-   `repo_tools.py` separado — não está claro se compartilha vocabulário de
-   domínio com o Linear ou se é um segundo silo.
-2. **"Sinal" e "memória do sistema agêntico" não têm dono** — já registrado
-   como lacuna aberta em [[Vocabulário do Fluxo Agêntico]] e em
-   [[Agent Flow]] desde 2026-08-20 (Luís: organizar essa memória bem é
-   "talvez a coisa mais importante do projeto todo"). É exatamente a peça que
-   a camada de sustentação da Bossabox resolve — contexto que sobrevive entre
-   ferramentas e entre agentes. Hoje a memória que existe (`a14/memoria.py`)
-   é por agente e por projeto, o oposto de uma camada compartilhada.
+**Memória do sistema agêntico segue sem dono** — Luís pediu em 2026-08-20 pra
+não desenhar isso ainda, assentar as entidades primeiro. Rastreado como spike
+[PRO-517](https://linear.app/projetos-livemode/issue/PRO-517/revisitar-se-ja-da-pra-desenhar-a-memoria-compartilhada-dos-agentes):
+revisitar com ele se a objeção ainda vale, agora que A10/A14 e o molde
+avançaram.
 
-**Caminho prático de replicar, ainda não decidido com Luís:**
+**Desenho feito mesmo assim, 2026-09-10** — ver
+[[2026-09-10 Memória de fatos do agente (agent_facts)]]: padrão
+propõe→aprova (`agent_facts`, individual + global), sem implementação
+autorizada. A metade global é exatamente o que este spike pede pra revisitar
+com Luís antes de codar; a metade individual não tem objeção registrada.
 
-- ~~Quando o molde for fechado, garantir que ele carregue não só o contrato
-  comportamental do agente, mas também um vocabulário de domínio
-  compartilhado — hoje não está claro se essas são a mesma peça ou duas
-  questões distintas sendo tratadas como uma.~~ **Resolvido em 2026-09-02**,
-  ver seção "Vocabulário de domínio: três camadas separadas" abaixo — molde
-  (contrato comportamental) e vocabulário/processo de domínio são eixos
-  diferentes; nenhum dos dois vive dentro do outro.
-- Estender o padrão DTO-vs-domínio do `linear_client.py` para os demais
-  sistemas de registro conforme forem entrando — **confirmado dormente em
-  2026-09-02**: hoje não existe um segundo sistema de registro real (a
-  auditoria da Lacuna 1 já havia achado isso pro GitHub); nada a estender até
-  um aparecer de fato.
-- Dar dono explícito à "memória do sistema agêntico" — a lacuna que mais se
-  parece com o que falta para replicar a lógica da Bossabox, mais do que os
-  contratos por agente (que já andam bem).
+## Slot MCP: refinado numa sessão de código, 2026-09-10
 
-**Atacada primeiro, 2026-09-01**: msilva decidiu priorizar a lacuna de
-memória sobre a de DTO≠domínio — o padrão DTO já tem modelo pra copiar
-(`linear_client.py`), a memória não tem nem padrão nem dono. Como Luís já
-havia pedido explicitamente, em 2026-08-20, para **não desenhar memória
-ainda** (assentar as entidades primeiro — ver [[Vocabulário do Fluxo
-Agêntico]]), o primeiro passo não é desenho, é revisitar com ele se essa
-objeção ainda se sustenta agora que A10/A14 estão em construção e o molde
-está sendo fechado. Rastreado como spike:
-[PRO-517](https://linear.app/projetos-livemode/issue/PRO-517/revisitar-se-ja-da-pra-desenhar-a-memoria-compartilhada-dos-agentes).
+Discussão em `livemode-fluxo-agentico` (branch `langgraph`), puxada por
+msilva a partir da própria anatomia do Harness, pra entender melhor o slot
+MCP antes de mexer em código. Nenhuma implementação foi feita.
 
-Ver também o ponto 7 de [[What Bossabox's Assessment suggests for Agent
-Flow]]: ainda em aberto se compensa usar o tier gratuito da Bossabox para
-validar/acelerar essa camada em vez de reconstruí-la do zero.
+**MCP é um adapter, mas com uma propriedade que os adapters manuais
+(`linear_client.py`, `github_client.py`) não têm: plugável em runtime, do
+lado do host.** Adicionar/trocar integração vira mudança de config (entrada
+nova numa lista de servidores — nome, transporte, comando/URL, auth), não
+código novo no agente. Mesmo mecanismo do `.mcp.json` do Claude Code — a
+versão Python equivalente é o `MultiServerMCPClient` da lib
+`langchain-mcp-adapters` (cogitada e descartada uma vez, ver `HANDOFF.md` do
+repo), que aceita o mesmo formato de config.
 
-**Lacuna 1 auditada e corrigida no código real, 2026-09-01** — lida
-`linear_client.py`, `repo_tools.py`, `github_client.py` e `a10/tools.py` no
-repo `livemode-fluxo-agentico` (não só hipótese de wiki):
+**A plugabilidade de transporte sozinha não basta.** Só funciona de verdade
+se o agente raciocina sobre "quais tools existem agora" (via tool-calling
+schema) em vez de integração fixa hardcoded no prompt/lógica — bate com a
+resolução acima sobre semântica de campo via schema de tool.
 
-- **Não é um silo completo.** `linear_client.Issue` já tem um campo
-  `github_pr: GithubPR | None` — um PR vinculado a uma issue do Linear já
-  entra como parte do domínio da própria issue. Esse ponto de integração
-  está certo.
-- **Fora desse ponto, o GitHub não tem vocabulário de domínio — e está
-  certo assim.** `repo_tools.py`/`github_client.py` devolvem dicts crus
-  (arquivos, commits, branches, métricas de repo) direto como tool output
-  pro LLM em `a10/tools.py`/`a14/tools.py`. Isso bate com o padrão de
-  **"sinal"** já definido em [[Vocabulário do Fluxo Agêntico]] — dado bruto
-  que o agente julga, não precisa de tipo Pydantic pra isso. Não é gap.
-- **Achado real: duplicação, não silo.** Um Pull Request era modelado
-  **duas vezes**, sem relação entre si — `GithubPR` (dentro de `Issue`:
-  `status, url, repo_name, created_at, updated_at, merged_at, closed_at`) e
-  o dict solto de `get_pr_status`/`repo_pr_status` (`number, title, url,
-  author, created_at, updated_at, draft, review_status, ci_status`). Mesma
-  coisa do mundo real, dois shapes, zero cross-check.
-- **`Issue`/`Project`/`Milestone` não precisam de trabalho nenhum agora.**
-  Os tipos já são genéricos (sem nome nem shape do Linear vazando) — a
-  tradução específica do GraphQL fica isolada nas funções de
-  `linear_client.py`. Se uma segunda ferramenta de tickets aparecer um dia,
-  o trabalho é só escrever um novo mapper pros mesmos tipos, não redesenhar
-  nada. Não há hoje uma segunda fonte competindo por esses conceitos —
-  GitHub tem PR/commit/branch, que são coisas diferentes, não um Project ou
-  Milestone alternativo.
-- **Detalhe pra guardar, não pra agir agora**: `a10/tools.py` tem
-  `CLOSED_STATE_TYPES = {"completed", "canceled", "duplicate"}` — hardcoda
-  os valores específicos que o *Linear* usa pro campo `state_type`. O tipo
-  `Issue` é genérico, mas esse ponto de consumo assume o vocabulário do
-  Linear como universal. Só vira problema se uma segunda fonte de tickets
-  entrar com categorias diferentes; não vale generalizar preventivamente.
+**Duas variantes de transporte com implicação de deploy diferente**: stdio
+(subprocesso) exige processo persistente — funciona local ou serviço
+contínuo, não em função serverless (ex.: Vercel); remoto/HTTP funciona em
+qualquer lugar. Relevante pro `livemode-fluxo-agentico`, que roda em função
+serverless da Vercel.
 
-**Fix aplicado, mesma sessão**: `GithubPR` ganhou os campos que só existiam
-no dict solto (`number, title, author, draft, review_status, ci_status`,
-todos opcionais); `github_client.get_pr_status` passa a devolver
-`list[GithubPR]` em vez de `list[dict]`; `repo_tools.repo_pr_status`
-serializa pra dict só na borda (`model_dump(mode="json")`), mesmo padrão que
-`linear_client.list_issues()` já usa em `a10/tools.py`. Testado: imports OK,
-suite `a10.test_agent` (`unittest`) passa. **Ainda não commitado** — o repo
-já tinha bastante trabalho pendente de outras sessões (SOUL, `db.py`,
-frontend) não relacionado a esta mudança; a decisão de como/quando
-commitar cada frente fica com msilva.
+**Correção importante, motivada por uma pergunta de segurança de msilva**: em
+um runtime **multi-tenant** — como o dashboard do A10/A14 hospedado na
+Vercel, acessível por qualquer `@livemode.com` logado via `auth_gate.py` —
+"o host decide quais MCPs existem" não basta. Um MCP com credencial de uma
+pessoa (ex.: Slack pessoal) configurado no nível do host vazaria
+acesso/identidade pra todo mundo que usa o dashboard. Versão correta: **MCP
+plugável é por identidade, não por deployment**, sempre que o runtime é
+compartilhado — cada `email` (já disponível via `auth_gate.get_current_user`,
+usado hoje por `require_admin`) teria seu próprio conjunto de MCPs, wireado
+por request, não um `mcp_servers.json` único carregado no boot. Numa sessão
+pessoal de Claude Code isso é de graça (single-user); num serviço hospedado
+compartilhado, é requisito explícito de desenho.
 
-**Correção de nome, mesma passada**: esta página e o [[log]] citavam
-`a14/memoria.py` — o arquivo real é `a14/memory.py`. Corrigido aqui; ver
-nota equivalente no `log.md`, que não é reescrito por ser append-only.
+**Por que nada disso foi codado**: mesma regra de amostra do molde inteiro —
+só existem 2 integrações reais hoje (Linear, GitHub), resolvidas com adapter
+direto, nenhum host pediu uma terceira em runtime ainda. Um spike isolado
+(testando Slack via MCP) foi cogitado mas parado antes de codar: sem token de
+Slack disponível, sem `langchain-mcp-adapters` instalado, questão de
+identidade acima ainda não resolvida na hora. Rastreado no mesmo espaço de
+PRO-517.
 
-## Generalização: workflow autônomo guiado pelo vocabulário interno, adapters também na escrita — msilva, 2026-09-01
+## Slot Agent-as-tool: agente chamando agente — desenhado, 2026-09-10
 
-Msilva reformulou, em chat, a mesma lacuna acima como princípio arquitetural
-mais amplo, não restrito ao molde do A14: qualquer agente do [[Agent Flow]]
-deveria ter um **fluxo de trabalho autônomo guiado pelo vocabulário/ontologia
-interna** (issue, milestone, PR, projeto...), não pela API nativa da
-ferramenta em que grava. O contrato/ports-and-adapters já resolve isso do
-lado da entrada (Trigger/Input); a peça nomeada aqui é o mesmo padrão do lado
-da **saída** — um adapter por plataforma de destino traduzindo o modelo de
-domínio interno pro formato nativo dela.
+Mesma sessão de código, puxado de uma pergunta concreta sobre `outcomes.py`
+(A10 lê o outcome que A14 escreve, store compartilhado — deveria A10 chamar
+A14 direto em vez disso?). Generalizado por msilva: agentes deveriam poder
+se comunicar quando necessário pra alcançar o objetivo, não só trocar fatos
+por um store passivo. Ver [[2026-09-10 Agentes expostos como tool uns para
+os outros]] pro desenho completo.
 
-Exemplo de trabalho dele: enviar ao A14 um arquivo detalhando um projeto, e o
-agente gerar toda a configuração (projeto, milestones, issues) em **qualquer
-plataforma de gerenciamento de projeto**, usando a linguagem interna e um
-adapter específico da plataforma-alvo. Jira foi citado como exemplo mais
-familiar de "outra plataforma", **não como alvo real** — confirmado por
-msilva: o `AIRTABLEGC` no Jira é legado, em migração pro Linear (ver
-[[Agent Flow]]).
+**Decisão**: por padrão, todo agente pode chamar qualquer outro através do
+contrato público dele (`Input → Output`), via um primitivo genérico
+`ask_agent(agent_key, question)` — não um tool bespoke por par, não gateado
+por critério/contexto (cogitado, descartado: msilva prefere disponível por
+padrão). Não quebra "cada agente define a própria interface" — quebraria só
+se um agente importasse o pacote interno do outro; chamar pelo contrato
+público é o mesmo acesso que qualquer consumidor externo já tem.
 
-Não é capacidade nova a construir agora — é a mesma "Lacuna 1" que hoje só
-está resolvida pro Linear (`linear_client.py`) e ainda precisa generalizar,
-já listada em "Caminho prático de replicar" acima. O que essa reformulação
-confirma explicitamente é o **escopo**: vale pra todo agente que escreve num
-sistema externo (A14 no Linear, A10 idem), não só um recurso específico do
-A14. Ainda não desenhado — mesmas questões em aberto abaixo: se o molde
-carrega esse vocabulário compartilhado ou se é camada separada da ontologia
-do agente.
+**Guardrails tratados como requisito, não simplificação opcional** —
+justamente por ser padrão, não exceção pontual: pilha de chamada (lista de
+`agent_key` já visitados, propagada via config) pra recusar ciclo antes de
+gastar token (o `recursion_limit` de hoje só protege o loop *dentro* de um
+agente, uma chamada cross-agent é um `invoke()` novo); profundidade máxima
+de cadeia independente de ciclo; rastreamento cross-agent como span/trace
+ligado no Langfuse.
 
-## Vocabulário de domínio: três camadas separadas — msilva, 2026-09-02
+**Escopo maior que `agent_facts`** — sistêmico desde o início (sustenta o
+roteamento A2→A3/A4/A7), não uma decisão local de A10/A14. Nenhuma
+implementação autorizada; alinhar com Luís antes de codar pesa mais aqui
+que no `agent_facts`.
 
-Discussão em chat resolve a questão em aberto deixada pela generalização
-acima ("o molde carrega o vocabulário compartilhado, ou é camada separada?")
-— e no processo revela que "vocabulário de domínio" vinha cobrindo duas
-coisas diferentes sob um nome só, o que travava a resposta.
+## Slot Skills (sentido 1: conteúdo sob demanda) — fechado, 2026-09-10
 
-**1. Molde (contrato comportamental) e vocabulário/processo de domínio são
-eixos diferentes.** O molde é sobre *como um agente opera* — Trigger/Trigger
-Channel → Input → Harness → Output, invariantes por instância. Vocabulário de
-domínio é sobre *o que as coisas significam*, independente de qual agente
-consome — mais parecido com um módulo compartilhado (`domain/`, no sentido de
-`linear_client.py` hoje) do que com um campo dentro do contrato de uma
-instância. Colocar vocabulário dentro do molde faria cada instância carregar
-sua própria cópia da ontologia, repetindo o problema que a Lacuna 1 já
-resolveu pro GitHub (não tipar o que é sinal).
+Mesma sessão de código do slot MCP acima. Cobre só o primeiro dos dois
+sentidos de "Skill" já registrados em [[Agent Harness Template]] — conteúdo
+carregado sob demanda dentro do Harness, paralelo a Tools. O segundo sentido
+(componente que não vira agente de primeiro nível, aninhado no harness de
+outro) segue em aberto, não tocado nesta sessão.
 
-**2. "Vocabulário de domínio" partido em duas peças que precisam de solução
-diferente:**
+**O que é**: mesmo tipo de conteúdo que um Fragment de SOUL — texto,
+metodologia, procedimento, versionado em `soul_versions`. A diferença é a
+**política de carregamento**: Fragment é sempre composto no profile; Skill só
+entra no contexto quando o gatilho bate.
 
-- **Semântica mecânica de campo** — o que `Issue`, `state_type`, `Milestone`
-  significam estruturalmente. **Não precisa de fragment nem skill dedicados**
-  se o agente recebe o adapter como uma **Tool**: o próprio schema da tool
-  (nomes de parâmetro, tipos, descriptions) já entrega esse vocabulário ao
-  modelo via tool-calling, sem duplicar em prosa em outro lugar. Regra de
-  negócio hoje escondida em código — `a10/tools.py`:
-  `CLOSED_STATE_TYPES = {"completed", "canceled", "duplicate"}` — deveria
-  idealmente virar **campo computado no próprio tipo** (ex.: `Issue.is_closed:
-  bool`) em vez de exigir um texto à parte explicando a regra: uma fonte só
-  (o tipo/adapter), sem risco de duas fontes divergirem.
-- **Metodologia de estruturação de demanda** — como decompor uma demanda em
-  project/milestones/issues, que forma um bom issue deve ter, que critérios
-  usar. **Isso não é redutível a um campo de tipo** e precisa mesmo de um
-  fragment (ou skill, dependendo de tamanho/frequência) — é a parte que
-  msilva queria dizer com "vocabulário de domínio" desde o início do
-  exemplo original (mandar ao A14 um arquivo de projeto e o agente gerar
-  toda a configuração). Ponto central, confirmado por msilva: essa camada é
-  **deliberadamente independente de qualquer adapter** — o agente estrutura a
-  demanda inteira em vocabulário interno antes de, e sem depender de, qual
-  adapter vai escrever o resultado depois. Mesma separação ports-and-adapters
-  aplicada à lógica de domínio em si: se o conteúdo de um fragment só faz
-  sentido no contexto de uma ferramenta específica, é vocabulário vazado, não
-  metodologia. Candidato natural a **fragment compartilhado** entre agentes
-  que estruturam demanda (A7 Discovery, A14, possivelmente A2 Classificador)
-  — `soul_composition` já suporta reuso de um mesmo fragment em múltiplos
-  profiles, sem trabalho de infra novo; decisão de compartilhar fica por
-  fragment, não é regra fixa. O "ticket template" de [[Gabriel Packer -
-  DAG-driven agent orchestration]] (escopo, critério de aceite, `blockedBy`,
-  rollout/kill switch) é candidato a base concreta pro conteúdo desse
-  fragment.
+**Diferença de Tool**: Tool é I/O — o modelo chama, recebe dado ou executa
+ação. Skill não é chamada, é instrução injetada que muda *como* o modelo
+interpreta o dado que as Tools já trouxeram. Exemplo concreto (hipotético,
+não construído): uma Tool `list_issues()` devolve dado bruto; uma Skill
+"como julgar escopo descontrolado" mudaria como o A10 interpreta esse dado
+pro critério `escopo_descontrolado`, sem buscar dado novo nenhum.
 
-**Critério pra escolher fragment vs. skill**, aplicável a qualquer conteúdo
-dessa segunda categoria: sempre relevante e pequeno → fragment (composto
-sempre, custo desprezível); às vezes relevante ou grande → skill (carregada
-só quando a tarefa pede — mesmo lever de narrow fetching já validado no A10,
-ver [[Agent Flow]]).
+**Não é plugável como MCP.** MCP resolve acesso a sistema externo por
+identidade; Skill é conhecimento que o próprio time autora e versiona, sem
+credencial de terceiro envolvida. Isolar por usuário/host não tem evidência
+de necessidade — mesma regra já aplicada à decisão de arquétipos acima.
 
-**Nome a evitar**: "vocabulário de domínio" sozinho é ambíguo o bastante pra
-ter travado esta própria discussão — cobre tanto semântica de campo (resolvida
-por tooling) quanto metodologia de processo (que precisa de fragment). Ao
-nomear esse fragment/skill concretamente, preferir algo como
-"metodologia de estruturação de demanda" ou equivalente, não "vocabulário",
-para não recriar a mesma colisão — mesmo cuidado já aplicado ao nome do
-projeto em [[Vocabulário do Fluxo Agêntico]].
+**Mecanismo de carregamento**: dispatch determinístico, não classificador de
+relevância (ao contrário da descoberta de Skill do Claude Code, por matching
+de descrição). Pro A10, chaveado pelo critério em avaliação — só carrega
+skill quando o critério é julgado por LLM (`priorizacao_desalinhada`,
+`escopo_descontrolado`); os determinísticos (`iniciativa_estagnada`,
+`gargalo_de_capacidade`, resolvidos em `rules.py`) nunca tocam skill
+nenhuma. Pro A14, chaveado por tipo de tarefa (ex.: estruturar demanda
+carrega skill; calcular progresso por milestone não).
+
+**Implementação, quando materializar**: **tabela própria** (`skills`), não
+`soul_versions`. Cogitado primeiro reaproveitar `soul_versions` com
+`kind="fragment"` (mesma forma de conteúdo) ou um terceiro valor
+`kind="skill"` — descartado: `soul_versions` já significa algo específico
+(comportamento/identidade, "fonte comportamental do agente, independente do
+prompt de tarefa"), e skill é metodologia situacional, eixo conceitual
+diferente (mesma separação já fechada em "Vocabulário de domínio vs. molde"
+acima). Um `kind="skill"` resolveria a forma do dado, mas deixaria a skill
+**visível pra `soul_composition`** — vazando pra lista de candidatos de um
+profile, sem nada impedindo estruturalmente. Tabela separada resolve isso de
+graça: skill fisicamente fora do que `soul_composition` enxerga, não uma
+convenção de filtro que alguém pode esquecer de aplicar.
+
+Forma mínima, mesmo padrão de versionamento que a SOUL já usa, sem
+reinventar:
+
+```
+skills
+  id
+  name
+  version
+  content
+  created_at
+  created_by
+```
+
+Sem binding/promoção própria (mesma decisão de manter simples): skill
+referenciada por `id`/versão fixa direto no código (`agent.py`), buscada ad
+hoc por nome só no momento em que o critério/tarefa que a dispara acontece —
+sem passar por `soul_composition`. Perde a ergonomia de promover sem deploy
+que o profile tem; revisitar se/quando o dashboard de SOUL precisar disso
+pra skill também.
+
+**Nada codado** — mesma postura do resto do molde: conceitual até um
+critério/tarefa real pedir a separação. Hoje `priorizacao_desalinhada` e
+`escopo_descontrolado` (candidatos mais óbvios) ainda vivem só no prompt
+principal do A10, sem skill dedicada.
+
+**Critério real apareceu, 2026-09-10** — ver
+[[2026-09-10 A10 - critérios julgados por skill, não determinísticos em Python]]:
+todo critério do A10 (incluindo os que eram determinísticos em Python)
+passa a exigir skill própria, mais o critério novo `fluxo_represado`. A
+tabela `skills` deixa de ser hipotética, vira pré-requisito real — ainda
+sem implementação autorizada. Mesma sessão também resolveu o dispatch de
+skill no chat (sem critério fixo pra disparar por, ao contrário do batch):
+skills relevantes entram sempre no prompt do chat, sem mecanismo de
+roteamento.
+
+**Confirmado no A14 também, mesmo dia** — ver
+[[2026-09-10 A14 - retrofit dos verdicts para skill (mesmo princípio do A10)]]:
+os três verdicts que `a14/rules.py` decidia sozinho (`health`, alerta de
+atraso, sinal de PR parado) passam pelo mesmo retrofit — Python só número,
+skill decide gravidade. Confirma que `skills` não é peculiaridade do A10,
+serve os dois agentes com critérios próprios de cada um.
+
+## Trigger e Trigger Channel: sem representação em código — sessão de código, 2026-09-10
+
+Puxado por msilva ao revisitar a pergunta "qual problema o molde resolve
+primeiro" (ver resolução acima: **nortear criação de agentes, padronização,
+e uma factory low-code futura**). Auditado no repo real
+(`livemode-fluxo-agentico`, `grep -i trigger`): zero representação. O único
+hit é homônimo — *database triggers* do Postgres em `db.py`
+(`soul_versions_immutable`, etc.), sem relação com o conceito do Harness.
+Hoje Trigger/Channel só existe como fato observável de fora (qual
+entrypoint chamou), nunca declarado no código.
+
+**Trigger (Human|Machine) descartado por ora — sem evidência.** Auditando os
+3 pontos reais de invocação (`cron.py` → Machine, rota `/run` de
+`a10/api.py`/`a14/api.py` → Human, blocos `__main__` → Human), **Channel
+determina Trigger 1:1 hoje** — nenhum canal atende os dois tipos de
+disparo. Separar em dois campos agora não carregaria informação nenhuma além
+do que `TriggerChannel` sozinho já dá; mesma regra de amostra aplicada ao
+resto do molde. Valor real só aparece no dia em que um canal (o candidato
+óbvio é HTTP) atender tanto humano quanto outro agente chamando
+programaticamente — aí sim Trigger vira informação, não redundância.
+
+**TriggerChannel materializa sozinho — valor já comprovado, não hipotético.**
+`cron_runs` (`cron_history.py`) guarda só `id, ran_at, result`, sem campo de
+canal. Na investigação de um bug real desta mesma sessão (cron da Vercel disparando
+via GET contra uma rota que só aceitava POST, corrigido em `cron.py:249`),
+diagnosticar "essas 6 execuções foram automáticas ou manuais?" exigiu inferir
+pelo horário bater perto de 10:00 UTC, em vez de uma query direta. Um campo `trigger_channel` gravado no `cron_runs` (e propagado
+como metadata de trace do Langfuse) transformaria isso numa filtragem
+trivial.
+
+**Onde materializar**: `Literal["cron", "http", "cli"]` em `domain.py`,
+mesmo padrão de `Criterion`/`SourceType` já usado no repo. Passado como
+parâmetro nomeado em `run_a10`/`run_a14` (mesmo lugar de `reader`), não como
+campo de `A10Input`/`A14Input` — misturaria infra (como foi chamado) com
+domínio (o que o agente processa), quebrando a regra já fixada de "contrato
+definido por formato, nunca por quem chama".
+
+**Achado à parte: "cron" não é um canal que uma factory consiga criar
+sozinha em runtime, ao contrário de HTTP/CLI.** HTTP e CLI são canais que o
+próprio runtime cria (rota nova registrada ao subir, bloco `__main__` novo)
+— não tocam config de deploy. Cron na Vercel é **declarativo, resolvido em
+tempo de deploy** (`vercel.json`, array `crons`, lido só quando a app é
+publicada — não uma API que se chama em runtime pra agendar algo novo; foi
+exatamente essa característica que causou o bug do cron nunca disparando
+antes desta sessão). Uma factory criar um canal "cron" de verdade pra um
+agente novo pedido por usuário exigiria: (1) gerar/registrar uma rota pro
+agente, (2) adicionar entrada no `crons` do `vercel.json`, (3) **disparar um
+deploy real de produção** — permissão de risco/blast-radius bem maior que
+escrever uma linha em tabela. Acompanha as outras peças do molde: nada disso
+foi codado, fica registrado como limite conhecido da ambição de factory.
 
 ## Questões em aberto
 
-- Qual problema concreto o molde precisa resolver primeiro: criação de novos
-  agentes, padronização dos existentes, delegação da configuração para pessoas
-  não técnicas ou comparação entre implementações?
-- Existe um molde-base único com módulos opcionais ou uma família de arquétipos?
+- ~~Qual problema concreto o molde precisa resolver primeiro: criação de
+  novos agentes, padronização dos existentes, delegação da configuração para
+  pessoas não técnicas ou comparação entre implementações?~~ **Resolvido em
+  2026-09-10** (msilva): nortear a criação de novos agentes, permitindo
+  padronização e, no horizonte, uma **factory** — criação de agente novo de
+  forma não programática/low-code. Isso eleva o peso de duas peças que antes
+  pareciam só detalhe: Trigger/Trigger Channel precisam ser configuráveis sem
+  código (ver seção acima), e o molde precisa virar **dado máquina-legível**,
+  não só prosa de wiki — a "Hipótese de estrutura" (bloco `yaml` acima) é o
+  rascunho desse schema, não só referência conceitual. Ainda não é hora de
+  construir a factory (duas instâncias do mesmo arquétipo não são amostra
+  suficiente) — a direção é registrar candidatos a campo configurável
+  conforme aparecem, pro terceiro agente real testar o schema de verdade.
 - Quais campos pertencem ao molde e quais só aparecem na instância?
 - Quais mudanças podem ser feitas sem código, e quais exigem revisão técnica?
 - Como versões de molde e de instância se relacionam quando o molde evolui?
 - Quais invariantes não podem ser sobrescritas por uma instância?
 - Como o molde representa componentes que não são agentes independentes?
-- ~~O que exatamente compõe a Soul e como seus atributos viram comportamento
-  observável?~~ **Parcialmente respondida em 2026-09-01:** o V1 abandona
-  atributos estruturados em favor de texto direto, composição plana e versões
-  rastreáveis; o conteúdo real dos fragments ainda precisa ser definido.
-- ~~O molde deve incluir vocabulário de domínio compartilhado entre sistemas
-  de registro (Linear, GitHub, futuros), ou essa é uma camada separada da
-  ontologia do agente em si?~~ **Resolvido em 2026-09-02** — ver seção acima:
-  camada separada, e partida em duas peças (semântica mecânica via adapter/
-  tool schema; metodologia de processo via fragment/skill).
-- **Novo, 2026-09-02**: quais agentes de fato compartilham a mesma metodologia
-  de estruturação de demanda (A7, A14, A2?) — ainda não confirmado com Luís
-  nem testado contra os specs reais de cada um.
-- **Novo, 2026-09-02**: vale a pena migrar `CLOSED_STATE_TYPES` (e regras
-  hardcoded parecidas) de constante Python pra campo computado no tipo
-  (`Issue.is_closed`) agora, ou só quando um segundo sistema de tickets
-  entrar e a regra precisar variar por fonte? Não decidido — ver a nota
-  equivalente na auditoria da Lacuna 1 acima ("só vira problema se uma
-  segunda fonte entrar com categorias diferentes").
+- Quais agentes de fato compartilham a mesma metodologia de estruturação de
+  demanda (A7, A14, A2?) — não confirmado com Luís nem testado contra os
+  specs reais de cada um.
+- Vale a pena migrar `CLOSED_STATE_TYPES` (e regras hardcoded parecidas) de
+  constante Python pra campo computado no tipo (`Issue.is_closed`) agora, ou
+  só quando um segundo sistema de tickets entrar?
+- Vale usar o tier gratuito da Bossabox pra validar/acelerar a camada de
+  memória compartilhada em vez de reconstruir do zero? (ver [[What Bossabox's
+  Assessment suggests for Agent Flow]], ponto 7)
