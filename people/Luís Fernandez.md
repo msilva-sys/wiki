@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-09-04
+updated: 2026-09-10
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
@@ -147,3 +147,8 @@ sometimes builds directly, otherwise supports.
   decisões nela e na Gabi, ficando só na parte técnica com msilva. Se ela
   quiser Luís envolvido, ele passa a cobrar msilva em produto do mesmo
   jeito que já cobra em técnica. A decidir com a Carol em 08/09.
+- **1:1 de memória/comunicação entre agentes, 2026-09-10**
+  ([[2026-09-10 1-1 Matheus - Luís]], diarização de baixa confiança):
+  endossa (atribuição não confiável) o fluxo de aprovação humana proposto
+  pra memória de agentes; reconfirma a fronteira quantitativa (PM) vs.
+  qualitativa (Portfolio); confirma início do dev de A1/A2 em 15/09.

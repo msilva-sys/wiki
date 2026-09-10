@@ -5766,3 +5766,51 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `projects/Airtable Proxy.md` (novo tip + item em "Things to
   actually do"), `concepts/Linear Project Structure.md` (confirmação do
   trial expirado em "Plan constraints"), `index.md`.
+
+## [2026-09-10] lint | Checagem de saúde da wiki
+- Rodadas as 8 checagens do schema (contradições, claims obsoletos, órfãs/
+  dead-ends, `raw/` sem `sources/`, contradição intra-página, wikilinks
+  quebrados, decisão aberta vs. resolvida, callouts `[!msilva]` pendentes).
+- Único achado acionável: `projects/Airtable Proxy.md` listava "Pulumi IaC
+  (phase 4)" em "Deferred (do not start unprompted)" mesmo com `PRO-91`
+  codado desde 2026-08-24 (Go/Pulumi, Cloud Run + Secret Manager) — mesmo
+  padrão de item desatualizado já corrigido para "multi-app API-key auth"
+  na mesma lista.
+- Achados menores sem ação: `reference/Zed Cheatsheet.md` roçando o limiar
+  de 30 dias sem update (esperado, cheatsheet pessoal); cópia duplicada do
+  vault em `.claude/worktrees/agent-a8ff7cdda35be0a24/` de um worktree
+  antigo (fora do escopo da wiki, sinalizado para limpeza manual).
+- Updated: `projects/Airtable Proxy.md` (item Pulumi riscado + callout de
+  supersede), `index.md`.
+
+## [2026-09-10] ingest | 1-1 Matheus - Luís (Granola, memória e comunicação entre agentes)
+- Lido via MCP Granola (autenticação feita nesta sessão): transcrição bruta
+  disponível, mas diarização quebrada — só a primeira fala rotulada (`Me:`),
+  resto sem separação de falante. Atendee confirmado com msilva: Luís
+  Fernandez.
+- New: `meetings/2026-09-10 1-1 Matheus - Luís.md` — reconfirma fronteira PM
+  (quantitativo) vs. Portfolio (qualitativo); comunicação entre agentes hoje
+  só via tabela compartilhada, sem chamada direta; memória com fluxo
+  `pendente` → aprovação humana discutido e aparentemente endossado por
+  Luís (atribuição incerta); triagem no Linear cogitada pra padronizar
+  entrada de A1/A2; chave OpenRouter própria a solicitar via Carol; dev de
+  A1/A2 confirmado pra 15/09 (já tracked: projeto A1 & A2, milestone M0 -
+  Discovery, PRO-543/544/545).
+- Sem decisão formal nesta conversa — é precursor informal de duas decisões
+  técnicas já rascunhadas no mesmo dia em sessão de código separada:
+  cross-linkadas em `decisions/2026-09-10 Memória de fatos do agente
+  (agent_facts).md` e `decisions/2026-09-10 Agentes expostos como tool uns
+  para os outros.md`. Essas duas ainda não estão indexadas em `index.md`
+  (fora do escopo deste ingest — sinalizado a msilva, não corrigido aqui).
+- `sources/Reunião Luís.md` era um rascunho manual de msilva, fora do
+  schema (sources/ sem raw/ correspondente). A pedido dele: movido pra
+  `raw/2026-09-10 Notas PM vs Portfólio - pré-1-1 Luís.md` e ingerido como
+  fonte própria — `sources/Notas PM vs Portfólio (pré-1-1 Luís).md`. Achou
+  uma nuance que a página da reunião tinha errado: Portfolio olha
+  qualitativo **e** quantitativo, não só qualitativo — corrigido na página
+  da reunião.
+- Updated: `index.md` (entradas Agent Flow, Luís Fernandez, Meetings,
+  Sources), `people/Luís Fernandez.md`, `decisions/2026-09-10 Memória de
+  fatos do agente (agent_facts).md`, `decisions/2026-09-10 Agentes
+  expostos como tool uns para os outros.md`, `meetings/2026-09-10 1-1
+  Matheus - Luís.md` (correção de nuance pós-ingest da nota raw).
