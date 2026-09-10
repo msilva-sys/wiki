@@ -616,7 +616,13 @@ telemetry*, not enforcement:
       (not `main`, no push).
 
 **Deferred (do not start unprompted):** ~~multi-app API-key auth (phase 3)~~,
-Pulumi IaC (phase 4), rate-limiting (phase 5), metadata cache (phase 6).
+~~Pulumi IaC (phase 4)~~, rate-limiting (phase 5), metadata cache (phase 6).
+
+> [!important] Superseded 2026-08-24 — Pulumi IaC is active work, not deferred
+> `PRO-91` (Cloud Run + Secret Manager em Pulumi) was coded 2026-08-24 — see
+> the callout above. This is the same reordering Luís did for app auth below:
+> "phase 4" in the list is the design doc's original plan, not the current
+> one.
 
 > [!important] Superseded 2026-08-17 — app auth is active work, not deferred
 > As of 2026-08-14 msilva is **building app authentication and centralizing
