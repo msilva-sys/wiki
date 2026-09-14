@@ -1,7 +1,7 @@
 ---
 type: concept
 status: draft
-updated: 2026-09-04
+updated: 2026-09-14
 aliases: [fronteira A10 A14, N0-N4, niveis de informacao A10 A14, painel de métricas A10 A14, teste da pergunta A10 A14, efeito medido, acoplamento A10 A14, projeto milestone A14]
 tags: [agents, agent-flow, a10, a14, product-scope, metrics]
 ---
@@ -375,6 +375,21 @@ Resumo — texto completo no raw source:
   aceita no escopo em andamento; toda recomendação cita prazo, dependência,
   escopo ou uso real; se a resposta exigir comparar iniciativas, devolve ao
   A2 com o sinal observado; nunca escreve na carteira de iniciativas.
+
+## Validação de produto com Carolina, 2026-09-14
+
+Carolina Bezerra (perspectiva de produto) revisou os critérios e confirmou
+que o A10-como-construído é, na prática, um **segundo A14** — julga saúde de
+uma iniciativa, não compara iniciativas concorrentes para decidir onde
+alocar capacidade. A distinção A10 (iniciativa) × A14 (projeto) descrita
+acima está correta como fronteira de **status/saúde**, mas isso não é a
+mesma coisa que a **priorização de portfólio** da proposta original ([[2026-
+08-24 Start Agent Flow with A10 Portfolio]]). O motivo é falta de dado, não
+falha de desenho: priorizar entre iniciativas exige esforço, retorno
+esperado e risco, nenhum dos três presente no Linear hoje (vivem no
+Airtable). Ver [[A10 avalia saúde, não prioriza portfólio]] para o
+desdobramento — inclui um caminho não descartado por Carolina: um terceiro
+agente dedicado à comparação de portfólio, deixando A10/A14 como estão.
 
 ## Ligação com o resto do projeto
 

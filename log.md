@@ -5941,3 +5941,23 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   Doc marca explicitamente pra conferir se o número ainda bate antes da
   reunião — é dado de 10 dias atrás, não puxado ao vivo desta vez.
 - Updated: `meetings/Meeting prep - A10 e A14 com Carol - 2026-09-14.md`.
+
+## [2026-09-14] ingest | Reunião Carolina - Matheus (critérios A10-A14)
+- Read Granola meeting `9c2d9dfc-3e1d-48ff-bcab-b83b7429cbcd` (URL id in the
+  share link differs from the API's internal meeting id). Diarização
+  quebrada, atribuição por inferência de conteúdo.
+- Diagnóstico central: Carolina confirma que o A10 construído é um segundo
+  A14 (saúde por iniciativa), não a comparação/priorização de portfólio da
+  proposta original de [[2026-08-24 Start Agent Flow with A10 Portfolio]].
+  Faltam 3 dados no Linear — esforço, retorno esperado, risco — hoje só no
+  Airtable; Gabi já tem regras de priorização definidas (fato novo).
+- Nenhuma decisão fechada. 3 commitments do msilva viraram issues Linear:
+  PRO-593 (enviar critérios pra Carolina validar), PRO-594 (reforçar no
+  grupo que cada um revisa o próprio projeto), PRO-595 (entender regras de
+  priorização da Gabi e decidir migração Airtable → Linear de
+  esforço/retorno).
+- New: `meetings/2026-09-14 Carolina - Matheus (critérios A10-A14).md`,
+  `syntheses/A10 avalia saúde, não prioriza portfólio.md`.
+- Updated: `decisions/2026-08-24 Start Agent Flow with A10 Portfolio.md`,
+  `concepts/Fronteira A10×A14 (informação e métricas).md`,
+  `people/Carolina Bezerra.md`, `index.md`.

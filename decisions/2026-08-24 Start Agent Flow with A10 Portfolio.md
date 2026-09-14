@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-24
+updated: 2026-09-14
 date: 2026-08-24
 decided_by: Matheus Silva
 source: "[[2026-08-24 Agent Flow discovery with Carol]]"
@@ -53,6 +53,15 @@ call msilva is making today.
   day-to-day work, João Victor Andrade's CRM backlog (his own spreadsheet).
   msilva still needs to talk to both before Portfolio can see the whole
   picture, not just the Linear-shaped slice.
+- **Confirmed 2026-09-14, in a product review with Carolina Bezerra: what
+  got built is not this decision's "portfolio."** A10 as implemented
+  judges the health of one iniciativa at a time — it doesn't compare
+  iniciativas against each other to decide where capacity should go, which
+  is what "start with A10 Portfolio" originally meant. The blocker is data,
+  not scope creep: prioritizing across iniciativas needs effort, expected
+  return, and risk, none of which live in Linear today (they're in
+  Airtable). See [[A10 avalia saúde, não prioriza portfólio]] for the open
+  question this created.
 - **Whether A10 and A14 PM Agent are one build or two** is not addressed
   here — the syntheses below frame it as "A10+A14," this decision commits
   only to A10 itself, the piece msilva is actually about to touch (the

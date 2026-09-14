@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-25
+updated: 2026-09-14
 aliases: [Carolina, Carol]
 tags: [people, governance]
 ---
@@ -68,6 +68,12 @@ elsewhere in the wiki.
   hers (matches her governance/process-feedback role), but not
   confidently distinguished from Yasmin's voice — see that page's
   warning.
+- **Reviewed the A10/A14 classification criteria, 2026-09-14**
+  ([[2026-09-14 Carolina - Matheus (critérios A10-A14)]]) — confirmed the
+  built A10 is a second A14 (health-per-iniciativa), not the portfolio
+  comparison her own 2026-08-24 prioritization opinion assumed; named the
+  missing data (effort, expected return, risk) blocking real prioritization.
+  See [[A10 avalia saúde, não prioriza portfólio]].
 - **On the [[Bossabox Engagement]] discovery call** — alongside msilva and
   Luís, all three picked up on her microphone, so the transcript can't
   actually distinguish which of the three said what
