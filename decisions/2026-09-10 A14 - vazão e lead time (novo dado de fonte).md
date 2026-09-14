@@ -61,12 +61,15 @@ e [[2026-09-10 A10 - critérios julgados por skill, não determinísticos em Pyt
 
 ## Em aberto, não desenhado ainda
 
-Dependência/sequência (leitura de `blockedBy` do Linear) e mudança de
-escopo (comparar composição de um milestone entre execuções) — gaps de
-regra, ficam pra uma próxima rodada de desenho.
+~~Dependência/sequência (leitura de `blockedBy` do Linear)~~ — **desenhada
+na mesma sessão**, ver [[2026-09-10 A14 - dependência e sequência (blocked_by)]].
+Mudança de escopo (comparar composição de um milestone entre execuções)
+segue de fato em aberto — deixada de lado por decisão explícita de
+msilva, não desenhada.
 
 ## Relacionado
 
+- [[2026-09-10 A14 - dependência e sequência (blocked_by)]]
 - [[2026-09-10 A14 - retrofit dos verdicts para skill (mesmo princípio do A10)]]
 - [[2026-09-10 A10 - critérios julgados por skill, não determinísticos em Python]]
 - [[Fronteira A10×A14 (informação e métricas)]]

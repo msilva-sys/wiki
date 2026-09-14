@@ -5851,3 +5851,32 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `projects/Airtable Proxy.md` (issue `PRO-587` referenciada,
   checklist "things to actually do" atualizado), `index.md` (entrada
   Meetings).
+
+## [2026-09-14] lint | Checagem de saúde da wiki (16ª)
+- Rodada via fork read-only, checklist do `CLAUDE.md`: 5 páginas
+  `status: active` cruzam 30 dias em ~2 dias se não forem tocadas
+  (`Airtable Rate Limits`, `2026-08-17 A5 receiver runs on Cloud Run`, 3
+  syntheses); 1 órfã real (`2026-09-10 A14 - dependência e sequência
+  (blocked_by)` — nenhuma das 5 decisões-irmãs do mesmo dia linkava de
+  volta); nenhum wikilink quebrado real; 4 `raw/Clippings` e 2 outros
+  arquivos de `raw/` sem source/meeting correspondente; nenhum callout
+  `[!msilva]` pendente; uma conexão implícita não escrita em nenhuma
+  página — as 6 decisões de 2026-09-10 mostram A10 rodando em modo chat
+  de verdade, o que responde (sem nunca ter sido dito) a pergunta aberta
+  em `Agent Flow.md` sobre se LangGraph sustenta um agente conversacional.
+- **Fixes aplicados** (só os dois fáceis, resto fica pra depois por
+  decisão de msilva): link recíproco adicionado em
+  `2026-09-10 A14 - vazão e lead time (novo dado de fonte).md` de volta
+  pra `2026-09-10 A14 - dependência e sequência (blocked_by)` (que ela
+  próprio já linkava, mas não o contrário) — resolve a órfã e corrige a
+  seção "Em aberto" da página de vazão, que ainda listava dependência
+  como não desenhada; questão do LangGraph conversacional em `Agent
+  Flow.md` marcada respondida, citando as decisões de 2026-09-10.
+- **Não feito, registrado só como achado**: as 6 decisões de 2026-09-10
+  (molde de agente) ainda não têm entrada própria na seção `## Decisions`
+  de `index.md` — gap já sinalizado no ingest do mesmo dia, não corrigido
+  agora (fora do escopo que msilva pediu nesta passada). Itens de `raw/`
+  sem source e as 5 páginas próximas do limiar de 30 dias também ficam
+  sem ação.
+- Updated: `decisions/2026-09-10 A14 - vazão e lead time (novo dado de
+  fonte).md`, `projects/Agent Flow.md`.

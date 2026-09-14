@@ -185,11 +185,20 @@ tags: [agents, llm, automation, onboarding, research]
 > Reforça de novo a distinção trigger/input ([[Agent Harness Template]]) e
 > nomeia o problema central dos 14 agentes: descritos de forma macro, sem
 > capacidades específicas listadas — analogia de "agente como funcionário
-> novo," precisa de objetivo claro e entrega de valor definida. **Questão
+> novo," precisa de objetivo claro e entrega de valor definida. ~~**Questão
 > em aberto, ainda não resolvida em nenhuma síntese**: se o agente precisar
 > ser conversacional (Slack, chat interno, Telegram), a escolha LangGraph
 > vs. agente autônomo ainda se sustenta? A síntese acima assume uso CLI
-> single-shot, não conversacional — não é a mesma pergunta.
+> single-shot, não conversacional — não é a mesma pergunta.~~
+>
+> **Respondida na prática, 2026-09-10** (achado no lint, não afirmado
+> explicitamente em nenhuma página até agora): as 6 decisões da sessão de
+> código do mesmo dia (ver [[2026-09-10 A10 - critérios julgados por skill, não determinísticos em Python]])
+> tratam A10 rodando em **modo chat de verdade** — `list_initiative_summaries()`
+> liberado pro chat, skills sempre incluídas no prompt composto em vez de
+> dispatch por critério — não CLI single-shot. LangGraph sustenta os dois
+> modos (chat e batch) no mesmo agente; a pergunta original tratava os dois
+> como mutuamente exclusivos, e não são.
 
 > [!tip] A10/A14 caminham pra proatividade real — msilva, 2026-08-31
 > [[2026-08-24 Build A10 and A14 together, PoC first]] (seção "Proatividade
