@@ -5891,3 +5891,20 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   wiki: `Agent Flow.md` já registrava Vercel Cron pro A10/A14 antes desta
   sessão, só não tinha sido cruzado com esta decisão específica.
 - Updated: `decisions/2026-08-17 A5 receiver runs on Cloud Run.md`.
+
+## [2026-09-14] refactor | Indexa as 6 decisões do molde de agente (2026-09-10)
+- Gap achado no lint da sessão: as 6 decisões da sessão de código de
+  2026-09-10 (molde de agente A10/A14) não tinham entrada própria na
+  seção `## Decisions` de `index.md`, só apareciam citadas dentro do
+  bullet do `Agent Flow`. msilva pediu pra indexar.
+- Uma linha por decisão, mesmo padrão das demais: `2026-09-10 A10 -
+  critérios julgados por skill`, `2026-09-10 A14 - retrofit dos verdicts
+  para skill`, `2026-09-10 A14 - vazão e lead time`, `2026-09-10 A14 -
+  dependência e sequência (blocked_by)`, `2026-09-10 Memória de fatos do
+  agente (agent_facts)`, `2026-09-10 Agentes expostos como tool uns para
+  os outros`. Todas marcadas "só desenho, nada implementado" — nenhuma
+  das 6 autorizou código nesta sessão de origem.
+- Aproveitado: a linha da `2026-08-17 A5 receiver runs on Cloud Run` no
+  índice ainda dizia `active` — corrigida pra citar o `deferred` do
+  commit anterior, que tinha atualizado a página mas não essa linha.
+- Updated: `index.md`.
