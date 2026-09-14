@@ -17,14 +17,19 @@ Grounding técnico auditado direto no código (`livemode-fluxo-agentico`,
 [[Fronteira A10×A14 (informação e métricas)]] pro desenho de papel mais
 amplo (o que cada um deveria fazer versus o que já está implementado).
 
+**Atualização de última hora (mesmo dia, PRO-589):** foi ao ar a capacidade
+de A10/A14 **recomendarem uma ação concreta**, não só sinalizar. Isso muda a
+pergunta 3 da pauta de hipotética pra real — ver seção nova abaixo.
+
 ## Pauta (tela/condução) — 15 min
 
 **1. Intro** *(1 min)*
-A10 e A14 só sinalizam, não decidem. A10 = radar de risco de portfólio
-(não aprova/recusa demanda, não realoca capacidade, não recomenda encerrar
-iniciativa — isso é decisão humana hoje). A14 = acompanha execução de
-entregas já aprovadas. Critérios calibrados de forma técnica — hoje
-validando com visão de negócio dela.
+A10 e A14 sinalizam e agora também podem **recomendar uma ação concreta** —
+nunca decidem sozinhos. A10 = radar de risco de portfólio. A14 = acompanha
+execução de entregas já aprovadas. Toda recomendação nasce pendente; só vira
+ação de verdade se uma pessoa aprovar (mesmo padrão que já usamos pra fato
+	 lembrado — propõe, humano decide). Critérios calibrados de forma técnica —
+hoje validando com visão de negócio dela.
 
 **2. Critérios atuais** *(5 min, mostrar rápido)*
 
@@ -51,12 +56,24 @@ pra mostrar como os sinais se cruzam na prática, não só em teoria.
 - **Entregue sem integrar** — marcado como concluído, mas código ainda não integrado
 → status: no prazo / em risco / fora dos trilhos
 
-**3. Três perguntas-chave** *(8 min)*
+**3. Nova capacidade: recomendação de ação** *(2 min)*
+Foi ao ar hoje. Além de sinalizar, A10 e A14 agora podem propor uma ação
+concreta pra alguém do time fazer — ex.: "redistribuir issues entre os
+integrantes do time", "mover uma issue pro próximo milestone". Mesmo padrão
+propõe → aprova: a recomendação nasce `pending`, aparece numa tela nova
+(`/actions`) e no status update do portfólio/projeto quando existe uma
+pendente; só vira ação de fato se uma pessoa aprovar — quem reatribui, muda
+prioridade ou move milestone no Linear continua sendo humano, sempre.
+
+**4. Três perguntas-chave** *(6 min)*
 - Esses critérios são os que importam pra decisão de vocês, ou falta/sobra algo?
 - Hoje só medimos se saiu no prazo, não se resolveu o problema de negócio — vale priorizar fechar isso?
-- Se isso evoluir de "radar" pra "decisor" (recomendar realocar capacidade, encerrar iniciativa), quem toma essa decisão — o agente sugere e uma pessoa aprova, ou algum nível pode ser automático?
+- Sobre a recomendação de ação: que tipo de ação faz sentido o agente sugerir
+  (redistribuir trabalho, mudar prioridade, encerrar iniciativa) e que tipo
+  não — tem categoria que ela quer manter fora, mesmo com aprovação humana no
+  meio?
 
-**4. Fechamento** *(1 min)*
+**5. Fechamento** *(1 min)*
 Definir dono do próximo ajuste.
 
 ## Material de apoio — mecânica de cada critério
@@ -112,5 +129,8 @@ nunca julgado pelo LLM.
   contra dado real. Boa munição se a discussão de calibração render.
 - O sistema passou de "2 iniciativas piloto" pra cobrir o portfólio inteiro
   do time recentemente — contexto de fundo, não entrou como pergunta
-  formal na pauta de 15 min por decisão do msilva (pergunta B sobre
-  radar→decisor cobre a mesma preocupação de forma mais produtiva).
+  formal na pauta de 15 min por decisão do msilva.
+- Recomendação de ação é novíssima (foi ao ar no dia da reunião) — nenhuma
+  ação real ainda passou pelo fluxo de aprovação em produção. Se ela
+  perguntar "já foi usado?", a resposta honesta é não, ainda não há caso
+  real pra mostrar.
