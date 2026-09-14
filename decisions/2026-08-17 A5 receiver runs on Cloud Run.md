@@ -1,7 +1,7 @@
 ---
 type: decision
-status: active
-updated: 2026-08-17
+status: deferred
+updated: 2026-09-14
 date: 2026-08-17
 decided_by: msilva
 source: working session 2026-08-17
@@ -9,6 +9,17 @@ tags: [agents, a5, infrastructure, cloud-run, n8n]
 ---
 
 # A5's receiver runs on Cloud Run
+
+> [!warning] Marcada `deferred`, 2026-09-14
+> Dois motivos, juntos: **A5 segue despriorizado** desde
+> [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]] (nunca
+> construído), e **o cenário de infra mudou** — os agentes que de fato
+> existem, A10 e A14, rodam na **Vercel**, confirmado por msilva
+> 2026-09-14, não no GCP/Cloud Run. Isso enfraquece por completo o
+> argumento "A5's deploy target is now the same platform as the proxy,
+> which keeps secrets and deploys in one cloud" (seção Consequences) — os
+> agentes reais não estão nessa nuvem. Se A5 for retomado algum dia, essa
+> decisão deveria ser revisitada do zero, não assumida como ainda válida.
 
 **Decision.** A5 Watcher's webhook receiver is a **plain container exposing one
 HTTP route, deployed to Cloud Run with `min-instances=0`**. This resolves the

@@ -5880,3 +5880,14 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   sem ação.
 - Updated: `decisions/2026-09-10 A14 - vazão e lead time (novo dado de
   fonte).md`, `projects/Agent Flow.md`.
+
+## [2026-09-14] refactor | A5 receiver em Cloud Run marcada deferred
+- msilva, sobre um dos achados do lint anterior: os agentes que de fato
+  existem hoje, A10 e A14, rodam na **Vercel**, não no GCP. A decisão de
+  2026-08-17 (A5's receiver em Cloud Run) tinha um argumento — "mantém
+  secrets e deploys numa nuvem só" — que pressupunha o oposto. Combinado
+  com A5 já despriorizado desde 2026-08-24 (nunca construído), a página
+  vira `deferred` em vez de `active`. Sem contradição com o resto da
+  wiki: `Agent Flow.md` já registrava Vercel Cron pro A10/A14 antes desta
+  sessão, só não tinha sido cruzado com esta decisão específica.
+- Updated: `decisions/2026-08-17 A5 receiver runs on Cloud Run.md`.
