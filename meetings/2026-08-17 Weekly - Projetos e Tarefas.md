@@ -313,8 +313,11 @@ those events **automatically in the matriz**.
 
 ## Open questions
 
-- **Do Recap da Semana and this Weekly both continue?** They cover nearly the same
-  ground three days apart.
+- ~~**Do Recap da Semana and this Weekly both continue?**~~ **Resolvido por
+  msilva, 2026-09-14**: sim, os dois continuam — não é redundância. A Weekly
+  de segunda é prospectiva (no que vamos trabalhar essa semana); o Recap de
+  sexta é retrospectivo (reporta o progresso da semana que passou). Ver
+  [[2026-08-14 Recap da Semana]].
 - **Who actually approves external event creation** in the matriz — raised and left
   unanswered.
 - **Does the Fronte test suite get isolated from Airtable by mocking, by a separate

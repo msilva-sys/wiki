@@ -93,28 +93,22 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > (LiveScript) ainda manda o PAT do Airtable no `Authorization: Bearer` em vez
 > da chave do app — gap que nenhuma issue cobria (`PRO-96`, que roteou o
 > LiveScript pelo proxy, já estava `Done` antes da exigência de chave
-> existir). A implementação já existe no repo, ainda não commitada:
+> existir). A implementação já existe no repo. **Atualizado 2026-09-14,
+> confirmado por msilva**: commitada e pushada (`7570ee6`, "feat(airtable):
+> send proxy app-key instead of PAT when routed") na branch
+> `feature/airtable-proxy-observability`, sincronizada com o remoto — mas
+> **sem PR aberto ainda**, não mergeada na `main`.
 > `resolveAirtableAuthHeaders`/`requireAirtableProxyAppKey` em
 > `lib/services/airtable-monitoring.ts` trocam o PAT pela env var nova
 > `AIRTABLE_PROXY_APP_KEY` quando `AIRTABLE_ENDPOINT_URL` está setada.
 >
-> **Issue não criada no Linear** — `save_issue` recusou com "exceeded the
-> free issue limit for this workspace": o trial gratuito expirou (ver
-> [[Linear Project Structure]]) e o time ainda não fez upgrade. Rascunho
-> pronto pra colar assim que o plano voltar:
->
-> - **Título**: Adaptar o LiveScript para autenticar no proxy do Airtable
->   com chave própria
-> - **Team/Projeto**: Projetos-livemode / Proxy em produção validado c/
->   LiveScript · **Label**: Task · **Estimate**: XS (1) · **Blocked by**:
->   `PRO-553`
-> - **O que fazer**: adaptar as chamadas via SDK e via REST manual pra
->   mandar a chave do app no lugar do PAT quando o proxy passar a exigir.
-> - **Pronto quando**: chamadas usando a chave nova; erro claro se ela
->   faltar; variável documentada no guia de setup local; testes cobrindo o
->   comportamento.
-> - **Pedido original**: surgiu internamente ao notar o gap entre `PRO-96`
->   (Done) e `PRO-553` (em andamento) durante a sessão acima.
+> **Issue criada no Linear, 2026-09-14** — `save_issue` recusava antes com
+> "exceeded the free issue limit for this workspace" (trial expirado, ver
+> [[Linear Project Structure]]); resolvido no mesmo dia (upgrade feito).
+> [PRO-587](https://linear.app/projetos-livemode/issue/PRO-587/adaptar-o-livescript-para-autenticar-no-proxy-do-airtable-com-chave) —
+> Task, parent `PRO-95`, blocked by `PRO-553`, estimate XS, status **In
+> Review** (código já commitado e pushado — `7570ee6`, branch
+> `feature/airtable-proxy-observability` — falta abrir/mergear o PR).
 >
 > **Confirmado ao vivo com Luís, mesmo dia** ([[2026-09-04 1-1 Matheus -
 > Luís]]): sem reabrir nada — msilva concorda com o memo por escrito antes
@@ -129,6 +123,15 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > pode contradizer a decisão de 2026-08-19 de não colocar due dates no
 > Linear (reforçada pela limpeza de 2026-09-03) — não ficou claro se é
 > campo nativo ou compromisso verbal com a Carol.
+
+> [!important] Deploy em produção já no ar, confirmado por msilva 2026-09-14
+> O proxy **já está rodando em produção no Cloud Run**, mas **nenhum
+> serviço ainda aponta pra ele** — o deploy em si (`PRO-84`) está feito, o
+> que falta é a validação pós-deploy: consumidor real ([[LiveScript]] ou
+> outro), uptime check sintético, alerta real, e conferir se os dados
+> batem com o Airtable direto (`PRO-88`, `PRO-89`, `PRO-95`, `PRO-97`).
+> `PRO-84` deixado como `In Progress` no Linear por decisão de msilva —
+> falta a validação pra fechar de fato.
 
 > [!tip] Git workflow ajustado, 2026-09-04 ([[2026-09-04 1-1 Matheus - Luís]])
 > Duas pessoas editando o mesmo repo agora exige mais disciplina de
@@ -900,8 +903,10 @@ communicate async and often]].
       Finding filed onto `PRO-96` (already the right issue for LiveScript
       proxy routing, Cenário A), which stays in Backlog per the deferral
       above — this only documents the gap, doesn't schedule the fix.
-- [ ] Criar no Linear a issue de app-key do LiveScript, bloqueada por
-      trial expirado — rascunho completo no tip 2026-09-10 acima.
+- [x] Criar a issue de app-key do LiveScript no Linear — `PRO-587`,
+      2026-09-14, status In Review.
+- [ ] Abrir e mergear o PR de `feature/airtable-proxy-observability`
+      (código já commitado e pushado, `7570ee6`) — fecha `PRO-587`.
 - [ ] Confirm the private-infra inputs in
       [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
 - [ ] Start the Go/Pulumi stack only after those inputs and ownership boundaries

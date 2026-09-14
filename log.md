@@ -5814,3 +5814,40 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   fatos do agente (agent_facts).md`, `decisions/2026-09-10 Agentes
   expostos como tool uns para os outros.md`, `meetings/2026-09-10 1-1
   Matheus - Luís.md` (correção de nuance pós-ingest da nota raw).
+
+## [2026-09-14] refactor | Correções de estado: trial do Linear, proxy em produção, ritmo de reuniões
+- msilva corrigiu três fatos que a wiki tinha desatualizados: (1) o trial
+  do Linear que bloqueava criação de issue (achado 2026-09-10) já foi
+  resolvido, upgrade feito; (2) o proxy já está rodando em produção no
+  Cloud Run — `PRO-84` segue `In Progress` porque falta validação
+  pós-deploy, não porque o deploy em si não aconteceu; (3) a Weekly de
+  segunda e o Recap de sexta não são redundantes — a primeira é
+  prospectiva (no que vou trabalhar essa semana), o segundo é
+  retrospectivo (progresso da semana que passou). Fecha uma pergunta em
+  aberto desde 2026-08-14/17.
+- Updated: `concepts/Linear Project Structure.md` (trial marcado
+  resolvido), `projects/Airtable Proxy.md` (callout novo sobre deploy já
+  no ar), `index.md` (callout do trial corrigido), `meetings/2026-08-14
+  Recap da Semana.md` e `meetings/2026-08-17 Weekly - Projetos e
+  Tarefas.md` (pergunta em aberto sobre redundância resolvida nas duas
+  pontas).
+
+## [2026-09-14] refactor | Skill `/weekly-prep` criada + primeiro prep da Weekly + PRO-587
+- msilva pediu uma skill pra montar o prep da Weekly de segunda,
+  construída junto em chat (não entregue pronta) — nome, gatilho, e
+  conteúdo (prospectivo: resumo curto da semana passada + no que vou
+  trabalhar + pontos rápidos pro grupo, sem seção de status alheio,
+  cortada a pedido dele) decididos em conjunto antes de escrever o
+  arquivo. Vive em `dotfiles/claude/skills/weekly-prep/SKILL.md`
+  (global, mesmo padrão do `start-day`/`finish-day`), não neste vault.
+- Rodada a skill pra gerar o prep de hoje. No processo, msilva confirmou
+  que a mudança de app-key do LiveScript (branch
+  `feature/airtable-proxy-observability`, commit `7570ee6`) já estava
+  commitada e pushada, sem PR aberto — criada a issue
+  [PRO-587](https://linear.app/projetos-livemode/issue/PRO-587/adaptar-o-livescript-para-autenticar-no-proxy-do-airtable-com-chave)
+  no Linear já refletindo esse estado (status `In Review`, parent
+  `PRO-95`, blocked by `PRO-553`), em vez de registrada como "a fazer".
+- New: `meetings/2026-09-14 Weekly - Projetos e Tarefas.md`.
+- Updated: `projects/Airtable Proxy.md` (issue `PRO-587` referenciada,
+  checklist "things to actually do" atualizado), `index.md` (entrada
+  Meetings).

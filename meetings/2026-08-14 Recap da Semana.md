@@ -87,16 +87,18 @@ in the *projetos* channel, not IT.
 
 | Meeting | Purpose |
 |---|---|
-| **Recap da Semana** (Fri) | Consolidated status per person; concerns; walks the team board |
-| **Weekly - Projetos e Tarefas** (Mon) | Projects walked against the AI status readout, then tasks per person. Added 2026-08-18 — see [[2026-08-17 Weekly - Projetos e Tarefas]] |
+| **Recap da Semana** (Fri) | **Backward-looking**: reporta o progresso da semana que passou |
+| **Weekly - Projetos e Tarefas** (Mon) | **Forward-looking**: mostra no que cada um vai trabalhar na semana que começa. Added 2026-08-18 — see [[2026-08-17 Weekly - Projetos e Tarefas]] |
 | **Papo de Projetos** | Company/area news, culture, tools, ideas — not task status. See [[2026-08-14 Papo de Projetos]] |
 | **1:1** (weekly, first month) | See [[2026-08-14 1-1 Matheus - Gabrielle]] |
 
-> [!question] Two status meetings, three days apart
-> The Monday Weekly and this Friday Recap cover nearly the same ground — a
-> per-person walkthrough of the same board. Whether both persist, or one is
-> replacing the other, was never stated. Worth asking, since it doubles the
-> status-reporting overhead on msilva.
+> [!success] Resolvido por msilva, 2026-09-14 — as duas não se sobrepõem
+> A distinção não era óbvia da transcrição (ambas pareciam um "walkthrough do
+> board"), mas os dois encontros têm direções opostas no tempo: a **Weekly de
+> segunda é prospectiva** (o que vou fazer essa semana) e o **Recap de sexta é
+> retrospectivo** (o que eu de fato fiz). Não é redundância — fecha a pergunta
+> aberta abaixo e a réplica em
+> [[2026-08-17 Weekly - Projetos e Tarefas]].
 
 ## Other projects named
 

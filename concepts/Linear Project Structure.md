@@ -322,14 +322,12 @@ qualified in words.
 > And it is not theoretical: Gabrielle to msilva, *"você tomou um rate limit, né? […] não
 > podia mais criar."* He hit the ceiling already, before the migration.
 
-> [!warning] Trial expirado, confirmado 2026-09-10 — time ainda sem upgrade
-> msilva: *"o free trial do linear acabou e minha equipe ainda não fez o
-> upgrade"* (2026-09-10). Confirmado na prática: `save_issue` (criação) falha
-> com `"You've exceeded the free issue limit for this workspace."` Não é algo
-> resolvível por aqui — precisa de upgrade ou trial novo por alguém do time.
-> Enquanto isso, issues novas ficam registradas em rascunho na página do
-> projeto relevante até o plano ser resolvido — primeiro caso em
-> [[Airtable Proxy]].
+> [!success] Trial resolvido, confirmado por msilva 2026-09-14
+> O bloqueio de criação de issue (`save_issue` falhando com
+> `"You've exceeded the free issue limit for this workspace."`, confirmado
+> 2026-09-10) está superado — o time fez o upgrade. Issues que ficaram em
+> rascunho por causa do bloqueio (ex.: PRO-517 em [[Airtable Proxy]]) podem
+> ser criadas normalmente agora.
 
 ## Open questions
 
