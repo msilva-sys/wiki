@@ -28,6 +28,15 @@ validando com visão de negócio dela.
 
 **2. Critérios atuais** *(5 min, mostrar rápido)*
 
+Abrir com exemplo real antes da lista abstrata — **Airtable GC**, dado
+auditado em 2026-09-04 (conferir se ainda bate antes da reunião, pode ter
+mudado): consome **15,4% da capacidade ativa** do time; **nenhuma issue
+ativa tem prioridade definida** (não é "prioridade baixa" — é campo vazio,
+ambiguidade real do dado); **28 das 35 issues ativas têm descrição curta
+demais**. Três critérios diferentes (concentração, prioridade desalinhada,
+escopo mal definido) batendo na mesma iniciativa de uma vez — bom gancho
+pra mostrar como os sinais se cruzam na prática, não só em teoria.
+
 *A10 — por iniciativa:*
 - **Estagnação** — sem entrega há muito tempo (~14 dias)
 - **Concentração de esforço** — puxando fatia desproporcional da capacidade do time (~30%)

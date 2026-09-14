@@ -5931,3 +5931,13 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   vivo).
 - New: `meetings/Meeting prep - A10 e A14 com Carol - 2026-09-14.md`.
 - Updated: `index.md`.
+
+## [2026-09-14] refactor | Adiciona exemplo real à prep A10/A14 com Carol
+- msilva perguntou se faltava algo na prep. Adicionado exemplo concreto
+  pra abrir a seção de critérios em vez de só listar de forma abstrata:
+  Airtable GC, números já auditados em
+  [[Fronteira A10×A14 (informação e métricas)]] (2026-09-04) — 15,4% da
+  capacidade, prioridade sem preencher, 28/35 issues com descrição curta.
+  Doc marca explicitamente pra conferir se o número ainda bate antes da
+  reunião — é dado de 10 dias atrás, não puxado ao vivo desta vez.
+- Updated: `meetings/Meeting prep - A10 e A14 com Carol - 2026-09-14.md`.
