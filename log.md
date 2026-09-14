@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-09-10
+updated: 2026-09-14
 
 
 ---
@@ -5907,4 +5907,27 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Aproveitado: a linha da `2026-08-17 A5 receiver runs on Cloud Run` no
   índice ainda dizia `active` — corrigida pra citar o `deferred` do
   commit anterior, que tinha atualizado a página mas não essa linha.
+- Updated: `index.md`.
+
+## [2026-09-14] refactor | Meeting prep — A10 e A14 com Carol
+- msilva marcou reunião de produto de 15 min com a Carol, pra apresentar
+  A10/A14 e entender comportamento desejado do ponto de vista dela.
+  Auditados direto no código (`livemode-fluxo-agentico`) os 5 critérios
+  reais do A10 (`a10/contracts.py`, `a10/seed_skills.py`,
+  `a10/seed_prompt.py`) e os do A14 (`a14/contracts.py`, `a14/agent.py`,
+  `a14/seed_skills.py`), mais como cada um alimenta o digest publicado
+  (`a10/formatting.py::format_portfolio_digest`,
+  `a14/formatting.py::format_status_update`).
+- Correção no meio da prep: msilva descreveu inicialmente o A10 como já
+  cumprindo o papel de "vale a pena continuar investindo" — auditoria do
+  prompt (`a10/seed_prompt.py`: "NUNCA executa nada — só sugere") e dos
+  contratos mostrou que ele só sinaliza risco hoje; o papel mais amplo
+  (aprovar/recusar demanda, realocar capacidade, recomendar encerrar
+  iniciativa) é desenho ainda não implementado, já registrado em
+  [[Fronteira A10×A14 (informação e métricas)]].
+- Pauta final iterada com o msilva: cortada de um rascunho maior pra 3
+  perguntas-chave dentro de 15 min, com explicação da mecânica de cada
+  critério movida pra seção de material de apoio (não pra leitura ao
+  vivo).
+- New: `meetings/Meeting prep - A10 e A14 com Carol - 2026-09-14.md`.
 - Updated: `index.md`.
