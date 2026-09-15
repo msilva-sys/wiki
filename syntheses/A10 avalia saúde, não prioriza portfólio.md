@@ -45,6 +45,23 @@ andamento ([[2026-08-14 Migrate project management from Jira to
 Linear]] é sobre a saída do Jira, não do Airtable — este é um fluxo de
 dado separado), fica em aberto se esses campos migram também.
 
+## Correção — os "critérios já definidos" não são esforço/ganho/risco prontos
+
+[[2026-09-15 Discovery A1 e A2 com Gabrielle]]: Carolina (2026-09-14)
+descreveu os critérios de Gabrielle como esforço/ganho/risco, dando a
+entender que já existe uma régua pronta pra reaproveitar. Na conversa
+direta com Gabrielle, os critérios reais são outros e vêm de um **GPT
+customizado que ela mesma construiu** ("priorizador de projetos",
+https://chatgpt.com/gpts/editor/g-6967b8ab3140819197cda61702e3a006):
+valor pro negócio (peso 2), complexidade de desenvolvimento,
+escalabilidade, economia de tempo — rodava toda quinta antes da reunião
+de priorização (Gabrielle, Carol, Luís, Arthur). **A própria Gabrielle
+diz que esses critérios caíram em desuso e não devem servir de base** pra
+qualquer priorização nova. Ou seja: a "regra já definida" é só ponto de
+partida histórico, não uma decisão pronta — os critérios de verdade ainda
+precisam ser definidos do zero, numa reunião que msilva vai marcar com
+Carol, Luís e Gabrielle.
+
 ## Caminhos possíveis, não decididos
 
 - Trazer esforço/retorno para campos nativos no Linear (iniciativa e/ou

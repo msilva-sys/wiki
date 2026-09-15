@@ -368,6 +368,26 @@ tags: [agents, llm, automation, onboarding, research]
 > desenho de como fechar esse loop (definição de "efeito medido", contrato
 > de dado, cadência) segue como próximo passo, não iniciado.
 
+> [!tip] Discovery A1/A2 com Gabrielle — panorama de dados legados e GPT priorizador achado — 2026-09-15
+> [[2026-09-15 Discovery A1 e A2 com Gabrielle]]: discovery do projeto A1 & A2
+> (PRO-543/544), aproveitando pra também cobrir PRO-595. Gabrielle detalha a
+> origem do Airtable como sistema legado — todo o histórico de projetos
+> anterior ao "marco zero" da migração pro Linear
+> ([[2026-08-14 Migrate project management from Jira to Linear]]) vive só lá,
+> e continua recebendo tarefas soltas hoje, inclusive via ferramenta própria
+> dela, que ainda cria no Airtable em vez do Linear. **Corrige**
+> [[2026-09-14 Carolina - Matheus (critérios A10-A14)]]: os "critérios já
+> definidos" que Carolina mencionou não são esforço/ganho/risco prontos pra
+> reusar — são os quatro eixos de um GPT customizado que Gabrielle mesma
+> construiu (valor pro negócio peso 2, complexidade, escalabilidade,
+> economia de tempo), e que ela própria considera obsoletos. Ver
+> [[A10 avalia saúde, não prioriza portfólio]]. Nomeia as dores reais do A1
+> (zero visibilidade unificada de demanda, roteamento hoje depende de
+> conhecimento tribal de quem está há mais tempo) e uma ideia inicial de
+> expor o A1 como bot na Vercel/Slack, formato ainda não decidido — msilva
+> vai pensar nas opções e marcar a reunião de critérios com Carol e Luís.
+> Achados ainda não levados pro Linear, revisão pendente.
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides

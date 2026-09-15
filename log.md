@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-09-14
+updated: 2026-09-15
 
 
 ---
@@ -5994,3 +5994,28 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   escopo do A10 — ver [[A10 avalia saúde, não prioriza portfólio]].
 - New: `meetings/Meeting prep - Proxy e Fluxo Agêntico com Luís - 2026-09-15.md`.
 - Updated: `index.md`.
+
+## [2026-09-15] ingest | Discovery A1 e A2 com Gabrielle
+- Read `raw/Gabrielle _ Matheus - 2026_09_15 11_49 GMT-03_00 - Anotações do
+  Gemini.md` (Gemini notes, mesmo problema de diarização quebrada já visto
+  na reunião com Carolina de 2026-09-14 — quase tudo rotulado "Gabrielle
+  Ferreira", atribuição por conteúdo, não por rótulo).
+- Achado principal: os "critérios já definidos" que Carolina descreveu em
+  [[2026-09-14 Carolina - Matheus (critérios A10-A14)]] como
+  esforço/ganho/risco não são uma régua pronta — são os quatro eixos de um
+  GPT customizado que Gabrielle mesma construiu (valor pro negócio peso 2,
+  complexidade, escalabilidade, economia de tempo), que ela própria
+  considera obsoletos hoje.
+- Também: Airtable explicado como sistema legado (todo o histórico
+  pré-migração pro Linear vive só lá, e a própria ferramenta da Gabrielle
+  ainda cria tarefa lá em vez do Linear); dores reais do A1 (zero
+  visibilidade unificada de demanda) e A2 (roteamento hoje depende de
+  conhecimento tribal); ideia inicial de bot Vercel/Slack pro A1, sem
+  formato decidido.
+- Commitments: msilva marca a reunião de critérios com Carol, Luís e
+  Gabrielle (PRO-595); msilva pensa nos formatos de exposição do A1.
+- Achados ainda não levados pro Linear (PRO-543/544/595) — revisão com
+  msilva primeiro, por instrução dele.
+- New: `meetings/2026-09-15 Discovery A1 e A2 com Gabrielle.md`.
+- Updated: `syntheses/A10 avalia saúde, não prioriza portfólio.md`,
+  `people/Gabrielle Ferreira.md`, `projects/Agent Flow.md`, `index.md`.

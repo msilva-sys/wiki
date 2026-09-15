@@ -32,6 +32,23 @@ primary technical contact ([[2026-08-24 Agent Flow discovery with Carol]]).
 - Already uses Claude to author this area's Linear backlogs from PRDs and
   documentation, unattended — the area's most established agent-like workflow
   ([[Agent Flow]]).
+- **Built and ran a custom GPT** ("priorizador de projetos",
+  https://chatgpt.com/gpts/editor/g-6967b8ab3140819197cda61702e3a006) that
+  scored new project requests weekly, before the prioritization meeting she
+  ran with Carol, Luís and Arthur — weighted criteria (valor pro negócio
+  peso 2, complexidade, escalabilidade, economia de tempo) plus judgment on
+  risk/complexity and whether to test small before a full corporate project.
+  **She considers these criteria obsolete now** — 2026-09-15
+  ([[2026-09-15 Discovery A1 e A2 com Gabrielle]]), correcting Carolina's
+  2026-09-14 framing that ready-made effort/gain/risk rules already exist.
+  See [[A10 avalia saúde, não prioriza portfólio]].
+- **Explained the Airtable-vs-Linear data split, 2026-09-15**: Airtable is
+  the legacy system from before the Linear migration's "marco zero"
+  ([[2026-08-14 Migrate project management from Jira to Linear]]) — it still
+  holds every never-migrated project (untouched backlog, completed,
+  abandoned) and keeps receiving loose tasks today, including from her own
+  internal tool, which still creates tasks in Airtable instead of Linear (a
+  gap she flagged on herself, unfixed).
 
 ## Aliases
 
