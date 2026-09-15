@@ -5961,3 +5961,18 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `decisions/2026-08-24 Start Agent Flow with A10 Portfolio.md`,
   `concepts/Fronteira A10×A14 (informação e métricas).md`,
   `people/Carolina Bezerra.md`, `index.md`.
+
+## [2026-09-15] refactor | Meeting prep — Discovery A1 e A2 com Gabrielle
+- msilva marcou 45 min com Gabrielle (11:45–12:30) pra discovery de
+  PRO-543/PRO-544 (A1 & A2: como pedidos chegam e são roteados hoje) e, na
+  mesma conversa, PRO-595 (regras de priorização de portfólio que ela já
+  tem — levantado por Carolina em
+  [[2026-09-14 Carolina - Matheus (critérios A10-A14)]]).
+- Um agente foi disparado antes pra varrer o Slack atrás de evidência real
+  de canais de intake e roteamento; postou achados como comentário em
+  PRO-543/544 e mudou o status pra In Progress antes de receber a instrução
+  de msilva de não tocar no Linear ainda. Revertido: comentários apagados,
+  status voltado pra Backlog. Achados guardados nesta prep como ponto de
+  partida a confirmar com Gabrielle, não como fato registrado.
+- New: `meetings/Meeting prep - Discovery A1 e A2 com Gabrielle - 2026-09-15.md`.
+- Updated: `index.md`.
