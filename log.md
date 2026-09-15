@@ -6038,3 +6038,16 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `meetings/2026-09-15 Discovery A1 e A2 com Gabrielle.md`,
   `syntheses/A10 avalia saúde, não prioriza portfólio.md`,
   `people/Gabrielle Ferreira.md`, `projects/Agent Flow.md`, `index.md`.
+
+## [2026-09-15] lint | Health check completo do vault
+- Checagem das 8 categorias do checklist (contradições, claims obsoletos,
+  órfãs/becos sem saída, `raw/` sem `sources/`, contradição intra-página,
+  wikilinks quebrados, decisão aberta vs. resolvida, callouts `[!msilva]`
+  não tratados).
+- Sete categorias limpas. Único problema real: `projects/Agent Flow.md`
+  com `updated: 2026-09-04` no frontmatter, apesar de editado duas vezes
+  nesta sessão (2026-09-15) — corrigido.
+- Nota fora do schema: 3 diretórios `.claude/worktrees/*` (26/08, 04/09)
+  gitignorados, sobra de sessões antigas de agente — não é conteúdo da
+  wiki, flagueado a msilva pra ele decidir se limpa.
+- Updated: `projects/Agent Flow.md` (frontmatter).
