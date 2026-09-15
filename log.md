@@ -5976,3 +5976,21 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   partida a confirmar com Gabrielle, não como fato registrado.
 - New: `meetings/Meeting prep - Discovery A1 e A2 com Gabrielle - 2026-09-15.md`.
 - Updated: `index.md`.
+
+## [2026-09-15] refactor | Meeting prep — Proxy e Fluxo Agêntico com Luís
+- msilva pediu ajuda pra preparar reunião de hoje com Luís sobre próximos
+  passos do proxy e os novos agentes do Fluxo Agêntico.
+- Pauta reduzida a 2 itens a pedido dele: (1) padrão de entrada do A1/A2 —
+  perspectiva de produto do Luís, combinado desde
+  [[2026-09-10 1-1 Matheus - Luís]] decidir junto antes do dev começar
+  hoje; (2) qual consumidor apontar pro proxy — deliberadamente deixado em
+  aberto, sem LiveScript ou apps não-Node pré-assumidos como opções fixas
+  (msilva corrigiu um rascunho anterior que os apresentava como as duas
+  alternativas).
+- Seção "se sobrar tempo" reduzida, a pedido de msilva, a um único ponto:
+  o achado de Carolina em
+  [[2026-09-14 Carolina - Matheus (critérios A10-A14)]] de que Gabi já tem
+  regras de priorização de portfólio definidas, e o que isso reabre no
+  escopo do A10 — ver [[A10 avalia saúde, não prioriza portfólio]].
+- New: `meetings/Meeting prep - Proxy e Fluxo Agêntico com Luís - 2026-09-15.md`.
+- Updated: `index.md`.
