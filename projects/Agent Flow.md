@@ -378,9 +378,14 @@ tags: [agents, llm, automation, onboarding, research]
 > dela, que ainda cria no Airtable em vez do Linear. **Corrige**
 > [[2026-09-14 Carolina - Matheus (critérios A10-A14)]]: os "critérios já
 > definidos" que Carolina mencionou não são esforço/ganho/risco prontos pra
-> reusar — são os quatro eixos de um GPT customizado que Gabrielle mesma
-> construiu (valor pro negócio peso 2, complexidade, escalabilidade,
-> economia de tempo), e que ela própria considera obsoletos. Ver
+> reusar — são a fórmula ponderada de um GPT customizado que Gabrielle
+> mesma construiu (valor pro negócio peso 2, escalabilidade/economia de
+> tempo/complexidade peso 1), que ela própria considera obsoleta. **A
+> filosofia por trás não foi descartada**: "testar primeiro é dar
+> autonomia," projeto não é permissão pra agir, matar rápido em vez de
+> escalar cedo — prompt completo colado por msilva no apêndice da reunião,
+> candidato a insumo direto pro A2/A7 (decidir projeto vs. teste pequeno),
+> independente da fórmula obsoleta. Ver
 > [[A10 avalia saúde, não prioriza portfólio]]. Nomeia as dores reais do A1
 > (zero visibilidade unificada de demanda, roteamento hoje depende de
 > conhecimento tribal de quem está há mais tempo) e uma ideia inicial de

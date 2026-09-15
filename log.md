@@ -6019,3 +6019,22 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - New: `meetings/2026-09-15 Discovery A1 e A2 com Gabrielle.md`.
 - Updated: `syntheses/A10 avalia saúde, não prioriza portfólio.md`,
   `people/Gabrielle Ferreira.md`, `projects/Agent Flow.md`, `index.md`.
+
+## [2026-09-15] refactor | Prompt real do GPT priorizador da Gabrielle
+- msilva colou o system prompt completo do GPT customizado da Gabrielle
+  (link https://chatgpt.com/gpts/editor/g-6967b8ab3140819197cda61702e3a006,
+  já citado como referência na sessão anterior de hoje).
+- Correção fina sobre o que ficou registrado antes: os pesos reais são
+  Valor pro Negócio peso 2, Escalabilidade/Economia de Tempo/Complexidade
+  de Desenvolvimento peso 1 cada (não "quatro eixos" sem peso
+  especificado). Escala 1/3/5, Complexidade invertida.
+- Achado novo: a fórmula de score caiu em desuso (confirmado, sem
+  mudança), mas a **filosofia de fundo** do prompt ("testar primeiro é dar
+  autonomia," projeto não é permissão pra agir, matar rápido em vez de
+  escalar cedo) não foi rejeitada por Gabrielle — é candidata a insumo
+  direto pro desenho do A2/A7, separado da fórmula obsoleta.
+- New: apêndice com o prompt verbatim em
+  `meetings/2026-09-15 Discovery A1 e A2 com Gabrielle.md`.
+- Updated: `meetings/2026-09-15 Discovery A1 e A2 com Gabrielle.md`,
+  `syntheses/A10 avalia saúde, não prioriza portfólio.md`,
+  `people/Gabrielle Ferreira.md`, `projects/Agent Flow.md`, `index.md`.

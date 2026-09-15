@@ -38,9 +38,11 @@ Nenhuma decisão formal fechada — reunião de discovery, sem fechamento.
 ## Open questions
 
 - Quais critérios de priorização de portfólio a área vai usar daqui pra
-  frente. Os antigos do GPT de Gabrielle (valor pro negócio peso 2,
-  complexidade de desenvolvimento, escalabilidade, economia de tempo)
-  caíram em desuso segundo ela mesma e não devem servir de base — PRO-595.
+  frente. A fórmula ponderada do GPT antigo de Gabrielle (ver apêndice)
+  caiu em desuso segundo ela mesma e não deve servir de base — PRO-595.
+  A **filosofia** por trás (testar pequeno antes de estruturar, "projeto
+  não é autorização pra agir") não foi descartada por ela e pode seguir
+  como insumo pro desenho do A2/A7, independente da fórmula de score.
 - Vale manter um cálculo ponderado (fórmula com pesos por critério) ou
   simplificar? Só faz sentido manter pesos diferentes se o time ainda
   quiser isso — em aberto, decisão da reunião futura com Carol e Luís.
@@ -69,14 +71,19 @@ Nenhuma decisão formal fechada — reunião de discovery, sem fechamento.
   pra não priorizar agora).
 - Gabrielle: ela mesma construiu um GPT customizado — **"priorizador de
   projetos"**, https://chatgpt.com/gpts/editor/g-6967b8ab3140819197cda61702e3a006
-  — com um prompt de contexto da empresa, critérios com peso (valor pro
-  negócio tinha peso 2) e regras extra: sugeria validar com um teste
-  pequeno antes de virar projeto corporativo, avaliava risco/complexidade,
-  sugeria quebrar em sub-projetos. Rodava toda quinta antes da reunião de
-  priorização (ela, Carol, Luís, Arthur); trazia nota sugerida por
-  critério, o grupo validava/ajustava.
-- Gabrielle: esses critérios antigos caíram em desuso — não devem servir
-  de base pra conversa nova com Carol e Luís.
+  — prompt completo colado por msilva no apêndice abaixo. Quatro critérios
+  ponderados (**peso 2** só pra Valor pro Negócio; Escalabilidade, Economia
+  de Tempo e Complexidade de Desenvolvimento todos **peso 1**, escala
+  1/3/5, Complexidade invertida — baixa complexidade pontua 5) mais uma
+  filosofia central de fundo: "testar primeiro é dar autonomia", projeto
+  não é autorização pra agir, prefere matar rápido a escalar cedo. Rodava
+  toda quinta antes da reunião de priorização (ela, Carol, Luís, Arthur);
+  trazia nota sugerida por critério, o grupo validava/ajustava.
+- Gabrielle: a fórmula de score caiu em desuso — não deve servir de base
+  pra conversa nova com Carol e Luís. A filosofia de fundo (testar antes
+  de estruturar) não foi descartada por ela — é o comportamento que ela
+  elogiou no próprio GPT (sugerir teste pequeno antes de projeto
+  corporativo), possível insumo pro A2/A7 independente da fórmula.
 - Gabrielle: canal oficial hoje é `#resolveaqui-livemode` ("resolve
   aqui"), mas é minoria do volume real — maioria ainda manda mensagem
   direta no Slack. Existiu um formulário antigo na plataforma "Fill",
@@ -98,6 +105,89 @@ Nenhuma decisão formal fechada — reunião de discovery, sem fechamento.
 
 Achados aqui ainda não foram levados pro Linear — msilva revisa antes de
 qualquer atualização em PRO-543/544/595.
+
+## Anexo — prompt completo do GPT priorizador (colado por msilva, 2026-09-15)
+
+Copiado da aba Configure do GPT
+(https://chatgpt.com/gpts/editor/g-6967b8ab3140819197cda61702e3a006),
+depois da reunião, a pedido de msilva. Verbatim, não editado:
+
+> Você é um Especialista Sênior em Priorização de Projetos Estratégicos e Operacionais.
+> Atue como alguém que participa de comitês executivos, mas com forte viés de
+> descentralização, aprendizado rápido e uso responsável de estrutura.
+> Lembre-se sempre: projeto não é autorização para agir — é consequência do aprendizado.
+>
+> CONTEXTO CULTURAL (NÃO É REGRA, É JEITO DE PENSAR)
+> A organização identificou riscos claros:
+> - Estrutura cedo demais para problemas simples
+> - Projetos grandes para aprendizados pequenos
+> - Centralização excessiva do que poderia ser testado de forma autônoma
+> - Pessoas esperando "projeto" para agir
+> - Alto custo de agenda antes de testar algo simples
+>
+> PRINCÍPIO FUNDAMENTAL
+> "Testar primeiro é dar autonomia."
+> Se dá para testar sozinho, a pessoa testa.
+> Estrutura vem depois do aprendizado, não antes.
+>
+> CRITÉRIOS DE PRIORIZAÇÃO (USE APENAS SE PASSAR PELA LENTE)
+> Avalie somente se fizer sentido virar projeto.
+>
+> 1) Valor para o Negócio (Peso 2)
+> - Alto (5): impacto direto e relevante em receita, eficiência, risco ou posicionamento
+> - Médio (3): suporte a iniciativas maiores ou melhoria operacional relevante
+> - Baixo (1): impacto indireto, exploratório ou aprendizado limitado
+>
+> 2) Escalabilidade (Peso 1)
+> - Alta (5): cria capacidade reutilizável
+> - Média (3)
+> - Baixa (1): resolve um caso isolado
+>
+> 3) Economia de Tempo (Peso 1)
+> - Alta (5): reduz retrabalho ou acelera decisões recorrentes
+> - Média (3)
+> - Baixa (1)
+>
+> 4) Complexidade de Desenvolvimento (Peso 1)
+> - Baixa (5)
+> - Média (3)
+> - Alta (1)
+>
+> FORMA DE RACIOCÍNIO ESPERADA
+> - Diferencie claramente dor estrutural vs. dor pontual
+> - Seja cético com "soluções bonitas"
+> - Penalize projetos grandes com aprendizado pequeno
+> - Considere sempre o custo de agenda e coordenação
+> - Trabalhe bem com hipóteses explícitas
+>
+> ESTRUTURA DE SAÍDA (SIGA EXATAMENTE)
+> Se virar projeto, entregue:
+>
+> 1) Detalhamento do que é o projeto
+> - Clara, direta e focada no problema real
+> - Precisa ficar claro do que se trata o projeto e a dor enfrentada
+>
+> 2) Análise da solução proposta
+> - Como ataca a dor
+> - Pontos fortes
+> - Limites e riscos de estruturar cedo demais
+>
+> 3) Alternativas antes de virar projeto
+> - Testes menores
+> - Abordagens mais rápidas
+> - Caminhos menos estruturados, porém suficientes
+>
+> 4) Sugestão de priorização inicial
+> - Valor para o negócio: Baixo / Médio / Alto (com justificativa curta)
+> - Escalabilidade: Baixa / Média / Alta (com justificativa curta)
+> - Economia de tempo: Baixa / Média / Alta (com justificativa curta)
+> - Complexidade de desenvolvimento: Baixa / Média / Alta (com justificativa curta)
+>
+> REGRAS FINAIS
+> - Nunca trate projeto como permissão para agir.
+> - Prefira matar rápido a escalar cedo.
+> - Se a estrutura não aumenta aprendizado ou impacto, ela é ruído.
+> - Clareza > sofisticação.
 
 ## Relacionado
 

@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-24
+updated: 2026-09-15
 aliases: [Gabrielle, Gabi]
 tags: [people, management]
 ---
@@ -33,15 +33,21 @@ primary technical contact ([[2026-08-24 Agent Flow discovery with Carol]]).
   documentation, unattended — the area's most established agent-like workflow
   ([[Agent Flow]]).
 - **Built and ran a custom GPT** ("priorizador de projetos",
-  https://chatgpt.com/gpts/editor/g-6967b8ab3140819197cda61702e3a006) that
-  scored new project requests weekly, before the prioritization meeting she
-  ran with Carol, Luís and Arthur — weighted criteria (valor pro negócio
-  peso 2, complexidade, escalabilidade, economia de tempo) plus judgment on
-  risk/complexity and whether to test small before a full corporate project.
-  **She considers these criteria obsolete now** — 2026-09-15
-  ([[2026-09-15 Discovery A1 e A2 com Gabrielle]]), correcting Carolina's
-  2026-09-14 framing that ready-made effort/gain/risk rules already exist.
-  See [[A10 avalia saúde, não prioriza portfólio]].
+  https://chatgpt.com/gpts/editor/g-6967b8ab3140819197cda61702e3a006, full
+  system prompt pasted by msilva into the appendix of
+  [[2026-09-15 Discovery A1 e A2 com Gabrielle]]) that scored new project
+  requests weekly, before the prioritization meeting she ran with Carol,
+  Luís and Arthur — weighted criteria (valor pro negócio **peso 2**,
+  escalabilidade/economia de tempo/complexidade de desenvolvimento **peso
+  1** each, scale 1/3/5, complexity inverted) plus a broader philosophy —
+  "testar primeiro é dar autonomia," project isn't permission to act,
+  prefer killing fast over structuring early. **She considers the scoring
+  formula obsolete now** — 2026-09-15, correcting Carolina's 2026-09-14
+  framing that ready-made effort/gain/risk rules already exist. **The
+  underlying philosophy is not what she rejected** — it's the behavior she
+  praised in the same GPT (suggesting a small test before a full corporate
+  project), a candidate input for A2/A7's own design, independent of the
+  now-obsolete score. See [[A10 avalia saúde, não prioriza portfólio]].
 - **Explained the Airtable-vs-Linear data split, 2026-09-15**: Airtable is
   the legacy system from before the Linear migration's "marco zero"
   ([[2026-08-14 Migrate project management from Jira to Linear]]) — it still
