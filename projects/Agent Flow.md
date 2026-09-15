@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: build
-updated: 2026-09-04
+updated: 2026-09-15
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
 tags: [agents, llm, automation, onboarding, research]
 ---
