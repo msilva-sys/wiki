@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-09-10
+updated: 2026-09-15
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
@@ -152,3 +152,20 @@ sometimes builds directly, otherwise supports.
   endossa (atribuição não confiável) o fluxo de aprovação humana proposto
   pra memória de agentes; reconfirma a fronteira quantitativa (PM) vs.
   qualitativa (Portfolio); confirma início do dev de A1/A2 em 15/09.
+- **Autor das skills `airtable-proxy-connect`/`airtable-proxy-doctor`**,
+  desvinculadas do repo do proxy — testadas com sucesso conectando o front.
+  Confirma, 2026-09-15, que não vai se meter na central de skills do time
+  (é a Carolina quem puxa isso) e que o destino ideal de longo prazo pras
+  skills genéricas seria o admin do Claude Cloud, sem acesso hoje — ver
+  [[2026-09-15 Proxy e Fluxo Agêntico com Luís]].
+- **Decide, com convicção forte, 2026-09-15**: cada agente do
+  [[Agent Flow]] que fala com usuário externo precisa de identidade/persona
+  própria, e o A1 Receptor tem que responder ao usuário quase na hora —
+  ver [[2026-09-15 Agente voltado a usuário externo precisa de identidade
+  própria e resposta imediata]]. Mesma conversa: discorda de msilva sobre
+  se os critérios de classificação do A2 têm ligação com os de priorização
+  de portfólio (A10) — baixa convicção dos dois lados, em aberto. Confirma
+  ter um fluxo pessoal (LangGraph + Claude Code) já funcionando pra um
+  projeto próprio ("Dinda"), mas descobriu que precisa da API da Anthropic
+  direta em vez da assinatura do Claude Code, por questão comercial —
+  resolve o open question de [[Claude Agent SDK]].

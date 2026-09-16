@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-09-01
+updated: 2026-09-15
 date: 2026-08-17
 aliases: [skills, packaging, skill packaging, distribution]
 tags: [agents, skills, tokens, sharing, claude]
@@ -137,6 +137,33 @@ about whether *one skill in isolation* works. This is the layer above it — whi
 skills are team-generic versus project-bound, and where the generic ones actually
 live. Worth revisiting once Carol's repo exists as something to compare the
 current fragments against.
+
+## Um caso real, dentro do time — as skills de conexão do proxy, 2026-09-15
+
+[[2026-09-15 Proxy e Fluxo Agêntico com Luís]]: Luís já tinha empacotado a
+integração ao [[Airtable Proxy]] como duas skills desvinculadas do repo do
+proxy — `airtable-proxy-connect` (registra o app, muda endpoint, verifica)
+e `airtable-proxy-doctor` (diagnostica 401/403/telemetria ausente) — e
+Matheus, colega de time, nem sabia que existiam até essa conversa. Instância
+concreta do que esta página já registrava em teoria: packaging resolveu
+compartilhamento sem ninguém ter planejado a distribuição (a skill "sai" do
+repo do proxy sem precisar clonar nada).
+
+**Mas expõe o lado da manutenção que a página já apontava como não
+testado**: as skills ficaram pra trás de uma mudança de requisito real (a
+autenticação por API key, `PRO-553`/`PRO-587`) sem que ninguém as
+atualizasse — o autor original (Luís) não estava olhando pra elas, e quem
+ia usá-las (Matheus, testando com Yasmin) não sabia que existiam pra
+verificar se estavam desatualizadas. Empacotar resolveu achar e rodar a
+capacidade; não resolveu sozinho saber que ela precisava de update.
+
+**Reforça a resposta já registrada sobre onde skills genéricas vivem**:
+Luís confirma de novo que é a Carolina quem está puxando o repo
+`livemode` — ele começou uma versão própria antes, mas despriorizou; não
+vai se meter enquanto ela cuida disso, a menos que ela peça. O destino de
+longo prazo que ele imagina pras skills do proxy é o admin do Claude Cloud
+(empresa toda, automático) — mas isso também ficou parado, pelo mesmo
+motivo de não estar sendo envolvido nas decisões de plataforma.
 
 ## Open questions
 

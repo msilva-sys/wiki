@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-09-01
+updated: 2026-09-15
 aliases: [live script, livescript, roteiros, roteiros app, live stre]
 tags: [airtable, livescript, realtime, frontend]
 ---
@@ -136,6 +136,20 @@ identificação virou URL-path em [[2026-08-19 Identify proxy apps by URL path,
 not header]] (ver seção acima). O limite de escopo em si — SDK fora, só
 REST-transport dentro — continua de pé, só que hoje é "identificação por
 URL-path em todo o tráfego", não "`X-App-Id` em todo o tráfego".
+
+## Confusão de branch — não resolvida, 2026-09-15
+
+[[2026-09-15 Proxy e Fluxo Agêntico com Luís]]: Luís acha que Matheus
+avançou o trabalho de conexão ao proxy na branch errada —
+`feature/airtable-proxy-observability` (mesma branch onde `PRO-587`/API
+key foi commitado, ver [[Airtable Proxy]]) também carregaria, segundo ele,
+uma pilha de configuração de OpenTelemetry pensada pra conectar direto na
+Vercel, com commits desde 2026-06-26, sem relação com a integração ao
+proxy. Matheus contesta — não acha que é a branch em que trabalhou.
+Nenhum dos dois confirmou olhando o diff real durante a call. Consenso do
+que é realmente necessário pra conexão funcionar: só a injeção de URL + o
+header, nada além disso. Ação pendente: Matheus confirma qual branch tem
+esse diff mínimo antes de repassar pra Yasmin testar.
 
 ## A historical bug — test roteiros surviving a migration
 

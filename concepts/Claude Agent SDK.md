@@ -1,7 +1,7 @@
 ---
 type: concept
 status: draft
-updated: 2026-08-20
+updated: 2026-09-15
 aliases: [claude code SDK, headless claude code, agent SDK]
 tags: [claude-code, agents, tooling]
 ---
@@ -31,12 +31,20 @@ programmatically instead of a human opening an IDE.
 
 ## Open questions
 
-- What is Luís actually testing it for? Not stated beyond the unclear "a
-  dinda" reference.
 - Does this change how [[Agent Flow]]'s A3/A9 would be built — invoking Claude
   Code headless, rather than each agent being its own bespoke orchestration?
 - Nobody on the team has reviewed the official docs/API surface yet, per this
   transcript.
+
+> [!tip] "A dinda" answered, and a real limit found — [[2026-09-15 Proxy e Fluxo Agêntico com Luís]]
+> Not unclear after all — Luís confirms he has a personal LangGraph + Claude
+> Code flow already **working** for a project he calls "Dinda." New limit
+> surfaced: he doesn't think he'll be able to use Claude Code's own
+> API/subscription for this **commercially** — it needs the raw Anthropic
+> API instead, at higher cost. Relevant to any [[Agent Flow]] agent
+> considering this SDK as its execution substrate — the cost comparison
+> isn't "Claude Code CLI vs. bespoke orchestration," it's "Claude Code
+> subscription (not usable here) vs. Anthropic API directly."
 
 > [!note] External counterpoint on harness choice — 2026-08-20
 > [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]] argues

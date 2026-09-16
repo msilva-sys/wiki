@@ -393,6 +393,48 @@ tags: [agents, llm, automation, onboarding, research]
 > vai pensar nas opções e marcar a reunião de critérios com Carol e Luís.
 > Achados ainda não levados pro Linear, revisão pendente.
 
+> [!important] Dev do A1/A2 começa — identidade por agente, resposta imediata, desenho A1→A2 — 2026-09-15
+> [[2026-09-15 Proxy e Fluxo Agêntico com Luís]], mesmo dia da discovery com
+> Gabrielle acima: dev do A1/A2 começa oficialmente hoje (já previsto em
+> [[2026-09-10 1-1 Matheus - Luís]]). Duas decisões de produto, convicção
+> forte de Luís — ver
+> [[2026-09-15 Agente voltado a usuário externo precisa de identidade
+> própria e resposta imediata]]:
+> - **Cada agente que fala com usuário externo tem identidade/persona
+>   própria** (nome, foto) — não dá pra adiar, porque a primeira resposta
+>   ao usuário já compromete essa escolha.
+> - **A1 Receptor responde quase na hora** (poucos minutos), mesmo que a
+>   classificação/decisão real venha depois — *"se demorar 4 minutos [...]
+>   já não valeu a pena."*
+>
+> **Design mais concreto do A1→A2**: A1 classifica tipo rápido (bug,
+> feature, dúvida, investigação, pedido de projeto); A2 faz a análise
+> contextual (Linear + GitHub + logs + código) e decide a rota — risco 1
+> vai pra esteira automática (abre PR, humano só aprova), risco maior gera
+> issue no fluxo de dev normal. Luís, sem se comprometer, sugere simplificar
+> A1+A2 num agente só pra começar, quebrar em dois depois se ficar evidente
+> que faz coisa demais — mesma lógica de "avança e descobre" já usada em
+> outras decisões deste projeto.
+>
+> **Tensão nova, não resolvida**: msilva enxerga ligação entre os critérios
+> de classificação do A2 (complexidade de uma demanda) e os critérios de
+> priorização de portfólio do A10 (mesmo tema da discovery com Gabrielle,
+> acima) — mesma análise de complexidade, achava ele. Luís discorda —
+> profundidades diferentes, classificador rápido vs. decisão que exige mais
+> contexto — mas admite baixa convicção dos dois lados. Em aberto.
+>
+> **Correção de escopo**: msilva presumiu inicialmente que A1/A2 seriam
+> abertos pra qualquer demanda de qualquer área da empresa (lendo a
+> discovery com Gabrielle nesse sentido). Luís corrige — escopo é só os
+> sistemas internos do próprio time (LiveScript, Orca, o proxy, etc.) com
+> usuário interno da empresa, não qualquer demanda de qualquer área.
+>
+> **[[Claude Agent SDK]] ganha resposta e um limite novo**: Luís confirma
+> que "a dinda" (referência de 2026-08-19) é um fluxo pessoal
+> LangGraph+Claude Code, já funcionando — mas ele não vai poder usar a
+> API/assinatura do próprio Claude Code comercialmente, precisa da API da
+> Anthropic direta, custo maior.
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides

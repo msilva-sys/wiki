@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-20
+updated: 2026-09-15
 aliases: [Yasmin]
 tags: [people]
 ---
@@ -22,3 +22,8 @@ tags: [people]
   [[2026-08-17 Weekly - Projetos e Tarefas]], [[2026-08-27 Recap da
   Semana]] (Gemini collapsed all four attendees into one label; nothing
   below is confidently hers specifically — see that page's warning).
+- **Cobaia da integração ao [[Airtable Proxy]] via skill, 2026-09-15**:
+  vai testar a skill `airtable-proxy-connect` direto no [[LiveScript]],
+  localmente, coordenando direto com Matheus (não via Luís) — ver
+  [[2026-09-15 Proxy e Fluxo Agêntico com Luís]]. Nada disso vai pra
+  produção antes de Luís e Matheus revisarem juntos.

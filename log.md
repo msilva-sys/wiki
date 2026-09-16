@@ -6051,3 +6051,31 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   gitignorados, sobra de sessões antigas de agente — não é conteúdo da
   wiki, flagueado a msilva pra ele decidir se limpa.
 - Updated: `projects/Agent Flow.md` (frontmatter).
+
+## [2026-09-15] ingest | Proxy e Fluxo Agêntico com Luís
+- Read `raw/Luis _ Matheus - 2026_09_15 15_02 GMT-03_00 - Anotações do
+  Gemini.md` — reunião 1:1 msilva/Luís, ~54min, diarização por turno
+  confiável.
+- Proxy: skills `airtable-proxy-connect`/`airtable-proxy-doctor` já
+  existiam (Luís as criou), msilva não sabia; ficaram pra trás da exigência
+  de API key (`PRO-553`/`PRO-587`). Yasmin vira cobaia testando a conexão
+  no LiveScript; nada vai pra produção sem revisão conjunta Luís+msilva.
+  Confusão de branch não resolvida entre os dois sobre onde está o diff
+  mínimo de conexão.
+- Fluxo Agêntico: dev do A1/A2 começa hoje. Duas decisões de produto de
+  Luís — identidade própria por agente + resposta imediata do A1 — viraram
+  decisão própria. Desenho mais concreto do A1→A2 (classifica tipo →
+  análise contextual → rota por risco). Tensão aberta: critérios de
+  classificação do A2 têm ligação com os de priorização do A10? Sem
+  convicção de nenhum dos dois lados. Escopo corrigido: só sistemas
+  internos do time, não qualquer demanda de qualquer área.
+- Resolvido: "a dinda" (open question de `Claude Agent SDK` desde
+  2026-08-19) — fluxo pessoal de Luís, LangGraph+Claude Code, funcionando,
+  mas não pode usar a assinatura do Claude Code comercialmente.
+- New: `meetings/2026-09-15 Proxy e Fluxo Agêntico com Luís.md`,
+  `decisions/2026-09-15 Agente voltado a usuário externo precisa de
+  identidade própria e resposta imediata.md`.
+- Updated: `projects/Airtable Proxy.md`, `projects/Agent Flow.md`,
+  `systems/LiveScript.md`, `concepts/Packaging as skills.md`,
+  `concepts/Claude Agent SDK.md`, `people/Luís Fernandez.md`,
+  `people/Yasmin Macedo.md`, `index.md`.

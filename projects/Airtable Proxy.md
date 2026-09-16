@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-09-10
+updated: 2026-09-15
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -123,6 +123,38 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > pode contradizer a decisão de 2026-08-19 de não colocar due dates no
 > Linear (reforçada pela limpeza de 2026-09-03) — não ficou claro se é
 > campo nativo ou compromisso verbal com a Carol.
+
+> [!tip] Skills de conexão existem, mas ficaram pra trás da exigência de API key — Luís/Matheus, 2026-09-15
+> [[2026-09-15 Proxy e Fluxo Agêntico com Luís]]: Matheus não sabia, mas Luís
+> já tinha criado duas skills do Claude Code pra integrar qualquer projeto
+> ao proxy — `airtable-proxy-connect` (registra o app, muda o endpoint,
+> verifica) e `airtable-proxy-doctor` (diagnostica 401/403/telemetria
+> ausente), ambas desvinculadas do repo do proxy (rodam a partir do projeto
+> cliente). Usadas com sucesso ao conectar o front. **Gap**: não cobrem
+> ainda a autenticação por API key (`PRO-553`/`PRO-587`, ver callout acima)
+> — precisam de update antes de qualquer app novo confiar nelas.
+>
+> **Yasmin vai ser a cobaia**: testa a skill `connect` direto no LiveScript,
+> localmente, sem passar pela branch que Matheus já revisou manualmente.
+> Matheus levanta a preocupação de confiabilidade (a skill não carrega as
+> salvaguardas que ele já testou); combinado comparar via PR. **Regra
+> explícita**: nada disso vai pra produção antes de Luís e Matheus
+> revisarem juntos — precisa também de um plano de rollback rápido (Luís
+> aposta em só variável de ambiente, não confirmado).
+>
+> **Confusão de branch, não resolvida**: Luís acha que Matheus avançou na
+> branch errada — acredita que `feature/airtable-proxy-observability`
+> carrega, além da mudança de conexão ao proxy, uma pilha de configuração
+> de OpenTelemetry/Vercel desde 26/06 que não é necessária pro proxy
+> funcionar (só precisa da injeção de URL + header). Matheus contesta que
+> não é essa a branch em que trabalhou. Ação: Matheus confirma depois qual
+> branch tem de fato o diff mínimo. Ver [[LiveScript]].
+>
+> **Destino das skills genéricas**: ainda não têm um lar compartilhado —
+> quem está puxando isso é a Carolina (repo `livemode`), não Luís (ver
+> [[Packaging as skills]]). Destino ideal de longo prazo seria o admin do
+> Claude Cloud (empresa toda), mas só depois do proxy estar oficialmente
+> disponível pra todo mundo.
 
 > [!important] Deploy em produção já no ar, confirmado por msilva 2026-09-14
 > O proxy **já está rodando em produção no Cloud Run**, mas **nenhum
