@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Da saúde à priorização de portfólio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root {
+    --bg: #faf8f3;
+    --surface: #ffffff;
+    --text: #21231f;
+    --text-muted: #63665d;
+    --accent: #33564f;
+    --accent-soft: #e4ece9;
+    --border: #e2dfd3;
+    --saudavel: #3e7c4f;
+    --atencao: #a5730a;
+    --critico: #b03a2e;
+    --saudavel-soft: #e4f0e6;
+    --atencao-soft: #f5e9d3;
+    --critico-soft: #f6e0dc;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14171a;
+      --surface: #1b1f22;
+      --text: #ece9e2;
+      --text-muted: #9ea298;
+      --accent: #86c0b3;
+      --accent-soft: #223330;
+      --border: #2b3033;
+      --saudavel: #74c187;
+      --atencao: #dcaf4c;
+      --critico: #e08476;
+      --saudavel-soft: #1e2f22;
+      --atencao-soft: #332a1a;
+      --critico-soft: #33211e;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #14171a;
+    --surface: #1b1f22;
+    --text: #ece9e2;
+    --text-muted: #9ea298;
+    --accent: #86c0b3;
+    --accent-soft: #223330;
+    --border: #2b3033;
+    --saudavel: #74c187;
+    --atencao: #dcaf4c;
+    --critico: #e08476;
+    --saudavel-soft: #1e2f22;
+    --atencao-soft: #332a1a;
+    --critico-soft: #33211e;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Public Sans", "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.9rem;
+  }
+
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 5vw, 2.7rem);
+    line-height: 1.12;
+    margin: 0 0 0.9rem;
+    text-wrap: balance;
+    color: var(--text);
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 56ch;
+    margin: 0 0 2.2rem;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.6rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 0.9rem 0;
+    margin-bottom: 3rem;
+  }
+
+  .meta-row strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  section {
+    margin-bottom: 3.4rem;
+  }
+
+  h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0 0 0.3rem;
+    color: var(--text);
+  }
+
+  .section-lede {
+    color: var(--text-muted);
+    margin: 0 0 1.6rem;
+    max-width: 60ch;
+  }
+
+  p { margin: 0 0 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  code {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.86em;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+  }
+
+  .agent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.1rem;
+  }
+
+  .agent-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 1.6rem;
+  }
+
+  .agent-card h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    margin: 0 0 0.15rem;
+  }
+
+  .agent-card .agent-sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0 0 1.1rem;
+  }
+
+  .criterion-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .criterion-list li {
+    display: flex;
+    gap: 0.7rem;
+    align-items: baseline;
+  }
+
+  .criterion-num {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    min-width: 1.1rem;
+  }
+
+  .criterion-body code {
+    display: inline-block;
+    margin-bottom: 0.2rem;
+  }
+
+  .criterion-body p {
+    margin: 0.2rem 0 0;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  .example-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 1.1rem;
+  }
+
+  .example-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 1.6rem 1.7rem;
+  }
+
+  .example-card h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 0 0 0.9rem;
+  }
+
+  .example-setup {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0 0 1.1rem;
+  }
+
+  .gauge-wrap {
+    margin: 1.1rem 0 0.6rem;
+  }
+
+  .gauge-track {
+    position: relative;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(
+      to right,
+      var(--saudavel-soft) 0%,
+      var(--saudavel-soft) 10%,
+      var(--atencao-soft) 10%,
+      var(--atencao-soft) 30%,
+      var(--critico-soft) 30%,
+      var(--critico-soft) 100%
+    );
+    border: 1px solid var(--border);
+  }
+
+  .gauge-marker {
+    position: absolute;
+    top: -6px;
+    width: 3px;
+    height: 22px;
+    background: var(--text);
+    border-radius: 2px;
+  }
+
+  .gauge-marker::after {
+    content: attr(data-label);
+    position: absolute;
+    top: -1.55rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .gauge-scale {
+    display: flex;
+    justify-content: space-between;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+  }
+
+  .gauge-legend {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.9rem;
+  }
+
+  .legend-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 0.35rem;
+  }
+
+  .verdict-line {
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .verdict-pill {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .pill-atencao { background: var(--atencao-soft); color: var(--atencao); }
+  .pill-critico { background: var(--critico-soft); color: var(--critico); }
+  .pill-saudavel { background: var(--saudavel-soft); color: var(--saudavel); }
+
+  .milestone-row {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1.1rem 0 1rem;
+  }
+
+  .milestone-dot {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+  }
+
+  .milestone-ok {
+    background: var(--saudavel-soft);
+    color: var(--saudavel);
+    border-color: transparent;
+  }
+
+  .milestone-late {
+    background: var(--critico-soft);
+    color: var(--critico);
+    border-color: transparent;
+  }
+
+  .rule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.86rem;
+    margin-top: 0.9rem;
+  }
+
+  .rule-table td {
+    padding: 0.4rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .rule-table td:first-child {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--text-muted);
+    white-space: nowrap;
+    padding-right: 1rem;
+  }
+
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 1.1rem 1.3rem;
+    font-size: 0.94rem;
+    color: var(--text-muted);
+  }
+
+  .callout strong { color: var(--text); }
+
+  .ask-box {
+    background: var(--accent-soft);
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+  }
+
+  .ask-box .eyebrow { margin-bottom: 0.6rem; }
+
+  .ask-box p {
+    font-size: 1.05rem;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .refs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.4rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+  }
+
+  .refs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .refs a:hover { text-decoration: underline; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 1.4rem;
+    margin-top: 3.6rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 600px) {
+    .example-grid, .agent-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <p class="eyebrow">Pré-leitura · Reunião de critérios de priorização</p>
+  <h1>Da saúde à priorização de portfólio</h1>
+  <p class="subtitle">
+    Contexto rápido antes da conversa, pra todo mundo partir do mesmo ponto: o que os
+    agentes já avaliam, como chegam num veredito, e por que isso ainda não é a mesma
+    coisa que priorizar entre iniciativas.
+  </p>
+
+  <div class="meta-row">
+    <span><strong>Participantes</strong> Carolina · Luís · Gabrielle · Matheus</span>
+    <span><strong>Rastreamento</strong> PRO-595 · PRO-597</span>
+  </div>
+
+  <section>
+    <h2>Critérios atuais de saúde</h2>
+    <p class="section-lede">
+      Cinco sinais por agente, julgados pelo LLM guiado por uma metodologia escrita —
+      nunca sobre uma tarefa isolada, sempre sobre o conjunto (iniciativa ou projeto).
+    </p>
+    <div class="agent-grid">
+      <div class="agent-card">
+        <h3>Agente de Portfólio</h3>
+        <p class="agent-sub">saúde por iniciativa</p>
+        <ol class="criterion-list">
+          <li><span class="criterion-num">01</span><div class="criterion-body">
+            <code>iniciativa_estagnada</code><p>sem entrega há ~14+ dias</p></div></li>
+          <li><span class="criterion-num">02</span><div class="criterion-body">
+            <code>gargalo_de_capacidade</code><p>consome ~30%+ da capacidade ativa do time</p></div></li>
+          <li><span class="criterion-num">03</span><div class="criterion-body">
+            <code>priorizacao_desalinhada</code><p>capacidade consumida desalinhada da prioridade declarada</p></div></li>
+          <li><span class="criterion-num">04</span><div class="criterion-body">
+            <code>escopo_descontrolado</code><p>descrições vagas ou desproporcionais ao título</p></div></li>
+          <li><span class="criterion-num">05</span><div class="criterion-body">
+            <code>fluxo_represado</code><p>backlog empacado, ou prestes a secar</p></div></li>
+        </ol>
+      </div>
+      <div class="agent-card">
+        <h3>Agente de PM</h3>
+        <p class="agent-sub">saúde por projeto</p>
+        <ol class="criterion-list">
+          <li><span class="criterion-num">01</span><div class="criterion-body">
+            <code>atraso_milestone</code><p>milestone com prazo vencido, não concluído</p></div></li>
+          <li><span class="criterion-num">02</span><div class="criterion-body">
+            <code>pr_parado</code><p>PR aberto há muito tempo (~2+ dias)</p></div></li>
+          <li><span class="criterion-num">03</span><div class="criterion-body">
+            <code>vazao_lead_time</code><p>queda abrupta e sustentada na vazão, ou lead time destoante</p></div></li>
+          <li><span class="criterion-num">04</span><div class="criterion-body">
+            <code>sequenciamento</code><p>ordem de entrega dado o grafo de bloqueio</p></div></li>
+          <li><span class="criterion-num">05</span><div class="criterion-body">
+            <code>health</code><p>veredito final — derivado dos 4 sinais acima</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Como o health final é calculado</h2>
+    <p class="section-lede">
+      Os dois chegam num mesmo veredito de três níveis — saudável, atenção, crítico —
+      mas por caminhos diferentes, porque medem coisas de tamanho diferente.
+    </p>
+    <div class="example-grid">
+
+      <div class="example-card">
+        <h3>Agente de Portfólio — percentual sobre issues ativas</h3>
+        <p class="example-setup">Iniciativa com 12 issues ativas dispara 2 dos 5 critérios.</p>
+
+        <div class="gauge-wrap">
+          <div class="gauge-track">
+            <div class="gauge-marker" style="left: 16.7%;" data-label="16,7%"></div>
+          </div>
+          <div class="gauge-scale"><span>0%</span><span>10%</span><span>30%</span><span>100%</span></div>
+        </div>
+        <div class="gauge-legend">
+          <span><span class="legend-dot" style="background:var(--saudavel-soft)"></span>saudável &lt;10%</span>
+          <span><span class="legend-dot" style="background:var(--atencao-soft)"></span>atenção 10–30%</span>
+          <span><span class="legend-dot" style="background:var(--critico-soft)"></span>crítico ≥30%</span>
+        </div>
+
+        <p class="verdict-line">2 critérios ÷ 12 issues = 16,7% → <span class="verdict-pill pill-atencao">atenção</span></p>
+        <p style="font-size:0.86rem; color:var(--text-muted); margin-top:0.8rem;">
+          A mesma dupla de critérios numa iniciativa de só 4 issues daria 50% —
+          <span class="verdict-pill pill-critico" style="margin-left:0.3rem;">crítico</span>.
+          Iniciativas menores ficam mais sensíveis ao mesmo problema.
+        </p>
+      </div>
+
+      <div class="example-card">
+        <h3>Agente de PM — contagem de milestones</h3>
+        <p class="example-setup">Projeto com 3 milestones, 1 deles com prazo vencido.</p>
+
+        <div class="milestone-row">
+          <div class="milestone-dot milestone-late">M1</div>
+          <div class="milestone-dot milestone-ok">M2</div>
+          <div class="milestone-dot milestone-ok">M3</div>
+        </div>
+
+        <table class="rule-table">
+          <tr><td>0 alertas</td><td><span class="verdict-pill pill-saudavel">saudável</span></td></tr>
+          <tr><td>1 alerta</td><td><span class="verdict-pill pill-atencao">atenção</span></td></tr>
+          <tr><td>2+ alertas</td><td><span class="verdict-pill pill-critico">crítico</span></td></tr>
+        </table>
+        <p style="font-size:0.86rem; color:var(--text-muted); margin-top:1rem;">
+          Sem cálculo de percentual — com poucos milestones por projeto, contar direto
+          já é suficiente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>O gap que motiva esta reunião</h2>
+    <p>
+      Nenhum dos dois critérios acima compara iniciativas entre si por esforço, retorno
+      ou risco — eles avaliam a saúde de uma iniciativa ou projeto isolado, não se ela
+      deveria ganhar mais ou menos capacidade que as outras. É essa lacuna que a reunião
+      de hoje precisa fechar.
+    </p>
+    <div class="callout">
+      <strong>A fórmula antiga não serve de base.</strong> O GPT priorizador que a
+      Gabrielle construiu (Valor pro Negócio peso 2; Escalabilidade, Economia de Tempo e
+      Complexidade peso 1 cada) caiu em desuso segundo ela mesma. A filosofia de fundo —
+      "testar antes de estruturar" — segue válida como referência, só a fórmula de score
+      que está obsoleta.
+    </div>
+  </section>
+
+  <section class="ask-box">
+    <p class="eyebrow" style="margin-bottom:0.5rem;">Pedido a cada stakeholder</p>
+    <p>Traga uma sugestão de critérios que os agentes de Portfólio e de PM deveriam usar pra comparar e priorizar iniciativas entre si.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Pauta correlata</p>
+    <h2 style="font-size:1.25rem;">O classificador de demandas avalia complexidade parecida?</h2>
+    <p>
+      O agente que vai classificar demandas novas (A2) vai julgar a complexidade de cada
+      uma pra decidir se vira projeto ou teste rápido. Os critérios novos de priorização
+      de portfólio (que saem desta reunião) também vão precisar de um sinal de
+      esforço/complexidade pra comparar iniciativas.
+    </p>
+    <p>
+      Pergunta pra entender, não pra decidir agora: é o mesmo tipo de julgamento em
+      escalas diferentes (uma demanda isolada vs. iniciativa em andamento), ou são
+      coisas genuinamente distintas? Não implica integrar os agentes — só mapear se o
+      raciocínio se parece, pra não reinventar critério que já foi pensado num lugar.
+    </p>
+  </section>
+
+  <footer>
+    <div class="refs">
+      <a href="https://linear.app/projetos-livemode/issue/PRO-595/entender-regras-de-priorizacao-existentes-e-decidir-migracao-de">PRO-595 — regras de priorização</a>
+      <a href="https://linear.app/projetos-livemode/issue/PRO-597/marcar-reuniao-para-fechar-os-novos-criterios-de-priorizacao-de">PRO-597 — marcar reunião</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
