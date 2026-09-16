@@ -435,6 +435,16 @@ tags: [agents, llm, automation, onboarding, research]
 > API/assinatura do próprio Claude Code comercialmente, precisa da API da
 > Anthropic direta, custo maior.
 
+> [!tip] Design doc de A1/A2 ganha estrutura de referência — msilva, 2026-09-16
+> [[How to Write an Effective Software Design Document]]: guia de Michael Lynch
+> trazido pra estruturar o design doc de **A1/A2**, ainda em construção. Duas
+> seções encaixam direto no que já estava em aberto: **Non-goals** absorve a
+> correção de escopo do Luís (sistemas internos do time, não qualquer demanda
+> de qualquer área); **Open Issues** (problema · opções · próximo passo) vira
+> o formato pras duas perguntas não resolvidas do M0 — A1+A2 um agente ou
+> dois, e se A2 acopla ou não ao critério de complexidade do A10 — em vez de
+> forçar uma decisão prematura só pra fechar o doc.
+
 ## Philosophy and build strategy
 
 From [[Fluxo Agêntico project instruction]] — this is the spec, and it overrides

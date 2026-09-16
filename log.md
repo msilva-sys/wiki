@@ -6131,3 +6131,16 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   desta sessão) — resposta ainda pendente.
 - Updated: `meetings/2026-09-15 Proxy e Fluxo Agêntico com Luís.md`,
   `projects/Airtable Proxy.md`, `index.md`.
+
+## [2026-09-16] ingest | How to Write an Effective Software Design Document
+- Read `raw/Clippings/How to Write an Effective Software Design Document.md`
+  (Michael Lynch, publicado 2026-06-23).
+- New: `sources/How to Write an Effective Software Design Document.md`.
+- Trazido pra estruturar o design doc de A1/A2 (em construção, ainda só em
+  chat, não escrito em arquivo): Non-goals absorve a correção de escopo do
+  Luís (sistemas internos do time, não qualquer demanda de qualquer área);
+  Open Issues (problema · opções · próximo passo) formaliza as duas
+  perguntas não resolvidas do M0 (A1+A2 um agente ou dois; A2 acoplado ou
+  não ao critério de complexidade do A10) em vez de forçar decisão
+  prematura.
+- Updated: `projects/Agent Flow.md`, `index.md`.
