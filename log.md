@@ -6144,3 +6144,22 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   não ao critério de complexidade do A10) em vez de forçar decisão
   prematura.
 - Updated: `projects/Agent Flow.md`, `index.md`.
+
+## [2026-09-16] synthesis | Design Doc — Intake (A1+A2 vira um agente só)
+- Construído em chat, seção por seção, com a skill `design-doc` (baseada em
+  `sources/How to Write an Effective Software Design Document.md`).
+- Resolve a Open Issue "A1+A2 um agente ou dois?" a favor de um agente
+  único, "Intake" — as duas responsabilidades (captar/catalogar vs. buscar
+  contexto/classificar) seguem como estágios internos, não agentes
+  numerados.
+- Escopo ficou mais estreito que o desenho original: não avalia risco de
+  execução, não decide esteira automática de PR, não decide priorização de
+  portfólio — resolve por tabela a tensão A2×A10 registrada em
+  `syntheses/A10 avalia saúde, não prioriza portfólio.md`.
+- 5 Open Issues residuais: onde mora o catálogo central (Linear Triagem,
+  Airtable, outro); quem recebe o ack quando a demanda é lançada direto
+  numa base sem conversa de origem; schema do catálogo; se o Intake precisa
+  de persona própria; canal de exposição (bot em DM vs. canal que só
+  encaminha).
+- New: `syntheses/Design Doc — Intake.md`.
+- Updated: `projects/Agent Flow.md`, `index.md`.

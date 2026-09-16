@@ -435,15 +435,20 @@ tags: [agents, llm, automation, onboarding, research]
 > API/assinatura do próprio Claude Code comercialmente, precisa da API da
 > Anthropic direta, custo maior.
 
-> [!tip] Design doc de A1/A2 ganha estrutura de referência — msilva, 2026-09-16
-> [[How to Write an Effective Software Design Document]]: guia de Michael Lynch
-> trazido pra estruturar o design doc de **A1/A2**, ainda em construção. Duas
-> seções encaixam direto no que já estava em aberto: **Non-goals** absorve a
-> correção de escopo do Luís (sistemas internos do time, não qualquer demanda
-> de qualquer área); **Open Issues** (problema · opções · próximo passo) vira
-> o formato pras duas perguntas não resolvidas do M0 — A1+A2 um agente ou
-> dois, e se A2 acopla ou não ao critério de complexidade do A10 — em vez de
-> forçar uma decisão prematura só pra fechar o doc.
+> [!important] A1+A2 vira um agente só, "Intake" — design doc fechado, msilva, 2026-09-16
+> [[Design Doc — Intake]]: construído em chat, seção por seção, com a skill
+> `design-doc` (baseada em [[How to Write an Effective Software Design Document]]).
+> **Resolve a Open Issue "A1+A2 um agente ou dois?" a favor de um agente único**,
+> chamado **Intake** — as duas responsabilidades (captar/catalogar vs. buscar
+> contexto/classificar) seguem existindo como estágios internos, não como
+> agentes numerados separados. Objective/Goals/Non-goals/Interfaces/Scenarios/
+> Constraints todos fechados; 5 Open Issues residuais (onde mora o catálogo
+> central — Linear Triagem, Airtable ou outro; ack sem destinatário quando a
+> demanda é lançada direto numa base; schema do catálogo; persona própria;
+> canal de exposição). **Escopo do agente ficou mais estreito do que o desenho
+> original**: não avalia risco de execução, não decide esteira automática de
+> PR, não decide priorização de portfólio — resolve por tabela a tensão
+> A2×A10 que estava em aberto (ver [[A10 avalia saúde, não prioriza portfólio]]).
 
 ## Philosophy and build strategy
 
