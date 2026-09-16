@@ -140,13 +140,17 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > Luís e Matheus revisarem juntos — precisa também de um plano de rollback
 > rápido (Luís aposta em só variável de ambiente, não confirmado).
 >
-> **Confusão de branch, resolvida 2026-09-16**: eram de fato duas branches
-> distintas, não uma confusão sobre a mesma — `feature/airtable-proxy-
-> observability` (onde `PRO-587`/API key foi commitado) é a **certa**, sem
-> OTel implementado, porque a telemetria é responsabilidade do proxy, não
-> do LiveScript; `airtable-observability` é a outra, a que carrega a
-> configuração de OpenTelemetry/Vercel que preocupou Luís (commits desde
-> 26/06) — não é a que Matheus usou. Ver [[LiveScript]].
+> **Confusão de branch, verificada direto no repo 2026-09-16** — a
+> primeira resolução (por lembrança de Matheus) estava errada: não existe
+> `airtable-observability`. Consultado o repo real via `gh api`: são
+> `feature/airtable-proxy` (2 arquivos, um commit de 26/06, **sem OTel mas
+> também sem a autenticação por API key** — anterior a `PRO-96`/`PRO-587`)
+> e `feature/airtable-proxy-observability` (11 arquivos, **com OTel real**
+> desde 27/06 **e** com os commits recentes que o proxy precisa —
+> `PRO-96`, `PRO-587`, docs de 15/09). Nenhuma das duas está pronta como
+> está — decisão (cherry-pick vs. aceitar o OTel) deixada pra depois,
+> msilva priorizou os outros pontos da reunião com Luís. Ver
+> [[LiveScript]].
 >
 > **Destino das skills genéricas**: ainda não têm um lar compartilhado —
 > quem está puxando isso é a Carolina (repo `livemode`), não Luís (ver

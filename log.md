@@ -6092,3 +6092,19 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   preocupou Luís.
 - Updated: `meetings/2026-09-15 Proxy e Fluxo Agêntico com Luís.md`,
   `systems/LiveScript.md`, `projects/Airtable Proxy.md`, `index.md`.
+
+## [2026-09-16] refactor | Correção — branch do proxy, verificada no repo real
+- msilva desconfiou da própria resposta anterior (branch "sem OTel" errada)
+  e pediu pra buscar direto no repo. Usado `gh api` contra
+  `tech-livemode/livemode-roteiros-nextjs` (branches, commits, diff de
+  arquivos por branch vs. `main`) em vez de reconstituir de memória.
+- **Correção**: não existe `airtable-observability` — as duas branches
+  reais são `feature/airtable-proxy` (2 arquivos, 1 commit de 26/06, sem
+  OTel mas também sem a autenticação por API key — anterior a
+  `PRO-96`/`PRO-587`) e `feature/airtable-proxy-observability` (11
+  arquivos, OTel real desde 27/06 **e** os commits recentes necessários —
+  `PRO-96`, `PRO-587`, docs de 15/09). Nenhuma das duas está pronta como
+  está. Decisão de como resolver (cherry-pick vs. aceitar o OTel) deixada
+  em aberto — msilva priorizou os outros pontos da reunião com Luís.
+- Updated: `meetings/2026-09-15 Proxy e Fluxo Agêntico com Luís.md`,
+  `systems/LiveScript.md`, `projects/Airtable Proxy.md`, `index.md`.

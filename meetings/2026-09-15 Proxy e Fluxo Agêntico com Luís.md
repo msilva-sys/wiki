@@ -40,12 +40,16 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
 - ~~Matheus atualiza as skills `airtable-proxy-connect`/`airtable-proxy-doctor`
   pra cobrirem a autenticação por API key (`PRO-553`/`PRO-587`), que ainda
   não estava contemplada quando Luís as criou.~~ **Feito, 2026-09-16.**
-- ~~Matheus confirma qual branch carrega exatamente o diff mínimo de conexão
-  ao proxy (injeção de URL + header) antes de repassar pra Yasmin.~~
-  **Feito, 2026-09-16**: eram duas branches distintas —
-  `feature/airtable-proxy-observability` é a certa (sem OTel, telemetria é
-  do proxy), `airtable-observability` é a que preocupava Luís. Ver
-  [[LiveScript]].
+- Matheus confirma qual branch carrega exatamente o diff mínimo de conexão
+  ao proxy antes de repassar pra Yasmin — **verificado no repo real
+  2026-09-16 (`gh api`), não resolvido como esperado**: não existe
+  `airtable-observability` (lembrança errada de Matheus). São
+  `feature/airtable-proxy` (sem OTel, mas também sem a autenticação por
+  API key — desatualizada) e `feature/airtable-proxy-observability` (com
+  OTel real **e** com os commits recentes necessários, `PRO-96`/`PRO-587`).
+  Nenhuma pronta como está; decisão de como resolver (cherry-pick vs.
+  aceitar o OTel) adiada — msilva priorizou os outros pontos da reunião.
+  Ver [[LiveScript]].
 - ~~Matheus fala direto com Yasmin (não via Luís) pra ela testar a skill de
   conexão no LiveScript, localmente, como "cobaia".~~ **Feito, 2026-09-16.**
 - Matheus e Luís desenham um plano de rollback rápido pro LiveScript antes
@@ -74,9 +78,10 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
   dois só se ficar evidente que faz muita coisa.
 - Mecanismo de rollback do LiveScript em produção — hipótese de variável de
   ambiente, não confirmado.
-
-~~Qual branch tem de fato o diff mínimo necessário pro proxy~~ — **resolvido
-2026-09-16**, ver Commitments acima e [[LiveScript]].
+- Qual branch usar de fato pra Yasmin testar — nenhuma das duas branches
+  reais (`feature/airtable-proxy`, `feature/airtable-proxy-observability`)
+  está pronta como está; decisão de cherry-pick vs. aceitar o OTel ainda
+  em aberto, ver Commitments acima e [[LiveScript]].
 
 ## Facts stated
 

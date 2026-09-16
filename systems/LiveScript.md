@@ -137,21 +137,37 @@ not header]] (ver seção acima). O limite de escopo em si — SDK fora, só
 REST-transport dentro — continua de pé, só que hoje é "identificação por
 URL-path em todo o tráfego", não "`X-App-Id` em todo o tráfego".
 
-## Confusão de branch — resolvida, 2026-09-16
+## Confusão de branch — verificada direto no repo, 2026-09-16
 
 [[2026-09-15 Proxy e Fluxo Agêntico com Luís]]: Luís achou, na call, que
 Matheus tinha avançado o trabalho de conexão ao proxy na branch errada.
-**Resolvido por Matheus, 2026-09-16: são duas branches distintas**, não
-uma só mal-entendida —
-`feature/airtable-proxy-observability` (onde `PRO-587`/API key foi
-commitado, ver [[Airtable Proxy]]) é a **certa**: sem OTel implementado,
-porque a telemetria é responsabilidade do proxy, não do LiveScript.
-`airtable-observability` é a outra branch, a que carrega a pilha de
-configuração de OpenTelemetry pensada pra conectar direto na Vercel
-(commits desde 2026-06-26) — essa é a que preocupou Luís, mas não é a que
-Matheus usou. Critério confirmado: **o LiveScript não deve implementar
-OTel próprio** — só a injeção de URL + header pro proxy, que já emite a
-telemetria.
+
+**Primeira tentativa de resolução (por lembrança de Matheus) estava
+errada** — não existe nenhuma branch `airtable-observability`. Corrigido
+consultando o repo real (`gh api`, `tech-livemode/livemode-roteiros-nextjs`,
+2026-09-16), diff de arquivos de cada branch contra `main`:
+
+- **`feature/airtable-proxy`** — só 2 arquivos mudados
+  (`docs/tech/airtable-proxy-design.md`,
+  `lib/services/airtable-monitoring.ts`), um único commit
+  (`50e37d8`, 2026-06-26, *"wire proxy endpoint switch"*). **Sem OTel** —
+  mas também **sem a autenticação por API key**: é anterior ao `PRO-96`
+  (26/08) e ao `PRO-587` (10/09).
+- **`feature/airtable-proxy-observability`** — 11 arquivos, incluindo
+  `instrumentation.ts`, `instrumentation.node.ts`,
+  `lib/observability/airtable-metrics.ts`. Tem OTel de verdade
+  (`59282b5`/`f3f1060`, 2026-06-27) — **e também** os commits recentes que
+  o proxy precisa: `0af8bc4` (PRO-96, 26/08), `7570ee6` (API key, PRO-587,
+  10/09), `0818700` (docs, 15/09).
+
+**Nenhuma das duas branches está pronta pra passar pra Yasmin como está**:
+a limpa não tem a autenticação atual; a que tem a autenticação carrega o
+OTel que preocupava Luís junto. Bate com o que ele disse na call — essa
+branch "leva mais do que só integração com o proxy". **Decisão de como
+resolver (cherry-pick só do `airtable-monitoring.ts`/API-key pra cima da
+`feature/airtable-proxy`, ou aceitar o peso do OTel por ora) ainda em
+aberto** — msilva optou por deixar essa escolha pra depois e seguir com os
+outros pontos da reunião com Luís primeiro.
 
 ## A historical bug — test roteiros surviving a migration
 
