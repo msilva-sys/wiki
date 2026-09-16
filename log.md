@@ -6108,3 +6108,26 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   em aberto — msilva priorizou os outros pontos da reunião com Luís.
 - Updated: `meetings/2026-09-15 Proxy e Fluxo Agêntico com Luís.md`,
   `systems/LiveScript.md`, `projects/Airtable Proxy.md`, `index.md`.
+
+## [2026-09-16] query | Plano de rollback do proxy — hipótese refutada, proposta desenhada
+- msilva pediu pra desenhar o plano de rollback rápido do LiveScript
+  (commitment #4 da reunião de 15/09 com Luís). Verificado direto no
+  repo `livemode-roteiros-nextjs` (`gh api`, leitura de
+  `lib/services/airtable-monitoring.ts` na branch
+  `feature/airtable-proxy-observability`).
+- Hipótese do Luís (só variável de ambiente) **refutada**: Vercel exige
+  redeploy pra aplicar mudança de env var em Serverless Function (~1-3min,
+  não instantâneo).
+- Mecanismo real confirmado: um único env var, `AIRTABLE_ENDPOINT_URL`,
+  controla SDK e REST; `AIRTABLE_PROXY_APP_KEY` só é exigida quando ele
+  está setado.
+- Alternativa investigada: flag em runtime. Comparado Vercel Global
+  Config (nativo, mas 17 arquivos chamam o wrapper — leitura por chamada
+  arriscaria estourar quota/custo) vs. Firestore (já é dependência do
+  repo, free tier ~15x maior, ~5x mais barato por leitura, verificado via
+  docs oficiais do Google Cloud). Proposta final: flag booleano no
+  Firestore + cache em memória (~5-10s) no wrapper compartilhado.
+- Mensagem resumindo a proposta enviada a Luís por msilva (Slack, fora
+  desta sessão) — resposta ainda pendente.
+- Updated: `meetings/2026-09-15 Proxy e Fluxo Agêntico com Luís.md`,
+  `projects/Airtable Proxy.md`, `index.md`.

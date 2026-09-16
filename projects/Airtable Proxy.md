@@ -138,7 +138,11 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > localmente. Matheus falou diretamente com ela (não via Luís), como
 > combinado. **Regra explícita**: nada disso vai pra produção antes de
 > Luís e Matheus revisarem juntos — precisa também de um plano de rollback
-> rápido (Luís aposta em só variável de ambiente, não confirmado).
+> rápido. **Hipótese do Luís (só variável de ambiente) refutada 2026-09-16**:
+> Vercel exige redeploy pra aplicar mudança de env var (~1-3min). Proposta
+> em avaliação: flag em runtime no Firestore + cache em memória (~5-10s),
+> mensagem enviada a Luís, resposta pendente. Ver
+> [[2026-09-15 Proxy e Fluxo Agêntico com Luís]].
 >
 > **Confusão de branch, verificada direto no repo 2026-09-16** — a
 > primeira resolução (por lembrança de Matheus) estava errada: não existe

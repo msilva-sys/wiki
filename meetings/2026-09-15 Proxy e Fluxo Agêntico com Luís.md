@@ -53,8 +53,16 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
 - ~~Matheus fala direto com Yasmin (não via Luís) pra ela testar a skill de
   conexão no LiveScript, localmente, como "cobaia".~~ **Feito, 2026-09-16.**
 - Matheus e Luís desenham um plano de rollback rápido pro LiveScript antes
-  de qualquer coisa ir pra produção — hipótese de Luís: só variável de
-  ambiente, a confirmar.
+  de qualquer coisa ir pra produção — hipótese de Luís (só variável de
+  ambiente) **investigada e refutada, 2026-09-16**: Vercel exige redeploy
+  pra aplicar mudança de env var em Serverless Function (~1-3min, não
+  instantâneo). Proposta desenhada por Matheus: flag em runtime (Firestore
+  — já é dependência do repo `livemode-roteiros-nextjs`) com cache em
+  memória de ~5-10s no wrapper compartilhado
+  (`lib/services/airtable-monitoring.ts`), evitando estourar volume de
+  leitura (17 arquivos chamam esse wrapper). **Mensagem enviada a Luís
+  2026-09-16, resposta pendente** — TTL exato e se o redeploy de 1-3min já
+  não seria aceitável seguem em aberto até ele responder.
 - Luís vai falar com a Gabrielle sobre a reunião de critérios novos de
   priorização de portfólio (compromisso já registrado em
   [[2026-09-15 Discovery A1 e A2 com Gabrielle]]).
