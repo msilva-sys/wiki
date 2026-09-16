@@ -6079,3 +6079,16 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   `systems/LiveScript.md`, `concepts/Packaging as skills.md`,
   `concepts/Claude Agent SDK.md`, `people/Luís Fernandez.md`,
   `people/Yasmin Macedo.md`, `index.md`.
+
+## [2026-09-16] query | Pendências da reunião de 15/09 com Luís, resolvidas
+- msilva confirmou em chat (sem novo raw) que os 3 commitments dele da
+  reunião de 2026-09-15 com Luís foram cumpridos: skills atualizadas pra
+  API key, branch confirmada, conversa com Yasmin feita.
+- Resolve a confusão de branch: são duas branches distintas, não uma
+  confusão sobre a mesma — `feature/airtable-proxy-observability` (onde
+  `PRO-587` foi commitado) é a certa, sem OTel implementado, porque a
+  telemetria é responsabilidade do proxy, não do LiveScript;
+  `airtable-observability` é a outra, com a config de OTel/Vercel que
+  preocupou Luís.
+- Updated: `meetings/2026-09-15 Proxy e Fluxo Agêntico com Luís.md`,
+  `systems/LiveScript.md`, `projects/Airtable Proxy.md`, `index.md`.

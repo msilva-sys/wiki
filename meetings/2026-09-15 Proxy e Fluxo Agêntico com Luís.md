@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: stable
-updated: 2026-09-15
+updated: 2026-09-16
 date: 2026-09-15
 attendees: [Matheus Silva, Luís Fernandez]
 aliases: [proxy e fluxo agêntico com luís, reunião luís 15/09]
@@ -37,16 +37,17 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
 
 ## Commitments
 
-- Matheus atualiza as skills `airtable-proxy-connect`/`airtable-proxy-doctor`
+- ~~Matheus atualiza as skills `airtable-proxy-connect`/`airtable-proxy-doctor`
   pra cobrirem a autenticação por API key (`PRO-553`/`PRO-587`), que ainda
-  não estava contemplada quando Luís as criou.
-- Matheus confirma qual branch carrega exatamente o diff mínimo de conexão
-  ao proxy (injeção de URL + header) antes de repassar pra Yasmin — dúvida
-  se é a mesma `feature/airtable-proxy-observability` que também carrega
-  configuração de OpenTelemetry/Vercel desde 26/06, sem relação com o
-  proxy.
-- Matheus fala direto com Yasmin (não via Luís) pra ela testar a skill de
-  conexão no LiveScript, localmente, como "cobaia".
+  não estava contemplada quando Luís as criou.~~ **Feito, 2026-09-16.**
+- ~~Matheus confirma qual branch carrega exatamente o diff mínimo de conexão
+  ao proxy (injeção de URL + header) antes de repassar pra Yasmin.~~
+  **Feito, 2026-09-16**: eram duas branches distintas —
+  `feature/airtable-proxy-observability` é a certa (sem OTel, telemetria é
+  do proxy), `airtable-observability` é a que preocupava Luís. Ver
+  [[LiveScript]].
+- ~~Matheus fala direto com Yasmin (não via Luís) pra ela testar a skill de
+  conexão no LiveScript, localmente, como "cobaia".~~ **Feito, 2026-09-16.**
 - Matheus e Luís desenham um plano de rollback rápido pro LiveScript antes
   de qualquer coisa ir pra produção — hipótese de Luís: só variável de
   ambiente, a confirmar.
@@ -71,10 +72,11 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
 - A1 e A2 continuam sendo dois agentes ou viram um só? Luís não decide —
   sugere simplificar pra um único agente primeiro, avançar, e quebrar em
   dois só se ficar evidente que faz muita coisa.
-- Qual branch tem de fato o diff mínimo necessário pro proxy — a confirmar
-  por Matheus (ver commitment acima).
 - Mecanismo de rollback do LiveScript em produção — hipótese de variável de
   ambiente, não confirmado.
+
+~~Qual branch tem de fato o diff mínimo necessário pro proxy~~ — **resolvido
+2026-09-16**, ver Commitments acima e [[LiveScript]].
 
 ## Facts stated
 

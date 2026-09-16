@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-09-15
+updated: 2026-09-16
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -124,31 +124,29 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > Linear (reforçada pela limpeza de 2026-09-03) — não ficou claro se é
 > campo nativo ou compromisso verbal com a Carol.
 
-> [!tip] Skills de conexão existem, mas ficaram pra trás da exigência de API key — Luís/Matheus, 2026-09-15
+> [!tip] Skills de conexão existem, atualizadas pra API key — Luís/Matheus, 2026-09-15/16
 > [[2026-09-15 Proxy e Fluxo Agêntico com Luís]]: Matheus não sabia, mas Luís
 > já tinha criado duas skills do Claude Code pra integrar qualquer projeto
 > ao proxy — `airtable-proxy-connect` (registra o app, muda o endpoint,
 > verifica) e `airtable-proxy-doctor` (diagnostica 401/403/telemetria
 > ausente), ambas desvinculadas do repo do proxy (rodam a partir do projeto
-> cliente). Usadas com sucesso ao conectar o front. **Gap**: não cobrem
-> ainda a autenticação por API key (`PRO-553`/`PRO-587`, ver callout acima)
-> — precisam de update antes de qualquer app novo confiar nelas.
+> cliente). Usadas com sucesso ao conectar o front. **Gap fechado
+> 2026-09-16**: Matheus atualizou as duas skills pra cobrirem a
+> autenticação por API key (`PRO-553`/`PRO-587`, ver callout acima).
 >
-> **Yasmin vai ser a cobaia**: testa a skill `connect` direto no LiveScript,
-> localmente, sem passar pela branch que Matheus já revisou manualmente.
-> Matheus levanta a preocupação de confiabilidade (a skill não carrega as
-> salvaguardas que ele já testou); combinado comparar via PR. **Regra
-> explícita**: nada disso vai pra produção antes de Luís e Matheus
-> revisarem juntos — precisa também de um plano de rollback rápido (Luís
-> aposta em só variável de ambiente, não confirmado).
+> **Yasmin vira cobaia**: testa a skill `connect` direto no LiveScript,
+> localmente. Matheus falou diretamente com ela (não via Luís), como
+> combinado. **Regra explícita**: nada disso vai pra produção antes de
+> Luís e Matheus revisarem juntos — precisa também de um plano de rollback
+> rápido (Luís aposta em só variável de ambiente, não confirmado).
 >
-> **Confusão de branch, não resolvida**: Luís acha que Matheus avançou na
-> branch errada — acredita que `feature/airtable-proxy-observability`
-> carrega, além da mudança de conexão ao proxy, uma pilha de configuração
-> de OpenTelemetry/Vercel desde 26/06 que não é necessária pro proxy
-> funcionar (só precisa da injeção de URL + header). Matheus contesta que
-> não é essa a branch em que trabalhou. Ação: Matheus confirma depois qual
-> branch tem de fato o diff mínimo. Ver [[LiveScript]].
+> **Confusão de branch, resolvida 2026-09-16**: eram de fato duas branches
+> distintas, não uma confusão sobre a mesma — `feature/airtable-proxy-
+> observability` (onde `PRO-587`/API key foi commitado) é a **certa**, sem
+> OTel implementado, porque a telemetria é responsabilidade do proxy, não
+> do LiveScript; `airtable-observability` é a outra, a que carrega a
+> configuração de OpenTelemetry/Vercel que preocupou Luís (commits desde
+> 26/06) — não é a que Matheus usou. Ver [[LiveScript]].
 >
 > **Destino das skills genéricas**: ainda não têm um lar compartilhado —
 > quem está puxando isso é a Carolina (repo `livemode`), não Luís (ver
