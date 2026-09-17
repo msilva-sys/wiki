@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: stable
-updated: 2026-09-16
+updated: 2026-09-17
 date: 2026-09-15
 attendees: [Matheus Silva, Luís Fernandez]
 aliases: [proxy e fluxo agêntico com luís, reunião luís 15/09]
@@ -40,29 +40,32 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
 - ~~Matheus atualiza as skills `airtable-proxy-connect`/`airtable-proxy-doctor`
   pra cobrirem a autenticação por API key (`PRO-553`/`PRO-587`), que ainda
   não estava contemplada quando Luís as criou.~~ **Feito, 2026-09-16.**
-- Matheus confirma qual branch carrega exatamente o diff mínimo de conexão
-  ao proxy antes de repassar pra Yasmin — **verificado no repo real
+- ~~Matheus confirma qual branch carrega exatamente o diff mínimo de conexão
+  ao proxy antes de repassar pra Yasmin~~ — **verificado no repo real
   2026-09-16 (`gh api`), não resolvido como esperado**: não existe
   `airtable-observability` (lembrança errada de Matheus). São
   `feature/airtable-proxy` (sem OTel, mas também sem a autenticação por
   API key — desatualizada) e `feature/airtable-proxy-observability` (com
   OTel real **e** com os commits recentes necessários, `PRO-96`/`PRO-587`).
-  Nenhuma pronta como está; decisão de como resolver (cherry-pick vs.
-  aceitar o OTel) adiada — msilva priorizou os outros pontos da reunião.
-  Ver [[LiveScript]].
+  **Resolvido 2026-09-17**: reimplementação completa do roteamento pelo
+  proxy feita em cima da `feature/airtable-proxy` limpa (19 arquivos,
+  `83d1a7f`/`84cea6f`) — essa é a branch a usar. `-observability` descartada
+  como fonte; OTel deferido. Ver [[Conectar o LiveScript ao proxy via
+  feature-airtable-proxy, sem OTel por ora]] e [[LiveScript]].
 - ~~Matheus fala direto com Yasmin (não via Luís) pra ela testar a skill de
   conexão no LiveScript, localmente, como "cobaia".~~ **Feito, 2026-09-16.**
-- Matheus e Luís desenham um plano de rollback rápido pro LiveScript antes
-  de qualquer coisa ir pra produção — hipótese de Luís (só variável de
+- ~~Matheus e Luís desenham um plano de rollback rápido pro LiveScript antes
+  de qualquer coisa ir pra produção~~ — hipótese de Luís (só variável de
   ambiente) **investigada e refutada, 2026-09-16**: Vercel exige redeploy
   pra aplicar mudança de env var em Serverless Function (~1-3min, não
   instantâneo). Proposta desenhada por Matheus: flag em runtime (Firestore
   — já é dependência do repo `livemode-roteiros-nextjs`) com cache em
   memória de ~5-10s no wrapper compartilhado
   (`lib/services/airtable-monitoring.ts`), evitando estourar volume de
-  leitura (17 arquivos chamam esse wrapper). **Mensagem enviada a Luís
-  2026-09-16, resposta pendente** — TTL exato e se o redeploy de 1-3min já
-  não seria aceitável seguem em aberto até ele responder.
+  leitura (17 arquivos chamam esse wrapper). **Resolvido 2026-09-16**: Luís
+  rejeita a proposta por complexidade desnecessária agora, prefere só
+  checar as env vars no build/deploy. Ver [[Resolver rollback do LiveScript
+  com checagem de variáveis de ambiente]].
 - Luís vai falar com a Gabrielle sobre a reunião de critérios novos de
   priorização de portfólio (compromisso já registrado em
   [[2026-09-15 Discovery A1 e A2 com Gabrielle]]).
@@ -84,12 +87,11 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
 - A1 e A2 continuam sendo dois agentes ou viram um só? Luís não decide —
   sugere simplificar pra um único agente primeiro, avançar, e quebrar em
   dois só se ficar evidente que faz muita coisa.
-- Mecanismo de rollback do LiveScript em produção — hipótese de variável de
-  ambiente, não confirmado.
-- Qual branch usar de fato pra Yasmin testar — nenhuma das duas branches
-  reais (`feature/airtable-proxy`, `feature/airtable-proxy-observability`)
-  está pronta como está; decisão de cherry-pick vs. aceitar o OTel ainda
-  em aberto, ver Commitments acima e [[LiveScript]].
+- ~~Mecanismo de rollback do LiveScript em produção — hipótese de variável de
+  ambiente, não confirmado.~~ **Resolvido 2026-09-16** — ver Commitments
+  acima.
+- ~~Qual branch usar de fato pra Yasmin testar~~ — **resolvido 2026-09-17**,
+  ver Commitments acima e [[LiveScript]].
 
 ## Facts stated
 
@@ -137,3 +139,5 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
 - [[Packaging as skills]]
 - [[Luís Fernandez]]
 - [[Yasmin Macedo]]
+- [[Resolver rollback do LiveScript com checagem de variáveis de ambiente]]
+- [[Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por ora]]

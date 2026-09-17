@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-09-16
+updated: 2026-09-17
 aliases: [live script, livescript, roteiros, roteiros app, live stre]
 tags: [airtable, livescript, realtime, frontend]
 ---
@@ -160,14 +160,21 @@ consultando o repo real (`gh api`, `tech-livemode/livemode-roteiros-nextjs`,
   o proxy precisa: `0af8bc4` (PRO-96, 26/08), `7570ee6` (API key, PRO-587,
   10/09), `0818700` (docs, 15/09).
 
-**Nenhuma das duas branches está pronta pra passar pra Yasmin como está**:
-a limpa não tem a autenticação atual; a que tem a autenticação carrega o
-OTel que preocupava Luís junto. Bate com o que ele disse na call — essa
-branch "leva mais do que só integração com o proxy". **Decisão de como
-resolver (cherry-pick só do `airtable-monitoring.ts`/API-key pra cima da
-`feature/airtable-proxy`, ou aceitar o peso do OTel por ora) ainda em
-aberto** — msilva optou por deixar essa escolha pra depois e seguir com os
-outros pontos da reunião com Luís primeiro.
+**Nenhuma das duas branches estava pronta pra passar pra Yasmin como
+estava**: a limpa não tinha a autenticação atual; a que tinha a autenticação
+carregava o OTel que preocupava Luís junto. Bate com o que ele disse na call
+— essa branch "leva mais do que só integração com o proxy".
+
+**Resolvido 2026-09-17** — ver
+[[Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por
+ora]]: em vez de cherry-pick pontual ou aceitar o peso do OTel, Matheus (com
+Claude Code) fez uma reimplementação completa do roteamento pelo proxy em
+cima da `feature/airtable-proxy` limpa — 19 arquivos, `83d1a7f`/`84cea6f`,
+2026-09-16. Essa é a branch a usar; `-observability` descartada como fonte;
+OTel fica deferido, não descartado. **Achado colateral, não confirmado**:
+os 19 arquivos incluem os 4 que o gap de `PRO-96` (abaixo, seção Roadmap)
+tinha deixado hardcoded pra `api.airtable.com` — pode fechar esse gap por
+tabela, mas não testado ainda.
 
 ## A historical bug — test roteiros surviving a migration
 

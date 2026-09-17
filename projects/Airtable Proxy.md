@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-09-16
+updated: 2026-09-17
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -144,17 +144,33 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > mensagem enviada a Luís, resposta pendente. Ver
 > [[2026-09-15 Proxy e Fluxo Agêntico com Luís]].
 >
-> **Confusão de branch, verificada direto no repo 2026-09-16** — a
-> primeira resolução (por lembrança de Matheus) estava errada: não existe
-> `airtable-observability`. Consultado o repo real via `gh api`: são
-> `feature/airtable-proxy` (2 arquivos, um commit de 26/06, **sem OTel mas
-> também sem a autenticação por API key** — anterior a `PRO-96`/`PRO-587`)
-> e `feature/airtable-proxy-observability` (11 arquivos, **com OTel real**
-> desde 27/06 **e** com os commits recentes que o proxy precisa —
-> `PRO-96`, `PRO-587`, docs de 15/09). Nenhuma das duas está pronta como
-> está — decisão (cherry-pick vs. aceitar o OTel) deixada pra depois,
-> msilva priorizou os outros pontos da reunião com Luís. Ver
-> [[LiveScript]].
+> **Confusão de branch, verificada direto no repo 2026-09-16, resolvida
+> 2026-09-17** — a primeira resolução (por lembrança de Matheus) estava
+> errada: não existe `airtable-observability`. Consultado o repo real via
+> `gh api`: são `feature/airtable-proxy` (2 arquivos, um commit de 26/06,
+> **sem OTel mas também sem a autenticação por API key** — anterior a
+> `PRO-96`/`PRO-587`) e `feature/airtable-proxy-observability` (11
+> arquivos, **com OTel real** desde 27/06 **e** com os commits recentes que
+> o proxy precisa — `PRO-96`, `PRO-587`, docs de 15/09). Nenhuma das duas
+> estava pronta como estava. **Resolvido**: em vez de cherry-pick pontual
+> ou aceitar o OTel, reimplementação completa do roteamento pelo proxy em
+> cima da `feature/airtable-proxy` limpa (19 arquivos, `83d1a7f`/`84cea6f`,
+> 2026-09-16) — essa é a branch a usar; `-observability` descartada como
+> fonte; OTel deferido, não descartado. Ver
+> [[Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por
+> ora]] e [[LiveScript]].
+>
+> **Achado colateral, não confirmado**: os 19 arquivos tocados incluem
+> `config.service.ts`, `narrator.service.ts` e `script-base.service.ts` —
+> os mesmos 4 arquivos que o gap de `PRO-96` (2026-08-26, seção "Things to
+> actually do" abaixo) tinha deixado hardcoded pra `api.airtable.com`. Pode
+> fechar esse gap por tabela, mas não testado ainda — só lido o diff.
+>
+> **Rollback, resolvido 2026-09-16**: Luís rejeitou a proposta de flag em
+> runtime (Firestore+cache) por complexidade desnecessária agora — prefere
+> só checar as env vars do proxy no build/deploy. Ver
+> [[Resolver rollback do LiveScript com checagem de variáveis de
+> ambiente]].
 >
 > **Destino das skills genéricas**: ainda não têm um lar compartilhado —
 > quem está puxando isso é a Carolina (repo `livemode`), não Luís (ver
@@ -943,8 +959,13 @@ communicate async and often]].
       above — this only documents the gap, doesn't schedule the fix.
 - [x] Criar a issue de app-key do LiveScript no Linear — `PRO-587`,
       2026-09-14, status In Review.
-- [ ] Abrir e mergear o PR de `feature/airtable-proxy-observability`
-      (código já commitado e pushado, `7570ee6`) — fecha `PRO-587`.
+- [ ] ~~Abrir e mergear o PR de `feature/airtable-proxy-observability`
+      (código já commitado e pushado, `7570ee6`) — fecha `PRO-587`.~~
+      **Obsoleto, 2026-09-17**: o trabalho real migrou pra
+      `feature/airtable-proxy` (reimplementação completa, `83d1a7f`/
+      `84cea6f`) — ver [[Conectar o LiveScript ao proxy via
+      feature-airtable-proxy, sem OTel por ora]]. PR ainda não aberto,
+      agora a partir dessa branch.
 - [ ] Confirm the private-infra inputs in
       [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
 - [ ] Start the Go/Pulumi stack only after those inputs and ownership boundaries

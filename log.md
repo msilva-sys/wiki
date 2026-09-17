@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-09-15
+updated: 2026-09-17
 
 
 ---
@@ -6163,3 +6163,24 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   encaminha).
 - New: `syntheses/Design Doc — Intake.md`.
 - Updated: `projects/Agent Flow.md`, `index.md`.
+
+## [2026-09-17] decision | Rollback do LiveScript e branch de conexão ao proxy resolvidos antes do "Proxy | Próximos Passos"
+- Prep pra reunião com Luís e Gabrielle: revisado o Slack e o repo
+  `livemode-roteiros-nextjs` pra fechar dois itens em aberto desde
+  2026-09-15/16.
+- Rollback: Slack (DM Matheus–Luís, 2026-09-16) mostra Luís rejeitando a
+  proposta de flag em runtime (Firestore+cache) por complexidade
+  desnecessária — prefere só checar env vars do proxy no build/deploy.
+- Branch: `git log` no repo real mostra que a "confusão de branch" já foi
+  resolvida na prática em 2026-09-16 — não por cherry-pick pontual, mas por
+  reimplementação completa do roteamento pelo proxy (19 arquivos, commits
+  `83d1a7f`/`84cea6f`) sobre a `feature/airtable-proxy` limpa, descartando
+  `feature/airtable-proxy-observability` como fonte. Achado colateral, não
+  confirmado: os arquivos tocados incluem os 4 que o gap do `PRO-96`
+  (2026-08-26) tinha deixado hardcoded pra `api.airtable.com` — pode fechar
+  esse gap por tabela.
+- New: `decisions/2026-09-16 Resolver rollback do LiveScript com checagem
+  de variáveis de ambiente.md`, `decisions/2026-09-17 Conectar o LiveScript
+  ao proxy via feature-airtable-proxy, sem OTel por ora.md`.
+- Updated: `meetings/2026-09-15 Proxy e Fluxo Agêntico com Luís.md`,
+  `systems/LiveScript.md`, `projects/Airtable Proxy.md`, `index.md`.
