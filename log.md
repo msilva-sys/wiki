@@ -6202,3 +6202,24 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   feature-airtable-proxy, sem OTel por ora.md`, `systems/LiveScript.md`,
   `projects/Airtable Proxy.md`, `index.md`.
 - Comentário novo deixado na `PRO-96` (Linear) linkando pro fix atual.
+
+## [2026-09-17] refactor | Skill `/weekly-recap` criada
+- msilva pediu ajuda com o recap da semana; rascunho inicial errou o
+  formato (tabela de status atual, parecido com o que o `/weekly-prep`
+  produz) — corrigido pra retrospectivo puro (só o que mudou na semana),
+  organizado por projeto. A partir disso, msilva pediu a skill nova,
+  construída seção por seção em chat antes de escrever o arquivo (mesmo
+  método do `/weekly-prep`).
+- Espelha `/weekly-prep`: mesma janela de descoberta (`Glob` na última
+  ocorrência, não um "~7 dias" fixo — a cadência do Recap já variou entre
+  sexta e quinta), mesmo escopo (só a parte de msilva, mesmo a reunião
+  reunindo o time todo), mesmo fluxo de escrita (rascunho em chat →
+  confirmação → grava). Fonte primária pro conteúdo é o `log.md` da
+  janela, cruzado com `decisions/`/`meetings/` novos e issues do Linear
+  fechadas/criadas por msilva — regra central: só entra o que **mudou**
+  essa semana, nunca "estado atual do projeto" sem mudança por trás (isso
+  já é `projects/*.md`).
+- Vive em `dotfiles/claude/skills/weekly-recap/SKILL.md` (global, mesmo
+  padrão do `weekly-prep`/`start-day`/`finish-day`), não neste vault.
+- Updated: nenhuma página deste vault (skill vive fora dele, como o
+  `weekly-prep`).
