@@ -6184,3 +6184,21 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   ao proxy via feature-airtable-proxy, sem OTel por ora.md`.
 - Updated: `meetings/2026-09-15 Proxy e Fluxo Agêntico com Luís.md`,
   `systems/LiveScript.md`, `projects/Airtable Proxy.md`, `index.md`.
+
+## [2026-09-17] query | PRO-96 já mapeava o gap REST que a entrada acima chamou de "não confirmado"
+- msilva perguntou se o achado colateral da entrada anterior (gap de REST
+  hardcoded, 4 arquivos) já não estava mapeado na `PRO-96`. Sim — a issue
+  descreve os 7 pontos com arquivo e linha exatos, e já tinha um fix real
+  comentado em 2026-08-26 (`0af8bc4`, branch `-observability`, testado e
+  validado no Grafana), via mecanismo centralizado nos wrappers
+  compartilhados (`resolveAirtableUrl()`).
+- Correção: o `83d1a7f` de 2026-09-16 não fecha um gap por acaso — é uma
+  **reimplementação completa e paralela** do mesmo fix, arquivo por
+  arquivo, com env vars renomeadas (`AIRTABLE_PROXY_KEY`/`AIRTABLE_PROXY_URL`
+  em vez de `AIRTABLE_ENDPOINT_URL`/`AIRTABLE_PERSONAL_ACCESS_TOKEN`). Não é
+  regressão porque a branch antiga já estava descartada como fonte.
+  `PRO-96` segue `Done`, sem mudança de status.
+- Updated: `decisions/2026-09-17 Conectar o LiveScript ao proxy via
+  feature-airtable-proxy, sem OTel por ora.md`, `systems/LiveScript.md`,
+  `projects/Airtable Proxy.md`, `index.md`.
+- Comentário novo deixado na `PRO-96` (Linear) linkando pro fix atual.

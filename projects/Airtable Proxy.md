@@ -160,11 +160,16 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > [[Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por
 > ora]] e [[LiveScript]].
 >
-> **Achado colateral, não confirmado**: os 19 arquivos tocados incluem
-> `config.service.ts`, `narrator.service.ts` e `script-base.service.ts` —
-> os mesmos 4 arquivos que o gap de `PRO-96` (2026-08-26, seção "Things to
-> actually do" abaixo) tinha deixado hardcoded pra `api.airtable.com`. Pode
-> fechar esse gap por tabela, mas não testado ainda — só lido o diff.
+> **Confirmado 2026-09-17, não é achado colateral**: os 19 arquivos tocados
+> incluem os mesmos 7 pontos REST hardcoded (4 arquivos) que a `PRO-96`
+> (2026-08-26) já mapeava com arquivo e linha exatos — e já tinha corrigido,
+> testado e validado no Grafana (`0af8bc4`, comentário na issue), só que na
+> branch `-observability` agora descartada, via um mecanismo centralizado
+> (`resolveAirtableUrl()` dentro dos wrappers compartilhados). O `83d1a7f`
+> resolve o mesmo problema de novo, do zero, editando cada call site
+> diretamente com env vars renomeadas (`AIRTABLE_PROXY_KEY`/
+> `AIRTABLE_PROXY_URL`) — reimplementação paralela, não regressão. `PRO-96`
+> segue `Done`; comentário novo deixado na issue linkando pro fix atual.
 >
 > **Rollback, resolvido 2026-09-16**: Luís rejeitou a proposta de flag em
 > runtime (Firestore+cache) por complexidade desnecessária agora — prefere

@@ -171,10 +171,11 @@ ora]]: em vez de cherry-pick pontual ou aceitar o peso do OTel, Matheus (com
 Claude Code) fez uma reimplementação completa do roteamento pelo proxy em
 cima da `feature/airtable-proxy` limpa — 19 arquivos, `83d1a7f`/`84cea6f`,
 2026-09-16. Essa é a branch a usar; `-observability` descartada como fonte;
-OTel fica deferido, não descartado. **Achado colateral, não confirmado**:
-os 19 arquivos incluem os 4 que o gap de `PRO-96` (abaixo, seção Roadmap)
-tinha deixado hardcoded pra `api.airtable.com` — pode fechar esse gap por
-tabela, mas não testado ainda.
+OTel fica deferido, não descartado. **Confirmado 2026-09-17**: os 7 pontos
+REST hardcoded que a `PRO-96` já mapeava (e já tinha corrigido, `0af8bc4`,
+na branch descartada) são resolvidos de novo aqui, do zero, arquivo por
+arquivo, com env vars renomeadas — reimplementação paralela, não gap
+fechado por acaso. `PRO-96` segue `Done`.
 
 ## A historical bug — test roteiros surviving a migration
 
