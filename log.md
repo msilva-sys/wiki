@@ -6223,3 +6223,35 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   padrão do `weekly-prep`/`start-day`/`finish-day`), não neste vault.
 - Updated: nenhuma página deste vault (skill vive fora dele, como o
   `weekly-prep`).
+
+## [2026-09-21] synthesis | LiveAuth — identidade e autorização por grupo entre apps Livemode
+- msilva pediu ajuda pra planejar autorização granular por grupo (a trava
+  de domínio existente só resolve autenticação). Construído em chat, seção
+  por seção, com a skill `design-doc`. Escopo mudou de "só Fluxo Agêntico"
+  pra "abstrato, multi-app", primeiro consumidor concreto sendo a rota
+  `/dashboard` (planejada, não implementada) da Airtable Proxy.
+- Desenho passou por várias voltas até fechar: (1) fonte de grupo —
+  descartado Google Workspace Groups e ABAC, fechado em RBAC com grupo
+  como roster arbitrário, não fronteira organizacional; (2) autenticação —
+  descoberto que a Livemode já usa Firebase Auth (LiveScript,
+  `livemode-roteiros-dev`), então LiveAuth vira abstração sobre Firebase
+  Auth em vez de OAuth próprio; (3) onde mora grupo/política — girou entre
+  local-por-app e centralizado no LiveAuth várias vezes, fechado em
+  LiveAuth decidindo autorização por completo (não só identidade) e
+  emitindo um token assinado escopado por app; (4) enforcement —
+  isolamento de rede (LiveAuth como reverse proxy completo) considerado e
+  descartado, porque Cloud Run restringe ingress por serviço inteiro, não
+  por rota; fechado em middleware mínimo por app, instalado por uma skill
+  companheira `liveauth-connect` (espelha `airtable-proxy-connect`), pra
+  ninguém escrever a integração à mão.
+- Cruzado com um resumo colado por msilva de uma sessão paralela (RBAC por
+  grupo, Firestore, Google IAP descartado pelo mesmo motivo — não cobre
+  Vercel/Cloudflare) — convergência em RBAC/grupo/IAP descartado; diverge
+  em onde mora o registro de grupo (Firestore de terceiros vs. dado
+  próprio do LiveAuth aqui).
+- New: `syntheses/LiveAuth — Identidade e Autorização por Grupo entre Apps
+  Livemode.md`.
+- Updated: `index.md`. **Por pedido explícito de msilva, não linkado ainda
+  de `projects/Airtable Proxy.md` nem da decisão de trava de domínio do
+  Fluxo Agêntico** — projeto ainda precisa amadurecer antes de fanar pras
+  páginas de entidade.
