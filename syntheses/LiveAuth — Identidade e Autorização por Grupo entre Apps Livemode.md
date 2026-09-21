@@ -25,6 +25,11 @@ Google IAP descartado pelo mesmo motivo); a diferença principal é onde
 mora o registro de grupo — aqui decidido como dado do próprio LiveAuth
 (ver Interfaces), não Firestore de terceiros.
 
+**2026-09-21, conversa com Luís**: recomendou criar a skill de ajuste de
+cliente (`liveauth-connect`) — confirma o desenho já proposto na seção
+Interfaces, espelhando `airtable-proxy-connect`. Não resolve o Open Issue
+de quem é dono da infra do LiveAuth.
+
 ## Objective
 
 Dar aos apps internos da Livemode uma forma compartilhada de saber não só

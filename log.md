@@ -6272,3 +6272,10 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   deck da Bossabox de fato disse), `projects/Agent Flow.md` (mesmo
   callout do cross-read da Bossabox, 2026-08-26, ganhou a atualização),
   `index.md`.
+
+## [2026-09-21] synthesis | LiveAuth — confirmação do Luís sobre a skill liveauth-connect
+- Conversa com Luís confirma a criação da skill `liveauth-connect`
+  (ajusta código do cliente, espelha `airtable-proxy-connect`) — já
+  estava desenhada na seção Interfaces do synthesis, agora validada.
+- Updated: `syntheses/LiveAuth — Identidade e Autorização por Grupo entre
+  Apps Livemode.md`.
