@@ -166,8 +166,7 @@ carregava o OTel que preocupava Luís junto. Bate com o que ele disse na call
 — essa branch "leva mais do que só integração com o proxy".
 
 **Resolvido 2026-09-17** — ver
-[[Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por
-ora]]: em vez de cherry-pick pontual ou aceitar o peso do OTel, Matheus (com
+[[2026-09-17 Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por ora]]: em vez de cherry-pick pontual ou aceitar o peso do OTel, Matheus (com
 Claude Code) fez uma reimplementação completa do roteamento pelo proxy em
 cima da `feature/airtable-proxy` limpa — 19 arquivos, `83d1a7f`/`84cea6f`,
 2026-09-16. Essa é a branch a usar; `-observability` descartada como fonte;

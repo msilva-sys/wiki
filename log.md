@@ -6279,3 +6279,28 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   estava desenhada na seção Interfaces do synthesis, agora validada.
 - Updated: `syntheses/LiveAuth — Identidade e Autorização por Grupo entre
   Apps Livemode.md`.
+
+## [2026-09-21] lint | health check + fixes
+- Rodado o check completo (contradições, staleness, órfãs/dead-ends,
+  raw sem página, contradição intra-página, wikilinks quebrados,
+  decisão aberta vs. resolvida, callouts `[!msilva]` pendentes).
+- Achado real e corrigido: as duas decisions mais novas do LiveScript
+  (`2026-09-16 Resolver rollback...`, `2026-09-17 Conectar o
+  LiveScript...`) eram linkadas em 6 lugares sem o prefixo de data,
+  quebrando o wikilink — causa também das duas aparecerem como órfãs.
+  Corrigido o link em todos os call sites, incluindo dois casos com
+  quebra de linha dentro do `[[...]]`.
+- Corrigido também um line-wrap quebrando a data dentro do link em
+  `concepts/Fronteira A10×A14 (informação e métricas).md` (linha 387).
+- `reference/AIRTABLEGC-34.md`: `status: active` → `stale` (Jira já é
+  legado, página não é mais mantida) e `updated` atualizado.
+- Sem ação: demais achados são ruído esperado (source pages de uma
+  sessão só, meeting/people pages naturalmente paradas, dois clippings
+  reais ainda não ingeridos — decisão de ingest fica para quando
+  msilva pedir) ou falsos positivos já descartados no próprio check.
+- Updated: `index.md` (×2 blocos), `projects/Airtable Proxy.md` (×2),
+  `meetings/2026-09-15 Proxy e Fluxo Agêntico com Luís.md` (×2),
+  `systems/LiveScript.md`, `decisions/2026-09-17 Conectar o LiveScript
+  ao proxy via feature-airtable-proxy, sem OTel por ora.md`,
+  `concepts/Fronteira A10×A14 (informação e métricas).md`,
+  `reference/AIRTABLEGC-34.md`.

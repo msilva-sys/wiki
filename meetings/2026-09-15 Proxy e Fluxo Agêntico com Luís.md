@@ -139,5 +139,5 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
 - [[Packaging as skills]]
 - [[Luís Fernandez]]
 - [[Yasmin Macedo]]
-- [[Resolver rollback do LiveScript com checagem de variáveis de ambiente]]
-- [[Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por ora]]
+- [[2026-09-16 Resolver rollback do LiveScript com checagem de variáveis de ambiente]]
+- [[2026-09-17 Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por ora]]

@@ -1,7 +1,7 @@
 ---
 type: reference
-status: active
-updated: 2026-08-13
+status: stale
+updated: 2026-09-21
 aliases: [GC-34]
 tags: [airtable, jira, livescript]
 ---

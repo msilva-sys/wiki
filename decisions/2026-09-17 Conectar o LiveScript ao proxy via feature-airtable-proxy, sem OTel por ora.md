@@ -70,4 +70,4 @@ o PR real agora sai da `feature/airtable-proxy`, ainda não aberto.
 - [[Airtable Proxy]]
 - [[LiveScript]]
 - [[2026-09-15 Proxy e Fluxo Agêntico com Luís]]
-- [[Resolver rollback do LiveScript com checagem de variáveis de ambiente]]
+- [[2026-09-16 Resolver rollback do LiveScript com checagem de variáveis de ambiente]]

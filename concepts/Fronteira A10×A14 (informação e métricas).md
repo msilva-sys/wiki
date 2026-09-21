@@ -383,8 +383,7 @@ que o A10-como-construído é, na prática, um **segundo A14** — julga saúde 
 uma iniciativa, não compara iniciativas concorrentes para decidir onde
 alocar capacidade. A distinção A10 (iniciativa) × A14 (projeto) descrita
 acima está correta como fronteira de **status/saúde**, mas isso não é a
-mesma coisa que a **priorização de portfólio** da proposta original ([[2026-
-08-24 Start Agent Flow with A10 Portfolio]]). O motivo é falta de dado, não
+mesma coisa que a **priorização de portfólio** da proposta original ([[2026-08-24 Start Agent Flow with A10 Portfolio]]). O motivo é falta de dado, não
 falha de desenho: priorizar entre iniciativas exige esforço, retorno
 esperado e risco, nenhum dos três presente no Linear hoje (vivem no
 Airtable). Ver [[A10 avalia saúde, não prioriza portfólio]] para o

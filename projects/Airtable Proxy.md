@@ -157,8 +157,7 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > cima da `feature/airtable-proxy` limpa (19 arquivos, `83d1a7f`/`84cea6f`,
 > 2026-09-16) — essa é a branch a usar; `-observability` descartada como
 > fonte; OTel deferido, não descartado. Ver
-> [[Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por
-> ora]] e [[LiveScript]].
+> [[2026-09-17 Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por ora]] e [[LiveScript]].
 >
 > **Confirmado 2026-09-17, não é achado colateral**: os 19 arquivos tocados
 > incluem os mesmos 7 pontos REST hardcoded (4 arquivos) que a `PRO-96`
@@ -174,8 +173,7 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > **Rollback, resolvido 2026-09-16**: Luís rejeitou a proposta de flag em
 > runtime (Firestore+cache) por complexidade desnecessária agora — prefere
 > só checar as env vars do proxy no build/deploy. Ver
-> [[Resolver rollback do LiveScript com checagem de variáveis de
-> ambiente]].
+> [[2026-09-16 Resolver rollback do LiveScript com checagem de variáveis de ambiente]].
 >
 > **Destino das skills genéricas**: ainda não têm um lar compartilhado —
 > quem está puxando isso é a Carolina (repo `livemode`), não Luís (ver
