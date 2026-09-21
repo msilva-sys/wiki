@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-08-26
+updated: 2026-09-21
 date: 2026-08-26
 aliases: [bossabox vs agent flow, assessment cross-read]
 tags: [agents, bossabox, dora, vsm, team-topologies, research]
@@ -62,11 +62,21 @@ Two open gaps this fills at once:
   inventing what to measure from scratch.
 
 Bossabox's example dashboard is a proven, standard instrument set: **DORA**
-(deploy frequency, lead time, change-failure rate, recovery time) for
-delivery rhythm, and **VSM** (dwell time per pipeline stage) for where
-time actually goes. A10 doesn't need to invent a metric vocabulary —
-it can adopt these and skip straight to "which of our tools can produce
-them."
+(deploy frequency, lead time, change-failure rate, recovery time — the
+classic 4, per Bossabox's own deck) for delivery rhythm, and **VSM**
+(dwell time per pipeline stage) for where time actually goes. A10 doesn't
+need to invent a metric vocabulary — it can adopt these and skip straight
+to "which of our tools can produce them."
+
+> [!important] Corrected 2026-09-21 — DORA's own framework is 5 metrics now, not 4
+> [[DORA Metrics Guide]] (read directly from dora.dev, not secondhand via
+> Bossabox): the official framework adds **Deployment Rework Rate**
+> (unplanned deploys reacting to a production incident) as its own
+> instability metric, split out from Change Fail Rate. Bossabox's deck
+> wasn't wrong — it's citing the classic 4, which is what most people mean
+> by "DORA metrics" — but citing DORA directly from here on should use the
+> 5-metric version. No numeric Elite/High/Medium/Low thresholds are on
+> this particular DORA page, unlike what I expected going in.
 
 ## 5. A more concrete version of A4 Teacher's vague maturity ladder
 

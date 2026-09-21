@@ -6255,3 +6255,20 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   de `projects/Airtable Proxy.md` nem da decisão de trava de domínio do
   Fluxo Agêntico** — projeto ainda precisa amadurecer antes de fanar pras
   páginas de entidade.
+
+## [2026-09-21] ingest | DORA Metrics guide (dora.dev)
+- Read `https://dora.dev/guides/dora-metrics/` (live WebFetch, sem raw
+  local — mesma convenção já usada em `sources/How we built our
+  multi-agent research system.md`).
+- Achado: o framework oficial da DORA tem **5** métricas hoje (throughput:
+  change lead time, deployment frequency, failed-deployment recovery time;
+  instability: change fail rate + **deployment rework rate**, nova), não
+  as 4 clássicas já citadas nesta wiki via o deck de vendas da Bossabox.
+  Sem faixas numéricas (Elite/High/Medium/Low) nesta página específica —
+  ao contrário do esperado.
+- New: `sources/DORA Metrics Guide.md`.
+- Updated: `syntheses/What Bossabox's Assessment suggests for Agent
+  Flow.md` (callout de correção — 4 vs. 5 métricas, sem reescrever o que o
+  deck da Bossabox de fato disse), `projects/Agent Flow.md` (mesmo
+  callout do cross-read da Bossabox, 2026-08-26, ganhou a atualização),
+  `index.md`.

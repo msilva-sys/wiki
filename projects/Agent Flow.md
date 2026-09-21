@@ -119,6 +119,14 @@ tags: [agents, llm, automation, onboarding, research]
 > [[Agents read primary sources]] design call; and names an unowned
 > bus-factor risk pattern (Luís on GCP, Arthur on the matriz schema)
 > nobody currently tracks.
+>
+> **DORA read direct from the source, 2026-09-21**: [[DORA Metrics Guide]]
+> — the official framework is actually **5** metrics now (throughput:
+> change lead time, deployment frequency, failed-deployment recovery time;
+> instability: change fail rate, and a new one, deployment rework rate),
+> not the classic 4 Bossabox's deck cited. No numeric Elite/High/Medium/Low
+> thresholds on that particular DORA page. Still open whether A10 adopts
+> this vocabulary outright.
 
 > [!tip] M1 scope settled — A10 + A14 together, PoC first — msilva, 2026-08-24
 > [[2026-08-24 Build A10 and A14 together, PoC first]]: answers the "one
