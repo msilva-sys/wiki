@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-09-21
+updated: 2026-09-22
 date: 2026-09-21
 tags: [auth, security, proxy, agent-flow, liveauth]
 aliases: [LiveAuth, autorização por grupo, grupo de acesso, liveauth-connect]
@@ -29,6 +29,9 @@ mora o registro de grupo — aqui decidido como dado do próprio LiveAuth
 cliente (`liveauth-connect`) — confirma o desenho já proposto na seção
 Interfaces, espelhando `airtable-proxy-connect`. Não resolve o Open Issue
 de quem é dono da infra do LiveAuth.
+
+**2026-09-22, conversa com Luís**: nome do projeto fechado como
+**LiveAuth**. Falta validar com a Gabi.
 
 ## Objective
 
@@ -156,6 +159,9 @@ uma implementação OAuth própria, mais um **registro de app** e um
 
 ## Open Issues
 
+- **Validar o nome "LiveAuth" com a Gabi** — fechado com Luís em
+  2026-09-22, falta confirmação dela antes de considerar o nome
+  definitivo.
 - **Qual projeto Firebase o LiveAuth usa** — o mesmo `livemode-roteiros-dev`
   do LiveScript, ou um novo dedicado? Próximo passo: decidir no desenho
   técnico do LiveAuth.

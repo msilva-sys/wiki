@@ -6304,3 +6304,10 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   ao proxy via feature-airtable-proxy, sem OTel por ora.md`,
   `concepts/Fronteira A10×A14 (informação e métricas).md`,
   `reference/AIRTABLEGC-34.md`.
+
+## [2026-09-22] synthesis | LiveAuth — nome fechado com Luís
+- msilva confirmou em chat: nome do projeto fechado como LiveAuth com
+  Luís (conversa fora do Slack, sem transcript). Falta validar com a
+  Gabi antes de considerar definitivo.
+- Updated: `syntheses/LiveAuth — Identidade e Autorização por Grupo
+  entre Apps Livemode.md` (nota datada + novo Open Issue), `index.md`.
