@@ -1,0 +1,288 @@
+<title>LiveAuth vs Sentinela</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5f6f3;
+    --paper-2: #ffffff;
+    --ink: #14181a;
+    --ink-dim: #565f5a;
+    --line: #dee2dd;
+    --live: #1a9850;
+    --live-tint: #e8f5ec;
+    --watch: #2557a7;
+    --watch-tint: #e9f0fb;
+    --font-display: "Public Sans", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14171a;
+      --paper-2: #1b1f22;
+      --ink: #edeeec;
+      --ink-dim: #a2a9a4;
+      --line: #2b302d;
+      --live: #3bd07a;
+      --live-tint: #133523;
+      --watch: #6ea3ec;
+      --watch-tint: #16273f;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #14171a;
+    --paper-2: #1b1f22;
+    --ink: #edeeec;
+    --ink-dim: #a2a9a4;
+    --line: #2b302d;
+    --live: #3bd07a;
+    --live-tint: #133523;
+    --watch: #6ea3ec;
+    --watch-tint: #16273f;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-display);
+    line-height: 1.55;
+  }
+
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 3.5rem 1.75rem 5rem;
+  }
+
+  .byline {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin: 0 0 1.1rem;
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 4vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    margin: 0 0 1rem;
+    text-wrap: balance;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+    color: var(--ink-dim);
+    max-width: 62ch;
+    margin: 0 0 3rem;
+  }
+
+  .lead strong { color: var(--ink); font-weight: 600; }
+
+  h2 {
+    font-size: 0.78rem;
+    font-family: var(--font-mono);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin: 0 0 1.2rem;
+  }
+
+  section + section { margin-top: 3rem; }
+
+  /* ---------- profile cards ---------- */
+
+  .profiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .profile {
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.5rem 1.5rem 1.7rem;
+  }
+
+  .profile .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+  }
+
+  .profile.live .tag { color: var(--live); background: var(--live-tint); }
+  .profile.watch .tag { color: var(--watch); background: var(--watch-tint); }
+
+  .profile .tag .dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .profile h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.5rem;
+  }
+
+  .profile p.desc {
+    color: var(--ink-dim);
+    font-size: 0.95rem;
+    margin: 0 0 1.2rem;
+  }
+
+  .profile dl {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .profile dt {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin: 0;
+  }
+
+  .profile dd {
+    margin: 0.2rem 0 0;
+    font-size: 0.92rem;
+  }
+
+  /* ---------- table ---------- */
+
+  .table-wrap { overflow-x: auto; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  thead th {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    font-weight: 500;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  tbody th {
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--ink-dim);
+    font-size: 0.85rem;
+  }
+
+  tbody tr:last-child td, tbody tr:last-child th { border-bottom: none; }
+
+  /* ---------- relation note ---------- */
+
+  .relation {
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--ink);
+    border-radius: 0 8px 8px 0;
+    padding: 1.2rem 1.4rem;
+    font-size: 0.98rem;
+  }
+
+  .relation strong { font-weight: 700; }
+
+  @media (max-width: 620px) {
+    .profiles { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="page">
+
+  <p class="byline">Comparativo · 2026-09-22</p>
+  <h1>LiveAuth vs Sentinela</h1>
+  <p class="lead">
+    Aparecem juntos por causa do mesmo projeto, mas são coisas de naturezas
+    diferentes: <strong>LiveAuth é o produto</strong> que deixa a pessoa entrar
+    num app da Livemode; <strong>Sentinela é a checagem</strong> que confere se
+    o que foi construído — LiveAuth incluso — está seguro antes de ir pro ar.
+  </p>
+
+  <section class="profiles">
+    <div class="profile live">
+      <span class="tag"><span class="dot"></span>Produto</span>
+      <h3>LiveAuth</h3>
+      <p class="desc">Autenticação e identidade do ecossistema Livemode.</p>
+      <dl>
+        <div><dt>Pra quem</dt><dd>Usuário final, no login</dd></div>
+        <div><dt>Como</dt><dd>Login único via Google, orquestrado pelo Firebase Auth</dd></div>
+        <div><dt>Onde vive</dt><dd>Dentro de cada app, ativo o tempo todo</dd></div>
+      </dl>
+    </div>
+    <div class="profile watch">
+      <span class="tag"><span class="dot"></span>Processo de TI</span>
+      <h3>Sentinela</h3>
+      <p class="desc">Checagem de segurança rodada pelo time de TI, na própria máquina.</p>
+      <dl>
+        <div><dt>Pra quem</dt><dd>Time de TI/dev, antes de liberar produção</dd></div>
+        <div><dt>Como</dt><dd>Lê o código e testa o ambiente publicado, com prova mínima</dd></div>
+        <div><dt>Quando</dt><dd>Sob demanda, depois do deploy</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lado a lado</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th></th><th>LiveAuth</th><th>Sentinela</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Resolve</th><td>Quem é essa pessoa, deixa ela entrar</td><td>Esse site está seguro pra ir pro ar</td></tr>
+          <tr><th>Quem usa</th><td>Usuário final</td><td>Time de TI/dev</td></tr>
+          <tr><th>Quando age</th><td>No momento do login</td><td>Depois do deploy</td></tr>
+          <tr><th>Onde roda</th><td>Dentro do app, em produção</td><td>Local, sob demanda</td></tr>
+          <tr><th>Produz</th><td>Sessão autenticada</td><td>Relatório com nota, no inventário</td></tr>
+          <tr><th>Identidade visual</th><td>Sim — tema Livemode</td><td>Não — é um processo, sem interface própria</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Como se relacionam</h2>
+    <p class="relation">
+      São etapas diferentes do mesmo ciclo de vida de produto: o LiveAuth é
+      construído primeiro; o Sentinela audita esse trabalho antes de ele ganhar
+      visibilidade oficial. <strong>Ter a autenticação bem feita não dispensa a
+      checagem de segurança do resto do sistema.</strong>
+    </p>
+  </section>
+
+</div>
