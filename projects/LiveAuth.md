@@ -44,8 +44,13 @@ existe, `.firebaserc` aponta pro projeto dedicado
 
 Inventário de apps com auth própria feito em 2026-09-24, a pedido de
 msilva (achou por fora um deploy — `tasks-projetos` na Vercel — que a
-busca de código do GitHub não indexava): **11 deploys** identificados
-reimplementando gate de e-mail/domínio cada um do seu jeito (skill
-`trava-de-dominio`, Auth.js próprio, sessão Firebase própria), fora o
-Fluxo Agêntico. Nenhum é consumidor do LiveAuth hoje. Ver
+busca de código do GitHub não indexava). **Duas rodadas de correção no
+caminho**: msilva também apontou que **LiveScript** tinha login (achado
+real que a primeira varredura tinha classificado como "sem gate"),
+levando a uma terceira passada que achou mais 5 casos. Total final:
+**17 deploys** reimplementando gate de e-mail/domínio cada um do seu
+jeito, fora o Fluxo Agêntico — **18 apps** no total, nenhum consumidor
+do LiveAuth hoje. Achado notável: `livemode-projects-management` já tem
+autorização por grupo própria (`authz.ts`), o precedente mais próximo do
+objetivo do LiveAuth achado no levantamento. Ver
 [[Trava de domínio e autenticação — inventário para o LiveAuth]].

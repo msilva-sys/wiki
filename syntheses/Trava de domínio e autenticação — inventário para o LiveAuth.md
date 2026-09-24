@@ -37,6 +37,28 @@ reverso pra outros Pages projects, `status-salas` só redireciona domínio
 antigo, `whatsapp-image-decryptor/functions` é Cloud Function de
 descriptografia de imagem).
 
+**Correção, mesma sessão**: essa segunda rodada também tinha lacuna —
+só olhava a **raiz** do repo por `middleware`/`functions`/`vercel.json`.
+msilva apontou um caso real que ela classificou errado: **LiveScript**
+(`livemode-roteiros-nextjs`) tem login em produção
+(`roteiros.livemode.space/auth/signin`) mas não usa `middleware.ts`
+nenhum — o gate é feito num `app/(auth)/layout.tsx` (client-side,
+redirect) + validação de token do Firebase nas rotas de API (server-side,
+`withApi`, 401/403), documentado em `docs/architecture/ADR-007-firebase-
+auth-authentication.md`. **Terceira rodada**: grep de palavra-chave
+(`auth`, `signin`, `login`, `passport`) na árvore inteira de arquivos
+(`git/trees/…?recursive=true`) de todo repo antes classificado como "sem
+gate" — achou mais 5 casos reais (detalhados abaixo) que a segunda rodada
+também tinha perdido. Também rodada uma checagem de `firebase.json` na
+raiz de todo repo (Firebase Hosting não deixa rastro em `vercel.json`);
+não achou nenhum caso novo além do LiveScript — os outros resultados
+eram repos vazios (placeholder), confirmado por leitura direta.
+
+Mesmo essa terceira rodada não é garantidamente exaustiva — um gate
+embutido direto num `index.html` estático sem nenhum framework, ou uma
+hospedagem fora de Vercel/Cloudflare/Firebase, não deixaria nenhum dos
+sinais buscados. Ver Open questions.
+
 ## Padrão 1 — skill `trava-de-dominio` (Google OAuth por domínio, 5 deploys)
 
 Fonte: `livemode-brain/skills/trava-de-dominio`. Cada instalação é
@@ -75,44 +97,66 @@ viewer, allow-lists nomeadas) — mais granular que o modelo do LiveAuth
 hoje (grupo binário por `app_id`, ver Non-goals do design doc). Se
 migrarem, perdem essa granularidade a menos que criem um grupo por role.
 
-## Padrão 3 — sessão Firebase própria (1 deploy)
+## Padrão 3 — sessão Firebase própria (4 deploys)
 
-`tasks-projetos` (pessoal, o que msilva achou na Vercel): Firebase Auth
-client + Admin SDK, cookie de sessão verificado no server, role
-(`admin`/`viewer`) por `ADMIN_EMAILS`. Middleware só confere presença do
-cookie (Edge Runtime não roda o Admin SDK) — mesma técnica de
-"checagem barata no edge, checagem real no server" que `livemode-juridico`
-usa e que o próprio design do LiveAuth também usa (Blocking Function +
-verificação de assinatura). É o deploy mais parecido em arquitetura com o
-LiveAuth, mas construído antes e isolado.
+| Repo | Conta | Detalhe |
+|---|---|---|
+| `tasks-projetos` | pessoal | Firebase Auth client + Admin SDK, cookie de sessão verificado no server, role (`admin`/`viewer`) por `ADMIN_EMAILS`. Middleware só confere presença do cookie (Edge Runtime não roda o Admin SDK) |
+| `livemode-roteiros-nextjs` (**LiveScript**) | pessoal | achado por msilva (não pela busca) — sem middleware nenhum: gate client-side em `app/(auth)/layout.tsx` + token do Firebase validado nas rotas de API (`withApi`, 401/403), domínio checado no client (`hd` hint + checagem pós-login). Documentado em ADR-007 |
+| `livemode-video-downloader` | org | Firebase Auth, login próprio; único com **infra do auth em Terraform** (`infra/tofu/modules/firebase-auth`) |
+| `livemode-projects-management` | org | "Console de Publicação" — restringe quem pode publicar quais projetos na Vercel sem dar acesso à conta. Firebase Auth (domínio checado em `identity.ts`, `endsWith` contra truque de subdomínio) + **autorização por grupo própria** (`authz.ts`: `admins` globais + `deployer_groups` por projeto, config-driven, RF-03/04/05 documentados no PRD) |
 
-## Padrão 4 — Supabase Auth (1 deploy, sem confirmação de domínio)
+`livemode-projects-management` merece destaque: é o precedente mais
+próximo do objetivo do LiveAuth achado neste levantamento — grupo decide
+quem pode fazer o quê em qual projeto — só que construído e preso a um
+app só, sem ambição de ser compartilhado. Mesma técnica de "checagem
+barata no edge/client, checagem real no server" nos quatro, e é o mesmo
+modelo mental do próprio design do LiveAuth (Blocking Function +
+verificação de assinatura).
 
-`live-content` (pessoal): sessão via Supabase, redireciona pra
-`/auth/signin` sem sessão. Não achei checagem de domínio de e-mail no
-código lido — se restringe a `@livemode.com`, é por outro mecanismo não
-identificado nesta varredura.
+## Padrão 4 — Supabase Auth (2 deploys)
 
-## Padrão 5 — HTTP Basic Auth, credencial compartilhada (2 deploys)
+| Repo | Conta | Domínio confirmado? |
+|---|---|---|
+| `caz-tv-escala-hub` | pessoal | sim — `ALLOWED_DOMAIN = "livemode.com"`, guard de rota client-side (TanStack Router `_authenticated`), tem flag de bypass pra dev (`VITE_DISABLE_AUTH`) |
+| `live-content` | pessoal | não achei no código lido — sessão via Supabase, redireciona pra `/auth/signin` sem sessão, mas nenhuma checagem de sufixo de e-mail identificada |
 
-`world-cup-picks` e `Monitor-de-Dados` (pessoal): usuário/senha únicos
-via env var, não por pessoa. Modelo de segurança diferente dos outros —
-mais parecido com a "senha compartilhada" que o `guia-de-um-builder`
-documentou ter abandonado (ver `governanca.md` desse repo, trava de
-domínio por e-mail substituiu senha única em 2026-09-22). Ambos falham
-aberto se a env var não estiver configurada.
+## Padrão 5 — segredo único compartilhado, não domínio (3 deploys)
+
+`world-cup-picks` e `Monitor-de-Dados` (pessoal): HTTP Basic Auth,
+usuário/senha únicos via env var, não por pessoa. `copa-audiencia`
+(`reports-app`, pessoal): mesma ideia com implementação própria — senha
+única, cookie assinado HMAC-SHA256, gate no entry do servidor Nitro,
+comentado no próprio código como decisão deliberada ("no-op se
+`APP_PASSWORD` não setada — rollback trivial"). Modelo de segurança
+diferente dos outros — mais parecido com a "senha compartilhada" que o
+`guia-de-um-builder` documentou ter abandonado (ver `governanca.md`
+desse repo, trava de domínio por e-mail substituiu senha única em
+2026-09-22). Os três falham aberto se o segredo não estiver configurado.
+
+## Padrão 6 — Express + Passport, servidor próprio (1 deploy)
+
+`portal-audiencia-programacao` (pessoal): não é Next.js — um `api/
+index.ts` só, rodando como função da Vercel, com Express + Passport
+(`GoogleStrategy`), sessão via `cookie-session`, domínio checado no
+callback da strategy (`ALLOWED_DOMAIN = 'livemode.com'`), headers de
+segurança (`helmet`, HSTS) configurados manualmente. Arquitetura mais
+distante dos outros padrões — nenhum framework de auth compartilhado.
 
 ## Sem gate detectável (não é prova de ausência)
 
-Têm `vercel.json` mas nenhum `middleware`/`functions` na raiz —
-`bq-quality`, `caz-tv-escala-hub`, `content-pulse`, `copa-audiencia`,
-`copa2026-labelling`, `dashboard_ao_vivo_copa`, `livemode-roteiros-nextjs`,
-`narradores-cztv-web`, `portal-audiencia-programacao`,
-`social-media-thumb-collector`. Não confirma ausência de proteção — pode
-haver Vercel Deployment Protection configurado só no painel (não aparece
-no repo), ou o conteúdo pode ser deliberadamente público (ex. picks de
-Copa do Mundo). Não investigado a fundo; relevante pro escopo da issue
-PRO-717 (skill que aponta apps com dado sensível sem autenticação).
+Têm `vercel.json` mas nenhum `middleware`/`functions`/sinal de auth
+achado na árvore inteira do repo — `bq-quality`, `content-pulse`,
+`copa2026-labelling`, `dashboard_ao_vivo_copa`, `narradores-cztv-web`,
+`social-media-thumb-collector`. **Três repos saíram desta lista na
+correção** (`caz-tv-escala-hub`, `copa-audiencia`,
+`portal-audiencia-programacao`) — tinham gate real que só apareceu numa
+varredura mais funda; ver Método. Não confirma ausência de proteção nos
+6 restantes — pode haver Vercel Deployment Protection configurado só no
+painel (não aparece no repo), ou o conteúdo pode ser deliberadamente
+público (ex. picks de Copa do Mundo). Não investigado a fundo; relevante
+pro escopo da issue PRO-717 (skill que aponta apps com dado sensível sem
+autenticação).
 
 ## `livemode-juridico`: repo fantasma na org
 
@@ -132,23 +176,35 @@ Issue "qual projeto Firebase" na synthesis de design** — ver
 
 ## Implicação para o LiveAuth
 
-Superfície de apps com auth próprio identificados: **11 deploys** (5
-skill + 5 Auth.js própria + 1 Firebase própria), fora os 2 de Basic Auth
-(modelo diferente, não comparável) e o Fluxo Agêntico. O design doc do
-LiveAuth cobre migração do Fluxo Agêntico como não-objetivo por ora, mas
-não menciona nenhum destes 11 — se um dia virar migração, não é troca de
-um lugar só, e pelo menos 2 apps (`sistemas-visuais-hub`,
-`ai-enablement-hub`) têm RBAC por pessoa que o modelo atual de grupo
-binário do LiveAuth não cobre sem adaptação.
+Superfície de apps com auth/domínio próprio identificados: **17 deploys**
+(5 skill `trava-de-dominio` + 5 Auth.js própria + 4 Firebase própria + 2
+Supabase + 1 Express/Passport), fora os 3 de segredo único compartilhado
+(modelo diferente, não comparável) e o Fluxo Agêntico — **18 apps** no
+total já resolvendo esse problema, cada um à sua maneira, nenhum
+consumidor do LiveAuth. O design doc do LiveAuth cobre migração do Fluxo
+Agêntico como não-objetivo por ora, mas não menciona nenhum dos outros
+17 — se um dia virar migração, não é troca de um lugar só. Pelo menos 3
+apps já têm autorização mais granular que o modelo atual de grupo
+binário por `app_id` do LiveAuth: `sistemas-visuais-hub` e
+`ai-enablement-hub` (RBAC por pessoa/role), e sobretudo
+`livemode-projects-management` (grupo por projeto, `deployer_groups`) —
+o precedente mais próximo do próprio objetivo do LiveAuth, vale uma
+leitura direta do `authz.ts` de lá antes de fechar o modelo de grupo
+final.
 
 ## Open questions
 
-- Não confirmado se algum dos 11 apps tem plano de virar consumidor do
+- Não confirmado se algum dos 17 apps tem plano de virar consumidor do
   LiveAuth.
 - `live-content` (Supabase) — não confirmado se restringe por domínio ou
   não.
-- 10 repos com `vercel.json` sem gate detectável no código — não
-  investigado se têm proteção fora do repo (Vercel Deployment
-  Protection) ou se são intencionalmente públicos.
+- 6 repos com `vercel.json` sem gate detectável — não investigado se têm
+  proteção fora do repo (Vercel Deployment Protection) ou se são
+  intencionalmente públicos.
+- **Método ainda não é garantidamente exaustivo** (ver correção na seção
+  Método) — um gate embutido direto num `index.html` estático, ou fora
+  de Vercel/Cloudflare/Firebase, não deixaria nenhum dos sinais
+  buscados. Se surgir mais algum caso, seguir o mesmo padrão desta
+  correção: registrar inline, não reescrever silenciosamente.
 - Escopo desta pesquisa: conta `tech-livemode` (org + pessoal). Não
   cobre outras contas/orgs GitHub da Livemode, se existirem.

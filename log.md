@@ -6387,3 +6387,36 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   entre Apps Livemode.md` (Open Issue do projeto Firebase marcado
   resolvido), `index.md` (nova linha em Syntheses, linhas de LiveAuth
   atualizadas em Projects e Syntheses).
+
+## [2026-09-24] query | correção — inventário de auth tinha lacuna de método
+- msilva apontou que o LiveScript (`livemode-roteiros-nextjs`) tem login
+  em produção (`roteiros.livemode.space/auth/signin`) mas a synthesis
+  do mesmo dia listava esse repo como "sem gate detectável" — a
+  varredura de árvore de arquivos só procurava `middleware.js/ts`,
+  `functions/`, `vercel.json` na raiz; o LiveScript protege por
+  `app/(auth)/layout.tsx` (client) + validação de token nas rotas de
+  API (`withApi`, server), sem middleware nenhum — sinal que o método
+  não pegava.
+- Rodada uma terceira passada (grep de `auth`/`signin`/`login`/
+  `passport` na árvore inteira de todo repo antes marcado "sem gate")
+  e achou mais 5 casos reais perdidos pela segunda rodada:
+  `caz-tv-escala-hub` (Supabase, domínio confirmado), `portal-
+  audiencia-programacao` (Express+Passport, servidor próprio),
+  `livemode-video-downloader` (Firebase, infra em Terraform),
+  `livemode-projects-management` (Firebase + **autorização por grupo
+  própria**, `authz.ts` — precedente mais próximo do objetivo do
+  LiveAuth achado em todo o levantamento), `copa-audiencia`/
+  `reports-app` (senha única, não domínio — some da lista "sem gate"
+  mas não conta como app domain-restricted).
+- Checagem extra por `firebase.json` na raiz (Firebase Hosting não
+  aparece em `vercel.json`) não achou nenhum caso novo — os outros
+  resultados eram repos vazios (placeholder), confirmado por leitura
+  direta.
+- Total corrigido: 17 deploys com auth/domínio próprio (era 11) + Fluxo
+  Agêntico = 18 apps; lista "sem gate detectável" caiu de 10 pra 6
+  repos.
+- Updated (correção inline, nada reescrito por cima): `syntheses/Trava
+  de domínio e autenticação — inventário para o LiveAuth.md` (Método,
+  Padrões 3–6 reescritos, Implicação, Open questions),
+  `projects/LiveAuth.md` (seção de impacto), `index.md` (linhas de
+  LiveAuth em Projects e Syntheses).
