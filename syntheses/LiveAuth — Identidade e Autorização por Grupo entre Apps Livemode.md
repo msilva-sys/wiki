@@ -164,9 +164,12 @@ uma implementação OAuth própria, mais um **registro de app** e um
 - **Validar o nome "LiveAuth" com a Gabi** — fechado com Luís em
   2026-09-22, falta confirmação dela antes de considerar o nome
   definitivo.
-- **Qual projeto Firebase o LiveAuth usa** — o mesmo `livemode-roteiros-dev`
-  do LiveScript, ou um novo dedicado? Próximo passo: decidir no desenho
-  técnico do LiveAuth.
+- ~~**Qual projeto Firebase o LiveAuth usa**~~ — **resolvido, achado no
+  repo 2026-09-24**: `livemode-org/livemode-liveauth` já existe
+  (Cloudflare Worker), `.firebaserc` aponta pro projeto dedicado
+  `livemode-liveauth-42ca1`, não o `livemode-roteiros-dev` compartilhado
+  com o LiveScript. Ver
+  [[Trava de domínio e autenticação — inventário para o LiveAuth]].
 - **Quem pode criar/editar um grupo no LiveAuth** — default proposto em
   chat, não confirmado: qualquer `@livemode.com` logado pode criar um
   grupo novo e vira automaticamente editor dele. Próximo passo: validar

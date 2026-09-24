@@ -34,6 +34,18 @@ target date é amanhã. Sinalizado por msilva em 2026-09-24, sem issue criada.
 
 ## Open questions (herdadas da synthesis)
 
-Nome "LiveAuth" fechado com Luís, falta validar com a Gabi; dono da infra e
-projeto Firebase a usar seguem indefinidos — ver a lista completa na
-synthesis.
+Nome "LiveAuth" fechado com Luís, falta validar com a Gabi; dono da infra
+segue indefinido — ver a lista completa na synthesis. **Projeto Firebase
+já resolvido** (2026-09-24): o repo `livemode-org/livemode-liveauth` já
+existe, `.firebaserc` aponta pro projeto dedicado
+`livemode-liveauth-42ca1`, não o `livemode-roteiros-dev` compartilhado.
+
+## Impacto de uma futura migração
+
+Inventário de apps com auth própria feito em 2026-09-24, a pedido de
+msilva (achou por fora um deploy — `tasks-projetos` na Vercel — que a
+busca de código do GitHub não indexava): **11 deploys** identificados
+reimplementando gate de e-mail/domínio cada um do seu jeito (skill
+`trava-de-dominio`, Auth.js próprio, sessão Firebase própria), fora o
+Fluxo Agêntico. Nenhum é consumidor do LiveAuth hoje. Ver
+[[Trava de domínio e autenticação — inventário para o LiveAuth]].

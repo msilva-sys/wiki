@@ -6352,3 +6352,38 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   sinalizada em `[!danger]` no `index.md` (pendente desde 2026-08-11)
   já foi feita — `systems/Proxy Environments.md` não teve nenhum touch
   desde 2026-08-24 que confirme isso.
+
+## [2026-09-24] query | inventário de trava de domínio/auth pro LiveAuth
+- Pergunta de msilva: quais repos na conta GitHub `tech-livemode`
+  implementam trava de domínio, pra medir o impacto de uma futura
+  migração pro [[LiveAuth]]. Pesquisa via `gh` cobrindo a org
+  `livemode-org` (34 repos) e os repos pessoais da conta `tech-livemode`
+  (59 repos).
+- Lacuna de método achada no caminho: primeira rodada usou
+  `gh api search/code`; msilva achou por fora, na Vercel, um deploy
+  (`tasks-projetos`, `/login`) que a busca não indexava (nem
+  `filename:middleware.ts` retornava o arquivo, que existia). Segunda
+  rodada trocou pra varredura direta de árvore de arquivos (API de
+  conteúdo), confiável, não depende de indexação.
+- Achado: **11 deploys** com auth própria, em 5 padrões distintos —
+  skill `trava-de-dominio` (5, já conhecida), Auth.js/NextAuth própria
+  com domínio restrito por código (5, RBAC por pessoa em 2 delas),
+  sessão Firebase própria (1, `tasks-projetos`, arquitetura mais
+  parecida com o próprio LiveAuth). Mais 2 com Basic Auth (modelo
+  diferente) e 10 repos com `vercel.json` sem gate detectável no código
+  (não é prova de ausência). Nenhum dos 11 é consumidor do LiveAuth
+  hoje. Achado colateral: `livemode-org/livemode-juridico` existe vazio,
+  o app real mora só na conta pessoal — mesma fragmentação de ownership
+  já vista na trava de domínio.
+- Achado colateral que resolve um Open Issue: `livemode-org/livemode-
+  liveauth` já existe (Cloudflare Worker, skill `liveauth-connect` já
+  no repo); `.firebaserc` aponta pro projeto Firebase dedicado
+  `livemode-liveauth-42ca1`, não o `livemode-roteiros-dev`
+  compartilhado com o LiveScript.
+- New: `syntheses/Trava de domínio e autenticação — inventário para o
+  LiveAuth.md`.
+- Updated: `projects/LiveAuth.md` (Open questions + nova seção de
+  impacto), `syntheses/LiveAuth — Identidade e Autorização por Grupo
+  entre Apps Livemode.md` (Open Issue do projeto Firebase marcado
+  resolvido), `index.md` (nova linha em Syntheses, linhas de LiveAuth
+  atualizadas em Projects e Syntheses).
