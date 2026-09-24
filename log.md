@@ -6311,3 +6311,20 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   Gabi antes de considerar definitivo.
 - Updated: `syntheses/LiveAuth — Identidade e Autorização por Grupo
   entre Apps Livemode.md` (nota datada + novo Open Issue), `index.md`.
+
+## [2026-09-24] query | LiveAuth virou POC no Linear
+- msilva apontou que o LiveAuth já existe como POC no Linear (projeto
+  `LiveAuth - POC`, P-PRO-29, iniciativa LiveAuth), pedido de
+  `get_project`/`list_issues`. Estado: In Progress, `targetDate`
+  2026-09-25, 3/4 issues `Done` (PRO-711 login restrito a
+  @livemode.com, PRO-714 login único decide quem entra, PRO-713 tela
+  do grupo `admin-proxy`); PRO-717 (skill de auditoria de auth) em
+  andamento. Nenhuma issue cobre deploy em produção — sinalizado como
+  gap, sem issue criada ainda.
+- New: `projects/LiveAuth.md` — página de entidade acompanhando o
+  estado de execução, separada da synthesis (que segue como o
+  desenho).
+- Updated: `syntheses/LiveAuth — Identidade e Autorização por Grupo
+  entre Apps Livemode.md` (nota de graduação a POC, remove "ainda não
+  linkado"), `index.md` (nova linha em Projects, linha da synthesis
+  atualizada).

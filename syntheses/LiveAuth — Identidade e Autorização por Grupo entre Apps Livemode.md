@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-09-22
+updated: 2026-09-24
 date: 2026-09-21
 tags: [auth, security, proxy, agent-flow, liveauth]
 aliases: [LiveAuth, autorização por grupo, grupo de acesso, liveauth-connect]
@@ -13,9 +13,11 @@ Design doc construído em chat, seção por seção, com a skill `design-doc`,
 2026-09-21. Motivado pela necessidade concreta de restringir a rota
 `/dashboard` (planejada, ainda não implementada) da [[Airtable Proxy]] por
 grupo — mas desenhado deliberadamente em nível abstrato, multi-app, não
-amarrado ao proxy. **Ainda não linkado das páginas de entidade (Airtable
-Proxy, trava de domínio do Fluxo Agêntico) por pedido explícito de
-msilva — o projeto ainda precisa amadurecer antes disso.**
+amarrado ao proxy. **2026-09-24: já existe como POC em execução no Linear**
+— projeto [LiveAuth - POC](https://linear.app/projetos-livemode/project/liveauth-poc-c6dfa1c702b0)
+(3 de 4 issues concluídas), target date 2026-09-25, faltando issue de
+deploy em produção. Estado de execução acompanhado em [[LiveAuth]]; esta
+página segue como o desenho.
 
 Uma sessão paralela (link `claude.ai/share/803d8669-...`, resumo colado por
 msilva) chegou a um desenho concorrente no mesmo problema — RBAC por grupo,
