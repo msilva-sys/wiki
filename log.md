@@ -6420,3 +6420,37 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   Padrões 3–6 reescritos, Implicação, Open questions),
   `projects/LiveAuth.md` (seção de impacto), `index.md` (linhas de
   LiveAuth em Projects e Syntheses).
+
+## [2026-09-24] query | segunda correção — auth embutida no HTML escapava do grep
+- msilva perguntou "quais apps podemos ter deixado de fora" — pergunta
+  aberta, não apontando um caso específico. Investigação achou mais uma
+  lacuna de método real: a rodada 3 (grep de palavra-chave) buscava só
+  em **nome de arquivo**, não em conteúdo — auth embutida direto num
+  `index.html`, sem arquivo próprio, passava batido.
+- Achado concreto: `chamados-administrativo` e `liberacao-acesso`
+  (cluster do `hub-administrativo`) tinham sido classificados sem gate;
+  na verdade usam Google Identity Services embutido no HTML +
+  validação real de `id_token` no worker `chamados-administrativo-worker`
+  (chama `oauth2.googleapis.com/tokeninfo`, confere `aud` + domínio).
+  `portal-salas-realtime` (mesmo cluster) segue o mesmo contrato.
+- Rodada uma quarta passada: grep de **conteúdo** (não só nome de
+  arquivo) nos 6 repos que ainda restavam "sem gate detectável". Achou
+  mais 2 casos reais — `content-pulse` (login Google só no client, sem
+  nenhum backend, o padrão mais fraco do levantamento) e confirmou
+  `copa2026-labelling` como **aberto de propósito** (Firebase Realtime
+  Database sincronizado sem login, regra recomendada no próprio código
+  é `.read`/`.write` público — achado sem ambiguidade, não é limite de
+  método).
+- Dois candidatos ficaram sem confirmação por código, registrados como
+  tal: `painel-salas` (sem sinal de auth, mas o backend que consome
+  exige token — não dá pra saber sem abrir a URL) e `livemode-brain`
+  (sem sinal de auth e sem pipeline de deploy encontrado — não está
+  claro se está publicado).
+- Total corrigido de novo: 20 deploys com auth/domínio próprio (era 17)
+  + Fluxo Agêntico = 21 apps; mais 1 app confirmado aberto e 2
+  candidatos não confirmados.
+- Updated (correção inline de novo): `syntheses/Trava de domínio e
+  autenticação — inventário para o LiveAuth.md` (Método, Padrões 7–8
+  novos, seção "Achado sem ambiguidade" e "Candidatos a gap" novas,
+  Implicação, Open questions), `projects/LiveAuth.md` (seção de
+  impacto), `index.md` (linhas de LiveAuth em Projects e Syntheses).
