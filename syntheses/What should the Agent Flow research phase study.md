@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-08-24
+updated: 2026-09-24
 date: 2026-08-17
 aliases: [agent flow research, research agenda, agent flow status]
 tags: [agents, research, planning, index]
@@ -260,8 +260,8 @@ struck through, kept for the record — and the answers reshape the list.
 - **How often does the area start a new project?** **msilva has no metric for this
   (2026-08-18).** So A7 cannot be evaluated on utility at all — which is itself an
   argument for A1 + A2, the build that would produce the number. Ask Gabrielle.
-- **Is A1 + A2 one agent or two?** New 2026-08-19, [[2026-08-19 1-1 Matheus -
-  Gabrielle]]. Splitting earns its keep only if A2 gets inputs beyond A1.
+- ~~**Is A1 + A2 one agent or two?**~~ **Resolvido 2026-09-16**: viram um
+  agente único, o **Intake** — ver [[Design Doc — Intake]].
 - **Does A3 need a universal discovery/planning step, or only complex work?**
   New 2026-08-19, same source — msilva questioning his own A3-vs-A7 split.
   Could collapse the fork into "discover always, fork by complexity after."

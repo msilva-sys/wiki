@@ -6328,3 +6328,27 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   entre Apps Livemode.md` (nota de graduação a POC, remove "ainda não
   linkado"), `index.md` (nova linha em Projects, linha da synthesis
   atualizada).
+
+## [2026-09-24] lint | correções aplicadas
+- Rodado o lint completo da wiki (delegado a um fork, ~40 páginas
+  `active` checadas, wikilinks, órfãs, raw/ sem cobertura, contradição
+  intra-página, `[!msilva]` pendentes). Achados sem ação: stale claims
+  esperados em `decisions/`/`sources/`/`people/`; nenhuma órfã real;
+  2 `raw/` genuinamente sem página (`2026-06-14 Papo de Projetos` e
+  `2026-09-22 Agente de portfólio`, ambas notas do Gemini); nenhum
+  callout `[!msilva]` pendente.
+- Corrigido: dois wikilinks quebrados por falta de prefixo de data
+  (apontavam pro decision certo mas sem resolver) em
+  `projects/Airtable Proxy.md` e `meetings/2026-09-15 Proxy e Fluxo
+  Agêntico com Luís.md`, agora `[[2026-09-17 Conectar o LiveScript ao
+  proxy via feature-airtable-proxy, sem OTel por ora]]` e
+  `[[2026-09-16 Resolver rollback do LiveScript com checagem de
+  variáveis de ambiente]]`.
+- Corrigido: `syntheses/What should the Agent Flow research phase
+  study.md` listava "A1 + A2 um agente ou dois?" como pergunta aberta;
+  já resolvida em 2026-09-16 (virou o agente único **Intake**, ver
+  [[Design Doc — Intake]]) — riscado e marcado resolvido.
+- Não aplicado, fica pra msilva confirmar: se a rotação de credenciais
+  sinalizada em `[!danger]` no `index.md` (pendente desde 2026-08-11)
+  já foi feita — `systems/Proxy Environments.md` não teve nenhum touch
+  desde 2026-08-24 que confirme isso.

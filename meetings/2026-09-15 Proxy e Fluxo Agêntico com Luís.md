@@ -50,7 +50,7 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
   **Resolvido 2026-09-17**: reimplementação completa do roteamento pelo
   proxy feita em cima da `feature/airtable-proxy` limpa (19 arquivos,
   `83d1a7f`/`84cea6f`) — essa é a branch a usar. `-observability` descartada
-  como fonte; OTel deferido. Ver [[Conectar o LiveScript ao proxy via
+  como fonte; OTel deferido. Ver [[2026-09-17 Conectar o LiveScript ao proxy via
   feature-airtable-proxy, sem OTel por ora]] e [[LiveScript]].
 - ~~Matheus fala direto com Yasmin (não via Luís) pra ela testar a skill de
   conexão no LiveScript, localmente, como "cobaia".~~ **Feito, 2026-09-16.**
@@ -64,8 +64,8 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
   (`lib/services/airtable-monitoring.ts`), evitando estourar volume de
   leitura (17 arquivos chamam esse wrapper). **Resolvido 2026-09-16**: Luís
   rejeita a proposta por complexidade desnecessária agora, prefere só
-  checar as env vars no build/deploy. Ver [[Resolver rollback do LiveScript
-  com checagem de variáveis de ambiente]].
+  checar as env vars no build/deploy. Ver [[2026-09-16 Resolver rollback do
+  LiveScript com checagem de variáveis de ambiente]].
 - Luís vai falar com a Gabrielle sobre a reunião de critérios novos de
   priorização de portfólio (compromisso já registrado em
   [[2026-09-15 Discovery A1 e A2 com Gabrielle]]).

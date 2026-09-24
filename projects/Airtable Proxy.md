@@ -966,7 +966,7 @@ communicate async and often]].
       (código já commitado e pushado, `7570ee6`) — fecha `PRO-587`.~~
       **Obsoleto, 2026-09-17**: o trabalho real migrou pra
       `feature/airtable-proxy` (reimplementação completa, `83d1a7f`/
-      `84cea6f`) — ver [[Conectar o LiveScript ao proxy via
+      `84cea6f`) — ver [[2026-09-17 Conectar o LiveScript ao proxy via
       feature-airtable-proxy, sem OTel por ora]]. PR ainda não aberto,
       agora a partir dessa branch.
 - [ ] Confirm the private-infra inputs in
