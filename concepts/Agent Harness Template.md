@@ -1,7 +1,7 @@
 ---
 type: concept
 status: draft
-updated: 2026-09-01
+updated: 2026-09-25
 aliases: [harness template, trigger input harness output, agent template (Luís)]
 tags: [agent-flow, architecture, harness, claude-agent-sdk]
 ---
@@ -127,6 +127,14 @@ Duas clippings do mesmo lote (`raw/Clippings/`, capturadas em 2026-08-21) usam
 Nenhuma das duas resolve qual substrato roda o Harness de Luís — Claude Agent
 SDK ou LangChain `create_agent`. Servem como vocabulário e comparação, não como
 resposta.
+
+**msilva, lendo [[Inside the multiplayer AI setups at Mintlify, LangChain,
+and Buffer]] (2026-09-25)**, nota a mesma distinção por conta própria: a
+frase da LangChain *"we're not solving a repo of skills management
+challenge, we're solving a production agent challenge"* aponta, na leitura
+dele, pro problema do harness (onde o agente roda, como se comunica) como
+categoria diferente de gerenciar skills — mesmo eixo desta pergunta em
+aberto, não resposta nova.
 
 ## Questões em aberto
 

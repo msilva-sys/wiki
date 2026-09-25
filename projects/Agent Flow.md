@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: build
-updated: 2026-09-15
+updated: 2026-09-25
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -1520,3 +1520,26 @@ consultant rather than validator.
   makes it a credible first target for the monitoring agent. The unrelated
   **Orca** in [[Gabriel Packer - DAG-driven agent orchestration]] is a tool that
   creates git worktrees and runs agent terminals. Same word, no relation.
+- **Qualquer solução de compartilhamento de contexto/capacidades precisa
+  respeitar a agência individual do time?** New 2026-09-25, lendo
+  [[Inside the multiplayer AI setups at Mintlify, LangChain, and Buffer]]
+  (MKT1, parte 2): o caso Buffer funciona porque o processo se encaixa na
+  cultura que já existia (bootstrapped, alta agência). msilva generaliza:
+  *"cada pessoa na livemode tem agência de fazer as coisas de sua
+  maneira. A ideia é que qualquer solução que cheguemos tenha isso em
+  mente."* Não é sobre um agente específico — é uma restrição de design
+  que valeria pra qualquer coisa construída sob o Fluxo Agêntico (skills
+  compartilhadas, o próprio A6 Curador padronizando). Ainda não
+  confrontada com nenhum desenho existente nem levada a Luís/Gabrielle.
+- **O acesso a contexto do Fluxo Agêntico está preso demais a um
+  dashboard específico?** New 2026-09-25, mesma fonte: msilva, reagindo a
+  *"you need an easy way for agents to reach your team's context,
+  wherever it lives"* — *"isso é importantíssimo. É uma das preocupações
+  que tenho com o fluxo-agêntico. Atualmente eu entendo que está muito
+  ligado ao dashboard que desenvolvi. A ideia é termos mais
+  flexibilidade."* Relacionado mas distinto do open question logo acima
+  sobre como agentes conversam entre si — este é sobre como um agente (ou
+  pessoa) alcança contexto em geral. Toca [[Agents read primary sources]]
+  (tool layer compartilhado); vale checar se a resposta já dada ali
+  (tools determinísticas por agente) já cobre essa preocupação, ou se o
+  dashboard é um acoplamento diferente, ainda não examinado.

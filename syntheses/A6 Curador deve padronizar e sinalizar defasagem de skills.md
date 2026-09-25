@@ -57,6 +57,17 @@ atribuição explícita até agora.
   padronizar e sinalizar defasagem cai inteiramente do lado de curadoria,
   não força reabrir esse corte.
 
+## Segunda leitura independente, 2026-09-25
+
+Lendo [[Inside the multiplayer AI setups at Mintlify, LangChain, and
+Buffer]] (MKT1, parte 2), msilva chegou na mesma divisão por outro
+caminho, sem reler esta página: Buffer separa capability em "faz o
+trabalho" vs. "mantém o sistema atualizado", e ele encaixou o agente
+curador direto na segunda categoria — *"o agente curador seria uma
+capacidade que mantém o sistema atualizado."* Não resolve a pergunta de
+autoridade abaixo, mas é uma segunda convergência independente pra mesma
+atribuição.
+
 ## O que continua em aberto
 
 - **Autoridade**: A6 só propõe/sinaliza padrão (mais fraco — um aviso) ou

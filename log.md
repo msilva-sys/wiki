@@ -6502,3 +6502,20 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   removido trecho inventado por Claude, atribuído por engano a msilva, na
   frase sobre David Johnson-Igra; citação do caso Buffer removida e
   marcada como pertencente à Parte 2 (não ingerida), não a esta página.
+
+## [2026-09-25] ingest | MKT1 "Inside the multiplayer AI setups..." (parte 2)
+- Lido `raw/Fichamento da newsletter de mkt1 - segunda parte.md`
+  (fichamento próprio de msilva, sem imagens desta vez); data/título
+  confirmados no clip já existente em `raw/Clippings/`.
+- New: `sources/Inside the multiplayer AI setups at Mintlify, LangChain,
+  and Buffer.md` — casos Buffer/LangChain/Mintlify aplicando os 4 Cs.
+  msilva puxa 4 pontos próprios: restrição de design (agência individual
+  do time), confirmação independente da divisão de A6, distinção
+  harness vs. gerenciamento de skills, e preocupação com acoplamento ao
+  dashboard do Fluxo Agêntico.
+- Updated: `syntheses/A6 Curador deve padronizar e sinalizar defasagem de
+  skills.md` (segunda leitura independente reforça a mesma divisão),
+  `concepts/Agent Harness Template.md` (nota sobre harness vs. skill
+  management), `projects/Agent Flow.md` (2 open questions novas —
+  agência individual do time, acoplamento ao dashboard), `index.md`
+  (Sources, Concepts, Syntheses, Projects).
