@@ -188,6 +188,10 @@ reprocessar tudo. Candidato a pista, não resposta.
   Levantado por msilva lendo [[Marketing teams are stuck in single-player
   Claude mode. Here's how to go multiplayer]] (2026-09-25) — nem a fonte
   externa nem esta página têm resposta ainda.
+- **Candidato a resposta parcial, 2026-09-25**: ver [[A6 Curador deve
+  padronizar e sinalizar defasagem de skills]] — atribuir a padronização e
+  o sinal de defasagem a A6 Curador, não a uma skill isolada. Reasoning
+  ainda não passou por Luís/Gabrielle.
 
 - **Does packaging survive complexity?** Every example here is small — a report
   audit, a Linear wrapper, a worktree manager. Nothing tests a skill doing

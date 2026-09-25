@@ -6472,3 +6472,24 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Parte 2 da série ("Inside the multiplayer AI setups at Mintlify, LangChain,
   and Buffer") discutida mas não ingerida — fica como to-do, wikilink sem
   página ainda.
+
+## [2026-09-25] synthesis | A6 Curador deve padronizar e sinalizar defasagem de skills
+- Discussão em chat a partir da pergunta em aberto de `Packaging as skills`
+  (o que packaging não resolve: manutenção) cruzada com a leitura da MKT1
+  parte 1. Correção de enquadramento no meio do caminho: curadoria já
+  pressupõe padronizar o que existe e o que vem, não é ampliação de escopo
+  de A6 — só explicita a função "templates" que Luís já tinha nomeado em
+  2026-08-19.
+- New: `syntheses/A6 Curador deve padronizar e sinalizar defasagem de
+  skills.md` — dá dono à pergunta "qual deveria ser o padrão" de
+  `Packaging as skills` e à lacuna de "sinal entre agentes" de
+  `Vocabulário do Fluxo Agêntico`. Autoridade (propor vs. bloquear) e se
+  é função nova ou só explicitação seguem abertas; não passou por
+  Luís/Gabrielle.
+- Updated: `concepts/Packaging as skills.md` (open question ganha
+  candidato a resposta parcial), `index.md` (linha em Syntheses).
+- Pendente, não feito nesta sessão: 3 reações de msilva do fichamento
+  ainda faltam em `sources/Marketing teams are stuck in single-player
+  Claude mode...md` (desperdício de oportunidade, AGENTS.md, Collaboration
+  como C mais importante), um trecho inventado por Claude a corrigir, e a
+  citação do caso Buffer (que é da Parte 2, não da Parte 1) a ajustar.
