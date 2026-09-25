@@ -192,6 +192,14 @@ reprocessar tudo. Candidato a pista, não resposta.
   padronizar e sinalizar defasagem de skills]] — atribuir a padronização e
   o sinal de defasagem a A6 Curador, não a uma skill isolada. Reasoning
   ainda não passou por Luís/Gabrielle.
+- **Mecanismo real revelado, 2026-09-25**: [[Inside team MKT1's
+  multiplayer AI setup]] (parte 3) mostra como a própria MKT1 resolve
+  isso — `/skill-update` não enxerga a skill em abstrato, só lê a sessão
+  específica em que a pessoa acabou de usá-la, disparado manualmente.
+  Detecção de defasagem sem gatilho humano existe (`/skill-audit`,
+  `/team-repo-stats`), mas é rasa — atividade de git, não conteúdo. Ou
+  seja: nem a fonte do conceito automatizou isso de verdade; mantém
+  humano no gatilho.
 
 - **Does packaging survive complexity?** Every example here is small — a report
   audit, a Linear wrapper, a worktree manager. Nothing tests a skill doing

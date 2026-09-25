@@ -6519,3 +6519,25 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   management), `projects/Agent Flow.md` (2 open questions novas —
   agência individual do time, acoplamento ao dashboard), `index.md`
   (Sources, Concepts, Syntheses, Projects).
+
+## [2026-09-25] ingest | MKT1 "Inside team MKT1's multiplayer AI setup" (parte 3)
+- Lido `raw/Fichamento da newsletter de mkt1 - terceira parte.md`
+  (fichamento curto, sem imagens); data/título/autoria confirmados via
+  WebFetch no artigo original (Emily Kramer + Halley Johnson,
+  2026-09-17).
+- New: `sources/Inside team MKT1's multiplayer AI setup.md` — a MKT1
+  aplica o framework a si mesma (2 repos, 100+ skills, 30+ rotinas).
+  Revela o mecanismo real de `/skill-update`: manual, session-scoped, lê
+  só a sessão em que a skill foi usada — não a skill em abstrato.
+  Detecção sem gatilho humano (`/skill-audit`, `/team-repo-stats`) é
+  rasa (duplicata/atividade de git, não conteúdo).
+- Updated: `concepts/Packaging as skills.md` (open question de
+  manutenção ganha mecanismo real, não mais só candidato), `syntheses/A6
+  Curador deve padronizar e sinalizar defasagem de skills.md` (terceira
+  leitura — dado a favor de A6 propor/sinalizar em vez de atualizar
+  sozinho), `index.md` (Sources, Concepts, Syntheses).
+- Teste de férias/computador novo do artigo converge, sem msilva ter
+  puxado a conexão sozinho, com o que Gabrielle e Mafê já tinham
+  levantado no thread do Slack `#projetos` (2026-09-24/25, resposta ao
+  pedido da Carol sobre as newsletters) — registrado como nota, thread
+  em si ainda não virou página própria na wiki.

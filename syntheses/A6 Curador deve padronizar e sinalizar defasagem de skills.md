@@ -68,6 +68,19 @@ capacidade que mantém o sistema atualizado."* Não resolve a pergunta de
 autoridade abaixo, mas é uma segunda convergência independente pra mesma
 atribuição.
 
+## Terceira leitura — como a própria MKT1 resolve isso, 2026-09-25
+
+[[Inside team MKT1's multiplayer AI setup]] (parte 3) revela o mecanismo
+real por trás do pipeline de manutenção descrito na Parte 1: mesmo a MKT1
+não automatizou detecção de defasagem por conteúdo. `/skill-update` é
+disparado manualmente, depois de uma sessão, e só lê aquela sessão
+específica — não a skill nem seu histórico. A detecção sem gatilho humano
+(`/skill-audit`, `/team-repo-stats`) é rasa: duplicata e atividade de
+git, não conteúdo. **Isso pesa a favor de A6 propor/sinalizar em vez de
+atualizar sozinho** — a pergunta de autoridade abaixo ainda não está
+decidida, mas agora tem um dado externo a favor do lado mais fraco
+(aviso, não automação plena).
+
 ## O que continua em aberto
 
 - **Autoridade**: A6 só propõe/sinaliza padrão (mais fraco — um aviso) ou
