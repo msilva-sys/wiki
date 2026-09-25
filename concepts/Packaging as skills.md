@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-09-15
+updated: 2026-09-25
 date: 2026-08-17
 aliases: [skills, packaging, skill packaging, distribution]
 tags: [agents, skills, tokens, sharing, claude]
@@ -165,7 +165,29 @@ longo prazo que ele imagina pras skills do proxy é o admin do Claude Cloud
 (empresa toda, automático) — mas isso também ficou parado, pelo mesmo
 motivo de não estar sendo envolvido nas decisões de plataforma.
 
+## Framework externo — MKT1 "4 Cs", 2026-09-25
+
+[[Marketing teams are stuck in single-player Claude mode. Here's how to go multiplayer]]
+categoriza capability em seis tipos (skill/agent/sub-agent/workflow/MCP/plugin)
+— mais fino que o [[Vocabulário do Fluxo Agêntico]] atual, que não nomeia
+"sub-agent" nem "plugin" como termos próprios. O repo `livemode` da Carol
+(seção acima) é exatamente o padrão de "capabilities num lugar único,
+repo+plugin" que o artigo descreve funcionando no caso Buffer.
+
+O artigo também propõe um pipeline de skills pra manter skills
+(Build/Review/Publish + Dupe Check/Update + Maintain/Repo Stats) como
+resposta ao problema de manutenção — a mesma lacuna que esta página já
+registra como não resolvida. **Não testado, e o mecanismo real fica sem
+explicação**: nem o artigo nem quem o leu (msilva) conseguem dizer como a
+skill de "Update" acessaria o contexto da skill que está atualizando sem
+reprocessar tudo. Candidato a pista, não resposta.
+
 ## Open questions
+
+- **Como uma skill de manutenção enxerga o contexto da skill que mantém?**
+  Levantado por msilva lendo [[Marketing teams are stuck in single-player
+  Claude mode. Here's how to go multiplayer]] (2026-09-25) — nem a fonte
+  externa nem esta página têm resposta ainda.
 
 - **Does packaging survive complexity?** Every example here is small — a report
   audit, a Linear wrapper, a worktree manager. Nothing tests a skill doing

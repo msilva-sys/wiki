@@ -6454,3 +6454,21 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   novos, seção "Achado sem ambiguidade" e "Candidatos a gap" novas,
   Implicação, Open questions), `projects/LiveAuth.md` (seção de
   impacto), `index.md` (linhas de LiveAuth em Projects e Syntheses).
+
+## [2026-09-25] ingest | MKT1 "Marketing teams are stuck in single-player Claude mode" (parte 1)
+- Lido `raw/Fichamento da newsletter de mkt1 - primeira parte.md` (fichamento
+  próprio de msilva, com 4 imagens coladas) + data/título/autora confirmados
+  via WebFetch no artigo original (Emily Kramer, MKT1, 2026-07-27).
+- New: `sources/Marketing teams are stuck in single-player Claude mode. Here's
+  how to go multiplayer.md` — framework dos 4 Cs, taxonomia de capability
+  (skill/agent/sub-agent/workflow/MCP/plugin), as 12 perguntas de sistema
+  multiplayer, e o pipeline de skills-que-mantêm-skills (Build/Review/Publish
+  + Dupe Check/Update + Maintain/Repo Stats).
+- Updated: `concepts/Packaging as skills.md` (nova seção "Framework externo —
+  MKT1 '4 Cs'", citando o repo `livemode` da Carol como instância real do
+  padrão descrito; nova open question sobre como a skill de manutenção
+  acessaria contexto da skill mantida — pergunta do próprio msilva, sem
+  resposta na fonte), `index.md` (linhas em Sources e Concepts).
+- Parte 2 da série ("Inside the multiplayer AI setups at Mintlify, LangChain,
+  and Buffer") discutida mas não ingerida — fica como to-do, wikilink sem
+  página ainda.
