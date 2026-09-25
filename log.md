@@ -6493,3 +6493,12 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   Claude mode...md` (desperdício de oportunidade, AGENTS.md, Collaboration
   como C mais importante), um trecho inventado por Claude a corrigir, e a
   citação do caso Buffer (que é da Parte 2, não da Parte 1) a ajustar.
+
+## [2026-09-25] refactor | corrige lacunas do fichamento MKT1 apontadas por msilva
+- Updated: `sources/Marketing teams are stuck in single-player Claude
+  mode...md` — 3 reações de msilva do fichamento que tinham ficado de
+  fora (desperdício de oportunidade de não avançar junto com IA;
+  AGENTS.md como "capacidade"; Collaboration como C mais importante);
+  removido trecho inventado por Claude, atribuído por engano a msilva, na
+  frase sobre David Johnson-Igra; citação do caso Buffer removida e
+  marcada como pertencente à Parte 2 (não ingerida), não a esta página.

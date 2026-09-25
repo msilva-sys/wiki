@@ -28,11 +28,14 @@ teammates build and learn into a system the whole team runs on."*
 
 msilva, lendo: bate direto com a própria experiência — tem uma wiki pessoal
 com informação que agregaria se fosse compartilhada com o time, hoje não é.
+Reação mais forte à mesma ideia: *"acho que é um desperdício de
+oportunidade nós não estarmos avançando juntos com nossas IA's
+integradas."*
 
 David Johnson-Igra (Scribes), citado no artigo, sobre por que contexto
-estático falha: *"our voices aren't stagnant. They evolve."* — arquivos de
-contexto fixos ficam defasados rápido, e num contexto de time isso é pior
-ainda (mais gente puxando de fontes já erradas).
+estático falha: *"our voices aren't stagnant. They evolve."* msilva,
+lendo: *"as fontes acabam ficando defasadas rápido e em um contexto de
+time, isso é terrível."*
 
 ## Framework: os 4 Cs de um sistema Claude multiplayer
 
@@ -42,6 +45,11 @@ ainda (mais gente puxando de fontes já erradas).
 | **Context** | A informação que você alimenta | De docs, tools e sessões passadas, puxada pra uma fonte de verdade viva única |
 | **Capabilities** | Os trabalhos que ele faz por você | Skills, agents, workflows, MCPs e repos que fazem Claude produzir |
 | **Collaboration** | O sistema do time | Processos e hábitos que fazem todo mundo usar, aprender e melhorar o sistema junto |
+
+## Capacidades
+
+msilva, lendo: *"seriam as coisas que construímos uma vez pra não nos
+repetirmos. o AGENTS.md é isso."*
 
 ## O que conta como "capability" — taxonomia da MKT1
 
@@ -53,6 +61,11 @@ ainda (mais gente puxando de fontes já erradas).
 | **Workflow** | Receita fixa numa ferramenta (Zapier, Make, n8n) que segue passo a passo | Workflow no Zapier que enriquece lead novo e posta no Slack |
 | **MCPs & APIs** | Conexão entre Claude e outra ferramenta | MCP de website builder que deixa Claude atualizar o site |
 | **Plugin** | Pacote de skills+conectores+comandos instalado de uma vez | Plugin de time instalado por todo mundo a partir de um repo GitHub compartilhado |
+
+## Collaboration: o C esquecido
+
+msilva, lendo: *"o esforço de colaboração é o mais importante. É o que
+norteia o sistema multiplayer."*
 
 ## As 12 perguntas pra montar um sistema multiplayer
 
@@ -96,8 +109,12 @@ sessão, sugere atualizações", mas não explica o mecanismo — fica em aberto
   da skill mantida. Registrado como pista, não como solução.
 - **O repo `livemode` que Carol está construindo** (ver
   [[Packaging as skills]]) é exatamente o padrão "capabilities num único
-  lugar compartilhado, GitHub repo + plugin" que o artigo descreve como
-  modelo funcional (caso Buffer).
+  lugar compartilhado, GitHub repo + plugin" da taxonomia acima (linha
+  Plugin). *Nota de correção*: a versão anterior desta página citava o
+  caso Buffer como "modelo funcional" desse padrão — Buffer é exemplo da
+  **Parte 2** da série (não ingerida ainda), não desta Parte 1. Tirado
+  daqui; a comparação com Buffer cabe na página da Parte 2 quando ela for
+  ingerida.
 - **Ponto pessoal de msilva, não resolvido aqui**: esta própria wiki é hoje
   um "Context" C single-player — pensada pra uso dele, não pra o time (ver
   Audience em `CLAUDE.md`). O artigo não muda essa decisão, só deixa a
