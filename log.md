@@ -6541,3 +6541,21 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   levantado no thread do Slack `#projetos` (2026-09-24/25, resposta ao
   pedido da Carol sobre as newsletters) — registrado como nota, thread
   em si ainda não virou página própria na wiki.
+
+## [2026-09-30] ingest | LiveAuth discovery com Gustavo Cruz (Hub Fiscal)
+- Lida transcrição do Granola (reunião "Gustavo / Matheus", 2026-09-30,
+  via `get_meetings`/`get_meeting_transcript`). Diarização ausente (canal
+  único de microfone); Granola's próprio resumo parece ter invertido
+  Matheus e Gustavo nos itens de ação. Atribuição reconstruída por
+  conteúdo e confirmada com msilva em chat antes de escrever: Gustavo
+  Cruz é o dono do hub fiscal, msilva lidera o discovery do LiveAuth.
+  Duas correções feitas por msilva depois do rascunho: ERP é TOTVS (não
+  TOTI); Gustavo não é o único usuário do hub. Commitment de msilva
+  mandar prompt de rate limiting via Slack foi descartado por ele e
+  removido da nota.
+- New: `meetings/2026-09-30 LiveAuth - Discovery com Gustavo Cruz (Hub
+  Fiscal).md`, `people/Gustavo Cruz.md`, `people/Marina Ferrão.md`.
+- Updated: `projects/LiveAuth.md` (nova seção com os dois casos de uso —
+  hub fiscal do Gustavo, requisito de granularidade via Marina Ferrão),
+  `people/Marina.md` (open question cruzando com Marina Ferrão),
+  `index.md` (People, Meetings, entrada do LiveAuth em Projects).

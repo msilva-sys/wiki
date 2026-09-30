@@ -30,5 +30,8 @@ remains outstanding ([[2026-08-27 Recap da Semana]]).
   transcript re: a separate partner-program API integration? Not
   confirmed — could be a transcription inconsistency or a different
   person entirely.
+- Is she the same person as [[Marina Ferrão]] (atendimento, surfaced
+  2026-09-30 re: LiveAuth)? Different area (atendimento vs. finance)
+  argues against it, but unconfirmed either way.
 - Has she actually agreed to the repo+DB-copy handoff model? Recorded as
   proposed on the call, not yet confirmed with her directly.
