@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-09-15
+updated: 2026-10-01
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
@@ -169,3 +169,18 @@ sometimes builds directly, otherwise supports.
   projeto próprio ("Dinda"), mas descobriu que precisa da API da Anthropic
   direta em vez da assinatura do Claude Code, por questão comercial —
   resolve o open question de [[Claude Agent SDK]].
+- **Feedback direto sobre comunicação prévia, 2026-10-01**
+  ([[2026-10-01 1-1 Matheus - Luís]]): três violações da norma de
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]]
+  no mesmo 1:1 — intake retomado sem avisar, Cloudflare Workers escolhido no
+  lugar do Next.js sem comunicar antes, Supabase adotado por ruído de
+  comunicação (acha que já existia decisão contrária, sem registro na wiki).
+  Corolário novo: time é equipe técnica, não de produto — stack deve ser
+  simples e padronizada, GoLang no proxy é a única exceção justificada.
+  Pede estudo comparativo Supabase vs. Neon/Cloud SQL a msilva. Mesma
+  conversa: feedback sobre a saída dos agentes de análise (A10/A14) —
+  descrevem dado, não recomendam ação; envia formato alternativo bem
+  recebido. Começou a remover numeração de milestone nos próprios projetos
+  (atrapalha reordenação) — ainda não é padrão do time. Vai escrever
+  briefing de testes E2E com Playwright pra msilva e Yasmin, isolando a
+  camada de comunicação com Airtable, depois de alinhar com Carol e Gabi.

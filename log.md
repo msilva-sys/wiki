@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-09-17
+updated: 2026-10-01
 
 
 ---
@@ -6559,3 +6559,33 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   hub fiscal do Gustavo, requisito de granularidade via Marina Ferrão),
   `people/Marina.md` (open question cruzando com Marina Ferrão),
   `index.md` (People, Meetings, entrada do LiveAuth em Projects).
+
+## [2026-10-01] ingest | 1-1 Matheus - Luís
+- Lida transcrição do Granola (`get_meetings`/`get_meeting_transcript`,
+  reunião "Matheus / Luís 01-10"). Diarização confiável por fonte de
+  áudio: `Microphone` = msilva (gravador confirmado), `System audio` =
+  Luís (confirmado pelo título e pelo conteúdo).
+- Achado central: três violações concretas, no mesmo 1:1, da norma já
+  registrada em [[2026-08-18 Bring options to Luís before deciding,
+  communicate async and often]] — intake retomado sem avisar, Cloudflare
+  Workers escolhido no lugar do Next.js sem comunicar, Supabase adotado
+  por ruído de comunicação (Luís alega decisão contrária prévia, sem
+  registro nesta wiki — ficou como open question). Corolário novo:
+  equipe técnica (não de produto) deve manter stack simples e
+  padronizada, GoLang no proxy é a única exceção justificada.
+- Também: feedback sobre a saída dos agentes do [[Agent Flow]]
+  (descreve dado, não recomenda ação — exceção boa no Pulso); Luís
+  começou a remover numeração de milestone nos próprios projetos;
+  desenho de testes end-to-end determinísticos com Playwright
+  (isolando a comunicação com Airtable) como próxima frente pra msilva
+  e Yasmin.
+- Confirmado com msilva antes de escrever: não criar agora a synthesis
+  de "Supabase vs. alternativas" (só quando a análise sair), não abrir
+  issue no Linear pro commitment (fica só registrado na wiki por ora).
+- New: `meetings/2026-10-01 1-1 Matheus - Luís.md`.
+- Updated: `decisions/2026-08-18 Bring options to Luís before deciding,
+  communicate async and often.md` (seção "Violated, 2026-10-01"),
+  `people/Luís Fernandez.md`, `projects/Agent Flow.md` (novo callout),
+  `syntheses/Design Doc — Intake.md` (Open Issue 1 parcialmente
+  respondida), `index.md` (Projects, People, Decisions, Syntheses,
+  Meetings).
