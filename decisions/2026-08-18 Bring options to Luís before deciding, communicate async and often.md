@@ -86,10 +86,11 @@ norm wasn't followed, three times:
   justification behind it — but decided and acted on before telling Luís,
   not brought as options first.
 - **Supabase adopted** believing it was already-approved team stack — Luís
-  calls this "ruído de comunicação" and says there was a prior decision
-  *against* using Supabase that msilva wasn't aware of or didn't recall.
-  **That prior decision has no record in this wiki** — open question on the
-  meeting page, unconfirmed.
+  calls this "ruído de comunicação." **Confirmed by msilva, same day**: Luís
+  had in fact already said, in an unlogged meeting some weeks earlier, that
+  the team wasn't using Supabase — msilva simply forgot. Not a disputed
+  claim; the gap is in this wiki's record of that earlier meeting, not in
+  whether it happened.
 
 **New corollary stated explicitly this time**: the team is a **technical
 team, not a product team** — the stack should stay simple and standardized.

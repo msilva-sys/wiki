@@ -480,8 +480,11 @@ tags: [agents, llm, automation, onboarding, research]
 > escolha, junto com trocar o front de Next.js por **Cloudflare Workers**,
 > foi feita e justificada tecnicamente sem passar pela norma de
 > [[2026-08-18 Bring options to Luís before deciding, communicate async and often]]
-> primeiro. Luís pediu a msilva um estudo comparativo Supabase vs.
-> Neon/Cloud SQL antes de considerar essa escolha assentada. Também nesse
+> primeiro. Luís já tinha dito, numa reunião sem registro algumas semanas
+> antes, que o time não usaria Supabase — msilva simplesmente esqueceu,
+> confirmado por ele mesmo no mesmo dia. Pediu a msilva um estudo
+> comparativo Supabase vs. Neon/Cloud SQL antes de considerar essa escolha
+> assentada. Também nesse
 > 1:1: desenho de testes end-to-end com Playwright (determinísticos, a
 > cada PR, sem depender do Airtable de produção/sandbox) como próxima
 > frente técnica pra msilva e Yasmin — briefing ainda por escrever por
