@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-09-25
+updated: 2026-10-02
 date: 2026-08-17
 aliases: [skills, packaging, skill packaging, distribution]
 tags: [agents, skills, tokens, sharing, claude]
@@ -181,6 +181,18 @@ registra como não resolvida. **Não testado, e o mecanismo real fica sem
 explicação**: nem o artigo nem quem o leu (msilva) conseguem dizer como a
 skill de "Update" acessaria o contexto da skill que está atualizando sem
 reprocessar tudo. Candidato a pista, não resposta.
+
+## Candidato a arquitetura — Skills Registry, 2026-10-02
+
+[[Desenho de um Skills Registry corporativo]] parte dos mesmos três
+problemas desta página (compartilhamento manual, manutenção que não
+propaga, falta de controle de qualidade — agora com um caso concreto,
+`pm-linear`) e propõe um registry central servido via MCP, com formato de
+pacote na spec aberta `agentskills.io` (não o plugin marketplace do Claude
+Code, descartado por não ser harness-agnostic). Ainda não resolve a
+"manutenção" por completo — resolve distribuição/descoberta/trigger, mas o
+gate de qualidade real segue em aberto, mesma lacuna que esta página já
+registra.
 
 ## Open questions
 

@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-10-01
+updated: 2026-10-02
 
 
 ---
@@ -6589,3 +6589,27 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   `syntheses/Design Doc — Intake.md` (Open Issue 1 parcialmente
   respondida), `index.md` (Projects, People, Decisions, Syntheses,
   Meetings).
+
+## [2026-10-02] synthesis | Desenho de um Skills Registry corporativo
+- Ponto de partida: esboço de msilva (imagem, não salva em `raw/`) com um
+  "Skills registry" central + servidor MCP/API + usuários. Validados em
+  chat os três problemas reais por trás: compartilhamento manual/defasado,
+  manutenção que não propaga, controle de qualidade inexistente (caso
+  real: skill `pm-linear`), escala "todos".
+- Plugin marketplace do Claude Code pesquisado e descartado como solução
+  única — resolve distribuição/versionamento, mas não é harness-agnostic
+  (requisito de msilva). Formato de pacote resolvido com a spec aberta
+  `agentskills.io/specification` (`SKILL.md`), confirmada cross-harness via
+  `agentskills.io/clients.md` (~45 adotantes).
+- Problema de trigger mapeado (nada faz o modelo chamar `search_skills`
+  sozinho) e seis alternativas comparadas; hook nativo por harness
+  escolhido por msilva. Pesquisado suporte a hook-equivalente em 14
+  harnesses — 11 confirmados, sem padrão cross-vendor (Agent Plugins Spec
+  exclui hooks de propósito). Escopo final, decidido por msilva: Claude
+  Code, Cursor, Codex/GPT, Gemini CLI — os 4 com suporte confirmado sem gap
+  de documentação.
+- New: `syntheses/Desenho de um Skills Registry corporativo.md`.
+- Updated: `concepts/Packaging as skills.md` (nova seção "Candidato a
+  arquitetura — Skills Registry"), `syntheses/A6 Curador deve padronizar e
+  sinalizar defasagem de skills.md` (link relacionado), `index.md`
+  (Syntheses).

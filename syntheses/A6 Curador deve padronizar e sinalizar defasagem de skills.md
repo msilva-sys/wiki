@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-09-25
+updated: 2026-10-02
 date: 2026-09-25
 aliases: [padronização de skills, curadoria de skills, A6 padronização]
 tags: [agent-flow, a6, skills, curation, maintenance]
@@ -103,3 +103,6 @@ decidida, mas agora tem um dado externo a favor do lado mais fraco
 - [[Vocabulário do Fluxo Agêntico]]
 - [[Agent Flow]]
 - [[Marketing teams are stuck in single-player Claude mode. Here's how to go multiplayer]]
+- [[Desenho de um Skills Registry corporativo]] — candidato de arquitetura
+  (2026-10-02) pros mesmos problemas de compartilhamento/manutenção/
+  qualidade; não resolve sozinho a questão de autoridade desta página.
