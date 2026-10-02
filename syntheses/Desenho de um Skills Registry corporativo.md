@@ -3,7 +3,7 @@ type: synthesis
 status: active
 updated: 2026-10-02
 date: 2026-10-02
-aliases: [skills registry, registro de skills]
+aliases: [skills registry, registro de skills, LiveStry]
 tags: [skills, agent-skills, mcp, agent-flow, governance]
 ---
 
@@ -77,6 +77,52 @@ forte da pesquisa (hook injeta contexto automaticamente, sem decisão do
 modelo), sem gaps de documentação a cobrir — ao contrário de Windsurf/Goose/
 OpenCode, que ficaram como "parcial, não confirmado".
 
+## Segundo esboço, mesmo dia — nome e esteira de qualidade
+
+msilva trouxe uma segunda versão do diagrama, já com nome: **LiveStry**
+(mesma convenção Live* de [[LiveAuth]]/[[LiveScript]]). Novidades:
+
+- **"Manutenção" explicitada** na lista de funções do registry (antes só
+  implícita nos três problemas validados).
+- **"Upload de skills → Esteira de qualidade"**: ataca de frente o gate de
+  qualidade que ficou em aberto na primeira passada (caso `pm-linear`).
+  Ainda não definido o que a esteira roda de fato — validação estrutural
+  (`skills-ref validate`), eval automatizado, ou review humano obrigatório
+  antes do upload ser aceito. Segue como open issue abaixo.
+- **Três pitches ("Soluciona?")**: "definir o teste de uma skill antes de
+  publicar" (= a esteira acima), "servidor (MCP) de skills da LiveMode" (=
+  a arquitetura já desenhada), e "skill de mapeamento das skills pessoais e
+  de projeto" — escopo ainda não esclarecido com msilva; hipótese de
+  trabalho é uma skill de inventário que varre `.claude/skills`
+  local/projeto pra descobrir o que já existe antes de migrar pro LiveStry,
+  não confirmada.
+- **Inconsistência encontrada no mecanismo de trigger**: o diagrama
+  descreve a solução como "busca semântica e hook ao inicializar a
+  sessão" — mas um hook de `SessionStart` roda antes do usuário escrever
+  qualquer coisa, sem texto pra servir de query à busca semântica. O par
+  correto é `UserPromptSubmit` (roda a cada mensagem, tem o texto do
+  usuário como query) para a busca; `SessionStart` serve só pra injetar um
+  catálogo estático leve, não pra rodar `search_skills`. Os dois podem
+  coexistir, mas não são o mesmo evento — corrige a arquitetura abaixo.
+
+## LiveStry vs. Claude Marketplace
+
+Comparação ao longo dos três eixos levantados por msilva no segundo
+diagrama:
+
+| Eixo | Claude Marketplace (nativo) | LiveStry (build próprio) |
+|---|---|---|
+| **Granularidade de controle** | Binário: skill existe no repo ou não. Sem etapas de ciclo de vida nativas (rascunho → review → aprovado → publicado). `claude plugin eval` é opcional, dev-time, não é gate no fluxo de publish. Update é pull — ninguém força a versão nova rodar. | Controle total porque você constrói o pipeline: pode exigir evaluation antes de aceitar upload, bloquear skill reprovada, forçar re-teste quando o conteúdo muda. Custo: você constrói e mantém esse pipeline. |
+| **Analytics** | Telemetria via OpenTelemetry (`plugin_installed`, `plugin_loaded`, `skill_activated`) só se a org configurar exporter — não é automático. API de analytics agregada é Enterprise-only, por dia/por plugin, nome de plugin third-party redigido por padrão. `/skill-doctor` só dá visão local por usuário. | Cada chamada a `search_skills`/`load_skill` já é uma request no seu servidor — log granular, por usuário, por skill, por timestamp, sem depender de tier de plano nem de setup de exporter. |
+| **Provider lock-in** | Mecanismo 100% proprietário do Claude Code (`marketplace.json`, `/plugin install`). Não existe em Cursor, Copilot, Gemini CLI — falha o requisito harness-agnostic direto. | Formato (`SKILL.md`, spec agentskills.io) e distribuição (MCP) já são cross-vendor por design. Único lock-in residual é o hook de trigger por harness — real mas administrável (wrapper fino, mesma lógica central). |
+
+**Síntese**: o marketplace nativo ganha em "já existe, zero esforço" só
+pra quem fica 100% no Claude Code. Perde nos três eixos assim que entra o
+requisito harness-agnostic e a necessidade real de controle de qualidade e
+visibilidade — os dois problemas que motivaram o LiveStry desde o início.
+Não é alternativa ao LiveStry, é o fallback grátis de quem não sai do
+Claude Code.
+
 ## Arquitetura resultante
 
 - Formato de pacote: `SKILL.md` per agentskills.io spec.
@@ -84,9 +130,11 @@ OpenCode, que ficaram como "parcial, não confirmado".
   `search_skills` (busca semântica/vetorial) + `load_skill` (corpo
   completo), com log de uso por chamada (resolve auditoria/analytics de
   graça).
-- Trigger: hook nativo por harness (`SessionStart`/`UserPromptSubmit` ou
-  equivalente), um adapter fino por um dos 4 harnesses escopados, chamando
-  a mesma lógica central de busca.
+- Trigger: `UserPromptSubmit` (ou equivalente) roda `search_skills` com o
+  texto do usuário como query a cada mensagem; `SessionStart` (ou
+  equivalente), opcional, só injeta um catálogo estático leve. Um adapter
+  fino por um dos 4 harnesses escopados, chamando a mesma lógica central de
+  busca.
 - Gate de qualidade: ainda em aberto — `claude plugin eval` é early-access
   e dev-time, não serve como gate automático; `skills-ref validate` (lib
   de referência da spec) cobre só validação estrutural do frontmatter, não
@@ -97,8 +145,11 @@ OpenCode, que ficaram como "parcial, não confirmado".
 - Schema exato do hook em cada um dos 4 harnesses (nome do evento, formato
   de `additionalContext`) — pesquisa inicial via resumo de doc, não leitura
   verbatim; precisa confirmação campo-a-campo antes de implementar.
-- Gate de qualidade real pro caso `pm-linear` — nenhuma opção mapeada até
-  agora resolve isso automaticamente.
+- Gate de qualidade real pro caso `pm-linear` — "esteira de qualidade" foi
+  nomeada no segundo esboço, mas o que ela roda de fato (validação
+  estrutural, eval automatizado, review humano) ainda não foi definido.
+- Escopo da "skill de mapeamento das skills pessoais e de projeto" — não
+  esclarecido com msilva ainda.
 - Governança/escopo por time — ainda não desenhado como o registry decide
   o que cada time vê.
 - Não foi levado a Luís, Gabrielle, ou qualquer outra pessoa do time —

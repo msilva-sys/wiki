@@ -6613,3 +6613,24 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   arquitetura — Skills Registry"), `syntheses/A6 Curador deve padronizar e
   sinalizar defasagem de skills.md` (link relacionado), `index.md`
   (Syntheses).
+
+## [2026-10-02] synthesis | LiveStry — segundo esboço e comparação com Claude Marketplace
+- msilva trouxe uma segunda versão do diagrama, já nomeada **LiveStry**
+  (convenção Live*). Novidades: "Manutenção" explicitada entre as funções
+  do registry; "Upload de skills → Esteira de qualidade" nomeando o gate
+  de qualidade que ficou em aberto (ainda sem definir o que ela roda); três
+  pitches ("Soluciona?"), um deles ("skill de mapeamento das skills
+  pessoais e de projeto") com escopo ainda não esclarecido.
+- Inconsistência encontrada e corrigida na arquitetura: o diagrama descrevia
+  o trigger como "busca semântica e hook ao inicializar a sessão", mas
+  `SessionStart` roda antes de haver texto do usuário pra servir de query.
+  Corrigido para `UserPromptSubmit` (busca por turno, com o texto do
+  usuário) + `SessionStart` opcional (só catálogo estático).
+- Construída comparação LiveStry × Claude Marketplace nos três eixos do
+  diagrama (granularidade de controle, analytics, provider lock-in) —
+  marketplace nativo não cobre nenhum dos três assim que entra o requisito
+  harness-agnostic.
+- Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (nova
+  seção "Segundo esboço", nova seção "LiveStry vs. Claude Marketplace",
+  correção do trigger na arquitetura, open issues atualizadas), `index.md`
+  (entrada de Syntheses).
