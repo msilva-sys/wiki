@@ -1,7 +1,7 @@
 ---
 type: concept
 status: draft
-updated: 2026-09-14
+updated: 2026-10-05
 aliases: [fronteira A10 A14, N0-N4, niveis de informacao A10 A14, painel de métricas A10 A14, teste da pergunta A10 A14, efeito medido, acoplamento A10 A14, projeto milestone A14]
 tags: [agents, agent-flow, a10, a14, product-scope, metrics]
 ---
@@ -396,3 +396,13 @@ Alimenta a questão em aberto de
 [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro A14]]
 (fronteira PM vs. Portfolio, versão ampla ainda não fechada) e nomeia o
 design ainda não feito do loop de retorno A14→A10 em [[Agent Flow]].
+
+## Feedback de produto sobre o report do A14 (2026-10-05)
+
+Carolina, em [[2026-10-05 Carolina - Matheus (feedback reports A14)]]: o report do A14 deveria separar **o que o agente não
+conseguiu medir por falta de dado** (milestone, estimate, movimentação) de
+**alertas/progresso** e de **sugestões** — o primeiro bloco é um termômetro
+de maturidade de dados que deve tender a zero. Ela também questiona se
+sistemas em manutenção (sem projeto aberto no Linear) cabem no A14 ou pedem
+outro agente. Não é decisão; vira insumo para
+[PRO-860](https://linear.app/projetos-livemode/issue/PRO-860/pausar-a-publicacao-semanal-do-a14-e-reenviar-a-ultima-rodada-com-o).

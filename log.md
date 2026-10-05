@@ -6652,3 +6652,25 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   levantado no thread do Slack `#projetos` (2026-09-24/25, resposta ao
   pedido da Carol sobre as newsletters) — registrado como nota, thread
   em si ainda não virou página própria na wiki.
+
+## [2026-10-05] ingest | Carolina - Matheus, feedback dos reports do A14
+- Lido `raw/carol-matheus.pdf` (transcrição enviada por e-mail pela
+  Carolina, 2026-10-05 09:40; Speaker A = Carolina, Speaker B = msilva,
+  confirmado por msilva).
+- New: `meetings/2026-10-05 Carolina - Matheus (feedback reports A14).md`
+  — revisão de produto dos status updates semanais do A14: três blocos
+  (falta de dado · alertas/progresso · sugestões), sinais errados
+  conferidos ao vivo, estágio de ciclo de vida questionado pra v1, agente
+  separado para sistemas em manutenção, agente "pré-requisito" de
+  completude de dados. Nenhuma decisão formal.
+- Linear (projeto `A10 & A14 — Homologação`): criadas PRO-860 (pausar
+  publicação semanal e reenviar a última rodada com feedback) e PRO-861
+  (spike: mapeamento dos sinais errados pra investigação, por escolha de
+  msilva em vez de correção direta).
+- Updated: `projects/Agent Flow.md` (callout novo), `people/Carolina
+  Bezerra.md`, `concepts/Fronteira A10×A14 (informação e métricas).md`,
+  `concepts/Linear Project Structure.md` (status de projeto sem valores
+  customizados), `index.md`.
+- Achado lateral: o Linear mostra o A10/A14 bem à frente da wiki (estágio
+  por projeto PRO-669/704, prioridade calculada PRO-785, publicação
+  semanal PRO-667 etc., todas Done) — nada disso foi ingerido aqui ainda.

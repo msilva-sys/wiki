@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-09-10
+updated: 2026-10-05
 aliases: [Linear structure, initiatives and projects, milestones, Liner]
 tags: [linear, process, project-management]
 ---
@@ -460,3 +460,12 @@ que esbarra no Monday entra na iniciativa do Monday, não numa própria).
   the tool watching msilva's project would sit behind the project itself.
 - **Does a project have to be classified *em andamento* to appear on the board?** Implied.
   If so, classification is a visibility lever worth knowing about.
+
+## Status de projeto não aceita valores customizados (2026-10-05)
+
+msilva, em [[2026-10-05 Carolina - Matheus (feedback reports A14)]]: o Linear não deixa adicionar valores ao status de projeto
+(confirmado também por Gabrielle, segundo ele) — por isso o A10/A14 ganhou
+um campo próprio de **estágio** (Planejamento/Construção/Evolução/
+Manutenção…) com de-para para o status nativo (`PRO-704`). Carolina
+questiona usar esse estágio na v1 do agente; mérito em aberto com
+Gabrielle.

@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: build
-updated: 2026-09-25
+updated: 2026-10-05
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -457,6 +457,20 @@ tags: [agents, llm, automation, onboarding, research]
 > original**: não avalia risco de execução, não decide esteira automática de
 > PR, não decide priorização de portfólio — resolve por tabela a tensão
 > A2×A10 que estava em aberto (ver [[A10 avalia saúde, não prioriza portfólio]]).
+
+> [!warning] Reports do A14 pausados para iteração de formato — Carolina, 2026-10-05
+> [[2026-10-05 Carolina - Matheus (feedback reports A14)]]: revisão de produto dos status updates semanais do A14. Carolina
+> pede três blocos (o que não deu pra medir por falta de dado · alertas e
+> progresso · sugestões), sem "resumo", e "nenhuma movimentação" como
+> alerta. Vários sinais conferidos ao vivo saíram errados (prioridade
+> urgente, atraso de milestone, vazão zero sem estimate). msilva pausa o
+> envio automático e reenvia a última rodada reformulada
+> ([PRO-860](https://linear.app/projetos-livemode/issue/PRO-860/pausar-a-publicacao-semanal-do-a14-e-reenviar-a-ultima-rodada-com-o));
+> os bugs viram mapeamento pra investigação
+> ([PRO-861](https://linear.app/projetos-livemode/issue/PRO-861/investigar-sinais-errados-nos-status-updates-do-a14-prioridade-atraso)).
+> Em aberto: estágio de ciclo de vida fica ou sai da v1 (mérito com
+> Gabrielle); agente "pré-requisito" de completude de dados; sistemas em
+> manutenção (ORCA, LiveScript) talvez precisem de outro agente, não do A14.
 
 ## Philosophy and build strategy
 
