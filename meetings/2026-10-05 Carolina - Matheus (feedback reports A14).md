@@ -111,6 +111,26 @@ mérito do estágio de ciclo de vida para Gabrielle.
   - parear alerta com evidência (ex.: M5 em 40%, 20 dias sem ninguém tocar,
     data já vencida → sugestão: backlog ou mudar data/alocar esforço).
 
+## Depois da reunião
+
+Às 10:36 a Carolina pediu no DM do Slack a lista de tarefas que saiu do papo,
+pra validar. msilva respondeu às 10:54 com:
+
+- tirar a cadência semanal do update dos agentes e validar a análise com o
+  time pelo **preview do dashboard** (mostra a análise sem publicar no
+  Linear) — `PRO-860`;
+- investigar os erros da análise (urgência de issue) — `PRO-861`;
+- tópico do que o agente não conseguiu deduzir por falta de dado;
+- agente mais propositivo, sugerindo ação;
+- melhorar a legibilidade;
+- separar a análise do Linear da do GitHub;
+- retirar o estágio de vida da análise de projetos/iniciativas por enquanto.
+
+**Esclarecido por msilva (2026-10-05)**: o estágio de vida **continua como
+campo** (`PRO-669`/`PRO-704`), só sai da análise do A10 e do A14 por
+enquanto. Isso resolve, do lado de msilva, a open question acima sobre usar o
+estágio na v1. A validação da Carolina ainda não chegou.
+
 ## Notable quotes
 
 - Carolina: *"Se você colocar ele num agente e vir pra mim falando que o

@@ -6682,3 +6682,16 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `meetings/2026-10-05 Carolina - Matheus (feedback reports
   A14).md` (commitment com correção inline), `projects/Agent Flow.md`
   (callout), `index.md`.
+
+## [2026-10-05] refactor | Lista de tarefas enviada à Carolina; estágio sai da análise, fica como campo
+- Lido o thread do DM com Carolina no Slack (2026-10-05 10:36–10:54): ela
+  pediu a lista de tarefas que saiu da reunião, msilva mandou 7 itens, todos
+  já cobertos por PRO-860/PRO-861.
+- msilva esclarece: o estágio de vida **não é removido como campo**, só sai da
+  análise do A10 e do A14 por enquanto. PRO-860 deixou de dizer "avaliar
+  tirar" e passou a dizer isso.
+- Updated: `meetings/2026-10-05 Carolina - Matheus (feedback reports
+  A14).md` (seção "Depois da reunião"), `projects/Agent Flow.md` (callout).
+- Ainda em aberto: a pausa do cron vale também para a publicação do A10 na
+  iniciativa? A mensagem dizia "update dos agentes", mas a PRO-860 cita só
+  o A14.

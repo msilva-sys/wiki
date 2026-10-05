@@ -469,8 +469,8 @@ tags: [agents, llm, automation, onboarding, research]
 > ([PRO-860](https://linear.app/projetos-livemode/issue/PRO-860/pausar-a-publicacao-semanal-do-a14-e-reenviar-a-ultima-rodada-com-o));
 > os bugs viram mapeamento pra investigação
 > ([PRO-861](https://linear.app/projetos-livemode/issue/PRO-861/investigar-sinais-errados-nos-status-updates-do-a14-prioridade-atraso)).
-> Em aberto: estágio de ciclo de vida fica ou sai da v1 (mérito com
-> Gabrielle); agente "pré-requisito" de completude de dados; sistemas em
+> Estágio de ciclo de vida sai da **análise** do A10/A14 por enquanto, mas
+> continua como campo (msilva, mesmo dia). Em aberto: agente "pré-requisito" de completude de dados; sistemas em
 > manutenção (ORCA, LiveScript) talvez precisem de outro agente, não do A14.
 
 ## Philosophy and build strategy
