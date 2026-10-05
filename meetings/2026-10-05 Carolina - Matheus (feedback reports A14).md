@@ -31,7 +31,9 @@ mérito do estágio de ciclo de vida para Gabrielle.
 
 - msilva: pausar a publicação automática do A14, regenerar os reports da
   última rodada com o feedback da Carolina e do Luís, reenviar ao grupo; se
-  não convergir, reduzir escopo do agente —
+  não convergir, reduzir escopo do agente. **Ajustado por msilva
+  (2026-10-05, depois da reunião)**: não vai reenviar a última rodada — vai
+  pedir ao pessoal que revise o preview do report no dashboard —
   [PRO-860](https://linear.app/projetos-livemode/issue/PRO-860/pausar-a-publicacao-semanal-do-a14-e-reenviar-a-ultima-rodada-com-o).
 - msilva: investigar os sinais errados apontados na revisão (lista em
   *Facts stated*) —

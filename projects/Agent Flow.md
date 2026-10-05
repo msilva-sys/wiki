@@ -464,7 +464,8 @@ tags: [agents, llm, automation, onboarding, research]
 > progresso · sugestões), sem "resumo", e "nenhuma movimentação" como
 > alerta. Vários sinais conferidos ao vivo saíram errados (prioridade
 > urgente, atraso de milestone, vazão zero sem estimate). msilva pausa o
-> envio automático e reenvia a última rodada reformulada
+> envio automático e pede ao grupo que valide o novo formato pelo preview
+> do dashboard (não reenvia a última rodada)
 > ([PRO-860](https://linear.app/projetos-livemode/issue/PRO-860/pausar-a-publicacao-semanal-do-a14-e-reenviar-a-ultima-rodada-com-o));
 > os bugs viram mapeamento pra investigação
 > ([PRO-861](https://linear.app/projetos-livemode/issue/PRO-861/investigar-sinais-errados-nos-status-updates-do-a14-prioridade-atraso)).

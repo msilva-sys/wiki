@@ -6674,3 +6674,11 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Achado lateral: o Linear mostra o A10/A14 bem à frente da wiki (estágio
   por projeto PRO-669/704, prioridade calculada PRO-785, publicação
   semanal PRO-667 etc., todas Done) — nada disso foi ingerido aqui ainda.
+
+## [2026-10-05] refactor | PRO-860 — validação pelo preview do dashboard, sem reenvio
+- msilva: não vai reenviar a última rodada de reports do A14; vai pedir ao
+  pessoal que revise o preview no dashboard.
+- Linear: PRO-860 com título/descrição/checklist ajustados.
+- Updated: `meetings/2026-10-05 Carolina - Matheus (feedback reports
+  A14).md` (commitment com correção inline), `projects/Agent Flow.md`
+  (callout), `index.md`.
