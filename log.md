@@ -6695,3 +6695,22 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Ainda em aberto: a pausa do cron vale também para a publicação do A10 na
   iniciativa? A mensagem dizia "update dos agentes", mas a PRO-860 cita só
   o A14.
+
+## [2026-10-05] ingest | Cognee — Introduction
+- Lido `raw/Clippings/cognee introduction.md` (livemode-raw); doc completa
+  lida ao vivo em `docs.cognee.ai` (overview, architecture, improve,
+  feedback, fact validity, multi-user/permissions, plugin do Claude Code).
+- Discutido com msilva: (1) RAG no `agent_facts` foi descartado por
+  complexidade, não princípio — solução pronta é bem-vinda; (2) o Cognee não
+  tem gate humano nativo: curadoria por LLM (curator + writer/rejecter no
+  `improve`) e feedback 1–5 como sinal de ranking, desligado por padrão; um
+  propõe→aprova dá para montar por fora (sessão como staging, ou dataset
+  `proposals` vs. `approved` com permissões separadas; `close_node` como
+  `retired`, só no Ladybug e sem filtro na busca); (3) escopo é
+  time/organização — este wiki é a versão pessoal do msilva; (4) msilva
+  quer um roteiro guiado de estudo.
+- New: `sources/Cognee - Introduction.md`, `syntheses/Cognee como memória
+  dos agentes e do time.md` (inclui roteiro de estudo em 6 passos).
+- Updated: `decisions/2026-09-10 Memória de fatos do agente
+  (agent_facts).md` (esclarecimento inline sobre o descarte do RAG),
+  `index.md`.
