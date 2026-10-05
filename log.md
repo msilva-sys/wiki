@@ -6714,3 +6714,11 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `decisions/2026-09-10 Memória de fatos do agente
   (agent_facts).md` (esclarecimento inline sobre o descarte do RAG),
   `index.md`.
+
+## [2026-10-05] synthesis | PRO-870 — spike de estudo do Cognee
+- Criada a PRO-870 no Linear: Spike, Infra do Fluxo Agêntico, Todo, prazo
+  2026-10-09 (msilva: "priorizado, com prazo até sexta agora"), Effort M,
+  relacionada à PRO-517. Escopo = passos 1–5 do roteiro; feedback e
+  destilação fora.
+- Updated: `syntheses/Cognee como memória dos agentes e do time.md`,
+  `index.md`.

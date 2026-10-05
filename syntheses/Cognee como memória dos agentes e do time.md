@@ -14,6 +14,10 @@ Aberta em 2026-10-05, a partir de [[Cognee - Introduction]]
 organização** — e quer estudá-lo antes de concluir qualquer coisa. Esta
 página é o caderno desse estudo.
 
+Rastreado no Linear como [PRO-870](https://linear.app/projetos-livemode/issue/PRO-870/avaliar-uma-ferramenta-pronta-de-memoria-compartilhada-para-os-agentes)
+(Spike, Infra do Fluxo Agêntico, prazo 2026-10-09, relacionada à PRO-517) —
+roteiro passos 1–5; o passo 6 ficou fora do escopo.
+
 Salvo indicação, o conteúdo técnico abaixo vem da **doc ao vivo**
 (`docs.cognee.ai`, lida em 2026-10-05 via `llms.txt`/páginas `.md`), não do
 código — *o que a doc diz*, não verificado em execução.
