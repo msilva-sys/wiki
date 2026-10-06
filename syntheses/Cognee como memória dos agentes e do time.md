@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: open
-updated: 2026-10-05
+updated: 2026-10-06
 aliases: [cognee, estudo cognee, memória do time, memória organizacional]
 tags: [agents, memory, knowledge-graph, agent-flow, harness, human-in-the-loop]
 ---
@@ -36,6 +36,13 @@ código — *o que a doc diz*, não verificado em execução.
   deixou de ser agente, mas "memória organizada como infraestrutura"
   continuou o problema crítico) e com as preocupações de 2026-09-25 sobre
   contexto preso ao dashboard e agência individual do time.
+- **Grafo vale a pena (2026-10-06).** Confirmado em conversa: a necessidade
+  real não é só factoide isolado, é travessia relacional — "quem bloqueia o
+  quê", "que decisão depende de qual projeto" — o mesmo padrão que este
+  wiki já modela via wikilinks entre `projects/`/`people/`/`decisions/`. Sem
+  grafo, a camada de memória vira busca vetorial — "grep melhorado" — e
+  perde essa travessia. Pesa a favor do Cognee sobre uma solução puramente
+  vetorial (ex.: Mem0 sem o add-on de grafo).
 
 ## Como o Cognee trata "human in the loop"
 

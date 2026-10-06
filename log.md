@@ -6862,3 +6862,11 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   metade por orçamento — não confirmado como livre de contradição interna,
   sinalizado como pendente de verificação. Zero callouts `[!msilva]` sem
   log.
+
+## [2026-10-06] synthesis | Cognee — grafo é necessário?
+- Discussão em chat (não transcript): msilva concluiu que o grafo vale a
+  pena para a memória de time/organização do PRO-870 — a necessidade real
+  é travessia relacional, não só factoide isolado, mesmo padrão que este
+  wiki já modela via wikilinks.
+- Updated: `syntheses/Cognee como memória dos agentes e do time.md`
+  (seção "Enquadramento do msilva").
