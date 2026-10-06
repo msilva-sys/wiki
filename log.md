@@ -6912,6 +6912,23 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   Skills Registry corporativo.md` (nova seção "Achado novo", link em
   Relacionado), `index.md` (Systems, Syntheses).
 
+## [2026-10-06] lint | resolve 2 achados — status inválido e syntheses superadas
+- **Status inválido**: `syntheses/A10 avalia saúde, não prioriza portfólio.md`
+  e `syntheses/Cognee como memória dos agentes e do time.md` tinham
+  `status: open`, fora do enum do schema — corrigidas pra `active` (ambas
+  seguem genuinamente abertas, workbench de verdade, não resolvidas).
+- **Syntheses superadas nunca marcadas**: confirmado em
+  `projects/Agent Flow.md` (callout 2026-09-03) que as vias alternativas da
+  PoC A10/A14 (PRO-393 Skill, PRO-394 Agent SDK, PRO-395, PRO-377) ficaram
+  abandonadas — só a frente LangGraph (PRO-392) seguiu e virou o código real
+  em produção. Isso resolve (por via de fato, não pelo critério de
+  encerramento original) `syntheses/Como implementar a PoC do A10+A14
+  (LangGraph, Skill, Agent SDK).md` e `syntheses/Desenho do agente LangGraph
+  para A10+A14.md` — ambas densas demais pra fold, mantidas arquivadas com
+  `status: superseded` e nota explicando o que as superou, por
+  [[Fronteira A10×A14 (informação e métricas)]].
+- Updated: as 4 páginas acima, `index.md` (Syntheses, 2 entradas).
+
 ## [2026-10-06] synthesis | LiveStry — gate de qualidade também corroborado pela MKT1
 - msilva confirmou em chat o enquadramento "Claude Code tem governança
   limitada sobre skills" lido na síntese; checando, o ponto de gate de

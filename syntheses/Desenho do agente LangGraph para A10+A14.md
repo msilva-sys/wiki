@@ -1,13 +1,22 @@
 ---
 type: synthesis
-status: active
-updated: 2026-08-27
+status: superseded
+updated: 2026-10-06
 date: 2026-08-26
 tags: [agents, agent-flow, a10, a14, poc, langgraph, langchain, linear-api, langfuse]
 aliases: [desenho do LangGraph, agent vs workflow A10+A14, PRO-392 design]
 ---
 
 # Desenho do agente LangGraph para A10+A14
+
+> [!note] Superseded — 2026-10-06
+> Desenho pré-código (2026-08-26). O código real que saiu dele (`a10/agent.py`,
+> `a14/agent.py`, `a10/contracts.py`/`a14/contracts.py`, `a10/rules.py`) já foi
+> auditado contra o desenho em [[Fronteira A10×A14 (informação e métricas)]],
+> com divergências e ajustes documentados lá (ex.: unidade de julgamento do
+> A10 mudou duas vezes antes de bater com o princípio aqui descrito). Esta
+> página fica como registro do raciocínio original, não da implementação
+> atual — ver a concept page pro estado real do código.
 
 Continuação de [[Como implementar a PoC do A10+A14 (LangGraph, Skill, Agent SDK)]] —
 aquela página fechou o desenho das **três frentes**; esta cobre só o **interior

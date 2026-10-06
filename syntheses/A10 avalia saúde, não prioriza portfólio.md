@@ -1,6 +1,6 @@
 ---
 type: synthesis
-status: open
+status: active
 updated: 2026-09-15
 aliases: [gap de priorizacao do A10, A10 nao prioriza, esforco e retorno faltando]
 tags: [agents, a10, a14, portfolio, priorizacao, airtable, linear]

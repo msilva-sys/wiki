@@ -1,13 +1,25 @@
 ---
 type: synthesis
-status: active
-updated: 2026-08-26
+status: superseded
+updated: 2026-10-06
 date: 2026-08-26
 tags: [agents, agent-flow, a10, a14, poc, langgraph, claude-code, agent-sdk, mcp]
 aliases: [PoC A10+A14, três frentes da PoC, LangGraph vs Skill vs Agent SDK]
 ---
 
 # Como implementar a PoC do A10+A14 (LangGraph, Skill, Agent SDK)
+
+> [!note] Superseded — 2026-10-06
+> A comparação planejada entre as três frentes nunca aconteceu como desenhado
+> aqui. Em [[Agent Flow]] (callout de 2026-09-03), as vias alternativas
+> ficaram **abandonadas** (PRO-393 Skill, PRO-394 Agent SDK, PRO-395 e o
+> próprio PRO-377 de comparação, restando só cancelar formalmente no board) —
+> a frente LangGraph (PRO-392) seguiu sozinha e virou o código real em
+> produção (`a10/agent.py`/`a14/agent.py`, auditado em [[Fronteira A10×A14
+> (informação e métricas)]]). A PoC foi resolvida por via de fato (uma frente
+> emplacou), não pelo critério de encerramento original ("as três existem e o
+> feedback foi coletado"). Página mantida arquivada pelo raciocínio de
+> enquadramento (seção "O real valor da PoC"), ainda citável.
 
 Continuação de [[2026-08-24 Build A10 and A14 together, PoC first]] — aquela
 decisão fechou *o quê* (A10+A14 juntos, PoC antes de produção); esta página

@@ -1,6 +1,6 @@
 ---
 type: synthesis
-status: open
+status: active
 updated: 2026-10-06
 aliases: [cognee, estudo cognee, memória do time, memória organizacional]
 tags: [agents, memory, knowledge-graph, agent-flow, harness, human-in-the-loop]
