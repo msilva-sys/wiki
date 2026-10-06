@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-09-10
+updated: 2026-10-05
 date: 2026-09-10
 aliases: [agent_facts, memória de fatos, fact memory, remember_fact, recall_facts]
 tags: [agent-flow, agents, memory, database, harness]
@@ -96,6 +96,14 @@ e descartados por ora —
 
 Se o prompt inchar na prática,avaliar essas alternativas então, não agora.
 
+**Esclarecimento (msilva, 2026-10-05):** o RAG foi descartado **pela
+complexidade de construir**, não por princípio — se uma solução pronta já
+provê isso, não há motivo para não usar. Candidato em estudo:
+[[Cognee como memória dos agentes e do time]] (camada de memória com grafo +
+vetor). Ressalva da doc: o Cognee não tem gate humano nativo — o
+propõe→aprova desta decisão teria que ser montado por fora (datasets com
+permissão separada), então esta tabela não fica automaticamente obsoleta.
+
 ## Onde isso mora no molde
 
 [[Como deve funcionar o molde de agente]] reserva um campo `memory_policy`
@@ -127,6 +135,7 @@ A metade individual não tem essa objeção registrada — mesmo padrão de
 - [[Agent Harness Template]]
 - [[2026-09-01 Modelar SOUL em tabelas com composição plana]]
 - [[Agent Flow]]
+- [[Cognee como memória dos agentes e do time]]
 - [[2026-09-10 1-1 Matheus - Luís]] — precursor informal desta decisão,
   mesmo dia: fluxo `pendente` → aprovação humana discutido e endossado
   antes do desenho técnico ("essa ideia de passar por uma aprovação, eu

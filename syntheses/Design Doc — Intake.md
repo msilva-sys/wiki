@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-09-16
+updated: 2026-10-01
 date: 2026-09-16
 aliases: [intake design doc, design doc intake, design doc a1 a2, intake]
 tags: [agent-flow, intake, design-doc, a1, a2]
@@ -113,8 +113,13 @@ Open Issues).
 
 ## Open Issues
 
-1. **Onde mora o catálogo central?** Linear (Triagem), Airtable, ou outro —
-   restringido pela constraint de não introduzir ferramenta nova.
+1. ~~**Onde mora o catálogo central?**~~ **Respondida na prática, não por
+   decisão formal, 2026-10-01**: msilva implementou o catálogo em
+   **Supabase**, com o front em **Cloudflare Workers** no lugar de Next.js —
+   ver [[2026-10-01 1-1 Matheus - Luís]]. Luís pediu um estudo comparativo
+   Supabase vs. Neon/Cloud SQL antes de considerar essa escolha assentada
+   (comprometimento de msilva, ainda não entregue) — tratar como provisória,
+   não como resposta fechada desta Open Issue.
 2. **Quem recebe o ack quando a demanda é lançada direto numa base, sem
    conversa de origem?**
 3. **Schema do catálogo** — quais campos além de origem/conteúdo/timestamp.
@@ -134,3 +139,4 @@ Open Issues).
 - [[2026-09-15 Proxy e Fluxo Agêntico com Luís]]
 - [[2026-09-15 Agente voltado a usuário externo precisa de identidade própria e resposta imediata]]
 - [[A10 avalia saúde, não prioriza portfólio]]
+- [[2026-10-01 1-1 Matheus - Luís]]

@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-09-24
+updated: 2026-09-30
 aliases: [liveauth, liveauth poc]
 tags: [auth, security, liveauth, proxy]
 ---
@@ -57,3 +57,16 @@ notável: `livemode-projects-management` já tem autorização por grupo
 própria (`authz.ts`), o precedente mais próximo do objetivo do LiveAuth
 achado no levantamento. Ver
 [[Trava de domínio e autenticação — inventário para o LiveAuth]].
+
+## Discovery — casos de uso levantados, 2026-09-30
+
+Em [[2026-09-30 LiveAuth - Discovery com Gustavo Cruz (Hub Fiscal)]]:
+
+- **[[Gustavo Cruz]]**, área fiscal, opera o "Hub de Automações Fiscais" —
+  dashboards sobre dados do ERP TOTVS, travados só por senha, acessíveis
+  externamente, sem rate limiting, vulneráveis a força bruta. Caso real do
+  problema que o LiveAuth quer resolver; ainda não decidido se migra pro
+  LiveAuth ou só recebe mitigação via Sentinela por ora.
+- **[[Marina Ferrão]]** (atendimento), via Gustavo: planilha do núcleo criativo
+  que outros times precisam ler mas só o time dono pode editar — requisito
+  de granularidade de permissão por time, ainda sem desenho técnico.

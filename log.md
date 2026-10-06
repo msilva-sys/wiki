@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-09-17
+updated: 2026-10-06
 
 
 ---
@@ -6652,3 +6652,213 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   levantado no thread do Slack `#projetos` (2026-09-24/25, resposta ao
   pedido da Carol sobre as newsletters) — registrado como nota, thread
   em si ainda não virou página própria na wiki.
+
+## [2026-09-30] ingest | LiveAuth discovery com Gustavo Cruz (Hub Fiscal)
+- Lida transcrição do Granola (reunião "Gustavo / Matheus", 2026-09-30,
+  via `get_meetings`/`get_meeting_transcript`). Diarização ausente (canal
+  único de microfone); Granola's próprio resumo parece ter invertido
+  Matheus e Gustavo nos itens de ação. Atribuição reconstruída por
+  conteúdo e confirmada com msilva em chat antes de escrever: Gustavo
+  Cruz é o dono do hub fiscal, msilva lidera o discovery do LiveAuth.
+  Duas correções feitas por msilva depois do rascunho: ERP é TOTVS (não
+  TOTI); Gustavo não é o único usuário do hub. Commitment de msilva
+  mandar prompt de rate limiting via Slack foi descartado por ele e
+  removido da nota.
+- New: `meetings/2026-09-30 LiveAuth - Discovery com Gustavo Cruz (Hub
+  Fiscal).md`, `people/Gustavo Cruz.md`, `people/Marina Ferrão.md`.
+- Updated: `projects/LiveAuth.md` (nova seção com os dois casos de uso —
+  hub fiscal do Gustavo, requisito de granularidade via Marina Ferrão),
+  `people/Marina.md` (open question cruzando com Marina Ferrão),
+  `index.md` (People, Meetings, entrada do LiveAuth em Projects).
+
+## [2026-10-01] ingest | 1-1 Matheus - Luís
+- Lida transcrição do Granola (`get_meetings`/`get_meeting_transcript`,
+  reunião "Matheus / Luís 01-10"). Diarização confiável por fonte de
+  áudio: `Microphone` = msilva (gravador confirmado), `System audio` =
+  Luís (confirmado pelo título e pelo conteúdo).
+- Achado central: três violações concretas, no mesmo 1:1, da norma já
+  registrada em [[2026-08-18 Bring options to Luís before deciding,
+  communicate async and often]] — intake retomado sem avisar, Cloudflare
+  Workers escolhido no lugar do Next.js sem comunicar, Supabase adotado
+  por ruído de comunicação (Luís alega decisão contrária prévia, sem
+  registro nesta wiki — ficou como open question). Corolário novo:
+  equipe técnica (não de produto) deve manter stack simples e
+  padronizada, GoLang no proxy é a única exceção justificada.
+- Também: feedback sobre a saída dos agentes do [[Agent Flow]]
+  (descreve dado, não recomenda ação — exceção boa no Pulso); Luís
+  começou a remover numeração de milestone nos próprios projetos;
+  desenho de testes end-to-end determinísticos com Playwright
+  (isolando a comunicação com Airtable) como próxima frente pra msilva
+  e Yasmin.
+- Confirmado com msilva antes de escrever: não criar agora a synthesis
+  de "Supabase vs. alternativas" (só quando a análise sair), não abrir
+  issue no Linear pro commitment (fica só registrado na wiki por ora).
+- New: `meetings/2026-10-01 1-1 Matheus - Luís.md`.
+- Updated: `decisions/2026-08-18 Bring options to Luís before deciding,
+  communicate async and often.md` (seção "Violated, 2026-10-01"),
+  `people/Luís Fernandez.md`, `projects/Agent Flow.md` (novo callout),
+  `syntheses/Design Doc — Intake.md` (Open Issue 1 parcialmente
+  respondida), `index.md` (Projects, People, Decisions, Syntheses,
+  Meetings).
+
+## [2026-10-02] synthesis | Desenho de um Skills Registry corporativo
+- Ponto de partida: esboço de msilva (imagem, não salva em `raw/`) com um
+  "Skills registry" central + servidor MCP/API + usuários. Validados em
+  chat os três problemas reais por trás: compartilhamento manual/defasado,
+  manutenção que não propaga, controle de qualidade inexistente (caso
+  real: skill `pm-linear`), escala "todos".
+- Plugin marketplace do Claude Code pesquisado e descartado como solução
+  única — resolve distribuição/versionamento, mas não é harness-agnostic
+  (requisito de msilva). Formato de pacote resolvido com a spec aberta
+  `agentskills.io/specification` (`SKILL.md`), confirmada cross-harness via
+  `agentskills.io/clients.md` (~45 adotantes).
+- Problema de trigger mapeado (nada faz o modelo chamar `search_skills`
+  sozinho) e seis alternativas comparadas; hook nativo por harness
+  escolhido por msilva. Pesquisado suporte a hook-equivalente em 14
+  harnesses — 11 confirmados, sem padrão cross-vendor (Agent Plugins Spec
+  exclui hooks de propósito). Escopo final, decidido por msilva: Claude
+  Code, Cursor, Codex/GPT, Gemini CLI — os 4 com suporte confirmado sem gap
+  de documentação.
+- New: `syntheses/Desenho de um Skills Registry corporativo.md`.
+- Updated: `concepts/Packaging as skills.md` (nova seção "Candidato a
+  arquitetura — Skills Registry"), `syntheses/A6 Curador deve padronizar e
+  sinalizar defasagem de skills.md` (link relacionado), `index.md`
+  (Syntheses).
+
+## [2026-10-02] synthesis | LiveStry — segundo esboço e comparação com Claude Marketplace
+- msilva trouxe uma segunda versão do diagrama, já nomeada **LiveStry**
+  (convenção Live*). Novidades: "Manutenção" explicitada entre as funções
+  do registry; "Upload de skills → Esteira de qualidade" nomeando o gate
+  de qualidade que ficou em aberto (ainda sem definir o que ela roda); três
+  pitches ("Soluciona?"), um deles ("skill de mapeamento das skills
+  pessoais e de projeto") com escopo ainda não esclarecido.
+- Inconsistência encontrada e corrigida na arquitetura: o diagrama descrevia
+  o trigger como "busca semântica e hook ao inicializar a sessão", mas
+  `SessionStart` roda antes de haver texto do usuário pra servir de query.
+  Corrigido para `UserPromptSubmit` (busca por turno, com o texto do
+  usuário) + `SessionStart` opcional (só catálogo estático).
+- Construída comparação LiveStry × Claude Marketplace nos três eixos do
+  diagrama (granularidade de controle, analytics, provider lock-in) —
+  marketplace nativo não cobre nenhum dos três assim que entra o requisito
+  harness-agnostic.
+- Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (nova
+  seção "Segundo esboço", nova seção "LiveStry vs. Claude Marketplace",
+  correção do trigger na arquitetura, open issues atualizadas), `index.md`
+  (entrada de Syntheses).
+
+## [2026-10-05] ingest | Carolina - Matheus, feedback dos reports do A14
+- Lido `raw/carol-matheus.pdf` (transcrição enviada por e-mail pela
+  Carolina, 2026-10-05 09:40; Speaker A = Carolina, Speaker B = msilva,
+  confirmado por msilva).
+- New: `meetings/2026-10-05 Carolina - Matheus (feedback reports A14).md`
+  — revisão de produto dos status updates semanais do A14: três blocos
+  (falta de dado · alertas/progresso · sugestões), sinais errados
+  conferidos ao vivo, estágio de ciclo de vida questionado pra v1, agente
+  separado para sistemas em manutenção, agente "pré-requisito" de
+  completude de dados. Nenhuma decisão formal.
+- Linear (projeto `A10 & A14 — Homologação`): criadas PRO-860 (pausar
+  publicação semanal e reenviar a última rodada com feedback) e PRO-861
+  (spike: mapeamento dos sinais errados pra investigação, por escolha de
+  msilva em vez de correção direta).
+- Updated: `projects/Agent Flow.md` (callout novo), `people/Carolina
+  Bezerra.md`, `concepts/Fronteira A10×A14 (informação e métricas).md`,
+  `concepts/Linear Project Structure.md` (status de projeto sem valores
+  customizados), `index.md`.
+- Achado lateral: o Linear mostra o A10/A14 bem à frente da wiki (estágio
+  por projeto PRO-669/704, prioridade calculada PRO-785, publicação
+  semanal PRO-667 etc., todas Done) — nada disso foi ingerido aqui ainda.
+
+## [2026-10-05] refactor | PRO-860 — validação pelo preview do dashboard, sem reenvio
+- msilva: não vai reenviar a última rodada de reports do A14; vai pedir ao
+  pessoal que revise o preview no dashboard.
+- Linear: PRO-860 com título/descrição/checklist ajustados.
+- Updated: `meetings/2026-10-05 Carolina - Matheus (feedback reports
+  A14).md` (commitment com correção inline), `projects/Agent Flow.md`
+  (callout), `index.md`.
+
+## [2026-10-05] refactor | Lista de tarefas enviada à Carolina; estágio sai da análise, fica como campo
+- Lido o thread do DM com Carolina no Slack (2026-10-05 10:36–10:54): ela
+  pediu a lista de tarefas que saiu da reunião, msilva mandou 7 itens, todos
+  já cobertos por PRO-860/PRO-861.
+- msilva esclarece: o estágio de vida **não é removido como campo**, só sai da
+  análise do A10 e do A14 por enquanto. PRO-860 deixou de dizer "avaliar
+  tirar" e passou a dizer isso.
+- Updated: `meetings/2026-10-05 Carolina - Matheus (feedback reports
+  A14).md` (seção "Depois da reunião"), `projects/Agent Flow.md` (callout).
+- Ainda em aberto: a pausa do cron vale também para a publicação do A10 na
+  iniciativa? A mensagem dizia "update dos agentes", mas a PRO-860 cita só
+  o A14.
+
+## [2026-10-05] ingest | Cognee — Introduction
+- Lido `raw/Clippings/cognee introduction.md` (livemode-raw); doc completa
+  lida ao vivo em `docs.cognee.ai` (overview, architecture, improve,
+  feedback, fact validity, multi-user/permissions, plugin do Claude Code).
+- Discutido com msilva: (1) RAG no `agent_facts` foi descartado por
+  complexidade, não princípio — solução pronta é bem-vinda; (2) o Cognee não
+  tem gate humano nativo: curadoria por LLM (curator + writer/rejecter no
+  `improve`) e feedback 1–5 como sinal de ranking, desligado por padrão; um
+  propõe→aprova dá para montar por fora (sessão como staging, ou dataset
+  `proposals` vs. `approved` com permissões separadas; `close_node` como
+  `retired`, só no Ladybug e sem filtro na busca); (3) escopo é
+  time/organização — este wiki é a versão pessoal do msilva; (4) msilva
+  quer um roteiro guiado de estudo.
+- New: `sources/Cognee - Introduction.md`, `syntheses/Cognee como memória
+  dos agentes e do time.md` (inclui roteiro de estudo em 6 passos).
+- Updated: `decisions/2026-09-10 Memória de fatos do agente
+  (agent_facts).md` (esclarecimento inline sobre o descarte do RAG),
+  `index.md`.
+
+## [2026-10-05] synthesis | PRO-870 — spike de estudo do Cognee
+- Criada a PRO-870 no Linear: Spike, Infra do Fluxo Agêntico, Todo, prazo
+  2026-10-09 (msilva: "priorizado, com prazo até sexta agora"), Effort M,
+  relacionada à PRO-517. Escopo = passos 1–5 do roteiro; feedback e
+  destilação fora.
+- Updated: `syntheses/Cognee como memória dos agentes e do time.md`,
+  `index.md`.
+
+## [2026-10-06] refactor | merge da branch `mac` em `work`
+- Resolvidos os três conflitos de merge (`index.md`, `log.md`,
+  `projects/Agent Flow.md`) entre o trabalho feito no PC de casa (mac,
+  esquecido sem push) e o trabalho feito hoje no PC do trabalho. Todos os
+  conflitos eram aditivos — os dois lados só tinham adicionado conteúdo em
+  pontos diferentes, nenhuma contradição real.
+- Reordenados os dois itens de 2026-09-08 na lista de Meetings do
+  `index.md` pra posição cronológica correta (antes de 2026-09-14).
+- Push feito pra `origin/work`.
+
+## [2026-10-06] ingest | Feedback pra Carol sobre o Guia de um Builder
+- Carolina Bezerra pediu feedback sobre o seu projeto **Guia de um Builder**
+  (https://guia-de-um-builder.livemode.space/). Repo
+  `livemode-org/guia-de-um-builder` lido por completo via GitHub (login
+  Google da página impedia fetch direto).
+- Três dúvidas do rascunho de msilva (`raw/Feedback Carol guia de um
+  builder.md`) viraram achados confirmados contra o código-fonte:
+  inconsistência "etiqueta"/"TAG" na própria página, revisão trimestral sem
+  mecanismo especificado no contrato, "SSO" usado sem explicação.
+  Feedback reescrito na voz do msilva (perfil levantado a partir de
+  mensagens reais dele no Slack) e enviado por Slack.
+- Mesma investigação corrigiu o entendimento de msilva sobre o **Sentinela**
+  (artefato `liveauth-vs-sentinela.html` de 2026-09-22 dizia que quem roda é
+  o time de TI depois do deploy; na verdade é a própria pessoa que
+  construiu, antes e depois do deploy, em duas passadas).
+- New: `sources/Feedback Carol guia de um builder.md`,
+  `systems/Sentinela.md`.
+- Updated: `people/Carolina Bezerra.md` (dona do Programa de Governança),
+  `projects/Agent Flow.md` (link `[[linear-a1-a2-project]]` sem disclaimer
+  corrigido, achado do lint abaixo), `index.md` (Systems, Sources).
+- Perfil de voz do msilva pra comunicação registrado em
+  `C:\Users\msilva\.claude\skills\team-comms\SKILL.md`, levantado a partir
+  de mensagens reais dele no Slack — não é página desta wiki.
+
+## [2026-10-06] lint
+- Health check completo (29º registrado). Sem contradições entre páginas;
+  uma única staleness real (`systems/Proxy Environments.md`, rotação de
+  credenciais ainda não confirmada desde 2026-08-21); sem órfãs reais; 3
+  clippings novos em `raw/Clippings/` ainda não ingeridos (DAGs
+  orchestration, Mem0, Enterprise Agent Build & Runtime — msilva optou por
+  não ingerir agora); link `[[Sentinela]]` sem página corrigido (ver ingest
+  acima); link `[[linear-a1-a2-project]]` sem disclaimer corrigido no
+  `Agent Flow.md`. `Agent Flow.md` (1593 linhas, 84 edits) só foi lido até a
+  metade por orçamento — não confirmado como livre de contradição interna,
+  sinalizado como pendente de verificação. Zero callouts `[!msilva]` sem
+  log.

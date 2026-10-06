@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-09-14
+updated: 2026-10-06
 aliases: [Carolina, Carol]
 tags: [people, governance]
 ---
@@ -82,3 +82,15 @@ elsewhere in the wiki.
   at two layers, fragmented tooling, no area-wide view, individual AI
   usage) may be hers, but may equally be msilva's or Luís's own words —
   not confirmed as specifically hers.
+- **Dona do Programa de Governança e Segurança em IA** (projeto Linear `Guia
+  de um Builder`, P-PRO-16) — inclui o **Guia de um Builder** (página de
+  onboarding ao padrão corporativo) e o [[Sentinela]]. Pediu feedback a
+  msilva sobre a página em 2026-10-06; ver [[Feedback Carol guia de um
+  builder]].
+- **Revisou os status updates semanais do A14, 2026-10-05** ([[2026-10-05 Carolina - Matheus (feedback reports A14)]]) —
+  pediu três blocos (falta de dado · alertas/progresso · sugestões),
+  recomendou não usar o estágio de ciclo de vida na v1 (deixou o mérito com
+  Gabrielle), defende um agente separado para sistemas em manutenção e um
+  agente "pré-requisito" de completude de dados. Sugeriu pausar o envio
+  automático até o formato convergir. Vai incluir milestone na skill de
+  criação de projeto.

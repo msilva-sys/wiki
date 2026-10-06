@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: build
-updated: 2026-09-25
+updated: 2026-10-06
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -457,6 +457,53 @@ tags: [agents, llm, automation, onboarding, research]
 > original**: não avalia risco de execução, não decide esteira automática de
 > PR, não decide priorização de portfólio — resolve por tabela a tensão
 > A2×A10 que estava em aberto (ver [[A10 avalia saúde, não prioriza portfólio]]).
+
+> [!tip] Saída do A10/A14 precisa virar recomendação, não só descrição — Luís, 2026-10-01
+> [[2026-10-01 1-1 Matheus - Luís]]: revisão das análises de projeto em
+> produção. Problema nomeado: os agentes descrevem o que os dados
+> significam (estágio errado, entrega atrasada), mas não dizem o que fazer
+> com isso — falta a camada de recomendação acionável. Exceção boa, já
+> encontrada em produção: o Pulso gerou "revisar e decidir o PR aberto há
+> 12 dias ou registrar explicitamente o próximo passo" — exatamente a
+> forma esperada. Luís mandou um formato alternativo (mais direto, tipo
+> resumo de status) que msilva recebeu bem, não como versão final. **A
+> causa de alguns projetos não gerarem recomendação nenhuma ainda não foi
+> investigada** — próximo passo de msilva. Mesma conversa: Luís começou a
+> remover a numeração de milestone (`M1 -`, `M2 -`) nos próprios projetos —
+> atrapalha mais do que ajuda na hora de reordenar — ainda não é padrão
+> fechado pro time, só uma experiência em andamento; ver
+> [[linear-a1-a2-project]] (memória, não página da wiki) pra a convenção de
+> numeração ainda vigente no projeto A1 & A2.
+>
+> **Abertura de Open Issue 1 do [[Design Doc — Intake]]**: na prática, o
+> catálogo central do Intake já foi implementado em **Supabase** — mas essa
+> escolha, junto com trocar o front de Next.js por **Cloudflare Workers**,
+> foi feita e justificada tecnicamente sem passar pela norma de
+> [[2026-08-18 Bring options to Luís before deciding, communicate async and often]]
+> primeiro. Luís já tinha dito, numa reunião sem registro algumas semanas
+> antes, que o time não usaria Supabase — msilva simplesmente esqueceu,
+> confirmado por ele mesmo no mesmo dia. Pediu a msilva um estudo
+> comparativo Supabase vs. Neon/Cloud SQL antes de considerar essa escolha
+> assentada. Também nesse
+> 1:1: desenho de testes end-to-end com Playwright (determinísticos, a
+> cada PR, sem depender do Airtable de produção/sandbox) como próxima
+> frente técnica pra msilva e Yasmin — briefing ainda por escrever por
+> Luís.
+
+> [!warning] Reports do A14 pausados para iteração de formato — Carolina, 2026-10-05
+> [[2026-10-05 Carolina - Matheus (feedback reports A14)]]: revisão de produto dos status updates semanais do A14. Carolina
+> pede três blocos (o que não deu pra medir por falta de dado · alertas e
+> progresso · sugestões), sem "resumo", e "nenhuma movimentação" como
+> alerta. Vários sinais conferidos ao vivo saíram errados (prioridade
+> urgente, atraso de milestone, vazão zero sem estimate). msilva pausa o
+> envio automático e pede ao grupo que valide o novo formato pelo preview
+> do dashboard (não reenvia a última rodada)
+> ([PRO-860](https://linear.app/projetos-livemode/issue/PRO-860/pausar-a-publicacao-semanal-do-a14-e-reenviar-a-ultima-rodada-com-o));
+> os bugs viram mapeamento pra investigação
+> ([PRO-861](https://linear.app/projetos-livemode/issue/PRO-861/investigar-sinais-errados-nos-status-updates-do-a14-prioridade-atraso)).
+> Estágio de ciclo de vida sai da **análise** do A10/A14 por enquanto, mas
+> continua como campo (msilva, mesmo dia). Em aberto: agente "pré-requisito" de completude de dados; sistemas em
+> manutenção (ORCA, LiveScript) talvez precisem de outro agente, não do A14.
 
 ## Philosophy and build strategy
 

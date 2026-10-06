@@ -1,7 +1,7 @@
 ---
 type: decision
 status: active
-updated: 2026-08-24
+updated: 2026-10-01
 date: 2026-08-18
 aliases: [decision process norm, present options first]
 tags: [process, communication]
@@ -71,3 +71,42 @@ of not doing it: *"você tá desperdiçando informação sem necessidade."*
   (Go / TypeScript / Python) posted as a Linear comment, msilva's lean (Go, for
   toolchain/CI consistency with the proxy) stated but left as Luís's call.
   **Resolved 2026-08-20**: Luís aligned on Go. Matches msilva's stated lean.
+
+## Violated, 2026-10-01 — three concrete instances in one 1:1
+
+[[2026-10-01 1-1 Matheus - Luís]]: Luís opens with direct feedback that the
+norm wasn't followed, three times:
+
+- **Intake resumed without telling anyone**, despite an earlier agreement to
+  pause it while waiting on Gabrielle's A10/A14 feedback. msilva's own
+  account: he was partly idle, picked up a side request from Carolina (an
+  "agente priorizador" prototype) and kept going on intake rather than
+  flagging he had capacity free.
+- **Cloudflare Workers chosen over Next.js**, with a full technical
+  justification behind it — but decided and acted on before telling Luís,
+  not brought as options first.
+- **Supabase adopted** believing it was already-approved team stack — Luís
+  calls this "ruído de comunicação." **Confirmed by msilva, same day**: Luís
+  had in fact already said, in an unlogged meeting some weeks earlier, that
+  the team wasn't using Supabase — msilva simply forgot. Not a disputed
+  claim; the gap is in this wiki's record of that earlier meeting, not in
+  whether it happened.
+
+**New corollary stated explicitly this time**: the team is a **technical
+team, not a product team** — the stack should stay simple and standardized.
+GoLang in the proxy remains the one justified exception (agreed jointly,
+pre-existing). Any other deviation needs a comparison of options brought to
+Luís *before* acting, not after — this is the same rule as above, just with
+a concrete criterion for what counts as "a real decision point" in stack
+choices specifically. Luís's own illustration: a past (pre-msilva) rushed
+decision to migrate to Deno had to be reverted because it didn't fit the
+team's context.
+
+**Pattern across all three**: msilva moved from "communicate before a
+decision with real alternatives" to just not communicating at all when he
+judged himself capable of deciding alone. Luís's suggested fix is a
+standing phrase rather than a judgment call each time: *"vou fazer isso
+aqui, beleza? Se não tiver nenhuma outra coisa, se você não tiver tempo pra
+me ajudar, posso avançar?"* — stating the intended action and leaving the
+other person the opening to object, instead of silently assuming they
+wouldn't have time to weigh in.
