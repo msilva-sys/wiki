@@ -6911,3 +6911,18 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   escondida do catálogo", open question nova), `syntheses/Desenho de um
   Skills Registry corporativo.md` (nova seção "Achado novo", link em
   Relacionado), `index.md` (Systems, Syntheses).
+
+## [2026-10-06] query | Governança de skills no Claude Code é mesmo limitada?
+- msilva perguntou, lendo [[Desenho de um Skills Registry corporativo]], se
+  entendeu certo que o Claude Code tem governança limitada sobre skills
+  (auditoria, manutenção). Confirmado contra o que a própria página já
+  documenta, sem fato novo: Marketplace nativo é binário (sem lifecycle
+  rascunho→review→aprovado→publicado), `claude plugin eval` é early-access
+  e dev-time (não é gate de publish), `skills-ref validate` só valida
+  estrutura de frontmatter (não "a skill funciona certo"), update é pull
+  (ninguém força rodar versão nova), telemetria depende de exporter
+  configurado pela org e API agregada é Enterprise-only. Mesmo buraco
+  achado de fora em [[Inside team MKT1's multiplayer AI setup]]
+  (`/skill-update` deles também é manual e session-scoped).
+- Sem página nova — resposta já estava integralmente na síntese existente;
+  log serve só de registro da confirmação.
