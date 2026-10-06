@@ -140,6 +140,29 @@ Claude Code.
   de referência da spec) cobre só validação estrutural do frontmatter, não
   "a skill funciona certo".
 
+## Achado novo — a Vitrine de IA já modela "Skill" (2026-10-06)
+
+Lendo o código de [[Vitrine de IA]] (`livemode-org/vitrine-ia-lmarques`),
+achado que muda o enquadramento: não é só um registry parecido, é uma
+plataforma já em produção que **já tem o conceito de "Skill" no modelo de
+dado** — campo `tipo` com valores `Projeto`/`Skill`/`Artefato`, campo
+próprio pra comando de ativação (`/nome-da-skill`), exibição do conteúdo
+como `SKILL.md`, contador de downloads, badge própria na tela de curadoria
+interna.
+
+**Mas a exibição pública está desligada de propósito** (comentário no
+código: "escondida por ora, só projetos aparecem no catálogo") e **o form de
+cadastro não deixa ninguém escolher `tipo`** — só entra como Skill por
+edição direta do dado. Ou seja: a infraestrutura de dado existe, a
+publicação/descoberta de skill via Vitrine não foi ligada.
+
+**Isso muda a pergunta do LiveStry**: antes de desenhar um registry do zero,
+cabe perguntar pra quem mantém a Vitrine (dono do repo, programa de
+Carolina) se o plano é ligar essa parte — o que resolveria sozinho o
+problema de "compartilhamento manual e defasado" nomeado na abertura desta
+página, e já viria com o mesmo gate de qualidade (Sentinela) usado pra
+projetos. Ainda não levado a ninguém do time; só achado de código.
+
 ## O que continua em aberto
 
 - Schema exato do hook em cada um dos 4 harnesses (nome do evento, formato
@@ -160,3 +183,5 @@ Claude Code.
 - [[Packaging as skills]]
 - [[A6 Curador deve padronizar e sinalizar defasagem de skills]]
 - [[Agent Flow]]
+- [[Vitrine de IA]] — plataforma em produção com "Skill" já no modelo de
+  dado, exibição desligada; ver achado acima.

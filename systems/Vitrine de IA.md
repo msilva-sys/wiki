@@ -28,6 +28,31 @@ de cada área se torna a solução de todos."*
   `gpt-4o-mini`) — função exata ainda não lida no código, hipótese é busca
   ou recomendação assistida dentro do catálogo.
 
+## Skill já modelada, escondida do catálogo (2026-10-06)
+
+O campo `tipo` (`App.tsx`/`CadastroModal.tsx`) já suporta `Projeto`, `Skill`,
+`Artefato`. Skill tem campo próprio — "Comando de acesso no Claude"
+(`/nome-da-skill`) — e a página de detalhe exibe o conteúdo como `SKILL.md`,
+com contador de downloads. A tela de curadoria interna já trata os três
+tipos com badge própria e conta "Skills"/"Artefatos" nos stats agregados.
+
+**Mas o catálogo público filtra ativamente**: `App.tsx`, por volta da linha
+960 — `// Classificação de skill/artefato escondida por ora: só projetos
+aparecem no catálogo.` seguido de `if (p.tipo === 'Skill' || p.tipo ===
+'Artefato') return false;`. Skills/artefatos não aparecem na listagem
+principal, só nas telas internas (curadoria, stats).
+
+**E não há controle visível no form de cadastro pra escolher `tipo`** — o
+`useState` nasce em `'Projeto'` e nenhum `setTipo` é chamado em
+`CadastroModal.tsx`. Um registro só vira `Skill` por edição direta do dado,
+não pelo cadastro normal que qualquer pessoa usa.
+
+Isso muda o enquadramento do parágrafo "Por que importa" acima: a Vitrine
+não é só paralela ao [[Desenho de um Skills Registry corporativo|LiveStry]]
+— ela já modelou o conceito de skill como ativo cadastrável, só com a
+exibição desligada de propósito. Ver nota cruzada na própria página do
+LiveStry.
+
 ## Relação com o Sentinela
 
 A Vitrine não calcula segurança sozinha — ela consome o veredito do
@@ -67,6 +92,9 @@ página.
 
 - Quem de fato mantém o repo (`lmarques`) e se há relação formal com o
   LiveStry — não discutido com ninguém do time ainda.
+- Por que a classificação skill/artefato está desligada do catálogo público
+  — falta de prontidão (sem review de qualidade pra skill ainda) ou decisão
+  deliberada de escopo? Não há como saber só pelo código.
 - Função exata do "concierge de IA" dentro do catálogo.
 - Se e quando o conteúdo logado do site (que não consegui ler) muda algo do
   que está descrito aqui a partir só do código-fonte.

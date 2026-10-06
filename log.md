@@ -6894,3 +6894,20 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `systems/Sentinela.md` (nova seção "Ponte com a Vitrine de IA",
   `Relação com outros sistemas` e `Status operacional` linkando a nova
   página), `index.md` (Systems).
+
+## [2026-10-06] synthesis | Vitrine de IA já modela "Skill", escondida do catálogo
+- Lido o código de `App.tsx`/`CadastroModal.tsx` (mesmo repo do ingest
+  acima): campo `tipo` já suporta `Projeto`/`Skill`/`Artefato`, com campo
+  próprio de comando de ativação (`/nome-da-skill`), exibição do conteúdo
+  como `SKILL.md` e contador de downloads; tela de curadoria interna já
+  trata os três tipos. Mas o catálogo público filtra `tipo === 'Skill'` de
+  propósito (comentário no código: "escondida por ora") e o form de
+  cadastro não tem controle pra escolher `tipo` — só entra como Skill por
+  edição direta do dado.
+- Isso muda o enquadramento do LiveStry: de "paralelo institucional
+  parecido" para "candidata a já ser a plataforma, com a parte de skill
+  desligada". Achado de código, não levado a ninguém do time ainda.
+- Updated: `systems/Vitrine de IA.md` (nova seção "Skill já modelada,
+  escondida do catálogo", open question nova), `syntheses/Desenho de um
+  Skills Registry corporativo.md` (nova seção "Achado novo", link em
+  Relacionado), `index.md` (Systems, Syntheses).
