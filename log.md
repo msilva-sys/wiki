@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-10-02
+updated: 2026-10-06
 
 
 ---
@@ -6815,3 +6815,50 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   destilação fora.
 - Updated: `syntheses/Cognee como memória dos agentes e do time.md`,
   `index.md`.
+
+## [2026-10-06] refactor | merge da branch `mac` em `work`
+- Resolvidos os três conflitos de merge (`index.md`, `log.md`,
+  `projects/Agent Flow.md`) entre o trabalho feito no PC de casa (mac,
+  esquecido sem push) e o trabalho feito hoje no PC do trabalho. Todos os
+  conflitos eram aditivos — os dois lados só tinham adicionado conteúdo em
+  pontos diferentes, nenhuma contradição real.
+- Reordenados os dois itens de 2026-09-08 na lista de Meetings do
+  `index.md` pra posição cronológica correta (antes de 2026-09-14).
+- Push feito pra `origin/work`.
+
+## [2026-10-06] ingest | Feedback pra Carol sobre o Guia de um Builder
+- Carolina Bezerra pediu feedback sobre o seu projeto **Guia de um Builder**
+  (https://guia-de-um-builder.livemode.space/). Repo
+  `livemode-org/guia-de-um-builder` lido por completo via GitHub (login
+  Google da página impedia fetch direto).
+- Três dúvidas do rascunho de msilva (`raw/Feedback Carol guia de um
+  builder.md`) viraram achados confirmados contra o código-fonte:
+  inconsistência "etiqueta"/"TAG" na própria página, revisão trimestral sem
+  mecanismo especificado no contrato, "SSO" usado sem explicação.
+  Feedback reescrito na voz do msilva (perfil levantado a partir de
+  mensagens reais dele no Slack) e enviado por Slack.
+- Mesma investigação corrigiu o entendimento de msilva sobre o **Sentinela**
+  (artefato `liveauth-vs-sentinela.html` de 2026-09-22 dizia que quem roda é
+  o time de TI depois do deploy; na verdade é a própria pessoa que
+  construiu, antes e depois do deploy, em duas passadas).
+- New: `sources/Feedback Carol guia de um builder.md`,
+  `systems/Sentinela.md`.
+- Updated: `people/Carolina Bezerra.md` (dona do Programa de Governança),
+  `projects/Agent Flow.md` (link `[[linear-a1-a2-project]]` sem disclaimer
+  corrigido, achado do lint abaixo), `index.md` (Systems, Sources).
+- Perfil de voz do msilva pra comunicação registrado em
+  `C:\Users\msilva\.claude\skills\team-comms\SKILL.md`, levantado a partir
+  de mensagens reais dele no Slack — não é página desta wiki.
+
+## [2026-10-06] lint
+- Health check completo (29º registrado). Sem contradições entre páginas;
+  uma única staleness real (`systems/Proxy Environments.md`, rotação de
+  credenciais ainda não confirmada desde 2026-08-21); sem órfãs reais; 3
+  clippings novos em `raw/Clippings/` ainda não ingeridos (DAGs
+  orchestration, Mem0, Enterprise Agent Build & Runtime — msilva optou por
+  não ingerir agora); link `[[Sentinela]]` sem página corrigido (ver ingest
+  acima); link `[[linear-a1-a2-project]]` sem disclaimer corrigido no
+  `Agent Flow.md`. `Agent Flow.md` (1593 linhas, 84 edits) só foi lido até a
+  metade por orçamento — não confirmado como livre de contradição interna,
+  sinalizado como pendente de verificação. Zero callouts `[!msilva]` sem
+  log.

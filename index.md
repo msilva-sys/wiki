@@ -1,7 +1,6 @@
 ﻿---
 type: index
-updated: 2026-10-05
-
+updated: 2026-10-06
 ---
 
 # Index
@@ -123,6 +122,7 @@ Firestore + cache TTL enviada a ele, resposta pendente. Ver
 - [[LiveScript]] — collaborative script editor, heaviest Airtable consumer, the reason the proxy exists. Also called *roteiros*. **2026-09-16, verificado no repo real**: não existe `airtable-observability`. São `feature/airtable-proxy` (sem OTel, mas sem a API key — desatualizada) e `feature/airtable-proxy-observability` (com OTel real e com os commits recentes necessários) — nenhuma pronta como está. Ver [[2026-09-15 Proxy e Fluxo Agêntico com Luís]].
 - [[Orca (CDE)]] — Livemode's computer-vision/audio system proving commercial-insertion display in live sports broadcasts (the CDE, "Comprovante de Entregas"). In production since v3.2.0; business-critical, ~10 headcount worth of automation. **Resolves the "in production" vs. "nothing deployed" contradiction** flagged across five pages — the two statements were about the live system vs. its unshipped next-version roadmap ([[Orca Next Version]]).
 - [[Proxy Environments]] — environment/config reference for the proxy and LiveScript. Credentials redacted 2026-08-17; git history purged 2026-08-21; rotation still outstanding.
+- [[Sentinela]] — checagem de segurança/homologação da LiveMode, duas faces (plugin `/sentinela:sentinela` + portal), parte do Programa de Governança de Carolina Bezerra. Calcula a TAG, é o inventário oficial (H12). Corrige entendimento anterior de msilva (2026-09-22): quem roda é quem construiu, não o time de TI depois do deploy.
 
 ## Concepts
 - [[Airtable Rate Limits]] — 5 req/s per base, 429 → ~30s lockout, `Retry-After`; the constraint driving the whole programme.
@@ -299,6 +299,7 @@ _(next candidates, extractable from [[Airtable Proxy]]: token-terminating auth, 
 
 _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 - [[Cognee - Introduction]] — intro da doc do Cognee (clip 2026-10-05): camada de memória para agentes, knowledge graph + vetor em cima de RAG, operações `remember`/`recall`/`improve`/`forget`, Apache 2.0. Fonte rasa; o estudo está na synthesis abaixo.
+- [[Feedback Carol guia de um builder]] — notas próprias de msilva preparando o feedback pedido por Carolina sobre o Guia de um Builder; enviadas por Slack em 2026-10-06. Três achados confirmados contra o código-fonte do repo (`livemode-org/guia-de-um-builder`): inconsistência "etiqueta"/"TAG" na própria página, revisão trimestral sem mecanismo especificado no contrato, "SSO" usado sem explicação. Corrigiu de quebra o entendimento de msilva sobre o [[Sentinela]].
 
 ## Meetings
 - [[2026-08-10 Onboarding Técnico - Matheus]] — origin of the proxy, the agent architecture, and how the two tracks split.
