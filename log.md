@@ -6881,3 +6881,16 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `syntheses/Cognee como memória dos agentes e do time.md`
   (nota sobre o comparativo "Mem0 sem grafo" e nova pergunta aberta),
   `index.md` (Sources, Syntheses).
+
+## [2026-10-06] ingest | Vitrine de IA — contrato com o Sentinela
+- Lido `livemode-org/vitrine-ia-lmarques` via GitHub (sem cópia em `raw/`):
+  scaffold Google AI Studio, catálogo com cadastro de projeto e ranking.
+  `CONTRATO-SENTINELA.md` v2 revela o mecanismo de integração: o Sentinela
+  (atrás de VPN) puxa a fila da Vitrine (pública, Cloudflare) e grava o
+  resultado de volta, nunca o contrário; grau A/B aparece "aprovado", C
+  entra no catálogo sem endereço divulgado. Checagem de segurança mais
+  recente da própria Vitrine: Grau A.
+- New: `systems/Vitrine de IA.md`.
+- Updated: `systems/Sentinela.md` (nova seção "Ponte com a Vitrine de IA",
+  `Relação com outros sistemas` e `Status operacional` linkando a nova
+  página), `index.md` (Systems).

@@ -57,8 +57,35 @@ o endereço oficial `.livemode.space`.
 66 sites checados (03/07–30/09); 8 em grau C com achado grave aberto, ainda
 não roteados para correção (ver
 [PRO-876](https://linear.app/projetos-livemode/issue/PRO-876)); 63 fora do
-catálogo da Vitrine, em revisão um a um (ver
+catálogo da [[Vitrine de IA]], em revisão um a um (ver
 [PRO-857](https://linear.app/projetos-livemode/issue/PRO-857)).
+
+## Ponte com a Vitrine de IA — contrato de integração (2026-10-06)
+
+Lido via GitHub (`livemode-org/vitrine-ia-lmarques`, `CONTRATO-SENTINELA.md`
+v2 — não há cópia em `raw/`). Define como o Sentinela e o catálogo da
+[[Vitrine de IA]] trocam dado:
+
+- **Sentido é sempre puxado pelo Sentinela, nunca a Vitrine chamando pra
+  dentro da VPN.** A Vitrine roda pública no Cloudflare; o Sentinela vive
+  atrás de VPN e só ele consegue alcançar o outro lado. **Ida**: o
+  agente/n8n do Sentinela puxa a fila (`GET /api/sentinela-fila`). **Volta**:
+  grava o resultado (`POST /api/sentinela-callback`).
+- Autenticação por segredo compartilhado (`x-sentinela-token`), guardado
+  como secret `VITRINE_SENTINELA_TOKEN` nas duas pontas — **não** é o mesmo
+  `SENTINELA_TRIGGER_TOKEN` que autoriza gravar no inventário de segurança.
+- **Regra de exibição por grau** (v2): A e B aparecem como "aprovado" pra
+  quem navega a Vitrine (a letra exata do `Grau` fica só internamente); C
+  **entra no catálogo mas sem endereço divulgado**, marcado com estrela
+  vermelha — na v1 um reprovado não era penalizado visualmente, ficava
+  indistinguível de quem nunca tinha passado pela checagem.
+- Quem decide se um projeto tem domínio oficial da empresa é o **Sentinela**,
+  não a extensão da URL — um projeto pode ter dois endereços válidos (host de
+  origem + `.livemode.space`), enviados juntos em `urls` no mesmo POST, e a
+  Vitrine trata como uma entrada só.
+
+Checagem de segurança mais recente da própria Vitrine: **Grau A** (ver
+[[Vitrine de IA]]).
 
 ## Relação com outros sistemas
 
@@ -66,6 +93,9 @@ catálogo da Vitrine, em revisão um a um (ver
   LiveAuth autentica o usuário final; Sentinela audita se o projeto (LiveAuth
   incluso) está seguro antes de ir ao ar. Comparativo completo em
   `liveauth-vs-sentinela.html` (raiz da wiki).
+- [[Vitrine de IA]] — é quem **consome** o veredito do Sentinela: projeto que
+  passa (grau A/B) ganha endereço `.livemode.space` e aparece "aprovado" no
+  catálogo público; grau C entra sinalizado, sem endereço. Ver contrato acima.
 - [[Gustavo Cruz]] se comprometeu a rodar o Sentinela no Hub de Automações
   Fiscais como mitigação de força bruta/rate limiting (ver
   [[2026-09-30 LiveAuth - Discovery com Gustavo Cruz (Hub Fiscal)]]) — não
