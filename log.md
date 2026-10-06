@@ -5748,6 +5748,117 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   `meetings/Meeting prep - Carolina - Matheus - 2026-09-04.md` (tabela
   "Já resolvido" corrigida e ampliada), `index.md`.
 
+## [2026-09-09] ingest | Duas reuniões de 2026-09-08: Overview de Linear (João Victor) e Weekly de Projetos
+- Fontes lidas do **Google Drive**, não de `raw/` — os docs do Gemini de
+  08/09 nunca chegaram ao `raw/` local (o arquivo mais recente lá é de
+  04/09, e não havia nada em `raw/Clippings/` nem em `~/Downloads`).
+  msilva confirmou que estão no Drive e mandou buscar lá. As duas páginas
+  citam o `fileId` do Drive e carregam nota explícita de que o arquivo em
+  `raw/` está pendente. Sem página em `sources/`: o schema dispensa para
+  transcrição, satisfeita pela página em `meetings/`.
+  - *Overview de linear - 2026/09/08 15:12 GMT-03:00 - Anotações do Gemini*
+    (`1hxqgWF375FzEvpcIMCRaQb2Env0RY1V4KSbHCzMuUSg`)
+  - *Weekly - Projetos e Tarefas | Remarcação - 2026/09/08 13:59 GMT-03:00 -
+    Anotações do Gemini* (`1L-bbmK9YV-bv8nAjTGAyDGy70CsB28Jzz2urI4-xxkw`)
+- New: `meetings/2026-09-08 Overview de Linear com João Victor.md`,
+  `meetings/2026-09-08 Weekly - Projetos e Tarefas.md`
+- Updated: `concepts/Linear Project Structure.md`,
+  `projects/Airtable Proxy.md`, `people/João Victor Andrade.md`,
+  `people/Maria Fernanda Lemos.md`, `index.md`
+- Linear: criada
+  [PRO-567](https://linear.app/projetos-livemode/issue/PRO-567) (Task, XS,
+  `dueDate` 2026-09-09, `Todo`) para o único commitment de msilva das duas
+  reuniões — localizar o documento de definições formais de "iniciativa" e
+  "projeto" da Carol. Prazo escolhido por msilva; a skill
+  `linear-abrir-trabalho` bloqueia criação priorizada sem data.
+
+**Achados que mudam páginas existentes:**
+
+- **O painel de portfólio lê o projeto errado.** Mafê descobriu ao vivo que
+  o painel interno puxa de `Proxy do Airtable`, não de `Proxy em produção
+  validado c/ LiveScript`, onde msilva gerencia as issues desde a promoção
+  de 2026-08-19 — logo, o progresso real do proxy não aparece pra Carol e
+  Gabrielle. É o custo não previsto da quarta convenção de
+  [[Linear Project Structure]] ("milestone ativa pode virar projeto
+  irmão"): promover move o trabalho pra um projeto que o painel não lê.
+  A convenção segue válida, mas quem promove precisa avisar o dono do
+  painel. Ação é da Mafê, não de msilva — a ata do Gemini atribuiu errado
+  ("[Mateus] Validar Proxy"), corrigido nas duas páginas.
+- **Carol contesta a estrutura de projetos do proxy** — *"esses três aí
+  deveriam ser uma coisa só"*, com Mafê concordando. Conflita frontalmente
+  com a estrutura que veio do Luís e que msilva executou em 2026-08-19 sob
+  instrução explícita dele. Luís estava ausente. Registrado como tensão,
+  não como reversão; verificado que os quatro projetos seguem separados.
+  Hipótese registrada na página: as duas posições podem ser sobre coisas
+  diferentes — Carol olhando redundância de *nome* num painel, Luís tendo
+  desenhado por *segmento de entrega*. Se for isso, a correção é renomear,
+  não fundir — e msilva já admitiu que o nome está errado.
+- **msilva propagou uma convenção sem ter a fonte.** Ensinou a João Victor
+  que "cada demanda ou entregável vira um projeto"; a definição registrada
+  da Gabrielle é mais estreita (projeto = segmento de entrega de valor).
+  Ele mesmo reconheceu na call: *"não tenho esse conceito escrito, não
+  lembro como é que ela escreveu."* João Victor executou no mesmo dia, então
+  a leitura não verificada já está em duas cabeças e numa estrutura real.
+  Origem da PRO-567.
+- **A skill de Linear da Carol existe e foi distribuída** — responde
+  parcialmente o que [[2026-08-18 1-1 Matheus - Luís]] deixou aberto
+  ("no team standard yet for Linear skills, and Carol is building the real
+  one"). msilva já usava uma versão anterior obtida com o Luís: dois
+  caminhos independentes de distribuição da mesma skill, evidência direta
+  pra [[Packaging as skills]].
+- **João Victor migrou do ClickUp pro Linear** e a iniciativa `Monday - CRM`
+  existe com três projetos. Fecha na prática a lacuna de "backlog em
+  sistema não compartilhado" registrada na página dele desde 2026-08-25 —
+  e é uma fonte de dados a menos pro A10 Portfolio ter que integrar por
+  fora.
+
+**Ressalvas da passada:**
+
+- **Migração de idioma parcial, deliberada.** O schema manda a prosa de uma
+  página virar pt-BR quando ela é tocada. Feito integralmente em
+  `people/João Victor Andrade.md` (~60 linhas). **Não feito** em
+  `concepts/Linear Project Structure.md` (~400 linhas) nem em
+  `projects/Airtable Proxy.md` (~875 linhas): retraduzir wholesale duas
+  páginas densas e cheias de citação verbatim, como efeito colateral de
+  acrescentar uma seção, é exatamente o trabalho em lote que a política diz
+  não fazer — e o risco de corromper registro probatório é real. As seções
+  novas dessas duas páginas estão em pt-BR; a migração completa fica como
+  operação própria, a pedido de msilva.
+- **Trial do Linear expira hoje (2026-09-09)** segundo
+  [[Linear Project Structure]], com o cap de ~250 issues atrás dele, e
+  nenhuma compra registrada. Não confirmável pela API (o endpoint de
+  workspace do MCP devolve só `id`/`name`/`url`). A criação da PRO-567
+  funcionou normalmente, o que **descarta bloqueio imediato** mas não prova
+  compra. Gabrielle, que autoriza, volta 10/09. Registrado em
+  `index.md` e na página do conceito.
+
+## [2026-09-09] decision | Manter os projetos de proxy separados no Linear
+- msilva confirmou a hipótese levantada ao registrar a
+  [[2026-09-08 Weekly - Projetos e Tarefas]]: Carol e Luís falavam de
+  coisas diferentes. *"O ponto do Luís é mantermos frentes de trabalhos
+  diferentes, enquanto a Carol acha que são a mesma coisa."* Decisão:
+  **ficam separados, nada é fundido.**
+- O raciocínio que sustenta: Luís separou por **frente de trabalho**
+  (a definição de projeto registrada em [[Linear Project Structure]]);
+  Carol leu **redundância de nome** numa lista de painel. Como respondem
+  perguntas diferentes, fundir resolveria o problema dela destruindo a
+  estrutura dele — o custo cairia todo de um lado.
+- **A objeção da Carol continua legítima no que ela é de fato**:
+  legibilidade. Registrados os dois caminhos que a endereçam sem fundir —
+  renomear `Proxy em produção validado c/ LiveScript` (msilva já admitiu
+  na weekly que o nome está errado; depende de saber qual app vai apontar,
+  decisão do Luís) e corrigir o projeto que o painel de portfólio lê (ação
+  da Mafê). Nenhum dos dois decidido aqui.
+- **Pendência de comunicação registrada**: Carol levantou a proposta em
+  fórum, não teve resposta na hora (Luís ausente) e não sabe da decisão.
+  Próxima weekly é 10/09 15:00.
+- New: `decisions/2026-09-09 Manter os projetos de proxy separados no Linear.md`
+- Updated: `concepts/Linear Project Structure.md` (tensão vira resolvida),
+  `projects/Airtable Proxy.md`, `meetings/2026-09-08 Weekly - Projetos e
+  Tarefas.md` (open question apontando pra decisão, mantida como registro
+  do que estava aberto na hora), `index.md`
+- Nada mexido no Linear: manter separado é ausência de ação.
+
 ## [2026-09-10] refactor | Registrar rascunho de issue do Linear bloqueada por trial expirado
 - Sessão no repo `livemode-roteiros-nextjs` (branch
   `feature/airtable-proxy-observability`): identificado gap não coberto por
@@ -6634,3 +6745,73 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   seção "Segundo esboço", nova seção "LiveStry vs. Claude Marketplace",
   correção do trigger na arquitetura, open issues atualizadas), `index.md`
   (entrada de Syntheses).
+
+## [2026-10-05] ingest | Carolina - Matheus, feedback dos reports do A14
+- Lido `raw/carol-matheus.pdf` (transcrição enviada por e-mail pela
+  Carolina, 2026-10-05 09:40; Speaker A = Carolina, Speaker B = msilva,
+  confirmado por msilva).
+- New: `meetings/2026-10-05 Carolina - Matheus (feedback reports A14).md`
+  — revisão de produto dos status updates semanais do A14: três blocos
+  (falta de dado · alertas/progresso · sugestões), sinais errados
+  conferidos ao vivo, estágio de ciclo de vida questionado pra v1, agente
+  separado para sistemas em manutenção, agente "pré-requisito" de
+  completude de dados. Nenhuma decisão formal.
+- Linear (projeto `A10 & A14 — Homologação`): criadas PRO-860 (pausar
+  publicação semanal e reenviar a última rodada com feedback) e PRO-861
+  (spike: mapeamento dos sinais errados pra investigação, por escolha de
+  msilva em vez de correção direta).
+- Updated: `projects/Agent Flow.md` (callout novo), `people/Carolina
+  Bezerra.md`, `concepts/Fronteira A10×A14 (informação e métricas).md`,
+  `concepts/Linear Project Structure.md` (status de projeto sem valores
+  customizados), `index.md`.
+- Achado lateral: o Linear mostra o A10/A14 bem à frente da wiki (estágio
+  por projeto PRO-669/704, prioridade calculada PRO-785, publicação
+  semanal PRO-667 etc., todas Done) — nada disso foi ingerido aqui ainda.
+
+## [2026-10-05] refactor | PRO-860 — validação pelo preview do dashboard, sem reenvio
+- msilva: não vai reenviar a última rodada de reports do A14; vai pedir ao
+  pessoal que revise o preview no dashboard.
+- Linear: PRO-860 com título/descrição/checklist ajustados.
+- Updated: `meetings/2026-10-05 Carolina - Matheus (feedback reports
+  A14).md` (commitment com correção inline), `projects/Agent Flow.md`
+  (callout), `index.md`.
+
+## [2026-10-05] refactor | Lista de tarefas enviada à Carolina; estágio sai da análise, fica como campo
+- Lido o thread do DM com Carolina no Slack (2026-10-05 10:36–10:54): ela
+  pediu a lista de tarefas que saiu da reunião, msilva mandou 7 itens, todos
+  já cobertos por PRO-860/PRO-861.
+- msilva esclarece: o estágio de vida **não é removido como campo**, só sai da
+  análise do A10 e do A14 por enquanto. PRO-860 deixou de dizer "avaliar
+  tirar" e passou a dizer isso.
+- Updated: `meetings/2026-10-05 Carolina - Matheus (feedback reports
+  A14).md` (seção "Depois da reunião"), `projects/Agent Flow.md` (callout).
+- Ainda em aberto: a pausa do cron vale também para a publicação do A10 na
+  iniciativa? A mensagem dizia "update dos agentes", mas a PRO-860 cita só
+  o A14.
+
+## [2026-10-05] ingest | Cognee — Introduction
+- Lido `raw/Clippings/cognee introduction.md` (livemode-raw); doc completa
+  lida ao vivo em `docs.cognee.ai` (overview, architecture, improve,
+  feedback, fact validity, multi-user/permissions, plugin do Claude Code).
+- Discutido com msilva: (1) RAG no `agent_facts` foi descartado por
+  complexidade, não princípio — solução pronta é bem-vinda; (2) o Cognee não
+  tem gate humano nativo: curadoria por LLM (curator + writer/rejecter no
+  `improve`) e feedback 1–5 como sinal de ranking, desligado por padrão; um
+  propõe→aprova dá para montar por fora (sessão como staging, ou dataset
+  `proposals` vs. `approved` com permissões separadas; `close_node` como
+  `retired`, só no Ladybug e sem filtro na busca); (3) escopo é
+  time/organização — este wiki é a versão pessoal do msilva; (4) msilva
+  quer um roteiro guiado de estudo.
+- New: `sources/Cognee - Introduction.md`, `syntheses/Cognee como memória
+  dos agentes e do time.md` (inclui roteiro de estudo em 6 passos).
+- Updated: `decisions/2026-09-10 Memória de fatos do agente
+  (agent_facts).md` (esclarecimento inline sobre o descarte do RAG),
+  `index.md`.
+
+## [2026-10-05] synthesis | PRO-870 — spike de estudo do Cognee
+- Criada a PRO-870 no Linear: Spike, Infra do Fluxo Agêntico, Todo, prazo
+  2026-10-09 (msilva: "priorizado, com prazo até sexta agora"), Effort M,
+  relacionada à PRO-517. Escopo = passos 1–5 do roteiro; feedback e
+  destilação fora.
+- Updated: `syntheses/Cognee como memória dos agentes e do time.md`,
+  `index.md`.

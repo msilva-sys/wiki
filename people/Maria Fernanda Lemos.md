@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-25
+updated: 2026-09-09
 aliases: [Maria Fernanda, Mafê]
 tags: [people, agents, enablement, a4]
 ---
@@ -104,6 +104,28 @@ Cadeira com **duas posições**: a de Mafê, ocupada; uma segunda, **vaga**
   produção executiva) e Jorge (agente de transmissão da matriz); revisa
   a Taxonomia (marca/produto/submarca, tier de jogo) e assume o
   fechamento do "depara" como tarefa própria.
+- **Conduz a weekly de projetos da área** — [[2026-09-08 Weekly - Projetos
+  e Tarefas]]: ela é quem passa projeto a projeto, cobra status e nomeia
+  quem fala. Papel de PM da área, distinto do de habilitadora, exercido em
+  fórum. Vale registrar porque a página descrevia o papel de PM
+  genericamente ("PM em projetos de produto sob sua responsabilidade")
+  sem esse recorte concreto: ela também é a operadora do ritual de status.
+- **Cuida da higiene do portfólio no Linear, e achou um defeito real
+  (2026-09-08)**: descobriu ao vivo que o painel interno de portfólio está
+  lendo o projeto `Proxy do Airtable`, e não o `Proxy em produção validado
+  c/ LiveScript`, onde msilva de fato gerencia as issues — *"o nosso
+  sisteminha ele tá pegando do proxy do table e não pegando desse que você
+  tá falando."* Ou seja, o progresso real do proxy não aparecia no painel
+  que Carol e Gabrielle leem. Comprometeu-se a avisar a Gabrielle, dona da
+  ferramenta. Ela também tinha passado a semana anterior configurando
+  datas de projeto no Linear. Ver [[Linear Project Structure]].
+- **API da Gary adotada como banco de imagem padrão** (2026-09-08),
+  integração conduzida por ela após conversa técnica com o fornecedor em
+  04/09; começou pelos projetos de redes, tratada explicitamente também
+  como aprendizado técnico reaproveitável. Próxima frente dela: automatizar
+  a abertura de pedidos de arte de telão para jogos — trabalho manual
+  repetitivo que cresceu com as cinco ligas — com Ana Domingos, envolvendo
+  [[Camila Sande]] como primeira tarefa de contexto.
 - **Levanta uma dúvida real e não resolvida sobre o LiveScript**: é
   responsabilidade do time abordar áreas proativamente sobre
   funcionalidades pouco usadas e complexas de manter (ex: "congelar
