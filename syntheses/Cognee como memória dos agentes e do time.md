@@ -43,6 +43,13 @@ código — *o que a doc diz*, não verificado em execução.
   grafo, a camada de memória vira busca vetorial — "grep melhorado" — e
   perde essa travessia. Pesa a favor do Cognee sobre uma solução puramente
   vetorial (ex.: Mem0 sem o add-on de grafo).
+- **Checado 2026-10-06**: [[Mem0 - Introduction]] (post de lançamento do
+  blog, não a doc técnica) descreve só busca semântica + scoring por
+  relevância/importância/recência — nenhuma menção a grafo. O Mem0 tem um
+  backend opcional de graph memory (Neo4j) fora deste post, não conferido
+  aqui. Se esse add-on cobrir a mesma travessia relacional, o argumento
+  "grafo vale a pena" perde parte da força contra o Mem0 especificamente
+  (não contra busca vetorial em geral) — pergunta fica aberta, ver abaixo.
 
 ## Como o Cognee trata "human in the loop"
 
@@ -142,6 +149,9 @@ Postgres ou exige banco novo? (d) qualidade em pt-BR.
 - Ainda vale a objeção do Luís de 2026-08-20 (não desenhar memória
   compartilhada antes de assentar entidades, spike PRO-517)? Uma ferramenta
   pronta muda o custo dessa objeção, não necessariamente o mérito.
+- O add-on de graph memory do Mem0 (Neo4j) resolve a mesma travessia
+  relacional que motivou escolher grafo sobre vetor aqui? Não coberto pelo
+  post de lançamento lido em [[Mem0 - Introduction]].
 
 ## Relacionado
 
@@ -150,3 +160,4 @@ Postgres ou exige banco novo? (d) qualidade em pt-BR.
 - [[Como deve funcionar o molde de agente]]
 - [[Agent Flow]]
 - [[Inside the multiplayer AI setups at Mintlify, LangChain, and Buffer]]
+- [[Mem0 - Introduction]]

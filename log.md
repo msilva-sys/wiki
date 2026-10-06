@@ -6870,3 +6870,14 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   wiki já modela via wikilinks.
 - Updated: `syntheses/Cognee como memória dos agentes e do time.md`
   (seção "Enquadramento do msilva").
+
+## [2026-10-06] ingest | Mem0 — Introduction
+- Lido `raw/Clippings/Mem0 - AI Memory Layer for your Agents & Apps.md`
+  (clip de 2026-09-11, sinalizado pendente no lint do mesmo dia). Post de
+  lançamento do Mem0: camada de memória pra LLM (detecção → atualização →
+  recall com scoring), posicionado contra context window e RAG genérico.
+  Não cobre o add-on de graph memory (Neo4j) do Mem0.
+- New: `sources/Mem0 - Introduction.md`.
+- Updated: `syntheses/Cognee como memória dos agentes e do time.md`
+  (nota sobre o comparativo "Mem0 sem grafo" e nova pergunta aberta),
+  `index.md` (Sources, Syntheses).
