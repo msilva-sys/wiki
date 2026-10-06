@@ -138,7 +138,11 @@ Claude Code.
 - Gate de qualidade: ainda em aberto — `claude plugin eval` é early-access
   e dev-time, não serve como gate automático; `skills-ref validate` (lib
   de referência da spec) cobre só validação estrutural do frontmatter, não
-  "a skill funciona certo".
+  "a skill funciona certo". Não é só o Claude Code que não resolve isso:
+  [[Inside team MKT1's multiplayer AI setup]] (Parte 3) mostra que nem a
+  própria MKT1 automatizou manutenção por conteúdo — `/skill-update` é
+  manual, disparado depois de uma sessão, e lê só aquela sessão específica,
+  não a skill nem seu histórico.
 
 ## Achado novo — a Vitrine de IA já modela "Skill" (2026-10-06)
 

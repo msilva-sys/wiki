@@ -6912,17 +6912,15 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   Skills Registry corporativo.md` (nova seção "Achado novo", link em
   Relacionado), `index.md` (Systems, Syntheses).
 
-## [2026-10-06] query | Governança de skills no Claude Code é mesmo limitada?
-- msilva perguntou, lendo [[Desenho de um Skills Registry corporativo]], se
-  entendeu certo que o Claude Code tem governança limitada sobre skills
-  (auditoria, manutenção). Confirmado contra o que a própria página já
-  documenta, sem fato novo: Marketplace nativo é binário (sem lifecycle
-  rascunho→review→aprovado→publicado), `claude plugin eval` é early-access
-  e dev-time (não é gate de publish), `skills-ref validate` só valida
-  estrutura de frontmatter (não "a skill funciona certo"), update é pull
-  (ninguém força rodar versão nova), telemetria depende de exporter
-  configurado pela org e API agregada é Enterprise-only. Mesmo buraco
-  achado de fora em [[Inside team MKT1's multiplayer AI setup]]
-  (`/skill-update` deles também é manual e session-scoped).
-- Sem página nova — resposta já estava integralmente na síntese existente;
-  log serve só de registro da confirmação.
+## [2026-10-06] synthesis | LiveStry — gate de qualidade também corroborado pela MKT1
+- msilva confirmou em chat o enquadramento "Claude Code tem governança
+  limitada sobre skills" lido na síntese; checando, o ponto de gate de
+  qualidade já estava documentado ali (Marketplace binário, `claude plugin
+  eval` dev-time, `skills-ref validate` só estrutural, update pull,
+  telemetria dependente de exporter), mas a corroboração externa — nem a
+  MKT1 automatizou manutenção por conteúdo ([[Inside team MKT1's
+  multiplayer AI setup]], Parte 3) — não estava citada nesta página, só em
+  [[A6 Curador deve padronizar e sinalizar defasagem de skills]].
+- Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (seção
+  "Arquitetura resultante", linka a Parte 3 da MKT1 no ponto de gate de
+  qualidade).
