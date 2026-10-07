@@ -205,6 +205,17 @@ o Cognee precisaria recriar por fora já roda em produção hoje, pelo menos na
 metade individual — isso é o que estaria em jogo se o Cognee substituir essa
 peça.
 
+## Execução da PoC — PRO-983, 2026-10-07
+
+PRO-870 **continua aberta** — os critérios "pronto quando" (custo de ingestão
+real, encaixe no Postgres, qualidade em pt-BR, recomendação escrita) não
+foram cumpridos, só o desenho teórico do gate. Criada sub-issue
+[PRO-983](https://linear.app/projetos-livemode/issue/PRO-983/rodar-poc-do-cognee-cloud-com-dados-reais-do-time)
+pra rodar a PoC de fato: Cognee Cloud (free tier), com dado real — decidido
+em chat usar um recorte do **time Projetos-livemode inteiro no Linear**
+(não a wiki pessoal, não o Airtable legado — Linear é o sistema de registro
+atual, em pt-BR, com volume real de issues/comentários).
+
 ## Perguntas abertas
 
 - ~~Hipótese 1 ou 2 para o gate~~ — **resolvido 2026-10-07**: hipótese 2.

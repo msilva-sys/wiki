@@ -7061,3 +7061,18 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `people/Marina Ferrão.md` (nome completo, time, dores reais —
   antes só citação de segunda mão), `projects/LiveAuth.md` (seção de
   follow-up + flag de escopo), `index.md`.
+
+## [2026-10-07] decision | PRO-870 segue aberta, criada PRO-983 pra rodar a PoC
+- Revisado em chat o "pronto quando" da PRO-870: só o desenho teórico do
+  gate humano (hipótese 2) foi resolvido; custo de ingestão real, encaixe
+  no Postgres, qualidade em pt-BR e recomendação escrita seguem sem
+  resposta — todos dependem de rodar o Cognee de verdade.
+- Decidido: manter PRO-870 aberta (não fechar reescopada); criar
+  [PRO-983](https://linear.app/projetos-livemode/issue/PRO-983/rodar-poc-do-cognee-cloud-com-dados-reais-do-time)
+  como sub-issue (parent PRO-870, team Projetos-livemode, projeto Infra do
+  Fluxo Agêntico, label Task, estimate S) pra rodar a PoC no Cognee Cloud.
+- Fonte do dado de teste decidida em chat: nem a wiki pessoal, nem o
+  Airtable legado — **recorte real do time Projetos-livemode inteiro no
+  Linear**, por ser o sistema de registro atual, em pt-BR, com volume real.
+- Updated: `syntheses/Cognee como memória dos agentes e do time.md` (nova
+  seção "Execução da PoC — PRO-983"), `index.md`.
