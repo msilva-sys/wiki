@@ -71,6 +71,18 @@ Em [[2026-09-30 LiveAuth - Discovery com Gustavo Cruz (Hub Fiscal)]]:
   que outros times precisam ler mas só o time dono pode editar — requisito
   de granularidade de permissão por time, ainda sem desenho técnico.
 
+### Follow-up direto com Marina Ferrão, 2026-10-02
+
+Em [[2026-10-02 Discovery LiveAuth com Marina Ferrão (Atendimento)]] (contato
+passado por Gabrielle): a dor real do atendimento é compartilhamento de
+Drive/planilha com **clientes externos** (fora do domínio @livemode) —
+controlado hoje por convenção (pasta por cliente, cadastro de e-mail por
+e-mail), não por código, motivado por um vazamento de link real durante a
+Copa. **msilva reconheceu em tempo real que isso pode ser um problema
+diferente do que o LiveAuth resolve** — LiveAuth hoje restringe login a
+`@livemode.com`, não endereça compartilhamento com conta externa. Sem
+resolução; fica como open issue de escopo, não extensão de requisito.
+
 ## Conversa com Daniel Robillotta (Inventário de Processos), 2026-10-07
 
 Em [[2026-10-07 Daniel - Matheus (Inventário de Processos e Governança de Auth)]]:

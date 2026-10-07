@@ -7037,3 +7037,27 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   independentemente).
 - Updated: `meetings/2026-10-07 Daniel - Matheus (Inventário de Processos e Governança de Auth).md`
   (seção Facts stated).
+
+## [2026-10-07] ingest | Discovery LiveAuth com Marina Ferrão (2026-10-02)
+- Lido `raw/Marina _ Matheus - 2026_10_02 14_30 GMT-03_00 - Anotações do Gemini.md`
+  (transcript do Gemini, boa diarização — diferente das outras calls de
+  LiveAuth, de baixa confiança).
+- Follow-up direto ao caso citado de segunda mão por Gustavo Cruz
+  (2026-09-30): Marina Souza Ferrão, atendimento, São Paulo, sob Mateus
+  Favato. Dor real revelada: compartilhamento de Drive/planilha com
+  clientes externos, controlado por convenção (não código), motivado por
+  um vazamento de link real durante a Copa — não o caso específico do
+  núcleo criativo relatado por Gustavo.
+- **msilva reconheceu em tempo real, na própria call, que essa dor pode não
+  ser o mesmo problema que o LiveAuth resolve** (LiveAuth restringe login a
+  `@livemode.com`; o problema de Marina é acesso de conta externa/cliente)
+  — registrado como open issue de escopo, não como requisito novo do
+  LiveAuth.
+- Confirmado por decisão de msilva em chat: não abrir projeto/concept novo
+  pra essa dor agora — fica só como contexto nas páginas da Marina e do
+  LiveAuth.
+- New: `meetings/2026-10-02 Discovery LiveAuth com Marina Ferrão (Atendimento).md`,
+  `people/Mateus Favato.md`.
+- Updated: `people/Marina Ferrão.md` (nome completo, time, dores reais —
+  antes só citação de segunda mão), `projects/LiveAuth.md` (seção de
+  follow-up + flag de escopo), `index.md`.
