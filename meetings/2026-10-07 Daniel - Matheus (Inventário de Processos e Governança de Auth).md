@@ -53,6 +53,12 @@ iniciativas paralelas.
 - Daniel: não existe hoje padrão de auditoria/proteção de credenciais entre
   as áreas; poucos projetos têm segundo fator, a maioria só login
   @livemode.
+- Daniel (resumindo o que entendeu) e msilva (confirmando com exemplo):
+  autenticação/autorização hoje é fragmentada — cada projeto/processo
+  implementa sua própria lógica, sem padrão único. msilva cita dois
+  projetos que implementam SSO com login do Google cada um de forma
+  independente, como exemplo concreto da reimplementação que o LiveAuth
+  quer evitar.
 - Daniel: um bot do N8N ficou ligado e foi acionado sem querer dentro de um
   grupo do Slack — exemplo citado do problema de automações esquecidas.
 - Daniel: uma chave da API da OpenAI consumiu muito crédito sem

@@ -7028,3 +7028,12 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   `people/Daniel Robillotta.md`, `projects/Inventário de Processos e Ferramentas.md`.
 - Updated: `projects/LiveAuth.md` (seção da conversa com Daniel),
   `people/Zoca.md` (papel de CFO, link ao inventário), `index.md`.
+
+## [2026-10-07] callout | Correção: fato faltante na reunião com Daniel
+- msilva apontou que faltava registrar um fato da reunião: auth/autorização
+  hoje é fragmentada, cada projeto/processo implementa sua própria lógica
+  sem padrão único (Daniel resumindo o entendimento, msilva confirmando com
+  o exemplo de dois projetos reimplementando SSO do Google
+  independentemente).
+- Updated: `meetings/2026-10-07 Daniel - Matheus (Inventário de Processos e Governança de Auth).md`
+  (seção Facts stated).
