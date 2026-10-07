@@ -10,27 +10,48 @@ tags: [auth, security, liveauth, proxy]
 
 > Related: [[LiveAuth — Identidade e Autorização por Grupo entre Apps Livemode]] · [[Airtable Proxy]]
 
-Autorização por grupo compartilhada entre apps internos da Livemode. POC em
-andamento no Linear — iniciativa **LiveAuth**, projeto **LiveAuth - POC**
-([P-PRO-29](https://linear.app/projetos-livemode/project/liveauth-poc-c6dfa1c702b0)),
-lead msilva, team `Projetos-livemode`. O desenho completo (objetivo,
-interfaces, segurança, open issues) vive na synthesis linkada acima; esta
-página acompanha o estado de execução.
+Autorização por grupo compartilhada entre apps internos da Livemode. Já em
+produção no Linear — iniciativa **LiveAuth**, quatro projetos (POC,
+produção, integração, melhorias — ver Estado abaixo), lead msilva, team
+`Projetos-livemode`. O desenho completo (objetivo, interfaces, segurança,
+open issues) vive na synthesis linkada acima; esta página acompanha o
+estado de execução.
 
-## Estado, 2026-09-24
+## Estado, 2026-10-07 (checado direto no Linear)
 
-Status Linear: **In Progress**. `startDate` 2026-09-23, `targetDate`
-**2026-09-25** (amanhã).
+**Achado ao atualizar esta seção**: um projeto inteiro de deploy em
+produção foi criado e concluído em 2026-09-24, no mesmo dia em que esta
+página registrava "falta issue de deploy" — nunca tinha sido trazido pra
+wiki. A iniciativa **LiveAuth** no Linear hoje tem quatro projetos:
 
-- [x] PRO-711 — Restringir login do LiveAuth a contas @livemode.com (Blocking Function no Firebase Auth)
-- [x] PRO-714 — Login único do LiveAuth decide quem entra em cada app parceiro
-- [x] PRO-713 — Tela pra montar o grupo `admin-proxy` e gerenciar membros
-- [ ] PRO-717 (In Progress, msilva) — skill separada que aponta apps com dado
-      sensível sem autenticação, ou com login fora do padrão único (fora do
-      LiveAuth e do Sentinela por enquanto)
+- **LiveAuth - POC** ([P-PRO-29](https://linear.app/projetos-livemode/project/liveauth-poc-c6dfa1c702b0)) — **Completed**, 2026-09-24. PRO-711 (login
+  restrito a @livemode.com), PRO-714 (login único decide quem entra),
+  PRO-713 (tela do grupo `admin-proxy`), PRO-717 (skill de auditoria de
+  auth) — as quatro `Done`.
+- **LiveAuth em produção** ([P-PRO-34](https://linear.app/projetos-livemode/project/liveauth-em-producao-de0c066c4b57)) — **Completed**, mesmo dia
+  2026-09-24. Migrou a hospedagem pra Cloudflare (acompanhando a migração
+  geral da Livemode), tíquete de login passou de memória pra Firestore
+  (a nova hospedagem não garante processo único), conexão com agentes de
+  IA via MCP migrada junto (PRO-755), login validado ponta a ponta
+  (PRO-727). Único item **Canceled**: PRO-728 (migrar apps já conectados
+  pro endereço novo) — N/A, nenhum app estava conectado ainda.
+- **Integração com LiveAuth** ([P-PRO-32](https://linear.app/projetos-livemode/project/integracao-com-liveauth-e78af1e2fd54)) — **Backlog**, não iniciado
+  de fato. É o trabalho do lado do proxy do Airtable pra virar o primeiro
+  consumidor real: PRO-712 (cadastrar o proxy como app conectado), PRO-715
+  (sessão própria pós-login), PRO-716 (bloquear `/dashboard` por grupo) —
+  as três ainda `Backlog`. **Continua valendo**: nenhum consumidor real do
+  LiveAuth hoje, consistente com
+  [[Trava de domínio e autenticação — inventário para o LiveAuth]].
+- **LiveAuth - Melhorias** ([P-PRO-35](https://linear.app/projetos-livemode/project/liveauth-melhorias-2cc8c0893747)) — **Backlog**, não iniciado. Papel
+  leitura/escrita por membro de grupo (PRO-730/731/733), histórico
+  auditável (PRO-734), access log (PRO-735), Sentinela checando auth nos
+  apps (PRO-689) — motivado pelo Console de Publicação, que hoje mantém
+  sua própria lista de quem edita num YAML.
 
-**Falta issue de deploy em produção** — nenhuma das quatro cobre isso, e o
-target date é amanhã. Sinalizado por msilva em 2026-09-24, sem issue criada.
+**Resumo**: LiveAuth está em produção de verdade (hospedagem definitiva,
+MCP incluso) — só falta conectar o primeiro consumidor real (Airtable
+Proxy `/dashboard`), que é trabalho represado, não bloqueado por nada
+técnico listado aqui.
 
 ## Open questions (herdadas da synthesis)
 

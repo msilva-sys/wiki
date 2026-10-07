@@ -7076,3 +7076,19 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   Linear**, por ser o sistema de registro atual, em pt-BR, com volume real.
 - Updated: `syntheses/Cognee como memória dos agentes e do time.md` (nova
   seção "Execução da PoC — PRO-983"), `index.md`.
+
+## [2026-10-07] refactor | LiveAuth — Estado reescrito, estava escondendo deploy já feito
+- Pedido: atualizar a seção "Estado" (lint tinha flagado linguagem relativa
+  obsoleta, "amanhã" pra um targetDate 12 dias no passado).
+- Checado direto no Linear: achado maior que o esperado. Dois projetos
+  inteiros nunca tinham sido trazidos pra wiki — **LiveAuth em produção**
+  (`Completed` 2026-09-24, mesmo dia que a página registrava "falta issue
+  de deploy") migrou a hospedagem pra Cloudflare, tíquete de login pro
+  Firestore, conexão MCP incluída, login validado ponta a ponta. E
+  **Integração com LiveAuth** (conectar o proxy do Airtable como primeiro
+  consumidor real) e **LiveAuth - Melhorias** (papel leitura/escrita por
+  grupo) existem como projetos `Backlog`, não iniciados.
+- "Nenhum consumidor real do LiveAuth hoje" continua verdadeiro — produção
+  está no ar, mas ninguém consome ainda.
+- Updated: `projects/LiveAuth.md` (seção Estado reescrita com os 4
+  projetos e status reais), `index.md`.
