@@ -90,6 +90,17 @@ desenho, não testadas:
    busca **não filtra** nós fechados ainda, quem chama tem que filtrar com
    `is_valid()`.
 
+   **Resolvido (msilva, 2026-10-07): não precisamos do `close_node`.** A
+   fila de aprovação (pending/rejected) fica inteiramente fora do Cognee —
+   só o que já foi aprovado vira `.remember`, mesmo desenho da hipótese 2
+   acima. E um fato que ficou desatualizado não precisa manter histórico:
+   pode simplesmente **sumir** com `.forget`, em vez de ser aposentado com
+   `close_node`. Sem depender de `close_node`, a trava "só persiste no
+   Ladybug" deixa de valer como bloqueio — qualquer backend de grafo (Neo4j,
+   Kuzu-remote, Memgraph) serve. Isso também simplifica o passo 4 do
+   roteiro: a escolha de backend de grafo volta a ser só sobre maturidade/
+   operação em produção, não mais restrita ao Ladybug.
+
 ## Time / organização
 
 - Modo multi-usuário (`ENABLE_BACKEND_ACCESS_CONTROL`, default desde 0.5.0
@@ -164,7 +175,7 @@ A SOUL inteira (system prompt por agente) fica cacheada e reusada.
 | Custo | $0, 1M tokens/mês | $1/1M tokens | Grátis + chave LLM própria | Grátis + chave LLM própria |
 | Cabe no volume atual? | **Não** — frota já roda ~9,84M tokens/semana; 1M/mês estoura em dias se o `cognify` tocar fração relevante disso | Provável sim, mas vira ~$20-40/mês — maior linha de custo LLM do projeto (hoje tudo custa $3-5/mês com cache) | Sim — custo segue o preço do próprio modelo (gpt-5.6-luna: ~$0,20/1M input, ~$1,20/1M output), sem markup do Cognee | Mesmo caso, em escala |
 | Dado sai da Livemode? | Sim | Sim | Não | Não |
-| Testa backend de produção (Ladybug)? | Não | Não | Sim | Sim |
+| Testa backend de grafo de produção? | Não | Não | Sim, mas com Ladybug (sem necessidade real, ver abaixo) | Sim, já pode ser Neo4j/Kuzu-remote direto |
 | Setup | Zero | Zero | Baixo (embarcado) | Alto (Postgres+pgvector+grafo remoto) |
 | 1 workspace só | Trava modelo global/por-agente | Resolve ($5/mês por workspace extra) | N/A (dataset é seu) | N/A |
 
@@ -196,10 +207,17 @@ peça.
 
 ## Perguntas abertas
 
-- Hipótese 1 ou 2 para o gate — ou o Cognee fica só como camada de
-  *retrieval* atrás da tabela `agent_facts`, que continua dona do
-  propõe→aprova?
-- `close_node` só no Ladybug: Ladybug é viável em produção (Cloud Run)?
+- ~~Hipótese 1 ou 2 para o gate~~ — **resolvido 2026-10-07**: hipótese 2.
+  Fila de aprovação (pending/rejected) fica fora do Cognee, numa tabela
+  nossa (mesmo papel que `agent_facts` já cumpre); só o aprovado vira
+  `.remember`. Ainda em aberto dentro disso: essa tabela própria continua
+  sendo literalmente `agent_facts`, ou vira só o dataset `proposals` do
+  Cognee com uma tela de revisão por cima?
+- ~~`close_node` só no Ladybug~~ — **resolvido 2026-10-07, moot**: não
+  precisamos aposentar sem apagar; fato desatualizado é removido com
+  `.forget`. Sem `close_node`, qualquer backend de grafo serve — a escolha
+  de produção fica livre entre Neo4j/Kuzu-remote/Memgraph por maturidade de
+  operação, não mais travada no Ladybug.
 - Cognee Cloud (gerenciado) vs. self-hosted — dados internos saindo da
   Livemode é aceitável?
 - Ainda vale a objeção do Luís de 2026-08-20 (não desenhar memória

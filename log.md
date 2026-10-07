@@ -6987,3 +6987,16 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   implementada (gate do Luís, PRO-517, intacto).
 - Updated: `syntheses/Cognee como memória dos agentes e do time.md` (novas
   seções "Onde rodar — comparativo" e "Achado no código").
+
+## [2026-10-07] synthesis | Cognee — gate confirmado, close_node/Ladybug deixa de ser bloqueio
+- Decidido em chat: fila de aprovação (pending/rejected) fica inteiramente
+  fora do Cognee, numa tabela própria (hipótese 2 da synthesis confirmada);
+  só o aprovado vira `.remember`. Fato desatualizado não precisa manter
+  histórico — soma com `.forget` em vez de ser aposentado com `close_node`.
+- Consequência: a trava "`close_node` só persiste no Ladybug" deixa de ser
+  bloqueio, já que não vamos chamar `close_node`. Qualquer backend de grafo
+  (Neo4j, Kuzu-remote, Memgraph) serve — simplifica o passo 4 do roteiro e
+  a comparação self-host produção.
+- Updated: `syntheses/Cognee como memória dos agentes e do time.md`
+  (resolvida a ressalva 3 do gate humano, duas perguntas abertas marcadas
+  resolvidas, tabela de comparativo ajustada), `index.md`.
