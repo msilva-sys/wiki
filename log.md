@@ -7011,3 +7011,20 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   Cognee for descartado. Registrado como **leaning, não decisão fechada** —
   ordem sugerida é validar primeiro, centralizar depois.
 - Updated: `syntheses/Cognee como memória dos agentes e do time.md`.
+
+## [2026-10-07] ingest | Reunião Daniel Robillotta / Matheus (Granola)
+- Lido transcript + resumo via Granola MCP (note `adeb2e0c-073a-49ff-9694-986fcbec6da1`).
+  Diarização de baixa confiança (canal único de microfone); atribuição
+  reconstruída por conteúdo e confirmada por msilva em chat.
+- Primeiro contato com Daniel Robillotta, novo na Livemode, liderando a
+  pedido do CFO Zoca um mapeamento de processos/projetos/ferramentas e API
+  keys em uso pelas áreas — contraparte paralela ao LiveAuth. msilva
+  demonstrou a POC do LiveAuth; combinaram seguir em paralelo e unir os
+  esforços depois, sem desenho de como ainda.
+- Confirmado em chat: "Zoca" (CFO citado por Daniel) é a mesma pessoa já
+  catalogada como approver financeiro do Pulse; "Gabriela" (chaves de API
+  organizadas) é a mesma Gabrielle Ferreira ("Gabi").
+- New: `meetings/2026-10-07 Daniel - Matheus (Inventário de Processos e Governança de Auth).md`,
+  `people/Daniel Robillotta.md`, `projects/Inventário de Processos e Ferramentas.md`.
+- Updated: `projects/LiveAuth.md` (seção da conversa com Daniel),
+  `people/Zoca.md` (papel de CFO, link ao inventário), `index.md`.

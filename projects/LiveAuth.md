@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-09-30
+updated: 2026-10-07
 aliases: [liveauth, liveauth poc]
 tags: [auth, security, liveauth, proxy]
 ---
@@ -70,3 +70,18 @@ Em [[2026-09-30 LiveAuth - Discovery com Gustavo Cruz (Hub Fiscal)]]:
 - **[[Marina Ferrão]]** (atendimento), via Gustavo: planilha do núcleo criativo
   que outros times precisam ler mas só o time dono pode editar — requisito
   de granularidade de permissão por time, ainda sem desenho técnico.
+
+## Conversa com Daniel Robillotta (Inventário de Processos), 2026-10-07
+
+Em [[2026-10-07 Daniel - Matheus (Inventário de Processos e Governança de Auth)]]:
+msilva demonstrou a POC pra [[Daniel Robillotta]], que lidera um
+mapeamento paralelo de processos/ferramentas/API keys a pedido do CFO
+[[Zoca]]. Acordaram seguir as duas frentes separadas por ora, com plano de
+unir depois — ainda sem desenho de como. Reafirmado como open issue: validar
+a POC com Carolina e Gabrielle antes de ampliar o uso. Ver
+[[Inventário de Processos e Ferramentas]].
+
+Na mesma conversa, msilva citou seu próprio caso de chave de API
+compartilhada (Fluxo Agêntico, provável) correndo risco de ficar sem
+crédito por ser de uso exclusivo de LLM com vários agentes — exemplo
+concreto do problema que o inventário do Daniel também ataca.
