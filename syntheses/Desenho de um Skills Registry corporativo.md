@@ -177,6 +177,26 @@ restringir ao repositório/registry central das skills — fonte de verdade
 servida via MCP (`search_skills`/`load_skill`). A sincronização/injeção
 local via hook do harness é outra abstração, separada do registry.
 
+**Duas opções mapeadas pro mecanismo de sync**:
+
+- **Coldstart (fetch síncrono no `SessionStart`)**: a sessão busca o
+  catálogo fresco toda vez que abre. Sem processo residente, sem instalação
+  de serviço — só o hook chama o registry. Custo: latência de rede a cada
+  sessão.
+- **Serviço persistente a nível de OS**: processo contínuo (systemd/
+  launchd/Windows Service) mantém o cache local sempre quente; o hook só
+  lê do disco, sem roundtrip. Elimina o coldstart por sessão — o único
+  coldstart vira a instalação/primeiro boot do serviço. Custo: processo
+  residente, instalação e manutenção cross-platform, recuperação de crash.
+
+Cache local + refresh assíncrono sem processo residente foi descartado:
+não resolve a primeira sessão (sem cache ainda) nem atualiza uma sessão já
+em andamento — mesma limitação do coldstart síncrono, mas com complexidade
+extra de staleness e sem o benefício real de eliminar a latência, que só o
+serviço persistente entrega.
+
+Ainda não decidido entre as duas opções.
+
 ## O que continua em aberto
 
 - Schema exato do hook em cada um dos 4 harnesses (nome do evento, formato
@@ -189,9 +209,9 @@ local via hook do harness é outra abstração, separada do registry.
   esclarecido com msilva ainda.
 - Governança/escopo por time — ainda não desenhado como o registry decide
   o que cada time vê.
-- Dono da abstração de sync/injeção local (hook) que materializa o
-  catálogo no harness — fora do escopo do LiveStry propriamente dito, mas
-  ainda sem responsável definido.
+- Mecanismo de sync local: coldstart síncrono vs. serviço persistente a
+  nível de OS — duas opções mapeadas, nenhuma escolhida. Dono da
+  abstração (quem constrói/mantém) também em aberto.
 - Não foi levado a Luís, Gabrielle, ou qualquer outra pessoa do time —
   raciocínio só entre msilva e Claude até aqui.
 

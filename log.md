@@ -6955,3 +6955,16 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (nova
   seção "Escopo: LiveStry termina no repositório", bullet novo em "O que
   continua em aberto"), `index.md` (entrada LiveStry).
+
+## [2026-10-07] synthesis | LiveStry — duas opções pro mecanismo de sync local
+- Discussão em chat sobre como a abstração de sync local funcionaria:
+  coldstart (fetch síncrono no `SessionStart`, sem processo residente) vs.
+  serviço persistente a nível de OS (systemd/launchd/Windows Service,
+  cache sempre quente, elimina latência por sessão ao custo de instalação e
+  manutenção cross-platform). Cache local com refresh assíncrono sem
+  processo residente foi descartado — não resolve primeira sessão nem
+  sessão já em andamento, sem o ganho real de um serviço persistente.
+  Nenhuma das duas opções escolhida ainda.
+- Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (seção
+  "Escopo: LiveStry termina no repositório" ganha as duas opções mapeadas;
+  bullet de "O que continua em aberto" reescrito).
