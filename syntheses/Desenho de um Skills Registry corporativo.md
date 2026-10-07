@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-10-02
+updated: 2026-10-07
 date: 2026-10-02
 aliases: [skills registry, registro de skills, LiveStry]
 tags: [skills, agent-skills, mcp, agent-flow, governance]
@@ -167,6 +167,16 @@ problema de "compartilhamento manual e defasado" nomeado na abertura desta
 página, e já viria com o mesmo gate de qualidade (Sentinela) usado pra
 projetos. Ainda não levado a ninguém do time; só achado de código.
 
+## Escopo: LiveStry termina no repositório (2026-10-07)
+
+msilva (raw/sobre o livestry.md, 2026-10-07): questionou se o sync local
+das skills no início da sessão é tarefa do LiveStry. Conclusão discutida em
+chat: o "sync local" é o catálogo estático leve injetado no `SessionStart`
+(já citado em "Arquitetura resultante" acima). O LiveStry deve se
+restringir ao repositório/registry central das skills — fonte de verdade
+servida via MCP (`search_skills`/`load_skill`). A sincronização/injeção
+local via hook do harness é outra abstração, separada do registry.
+
 ## O que continua em aberto
 
 - Schema exato do hook em cada um dos 4 harnesses (nome do evento, formato
@@ -179,6 +189,9 @@ projetos. Ainda não levado a ninguém do time; só achado de código.
   esclarecido com msilva ainda.
 - Governança/escopo por time — ainda não desenhado como o registry decide
   o que cada time vê.
+- Dono da abstração de sync/injeção local (hook) que materializa o
+  catálogo no harness — fora do escopo do LiveStry propriamente dito, mas
+  ainda sem responsável definido.
 - Não foi levado a Luís, Gabrielle, ou qualquer outra pessoa do time —
   raciocínio só entre msilva e Claude até aqui.
 

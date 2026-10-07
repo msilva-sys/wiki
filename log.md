@@ -6941,3 +6941,17 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (seção
   "Arquitetura resultante", linka a Parte 3 da MKT1 no ponto de gate de
   qualidade).
+
+## [2026-10-07] ingest | raw/sobre o livestry.md — escopo do LiveStry
+- Lido raw/sobre o livestry.md: nota de msilva questionando se o sync local
+  das skills no início da sessão é tarefa do LiveStry.
+- Discutido em chat: confirmado que "sync local" = o catálogo estático
+  leve injetado no `SessionStart`, já citado na arquitetura da página. Sem
+  página nova em `sources/` — conteúdo pequeno demais, dobrado direto na
+  synthesis.
+- Decisão fechada: LiveStry se restringe ao repositório/registry central
+  (MCP `search_skills`/`load_skill`); a sincronização/injeção local via
+  hook do harness é outra abstração, dono ainda não definido.
+- Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (nova
+  seção "Escopo: LiveStry termina no repositório", bullet novo em "O que
+  continua em aberto"), `index.md` (entrada LiveStry).
