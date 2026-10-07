@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-10-06
+updated: 2026-10-07
 
 
 ---
@@ -6968,3 +6968,22 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (seção
   "Escopo: LiveStry termina no repositório" ganha as duas opções mapeadas;
   bullet de "O que continua em aberto" reescrito).
+
+## [2026-10-07] synthesis | Cognee — custo real medido via Langfuse, comparativo de onde rodar
+- Consultada a API de métricas do Langfuse (`us.cloud.langfuse.com`) do
+  projeto `livemode-fluxo-agentico`: 30 dias (= todo o histórico, começa em
+  2026-09-07) = 21,78M tokens / $3,29; últimos 7 dias = 9,84M tokens / $1,24
+  — uso acelerando, não estável. Custo baixo por cache de prompt pesado
+  (SOUL cacheada por agente).
+- Montada tabela comparando Cognee Cloud free tier / Standard / self-host
+  dev / self-host produção contra esse volume real: free tier (1M
+  tokens/mês) estoura em dias no volume atual da frota; Standard ($1/1M)
+  viraria a maior linha de custo LLM do projeto; self-host segue o preço do
+  próprio modelo, sem markup.
+- Investigado `livemode-fluxo-agentico` (dir adicionada à sessão): a metade
+  individual de `agent_facts` já está implementada desde 2026-09-11
+  (`ff2ad74`), não só desenhada — `core/agent_facts.py`,
+  `core/agent_facts_api.py`, com testes. Metade global segue não
+  implementada (gate do Luís, PRO-517, intacto).
+- Updated: `syntheses/Cognee como memória dos agentes e do time.md` (novas
+  seções "Onde rodar — comparativo" e "Achado no código").

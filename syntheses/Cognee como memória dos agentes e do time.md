@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-10-06
+updated: 2026-10-07
 aliases: [cognee, estudo cognee, memória do time, memória organizacional]
 tags: [agents, memory, knowledge-graph, agent-flow, harness, human-in-the-loop]
 ---
@@ -137,6 +137,62 @@ Ordem pensada para responder primeiro o que pode descartar a ferramenta.
 Critérios para fechar a synthesis: (a) dá para montar o gate humano sem
 brigar com a ferramenta? (b) custo de ingestão aceitável? (c) roda no nosso
 Postgres ou exige banco novo? (d) qualidade em pt-BR.
+
+## Onde rodar — comparativo (2026-10-07)
+
+msilva cogitou começar pelo Cognee Cloud free tier. Antes de decidir, medido
+o gasto real de LLM do `livemode-fluxo-agentico` via API de métricas do
+Langfuse (`us.cloud.langfuse.com`, projeto do fluxo agêntico) — todo o
+histórico do projeto começa em 2026-09-07, não tem dado antes disso:
+
+| Janela | Tokens | Custo | Observações |
+|---|---|---|---|
+| 30 dias (= todo o histórico) | 21,78M | $3,29 | 19.496 |
+| Últimos 7 dias | 9,84M | $1,24 | 12.454 |
+
+Uso está acelerando, não estável — 7 dias já é quase metade do total de 30.
+Taxa dos últimos 7 dias extrapolada pro mês: **~42M tokens / ~$5,30**, mais
+realista que os $3,29 do total bruto. Por trace: produção (`LangGraph`, A10/
+A14/intake/priorizador) = 18,94M tokens / $2,74 (87%); eval/CI = ~2,6M
+tokens / $0,51 (15%). Custo baixo apesar do volume porque cache de prompt
+carrega o peso — uma chamada amostrada teve 7.265 tokens de prompt, 5.773
+vindos de `input_cache_read` (barato) contra 1.370 de `input_cache_creation`.
+A SOUL inteira (system prompt por agente) fica cacheada e reusada.
+
+| | Cognee Cloud Free | Cognee Cloud Standard | Self-host local (dev) | Self-host produção |
+|---|---|---|---|---|
+| Custo | $0, 1M tokens/mês | $1/1M tokens | Grátis + chave LLM própria | Grátis + chave LLM própria |
+| Cabe no volume atual? | **Não** — frota já roda ~9,84M tokens/semana; 1M/mês estoura em dias se o `cognify` tocar fração relevante disso | Provável sim, mas vira ~$20-40/mês — maior linha de custo LLM do projeto (hoje tudo custa $3-5/mês com cache) | Sim — custo segue o preço do próprio modelo (gpt-5.6-luna: ~$0,20/1M input, ~$1,20/1M output), sem markup do Cognee | Mesmo caso, em escala |
+| Dado sai da Livemode? | Sim | Sim | Não | Não |
+| Testa backend de produção (Ladybug)? | Não | Não | Sim | Sim |
+| Setup | Zero | Zero | Baixo (embarcado) | Alto (Postgres+pgvector+grafo remoto) |
+| 1 workspace só | Trava modelo global/por-agente | Resolve ($5/mês por workspace extra) | N/A (dataset é seu) | N/A |
+
+Risco comum aos quatro, não só de escala: "tokens processados" do Cognee são
+as chamadas internas dele (extração de entidade, montagem de grafo) —
+normalmente **mais** que o texto de entrada (múltiplas passadas), não um
+espelho 1:1 do que se manda pro `.remember`. E se o recall do Cognee injeta
+conteúdo de grafo que muda o prefixo do prompt a cada chamada, quebra o
+cache que hoje carrega 87% do custo barato — o custo real pode subir
+desproporcional à conta simples de token-count.
+
+**Leitura**: free tier serve só pro quickstart pontual (passo 2 do roteiro,
+3-4 páginas de teste), não pra medir custo em escala — pra isso o número que
+importa é o self-host, que reflete o preço do próprio modelo, não o markup
+do Cognee. Decisão de onde rodar em produção continua em aberto.
+
+## Achado no código (2026-10-07)
+
+`agent_facts` não é só desenho — a metade individual (`agent_key` não nulo)
+já está implementada em `livemode-fluxo-agentico` desde 2026-09-11
+(`ff2ad74`, "memoria de fatos (agent_facts) -- só a metade individual"):
+`core/agent_facts.py`, `core/agent_facts_api.py`, com testes. A metade
+global (`agent_key IS NULL`) segue não implementada, consistente com o gate
+do Luís (PRO-517) registrado em
+[[2026-09-10 Memória de fatos do agente (agent_facts)]]. O propõe→aprova que
+o Cognee precisaria recriar por fora já roda em produção hoje, pelo menos na
+metade individual — isso é o que estaria em jogo se o Cognee substituir essa
+peça.
 
 ## Perguntas abertas
 
