@@ -7000,3 +7000,14 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `syntheses/Cognee como memória dos agentes e do time.md`
   (resolvida a ressalva 3 do gate humano, duas perguntas abertas marcadas
   resolvidas, tabela de comparativo ajustada), `index.md`.
+
+## [2026-10-07] synthesis | Cognee — leaning por centralizar o gate (não fechado)
+- msilva: "acho que faz sentido centralizar no Cognee" — mover a fila de
+  pending/rejected de `agent_facts` pro dataset `proposals`/`approved` do
+  próprio Cognee, em vez de manter as duas coisas em paralelo.
+- Contraponto discutido: `agent_facts` já está em produção desde 09-11; o
+  Cognee ainda não passou pelos passos 2-6 do roteiro. Centralizar antes de
+  validar qualidade/custo/pt-BR arrisca migrar o gate duas vezes se o
+  Cognee for descartado. Registrado como **leaning, não decisão fechada** —
+  ordem sugerida é validar primeiro, centralizar depois.
+- Updated: `syntheses/Cognee como memória dos agentes e do time.md`.

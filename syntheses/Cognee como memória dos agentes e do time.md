@@ -212,7 +212,14 @@ peça.
   nossa (mesmo papel que `agent_facts` já cumpre); só o aprovado vira
   `.remember`. Ainda em aberto dentro disso: essa tabela própria continua
   sendo literalmente `agent_facts`, ou vira só o dataset `proposals` do
-  Cognee com uma tela de revisão por cima?
+  Cognee com uma tela de revisão por cima? **Leaning (msilva, 2026-10-07,
+  não fechado)**: faz sentido centralizar no Cognee (dataset `proposals`/
+  `approved`) em vez de manter `agent_facts` em paralelo. Ressalva levantada
+  na mesma conversa: `agent_facts` já está em produção e o Cognee ainda não
+  passou por nenhum passo do roteiro (2-6) — migrar antes de validar
+  qualidade/custo/pt-BR arrisca pagar a migração duas vezes se o Cognee for
+  descartado depois. Ordem sugerida: validar primeiro (passos 2 e 3), só
+  então centralizar.
 - ~~`close_node` só no Ladybug~~ — **resolvido 2026-10-07, moot**: não
   precisamos aposentar sem apagar; fato desatualizado é removido com
   `.forget`. Sem `close_node`, qualquer backend de grafo serve — a escolha
