@@ -33,9 +33,11 @@ tags: [airtable-proxy, agent-flow, liveauth, onboarding, transição]
 - Luís vai marcar a reunião de sexta com a área admin.
 - Matheus vai investigar o limite de rate do Airtable (429 é por base, por
   token ou por conta) — define decisão de design no proxy.
+  [PRO-996](https://linear.app/projetos-livemode/issue/PRO-996/descobrir-como-o-airtable-aplica-o-limite-de-requisicoes-por-base-por).
 - Matheus vai trazer visão própria de melhorias/riscos do proxy — Luís
   prefere receber a leitura dele pra comparar com a própria, não o
   contrário.
+  [PRO-997](https://linear.app/projetos-livemode/issue/PRO-997/levantar-melhorias-e-riscos-do-proxy-do-airtable-numa-visao-propria).
 - Matheus e Luís vão alinhar com a Gabi uma data (semana que vem) pra subir
   o proxy em produção com o LiveScript conectado — preferem um dia com
   eventos (não zerado), monitorar por 1-2 dias antes da saída do Luís.

@@ -3,6 +3,7 @@ type: log
 updated: 2026-10-08
 
 
+
 ---
 
 # Log
@@ -7121,3 +7122,17 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   incerteza), `projects/Airtable Proxy.md` (três passagens que citavam
   "Livemode data hub" como inferência não verificada agora linkam
   [[Live Hub]] e marcam confirmado), `index.md`.
+
+## [2026-10-08] decision | Issues criadas pros 2 commitments do msilva na transição
+- De 4 commitments seus na reunião de transição, msilva priorizou os 2 de
+  escopo técnico do proxy e confirmou que há projeto — **Melhorias do
+  Proxy** (`P-PRO-26`, iniciativa Airtable Proxy, team Projetos-livemode),
+  já com as outras duas pendências citadas pelo Luís (PRO-671 painel
+  admin, PRO-619 sobrecarga).
+- Criadas: [PRO-996](https://linear.app/projetos-livemode/issue/PRO-996/descobrir-como-o-airtable-aplica-o-limite-de-requisicoes-por-base-por)
+  (limite 429, estimate XS) e
+  [PRO-997](https://linear.app/projetos-livemode/issue/PRO-997/levantar-melhorias-e-riscos-do-proxy-do-airtable-numa-visao-propria)
+  (visão própria de melhorias/riscos, estimate S), ambas label Task,
+  assignee msilva.
+- Updated: `meetings/2026-10-07 Matheus - Luis (Transição).md` (seção
+  Commitments referencia as duas issues).
