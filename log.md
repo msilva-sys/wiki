@@ -7136,3 +7136,23 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   assignee msilva.
 - Updated: `meetings/2026-10-07 Matheus - Luis (Transição).md` (seção
   Commitments referencia as duas issues).
+
+## [2026-10-08] ingest | Discovery LiveAuth com Ana Beatriz Fonseca (Jurídico)
+- Lido `raw/Ana Beatriz _ Matheus - 2026_10_08 13_59 GMT-03_00 -
+  Anotações do Gemini.md` — transcrição automática do Gemini, confiança
+  baixa em termos técnicos (STT corrompe "Vercel"/"GitHub").
+- Correção em chat antes de escrever: "não temos projetos públicos" da
+  Ana é sobre audiência, não exposição de rede — o hub jurídico já é
+  público na rede, protegido só por trava de domínio. É o mesmo
+  `livemode-juridico` já catalogado no inventário de 2026-09-24, não um
+  app novo.
+- New: `meetings/2026-10-08 Discovery LiveAuth com Ana Beatriz Fonseca
+  (Jurídico).md`, `people/Ana Beatriz Fonseca.md`, `people/Letícia.md`.
+- Updated: `people/Bianca (Bia).md` (desambiguação — "Bia" tem duas
+  pessoas distintas na wiki), `people/Kauan.md` (possível mesma pessoa
+  no financeiro, não confirmado), `people/Luís Fernandez.md` (deu acesso
+  de GitHub, achou vazamento no código do jurídico),
+  `projects/LiveAuth.md` (nova seção de discovery), `syntheses/Trava de
+  domínio e autenticação — inventário para o LiveAuth.md` (possível
+  fechamento do gap "repo fantasma na org", não reconferido no código),
+  `systems/Sentinela.md` (evidência de adoção), `index.md`.

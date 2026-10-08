@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-09-24
+updated: 2026-10-08
 date: 2026-09-24
 tags: [auth, security, liveauth, trava-de-dominio]
 aliases: [inventário trava de domínio, impacto liveauth, inventário de auth]
@@ -235,6 +235,16 @@ vivo (abrir a URL), não só leitura de repo:
 mora em `tech-livemode/livemode-juridico` (conta pessoal, Padrão 2
 acima). Mesmo tipo de fragmentação de ownership que a trava de domínio
 já tem — custódia não migrou junto com o nome do repo.
+
+> [!tip] Possivelmente resolvido — [[Ana Beatriz Fonseca]], 2026-10-08
+> Dona do projeto confirma, em
+> [[2026-10-08 Discovery LiveAuth com Ana Beatriz Fonseca (Jurídico)]],
+> ter terminado "agora" de migrar o GitHub de `tech-livemode` pra
+> `livemode-org` e o projeto Vercel pra conta da organização. Mesmo
+> padrão de migração já visto no [[Agent Flow]] (repo `livemode-fluxo-
+> agentico` transferido pra `livemode-org` em 2026-08-31). **Não
+> reconferido no código** — próxima varredura deveria checar se
+> `livemode-org/livemode-juridico` deixou de estar vazio.
 
 ## LiveAuth já tem repo e projeto Firebase definido
 

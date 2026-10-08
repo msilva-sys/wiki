@@ -196,3 +196,7 @@ sometimes builds directly, otherwise supports.
   conversa: usa Obsidian + LLM como second brain pessoal, sugere msilva
   testar o repositório dele; seu **AirBridge** (assistente pessoal na GCP,
   ~R$190/mês) provavelmente será desligado, infraestrutura não avançou.
+- **Deu acesso de GitHub a [[Ana Beatriz Fonseca]] pro hub jurídico
+  (`livemode-juridico`)**, e em algum momento anterior achou uma
+  informação vazada no código desse mesmo projeto — relatado por ela em
+  [[2026-10-08 Discovery LiveAuth com Ana Beatriz Fonseca (Jurídico)]].

@@ -16,3 +16,7 @@ Has already relayed feedback on the tool. msilva is not in this group.
 same-paragraph nickname/full-name pairing, not stated explicitly as one
 person in the source. Same evidence class as "Pedrinho" ↔
 [[Pedro Alves]], flagged there but missed here until this lint.)*
+
+> [!warning] Não confundir com [[Ana Beatriz Fonseca]]
+> Também chamada de "Bia", área jurídica — pessoa diferente, sem relação
+> conhecida com o grupo TES. Desambiguado 2026-10-08.

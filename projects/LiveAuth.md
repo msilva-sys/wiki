@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-10-07
+updated: 2026-10-08
 aliases: [liveauth, liveauth poc]
 tags: [auth, security, liveauth, proxy]
 ---
@@ -118,3 +118,30 @@ Na mesma conversa, msilva citou seu próprio caso de chave de API
 compartilhada (Fluxo Agêntico, provável) correndo risco de ficar sem
 crédito por ser de uso exclusivo de LLM com vários agentes — exemplo
 concreto do problema que o inventário do Daniel também ataca.
+
+## Discovery com o jurídico ([[Ana Beatriz Fonseca]]), 2026-10-08
+
+Em [[2026-10-08 Discovery LiveAuth com Ana Beatriz Fonseca (Jurídico)]]:
+**o hub jurídico dela não é um app novo — é o `livemode-juridico`** já
+catalogado em
+[[Trava de domínio e autenticação — inventário para o LiveAuth]] (Padrão
+2, domínio checado em `app/page.tsx`). "Não temos projetos públicos", na
+fala dela, é sobre **audiência** (quem ela deixa acessar), não exposição
+de rede — o hub roda num endereço público, protegido só por trava de
+domínio Google.
+
+**Validação independente do argumento central do LiveAuth**: o financeiro
+já cometeu e corrigiu o mesmo erro que motivou
+[[2026-08-28 Trava de domínio no Fluxo Agêntico via Google OAuth]] —
+restringir só por domínio `@livemode.com` não é suficiente, precisa de
+granularidade. Segundo discovery independente (depois de Gustavo Cruz e
+Marina Ferrão) a confirmar a mesma dor.
+
+**Possível fechamento de gap do inventário**: Ana diz ter terminado hoje
+de migrar o Vercel e o GitHub do hub jurídico pra conta da organização
+(`livemode-org`) — se confirmado, resolve o achado "repo fantasma na org"
+que o inventário registra desde 2026-09-24. Não reconferido no código
+ainda.
+
+Referências novas pro discovery: Kauan e [[Letícia]] (financeiro/FP&A),
+ainda sem contato direto.

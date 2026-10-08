@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-10-06
+updated: 2026-10-08
 aliases: [sentinela, SentinelaMODE, /sentinela:sentinela]
 tags: [security, governance, homologação, cloudflare]
 ---
@@ -38,6 +38,13 @@ construiu o projeto**, não um time auditando depois — e são **duas
 passadas**, não uma, a primeira já valendo com o projeto vazio. O resto do
 comparativo daquele artefato segue valendo (LiveAuth autentica o usuário
 final; Sentinela audita se o projeto está seguro antes de ir ao ar).
+
+## Evidência de adoção
+
+[[Ana Beatriz Fonseca]] (jurídico) já fazia auditoria de segurança própria
+via skill do Claude antes do Sentinela existir como ferramenta da empresa;
+hoje usa o Sentinela, disponível pra todo mundo
+([[2026-10-08 Discovery LiveAuth com Ana Beatriz Fonseca (Jurídico)]]).
 
 ## O que mede
 
