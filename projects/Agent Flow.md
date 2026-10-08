@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: build
-updated: 2026-10-06
+updated: 2026-10-08
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -504,6 +504,13 @@ tags: [agents, llm, automation, onboarding, research]
 > Estágio de ciclo de vida sai da **análise** do A10/A14 por enquanto, mas
 > continua como campo (msilva, mesmo dia). Em aberto: agente "pré-requisito" de completude de dados; sistemas em
 > manutenção (ORCA, LiveScript) talvez precisem de outro agente, não do A14.
+
+> [!important] msilva vira dono único do projeto — transição do Luís, 2026-10-07
+> [[2026-10-07 Matheus - Luis (Transição)]]: na saída do [[Luís Fernandez]]
+> da empresa, Agent Flow fica com msilva (junto com o [[Airtable Proxy]]) —
+> ver [[2026-10-07 Divisão de projetos na transição de Luís]]. Luís era até
+> aqui o contato técnico primário em paralelo a msilva; passa a não ter
+> papel ativo neste projeto.
 
 ## Philosophy and build strategy
 

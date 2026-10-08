@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-09-15
+updated: 2026-10-08
 aliases: [Yasmin]
 tags: [people]
 ---
@@ -27,3 +27,6 @@ tags: [people]
   localmente, coordenando direto com Matheus (não via Luís) — ver
   [[2026-09-15 Proxy e Fluxo Agêntico com Luís]]. Nada disso vai pra
   produção antes de Luís e Matheus revisarem juntos.
+- **Assume [[LiveScript]] e [[Farol]] na saída do Luís, 2026-10-07**
+  ([[2026-10-07 Matheus - Luis (Transição)]]) — ver
+  [[2026-10-07 Divisão de projetos na transição de Luís]].

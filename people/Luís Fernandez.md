@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-10-01
+updated: 2026-10-08
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
@@ -184,3 +184,15 @@ sometimes builds directly, otherwise supports.
   (atrapalha reordenação) — ainda não é padrão do time. Vai escrever
   briefing de testes E2E com Playwright pra msilva e Yasmin, isolando a
   camada de comunicação com Airtable, depois de alinhar com Carol e Gabi.
+- **Está saindo da empresa — reunião de transição, 2026-10-07**
+  ([[2026-10-07 Matheus - Luis (Transição)]]): divide os projetos que
+  tocava — ver [[2026-10-07 Divisão de projetos na transição de Luís]].
+  [[LiveScript]] e [[Farol]] passam pra [[Yasmin Macedo]]; msilva
+  fica com [[Agent Flow]] e [[Airtable Proxy]]; [[Opta]] continua
+  compartilhado com msilva enquanto Luís estiver presente; repassa o
+  [[Onboarding]] (repo `livemode-onboarding-devs`) pra msilva assumir como
+  projeto próprio. Vai marcar reunião com a área admin pra sexta-feira
+  (2026-10-09), fim do dia, pra apresentar a arquitetura do proxy. Mesma
+  conversa: usa Obsidian + LLM como second brain pessoal, sugere msilva
+  testar o repositório dele; seu **AirBridge** (assistente pessoal na GCP,
+  ~R$190/mês) provavelmente será desligado, infraestrutura não avançou.

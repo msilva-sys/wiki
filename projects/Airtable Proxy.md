@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-09-17
+updated: 2026-10-08
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -306,6 +306,34 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > defer LiveScript-side SDK changes]] — msilva confirmed the scope boundary
 > first stated for `PRO-76` generalizes to most remaining LiveScript-side
 > work.
+
+> [!important] Reunião de transição com Luís — go-live pré-saída, 2026-10-07
+> [[2026-10-07 Matheus - Luis (Transição)]]: Luís sai da empresa; msilva
+> fica como dono único do proxy (ver
+> [[2026-10-07 Divisão de projetos na transição de Luís]]). Estado
+> confirmado por Luís: proxy no Cloud Run com instâncias zeradas (cold
+> start) — **precisa subir pra `min=1` antes de conectar o LiveScript de
+> verdade**; monitoramento via Grafana Cloud já configurado. Plano:
+> alinhar com a Gabi uma data (semana que vem) pra ir a produção com o
+> LiveScript conectado, preferindo um dia com eventos (não zerado) e
+> monitorando 1-2 dias antes da saída dele. **Reunião com a área admin
+> marcada pra sexta-feira (2026-10-09)**, fim do dia — apresentar
+> arquitetura do proxy com desenhos, mostrar integração com o LiveScript,
+> brainstorm e LiveScript de teste.
+>
+> **Dois itens novos, não tratados antes nesta página**:
+> - **Pergunta em aberto sobre o limite de 429**: é por base, por personal
+>   access token ou pela conta inteira? Decide design do proxy, ainda não
+>   investigado.
+> - **503 com header `Retry-After`** é comportamento "normal" do Airtable
+>   que o proxy ainda não trata.
+>
+> **Backlog confirmado por Luís**: 3 projetos mapeados no Linear —
+> integração com [[LiveAuth]] (já rastreada em
+> [P-PRO-32](https://linear.app/projetos-livemode/project/integracao-com-liveauth-e78af1e2fd54)),
+> painel admin, cenário de sobrecarga. Teste de estresse (simular X
+> usuários simultâneos) deve rodar numa aplicação separada, pra não sujar
+> os relatórios do proxy real.
 
 ## How it's framed internally
 

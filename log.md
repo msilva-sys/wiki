@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-10-07
+updated: 2026-10-08
 
 
 ---
@@ -7092,3 +7092,23 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   está no ar, mas ninguém consome ainda.
 - Updated: `projects/LiveAuth.md` (seção Estado reescrita com os 4
   projetos e status reais), `index.md`.
+
+## [2026-10-08] ingest | Matheus - Luis (Transição), 2026-10-07 (Granola)
+- Lido via Granola MCP (notes.granola.ai/d/f41e9f8e-1a4e-4d73-b040-76e56640cb7f),
+  resumo estruturado — sem transcrição verbatim.
+- Fato central: Luís Fernandez está saindo da empresa. Divisão de projetos
+  decidida na reunião, corrigida por msilva no chat (Yasmin fica com
+  LiveScript e Farol, não Luís; projeto compartilhado é "Opta", não
+  "Óptica"; o onboarding é o repo `livemode-onboarding-devs`, sem "Bot" no
+  nome).
+- New: `meetings/2026-10-07 Matheus - Luis (Transição).md`,
+  `decisions/2026-10-07 Divisão de projetos na transição de Luís.md`,
+  `projects/Onboarding.md`, `projects/Opta.md`, `projects/Live Hub.md`.
+- Updated: `people/Luís Fernandez.md` (transição, AirBridge sendo
+  desligado), `people/Yasmin Macedo.md` (assume LiveScript/Farol),
+  `projects/Airtable Proxy.md` (min-instance 1 antes do go-live, reunião
+  admin 09/10, rate limit 429 em aberto, confirma backlog de 3 projetos),
+  `projects/Agent Flow.md` (msilva dono único), `index.md`.
+- Flagged, não confirmado: `Live Hub` pode se sobrepor ao "Livemode data
+  hub" já citado em `projects/Airtable Proxy.md` como sibling project na
+  mesma iniciativa — não resolvido nesta operação.
