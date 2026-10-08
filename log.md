@@ -7112,3 +7112,12 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Flagged, não confirmado: `Live Hub` pode se sobrepor ao "Livemode data
   hub" já citado em `projects/Airtable Proxy.md` como sibling project na
   mesma iniciativa — não resolvido nesta operação.
+
+## [2026-10-08] refactor | Live Hub e Livemode data hub são o mesmo projeto
+- msilva confirma diretamente: `projects/Live Hub.md` (criada hoje) e o
+  "Livemode data hub" que `projects/Airtable Proxy.md` carregava como
+  inferência não verificada desde 2026-08-18 são o mesmo projeto.
+- Updated: `projects/Live Hub.md` (alias `livemode data hub`, remove
+  incerteza), `projects/Airtable Proxy.md` (três passagens que citavam
+  "Livemode data hub" como inferência não verificada agora linkam
+  [[Live Hub]] e marcam confirmado), `index.md`.

@@ -399,7 +399,7 @@ not a LiveScript fix ([[2026-08-14 Recap da Semana]]).
 >
 > 1. **this proxy**;
 > 2. **expanding the proxy to other apps beyond [[LiveScript]]**;
-> 3. a **Livemode data hub**.
+> 3. a **Livemode data hub** — see [[Live Hub]].
 >
 > The initiative's purpose in her words: *"tudo isso é voltado para garantir, né,
 > govern[ança e con]fiabilidade dos dados que hoje a gente consome do A[irtable]."*
@@ -412,11 +412,13 @@ not a LiveScript fix ([[2026-08-14 Recap da Semana]]).
 > tool that runs the area's planning. **Luís created all three projects** — so the
 > expansion beyond LiveScript was scoped before msilva arrived.
 >
-> **Item 3 — the data hub is probably the wiki's missing Phase 2.** Gabrielle hedges
-> heavily and is relaying Luís second-hand: *"um data hub que ele tava criando da Live
-> Mode que não sei se tem mais detalhes aqui […] Banco de dados intermediári[o] […] Eu
-> acho que é a ideia de ir migrando do air table. Pode ser. Sei. Eu acho que é isso.
-> Deve ser."*
+> **Item 3 — the data hub is the wiki's missing Phase 2, confirmed 2026-10-08.**
+> Gabrielle had only hedged, relaying Luís second-hand: *"um data hub que ele
+> tava criando da Live Mode que não sei se tem mais detalhes aqui […] Banco de
+> dados intermediári[o] […] Eu acho que é a ideia de ir migrando do air table.
+> Pode ser. Sei. Eu acho que é isso. Deve ser."* **msilva confirms directly,
+> 2026-10-08: this item and [[Live Hub]] are the same project** — no longer
+> an inference from two hedged descriptions.
 >
 > An **intermediate database**, with the idea of **migrating off Airtable**. That is
 > the merged programme's Phase 2 as recorded in
@@ -484,11 +486,11 @@ from Gabrielle Ferreira in onboarding.
   stabilization* were joined into one programme. Phase 2 moves data that doesn't
   need to be in Airtable into a LiveScript-only database — see [[LiveScript]].
   ~~**That phase is absent from the roadmap recorded below.**~~ **Corrected
-  2026-08-18**: it is not absent from the *programme* — it is very likely the
-  **Livemode data hub**, a sibling project in the same initiative (see the callout at
-  the top). It remains absent from *this project's* roadmap, which is now the correct
-  place for it not to be. *(unverified: inference from two hedged descriptions
-  matching; ask Luís.)*
+  2026-08-18**: it is not absent from the *programme* — it is the
+  **[[Live Hub]]** ("Livemode data hub"), a sibling project in the same
+  initiative (see the callout at the top). It remains absent from *this
+  project's* roadmap, which is now the correct place for it not to be.
+  **Confirmed 2026-10-08 by msilva** — no longer an unverified inference.
 
 > [!question] Open tension — does the proxy retry 429s, and when?
 > Gabrielle described 429 retry/backoff as a proxy responsibility, so apps don't
