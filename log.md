@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-10-08
+updated: 2026-10-09
 
 
 
@@ -7156,3 +7156,23 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   domínio e autenticação — inventário para o LiveAuth.md` (possível
   fechamento do gap "repo fantasma na org", não reconferido no código),
   `systems/Sentinela.md` (evidência de adoção), `index.md`.
+
+## [2026-10-09] ingest | Transcrição parcial (Gemini) da reunião Matheus/Luís 2026-10-07
+- Lido `raw/Matheus _ Luis ( Transição) - 2026_10_07 17_35 GMT-03_00 -
+  Anotações do Gemini.md` — transcrição verbatim, mas cobre só os
+  primeiros ~4m30 de uma reunião de 30min (corta no meio de frase).
+- Mesma reunião já ingerida via Granola em `meetings/2026-10-07 Matheus -
+  Luis (Transição).md` (commit 487e7f8); conteúdo sobre o proxy é
+  redundante com o resumo já registrado. Decisão: não criar página nova
+  em `sources/`, só dobrar o que é novo na página existente.
+- Updated: `meetings/2026-10-07 Matheus - Luis (Transição).md` — citação
+  da transcrição como fonte secundária, novo fact sobre um sistema não
+  identificado (usabilidade ruim, em produção, sem uso — Luís queria
+  apresentar ao Matheus; não confundir com o "repo fantasma" do LiveAuth
+  sem confirmação), nova open question correspondente.
+- Em paralelo, no Linear (`Projetos-livemode` / `Melhorias do Proxy`):
+  criada [PRO-1004](https://linear.app/projetos-livemode/issue/PRO-1004/preparar-demonstracao-da-integracao-livescript-proxy-pra-reuniao-com)
+  (tarefa externa — demonstração do LiveScript+proxy pra reunião de
+  2026-10-13 com Luís e Yasmin) e atualizada
+  [PRO-997](https://linear.app/projetos-livemode/issue/PRO-997/levantar-melhorias-e-riscos-do-proxy-do-airtable-numa-visao-propria)
+  (due date 2026-10-13, critério de apresentação na mesma reunião).

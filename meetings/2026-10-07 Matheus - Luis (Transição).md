@@ -2,7 +2,7 @@
 type: meeting
 status: stable
 date: 2026-10-07
-updated: 2026-10-08
+updated: 2026-10-09
 attendees: [Matheus Oliveira da Silva, Luís Fernandez]
 aliases: [transição Luís]
 tags: [airtable-proxy, agent-flow, liveauth, onboarding, transição]
@@ -11,7 +11,10 @@ tags: [airtable-proxy, agent-flow, liveauth, onboarding, transição]
 # Matheus / Luís (Transição) — 2026-10-07
 
 > Fonte: Granola (notes.granola.ai/d/f41e9f8e-1a4e-4d73-b040-76e56640cb7f).
-> Resumo estruturado, não transcrição verbatim.
+> Resumo estruturado, não transcrição verbatim. Transcrição verbatim parcial
+> (raw/Matheus _ Luis ( Transição) - 2026_10_07 17_35 GMT-03_00 - Anotações do
+> Gemini.md) cobre só os primeiros ~4m30 dos 30min — citada abaixo onde traz
+> algo que o resumo Granola não capturou.
 
 ## Decisions
 
@@ -51,6 +54,9 @@ tags: [airtable-proxy, agent-flow, liveauth, onboarding, transição]
   pela conta toda? Impacta design do [[Airtable Proxy]].
 - Airtable retorna 503 com `Retry-After` como comportamento "normal" — o
   proxy ainda não trata isso.
+- Qual é o sistema de usabilidade ruim que o Luís quis apresentar ao
+  Matheus "depois"? Não identificado, não confundir com o LiveAuth sem
+  confirmar.
 
 ## Facts stated
 
@@ -68,6 +74,14 @@ tags: [airtable-proxy, agent-flow, liveauth, onboarding, transição]
   time.
 - Luís: o **AirBridge** (assistente pessoal dele na GCP) provavelmente vai
   ser desligado — custa ~R$190/mês e a infraestrutura não avançou.
+- Luís: fez evoluções num sistema que colocaram em produção, mas a
+  usabilidade ficou muito ruim e a parte técnica também não — e hoje
+  ninguém usa. Queria apresentá-lo ao Matheus depois, como exemplo do
+  "tamanho do problema" (raw/Matheus _ Luis ( Transição) - 2026_10_07
+  17_35 GMT-03_00 - Anotações do Gemini.md). Sistema não identificado no
+  texto — não confundir com o "repo fantasma" do LiveAuth
+  ([[2026-10-08 Discovery LiveAuth com Ana Beatriz Fonseca (Jurídico)]])
+  sem confirmação.
 
 ## Notable quotes
 
