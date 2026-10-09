@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-10-07
+updated: 2026-10-09
 aliases: [cognee, estudo cognee, memória do time, memória organizacional]
 tags: [agents, memory, knowledge-graph, agent-flow, harness, human-in-the-loop]
 ---
@@ -218,6 +218,10 @@ atual, em pt-BR, com volume real de issues/comentários).
 
 ## Perguntas abertas
 
+- **Reafirmado 2026-10-09** ([[2026-10-09 Matheus - Luís (práticas de IA e
+  governança)]]): migração da memória do Agent Flow (Postgres hoje) pra
+  Mem0 ou Cognee segue "depois", não prioritária agora — consistente com o
+  estado atual da PoC (PRO-870/PRO-983 ainda abertas).
 - ~~Hipótese 1 ou 2 para o gate~~ — **resolvido 2026-10-07**: hipótese 2.
   Fila de aprovação (pending/rejected) fica fora do Cognee, numa tabela
   nossa (mesmo papel que `agent_facts` já cumpre); só o aprovado vira

@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: build
-updated: 2026-10-08
+updated: 2026-10-09
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -917,6 +917,16 @@ That flow was diagnosed on 2026-08-17 —
 > **A mesma "narrow fetching" nomeada como lever logo abaixo**, desta vez
 > auto-diagnosticada via a instrumentação Langfuse da própria PoC, não por
 > reconstituição posterior.
+
+> [!tip] Práticas de IA e governança revisadas com o Luís, 2026-10-09
+> [[2026-10-09 Matheus - Luís (práticas de IA e governança)]]: queries ao
+> Linear no código do Agent Flow tinham ineficiências — redução de 35 pra
+> 3-4 chamadas possível só trocando as queries (achado complementar ao
+> `list_issues()` acima, desta vez do lado das queries, não do volume por
+> chamada). Prática adotada pra prompt caching: parte estática sempre no
+> início do prompt, TTL alinhado à frequência real de acesso. DRY vira
+> prática padrão em todos os projetos daqui pra frente. Proposta em aberto
+> (sem decisão): Open Router como camada de governança de chaves de LLM.
 
 > [!note] The instrument has two halves, and both had to be switched on — 2026-08-18
 > From [[2026-08-18 1-1 Matheus - Gabrielle]]:

@@ -7176,3 +7176,17 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   2026-10-13 com Luís e Yasmin) e atualizada
   [PRO-997](https://linear.app/projetos-livemode/issue/PRO-997/levantar-melhorias-e-riscos-do-proxy-do-airtable-numa-visao-propria)
   (due date 2026-10-13, critério de apresentação na mesma reunião).
+
+## [2026-10-09] ingest | Matheus - Luís (práticas de IA e governança)
+- Lido via Granola MCP (`get_meetings`/`get_meeting_transcript`,
+  notes.granola.ai/d/ee29120c-76da-406a-bb9f-8a5497ccd2d3) — transcrição de
+  baixa confiança (STT, canal único de microfone, sem diarização).
+- Correções confirmadas em chat antes de escrever: "Linnea" → Linear,
+  "Manual Rápido"/"Turbo Rápido" → Turborepo, "Homem Zero cognitivo" → Mem0
+  e Cognee.
+- New: `meetings/2026-10-09 Matheus - Luís (práticas de IA e
+  governança).md`.
+- Updated: `projects/Agent Flow.md` (otimização de queries ao Linear,
+  prática de prompt caching, DRY, proposta de Open Router), `syntheses/Cognee
+  como memória dos agentes e do time.md` (reafirma migração de memória
+  adiada, consistente com PoC ainda aberta), `index.md`.
