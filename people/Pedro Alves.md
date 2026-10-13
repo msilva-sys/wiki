@@ -1,9 +1,9 @@
 ---
 type: person
 status: active
-updated: 2026-08-18
+updated: 2026-10-13
 aliases: [Pedrinho]
-tags: [people, orca]
+tags: [people, orca, opta]
 ---
 
 # Pedro Alves
@@ -18,6 +18,14 @@ planning docs as owner of the E1 infrastructure milestone.
 - Per engineering, plugging an internal recording server ("Mã"/MAM) into
   [[Orca (CDE)]] directly is technically possible — the blocker is proving
   signal parity to external auditors (e.g. IVC), not engineering.
+- **Virou o dono informal da [[Opta]]** (confirmado por msilva 2026-10-13,
+  desambiguando o "Pedro" de [[2026-10-09 Opta - O que é isso]] como este e
+  não [[Pedro Arantes]]) — construiu a Opta API e o Opta MCP, sucedendo
+  [[Pessanha]]. Conhecia bem o sistema, era procurado por quem tinha dúvida;
+  aproximou-se de [[Vini]] durante a Copa, trocando bastante ideia. Teria
+  citado valores de contrato perto de R$150.000 pra Luís. Fez algum cache
+  seletivo de dado da Opta pra reduzir custo de chamada (nível de detalhe
+  não levantado).
 
 ## Open / unverified
 

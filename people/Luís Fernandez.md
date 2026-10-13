@@ -200,3 +200,11 @@ sometimes builds directly, otherwise supports.
   (`livemode-juridico`)**, e em algum momento anterior achou uma
   informação vazada no código desse mesmo projeto — relatado por ela em
   [[2026-10-08 Discovery LiveAuth com Ana Beatriz Fonseca (Jurídico)]].
+- **Passa o histórico e funcionamento da [[Opta]] pra Matheus e Yasmin,
+  2026-10-09** ([[2026-10-09 Opta - O que é isso]]): histórico de ownership
+  ([[Pessanha]] → [[Pedro Alves]] → [[Vini]]), arquitetura em três repos
+  (Opta API/MCP/Docs), chave de API única compartilhada pela empresa
+  (quer rotacionar), credencial fora do Secret Manager (aponta como
+  problema), relatório de uso que fez pra [[Maria Fernanda Lemos]] (bug real
+  no `get_schedule`, 51% de sucesso). Quer que o time trate a Opta como
+  produto, com dashboard de uso visível, antes de sair da empresa.

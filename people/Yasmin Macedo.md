@@ -30,3 +30,8 @@ tags: [people]
 - **Assume [[LiveScript]] e [[Farol]] na saída do Luís, 2026-10-07**
   ([[2026-10-07 Matheus - Luis (Transição)]]) — ver
   [[2026-10-07 Divisão de projetos na transição de Luís]].
+- **Presente em [[2026-10-09 Opta - O que é isso]]**, junto com Matheus
+  (transcrição do Gemini atribui tudo a Luís — presença de Yasmin só
+  confirmada em chat por msilva, 2026-10-13). Luís sugeriu que ela e
+  Matheus apresentassem a [[Opta]] pro time como dupla, sem ser pedido
+  fechado.

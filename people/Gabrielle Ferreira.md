@@ -56,6 +56,10 @@ primary technical contact ([[2026-08-24 Agent Flow discovery with Carol]]).
   internal tool, which still creates tasks in Airtable instead of Linear (a
   gap she flagged on herself, unfixed).
 
+- **Possivelmente copiada num e-mail de Luís pro time da [[Opta]]**
+  (não confirmado por ele mesmo) tentando puxar a responsabilidade de
+  contrato pra dentro de casa — ver [[2026-10-09 Opta - O que é isso]].
+
 ## Aliases
 
 Referred to as **"Gabi"** by Luís in at least one transcript

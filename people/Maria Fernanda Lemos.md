@@ -126,6 +126,11 @@ Cadeira com **duas posições**: a de Mafê, ocupada; uma segunda, **vaga**
   a abertura de pedidos de arte de telão para jogos — trabalho manual
   repetitivo que cresceu com as cinco ligas — com Ana Domingos, envolvendo
   [[Camila Sande]] como primeira tarefa de contexto.
+- **Pediu a Luís um relatório de uso da [[Opta]]** (~2026-08-25, "um mês e
+  meio" antes de [[2026-10-09 Opta - O que é isso]]) — queria saber se
+  alguém de fato usava o sistema. Luís conectou no log da GCP e achou um
+  volume de uso considerável via a API interna (1556 requests em 31 dias,
+  até 28/08). Ver [[Opta]] pros números completos.
 - **Levanta uma dúvida real e não resolvida sobre o LiveScript**: é
   responsabilidade do time abordar áreas proativamente sobre
   funcionalidades pouco usadas e complexas de manter (ex: "congelar

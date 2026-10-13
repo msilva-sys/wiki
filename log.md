@@ -1,6 +1,6 @@
 ---
 type: log
-updated: 2026-10-09
+updated: 2026-10-13
 
 
 
@@ -7190,3 +7190,25 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   prática de prompt caching, DRY, proposta de Open Router), `syntheses/Cognee
   como memória dos agentes e do time.md` (reafirma migração de memória
   adiada, consistente com PoC ainda aberta), `index.md`.
+
+## [2026-10-13] ingest | Opta - O que é isso
+- Lido `raw/Opta - O que é isso_ - 2026_10_09 17_35 GMT-03_00 - Anotações do
+  Gemini.md` — transcrição automática do Gemini, toda a fala atribuída a um
+  único locutor (mesmo problema de diarização já visto em
+  [[2026-08-25 Farol - Dados]] e no [[Bossabox Engagement]]).
+- Discutido em chat antes de escrever: confirmados os três presentes
+  (Luís, msilva, Yasmin Macedo); "Mafia"/"Mafê" = Maria Fernanda Lemos,
+  "Carol" = Carolina Bezerra, "Gabi"/"GB" = Gabrielle Ferreira. O "Pedro"
+  que construiu a Opta API/MCP foi inicialmente confundido com Pedro
+  Arantes (externo, Bossabox) — corrigido por msilva: é outro Pedro,
+  ligado ao projeto Orca — identificado como Pedro Alves, já cadastrado.
+  "Vini" (só primeiro nome) e "Pessanha" (colega já saído da empresa) não
+  tinham página — criadas como stubs mínimos.
+- New: `meetings/2026-10-09 Opta - O que é isso.md`, `people/Vini.md`,
+  `people/Pessanha.md`.
+- Updated: `projects/Opta.md` (reescrita completa — histórico de
+  ownership, arquitetura em três repos, contrato/chave de API, métricas de
+  uso, visão de produto, backlog de melhorias), `people/Pedro Alves.md`
+  (dono informal da Opta), `people/Yasmin Macedo.md`,
+  `people/Maria Fernanda Lemos.md`, `people/Carolina Bezerra.md`,
+  `people/Gabrielle Ferreira.md`, `people/Luís Fernandez.md`, `index.md`.

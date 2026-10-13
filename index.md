@@ -1,6 +1,6 @@
 ﻿---
 type: index
-updated: 2026-10-08
+updated: 2026-10-13
 ---
 
 # Index
@@ -119,7 +119,7 @@ Firestore + cache TTL enviada a ele, resposta pendente. Ver
 - [[Inventário de Processos e Ferramentas]] — iniciativa de [[Daniel Robillotta]], puxada pelo CFO [[Zoca]], pra mapear processos/projetos/ferramentas e API keys em uso nas áreas, reduzindo duplicação e chaves esquecidas. Já tem visualização em grafo (projetos/processos) com servidor MCP; time de Transfer de Patrimônio já usa. Contraparte paralela ao [[LiveAuth]], overlap a esclarecer com a [[Vitrine de IA]]. Levantado em [[2026-10-07 Daniel - Matheus (Inventário de Processos e Governança de Auth)]].
 - [[Bossabox Engagement]] — Carolina's discovery track with an external AI-transformation vendor, not previously in this wiki. msilva and Luís were both on the 2026-08-25 call, mic-conflated with Carolina in the transcript (corrected 2026-08-25); tracked because it names close to the same pains [[Agent Flow]] exists to address — see [[2026-08-25 Bossabox AI transformation discovery]]. **2026-08-26**: follow-up email thread + assessment deck confirm the Método (12-stage pipeline, +40 agents, 8 gates) and that the Assessment reads from Jira/GitHub/Linear/Confluence — near-exact match to Livemode's own toolset.
 - [[Onboarding]] — repo `livemode-onboarding-devs`. Repassado a msilva por Luís na transição de 2026-10-07 ([[2026-10-07 Matheus - Luis (Transição)]]); conteúdo bom mas travado em confirmações demais — próximo passo é destravar e pilotar pra Carol e Gabi.
-- [[Opta]] — projeto simples, compartilhado por msilva e Luís enquanto ele estiver presente; msilva como guardião técnico/revisor de PR. Levantado em [[2026-10-07 Matheus - Luis (Transição)]], sem mais detalhe de escopo ainda.
+- [[Opta]] — integração com fornecedor externo de dados estatísticos de futebol. Compartilhado por msilva e Luís enquanto ele estiver presente. **2026-10-09**: Luís passa histórico ([[Pessanha]] → [[Pedro Alves]] → [[Vini]]) e funcionamento — três repos separados (Opta API/MCP/Docs), chave de API única compartilhada pela empresa (rotação planejada, não feita), credencial fora do Secret Manager, relatório de uso com bug real no `get_schedule` (51% de sucesso de 246 chamadas). Backlog de melhorias listado, nada aprovado por Gabi/Carol ainda. Ver [[2026-10-09 Opta - O que é isso]].
 - [[Live Hub]] — tirar do Airtable dados que não precisam ficar lá; projeto do time, sem dono único. Levantado em [[2026-10-07 Matheus - Luis (Transição)]]; **confirmado 2026-10-08** como o mesmo projeto já citado em [[Airtable Proxy]] como "Livemode data hub" (terceiro projeto da iniciativa de governança/confiabilidade do Airtable, a Phase 2 de migração pra fora dele).
 
 ## Systems
@@ -198,14 +198,18 @@ transcript content; see each meeting page for that.
   day). **2026-09-14**: reviews the A10/A14 criteria, confirms the built A10
   is health-per-iniciativa, not the portfolio comparison her own A10
   conviction assumed; names the missing effort/return/risk data — see
-  [[A10 avalia saúde, não prioriza portfólio]].
+  [[A10 avalia saúde, não prioriza portfólio]]. **2026-10-09**: Luís pede
+  que ela ache o dono do contrato comercial da [[Opta]] — ver
+  [[2026-10-09 Opta - O que é isso]].
 - [[Yasmin Macedo]] — owns N8N/Monday flows; testing [[Farol]]'s GCP build;
   getting more of Luís's direct time (2026-08-20) tied to that ramp-up.
   **2026-09-15**: cobaia testando a skill de conexão ao [[Airtable Proxy]]
   no [[LiveScript]], direto com Matheus — ver
   [[2026-09-15 Proxy e Fluxo Agêntico com Luís]]. **2026-10-07**: assume
   [[LiveScript]] e [[Farol]] na saída do Luís — ver
-  [[2026-10-07 Divisão de projetos na transição de Luís]].
+  [[2026-10-07 Divisão de projetos na transição de Luís]]. **2026-10-09**:
+  presente em [[2026-10-09 Opta - O que é isso]], convidada por Luís a
+  apresentar a Opta pro time em dupla com msilva.
 - [[Arthur Tavares]] — maintains the matriz de eventos schema; moving to
   another area, so that knowledge is in transition.
 - [[João Victor Andrade]] — new hire, CRM onboarding contract, started
@@ -222,6 +226,8 @@ transcript content; see each meeting page for that.
   **2026-08-25**: her own 1:1 confirms demand intake does live in Airtable
   (refining that hypothesis), and every worked example of her support method
   is a judgment call, leaning A4 Teacher toward a standalone agent.
+  **~2026-08-25**: pediu a Luís um relatório de uso da [[Opta]], gerando o
+  achado de 1556 requests/31 dias — ver [[Opta]].
 - [[Michelly Magalhães]] — attendee only, no role recorded yet.
 - [[Gabriel (CazéTV automation)]] — n8n revenue-recognition flow; **distinct
   from** [[Gabriel (matriz de eventos, departed)]], who built the matriz and
@@ -230,7 +236,13 @@ transcript content; see each meeting page for that.
   external-events gateway use case in [[Agent Flow]] is their problem.
 - [[Bianca (Bia)]] · [[Kauan]] — with Arthur in the TES vendor-trial group.
 - [[Pedro Alves]] — Orca Next Version engineer, E1 infrastructure; likely
-  "Pedrinho" (unverified nickname match).
+  "Pedrinho" (unverified nickname match). **2026-10-09**: confirmado como o
+  dono informal da [[Opta]] que construiu a Opta API/MCP — ver
+  [[2026-10-09 Opta - O que é isso]].
+- [[Vini]] — só primeiro nome; aprendeu [[Opta]] perto de Pedro Alves
+  durante a Copa.
+- [[Pessanha]] — já saiu da empresa; começou a responsabilidade pela
+  [[Opta]] antes de Pedro Alves assumir.
 - [[Yuri Muanes]] · [[Lucas Gomes]] — Orca ops, Brazil/Portugal.
 - [[Júlia]] — co-created the CRM Slack channel.
 - [[Sérgio]] · [[Ribon]] · [[Zoca]] · [[Cristian]] — leadership approval
@@ -382,6 +394,7 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 - [[2026-10-01 1-1 Matheus - Luís]] — diarização confiável por fonte de áudio. Feedback sobre a saída dos agentes de análise do [[Agent Flow]] (descrevem dado, não recomendam ação — exceção boa no Pulso); Luís começou a remover numeração de milestone nos próprios projetos. **Três violações concretas, mesmo 1:1**, da norma de [[2026-08-18 Bring options to Luís before deciding, communicate async and often]]: intake retomado sem avisar, Cloudflare Workers escolhido sem comunicar, Supabase adotado por ruído de comunicação (decisão contrária prévia confirmada por msilva mesmo dia — ele esqueceu, reunião original sem registro na wiki). Corolário novo: stack do time deve ser simples/padronizada, GoLang no proxy é a única exceção. Commitments: msilva investiga recomendações ausentes e faz estudo Supabase vs. Neon/Cloud SQL; Luís escreve briefing de testes E2E com Playwright pra msilva e Yasmin.
 - [[2026-10-05 Carolina - Matheus (feedback reports A14)]] — revisão de produto dos status updates semanais do A14 com Carolina (transcrição por e-mail). Três blocos pedidos (falta de dado · alertas/progresso · sugestões), sinais errados conferidos ao vivo, estágio de ciclo de vida questionado pra v1. msilva pausa o envio automático e pede validação pelo preview do dashboard ([PRO-860]); bugs mapeados pra investigação ([PRO-861]).
 - [[2026-10-09 Matheus - Luís (práticas de IA e governança)]] — transcrição de baixa confiança (STT, canal único, vários termos corrigidos por msilva: Linnea→Linear, Manual Rápido/Turbo Rápido→Turborepo, Homem Zero cognitivo→Mem0/Cognee). Memória do Agent Flow segue em Postgres (Mem0/Cognee ficam pra depois); queries ao Linear otimizadas (35→3-4 chamadas); prática de prompt caching (parte estática no início, TTL alinhado à frequência de uso); DRY adotado daqui pra frente; proposta em aberto de Open Router como governança de chaves de LLM; LangFuse visto como solução segura de versionamento de prompt, plano de abrir acesso pra Gabi e Carol.
+- [[2026-10-09 Opta - O que é isso]] — transcrição automática do Gemini, toda a fala atribuída a um único locutor (confirmado por msilva: Luís, msilva e [[Yasmin Macedo]] presentes). Luís passa histórico ([[Pessanha]] → [[Pedro Alves]] → [[Vini]]), arquitetura em três repos (Opta API/MCP/Docs), relatório de uso que fez pra [[Maria Fernanda Lemos]] (1556 requests/31 dias, bug real no `get_schedule` — 51% de 246 chamadas), chave de API única compartilhada pela empresa, credencial fora do Secret Manager, visão de tratar a Opta como produto com dashboard de uso. Nenhuma decisão fechada — backlog de melhorias pendente de aval de Gabi/Carol.
 
 ## Syntheses
 - [[A6 Curador deve padronizar e sinalizar defasagem de skills]] — aberta 2026-09-25, lendo [[Marketing teams are stuck in single-player Claude mode. Here's how to go multiplayer]]: propõe que a curadoria de A6 inclua padronizar skills do time e sinalizar defasagem, não só memória institucional. Dá dono à pergunta em aberto de [[Packaging as skills]] sobre "qual deveria ser o padrão" e à lacuna de "sinal entre agentes" de [[Vocabulário do Fluxo Agêntico]]. Autoridade (propor vs. bloquear) e se vira função nova ou só explicita "templates" seguem em aberto; não passou por Luís/Gabrielle ainda. **Mesmo dia, segunda leitura independente**: lendo [[Inside the multiplayer AI setups at Mintlify, LangChain, and Buffer]], msilva chega sozinho na mesma divisão (capacidade que faz o trabalho vs. que mantém o sistema), reforçando a atribuição sem resolver a autoridade. **Mesmo dia, terceira leitura**: [[Inside team MKT1's multiplayer AI setup]] mostra que nem a MKT1 automatizou detecção de defasagem por conteúdo — mantém humano no gatilho — dado a favor de A6 propor/sinalizar em vez de atualizar sozinho, autoridade ainda não decidida.

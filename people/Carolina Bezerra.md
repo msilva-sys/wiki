@@ -87,6 +87,11 @@ elsewhere in the wiki.
   onboarding ao padrão corporativo) e o [[Sentinela]]. Pediu feedback a
   msilva sobre a página em 2026-10-06; ver [[Feedback Carol guia de um
   builder]].
+- **Contato indicado por Luís pra achar o dono do contrato comercial da
+  [[Opta]]** (2026-10-09) — ninguém sabe hoje quem internamente negocia/
+  aprova mudança de contrato com a Opta; Luís ia levar a questão a ela (e
+  possivelmente a [[Gabrielle Ferreira]]). Ver
+  [[2026-10-09 Opta - O que é isso]].
 - **Revisou os status updates semanais do A14, 2026-10-05** ([[2026-10-05 Carolina - Matheus (feedback reports A14)]]) —
   pediu três blocos (falta de dado · alertas/progresso · sugestões),
   recomendou não usar o estágio de ciclo de vida na v1 (deixou o mérito com
