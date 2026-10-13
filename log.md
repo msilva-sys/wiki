@@ -7240,6 +7240,10 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   quantificar de fora, virou pergunta de ritual em vez de ação).
 - New: `reference/PDI Matheus 2026.md`.
 - Updated: artefato do painel (republicado na mesma URL), `index.md`.
+- **Mesmo dia, ajuste fino do ritual**: texto trocado de autorrelato
+  ("dizer se...") pra demonstração ("mostrar..., caso tenha") — msilva não
+  queria um ritual que só pede pra falar, e sim trazer evidência concreta.
+  Updated: artefato do painel (republicado), `reference/PDI Matheus 2026.md`.
 
 ## [2026-10-13] synthesis | CrewAI vs LangGraph para o Fluxo Agêntico
 - Luís pediu uma comparação LangGraph vs CrewAI (chat, não reunião

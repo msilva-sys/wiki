@@ -39,9 +39,10 @@ Princípio: *"Falar o difícil direto à pessoa, sem esperar ser perguntado."*
 | F3.1 Dar ao menos um feedback direto a um colega | ✓ | registro de quando e a quem, na aba Registro | 1 feedback direto dado |
 
 ## Rituais *(revisado v2 — Luís sai da empresa, ritual fundido no Recap)*
-- **Toda semana, no Recap da Semana** — trazer atualização de decisão/produto;
-  dizer se tomei alguma decisão sem avisar antes; dizer se ouvi mais que
-  direcionei numa descoberta. Tags: F1.1 · F1.2 · F2.1 · F2.2
+- **Toda semana, no Recap da Semana** — trazer uma decisão recente (caso
+  tenha) e mostrar onde foi comunicada antes de agir; trazer um exemplo de
+  discovery da semana (caso tenha) mostrando as perguntas feitas. Tags:
+  F1.1 · F1.2 · F2.1 · F2.2
 
 ## Papel de Gabrielle neste PDI
 - Validou a v1 e ajustou a v2 na conversa de 13/10/2026.
