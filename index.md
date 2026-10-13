@@ -156,7 +156,9 @@ transcript content; see each meeting page for that.
   GPT that prioritized projects with weighted criteria, now obsolete by her
   own call; explains the Airtable-vs-Linear data split (Airtable is the
   pre-migration legacy system) — see
-  [[2026-09-15 Discovery A1 e A2 com Gabrielle]].
+  [[2026-09-15 Discovery A1 e A2 com Gabrielle]]. **2026-10-13**: valida a
+  v1 do [[PDI]] de Matheus, sem ressalvas técnicas sobre suas entregas — ver
+  [[2026-10-13 Matheus - Gabrielle (PDI)]].
 - [[Luís Fernandez]] — Tech Lead, part-time (afternoons); primary technical
   contact during Gabrielle's leave; disagrees with her on A5's proxy scoping.
   Grants msilva full autonomy on Linear org decisions (2026-08-19). **2026-08-20**:
@@ -183,7 +185,9 @@ transcript content; see each meeting page for that.
   camada de chaves (proposta), LangFuse como versionamento de prompt seguro,
   DRY como padrão daqui pra frente, memória segue Postgres (Mem0/Cognee
   ficam pra depois) — ver [[2026-10-09 Matheus - Luís (práticas de IA e
-  governança)]].
+  governança)]]. **2026-10-13**: Gabrielle descreve o perfil buscado pra vaga
+  que o substitui (arquitetura + produto + IA estratégica) — ver
+  [[2026-10-13 Matheus - Gabrielle (PDI)]].
 - [[Carolina Bezerra]] — runs Papo de Projetos and the `Brain`/Hub docs;
   building the shared skills repo and Claude Code training programme. Looped
   into [[Agent Flow]] conversations 2026-08-20, weekly check-in with msilva.
@@ -395,6 +399,7 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 - [[2026-10-05 Carolina - Matheus (feedback reports A14)]] — revisão de produto dos status updates semanais do A14 com Carolina (transcrição por e-mail). Três blocos pedidos (falta de dado · alertas/progresso · sugestões), sinais errados conferidos ao vivo, estágio de ciclo de vida questionado pra v1. msilva pausa o envio automático e pede validação pelo preview do dashboard ([PRO-860]); bugs mapeados pra investigação ([PRO-861]).
 - [[2026-10-09 Matheus - Luís (práticas de IA e governança)]] — transcrição de baixa confiança (STT, canal único, vários termos corrigidos por msilva: Linnea→Linear, Manual Rápido/Turbo Rápido→Turborepo, Homem Zero cognitivo→Mem0/Cognee). Memória do Agent Flow segue em Postgres (Mem0/Cognee ficam pra depois); queries ao Linear otimizadas (35→3-4 chamadas); prática de prompt caching (parte estática no início, TTL alinhado à frequência de uso); DRY adotado daqui pra frente; proposta em aberto de Open Router como governança de chaves de LLM; LangFuse visto como solução segura de versionamento de prompt, plano de abrir acesso pra Gabi e Carol.
 - [[2026-10-09 Opta - O que é isso]] — transcrição automática do Gemini, toda a fala atribuída a um único locutor (confirmado por msilva: Luís, msilva e [[Yasmin Macedo]] presentes). Luís passa histórico ([[Pessanha]] → [[Pedro Alves]] → [[Vini]]), arquitetura em três repos (Opta API/MCP/Docs), relatório de uso que fez pra [[Maria Fernanda Lemos]] (1556 requests/31 dias, bug real no `get_schedule` — 51% de 246 chamadas), chave de API única compartilhada pela empresa, credencial fora do Secret Manager, visão de tratar a Opta como produto com dashboard de uso. Nenhuma decisão fechada — backlog de melhorias pendente de aval de Gabi/Carol.
+- [[2026-10-13 Matheus - Gabrielle (PDI)]] — validação da v1 do PDI de Matheus (autoavaliação de 07/10, perfil B), transcrição do Gemini com toda a fala atribuída a um único locutor, reconstruída por conteúdo. Decide separar a ação de dar feedback num Foco 3 próprio e reforçar o Foco 2 (discovery ouvindo mais, pensar em escala/arquitetura da solução); confirma a ação de "vender projeto" como já suficiente. Confirma ausência de ciclo formal de senioridade na empresa e descreve o perfil buscado pra vaga que substitui o Luís (arquitetura + produto + IA estratégica). v2 do painel em elaboração.
 
 ## Syntheses
 - [[A6 Curador deve padronizar e sinalizar defasagem de skills]] — aberta 2026-09-25, lendo [[Marketing teams are stuck in single-player Claude mode. Here's how to go multiplayer]]: propõe que a curadoria de A6 inclua padronizar skills do time e sinalizar defasagem, não só memória institucional. Dá dono à pergunta em aberto de [[Packaging as skills]] sobre "qual deveria ser o padrão" e à lacuna de "sinal entre agentes" de [[Vocabulário do Fluxo Agêntico]]. Autoridade (propor vs. bloquear) e se vira função nova ou só explicita "templates" seguem em aberto; não passou por Luís/Gabrielle ainda. **Mesmo dia, segunda leitura independente**: lendo [[Inside the multiplayer AI setups at Mintlify, LangChain, and Buffer]], msilva chega sozinho na mesma divisão (capacidade que faz o trabalho vs. que mantém o sistema), reforçando a atribuição sem resolver a autoridade. **Mesmo dia, terceira leitura**: [[Inside team MKT1's multiplayer AI setup]] mostra que nem a MKT1 automatizou detecção de defasagem por conteúdo — mantém humano no gatilho — dado a favor de A6 propor/sinalizar em vez de atualizar sozinho, autoridade ainda não decidida.

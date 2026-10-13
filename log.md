@@ -7212,3 +7212,19 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   (dono informal da Opta), `people/Yasmin Macedo.md`,
   `people/Maria Fernanda Lemos.md`, `people/Carolina Bezerra.md`,
   `people/Gabrielle Ferreira.md`, `people/Luís Fernandez.md`, `index.md`.
+
+## [2026-10-13] ingest | PDI Matheus - Gabrielle (validação)
+- Lido `raw/PDI _ Matheus __ Gabi - 2026_10_13 17_02 GMT-03_00 - Anotações do
+  Gemini.md` — transcrição automática do Gemini, toda a fala atribuída a um
+  único locutor (mesmo problema de diarização recorrente); atribuição
+  reconstruída por conteúdo.
+- Reunião de validação da v1 do PDI de Matheus (skill `pdi-da-area`,
+  perfil B). Decide separar a ação de dar feedback num Foco 3 próprio,
+  reforçar o Foco 2 com ação de discovery (ouvir mais, pensar em escala/
+  arquitetura) e confirma a ação de "vender projeto" como já suficiente.
+  Confirma ausência de ciclo formal de senioridade na empresa e descreve o
+  perfil buscado pra vaga que substitui o Luís. v2 do painel do PDI em
+  elaboração, separada deste ingest.
+- New: `meetings/2026-10-13 Matheus - Gabrielle (PDI).md`.
+- Updated: `people/Gabrielle Ferreira.md`, `people/Luís Fernandez.md`,
+  `index.md`.

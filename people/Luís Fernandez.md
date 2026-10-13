@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-10-08
+updated: 2026-10-13
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
@@ -208,3 +208,8 @@ sometimes builds directly, otherwise supports.
   problema), relatório de uso que fez pra [[Maria Fernanda Lemos]] (bug real
   no `get_schedule`, 51% de sucesso). Quer que o time trate a Opta como
   produto, com dashboard de uso visível, antes de sair da empresa.
+- **Perfil da vaga que o substitui, descrito por Gabrielle em
+  [[2026-10-13 Matheus - Gabrielle (PDI)]]**: arquitetura + visão de produto
+  + uso estratégico de IA (multiplicar o time, não só uso pessoal); fit
+  cultural avaliado por Carolina. Na visão dela, o próprio Luís hoje olha
+  mais pro produto do que pro desenvolvimento em si — mesma conversa.
