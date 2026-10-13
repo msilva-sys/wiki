@@ -7228,3 +7228,17 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - New: `meetings/2026-10-13 Matheus - Gabrielle (PDI).md`.
 - Updated: `people/Gabrielle Ferreira.md`, `people/Luís Fernandez.md`,
   `index.md`.
+
+## [2026-10-13] synthesis | CrewAI vs LangGraph para o Fluxo Agêntico
+- Luís pediu uma comparação LangGraph vs CrewAI (chat, não reunião
+  formal). Verificado: docs/pricing do CrewAI (framework open-source
+  Agent/Task/Crew/Flow + plataforma Enterprise, memória unificada
+  opinativa — LanceDB + LLM em toda gravação/recall) contra o estado real
+  do código de `livemode-fluxo-agentico` (já LangGraph+LangChain+Langfuse
+  nos 4 agentes, memória determinística via Linear+Postgres, sem busca
+  vetorial). Em aberto — msilva volta nisso depois.
+- Correção: data de saída do Luís da empresa é fim de outubro/2026, não
+  2026-10-07 (essa foi só a reunião de transição) — `people/Luís
+  Fernandez.md` e `projects/Agent Flow.md` tinham essa leitura errada.
+- New: `syntheses/CrewAI vs LangGraph para o Fluxo Agêntico.md`.
+- Updated: `projects/Agent Flow.md`, `people/Luís Fernandez.md`.

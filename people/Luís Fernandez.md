@@ -184,8 +184,11 @@ sometimes builds directly, otherwise supports.
   (atrapalha reordenação) — ainda não é padrão do time. Vai escrever
   briefing de testes E2E com Playwright pra msilva e Yasmin, isolando a
   camada de comunicação com Airtable, depois de alinhar com Carol e Gabi.
-- **Está saindo da empresa — reunião de transição, 2026-10-07**
-  ([[2026-10-07 Matheus - Luis (Transição)]]): divide os projetos que
+- **Está saindo da empresa, último dia fim de outubro/2026** (confirmado
+  por msilva, 2026-10-13 — corrige a leitura anterior desta página de que
+  ele já teria saído em 2026-10-07; essa data foi só a reunião de
+  transição/divisão de projetos, ele segue presente e ativo até o fim do
+  mês) ([[2026-10-07 Matheus - Luis (Transição)]]): divide os projetos que
   tocava — ver [[2026-10-07 Divisão de projetos na transição de Luís]].
   [[LiveScript]] e [[Farol]] passam pra [[Yasmin Macedo]]; msilva
   fica com [[Agent Flow]] e [[Airtable Proxy]]; [[Opta]] continua

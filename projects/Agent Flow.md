@@ -507,10 +507,25 @@ tags: [agents, llm, automation, onboarding, research]
 
 > [!important] msilva vira dono único do projeto — transição do Luís, 2026-10-07
 > [[2026-10-07 Matheus - Luis (Transição)]]: na saída do [[Luís Fernandez]]
-> da empresa, Agent Flow fica com msilva (junto com o [[Airtable Proxy]]) —
-> ver [[2026-10-07 Divisão de projetos na transição de Luís]]. Luís era até
-> aqui o contato técnico primário em paralelo a msilva; passa a não ter
-> papel ativo neste projeto.
+> da empresa (**confirmado 2026-10-13: último dia só no fim de outubro/2026**,
+> não já em 2026-10-07 — essa data foi a reunião de transição/divisão de
+> projetos, ele segue presente), Agent Flow fica com msilva (junto com o
+> [[Airtable Proxy]]) — ver [[2026-10-07 Divisão de projetos na transição
+> de Luís]]. Luís era até aqui o contato técnico primário em paralelo a
+> msilva; passa a não ter papel ativo *decisório* neste projeto, mas segue
+> presente e pedindo coisas pontuais (ver callout abaixo).
+
+> [!tip] Luís pede comparação LangGraph vs CrewAI — 2026-10-13
+> Levantado em chat, consistente com ele seguir presente até o fim do mês.
+> Comparação completa em [[CrewAI vs LangGraph para o Fluxo Agêntico]]:
+> confirma que o repo já roda LangGraph+LangChain+Langfuse nos 4 agentes
+> (intake, prioritizer, project_reporter, portfolio_analyst), memória hoje
+> determinística (Linear + checkpoint Postgres, sem busca vetorial). CrewAI
+> ganharia um sistema de memória opinativo (LanceDB + LLM em toda
+> gravação/recall) e menos trabalho de orquestração — mas só valeria a
+> troca se surgir um padrão real de "comitê de personas" colaborando no
+> mesmo turno, que hoje não existe nos 4 agentes. **Em aberto**, msilva
+> volta nisso depois.
 
 ## Philosophy and build strategy
 
