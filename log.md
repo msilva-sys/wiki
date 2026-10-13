@@ -7229,6 +7229,18 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Updated: `people/Gabrielle Ferreira.md`, `people/Luís Fernandez.md`,
   `index.md`.
 
+## [2026-10-13] decision | PDI Matheus v2 (ajustar, skill pdi-da-area)
+- Aplicadas as decisões da validação na v2 do painel (artefato,
+  https://claude.ai/code/artifact/e46d94a6-53e9-4b5b-9977-7f297dc61033) e no
+  espelho em markdown: ação de dar feedback (F1.3) separada num Foco 3
+  próprio; Foco 2 ampliado (F2.1 cobre arquitetura + buscar pessoas
+  ativamente); ação de "vender projeto" (F2.3) confirmada sem mudança;
+  ritual do 1:1 semanal com o Luís fundido no Recap da Semana (ele sai da
+  empresa) — ajustado em chat (F2.4 proposta e descartada por não dar pra
+  quantificar de fora, virou pergunta de ritual em vez de ação).
+- New: `reference/PDI Matheus 2026.md`.
+- Updated: artefato do painel (republicado na mesma URL), `index.md`.
+
 ## [2026-10-13] synthesis | CrewAI vs LangGraph para o Fluxo Agêntico
 - Luís pediu uma comparação LangGraph vs CrewAI (chat, não reunião
   formal). Verificado: docs/pricing do CrewAI (framework open-source
