@@ -1,12 +1,38 @@
 ---
 type: person
 status: active
-updated: 2026-10-13
+updated: 2026-10-16
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
 	
 # Luís Fernandez
+
+> [!note] O que ele está passando adiante e propondo — 14/10
+> Duas reuniões no mesmo dia, ambas com cara de transição (ver
+> [[2026-10-07 Matheus - Luis (Transição)]]):
+>
+> **Entrega o [[Airtable Proxy]]** em
+> [[2026-10-14 Luís - Yasmin - Matheus (demo do proxy)]] — a evolução do
+> dashboard passa a msilva e [[Yasmin Macedo]]. Deixou pendente, como
+> ideia sem solução, levar a detecção de antipadrões para o momento de
+> escrever o código, em vez de só observar depois: *"o ideal é que o
+> próprio Claude, enquanto a gente tá desenvolvendo, veja isso, saiba e já
+> corrija. [...] Só não sei como que a gente automatiza esse processo
+> inteiro ainda."*
+>
+> **Propõe o fluxo de Git e homologação** em
+> [[2026-10-14 Workflow de Git + Linear Status]] — `main` protegida,
+> `release/*`, `develop`, PR obrigatório, chaves separadas por ambiente,
+> branches amarradas ao Linear. **Não foi aprovado**: ficou como "precisa
+> de mais conversa" diante do questionamento sobre burocracia para o
+> tamanho do time. Ele assumiu cinco commitments para a próxima rodada,
+> incluindo listar os sistemas a migrar para a Cloudflare e montar a
+> homologação do [[LiveScript]] lá.
+>
+> Posição dele sobre a migração Vercel → Cloudflare: cética quanto a
+> abandonar a Vercel por completo — prioriza serviços essenciais, propõe
+> descontinuar sistemas obsoletos e manter na Vercel o que for complexo.
 
 Tech Lead for the area. Part-time — afternoons only, with flexibility
 ([[2026-08-14 Papo de Projetos]]). Validates architecture and systems,

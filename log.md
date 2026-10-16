@@ -7258,3 +7258,58 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   Fernandez.md` e `projects/Agent Flow.md` tinham essa leitura errada.
 - New: `syntheses/CrewAI vs LangGraph para o Fluxo Agêntico.md`.
 - Updated: `projects/Agent Flow.md`, `people/Luís Fernandez.md`.
+
+## [2026-10-16] ingest | Atas de 14 e 15/10 (proxy, Git/Linear, Recap, PDIs)
+- Quatro atas do Gemini ingeridas de uma vez, nenhuma com cópia prévia em
+  `raw/`. Exportadas direto do Drive a pedido de msilva — sem
+  retranscrição minha, para que sirvam como fonte imutável:
+  `raw/2026-10-14 Luis - Yasmin - Matheus (demo do proxy).md`,
+  `raw/2026-10-14 Workflow de Git + Linear Status.md`,
+  `raw/2026-10-15 Papo de Projetos.md`,
+  `raw/2026-10-15 Recap da Semana.html` (HTML porque o export Markdown
+  desse não cabia no caminho sem passar pelo contexto do agente).
+- **Decisão real extraída**: migração obrigatória para o proxy — skill de
+  integração distribuída e todas as chaves diretas do Airtable
+  desabilitadas após ~2 meses.
+- **Correções feitas pelo código, não pela ata** (repos conferidos em
+  `C:\Users\msilva\projects\`):
+  - Os antipadrões do proxy não são detectados no Go — `telemetry.go`
+    emite sinais crus e os rótulos vivem nas queries de
+    `grafana/dashboards/airtable-usage.json`.
+  - Paginação profunda não duplica full scan (dúvida levantada ao vivo e
+    não respondida): sinais independentes, painéis distintos.
+  - O "algoritmo de bucket" listado como próximo passo já existe em parte
+    — `airtable-ratelimit.json` cobre o teto de 5 req/s por base. O que
+    falta é o teto por conta emissora.
+  - O fluxo `release/*` → staging, tratado na reunião de Git como
+    proposta, já é prática no `livemode-roteiros-nextjs` (`c94dde5`,
+    `b1d3d27`, `9461d9d`).
+- **Correção contra a documentação oficial do Airtable**, a pedido de
+  msilva: o segundo teto não é "somatório por conta" como dito na reunião,
+  e sim **50 req/s para todo o tráfego de PATs de um mesmo usuário ou
+  service account**. Escopo é a conta emissora, não o token.
+- **Erro meu, corrigido por msilva antes de ir pro disco**: eu havia
+  redigido o risco como "o proxy concentra todo o acesso num PAT único".
+  Falso — `internal/config/config.go` mantém um `Token` por app em
+  `PROXY_APPS`. A questão real é de qual conta esses PATs por app são
+  emitidos, que o design doc não define.
+- **Atribuição não confiável nas duas atas de 15/10**: a transcrição do
+  Recap colapsa todas as falas numa pessoa só, e o Papo troca nomes entre
+  "Próximas etapas" e "Detalhes" (existe um "Mateus" na ata do Papo que
+  não é msilva). Ambas as páginas levam callout de aviso; só o
+  confirmável pelo conteúdo foi atribuído.
+- Decidido com msilva: o compromisso dele de validar permissões de chave
+  com a liderança fica como prosa na ata, **sem** virar issue no Linear —
+  contrariando a preferência de 2026-08-26, por escolha explícita dele.
+- New: `decisions/2026-10-14 Migração obrigatória para o proxy do
+  Airtable.md`, `meetings/2026-10-14 Luís - Yasmin - Matheus (demo do
+  proxy).md`, `meetings/2026-10-14 Workflow de Git + Linear Status.md`,
+  `meetings/2026-10-15 Recap da Semana.md`, `meetings/2026-10-15 Papo de
+  Projetos (rodada de PDIs).md`.
+- Updated: `concepts/Airtable Rate Limits.md` (dois tetos, correção de
+  escopo, prosa migrada pra pt-BR), `projects/Airtable Proxy.md`,
+  `systems/LiveScript.md`, `people/Luís Fernandez.md`, `people/Yasmin
+  Macedo.md`, `projects/Farol.md`, `index.md`.
+- Pendente, não feito: registrar o teto por conta emissora no
+  `airtable-proxy-design.md` do repo do proxy, que hoje só documenta os
+  5 req/s por base. É mudança no repo, não no wiki.

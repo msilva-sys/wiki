@@ -1,12 +1,43 @@
 ---
 type: system
 status: active
-updated: 2026-09-17
+updated: 2026-10-16
 aliases: [live script, livescript, roteiros, roteiros app, live stre]
 tags: [airtable, livescript, realtime, frontend]
 ---
 
 # LiveScript
+
+> [!note] Estado em 2026-10-16 — verificado direto no repo
+> Três fatos do repo `livemode-roteiros-nextjs` que as atas de 14–15/10
+> tocam:
+>
+> **1. A integração com o proxy existe, com fallback, e ainda não foi
+> commitada.** `lib/services/airtable-client.ts` (não rastreado) centraliza
+> o acesso: com `AIRTABLE_PROXY_URL` definido usa `AIRTABLE_PROXY_KEY` e
+> aponta pro proxy; sem ela, cai no PAT direto
+> (`AIRTABLE_PERSONAL_ACCESS_TOKEN`). Scripts de manutenção em `scripts/`
+> contornam isso de propósito. Era a branch mostrada em
+> [[2026-10-14 Luís - Yasmin - Matheus (demo do proxy)]].
+>
+> **2. O fluxo `release/*` → staging já é prática aqui.** Commits
+> `c94dde5`, `b1d3d27` e `9461d9d` configuram deploy automático de
+> `release/*` para staging na Vercel, e `0a523af` cria tag em `main` com a
+> versão do `package.json` a cada push. Isso **antecede** a proposta
+> discutida em [[2026-10-14 Workflow de Git + Linear Status]], que tratou
+> homologação como tema a debater — a conversa que falta é sobre
+> generalizar para os outros projetos, não sobre inventar o fluxo.
+>
+> **3. É o primeiro app medido pelo proxy.** 157 chamadas de teste
+> produziram 28 possíveis full scans, além de over-fetch e paginação
+> profunda. Os dados existem no Grafana, mas o painel mostra rota e método,
+> **não** a tela ou o handler que disparou a chamada — ligar um full scan
+> ao ponto do código ainda é trabalho manual. Ver [[Airtable Rate Limits]].
+>
+> Em [[2026-10-15 Recap da Semana]], msilva reportou um protótipo com
+> Playwright para testes automatizados daqui, travado numa divergência de
+> abordagem: testar com o Airtable junto, ou só interface, como já estava
+> configurado no repo.
 
 Livemode's collaborative script-editing application (*roteiro* = script). **The
 heaviest user of the Airtable API at Livemode**, and the reason the

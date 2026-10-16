@@ -1,12 +1,28 @@
 ---
 type: person
 status: active
-updated: 2026-10-08
+updated: 2026-10-16
 aliases: [Yasmin]
 tags: [people]
 ---
 
 # Yasmin Macedo
+
+> [!note] Assume o dashboard do proxy — 2026-10-14
+> Em [[2026-10-14 Luís - Yasmin - Matheus (demo do proxy)]], a demo do
+> [[Airtable Proxy]] foi feita para ela e msilva como quem assume o
+> sistema. [[Luís Fernandez]] foi explícito de que a evolução contínua dos
+> painéis do Grafana passa a ser dos dois, não mais dele — os painéis hoje
+> têm excesso deliberado de informação, e cabe ao time decidir o que fica
+> numa versão final.
+>
+> Em [[2026-10-15 Papo de Projetos (rodada de PDIs)]], um dos focos de PDI
+> dela é assumir mais protagonismo em projetos como [[LiveScript]] e
+> [[Farol]], levantando uso atual e backlog, e exercitar discordar de
+> pessoas mais sêniores em vez de aceitar decisões passivamente. Outro é
+> compartilhar modelos de estado e testes com Playwright com o time — o
+> que encosta no protótipo que msilva reportou em
+> [[2026-10-15 Recap da Semana]].
 
 ## Owns / decides
 

@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-09-01
+updated: 2026-10-16
 aliases: [Projeto Farol, farol]
 tags: [farol, data, gcp, finance, bigquery, medallion]
 ---
@@ -136,6 +136,19 @@ had already grown large by the time she noticed —
 low importance against everything else the team could otherwise build.
 Recorded as her candid opinion, not a project-status change — Farol
 remains `active`, in development, per the rest of this page.
+
+## Erro recorrente de expressão da Expresso — 2026-10-15
+
+Em [[2026-10-15 Recap da Semana]], msilva reportou um teste rodando desde
+terça (2026-10-13) para monitorar erros de expressão no Farol vindos da
+**Expresso**. Resultado até ali: as execuções matinais seguiam normais, sem
+reincidência do erro. Ele planejava encerrar o teste em 2026-10-16 e usar
+os dados para decidir **se aciona a Expresso por uma solução definitiva** —
+*"porque de vez em quando tá sempre dando"*.
+
+Primeira menção na wiki de um problema **recorrente** com a Expresso, cujo
+fechamento de integração foi registrado como concluído em 2026-08-27
+(abaixo). Sem issue do Linear correspondente.
 
 ## Progress — 2026-08-27
 

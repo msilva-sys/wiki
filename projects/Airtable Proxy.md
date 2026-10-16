@@ -11,6 +11,56 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > Related: [[Proxy Environments]] · [[AIRTABLEGC-34]] · [[LiveScript]] ·
 > [[Airtable Rate Limits]] · [[Agent Flow]]
 
+> [!important] Migração para o proxy virou obrigatória — 2026-10-14
+> Decidido em [[2026-10-14 Luís - Yasmin - Matheus (demo do proxy)]]:
+> distribuir uma skill de integração e **desabilitar todas as chaves
+> diretas do Airtable** após cerca de dois meses de transição. Página da
+> decisão: [[2026-10-14 Migração obrigatória para o proxy do Airtable]].
+>
+> Três consequências que mudam o estado deste projeto:
+>
+> - **O proxy entra no caminho crítico de toda aplicação** que fala com o
+>   Airtable. O trade-off de disponibilidade do §13 do design doc deixa de
+>   ser hipotético.
+> - **O proxy ainda não está em produção** e precisa entrar **antes da
+>   saída de [[Luís Fernandez]]** — ver
+>   [[2026-10-07 Matheus - Luis (Transição)]]. msilva declarou a aplicação
+>   estável e pronta; o que falta é o deploy.
+> - **A evolução do dashboard passa a ser do time** ([[Yasmin Macedo]] e
+>   msilva), não mais do Luís. Ele montou os painéis com excesso
+>   deliberado de informação, para o time decidir o que fica numa versão
+>   final.
+>
+> **Questão em aberto que a decisão assume resolvida:** de qual conta do
+> Airtable saem os PATs por app. O proxy mantém **um PAT por app**
+> (`internal/config/config.go`, campo `Token` de `PROXY_APPS`), mas o teto
+> de 50 req/s do Airtable é **por conta emissora**, não por token — PATs
+> separados só distribuem consumo se as contas também forem distintas. Ver
+> [[Airtable Rate Limits]].
+
+> [!note] O que a demo de 14/10 corrigiu sobre a arquitetura — 2026-10-16
+> Conferido contra o repo ao ingerir a ata:
+>
+> - **Os antipadrões não são detectados no Go — são classificados no
+>   Grafana.** `internal/proxy/telemetry.go` emite sinais crus
+>   (`HasFilter`, `HasFieldProjection`, `FieldsByName`, `FilterHash`,
+>   `PageSize`, `Offset`, `TableByName`, `ViewByName`). Os rótulos "full
+>   scan", "over-fetch", "cache candidate" e "paginação profunda" vivem nas
+>   queries de `grafana/dashboards/airtable-usage.json`. Mudar a
+>   classificação é mudar query, não fazer deploy.
+> - **Paginação profunda não duplica full scan**, dúvida levantada ao vivo
+>   e não respondida na reunião: são sinais independentes (`Offset` versus
+>   ausência de `filterByFormula`), em painéis distintos.
+> - **O "algoritmo de bucket" listado como próximo passo já existe em
+>   parte** — o dashboard `Airtable Proxy — Rate-limit & Fairness` cobre o
+>   teto de 5 req/s por base com consumo por app, utilização percentual e
+>   minutos acima de 80%. O trabalho real que falta é o teto por conta
+>   emissora, que não está modelado em lugar nenhum.
+>
+> **Primeira medição real de antipadrões**: 157 chamadas de teste do
+> [[LiveScript]] produziram 28 possíveis full scans. Falta o julgamento
+> qualitativo — o painel sinaliza, não julga.
+
 > [!danger] O painel de portfólio não está vendo este trabalho — 2026-09-08
 > Descoberto ao vivo pela Mafê na [[2026-09-08 Weekly - Projetos e
 > Tarefas]]: o painel interno de portfólio lê o projeto **`Proxy do
