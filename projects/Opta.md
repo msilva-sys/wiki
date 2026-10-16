@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-10-13
+updated: 2026-10-16
 aliases: [opta]
 tags: [opta, transição]
 ---
@@ -22,21 +22,46 @@ Nenhum dono formal/único até hoje. [[Pessanha]] começou a assumir a
 responsabilidade antes de Luís entrar na empresa (já tinha saído quando
 Luís chegou). [[Pedro Alves]] (também ligado ao [[Orca (CDE)]]) virou o
 dono informal — conhecia bem o sistema, era procurado por quem tinha
-dúvida. [[Vini]] aprendeu bastante durante a Copa, perto do Pedro. Quem
-hoje é o responsável interno pelo **contrato comercial** com a Opta não é
-conhecido — pergunta em aberto, Luís ia levar a [[Carolina Bezerra]] e
-possivelmente [[Gabrielle Ferreira]].
+dúvida.
 
-## Arquitetura — três projetos separados
+> [!warning] Correção 2026-10-16 — quem construiu foi o Peçanha
+> Luís atribuiu a construção da Opta API e do Opta MCP a [[Pedro Alves]].
+> Os repos dizem outra coisa: todo commit inicial de `opta-api`, `opta-mcp`
+> e `goal-webhook` é de `ppecanha`/`pedrompecanha`, e Pedro Peçanha
+> anunciou a API no `#general` em 2026-05-11 e o [[Golzinho]] em
+> 2025-10-03. O papel de Pedro Alves como **dono informal** (quem era
+> procurado, quem conhecia o sistema) não é contraditado — só a autoria.
+> Consequência prática: o autor das quatro peças saiu e não está acessível
+> (msilva, 2026-10-16), e Luís, o único que ainda carregava contexto, está
+> de saída.
 
-- **Opta API** — proxy que encapsula os endpoints da Opta que a empresa tem
-  direito (não confirmado se cobre todos os endpoints licenciados).
-- **Opta MCP** — expõe essa API internamente via MCP; muito usado.
-- **Opta Docs** — documentação gerada por Luís via Claude, autenticada
-  (não exposta fora da empresa). Mistura orientação de uso (como integrar,
-  lista de competições disponíveis) com uma seção de operação interna
-  (como adicionar competição, gestão de chave) que não deveria ser pública
-  — ainda sem solução de separação.
+[[Vini]] aprendeu bastante durante a Copa, perto do Pedro. Quem hoje é o
+responsável interno pelo **contrato comercial** com a Opta não é conhecido —
+pergunta em aberto, Luís ia levar a [[Carolina Bezerra]] e possivelmente
+[[Gabrielle Ferreira]].
+
+## Arquitetura — três repos, quatro peças
+
+> [!note] Verificado no código em 2026-10-16
+> O relato de Luís em [[2026-10-09 Opta - O que é isso]] descreve três
+> projetos. A leitura dos repos mostra uma quarta peça que ninguém citou: o
+> banco de gols e partidas do [[Golzinho]], que nasceu sete meses antes da
+> API e que ela apenas expõe.
+
+- **[[Opta API]]** — proxy dos feeds da Opta **e** leitura do banco do
+  [[Golzinho]] (`/ourGoals`, `/ourMatches`, WebSocket). Duas naturezas no
+  mesmo serviço, unidas só pela `X-API-Key`. Não confirmado se o proxy
+  cobre todos os endpoints licenciados.
+- **[[Opta MCP]]** — seis ferramentas pro Claude, edição corrente de 18
+  competições, chave única compartilhada.
+- **Opta Docs** — repo `livemode-opta-docs`, Astro Starlight na Vercel com
+  login Google. Documentação gerada por Luís via Claude, autenticada (não
+  exposta fora da empresa). Mistura orientação de uso (como integrar, lista
+  de competições disponíveis) com uma seção de operação interna (como
+  adicionar competição, gestão de chave) que não deveria ser pública —
+  ainda sem solução de separação.
+- **[[Golzinho]]** — o produtor dos dados próprios, e a peça sem dono
+  mapeado. Ver [[Quem escreve nas tabelas goals e matches]].
 
 Luís já cogitou unificar os três repos num monorepo; não chegou a fazer —
 hoje é incômodo trabalhar com Claude Code cruzando os três.
@@ -89,6 +114,34 @@ reunião, como o dashboard "Insights" do [[Airtable Proxy]]), tratar quem usa
 como cliente, citar a Opta como case de sucesso do time (como já fizeram com
 LiveScript e [[Orca (CDE)]]). Pediu a Matheus e [[Yasmin Macedo]] que
 considerassem apresentar a Opta pro time como dupla.
+
+## Riscos levantados (2026-10-16)
+
+Consolidado da leitura dos repos, da doc interna e do relato de 09/10.
+Ordenado por gravidade.
+
+| # | Risco | Origem | No Linear? |
+| --- | --- | --- | --- |
+| 1 | [[Opta MCP]] sobe **sem autenticação** se `MCP_AUTH_KEY` sumir | código | não |
+| 2 | Produtor do [[Golzinho]] invisível, falha em silêncio, autor fora da empresa | código | não |
+| 3 | Chave única do MCP: sem revogação individual nem atribuição | doc + 09/10 | não |
+| 4 | 28 chaves de API sem registro de dono | doc | `PRO-694` |
+| 5 | Chaves em claro no log e no BigQuery | doc | não |
+| 6 | Credencial do contrato no BigQuery, não no Secret Manager | 09/10 | não |
+| 7 | Três clientes no Supabase direto, fora da auditoria | código | não |
+| 8 | Duas regiões da API em revisões divergentes | doc | não |
+| 9 | `service-account.json` versionado no `goal-webhook` (conteúdo não lido) | repo | não |
+| 10 | Rotação de chave é plano verbal, nunca executada | 09/10 | não |
+| 11 | `get_schedule` com 51% de sucesso em 246 chamadas | 09/10 + doc | `PRO-680`, `PRO-682` |
+| 12 | `competitions.json` fixo, editado à mão em produção, duplicado no docs | 09/10 + código | `PRO-679`, `PRO-683` |
+| 13 | Credencial lida do BigQuery a cada chamada do proxy | código | `PRO-693` |
+| 14 | README do `opta-mcp` anuncia ferramenta removida (`opta_raw`) | código | não |
+| 15 | `401`/`403` não entram no log de auditoria | doc | `PRO-699` |
+
+Os itens 1, 2, 7, 8 e 9 **não têm issue** e não aparecem no backlog da
+transição. 1 e 2 são os mais graves: um é exposição de credencial, o outro é
+falha silenciosa num caminho que alimenta transmissão ao vivo — agravado por
+2 e 3 juntos, já que o produtor não tem dono, não tem repo e seu autor saiu.
 
 ## Backlog de melhorias (não aprovado/priorizado ainda)
 

@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-10-13
+updated: 2026-10-16
 aliases: [Pedrinho]
 tags: [people, orca, opta]
 ---
@@ -20,8 +20,15 @@ planning docs as owner of the E1 infrastructure milestone.
   signal parity to external auditors (e.g. IVC), not engineering.
 - **Virou o dono informal da [[Opta]]** (confirmado por msilva 2026-10-13,
   desambiguando o "Pedro" de [[2026-10-09 Opta - O que é isso]] como este e
-  não [[Pedro Arantes]]) — construiu a Opta API e o Opta MCP, sucedendo
-  [[Pessanha]]. Conhecia bem o sistema, era procurado por quem tinha dúvida;
+  não [[Pedro Arantes]]) — sucedendo [[Pessanha]].
+
+  > [!warning] Correção 2026-10-16 — ele não construiu a Opta API nem o MCP
+  > Esta página dizia que sim, a partir do relato de Luís em 09/10. Os repos
+  > contradizem: todo commit inicial de `opta-api`, `opta-mcp` e
+  > `goal-webhook` é de `ppecanha`/`pedrompecanha`, e foi o Peçanha quem
+  > anunciou a API no `#general` (2026-05-11). O papel de **dono informal**
+  > — quem conhecia o sistema e era procurado — segue valendo; só a autoria
+  > muda de pessoa. Conhecia bem o sistema, era procurado por quem tinha dúvida;
   aproximou-se de [[Vini]] durante a Copa, trocando bastante ideia. Teria
   citado valores de contrato perto de R$150.000 pra Luís. Fez algum cache
   seletivo de dado da Opta pra reduzir custo de chamada (nível de detalhe

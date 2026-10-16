@@ -7313,3 +7313,49 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Pendente, não feito: registrar o teto por conta emissora no
   `airtable-proxy-design.md` do repo do proxy, que hoje só documenta os
   5 req/s por base. É mudança no repo, não no wiki.
+
+## [2026-10-16] synthesis | Opta — arquitetura real, Golzinho e 15 riscos
+
+- Leitura completa dos três repos da Opta (`opta-api`, `opta-mcp`,
+  `livemode-opta-docs`), incluindo histórico git, mais a doc interna em
+  `livemode-opta-docs/src/content/docs/`. Disparado por uma pergunta de msilva
+  sobre o que é a Opta e como o codebase está organizado.
+- **Achado principal**: a Opta não são três projetos, e sim quatro peças. As
+  rotas `/ourGoals`, `/ourMatches` e os WebSockets da [[Opta API]] não falam
+  com a Opta — leem um banco Supabase que pertence ao [[Golzinho]], produto do
+  Live Content que existe desde 2025-09, sete meses antes da API. O serviço só
+  lê: não há `insert`, `update` nem job em lugar nenhum do repo.
+- **Nenhum repositório escreve nessas tabelas.** Busca em `tech-livemode` e
+  `livemode-org` (~60 repos), nos repos locais, na wiki, no Slack e no Linear.
+  Os três consumidores achados (`goal-webhook`, `goal-clipper`, `live-content`)
+  só leem ou reagem. Virou `syntheses/Quem escreve nas tabelas goals e
+  matches.md`, com as três vias que ainda podem fechar a pergunta.
+- **Correção de autoria, contra o relato de 09/10**: Luís atribuiu a construção
+  da Opta API e do Opta MCP a [[Pedro Alves]]; todos os commits iniciais de
+  `opta-api`, `opta-mcp` e `goal-webhook` são de `ppecanha`/`pedrompecanha`, e
+  foi Peçanha quem anunciou a API no `#general` (2026-05-11) e o Golzinho
+  (2025-10-03). msilva confirmou (2026-10-16) que [[Pessanha]] é Pedro Peçanha,
+  que já saiu e **não está acessível** — o que fecha o caminho humano pra
+  lacuna acima e agrava o risco 2. O papel de dono informal de Pedro Alves não
+  foi contraditado, só a autoria; as duas páginas levam callout de correção, sem
+  apagar o relato original.
+- **15 riscos consolidados** em `projects/Opta.md`. Cinco não têm issue no
+  Linear: MCP subindo sem auth se `MCP_AUTH_KEY` sumir (`server.ts:318`),
+  produtor do Golzinho invisível e sem alerta, três clientes no Supabase direto
+  fora da auditoria, duas regiões da API em revisões divergentes, e um
+  `service-account.json` versionado na raiz do `goal-webhook` — **conteúdo não
+  lido de propósito**, precisa ser checado por msilva.
+- Erro meu, corrigido na mesma sessão: afirmei a msilva que os campos
+  `confirmed`/`additional_comments` eram preenchidos por operador humano. Era
+  inferência pelo formato, não evidência; o anúncio do Live Content mostra que a
+  origem é a Opta, com delay de ≤30s. A página do Golzinho registra a versão
+  correta.
+- Não verificado: nada foi conferido em execução. Os números de revisão do Cloud
+  Run e a divergência entre regiões vêm da doc interna, não do GCP — o token do
+  `gcloud` de msilva estava expirado.
+- New: `systems/Opta API.md`, `systems/Opta MCP.md`, `systems/Golzinho.md`,
+  `syntheses/Quem escreve nas tabelas goals e matches.md`.
+- Updated: `projects/Opta.md` (arquitetura reescrita, seção de riscos nova,
+  callout de autoria), `people/Pessanha.md` (identidade, o que construiu,
+  última atividade observada), `people/Pedro Alves.md` (callout de correção),
+  `index.md`.
