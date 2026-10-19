@@ -18,8 +18,9 @@ tags: [agents, research, planning, index]
 > [!danger] "Which agent first" is answered — msilva, 2026-08-24
 > [[2026-08-24 Start Agent Flow with A10 Portfolio]]: four independent
 > readings (Gabrielle, Luís, Carol, msilva's own pain) converged on **A10
-> Portfolio**. [[Which agent should be built first]] and [[Comparing the
-> first-agent candidates]] are now `status: superseded` — read as history.
+> Portfolio**. [[Which agent should be built first]] and
+> [[Comparing the first-agent candidates]] are now `status: superseded` —
+> read as history.
 > This page keeps routing what's still genuinely open.
 
 > [!danger] A5 deprioritized entirely — msilva, 2026-08-24

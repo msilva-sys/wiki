@@ -62,8 +62,9 @@ Nenhuma decisão formal fechada — reunião de discovery, sem fechamento.
   (inclusive pela ferramenta dela, que aponta pra lá e não pro Linear), e
   mensagem direta no Slack, sem registro em lugar nenhum.
 - Gabrielle: todo o histórico de projetos anterior ao "marco zero" da
-  migração pro Linear ([[2026-08-14 Migrate project management from Jira
-  to Linear]]) — backlog nunca tocado, projetos concluídos, abandonados —
+  migração pro Linear
+  ([[2026-08-14 Migrate project management from Jira to Linear]]) — backlog
+  nunca tocado, projetos concluídos, abandonados —
   vive só no Airtable, nunca foi migrado.
 - Gabrielle: o board de priorização de portfólio (antigo) tinha uma coluna
   de "hold" com motivo explícito registrado (dependência de projeto

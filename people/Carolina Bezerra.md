@@ -85,8 +85,8 @@ elsewhere in the wiki.
 - **Dona do Programa de Governança e Segurança em IA** (projeto Linear `Guia
   de um Builder`, P-PRO-16) — inclui o **Guia de um Builder** (página de
   onboarding ao padrão corporativo) e o [[Sentinela]]. Pediu feedback a
-  msilva sobre a página em 2026-10-06; ver [[Feedback Carol guia de um
-  builder]].
+  msilva sobre a página em 2026-10-06; ver
+  [[Feedback Carol guia de um builder]].
 - **Contato indicado por Luís pra achar o dono do contrato comercial da
   [[Opta]]** (2026-10-09) — ninguém sabe hoje quem internamente negocia/
   aprova mudança de contrato com a Opta; Luís ia levar a questão a ela (e

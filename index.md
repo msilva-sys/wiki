@@ -45,8 +45,8 @@ up; matches msilva's stated lean. `PRO-83` (key/secret rotation strategy)
 resolved the same day on the same policy — manual rotation, no tooling,
 revisit once real DB-backed storage exists — this one msilva's own call,
 not re-run past Luís, since it's applying an already-settled precedent
-rather than a fresh fork. See [[2026-08-18 Bring options to Luís before
-deciding, communicate async and often]].
+rather than a fresh fork. See
+[[2026-08-18 Bring options to Luís before deciding, communicate async and often]].
 **2026-08-21**: path-based app identification is now shipped and hardened
 (`8e4297b`, `bf5e681`, `12d1423`), replacing the wiki's stale "not yet
 implemented" state. Production ingress is now settled as private: VPN -> VPC ->
@@ -171,8 +171,9 @@ transcript content; see each meeting page for that.
   responde as análises que reabriu em 2026-09-02 sobre o deploy e a telemetria de
   produção do [[Airtable Proxy]] — Cloud Run público com API key por app, Grafana
   Cloud — ver [[Direcionamento PRO-84 PRO-87]]. **2026-09-10**: 1:1 sobre memória e
-  comunicação entre agentes, diarização de baixa confiança — ver [[2026-09-10 1-1
-  Matheus - Luís]]. **2026-09-15**: autor das skills de conexão ao proxy, ainda não
+  comunicação entre agentes, diarização de baixa confiança — ver
+  [[2026-09-10 1-1 Matheus - Luís]]. **2026-09-15**: autor das skills de
+  conexão ao proxy, ainda não
   atualizadas pra API key; decide identidade própria + resposta imediata por agente
   no [[Agent Flow]]; confirma "a dinda" no [[Claude Agent SDK]] — ver
   [[2026-09-15 Proxy e Fluxo Agêntico com Luís]]. **2026-10-01**: feedback direto
@@ -187,8 +188,9 @@ transcript content; see each meeting page for that.
   repassa práticas de governança de IA pro [[Agent Flow]] — Open Router como
   camada de chaves (proposta), LangFuse como versionamento de prompt seguro,
   DRY como padrão daqui pra frente, memória segue Postgres (Mem0/Cognee
-  ficam pra depois) — ver [[2026-10-09 Matheus - Luís (práticas de IA e
-  governança)]]. **2026-10-13**: Gabrielle descreve o perfil buscado pra vaga
+  ficam pra depois) — ver
+  [[2026-10-09 Matheus - Luís (práticas de IA e governança)]].
+  **2026-10-13**: Gabrielle descreve o perfil buscado pra vaga
   que o substitui (arquitetura + produto + IA estratégica) — ver
   [[2026-10-13 Matheus - Gabrielle (PDI)]].
 - [[Carolina Bezerra]] — runs Papo de Projetos and the `Brain`/Hub docs;

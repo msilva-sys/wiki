@@ -79,8 +79,9 @@ tags: [agents, llm, automation, onboarding, research]
 
 > [!tip] João Victor 1:1 — CRM backlog is more tracked than thought, macro-visibility gap confirmed — 2026-08-25
 > [[2026-08-25 1-1 Matheus - João Victor]] (second half of the joint session
-> planned in [[Meeting prep - Agent Flow discovery with Mafê and João
-> Victor - 2026-08-25]]). **Corrects the "personal spreadsheet" framing**:
+> planned in
+> [[Meeting prep - Agent Flow discovery with Mafê and João Victor - 2026-08-25]]).
+> **Corrects the "personal spreadsheet" framing**:
 > his CRM backlog actually lives in a defined ClickUp pipeline, fed by a
 > Claude-hosted roadmap file, with an N8N+Slack automation already
 > running — more tracked than the secondhand description suggested, just
@@ -238,8 +239,9 @@ tags: [agents, llm, automation, onboarding, research]
 > [!tip] Molde de agente e SOUL ganham desenho próprio, cruzado com a ontologia da Bossabox — msilva, 2026-09-01
 > [[Como deve funcionar o molde de agente]]: conversa com Luís levanta duas
 > questões — dashboard não-programático pra configurar a Soul, e um **molde
-> de agente** reutilizável/instanciável, generalizando o [[Agent Harness
-> Template]] (Trigger/Trigger Channel → Input → Harness → Output) em contrato
+> de agente** reutilizável/instanciável, generalizando o
+> [[Agent Harness Template]] (Trigger/Trigger Channel → Input → Harness →
+> Output) em contrato
 > configurável. **SOUL resolvida em V1** como fonte comportamental
 > independente do `system_prompt`, persistida em tabelas com composição
 > plana — ver [[2026-09-01 Modelar SOUL em tabelas com composição plana]].
@@ -247,8 +249,9 @@ tags: [agents, llm, automation, onboarding, research]
 > chegou na OS V2: peças equivalentes já existem no Fluxo Agêntico (contrato/
 > ports-and-adapters, o próprio Harness Template), mas faltam generalizar o
 > mapeamento DTO≠domínio além do Linear e dar dono à "memória do sistema
-> agêntico" — a mesma lacuna sem dono desde 2026-08-20 (ver [[Vocabulário do
-> Fluxo Agêntico]]). **Priorizada e rastreada, mesmo dia**: msilva decide
+> agêntico" — a mesma lacuna sem dono desde 2026-08-20 (ver
+> [[Vocabulário do Fluxo Agêntico]]). **Priorizada e rastreada, mesmo dia**:
+> msilva decide
 > atacar a lacuna de memória primeiro (DTO≠domínio já tem padrão pra copiar,
 > memória não tem nenhum); como Luís pediu em 2026-08-20 pra não desenhar
 > memória antes de assentar as entidades, o passo criado não é desenho —
@@ -364,8 +367,9 @@ tags: [agents, llm, automation, onboarding, research]
 > [[Fronteira A10×A14 (informação e métricas)]]: material que msilva pediu
 > ao Luís em [[2026-09-02 1-1 Matheus - Luís]] — resposta de IA "crua, sem
 > viés" sobre a fronteira PM (A14) vs. Portfolio (A10). Não contradiz a
-> regra já implementada ([[2026-09-02 A10 para de expor detalhe de issue,
-> encaminha pro A14]]); confirma ela como o caso mais estreito de um modelo
+> regra já implementada
+> ([[2026-09-02 A10 para de expor detalhe de issue, encaminha pro A14]]);
+> confirma ela como o caso mais estreito de um modelo
 > mais amplo (níveis de informação N0–N4, painel de métrica próprio por
 > agente, permissões de escrita por nível). **Achado mais concreto**: o
 > doc nomeia uma lacuna real, e a auditoria direta no código confirma que
@@ -406,8 +410,7 @@ tags: [agents, llm, automation, onboarding, research]
 > Gabrielle acima: dev do A1/A2 começa oficialmente hoje (já previsto em
 > [[2026-09-10 1-1 Matheus - Luís]]). Duas decisões de produto, convicção
 > forte de Luís — ver
-> [[2026-09-15 Agente voltado a usuário externo precisa de identidade
-> própria e resposta imediata]]:
+> [[2026-09-15 Agente voltado a usuário externo precisa de identidade própria e resposta imediata]]:
 > - **Cada agente que fala com usuário externo tem identidade/persona
 >   própria** (nome, foto) — não dá pra adiar, porque a primeira resposta
 >   ao usuário já compromete essa escolha.
@@ -510,8 +513,9 @@ tags: [agents, llm, automation, onboarding, research]
 > da empresa (**confirmado 2026-10-13: último dia só no fim de outubro/2026**,
 > não já em 2026-10-07 — essa data foi a reunião de transição/divisão de
 > projetos, ele segue presente), Agent Flow fica com msilva (junto com o
-> [[Airtable Proxy]]) — ver [[2026-10-07 Divisão de projetos na transição
-> de Luís]]. Luís era até aqui o contato técnico primário em paralelo a
+> [[Airtable Proxy]]) — ver
+> [[2026-10-07 Divisão de projetos na transição de Luís]]. Luís era até aqui
+> o contato técnico primário em paralelo a
 > msilva; passa a não ter papel ativo *decisório* neste projeto, mas segue
 > presente e pedindo coisas pontuais (ver callout abaixo).
 
@@ -619,8 +623,9 @@ classifies), which hands off to **A2 Classificador & Decisor** for routing:
 > [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]: *"da forma que
 > tá desenhado para mim, A8 e A9 é o Cloud Code"* — an orchestrator that spins
 > up its own subagents on demand is what Claude Code already is. Independent
-> convergence with Luís's own earlier point ([[2026-08-19 1-1 Matheus -
-> Luís]]) that dev-subagent design is project-harness scope, not architecture
+> convergence with Luís's own earlier point
+> ([[2026-08-19 1-1 Matheus - Luís]]) that dev-subagent design is
+> project-harness scope, not architecture
 > scope — reached again here, more bluntly, folded together with the A3/A9
 > merge above.
 
@@ -837,8 +842,9 @@ and as a fifteenth entity it "dies."
 > informational rather than acting or reasoning. Not resolved; the table
 > entry above (*"A4 Teacher — teaches areas. A single agent, not a
 > pipeline"*) predates this heuristic and hasn't been re-tested against it.
-> **Leaning resolved, 2026-08-25**: [[2026-08-25 Agent Flow discovery with
-> Mafê]] tests it against her real practice and every example is a
+> **Leaning resolved, 2026-08-25**:
+> [[2026-08-25 Agent Flow discovery with Mafê]] tests it against her real
+> practice and every example is a
 > judgment call, not a relay — leans toward A4 clearing the bar. See the
 > tip near the top of this page.
 
@@ -1409,8 +1415,8 @@ with what has since been settled marked as such.
 > experiment: build a small **A10 Portfolio prototype in LangGraph** and
 > compare it against building the same thing directly in Claude, to settle
 > empirically whether a framework is even needed. Continues the standing
-> tension with [[Fabio Akita - Harness, Loop and Graph Engineering are
-> bullshit]].
+> tension with
+> [[Fabio Akita - Harness, Loop and Graph Engineering are bullshit]].
 >
 > **Default while this settles**: route everything through the front
 > classifier (A1+A2) uniformly, rather than deciding per-agent whether it can
@@ -1458,8 +1464,9 @@ consultant rather than validator.
   just A1 (e.g. A6 Curator); his own lean, added afterward, was to merge
   them. [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]] confirms
   it directly as an actual call, not a lean — Luís: *"Para mim eles são a
-  mesma coisa"* — one orchestrator/classifier, not two agents. [[Which agent
-  should be built first]] and [[Comparing the first-agent candidates]] should
+  mesma coisa"* — one orchestrator/classifier, not two agents.
+  [[Which agent should be built first]] and
+  [[Comparing the first-agent candidates]] should
   be read with this settled, not as an open pair.
 - **Does discovery/planning belong before every execution, or only complex
   work?** New 2026-08-19, from msilva questioning his own A3-vs-A7 split live:
@@ -1519,8 +1526,9 @@ consultant rather than validator.
   start with what relieves **the team's own most immediate pain** — plus msilva's
   two stated pains (no unified cross-project backlog/prioritization; no good
   discovery/documentation minimum) point toward **A10+A14** and **A7/A8** rather
-  than A1+A2 or A5. Not a new decision — see [[Which agent should be built
-  first]] and [[Comparing the first-agent candidates]] for the detail.
+  than A1+A2 or A5. Not a new decision — see
+  [[Which agent should be built first]] and
+  [[Comparing the first-agent candidates]] for the detail.
   **2026-08-20, a third independent voice**: in
   [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]], Gabrielle's own
   stated pain (visibility across projects) is why she says she'd start with

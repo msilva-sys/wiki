@@ -64,8 +64,9 @@ matters:
   project's tooling kept insisting on Luís's approval per the old documented flow.
 
 The direction of travel is the same as msilva's arrangement, but it's a separate
-instance with a different reviewer. [[2026-08-14 No mandatory PR review while the
-proxy is pre-production]] has been corrected accordingly.
+instance with a different reviewer.
+[[2026-08-14 No mandatory PR review while the proxy is pre-production]] has
+been corrected accordingly.
 
 ## Commitments
 

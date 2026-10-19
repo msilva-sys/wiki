@@ -253,8 +253,9 @@ the proxy, and `Bug (sistema)` has both a producer and a consumer.
 > not utility to the company broadly — and msilva's two stated pains: **no
 > unified cross-project backlog/prioritization** (A10 Portfolio + A14 PM Agent
 > territory) and **no good discovery/documentation minimum** (A7/A8
-> territory). Neither points at A1+A2 or A5. [[2026-08-19 1-1 Matheus -
-> Gabrielle]] (Part 2) — not a new decision, but the first time msilva's own
+> territory). Neither points at A1+A2 or A5.
+> [[2026-08-19 1-1 Matheus - Gabrielle]] (Part 2) — not a new decision, but
+> the first time msilva's own
 > pain, rather than an abstract utility argument, has entered this comparison.
 > **His own follow-up, added afterward**: Pain 1 matters as a starting point
 > *because* it's recurring and current, not just because it's real — a

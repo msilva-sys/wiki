@@ -10,8 +10,9 @@ tags: [governance, sentinela, ai-adoption, catalog]
 
 Catálogo público interno das iniciativas de IA construídas na LiveMode —
 `https://vitrine.livemode.space/`. Atrás de login Google restrito a
-`@livemode.com` (mesma trava de domínio catalogada em [[Trava de domínio e
-autenticação — inventário para o LiveAuth]]), então não foi lida logada,
+`@livemode.com` (mesma trava de domínio catalogada em
+[[Trava de domínio e autenticação — inventário para o LiveAuth]]), então não
+foi lida logada,
 só por fonte (repo).
 
 Fonte: repositório privado `livemode-org/vitrine-ia-lmarques` (lido via
@@ -81,8 +82,9 @@ um colega específico, não confirmado quem.
 
 A descrição do próprio `metadata.json` — "o que uma área constrói vira
 solução de todos" — é quase literalmente a tese "single-player → multiplayer"
-de [[Marketing teams are stuck in single-player Claude mode. Here's how to
-go multiplayer]] (MKT1), só que aplicada a **projetos/produtos prontos**, não
+de
+[[Marketing teams are stuck in single-player Claude mode. Here's how to go multiplayer]]
+(MKT1), só que aplicada a **projetos/produtos prontos**, não
 a skills/capabilities reutilizáveis. É o paralelo institucional, já rodando,
 do que o [[Desenho de um Skills Registry corporativo|LiveStry]] propõe fazer
 pra skills — ver discussão em chat de 2026-10-06, ainda não fundida nessa

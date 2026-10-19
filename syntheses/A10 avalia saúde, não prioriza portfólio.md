@@ -10,10 +10,11 @@ tags: [agents, a10, a14, portfolio, priorizacao, airtable, linear]
 
 Aberta em [[2026-09-14 Carolina - Matheus (critérios A10-A14)]]. Carolina
 (perspectiva de produto) apontou que o A10, como implementado, não é o
-"portfólio" da proposta original de [[2026-08-24 Start Agent Flow with A10
-Portfolio]] — é uma segunda instância do A14, olhando saúde por iniciativa
-em vez de projeto. Ver também [[Fronteira A10×A14 (informação e
-métricas)]], que já documenta a granularidade "iniciativa" do A10 mas sob o
+"portfólio" da proposta original de
+[[2026-08-24 Start Agent Flow with A10 Portfolio]] — é uma segunda instância
+do A14, olhando saúde por iniciativa
+em vez de projeto. Ver também [[Fronteira A10×A14 (informação e métricas)]],
+que já documenta a granularidade "iniciativa" do A10 mas sob o
 ângulo de fronteira A10/A14, não sob o ângulo "isso ainda é priorização de
 portfólio?".
 
@@ -41,8 +42,8 @@ existem no Linear:
 Essas informações vivem hoje no **Airtable**, não no Linear. Gabi já tem
 regras de priorização de portfólio definidas (fato novo para msilva — não
 sabia disso antes desta reunião). Com a migração Airtable → Linear em
-andamento ([[2026-08-14 Migrate project management from Jira to
-Linear]] é sobre a saída do Jira, não do Airtable — este é um fluxo de
+andamento ([[2026-08-14 Migrate project management from Jira to Linear]] é
+sobre a saída do Jira, não do Airtable — este é um fluxo de
 dado separado), fica em aberto se esses campos migram também.
 
 ## Correção — os "critérios já definidos" não são esforço/ganho/risco prontos

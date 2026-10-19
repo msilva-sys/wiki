@@ -15,8 +15,9 @@ Newsletter da MKT1, por **Emily Kramer**, publicada **2026-07-27**. Parte 1
 de uma série de 3 sobre "multiplayer AI" em times de marketing. Lida e
 anotada por msilva em 2026-09-25 — a fonte crua é o fichamento dele
 (`raw/Fichamento da newsletter de mkt1 - primeira parte.md`), não um clip
-verbatim do artigo. A **Parte 2** ([[Inside the multiplayer AI setups at
-Mintlify, LangChain, and Buffer]] — ainda não ingerida) aplica esse mesmo
+verbatim do artigo. A **Parte 2**
+([[Inside the multiplayer AI setups at Mintlify, LangChain, and Buffer]] —
+ainda não ingerida) aplica esse mesmo
 framework a três empresas reais.
 
 ## A tese central

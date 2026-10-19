@@ -18,8 +18,8 @@ explícita em vários lugares ao mesmo tempo.
   Luís Fernandez, ver [[Agent Harness Template]].
 - **Entrada / Saída** — a fronteira de cada agente; o contrato em si,
   definido por formato, independente de quem chama. Padrão **ports and
-  adapters** (arquitetura hexagonal), ver [[Desenho do agente LangGraph
-  para A10+A14]].
+  adapters** (arquitetura hexagonal), ver
+  [[Desenho do agente LangGraph para A10+A14]].
 - **Adapter** — o componente que traduz um canal específico (Slack, CLI,
   webhook...) pro formato da Entrada. O agente não sabe nem precisa saber
   qual adapter o chamou.
@@ -54,8 +54,9 @@ explícita em vários lugares ao mesmo tempo.
   [doc oficial do LangChain](https://docs.langchain.com/oss/python/langgraph/workflows-agents).
 - **Ticket graph / DAG** — decomposição de um projeto em unidades menores
   (tickets), com dependência explícita entre elas (`blockedBy`, nunca
-  inferida do título). Modelo do [[Gabriel Packer - DAG-driven agent
-  orchestration]], adotado como saída do A7 Discovery.
+  inferida do título). Modelo do
+  [[Gabriel Packer - DAG-driven agent orchestration]], adotado como saída do
+  A7 Discovery.
 - **Contrato** — a especificação Entrada→Saída de um agente. Regra
   central: definido por **formato**, nunca por **quem chama** — "vem do
   A8" não é contrato, é nota de uso típico.

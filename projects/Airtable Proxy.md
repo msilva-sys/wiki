@@ -62,8 +62,9 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > qualitativo — o painel sinaliza, não julga.
 
 > [!danger] O painel de portfólio não está vendo este trabalho — 2026-09-08
-> Descoberto ao vivo pela Mafê na [[2026-09-08 Weekly - Projetos e
-> Tarefas]]: o painel interno de portfólio lê o projeto **`Proxy do
+> Descoberto ao vivo pela Mafê na
+> [[2026-09-08 Weekly - Projetos e Tarefas]]: o painel interno de portfólio
+> lê o projeto **`Proxy do
 > Airtable`**, não o **`Proxy em produção validado c/ LiveScript`**, que é
 > onde as issues são gerenciadas desde a promoção de 2026-08-19.
 >
@@ -138,8 +139,7 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > still genuinely open" abaixo), e o config de novas apps (env var com nome +
 > PAT, prefixado) segue como caminho prático, sem mudança à decisão de manter
 > secrets no código antes do Secret Manager
-> ([[2026-08-24 Manage Airtable Proxy secrets in the codebase before Secret
-> Manager]]).
+> ([[2026-08-24 Manage Airtable Proxy secrets in the codebase before Secret Manager]]).
 >
 > **2026-09-04**: análise de custo VM vs. Cloud Run publicada como comentário
 > na `PRO-84` — números reais do GCP Pricing Calculator (`southamerica-east1`):
@@ -154,12 +154,12 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > nem VM nem Cloud Run+LB — **Cloud Run público**, sem LB/VPN/VM, com API
 > key por app como fronteira de segurança. O que encarecia não era HA, era
 > a exigência de rede privada; sem ela, o LB desaparece. Ver
-> [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API
-> keys]] (supersede
+> [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API keys]]
+> (supersede
 > [[2026-08-21 Deploy Airtable Proxy privately behind VPN]]). Telemetria:
 > Grafana Cloud free tier, não Cloud Monitoring nem self-hosted — ver
-> [[2026-09-04 Use Grafana Cloud for Airtable Proxy production
-> telemetry]] (resolve a síntese acima, agora `status: superseded`).
+> [[2026-09-04 Use Grafana Cloud for Airtable Proxy production telemetry]]
+> (resolve a síntese acima, agora `status: superseded`).
 >
 > **Ajuste de tickets no Linear, feito 2026-09-08** — o memo pedia
 > fechar/adiar `PRO-90` e `PRO-93`, mas `PRO-90` no Linear é o épico
@@ -197,8 +197,9 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > Review** (código já commitado e pushado — `7570ee6`, branch
 > `feature/airtable-proxy-observability` — falta abrir/mergear o PR).
 >
-> **Confirmado ao vivo com Luís, mesmo dia** ([[2026-09-04 1-1 Matheus -
-> Luís]]): sem reabrir nada — msilva concorda com o memo por escrito antes
+> **Confirmado ao vivo com Luís, mesmo dia**
+> ([[2026-09-04 1-1 Matheus - Luís]]): sem reabrir nada — msilva concorda
+> com o memo por escrito antes
 > da call. Fato novo que reforça a decisão: ninguém usa VPN pra acessar as
 > aplicações internas, nem o próprio LiveScript (usuários trabalham de
 > casa) — a rede privada não seria só mais cara, seria inviável na
@@ -309,8 +310,8 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > LiveScript](https://linear.app/projetos-livemode/project/proxy-em-producao-validado-c-livescript-eb1691b502c3),
 > sibling to `Proxy do Airtable` inside the same **Airtable GC** initiative. All
 > 32 F3 issues (`PRO-74–105`) moved there. `Proxy do Airtable` keeps F1, F2, and
-> Backlog deferido, left untouched at msilva's call — no rush, per [[Linear
-> Project Structure]].
+> Backlog deferido, left untouched at msilva's call — no rush, per
+> [[Linear Project Structure]].
 >
 > **Reshaped same day, at msilva's request**: one-milestone-per-epic was wrong
 > (milestones are checkpoints, epics are issue-level parents) — down to **3
@@ -352,8 +353,9 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > "Backlog deferido" milestone into this project as a sub-issue of `PRO-89`,
 > and unarchived — it had stopped being genuinely deferred once `PRO-89`
 > needed the decision made. Everything else confirmed as accurate, no
-> changes. New decision recorded from this pass: [[2026-08-18 Proxy first,
-> defer LiveScript-side SDK changes]] — msilva confirmed the scope boundary
+> changes. New decision recorded from this pass:
+> [[2026-08-18 Proxy first, defer LiveScript-side SDK changes]] — msilva
+> confirmed the scope boundary
 > first stated for `PRO-76` generalizes to most remaining LiveScript-side
 > work.
 
@@ -426,8 +428,9 @@ not a LiveScript fix ([[2026-08-14 Recap da Semana]]).
 > that *cannot proceed without it* is this one. Per-app keys held by individuals is
 > also a live credential-sprawl problem, not a hypothetical.
 >
-> **Also the strongest utility argument yet for A5.** [[Which agent should be built
-> first]] weighs A5's reach; an unknown number of citizen-built flows, written by
+> **Also the strongest utility argument yet for A5.**
+> [[Which agent should be built first]] weighs A5's reach; an unknown number
+> of citizen-built flows, written by
 > people who by Gabrielle's own account do not know what their automations cost, is
 > precisely the population that produces detectable anti-patterns and nobody watching
 > them. But note the ordering: **it cannot be measured until the flows are behind the
@@ -933,8 +936,9 @@ These remain open (design §14):
 - **Caching freshness tolerance** per table/operation — still the right question,
   but scoped to *metadata only* given the attachment-URL constraint.
 - ~~Pulumi language (Go / TS / Python)~~ **Resolved 2026-08-20**: Go, aligned
-  with Luís — see [[2026-08-18 Bring options to Luís before deciding,
-  communicate async and often]]. Matches msilva's stated lean (toolchain/CI
+  with Luís — see
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]].
+  Matches msilva's stated lean (toolchain/CI
   consistency with the proxy).
 - Notification channel (Slack / PagerDuty / email); where the app API-key map
   lives when that future layer ships; ~~one base or all bases in v1~~
@@ -1006,8 +1010,8 @@ Two sources on record don't point the same way:
 Not resolved — msilva's call 2026-08-19 was to **leave the proxy's Linear dates
 as they are** (no milestone/issue due dates set) rather than pick a side. Worth
 raising explicitly with Luís or Gabrielle if the two timelines start to
-genuinely conflict, per [[2026-08-18 Bring options to Luís before deciding,
-communicate async and often]].
+genuinely conflict, per
+[[2026-08-18 Bring options to Luís before deciding, communicate async and often]].
 
 ---
 
@@ -1062,8 +1066,9 @@ communicate async and often]].
       confirm whether the REST-call path needs the same URL-sourcing fix as
       the SDK path — same call.~~ **Deferred, 2026-08-26**: msilva confirms
       this isn't happening for now — no LiveScript-side change was made. A
-      fresh instance of [[2026-08-18 Proxy first, defer LiveScript-side SDK
-      changes]], not a dropped commitment. **Correction, same day**: the
+      fresh instance of
+      [[2026-08-18 Proxy first, defer LiveScript-side SDK changes]], not a
+      dropped commitment. **Correction, same day**: the
       earlier note here pointed at `PRO-62` — wrong issue, that one is about
       committing the observability branch work, unrelated to this
       SDK-vs-REST question. The confirm-REST-path half of this commitment
@@ -1083,8 +1088,9 @@ communicate async and often]].
       (código já commitado e pushado, `7570ee6`) — fecha `PRO-587`.~~
       **Obsoleto, 2026-09-17**: o trabalho real migrou pra
       `feature/airtable-proxy` (reimplementação completa, `83d1a7f`/
-      `84cea6f`) — ver [[2026-09-17 Conectar o LiveScript ao proxy via
-      feature-airtable-proxy, sem OTel por ora]]. PR ainda não aberto,
+      `84cea6f`) — ver
+      [[2026-09-17 Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por ora]].
+      PR ainda não aberto,
       agora a partir dessa branch.
 - [ ] Confirm the private-infra inputs in
       [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].

@@ -30,8 +30,9 @@ Output (result, changed systems, etc)
 
 ## Como se conecta ao que já existe na wiki
 
-**Refina o método actor→input→output.** Em [[2026-08-20 Fluxo Agêntico diagram
-walkthrough with Luís]], Luís propõe que cada entidade do [[Agent Flow]] seja
+**Refina o método actor→input→output.** Em
+[[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]], Luís propõe que
+cada entidade do [[Agent Flow]] seja
 especificada somente como actor → input → output, sem desenhar antecipadamente
 o grafo entre agentes. Este template é a mesma ideia com mais resolução: o lado
 do “actor” se divide em **tipo de Trigger** (Human ou Machine) e **Trigger
@@ -83,8 +84,9 @@ camada Skills/Tools de outro agente.
 eixo distinto dos quatro canais de entrada de [[Agent Flow]] (`Bug sistema` ·
 `Bug manual` · `Tarefa` · `Consultoria`); ambos coexistem no modelo.
 
-**Reforçado ao vivo, não só por escrito.** Em [[2026-08-26 1-1 Matheus - Luís
-(agentes A10-A14)]], Luís retoma a distinção trigger/input especificamente
+**Reforçado ao vivo, não só por escrito.** Em
+[[2026-08-26 1-1 Matheus - Luís (agentes A10-A14)]], Luís retoma a distinção
+trigger/input especificamente
 sobre A10/A14. Não é um conceito isolado da mensagem de 2026-08-21, mas uma
 forma consistente de pensar os agentes.
 
@@ -93,8 +95,8 @@ forma consistente de pensar os agentes.
 A conversa de msilva com Luís em 2026-09-01 acrescenta uma questão de produto:
 além de usar este template para descrever um agente, deveria existir um **molde
 reutilizável** a partir do qual novas instâncias de agentes possam ser criadas e
-configuradas. O desenho inicial, ainda não decidido, está em [[Como deve
-funcionar o molde de agente]].
+configuradas. O desenho inicial, ainda não decidido, está em
+[[Como deve funcionar o molde de agente]].
 
 O molde não substitui este template: ele transforma a anatomia conceitual acima
 em um contrato configurável. A fronteira entre aquilo que pertence ao molde, à
@@ -128,8 +130,9 @@ Nenhuma das duas resolve qual substrato roda o Harness de Luís — Claude Agent
 SDK ou LangChain `create_agent`. Servem como vocabulário e comparação, não como
 resposta.
 
-**msilva, lendo [[Inside the multiplayer AI setups at Mintlify, LangChain,
-and Buffer]] (2026-09-25)**, nota a mesma distinção por conta própria: a
+**msilva, lendo
+[[Inside the multiplayer AI setups at Mintlify, LangChain, and Buffer]]
+(2026-09-25)**, nota a mesma distinção por conta própria: a
 frase da LangChain *"we're not solving a repo of skills management
 challenge, we're solving a production agent challenge"* aponta, na leitura
 dele, pro problema do harness (onde o agente roda, como se comunica) como

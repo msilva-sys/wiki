@@ -7450,3 +7450,31 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   pro banco a proteção contra flood que hoje vive no código do handler).
 - Updated: `systems/Golzinho.md` (§ Volume medido reescrita), `projects/Opta.md`
   (risco 13b). Também refletido no relatório HTML entregue a msilva.
+
+## [2026-10-19] lint | Vault inteiro + correção dos wikilinks quebrados por quebra de linha
+
+Lint completo sobre as 212 páginas. Achado principal: a prosa quebra em 76
+colunas e quebrava os wikilinks junto — o Obsidian não resolve `[[...]]` com
+newline no meio, então 116 links em 50 páginas não funcionavam, não apareciam
+no grafo e não contavam como inbound.
+
+- Corrigidos os 116 links: cada um recolhido para uma linha só, com o trecho
+  afetado re-wrapado em 76 colunas e a pontuação vizinha preservada.
+- Casos dentro de citação (`> `) tinham o próprio marcador preso *dentro* do
+  link — ex. `[[Which agent should be built > first]]`. O `> ` solto foi
+  removido do alvo; é a única alteração de conteúdo da passada.
+- Verificação: multiset de palavras idêntico antes/depois nos 50 arquivos,
+  ignorando o marcador de citação. Nenhuma perda de texto.
+- Efeito colateral: os "alvos inexistentes" caíram de 31 para 5, e
+  `sources/Feedback Carol guia de um builder.md` deixou de ser órfã.
+- `log.md` ficou de fora da correção de propósito — é append-only.
+
+Restante do relatório de lint, não corrigido nesta passada: premissa vencida
+em [[2026-08-14 No mandatory PR review while the proxy is pre-production]]
+(o proxy está em produção desde 2026-09-14); pergunta sobre o plano Business
+ainda marcada aberta em [[2026-08-14 Migrate project management from Jira to
+Linear]] embora resolvida em 2026-09-14; `PDI.md` vazio na raiz, fora do
+layout; 7 arquivos de `raw/` sem cobertura, sendo o transcript
+`Agente de portfólio - 2026_09_22` o único realmente não ingerido; e 90
+páginas `status: active` paradas há 30+ dias, das quais ~37 são convenção
+errada (nota de reunião e `sources/` deveriam nascer `stable`).

@@ -418,8 +418,9 @@ testes (adiados pra depois da validação manual, decisão explícita).
 > `Langfuse().get_prompt(PROMPT_NAME, label=os.environ["ENVIRONMENT"])` em
 > `a10/agent.py`/`a14/agent.py`) está rodando a versão 3 do prompt — sem a
 > regra de anonimização/pergunta consolidada depois, e sem a regra mais
-> recente de [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro
-> A14]] (redirecionamento pro A14), que só existe na versão de
+> recente de
+> [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro A14]]
+> (redirecionamento pro A14), que só existe na versão de
 > desenvolvimento. Promover o label é uma ação manual no dashboard do
 > Langfuse (ou via API) — ainda não feita.
 >

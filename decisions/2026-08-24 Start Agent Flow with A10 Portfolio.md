@@ -18,13 +18,15 @@ than any of the other 13 agents.
 ## Why now, not just "a good idea"
 
 This closes a question three synthesis pages had tracked as open since
-2026-08-17: [[Which agent should be built first]], [[Comparing the
-first-agent candidates]], and [[What should the Agent Flow research phase
-study]]. What changed is convergence, not new argument:
+2026-08-17: [[Which agent should be built first]],
+[[Comparing the first-agent candidates]], and
+[[What should the Agent Flow research phase study]]. What changed is
+convergence, not new argument:
 
 - **Gabrielle** — her own stated pain (cross-project visibility) already
-  pointed here, per [[2026-08-20 Fluxo Agêntico diagram walkthrough with
-  Luís]], and per msilva she gave it real emphasis in a separate
+  pointed here, per
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]], and per
+  msilva she gave it real emphasis in a separate
   conversation.
 - **Luís** — independently named the same cross-project visibility pain
   ([[2026-08-19 1-1 Matheus - Luís]]), and tasked msilva with a bounded
@@ -41,8 +43,9 @@ study]]. What changed is convergence, not new argument:
   already on record from 2026-08-19.
 
 Four independent readings of "what hurts most right now" land on the same
-agent. Combined with [[2026-08-24 Deprioritize A5 Watcher as first-agent
-candidate]] closing off the other live candidate from the lowest-risk
+agent. Combined with
+[[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]] closing off
+the other live candidate from the lowest-risk
 criterion, this is no longer a comparison with two live options — it's a
 call msilva is making today.
 
@@ -74,8 +77,9 @@ call msilva is making today.
 
 ## What this changes elsewhere
 
-- [[Which agent should be built first]], [[Comparing the first-agent
-  candidates]] — `status: superseded`. Kept as the reasoning record; not
+- [[Which agent should be built first]],
+  [[Comparing the first-agent candidates]] — `status: superseded`. Kept as
+  the reasoning record; not
   rewritten.
 - [[What should the Agent Flow research phase study]] — Settled table
   updated; this page continues as the live router for what's still open.

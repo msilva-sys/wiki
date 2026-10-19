@@ -14,8 +14,9 @@ tags: [agents, planning, decision, meeting-prep]
 > broader "which agent first" question kept moving through the 1:1s that
 > *did* happen (see [[Which agent should be built first]], up to
 > 2026-08-20), and separately **A5 specifically was deprioritized entirely**
-> on 2026-08-24 ([[2026-08-24 Deprioritize A5 Watcher as first-agent
-> candidate]]). So the recommendation and comparison below are stale as a
+> on 2026-08-24
+> ([[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]). So the
+> recommendation and comparison below are stale as a
 > whole, not just on the A5 point — kept as a record of the plan as it stood
 > on 2026-08-18, not as live reasoning. For the current state of the
 > question, see [[What should the Agent Flow research phase study]].

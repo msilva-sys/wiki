@@ -17,8 +17,9 @@ tags: [people]
 - **Moving to another area** ([[2026-08-14 Papo de Projetos]]) — this
   knowledge is in transition, no successor recorded. **Named as a
   bus-factor risk, 2026-08-26** — cross-read against Bossabox's Team
-  Topologies instrument in [[What Bossabox's Assessment suggests for
-  Agent Flow]] — nobody currently owns tracking this.
+  Topologies instrument in
+  [[What Bossabox's Assessment suggests for Agent Flow]] — nobody currently
+  owns tracking this.
 - Also does central-de-dados work (landmark only, not detailed here).
 - In the **TES** vendor-trial WhatsApp group, with [[Bianca (Bia)]] and
   [[Kauan]].

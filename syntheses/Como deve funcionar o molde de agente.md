@@ -59,8 +59,9 @@ qualidade é verificada.
 Cogitado: base comum + arquétipos específicos (leitor/analista, consultor,
 operador com permissão de escrita, monitor disparado por eventos,
 orquestrador), pra evitar dois extremos — molde genérico demais (sem contrato
-real) ou molde por agente (sem reaproveitamento). [[Harness engineering for
-coding agent users]] registra ideia próxima (bundles por topologia de
+real) ou molde por agente (sem reaproveitamento).
+[[Harness engineering for coding agent users]] registra ideia próxima
+(bundles por topologia de
 serviço), sem validar que esses sejam os arquétipos certos aqui.
 
 **Decisão** (sessão de código em `livemode-fluxo-agentico`, 2026-09-10):
@@ -115,8 +116,9 @@ não dentro do contrato de cada instância.
   milestone → issue) — não é campo de tipo, precisa de fragment/skill,
   deliberadamente independente de qual adapter escreve o resultado depois.
   Candidato a fragment compartilhado entre A7/A14/A2 (não confirmado com
-  Luís); base de conteúdo candidata: o "ticket template" de [[Gabriel Packer
-  - DAG-driven agent orchestration]] (escopo, critério de aceite,
+  Luís); base de conteúdo candidata: o "ticket template" de
+  [[Gabriel Packer - DAG-driven agent orchestration]] (escopo, critério de
+  aceite,
   `blockedBy`, rollout/kill switch). Critério fragment-vs-skill: sempre
   relevante e pequeno → fragment; às vezes relevante ou grande → skill (mesmo
   narrow fetching já validado no A10).
@@ -205,8 +207,9 @@ Mesma sessão de código, puxado de uma pergunta concreta sobre `outcomes.py`
 (A10 lê o outcome que A14 escreve, store compartilhado — deveria A10 chamar
 A14 direto em vez disso?). Generalizado por msilva: agentes deveriam poder
 se comunicar quando necessário pra alcançar o objetivo, não só trocar fatos
-por um store passivo. Ver [[2026-09-10 Agentes expostos como tool uns para
-os outros]] pro desenho completo.
+por um store passivo. Ver
+[[2026-09-10 Agentes expostos como tool uns para os outros]] pro desenho
+completo.
 
 **Decisão**: por padrão, todo agente pode chamar qualquer outro através do
 contrato público dele (`Input → Output`), via um primitivo genérico
@@ -396,5 +399,5 @@ foi codado, fica registrado como limite conhecido da ambição de factory.
   constante Python pra campo computado no tipo (`Issue.is_closed`) agora, ou
   só quando um segundo sistema de tickets entrar?
 - Vale usar o tier gratuito da Bossabox pra validar/acelerar a camada de
-  memória compartilhada em vez de reconstruir do zero? (ver [[What Bossabox's
-  Assessment suggests for Agent Flow]], ponto 7)
+  memória compartilhada em vez de reconstruir do zero? (ver
+  [[What Bossabox's Assessment suggests for Agent Flow]], ponto 7)

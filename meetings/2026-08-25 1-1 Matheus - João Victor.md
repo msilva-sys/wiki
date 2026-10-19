@@ -13,8 +13,8 @@ tags: [agents, discovery, a10, a2, a1, crm, linear, clickup]
 # 1:1 Matheus - João Victor — 2026-08-25, 16:30
 
 Segunda metade da reunião conjunta planejada em
-[[Meeting prep - Agent Flow discovery with Mafê and João Victor -
-2026-08-25]] (a primeira rodou só com Mafê,
+[[Meeting prep - Agent Flow discovery with Mafê and João Victor - 2026-08-25]]
+(a primeira rodou só com Mafê,
 [[2026-08-25 Agent Flow discovery with Mafê]]). Gemini identificou os dois
 falantes corretamente — sem os problemas de atribuição de transcrições
 anteriores.

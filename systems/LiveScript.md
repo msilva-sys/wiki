@@ -163,8 +163,9 @@ meeting page.
 
 **Terminologia desatualizada, conteúdo ainda válido**: esta seção fala em
 `X-App-Id` porque é como identificação de app era feita em 2026-08-18; a
-identificação virou URL-path em [[2026-08-19 Identify proxy apps by URL path,
-not header]] (ver seção acima). O limite de escopo em si — SDK fora, só
+identificação virou URL-path em
+[[2026-08-19 Identify proxy apps by URL path, not header]] (ver seção
+acima). O limite de escopo em si — SDK fora, só
 REST-transport dentro — continua de pé, só que hoje é "identificação por
 URL-path em todo o tráfego", não "`X-App-Id` em todo o tráfego".
 

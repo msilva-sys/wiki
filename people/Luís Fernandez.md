@@ -153,13 +153,14 @@ sometimes builds directly, otherwise supports.
   [[Fronteira A10×A14 (informação e métricas)]]. A fronteira ampla ainda
   não está formalmente adotada — o doc é material de referência, não
   decisão fechada.
-- **Respondeu as duas análises que pediu em 2026-09-02** ([[Direcionamento
-  PRO-84 PRO-87]], 2026-09-04): descarta rede privada/VM, decide Cloud Run
+- **Respondeu as duas análises que pediu em 2026-09-02**
+  ([[Direcionamento PRO-84 PRO-87]], 2026-09-04): descarta rede privada/VM,
+  decide Cloud Run
   público com API key por app como fronteira de segurança
-  ([[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app
-  API keys]]), e decide Grafana Cloud para telemetria de produção
-  ([[2026-09-04 Use Grafana Cloud for Airtable Proxy production
-  telemetry]]), fechando a investigação de
+  ([[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API keys]]),
+  e decide Grafana Cloud para telemetria de produção
+  ([[2026-09-04 Use Grafana Cloud for Airtable Proxy production telemetry]]),
+  fechando a investigação de
   [[Grafana hospedado vs Cloud Monitoring para telemetria de produção]].
   **Confirma ao vivo o mesmo dia** ([[2026-09-04 1-1 Matheus - Luís]]) e
   acrescenta um fato novo: ninguém usa VPN pra acessar as aplicações
@@ -187,8 +188,9 @@ sometimes builds directly, otherwise supports.
 - **Decide, com convicção forte, 2026-09-15**: cada agente do
   [[Agent Flow]] que fala com usuário externo precisa de identidade/persona
   própria, e o A1 Receptor tem que responder ao usuário quase na hora —
-  ver [[2026-09-15 Agente voltado a usuário externo precisa de identidade
-  própria e resposta imediata]]. Mesma conversa: discorda de msilva sobre
+  ver
+  [[2026-09-15 Agente voltado a usuário externo precisa de identidade própria e resposta imediata]].
+  Mesma conversa: discorda de msilva sobre
   se os critérios de classificação do A2 têm ligação com os de priorização
   de portfólio (A10) — baixa convicção dos dois lados, em aberto. Confirma
   ter um fluxo pessoal (LangGraph + Claude Code) já funcionando pra um

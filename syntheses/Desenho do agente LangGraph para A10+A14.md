@@ -417,8 +417,9 @@ parcialmente adotada:
 
 ## O que isso resolve na página-mãe
 
-As duas pendências operacionais que [[Como implementar a PoC do A10+A14
-(LangGraph, Skill, Agent SDK)]] deixou em aberto (origem da API key, quem paga)
+As duas pendências operacionais que
+[[Como implementar a PoC do A10+A14 (LangGraph, Skill, Agent SDK)]] deixou
+em aberto (origem da API key, quem paga)
 estão fechadas aqui — ver "Modelo e empacotamento" acima.
 
 ## Um risco encontrado no caminho, não sobre design

@@ -218,8 +218,9 @@ atual, em pt-BR, com volume real de issues/comentários).
 
 ## Perguntas abertas
 
-- **Reafirmado 2026-10-09** ([[2026-10-09 Matheus - Luís (práticas de IA e
-  governança)]]): migração da memória do Agent Flow (Postgres hoje) pra
+- **Reafirmado 2026-10-09**
+  ([[2026-10-09 Matheus - Luís (práticas de IA e governança)]]): migração da
+  memória do Agent Flow (Postgres hoje) pra
   Mem0 ou Cognee segue "depois", não prioritária agora — consistente com o
   estado atual da PoC (PRO-870/PRO-983 ainda abertas).
 - ~~Hipótese 1 ou 2 para o gate~~ — **resolvido 2026-10-07**: hipótese 2.

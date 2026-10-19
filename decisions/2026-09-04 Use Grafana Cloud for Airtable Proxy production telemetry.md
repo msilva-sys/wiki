@@ -36,8 +36,9 @@ existe.
 
 Precisa de compute (VM ou Cloud Run) e operação própria — versão, acesso,
 uptime, backup. Exatamente a peça de infraestrutura que a decisão de deploy
-público em Cloud Run ([[2026-09-04 Deploy Airtable Proxy publicly on Cloud
-Run with per-app API keys]]) também elimina.
+público em Cloud Run
+([[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API keys]])
+também elimina.
 
 ## Por que Grafana Cloud
 

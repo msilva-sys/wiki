@@ -197,15 +197,18 @@ registra.
 ## Open questions
 
 - **Como uma skill de manutenção enxerga o contexto da skill que mantém?**
-  Levantado por msilva lendo [[Marketing teams are stuck in single-player
-  Claude mode. Here's how to go multiplayer]] (2026-09-25) — nem a fonte
+  Levantado por msilva lendo
+  [[Marketing teams are stuck in single-player Claude mode. Here's how to go multiplayer]]
+  (2026-09-25) — nem a fonte
   externa nem esta página têm resposta ainda.
-- **Candidato a resposta parcial, 2026-09-25**: ver [[A6 Curador deve
-  padronizar e sinalizar defasagem de skills]] — atribuir a padronização e
+- **Candidato a resposta parcial, 2026-09-25**: ver
+  [[A6 Curador deve padronizar e sinalizar defasagem de skills]] — atribuir
+  a padronização e
   o sinal de defasagem a A6 Curador, não a uma skill isolada. Reasoning
   ainda não passou por Luís/Gabrielle.
-- **Mecanismo real revelado, 2026-09-25**: [[Inside team MKT1's
-  multiplayer AI setup]] (parte 3) mostra como a própria MKT1 resolve
+- **Mecanismo real revelado, 2026-09-25**:
+  [[Inside team MKT1's multiplayer AI setup]] (parte 3) mostra como a
+  própria MKT1 resolve
   isso — `/skill-update` não enxerga a skill em abstrato, só lê a sessão
   específica em que a pessoa acabou de usá-la, disparado manualmente.
   Detecção de defasagem sem gatilho humano existe (`/skill-audit`,

@@ -12,8 +12,9 @@ tags: [agents, skills, capabilities, agent-flow, claude]
 # MKT1 — "Inside the multiplayer AI setups at Mintlify, LangChain, and Buffer"
 
 Newsletter da MKT1, por **Emily Kramer**, publicada **2026-09-02**. Parte 2
-de 3 — aplica o framework dos 4 Cs de [[Marketing teams are stuck in
-single-player Claude mode. Here's how to go multiplayer]] a três empresas
+de 3 — aplica o framework dos 4 Cs de
+[[Marketing teams are stuck in single-player Claude mode. Here's how to go multiplayer]]
+a três empresas
 reais (Buffer, LangChain, Mintlify). Lida e anotada por msilva em
 2026-09-25 — a fonte crua é o fichamento dele (`raw/Fichamento da
 newsletter de mkt1 - segunda parte.md`); o clip verbatim do artigo já

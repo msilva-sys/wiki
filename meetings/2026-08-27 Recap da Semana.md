@@ -181,8 +181,8 @@ role across the wiki almost exactly):
 
 - **Farol status update**: Expresso done and handed to Marina; only Uber
   remains. Updates [[Farol]] and [[Marina]].
-- **A concrete, real discussion of exactly the kind of agent [[Agent
-  Flow]]'s A5 Watcher / A11 Product were meant to be** — msilva's
+- **A concrete, real discussion of exactly the kind of agent
+  [[Agent Flow]]'s A5 Watcher / A11 Product were meant to be** — msilva's
   internal-vs-user-facing monitoring split is a genuinely new framing,
   not yet in the wiki, for where a "watches the product" agent's
   responsibility should start and stop.

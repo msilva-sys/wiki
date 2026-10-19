@@ -21,8 +21,8 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
   identidade e persona próprias** (nome, foto) — Luís, convicção forte: não
   dá pra ser um "agente genérico" respondendo por todos, porque a partir do
   momento em que lidam com gente de fora do time, precisam ter uma cara.
-  Ver [[2026-09-15 Agente voltado a usuário externo precisa de identidade
-  própria e resposta imediata]].
+  Ver
+  [[2026-09-15 Agente voltado a usuário externo precisa de identidade própria e resposta imediata]].
 - **A1 Receptor tem que responder ao usuário quase na hora** (poucos
   minutos), mesmo que a decisão real (classificar/rotear) venha depois no
   fluxo — não dá pra adiar a resposta pro fim do ciclo assíncrono. Mesma
@@ -50,8 +50,9 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
   **Resolvido 2026-09-17**: reimplementação completa do roteamento pelo
   proxy feita em cima da `feature/airtable-proxy` limpa (19 arquivos,
   `83d1a7f`/`84cea6f`) — essa é a branch a usar. `-observability` descartada
-  como fonte; OTel deferido. Ver [[2026-09-17 Conectar o LiveScript ao proxy via
-  feature-airtable-proxy, sem OTel por ora]] e [[LiveScript]].
+  como fonte; OTel deferido. Ver
+  [[2026-09-17 Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por ora]]
+  e [[LiveScript]].
 - ~~Matheus fala direto com Yasmin (não via Luís) pra ela testar a skill de
   conexão no LiveScript, localmente, como "cobaia".~~ **Feito, 2026-09-16.**
 - ~~Matheus e Luís desenham um plano de rollback rápido pro LiveScript antes
@@ -64,8 +65,8 @@ consumidor real) e desenho do A1/A2, cujo dev começa hoje.
   (`lib/services/airtable-monitoring.ts`), evitando estourar volume de
   leitura (17 arquivos chamam esse wrapper). **Resolvido 2026-09-16**: Luís
   rejeita a proposta por complexidade desnecessária agora, prefere só
-  checar as env vars no build/deploy. Ver [[2026-09-16 Resolver rollback do
-  LiveScript com checagem de variáveis de ambiente]].
+  checar as env vars no build/deploy. Ver
+  [[2026-09-16 Resolver rollback do LiveScript com checagem de variáveis de ambiente]].
 - Luís vai falar com a Gabrielle sobre a reunião de critérios novos de
   priorização de portfólio (compromisso já registrado em
   [[2026-09-15 Discovery A1 e A2 com Gabrielle]]).

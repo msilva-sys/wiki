@@ -49,8 +49,9 @@ Todos de Matheus, roteados para o Linear por serem dele e caberem no time
   se a escolha se sustenta num cenário conversacional — o conteúdo já existe
   (descrição de
   [PRO-392](https://linear.app/projetos-livemode/issue/PRO-392/implementar-poc-em-langgraph),
-  escrita mais tarde no mesmo dia, ver [[Desenho do agente LangGraph para
-  A10+A14]]). **Feito, 2026-08-27**: enviado por Slack como artifact visual
+  escrita mais tarde no mesmo dia, ver
+  [[Desenho do agente LangGraph para A10+A14]]). **Feito, 2026-08-27**:
+  enviado por Slack como artifact visual
   ("Agent, não workflow"), com a reflexão sobre conversacional incluída.
   Luís já respondeu — ver "Discussão de continuação" abaixo.
 - **Desenhar arquitetura mínima dos agentes, começando pelo de portfólio, e
@@ -76,8 +77,9 @@ Todos de Matheus, roteados para o Linear por serem dele e caberem no time
   agora. Ver [[Desenho do agente LangGraph para A10+A14]].
 - **Formato de saída do agente de portfólio** — dashboard, mensagem no
   Slack, ou relatório semanal — ainda em aberto nesta reunião. *(Parcialmente
-  respondida depois, no mesmo dia: [[Desenho do agente LangGraph para
-  A10+A14]] fechou em HTML gerado por invocação manual via CLI, pra essa
+  respondida depois, no mesmo dia:
+  [[Desenho do agente LangGraph para A10+A14]] fechou em HTML gerado por
+  invocação manual via CLI, pra essa
   fase de PoC — não necessariamente a resposta final de produto que Luís
   estava perguntando aqui.)*
 

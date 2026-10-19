@@ -9,8 +9,8 @@ tags: [agents, bossabox, dora, vsm, team-topologies, research]
 
 # What Bossabox's Assessment suggests for Agent Flow
 
-msilva asked directly: how do [[Bossabox Assessment - institutional
-deck]] and [[LiveMode e Bossabox Services - email thread]] enrich
+msilva asked directly: how do [[Bossabox Assessment - institutional deck]]
+and [[LiveMode e Bossabox Services - email thread]] enrich
 [[Agent Flow]]'s planning? Cross-read against the existing wiki, not
 just the deck read in isolation.
 
@@ -57,8 +57,9 @@ Two open gaps this fills at once:
 
 - [[Agent Flow]]: *"How often does the area start a new project?
   msilva has no metric (2026-08-18)."*
-- The [[2026-08-25 Agent Flow discovery with Mafê]] / [[2026-08-25 1-1
-  Matheus - João Victor]] data-source discovery work is currently
+- The [[2026-08-25 Agent Flow discovery with Mafê]] /
+  [[2026-08-25 1-1 Matheus - João Victor]] data-source discovery work is
+  currently
   inventing what to measure from scratch.
 
 Bossabox's example dashboard is a proven, standard instrument set: **DORA**
@@ -80,8 +81,9 @@ to "which of our tools can produce them."
 
 ## 5. A more concrete version of A4 Teacher's vague maturity ladder
 
-The [[Meeting prep - Agent Flow discovery with Mafê and João Victor -
-2026-08-25]] diagnostic questions reference an **"L0–L3" literacy
+The
+[[Meeting prep - Agent Flow discovery with Mafê and João Victor - 2026-08-25]]
+diagnostic questions reference an **"L0–L3" literacy
 framing** for A4 Teacher that was never actually specified. Bossabox's
 **AI Readiness** scorecard (0–4, across adoção de IA, dados,
 infraestrutura, entrega, qualidade/testes, observabilidade,
@@ -123,8 +125,9 @@ Two things temper this rather than settle it:
   repeated independently twice) could apply here too — this is Bossabox
   proposing more work, not less, even in the free tier (a meeting,
   review, follow-through).
-- **The corroboration problem is unresolved**: [[2026-08-25 Bossabox AI
-  transformation discovery]] already flagged that the pains named to
+- **The corroboration problem is unresolved**:
+  [[2026-08-25 Bossabox AI transformation discovery]] already flagged that
+  the pains named to
   Bossabox might be msilva/Luís echoing their own case, not outside
   validation. Using Bossabox's assessment to *validate* Agent Flow's
   direction only works if that circularity is actually broken —

@@ -49,8 +49,9 @@ Two distinct points:
    enforcement point Airtable already provides. Luís doesn't recall deciding
    to add it originally, and doesn't think it holds up now.
 2. **No PAT sharing across apps.** Each app should have its own PAT, never a
-   PAT shared between multiple apps. This isn't a change — [[Airtable
-   Proxy]]'s `PROXY_APPS` config already stores one token per app id — but it
+   PAT shared between multiple apps. This isn't a change —
+   [[Airtable Proxy]]'s `PROXY_APPS` config already stores one token per app
+   id — but it
    is now an explicit constraint, not just today's shape. It's also *why*
    point 1 holds: a base allow-list only earns its keep as a proxy feature if
    one PAT might legitimately serve several apps needing different bases: with

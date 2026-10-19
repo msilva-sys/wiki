@@ -208,8 +208,9 @@ full at [[Linear Project Structure]]:
     were documenting/closing out work that had already landed, not new builds.
   - **`PRO-82` (Onboarding/key-issuance flow) → In Progress, blocked on Luís.**
     No code to write for the current env-JSON setup — this is a process
-    decision. Per [[2026-08-18 Bring options to Luís before deciding,
-    communicate async and often]], msilva posted 3 options as a Linear comment
+    decision. Per
+    [[2026-08-18 Bring options to Luís before deciding, communicate async and often]],
+    msilva posted 3 options as a Linear comment
     (manual env edit / self-serve script over env / defer until DB migration)
     rather than deciding unilaterally. Leaning option 3, but explicitly framed
     as Luís's call.
