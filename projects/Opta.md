@@ -144,7 +144,7 @@ n8n exportado em 19/10 e dos logs de API do Supabase do mesmo dia. Ordenado por 
 | 11 | `service-account.json` versionado no `goal-webhook` (conteúdo não lido) | repo | não |
 | 12 | Rotação de chave é plano verbal, nunca executada | 09/10 | não |
 | 13 | Placar ao vivo possivelmente errado: o fluxo testa `scores.total` e grava `scores.ft` (não verificado) | fluxo n8n | não |
-| 13b | Amplificação: o fluxo reescreve a janela inteira a cada tick — ~150 mil escritas/dia e ~3M invocações/mês do `goal-webhook` | logs Supabase | não |
+| 13b | Amplificação: o fluxo reescreve a janela inteira a cada tick e o gatilho dispara **por linha** — ~150 mil escritas/dia e ~3M invocações/mês do `goal-webhook`, acima do teto gratuito do Cloud Run. Correção mais barata: cláusula `WHEN` no trigger | logs Supabase | não |
 | 13c | A proteção contra flood do `#golzinho-alertas` é uma condição dentro do handler, não do banco | logs + código | não |
 | 14 | `get_schedule` com 51% de sucesso em 246 chamadas | 09/10 + doc | `PRO-680`, `PRO-682` |
 | 15 | `competitions.json` fixo, editado à mão em produção, duplicado no docs | 09/10 + código | `PRO-679`, `PRO-683` |

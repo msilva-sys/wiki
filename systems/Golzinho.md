@@ -110,10 +110,30 @@ refletir algumas dezenas de eventos reais. O log traz o checkpoint correspondent
 
 **Efeito em cascata.** Existe um Database Webhook, `CLOUD_RUN_Webhook`, **só na
 tabela `goals`** (eventos `INSERT` e `UPDATE`), apontando para o `goal-webhook` no
-Cloud Run. Como todo upsert com `merge-duplicates` conta como `UPDATE`, cada gol
-reescrito invoca o serviço: ~64 a 80 invocações por minuto, da ordem de 3 milhões
-por mês, quase todas descartadas. `matches` não tem webhook — mudança de placar não
-dispara nada.
+Cloud Run.
+
+O gatilho é de linha, não de execução: **cada gol regravado é uma invocação**, não
+uma por ciclo do fluxo. Como todo upsert com `merge-duplicates` conta como `UPDATE`,
+e o fluxo regrava a janela inteira, são ~32 invocações por ciclo, ~75 por minuto, da
+ordem de 3 milhões por mês — acima do teto gratuito de 2 milhões de requisições do
+Cloud Run. Quase todas terminam sem efeito: o serviço sobe, consulta o banco
+(`fetchMatch`) e descarta no `if` que compara `scorer` e `confirmed`.
+
+O que escala isso não é o tempo, é a janela: o número de invocações por ciclo é o
+número de gols existentes nas 48h consultadas. Rodada cheia de fim de semana é o
+pico, que coincide com a carga real de transmissão. `matches` não tem webhook —
+mudança de placar não dispara nada.
+
+**Duas correções possíveis**, nenhuma delas tocando no Cloud Run:
+
+1. **No fluxo** — só escrever o gol quando o `lastUpdated` da Opta for mais recente
+   que o gravado. Mata a reescrita cega na origem e resolve escrita e invocação de
+   uma vez.
+2. **No gatilho** — recriar o webhook como trigger com cláusula `WHEN`
+   (`OLD.scorer IS DISTINCT FROM NEW.scorer OR OLD.confirmed IS DISTINCT FROM
+   NEW.confirmed`). Mais barata das duas, e move para o banco a decisão que hoje
+   mora no código do handler, resolvendo junto o risco da proteção frágil contra
+   flood.
 
 O que impede isso de virar flood no `#golzinho-alertas` é uma única condição no
 `goal-webhook`, que só publica se `scorer` ou `confirmed` mudaram. A proteção

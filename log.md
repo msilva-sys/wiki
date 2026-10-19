@@ -7432,3 +7432,21 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   numa janela maior.
 - Updated: `systems/Golzinho.md` (seção § Volume medido, dois riscos novos),
   `projects/Opta.md` (riscos 13b e 13c), `index.md`.
+
+## [2026-10-19] query | O gatilho do Golzinho dispara por linha, não por execução
+
+- Pergunta de msilva: toda run do fluxo n8n aciona o Cloud Run? Sim, e pior que a
+  leitura inicial sugeria — o Database Webhook é um trigger de linha, então cada
+  gol regravado é uma invocação, não uma por ciclo.
+- ~32 invocações por ciclo (tamanho da janela de gols), ~75 por minuto, ordem de 3
+  milhões/mês — **acima do teto gratuito de 2 milhões de requisições** do Cloud Run.
+  Cada uma ainda faz um `fetchMatch` no Supabase antes de ser descartada pelo `if`
+  do handler.
+- O que escala é a janela de 48h, não o relógio: o pico coincide com rodada cheia de
+  fim de semana, que é quando a transmissão está sob carga real.
+- **Duas correções registradas**, nenhuma tocando o Cloud Run: filtrar por
+  `lastUpdated` da Opta no fluxo (mata a reescrita na origem), ou recriar o webhook
+  como trigger com cláusula `WHEN` sobre `scorer`/`confirmed` (mais barata, e move
+  pro banco a proteção contra flood que hoje vive no código do handler).
+- Updated: `systems/Golzinho.md` (§ Volume medido reescrita), `projects/Opta.md`
+  (risco 13b). Também refletido no relatório HTML entregue a msilva.
