@@ -126,8 +126,8 @@ considerassem apresentar a Opta pro time como dupla.
 
 ## Riscos levantados (2026-10-16, atualizado 2026-10-19)
 
-Consolidado da leitura dos repos, da doc interna, do relato de 09/10 e do fluxo
-n8n exportado em 19/10. Ordenado por gravidade.
+Consolidado da leitura dos repos, da doc interna, do relato de 09/10, do fluxo
+n8n exportado em 19/10 e dos logs de API do Supabase do mesmo dia. Ordenado por gravidade.
 
 | # | Risco | Origem | No Linear? |
 | --- | --- | --- | --- |
@@ -144,6 +144,8 @@ n8n exportado em 19/10. Ordenado por gravidade.
 | 11 | `service-account.json` versionado no `goal-webhook` (conteúdo não lido) | repo | não |
 | 12 | Rotação de chave é plano verbal, nunca executada | 09/10 | não |
 | 13 | Placar ao vivo possivelmente errado: o fluxo testa `scores.total` e grava `scores.ft` (não verificado) | fluxo n8n | não |
+| 13b | Amplificação: o fluxo reescreve a janela inteira a cada tick — ~150 mil escritas/dia e ~3M invocações/mês do `goal-webhook` | logs Supabase | não |
+| 13c | A proteção contra flood do `#golzinho-alertas` é uma condição dentro do handler, não do banco | logs + código | não |
 | 14 | `get_schedule` com 51% de sucesso em 246 chamadas | 09/10 + doc | `PRO-680`, `PRO-682` |
 | 15 | `competitions.json` fixo, editado à mão em produção, duplicado no docs | 09/10 + código | `PRO-679`, `PRO-683` |
 | 16 | Credencial lida do BigQuery a cada chamada do proxy | código | `PRO-693` |

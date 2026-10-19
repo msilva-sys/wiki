@@ -7403,3 +7403,32 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   MCP.md` (correção: não é o maior consumidor do contrato), `index.md`.
 - Pendente, não feito: rotação da `service_role` e migração pra credencial do n8n;
   confirmar o bug do placar; alerta de parada do produtor.
+
+## [2026-10-19] query | Volume real do Golzinho pelos logs do Supabase
+
+- msilva abriu o painel do Supabase e exportou 100 registros dos logs de API.
+  Projeto identificado: **`live-content`**, org **LiveMode Tech**, plano Pro, ref
+  `cegrhqontjltmfqfrkqr`, branch `main` como `PRODUCTION`. A wiki registrava só
+  "Supabase".
+- **Todo tráfego de escrita na janela é n8n** (64 `POST /rest/v1/goals`, 35
+  `POST /rest/v1/matches` em 27s). Confirma pelo lado do banco o que o export do
+  fluxo já dizia: o produtor é único.
+- **O fluxo reescreve a janela inteira a cada tick**, sem detectar mudança — ~50
+  escritas por tick, duas rajadas separadas por 24s, da ordem de 150 mil
+  escritas/dia no Postgres de produção.
+- **Cascata**: o Database Webhook `CLOUD_RUN_Webhook` existe **só** em `goals`
+  (`INSERT`+`UPDATE`) e aponta pro `goal-webhook`. Como upsert com
+  `merge-duplicates` conta como UPDATE, cada gol reescrito invoca o serviço —
+  ordem de 3 milhões de invocações/mês, quase todas descartadas. `matches` não tem
+  webhook.
+- **Correção de um número meu**: eu havia estimado ~5M invocações/mês em chat,
+  contando 64 gols por tick quando os 64 cobriam dois ticks. O valor correto é da
+  ordem de 3M. A wiki já foi escrita com o número corrigido.
+- **Achado de desenho**: o que impede flood no `#golzinho-alertas` é uma única
+  condição no handler do `goal-webhook` (só publica se `scorer` ou `confirmed`
+  mudaram) — não há proteção no banco nem na config do webhook.
+- Em aberto: nenhuma leitura (`GET`) apareceu na janela de 27s — amostra curta
+  demais pra concluir, mas vale medir o uso real de `/ourGoals` e `/ourMatches`
+  numa janela maior.
+- Updated: `systems/Golzinho.md` (seção § Volume medido, dois riscos novos),
+  `projects/Opta.md` (riscos 13b e 13c), `index.md`.

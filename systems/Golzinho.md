@@ -86,6 +86,40 @@ montar alerta de parada.
 > jogo**, que é quando importam. Confirmável por uma execução salva de jogo ao
 > vivo.
 
+## Volume medido (2026-10-19)
+
+Projeto Supabase identificado: **`live-content`**, organização **LiveMode Tech**,
+plano Pro, ref `cegrhqontjltmfqfrkqr`, branch `main` marcada como `PRODUCTION`.
+
+Amostra de 100 registros dos logs de API, janela de 27s (13:59:39 → 14:00:06):
+
+| Origem | Rota | Chamadas |
+| --- | --- | --- |
+| `n8n` | `POST /rest/v1/goals` | 64 |
+| `n8n` | `POST /rest/v1/matches` | 35 |
+
+**Todo o tráfego de escrita é n8n** — nenhuma outra origem na janela. Confirma pelo
+lado do banco que o fluxo é o único produtor. Duas rajadas, de 49 e 50 escritas,
+com início separado por 24s, batendo com o Schedule Trigger.
+
+**O fluxo não detecta mudança: ele reescreve a janela inteira a cada tick.** São
+~50 escritas por tick (~32 em `goals`, ~18 em `matches`), tenha mudado alguma coisa
+ou não — da ordem de 150 mil escritas por dia no Postgres de produção para
+refletir algumas dezenas de eventos reais. O log traz o checkpoint correspondente
+(`wrote 479 buffers […] write=47.876 s`).
+
+**Efeito em cascata.** Existe um Database Webhook, `CLOUD_RUN_Webhook`, **só na
+tabela `goals`** (eventos `INSERT` e `UPDATE`), apontando para o `goal-webhook` no
+Cloud Run. Como todo upsert com `merge-duplicates` conta como `UPDATE`, cada gol
+reescrito invoca o serviço: ~64 a 80 invocações por minuto, da ordem de 3 milhões
+por mês, quase todas descartadas. `matches` não tem webhook — mudança de placar não
+dispara nada.
+
+O que impede isso de virar flood no `#golzinho-alertas` é uma única condição no
+`goal-webhook`, que só publica se `scorer` ou `confirmed` mudaram. A proteção
+contra flood não está no banco nem na configuração do webhook: está numa
+comparação de campo dentro do handler.
+
 ## Quem lê (verificado nos repos, 2026-10-16)
 
 | Repo | Papel | Como é acionado |
@@ -122,6 +156,13 @@ Os IDs são os mesmos da Opta: `id` de partida serve como `fx` nos feeds, e
   [[Opta API]] — logo não entra no log `opta-proxy`. Um `GET` a cada 30s, 24/7,
   é da ordem de 86 mil chamadas/mês, e **nenhuma** aparece nos relatórios de uso.
   Toda leitura de custo do contrato feita até hoje está subestimada.
+- **Amplificação de escrita e de invocação** — ver § Volume medido. ~150 mil
+  escritas/dia e ~3 milhões de invocações/mês do `goal-webhook` para refletir
+  dezenas de eventos reais. Corrigível no fluxo (filtrar por `lastUpdated` antes
+  de escrever) ou no webhook (condicionar por coluna).
+- **A proteção contra flood do Slack é um `if` no handler.** Quem mexer nessa
+  condição sem saber o volume que chega transforma o `#golzinho-alertas` em
+  dezenas de mensagens por minuto.
 - **Produtor sem alerta.** Identificado em 2026-10-19, mas nada avisa se ele
   parar: `/ourGoals` e `/ourMatches` seguem respondendo `200` com dado velho e o
   WebSocket fica mudo — silêncio indistinguível de "nenhum gol ainda". Com
