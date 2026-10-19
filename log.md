@@ -7529,3 +7529,32 @@ errada (nota de reunião e `sources/` deveriam nascer `stable`).
 - `PDI.md` removido da raiz. Arquivo vazio (0 bytes), nunca commitado, fora
   do layout permitido para a raiz. O PDI de verdade segue em
   [[PDI Matheus 2026]].
+
+## [2026-10-19] lint | Premissas vencidas em duas decisões e limpeza de links soltos
+
+Continuação do lint do mesmo dia, agora no conteúdo e não só na formatação.
+
+- [[2026-08-14 No mandatory PR review while the proxy is pre-production]]
+  movida para `status: stale`. As duas condições que a sustentavam caíram:
+  o proxy saiu de pre-production em 2026-09-14, e o revisor nomeado na
+  decisão está deixando a empresa, com a transição em curso desde
+  2026-10-07. Nada foi decidido em substituição — a prática segue por
+  inércia, e agora sem a revisão a jusante que era a contrapartida do
+  acordo. Registrado em callout na própria página; a pergunta aberta foi
+  reescrita para apontar pra ele.
+- [[2026-08-14 Migrate project management from Jira to Linear]]: a pergunta
+  "Is the Business plan being purchased before 2026-09-09?" estava marcada
+  aberta mas já tinha resposta desde 2026-09-14, registrada em
+  [[Linear Project Structure]]. Riscada e datada. O wind-down do
+  `AIRTABLEGC`, que explicitamente esperava por ela, ficou desbloqueado e
+  continua em aberto.
+- Três wikilinks apontavam para slugs de memória do Claude Code, não para
+  páginas — `linear-a1-a2-project` (2x) e `feedback-agentic-output-informative`.
+  A prosa já dizia "memória, não página da wiki"; viraram código inline, que
+  é o que sempre foram. Param de contar como link quebrado.
+
+Dos cinco "alvos inexistentes" do relatório, sobraram três, todos corretos
+como estão: `[[Page]]` é exemplo dentro do `CLAUDE.md`,
+`[[Guia de um Builder]]` é marcador legítimo de página a criar, e
+`![[fluxo agêntico diagrama 0.png]]` era falso positivo meu — o arquivo
+existe em `sources/`, e o Obsidian resolve anexo por nome em qualquer pasta.

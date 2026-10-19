@@ -73,7 +73,7 @@ código, não na doc):
   um é um fluxo de um agente só por vez, não um comitê). Hipótese levantada
   em chat pro `portfolio_analyst`/A14 `project_reporter` como candidatos
   mais naturais, dado o histórico de saída "simplória" do A14
-  ([[feedback-agentic-output-informative]], memória, não página da wiki) —
+  (`feedback-agentic-output-informative`, memória, não página da wiki) —
   não confirmado, não desenhado.
 
 ## Relacionado

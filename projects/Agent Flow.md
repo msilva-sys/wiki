@@ -475,7 +475,7 @@ tags: [agents, llm, automation, onboarding, research]
 > remover a numeração de milestone (`M1 -`, `M2 -`) nos próprios projetos —
 > atrapalha mais do que ajuda na hora de reordenar — ainda não é padrão
 > fechado pro time, só uma experiência em andamento; ver
-> [[linear-a1-a2-project]] (memória, não página da wiki) pra a convenção de
+> `linear-a1-a2-project` (memória, não página da wiki) pra a convenção de
 > numeração ainda vigente no projeto A1 & A2.
 >
 > **Abertura de Open Issue 1 do [[Design Doc — Intake]]**: na prática, o
