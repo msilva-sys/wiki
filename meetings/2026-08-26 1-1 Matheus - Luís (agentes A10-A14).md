@@ -1,6 +1,6 @@
 ---
 type: meeting
-status: active
+status: stable
 updated: 2026-08-27
 date: 2026-08-26
 attendees: [Luís Fernandez, Matheus Silva]

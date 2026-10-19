@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-09-10
 date: 2026-09-10
 aliases: [days_overdue, pr_open_days, health via skill, retrofit A14]

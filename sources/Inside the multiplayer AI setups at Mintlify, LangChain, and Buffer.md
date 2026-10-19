@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-09-25
 date: 2026-09-02
 aliases: [mkt1 parte 2, buffer langchain mintlify, multiplayer ai case studies]

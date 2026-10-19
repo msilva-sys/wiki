@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-08-28
 date: 2026-08-28
 decided_by: Matheus Silva

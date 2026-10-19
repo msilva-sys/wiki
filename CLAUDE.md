@@ -132,6 +132,19 @@ the schema into it.**
   are infrastructure, not pages. They need no `status:`, and `CLAUDE.md` /
   `AGENTS.md` / `README.md` need no frontmatter at all.
   Having no inbound links is also correct for them — don't flag it as orphaning.
+- **`status` by folder.** `meetings/`, `sources/` and `decisions/` are born
+  `stable`, not `active`. They record a moment — a meeting that happened, a
+  document that was published, a call that was made — not a claim expected to
+  keep changing. `active` is reserved for pages that *should* still be edited:
+  `projects/`, `systems/`, `people/`, `concepts/`, and live `syntheses/`.
+  This is what makes `lint`'s "not updated in 30+ days" check readable; before
+  the rule, it reported 90 pages, roughly half of them nothing but miscategory.
+  A decision that **expires** — its premise no longer holds, like a
+  "while X is pre-production" clause after X ships — moves to `stale`, which is
+  now a real signal rather than noise. Changing a page's `status` to match this
+  convention is bookkeeping, not an edit: **don't bump `updated:` for it**, or
+  the ageing signal the rule exists to protect is erased in the same pass
+  (decided 2026-10-19).
 - **Dates**: absolute `YYYY-MM-DD`. Never "last week" or "recently". Determine
   them yourself — see **Dates** below. Never ask msilva for a date you can read.
 - **Confidence**: mark unverified claims inline — `(unverified: …)` — and state

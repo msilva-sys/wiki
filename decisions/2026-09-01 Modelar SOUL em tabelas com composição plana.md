@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-09-02
 date: 2026-09-01
 aliases: [SOUL relacional, soul_versions, soul_composition]

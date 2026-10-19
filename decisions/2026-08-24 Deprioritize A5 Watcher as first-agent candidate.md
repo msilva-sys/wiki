@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-08-24
 date: 2026-08-24
 aliases: [deprioritize watcher, A5 not first, watcher deprioritized]

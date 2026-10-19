@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-09-10
 date: 2026-09-10
 aliases: [fluxo_represado, upstream downstream A10, critérios A10 via skill, DETERMINISTIC_CRITERIA removido]

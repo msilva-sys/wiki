@@ -7558,3 +7558,37 @@ como estão: `[[Page]]` é exemplo dentro do `CLAUDE.md`,
 `[[Guia de um Builder]]` é marcador legítimo de página a criar, e
 `![[fluxo agêntico diagrama 0.png]]` era falso positivo meu — o arquivo
 existe em `sources/`, e o Obsidian resolve anexo por nome em qualquer pasta.
+
+## [2026-10-19] decision | `status` passa a ser definido por pasta; 68 páginas normalizadas
+
+Decidido por msilva no fecho do lint do dia. `meetings/`, `sources/` e
+`decisions/` nascem `stable`; `active` fica reservado a páginas que ainda
+deveriam ser editadas — `projects/`, `systems/`, `people/`, `concepts/` e
+`syntheses/` vivas. Regra escrita no `CLAUDE.md`, em **Page conventions**.
+
+O motivo é o próprio `lint`: o check de "não atualizada há 30+ dias"
+reportava 90 páginas, das quais ~41 eram só categoria errada — nota de
+reunião e resumo de fonte não envelhecem, são registro de um momento. Com
+68 páginas normalizadas (25 em `meetings/`, 16 em `sources/`, 27 em
+`decisions/`), o check caiu para **29**, e essas 29 são rot de verdade:
+14 em `people/`, 6 em `syntheses/`, 3 em `concepts/`, 2 em cada um de
+`projects/`, `systems/` e `reference/`.
+
+Duas escolhas de msilva dentro da decisão:
+
+- **Sem bump de `updated:`.** Mudar `status` para alinhar à convenção é
+  bookkeeping, não edição; bater a data nas 68 apagaria exatamente o sinal
+  de envelhecimento que a regra existe pra proteger. Verificado
+  mecanicamente: no diff das três pastas, nenhuma linha fora de `status:`
+  mudou. Isso abre uma exceção ao "bump on every edit" do schema, agora
+  registrada na própria regra.
+- **`decisions/` entra junto.** Uma decisão tomada não muda — mas pode
+  **vencer**, e aí vai para `stale`, não `stable`. É o caso de
+  [[2026-08-14 No mandatory PR review while the proxy is pre-production]],
+  movida ainda hoje. Com `active` deixando de ser o padrão da pasta,
+  `stale` vira sinal legível em vez de ruído.
+
+A normalização foi mecânica e **não auditou premissa de decisão nenhuma**.
+As 27 de `decisions/` foram para `stable` por serem `active`, não por
+alguém ter conferido se ainda valem. Se outras estiverem vencidas como a do
+PR review, só aparece quando a página for lida.

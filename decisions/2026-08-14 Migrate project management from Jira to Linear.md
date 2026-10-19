@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-10-19
 date: 2026-08-14
 decided_by: Gabrielle Ferreira

@@ -1,6 +1,6 @@
 ---
 type: meeting
-status: active
+status: stable
 updated: 2026-08-27
 date: 2026-08-27
 attendees: [Maria Fernanda Lemos, Yasmin Macedo, Matheus Silva, Carolina Bezerra]

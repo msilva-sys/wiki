@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-09-25
 date: 2026-09-17
 aliases: [mkt1 parte 3, vacation test, mkt1 own setup]

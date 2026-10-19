@@ -1,6 +1,6 @@
 ---
 type: meeting-prep
-status: active
+status: stable
 updated: 2026-09-02
 date: 2026-09-02
 attendees: [Matheus Silva, Carolina Bezerra]

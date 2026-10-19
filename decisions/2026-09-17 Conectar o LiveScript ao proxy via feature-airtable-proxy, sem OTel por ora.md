@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-09-17
 aliases: [decisão de branch do proxy, feature/airtable-proxy]
 tags: [airtable-proxy, livescript, git]

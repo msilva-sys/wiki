@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 date: 2026-10-14
 updated: 2026-10-16
 aliases: [migração do proxy, desligar as chaves diretas]

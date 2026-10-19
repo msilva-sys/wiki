@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-08-20
 date: 2025-06-12
 aliases: [cognition multi-agent, walden yan, don't build multi-agents, context engineering principles]

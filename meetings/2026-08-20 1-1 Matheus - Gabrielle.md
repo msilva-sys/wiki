@@ -1,6 +1,6 @@
 ---
 type: meeting
-status: active
+status: stable
 updated: 2026-09-01
 date: 2026-08-20
 attendees: [Gabrielle Ferreira, Matheus Silva]

@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-09-25
 date: 2026-07-27
 aliases: [multiplayer claude, 4 cs framework, mkt1 parte 1, single-player claude mode]

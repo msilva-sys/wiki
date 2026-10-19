@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-10-05
 date: 2026-09-10
 aliases: [agent_facts, memória de fatos, fact memory, remember_fact, recall_facts]

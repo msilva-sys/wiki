@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-09-09
 date: 2026-09-09
 aliases: [não unificar os projetos de proxy, projetos de proxy separados]

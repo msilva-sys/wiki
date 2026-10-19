@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-09-17
 aliases: [rollback do proxy, plano de rollback livescript]
 tags: [airtable-proxy, livescript, rollback, vercel]

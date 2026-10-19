@@ -1,6 +1,6 @@
 ---
 type: meeting
-status: active
+status: stable
 updated: 2026-08-26
 date: 2026-08-17
 attendees: [Gabrielle Ferreira, Luis Fernandez, João Victor Andrade, Yasmin Macedo, Arthur Tavares, Matheus Silva]

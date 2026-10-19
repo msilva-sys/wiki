@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-09-21
 date: 2026-09-21
 source: "live WebFetch"

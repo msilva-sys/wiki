@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-08-26
 date: 2025-06-13
 aliases: [anthropic multi-agent research, orchestrator-worker, anthropic research system]

@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-09-10
 date: 2026-09-10
 aliases: [ask_agent, agent-as-tool, chamada cross-agent, agentes se chamando]

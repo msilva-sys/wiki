@@ -1,6 +1,6 @@
 ---
 type: meeting
-status: active
+status: stable
 updated: 2026-08-26
 date: 2026-08-25
 attendees: [Matheus Silva, Luís Fernandez, Carolina Bezerra, Arthur Tavares]

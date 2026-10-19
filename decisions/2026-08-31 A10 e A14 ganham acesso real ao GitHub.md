@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-09-01
 date: 2026-08-31
 aliases: [github access a10 a14, repo_tools, acesso ao repositório]

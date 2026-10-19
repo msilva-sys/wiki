@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-08-28
 date: 2026-08-28
 aliases: [custo do chat_a10, list_issues cost bug, trace caro do A10]

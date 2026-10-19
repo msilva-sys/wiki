@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-08-26
 date: 2026-08-18
 decided_by: Luís Fernandez

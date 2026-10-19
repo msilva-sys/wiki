@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-09-10
 date: 2026-09-10
 aliases: [blocked_by, is_blocked, dependência A14, sequência de entrega]

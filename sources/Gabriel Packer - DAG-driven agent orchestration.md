@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-08-17
 date: 2026-07-23
 aliases: [gkpacker, packer workflow, waves, graph engineering]
