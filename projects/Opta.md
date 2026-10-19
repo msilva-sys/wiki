@@ -1,9 +1,9 @@
 ---
 type: project
 status: active
-updated: 2026-10-16
+updated: 2026-10-19
 aliases: [opta]
-tags: [opta, transição]
+tags: [opta, transição, n8n]
 ---
 
 # Opta
@@ -60,8 +60,10 @@ pergunta em aberto, Luís ia levar a [[Carolina Bezerra]] e possivelmente
   de competições disponíveis) com uma seção de operação interna (como
   adicionar competição, gestão de chave) que não deveria ser pública —
   ainda sem solução de separação.
-- **[[Golzinho]]** — o produtor dos dados próprios, e a peça sem dono
-  mapeado. Ver [[Quem escreve nas tabelas goals e matches]].
+- **[[Golzinho]]** — o produtor dos dados próprios: o fluxo n8n
+  `[GOLZINHO] Upload de Gols da Opta`, que pergunta à Opta a cada 30s e faz
+  upsert em `matches`/`goals`. Identificado em 2026-10-19; é a única peça que
+  não vive em repositório. Ver [[Quem escreve nas tabelas goals e matches]].
 
 Luís já cogitou unificar os três repos num monorepo; não chegou a fazer —
 hoje é incômodo trabalhar com Claude Code cruzando os três.
@@ -100,6 +102,13 @@ uso só começou perto do 5º dia da Copa (não cobre o histórico real); alguns
 erros 401 por chave mal configurada do lado de quem consome, sem
 identificação de quem é.
 
+> [!warning] Correção 2026-10-19 — esses números não cobrem o maior consumidor
+> O relatório mede o log `opta-proxy`, e o fluxo n8n do [[Golzinho]] chama a Opta
+> **direto**, sem passar pelo proxy. Um `GET` a cada 30s, 24/7, é da ordem de 86
+> mil chamadas/mês — contra os 1556 em 31 dias medidos aqui. Qualquer conclusão
+> sobre custo ou volume do contrato tirada deste relatório está subestimada por
+> uma ordem de grandeza.
+
 Cobrança da Opta: fixa até um limite de chamadas, por faixa adicional acima
 disso. Pedro Alves teria feito algum cache seletivo de dado pra reduzir
 custo (nível de detalhe não levantado). **Cuidado**: cachear resposta pode
@@ -115,33 +124,36 @@ como cliente, citar a Opta como case de sucesso do time (como já fizeram com
 LiveScript e [[Orca (CDE)]]). Pediu a Matheus e [[Yasmin Macedo]] que
 considerassem apresentar a Opta pro time como dupla.
 
-## Riscos levantados (2026-10-16)
+## Riscos levantados (2026-10-16, atualizado 2026-10-19)
 
-Consolidado da leitura dos repos, da doc interna e do relato de 09/10.
-Ordenado por gravidade.
+Consolidado da leitura dos repos, da doc interna, do relato de 09/10 e do fluxo
+n8n exportado em 19/10. Ordenado por gravidade.
 
 | # | Risco | Origem | No Linear? |
 | --- | --- | --- | --- |
-| 1 | [[Opta MCP]] sobe **sem autenticação** se `MCP_AUTH_KEY` sumir | código | não |
-| 2 | Produtor do [[Golzinho]] invisível, falha em silêncio, autor fora da empresa | código | não |
-| 3 | Chave única do MCP: sem revogação individual nem atribuição | doc + 09/10 | não |
-| 4 | 28 chaves de API sem registro de dono | doc | `PRO-694` |
-| 5 | Chaves em claro no log e no BigQuery | doc | não |
-| 6 | Credencial do contrato no BigQuery, não no Secret Manager | 09/10 | não |
-| 7 | Três clientes no Supabase direto, fora da auditoria | código | não |
-| 8 | Duas regiões da API em revisões divergentes | doc | não |
-| 9 | `service-account.json` versionado no `goal-webhook` (conteúdo não lido) | repo | não |
-| 10 | Rotação de chave é plano verbal, nunca executada | 09/10 | não |
-| 11 | `get_schedule` com 51% de sucesso em 246 chamadas | 09/10 + doc | `PRO-680`, `PRO-682` |
-| 12 | `competitions.json` fixo, editado à mão em produção, duplicado no docs | 09/10 + código | `PRO-679`, `PRO-683` |
-| 13 | Credencial lida do BigQuery a cada chamada do proxy | código | `PRO-693` |
-| 14 | README do `opta-mcp` anuncia ferramenta removida (`opta_raw`) | código | não |
-| 15 | `401`/`403` não entram no log de auditoria | doc | `PRO-699` |
+| 1 | Chave **`service_role`** do Supabase em texto claro dentro do fluxo n8n do [[Golzinho]] — escrita total no banco da transmissão, e todo export vaza de novo | fluxo n8n | não |
+| 2 | [[Opta MCP]] sobe **sem autenticação** se `MCP_AUTH_KEY` sumir | código | não |
+| 3 | **Consumo do contrato invisível**: o fluxo do [[Golzinho]] chama a Opta direto, fora do proxy — ~86 mil chamadas/mês que não entram em relatório nenhum | fluxo n8n | não |
+| 4 | Chave única do MCP: sem revogação individual nem atribuição | doc + 09/10 | não |
+| 5 | 28 chaves de API sem registro de dono | doc | `PRO-694` |
+| 6 | Chaves em claro no log e no BigQuery | doc | não |
+| 7 | Credencial do contrato no BigQuery, não no Secret Manager | 09/10 | não |
+| 8 | Produtor do [[Golzinho]] sem alerta de parada (identificado em 19/10, histórico de execução existe) | fluxo n8n | não |
+| 9 | Três clientes no Supabase direto, fora da auditoria | código | não |
+| 10 | Duas regiões da API em revisões divergentes | doc | não |
+| 11 | `service-account.json` versionado no `goal-webhook` (conteúdo não lido) | repo | não |
+| 12 | Rotação de chave é plano verbal, nunca executada | 09/10 | não |
+| 13 | Placar ao vivo possivelmente errado: o fluxo testa `scores.total` e grava `scores.ft` (não verificado) | fluxo n8n | não |
+| 14 | `get_schedule` com 51% de sucesso em 246 chamadas | 09/10 + doc | `PRO-680`, `PRO-682` |
+| 15 | `competitions.json` fixo, editado à mão em produção, duplicado no docs | 09/10 + código | `PRO-679`, `PRO-683` |
+| 16 | Credencial lida do BigQuery a cada chamada do proxy | código | `PRO-693` |
+| 17 | README do `opta-mcp` anuncia ferramenta removida (`opta_raw`) | código | não |
+| 18 | `401`/`403` não entram no log de auditoria | doc | `PRO-699` |
 
-Os itens 1, 2, 7, 8 e 9 **não têm issue** e não aparecem no backlog da
-transição. 1 e 2 são os mais graves: um é exposição de credencial, o outro é
-falha silenciosa num caminho que alimenta transmissão ao vivo — agravado por
-2 e 3 juntos, já que o produtor não tem dono, não tem repo e seu autor saiu.
+Só 5, 14, 15, 16 e 18 têm issue. O item 1 é o único com cara de incidente, não de
+dívida: a rotação derruba o fluxo e a [[Opta API]] juntos, então precisa de janela
+combinada. O item 3 inverte a leitura de uso do contrato — ver a correção na seção
+anterior.
 
 ## Backlog de melhorias (não aprovado/priorizado ainda)
 

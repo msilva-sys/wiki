@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-10-16
+updated: 2026-10-19
 aliases: [opta-mcp, mcp da opta, conector da opta]
 tags: [opta, mcp, cloud-run, typescript]
 ---
@@ -10,8 +10,10 @@ tags: [opta, mcp, cloud-run, typescript]
 
 Servidor MCP que expõe os dados da [[Opta]] como ferramentas pro Claude e outros
 agentes. Repo `tech-livemode/opta-mcp`, Node 22 + TypeScript com o SDK oficial do
-MCP, no Cloud Run desde 2026-03-19. É o consumidor mais pesado do contrato: o
-relatório de uso de 2026-08-25 aponta tráfego de agente como principal origem.
+MCP, no Cloud Run desde 2026-03-19. O relatório de uso de 2026-08-25 aponta tráfego de
+agente como principal origem do que passa pelo log `opta-proxy` — o que **não** o
+torna o maior consumidor do contrato: o fluxo n8n do [[Golzinho]] chama a Opta por
+fora e não é medido ali (ver [[Opta API]] § Auditoria).
 
 > [!note] Verificado direto no código em 2026-10-16
 > Leitura do repo (último commit `9d17349`). Onde a doc interna e o código

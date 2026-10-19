@@ -1,9 +1,9 @@
 ---
 type: system
 status: active
-updated: 2026-10-16
+updated: 2026-10-19
 aliases: [golzinho, live content, goal-webhook, pipeline de gols]
-tags: [opta, cazetv, supabase, realtime, live-content]
+tags: [opta, cazetv, supabase, realtime, live-content, n8n]
 ---
 
 # Golzinho
@@ -28,9 +28,9 @@ meses depois de o banco já existir.
 ## A arquitetura
 
 ```
-         pergunta de forma contínua
-Opta ◄──────────────────────────────── [produtor — NÃO IDENTIFICADO]
-                                                │ grava
+            GET a cada 30s, direto, sem passar pelo proxy
+Opta ◄──────────────────────────────── n8n: [GOLZINHO] Upload de Gols da Opta
+                                                │ upsert
                                                 ▼
                                    Supabase: tabelas goals e matches
                                                 │
@@ -44,6 +44,47 @@ A tabela é o ponto de encontro: o gol entra uma vez e três sistemas reagem jun
 cada um fazendo uma coisa. **Não é cache** — se fosse, espelharia o schema da Opta,
 teria TTL e não teria canal de push. A persistência existe porque a Opta é pull
 (nunca avisa nada) e o produto precisa de push.
+
+## Quem escreve: o fluxo n8n
+
+Identificado em 2026-10-19, quando msilva localizou o fluxo no n8n e exportou o
+JSON. Nome: **`[GOLZINHO] Upload de Gols da Opta`**, `active: true`, 18 nós.
+Resolve [[Quem escreve nas tabelas goals e matches]].
+
+| Nó | O que faz |
+| --- | --- |
+| `Schedule Trigger` | Campo `seconds` sem intervalo explícito — o default do n8n é 30s, que bate com o *"delay de no máximo 30 segundos"* do anúncio |
+| `Get bearer token` | Nó BigQuery com a **mesma query** dos dois serviços: `SELECT key FROM bronze_layer.opta_chaves_api ORDER BY insert_ts DESC LIMIT 1`, projeto `data-analytics-422617`, credencial OAuth2 própria |
+| `Get Match` | `GET api.performfeeds.com/soccerdata/match/{outlet}` com `live=yes`, `lineups=yes`, `_pgSz=100` e `mt.mDt=[ontem 00:00Z TO amanhã 00:00Z]` |
+| `Code` | Extrai `liveData.goal[]`, resolve o nome do time e inverte o contestant quando o tipo é `OG` |
+| `Upsert Match` / `Upsert Goal HTTP` | `POST /rest/v1/{matches,goals}?on_conflict=id` no Supabase, com `Prefer: resolution=merge-duplicates`; há também uma Edge Function `upsert-match` |
+| `Mark goals as disallowed` | Edge Function que recebe `match_id` + `allowed_event_ids` e marca como anulado todo gol que sumiu do feed |
+
+O último nó é a origem do `confirmed: disallowed` e do `❌ Gol anulado` no Slack:
+a Opta não avisa que anulou um gol, ela apenas para de listá-lo, e o fluxo compara
+e deduz.
+
+`settings.saveDataSuccessExecution: "all"` — diferente do default da instância,
+este fluxo **salva execuções bem-sucedidas**. Existe histórico pra auditar e pra
+montar alerta de parada.
+
+> [!danger] O export do fluxo carrega segredo em texto claro
+> O JSON exportado traz, embutidas nos headers dos nós HTTP, uma chave
+> **`service_role`** do Supabase (duas ocorrências) e uma `anon`. `service_role`
+> ignora o RLS: é escrita total no banco que alimenta transmissão ao vivo.
+> Qualquer export do fluxo vaza de novo enquanto a chave estiver inline em vez
+> de numa credencial do n8n. Nenhum valor foi registrado nesta wiki. Ação
+> pendente: migrar pra credencial Header Auth e rotacionar a chave — a rotação
+> derruba este fluxo **e** a [[Opta API]] (`SUPABASE_SERVICE_ROLE_KEY`) ao mesmo
+> tempo, então precisa ser coordenada e fora de horário de jogo.
+
+> [!warning] Bug candidato no placar ao vivo (não verificado)
+> O `Upsert Match` testa `liveData.matchDetails.scores.total.home !== undefined`
+> mas grava `scores.ft.home` — idem no away. Em partida em andamento `ft` (full
+> time) provavelmente não existe, enquanto `total` existe. Se confirmado,
+> `home_goals`/`away_goals` ficam nulos ou errados em `/ourMatches` **durante o
+> jogo**, que é quando importam. Confirmável por uma execução salva de jogo ao
+> vivo.
 
 ## Quem lê (verificado nos repos, 2026-10-16)
 
@@ -74,11 +115,18 @@ Os IDs são os mesmos da Opta: `id` de partida serve como `fx` nos feeds, e
 
 ## Riscos
 
-- **O produtor é um ponto cego.** Ninguém mapeou o processo que escreve nas
-  tabelas, e ele não tem monitoramento. Se parar, `/ourGoals` e `/ourMatches`
-  seguem respondendo `200` com dado velho; o WebSocket fica mudo — e silêncio é
-  indistinguível de "nenhum gol ainda". Ver
-  [[Quem escreve nas tabelas goals e matches]].
+- **Chave `service_role` em texto claro no export do fluxo** — ver o callout
+  acima. É o risco mais grave do conjunto da [[Opta]].
+- **O consumo da Opta é invisível no contrato.** O fluxo chama
+  `api.performfeeds.com` direto, com a credencial do BigQuery, sem passar pela
+  [[Opta API]] — logo não entra no log `opta-proxy`. Um `GET` a cada 30s, 24/7,
+  é da ordem de 86 mil chamadas/mês, e **nenhuma** aparece nos relatórios de uso.
+  Toda leitura de custo do contrato feita até hoje está subestimada.
+- **Produtor sem alerta.** Identificado em 2026-10-19, mas nada avisa se ele
+  parar: `/ourGoals` e `/ourMatches` seguem respondendo `200` com dado velho e o
+  WebSocket fica mudo — silêncio indistinguível de "nenhum gol ainda". Com
+  `saveDataSuccessExecution: "all"` ligado, o histórico pra construir esse alerta
+  já existe.
 - **Três clientes acessam o Supabase direto**, com credencial do banco, fora do
   log de auditoria `opta-proxy`. O controle de acesso que a [[Opta API]] constrói
   não alcança esse caminho.
@@ -97,3 +145,4 @@ Os IDs são os mesmos da Opta: `id` de partida serve como `fx` nos feeds, e
 | 2026-04-14 | A [[Opta API]] passa a expor as mesmas tabelas por HTTP e WebSocket |
 | 2026-04-24 | Último commit do `goal-webhook` (troca do modelo Gemini) |
 | 2026-10-16 | Em operação — alertas de Libertadores, Ligue 1, Serie A e Bundesliga no canal |
+| 2026-10-19 | Produtor identificado: o fluxo n8n `[GOLZINHO] Upload de Gols da Opta` |

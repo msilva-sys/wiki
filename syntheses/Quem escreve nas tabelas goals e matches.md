@@ -1,12 +1,25 @@
 ---
 type: synthesis
-status: active
-updated: 2026-10-16
+status: superseded
+updated: 2026-10-19
 aliases: [produtor do golzinho, quem alimenta ourgoals]
 tags: [opta, golzinho, supabase, investigação]
 ---
 
 # Quem escreve nas tabelas goals e matches
+
+> [!success] Respondida 2026-10-19 — é um fluxo n8n
+> **`[GOLZINHO] Upload de Gols da Opta`**, `active: true`, 18 nós, localizado por
+> msilva na instância do n8n. Schedule Trigger de 30s, credencial da Opta lida do
+> BigQuery, `GET` em `api.performfeeds.com/soccerdata/match` com `live=yes`, e
+> upsert em `matches`/`goals` via REST do Supabase mais duas Edge Functions.
+> O desenho completo está em [[Golzinho]]; esta página fica como registro da
+> busca. A hipótese abaixo estava certa.
+>
+> Dois achados que a pergunta original não previa: o fluxo chama a Opta **direto**,
+> fora do proxy, então seu consumo não aparece em nenhum relatório de uso do
+> contrato; e o export do fluxo carrega uma chave `service_role` do Supabase em
+> texto claro.
 
 Aberta 2026-10-16, durante a leitura dos três repos da [[Opta]]. Pergunta: qual
 processo pergunta à Opta de forma contínua e grava os gols e partidas no Supabase
@@ -49,10 +62,18 @@ Busca feita em 2026-10-16, sem achar o produtor:
 `n8n-automation-hub-448718`; a casa usa n8n para automação; e fluxo n8n não vive em
 repositório, o que explicaria ele não aparecer em lugar nenhum.
 
-Contra-indício, e por isso segue hipótese e não conclusão: numa queda do n8n em
-2025-11-10, Peçanha registrou no `#projetos` que *"o Golzinho seguiu no ar no fim de
-semana"* — ou o produtor não é n8n, ou só a parte do webhook (que é Cloud Run)
-sobreviveu e o que parou foi invisível.
+Contra-indício considerado e **descartado em 2026-10-16**: numa queda do n8n em
+2025-11-10, Peçanha estranhou que *"o Golzinho seguiu no ar no fim de semana"*, e
+isso chegou a ser registrado aqui como evidência contra a hipótese. Não sustenta o
+peso. A leitura do `#golzinho-alertas` confirma a parte factual — no domingo
+2025-11-09 houve dezenas de alertas reais, com arte e legenda, incluindo um gol
+anulado às 18:14, o que prova que o produtor estava inserindo **e atualizando**
+linhas. Mas a premissa nunca foi verificada: ele próprio chamou de "hipótese" que o
+n8n tivesse ficado fora o fim de semana todo, inferida de outro sintoma (o Artista
+da LFU). Se o n8n caiu só na segunda, o domingo não prova nada.
+
+**Confirmado em 2026-10-19**: era n8n mesmo. O episódio de 2025-11-10 continua sem
+explicação — provavelmente o n8n não ficou fora o fim de semana inteiro.
 
 ## O que fecharia
 

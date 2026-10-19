@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-10-16
+updated: 2026-10-19
 aliases: [opta-api, opta api, proxy da opta, api interna da opta]
 tags: [opta, cloud-run, fastapi, supabase, bigquery]
 ---
@@ -89,6 +89,13 @@ relatórios de uso do contrato.
 Não entram nesse log: chamadas recusadas por chave inválida (ficam só nos request
 logs do Cloud Run, 30 dias de retenção) e o status/latência das chamadas do proxy.
 
+> [!warning] O log não mede o maior consumidor do contrato
+> O fluxo n8n do [[Golzinho]] chama `api.performfeeds.com` **direto**, lendo a
+> credencial do mesmo BigQuery, sem passar por este serviço. Logo, não aparece
+> aqui — e são ~86 mil chamadas/mês, contra os 1556 em 31 dias que o relatório de
+> 2026-08-25 mediu. Qualquer painel de uso construído só sobre este log mostra a
+> parte menor do consumo.
+
 ## Riscos
 
 Consolidados em [[Opta]] § Riscos. Os específicos deste serviço:
@@ -103,7 +110,7 @@ Consolidados em [[Opta]] § Riscos. Os específicos deste serviço:
   domínio (unverified: levantado na doc interna, não checado no Cloud Run).
 - **A credencial do contrato mora no BigQuery**, não no Secret Manager — mesma
   dívida que o [[Airtable Proxy]] já resolveu.
-- **Falha silenciosa nas rotas `our*`**: se o produtor do [[Golzinho]] parar, elas
+- **Falha silenciosa nas rotas `our*`**: se o fluxo n8n do [[Golzinho]] parar, elas
   seguem respondendo `200` com dado velho e o WebSocket fica mudo. Não há alerta.
 
 ## Histórico

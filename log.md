@@ -7359,3 +7359,47 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   callout de autoria), `people/Pessanha.md` (identidade, o que construiu,
   última atividade observada), `people/Pedro Alves.md` (callout de correção),
   `index.md`.
+
+## [2026-10-19] synthesis | Produtor do Golzinho identificado — fluxo n8n
+
+- msilva localizou o fluxo no n8n e exportou o JSON
+  (`[GOLZINHO] Upload de Gols da Opta`, `active: true`, 18 nós). Fecha a pergunta
+  aberta em 2026-10-16: a hipótese n8n estava certa.
+- **Como funciona**: Schedule Trigger no campo `seconds` (default 30s do n8n, que
+  bate com o "delay de no máximo 30 segundos" do anúncio de 2025-10-03); nó
+  BigQuery com a mesma query de credencial dos dois serviços; `GET` em
+  `api.performfeeds.com/soccerdata/match` com `live=yes`, `lineups=yes`,
+  `_pgSz=100` e range de ontem a amanhã; upsert em `matches`/`goals` via REST do
+  Supabase (`on_conflict=id`, `merge-duplicates`) mais Edge Functions
+  `upsert-match` e `mark-disallowed-goals` — esta última deduz gol anulado por
+  ausência no feed, origem do `confirmed: disallowed`.
+- **Achado de segurança**: o export carrega uma chave `service_role` do Supabase em
+  texto claro (duas ocorrências) e uma `anon`. Só os claims foram decodificados
+  para identificar o papel; **nenhum valor foi registrado na wiki**. Vira o risco
+  #1 da Opta. A rotação derruba o fluxo e a `opta-api` juntos — precisa de janela
+  combinada. Correção estrutural: migrar pra credencial Header Auth no n8n, senão
+  todo export futuro vaza de novo.
+- **Achado de governança**: o fluxo chama a Opta **direto**, fora do proxy, então
+  não entra no log `opta-proxy`. Um GET a cada 30s, 24/7, é da ordem de 86 mil
+  chamadas/mês contra os 1556 em 31 dias do relatório de 2026-08-25 — que, logo,
+  subestima o consumo do contrato por uma ordem de grandeza. Callout de correção
+  na seção de uso de `projects/Opta.md` e em `systems/Opta API.md`.
+- **Bug candidato, não verificado**: o `Upsert Match` testa
+  `liveData.matchDetails.scores.total.home` mas grava `scores.ft.home` (idem away).
+  Se `ft` não existir em partida em andamento, o placar de `/ourMatches` fica
+  errado durante o jogo. Confirmável por uma execução salva de jogo ao vivo — o
+  fluxo tem `saveDataSuccessExecution: "all"`.
+- **Contra-indício anterior derrubado**: o episódio de 2025-11-10 ("o Golzinho
+  seguiu no ar no fim de semana") tinha sido registrado como evidência contra a
+  hipótese n8n. A leitura do `#golzinho-alertas` mostra dezenas de alertas reais no
+  domingo 2025-11-09, inclusive um gol anulado — o produtor estava vivo —, mas a
+  premissa de que o n8n ficou fora o fim de semana todo era hipótese do próprio
+  Peçanha, nunca verificada. Correção registrada na synthesis antes de ela ser
+  respondida.
+- Updated: `systems/Golzinho.md` (fluxo real no lugar da caixa "não
+  identificado", dois callouts), `syntheses/Quem escreve nas tabelas goals e
+  matches.md` (`status: superseded`, resposta no topo), `projects/Opta.md` (tabela
+  de riscos reordenada, 15 → 18 itens), `systems/Opta API.md`, `systems/Opta
+  MCP.md` (correção: não é o maior consumidor do contrato), `index.md`.
+- Pendente, não feito: rotação da `service_role` e migração pra credencial do n8n;
+  confirmar o bug do placar; alerta de parada do produtor.
