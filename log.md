@@ -958,8 +958,9 @@ be the natural second build. Undecided: separate agent, or logic inside A5.
   facts that apply whichever is chosen; a recommendation (**A1 + A2**) with the
   sequence behind it; and eight things to decide before 2026-08-24.
 - **Division of labour recorded on both pages to prevent drift**: the new page is the
-  *comparison*, written to be handed to someone else; [[Which agent should be built
-  first]] stays the *reasoning record* and remains the authority where they disagree.
+  *comparison*, written to be handed to someone else;
+  [[Which agent should be built first]] stays the *reasoning record* and
+  remains the authority where they disagree.
 - Makes the choice of utility reading explicit rather than implicit — expected value
   (value x P(works) x frequency), with "what it teaches" as tiebreak. Notes that under
   "value if it works" the answer flips to A7.
@@ -1463,8 +1464,9 @@ it is a second, contradictory claim.
   noted as settled by this ingest.
 - Updated: [[Agent Flow]] (3 spots), [[Airtable Proxy]],
   [[Comparing the first-agent candidates]] (contradiction warning closed out),
-  [[Which agent should be built first]], [[What should the Agent Flow research phase
-  study]], [[Meeting prep - first agent decision]] (4 spots),
+  [[Which agent should be built first]],
+  [[What should the Agent Flow research phase study]],
+  [[Meeting prep - first agent decision]] (4 spots),
   [[2026-08-10 Onboarding Técnico - Matheus]], [[AI status reporting on Linear]],
   [[Gabriel Packer - DAG-driven agent orchestration]], `index.md`.
 - Open: is Orca's proxy migration actually sequenced anywhere, or still just intended —
@@ -1563,8 +1565,9 @@ ele completamente do proxy [...] imagina que ele não funciona com o proxy, não
 ele ainda é útil"* — reasoning that scoping the Watcher to the proxy caps its value at
 whatever LiveScript alone generates early on. Neither referenced the other. Recorded as
 an unresolved conflict per the schema, on [[Agent Flow]],
-[[Which agent should be built first]] and [[What should the Agent Flow research phase
-study]] — not adjudicated. **Next step, agreed in the call**: msilva runs separate
+[[Which agent should be built first]] and
+[[What should the Agent Flow research phase study]] — not adjudicated.
+**Next step, agreed in the call**: msilva runs separate
 ~30-minute discovery conversations with Gabrielle and Carol, deliberately apart, about
 what each actually imagines the Watcher doing, before any more A5 design. This
 downgrades confidence in the existing detailed A5 build plan
@@ -1668,8 +1671,9 @@ revisit.
   2026-08-10 onboarding transcript's *"a second colleague, referred to as
   Gabi"* is flagged unresolved rather than silently merged, since it reads as
   a distinct attendee.
-- **Found and corrected a defect while sourcing [[Pedro Alves]]**: **[[Fluxo
-  Agêntico diagram]]** asserted *"Pedro (the departed developer) co-designed
+- **Found and corrected a defect while sourcing [[Pedro Alves]]**:
+  **[[Fluxo Agêntico diagram]]** asserted *"Pedro (the departed developer)
+  co-designed
   the architecture"*, citing [[2026-08-10 Onboarding Técnico - Matheus]] —
   but that meeting page names no Pedro and no departed developer. Citation
   didn't check out. Removed rather than merged into a fabricated person page;
@@ -1805,8 +1809,8 @@ revisit.
   same PR `PRO-79` cited) — linked it here too.
 - **`PRO-82` (Onboarding/key-issuance flow) → In Progress, not closed.**
   msilva called this one out for Luís rather than deciding it — matches
-  [[2026-08-18 Bring options to Luís before deciding, communicate async and
-  often]]. Drafted and tightened 3 options, posted as a Linear comment
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]].
+  Drafted and tightened 3 options, posted as a Linear comment
   (`@Luis Fernandez` — first draft used the accented spelling and wouldn't
   have resolved as a real mention; corrected).
 - **`PRO-83` (Spike: rotação de chaves) → `blockedBy: PRO-82`** (native
@@ -1866,12 +1870,14 @@ revisit.
   `NEXT_PUBLIC_FIREBASE_API_KEY` matches a key-shaped pattern); still present
   in git history, unchanged. Eighth report — rotation still outstanding,
   still msilva's action.
-- **Decisions open-vs-settled**: no mismatches. [[2026-08-18 Product feedback
-  in Linear, code review in Git]] is still correctly `draft` everywhere it's
+- **Decisions open-vs-settled**: no mismatches.
+  [[2026-08-18 Product feedback in Linear, code review in Git]] is still
+  correctly `draft` everywhere it's
   referenced.
 - **Intra-page contradictions**: the only page edited since the seventh lint
-  besides `log.md` — [[2026-08-14 Migrate project management from Jira to
-  Linear]], across five refactor commits (PRO-79 content drift, PRO-78's four
+  besides `log.md` —
+  [[2026-08-14 Migrate project management from Jira to Linear]], across five
+  refactor commits (PRO-79 content drift, PRO-78's four
   archived children restored, the PRO-78 epic worked through) — read in full.
   Internally consistent; each new "Resolved" bullet is additive, none
   contradicts an earlier one.
@@ -1984,8 +1990,9 @@ revisit.
   consolidator, the proxy is one input, not Watch's defining scope — which
   may answer Luís's objection without losing Gabrielle's utility case.
   **msilva's own synthesis from this meeting, not run past Luís** — recorded
-  as a candidate everywhere it touches, never as settled. [[How to implement
-  A5 Watcher]]'s existing build plan is flagged as the Path-A/proxy-only
+  as a candidate everywhere it touches, never as settled.
+  [[How to implement A5 Watcher]]'s existing build plan is flagged as the
+  Path-A/proxy-only
   slice, since it predates this distinction.
 - **A3-vs-A7 axis corrected**: msilva explicitly rejects "fast vs. slow
   demand" as the differentiator (a framing [[Agent Flow]]'s own agent table
@@ -2020,12 +2027,14 @@ revisit.
   first-class Pulumi SDK, mock-testing support) vs. TypeScript (denser
   example coverage for `pulumi-gcp`, but a second toolchain in an all-Go repo)
   vs. Python (no clear fit). msilva's own preference: Go.
-- Per [[2026-08-18 Bring options to Luís before deciding, communicate async
-  and often]], posted the same 3 options as a Linear comment on `PRO-94`
+- Per
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]],
+  posted the same 3 options as a Linear comment on `PRO-94`
   rather than deciding unilaterally, lean toward Go stated but left as Luís's
   call. Moved `PRO-94` to In Progress.
-- Updated: [[2026-08-18 Bring options to Luís before deciding, communicate
-  async and often]] (new "Applied since" section, also backfilling the
+- Updated:
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]]
+  (new "Applied since" section, also backfilling the
   `PRO-82` instance).
 - Open: Luís's reply on `PRO-82` and now `PRO-94`; everything else carried
   from prior entries.
@@ -2223,8 +2232,9 @@ revisit.
 - **Intra-page consistency**: read the pages touched by both parts of the
   2026-08-19 ingest and the callout-resolution commit in full —
   [[Agent Flow]], the [[2026-08-19 1-1 Matheus - Gabrielle]] meeting page,
-  [[Which agent should be built first]], [[Comparing the first-agent
-  candidates]], [[What should the Agent Flow research phase study]],
+  [[Which agent should be built first]],
+  [[Comparing the first-agent candidates]],
+  [[What should the Agent Flow research phase study]],
   [[How to implement A5 Watcher]], [[Linear Project Structure]]. All
   consistent: the "possible convergence" finding is flagged as unconfirmed
   identically everywhere it appears, decided-vs-discussed is kept straight,
@@ -2260,8 +2270,8 @@ revisit.
 - msilva asked to plan the Airtable Linear reorg "like Luís said" — went back
   to `raw/Luis _ Matheus - 2026_08_19 15_01...md` (not just the wiki's earlier
   summary of it) because msilva's own recollection ("F3 should be a project
-  under the Airtable initiative") didn't match what [[Linear Project
-  Structure]]'s "fourth convention" bullet had recorded.
+  under the Airtable initiative") didn't match what
+  [[Linear Project Structure]]'s "fourth convention" bullet had recorded.
 - **Found a real compression error in the earlier ingest.** The raw transcript
   has Luís saying explicitly: *"Isso é um projeto, cara. Esse projeto tem
   milestones"* — the milestone msilva is actively working in gets promoted to
@@ -2376,8 +2386,9 @@ revisit.
   "what the Gabi conversation already gave us" subsection under each of the
   five threads (which-agent-first, Watcher/A5 scope, A6-vs-skills-repo, A10/
   intranet tool, context minimalism).
-- **Explicit caveat added and repeated**: [[2026-08-19 1-1 Matheus -
-  Gabrielle]]'s transcription collapsed attribution entirely, so most of the
+- **Explicit caveat added and repeated**:
+  [[2026-08-19 1-1 Matheus - Gabrielle]]'s transcription collapsed
+  attribution entirely, so most of the
   "Gabi side" is msilva's own thinking said out loud, not confirmed quotes
   from her. The doc tells msilva to treat Carol's answers as the more
   reliable signal, not to use the Gabi column as a tie-breaker.
@@ -2483,8 +2494,9 @@ revisit.
   issue itself (2026-08-19, pre-dates this session) — the comment names
   Luís directly, which msilva confirmed is fine to leave as-is (he wants to
   raise the underlying scope question with Luís directly instead).
-- **New decision written**: [[2026-08-18 Proxy first, defer LiveScript-side
-  SDK changes]] — msilva confirmed during this pass that the constraint
+- **New decision written**:
+  [[2026-08-18 Proxy first, defer LiveScript-side SDK changes]] — msilva
+  confirmed during this pass that the constraint
   first stated for `PRO-76` generalizes ("mostly will be deferred") rather
   than being a one-off, so it's now recorded as a real decision, not just an
   issue comment. Cites both `PRO-76` and `PRO-82` as blocked by it.
@@ -2500,11 +2512,13 @@ revisit.
   migration) in pragmatic form: no self-serve script now, worst case is
   direct config, real flow worked out once real external apps show up.
   Matches msilva's stated lean.
-- Second instance of [[2026-08-18 Bring options to Luís before deciding,
-  communicate async and often]] reaching a reply (after `PRO-94`, still
+- Second instance of
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]]
+  reaching a reply (after `PRO-94`, still
   pending).
-- Updated: [[2026-08-18 Bring options to Luís before deciding, communicate
-  async and often]] (`PRO-82` entry marked resolved), [[Airtable Proxy]]
+- Updated:
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]]
+  (`PRO-82` entry marked resolved), [[Airtable Proxy]]
   (auth epic's tail note — `PRO-82` no longer blocked; `PRO-83` still blocked
   on it but now unblockable).
 
@@ -2517,8 +2531,9 @@ revisit.
 - **msilva's call: yes, same policy** — manual rotation for both secrets, no
   tooling built now, revisit once real DB-backed storage exists. Not run past
   Luís, on the reasoning that this is applying an already-settled precedent
-  (not a fresh architectural fork), which the [[2026-08-18 Bring options to
-  Luís before deciding, communicate async and often]] norm already scopes to
+  (not a fresh architectural fork), which the
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]]
+  norm already scopes to
   "real alternatives," not every micro-choice.
 - Noted in passing: `PRO-83` was overdue (`dueDate` 2026-07-31); msilva to
   handle the Linear-side status himself.
@@ -2647,8 +2662,9 @@ asked for both ingested directly.
   `CLAUDE.md`/`log.md`).
 - **Read the 12 changed files for contradictions.** Three real findings, not
   yet fixed:
-  1. **Stale claim, not yet corrected**: [[2026-08-18 Proxy first, defer
-     LiveScript-side SDK changes]] (still `updated: 2026-08-19`) lists
+  1. **Stale claim, not yet corrected**:
+     [[2026-08-18 Proxy first, defer LiveScript-side SDK changes]] (still
+     `updated: 2026-08-19`) lists
      `PRO-82` under "What this blocks," but `PRO-82` was resolved the next day
      — recorded correctly on [[Airtable Proxy]] and in this log. `index.md`'s
      Decisions-section summary of this same page repeats the stale "Blocks
@@ -2665,8 +2681,8 @@ asked for both ingested directly.
      filename's bytes. The citation doesn't exactly match the file it points
      at.
 - **Raw-layer anomaly, not a wiki defect**: `raw/Clippings/How we built our
-  multi-agent research system.md` — the file [[How we built our multi-agent
-  research system]] cites as its `source:` — no longer exists in `raw/`.
+  multi-agent research
+  system.md` — the file [[How we built our multi-agent research system]] cites as its `source:` — no longer exists in `raw/`.
   It was there and empty (frontmatter + title only) during the 2026-08-20
   ingest; something removed it since. `raw/` is off-limits to touch or
   investigate further on my own initiative — flagged for msilva, not acted
@@ -2684,8 +2700,9 @@ asked for both ingested directly.
   through the `PRO-82` line under "What this blocks" and added a visible
   **Resolved 2026-08-20** correction pointing at Luís's actual decision and
   [[Airtable Proxy]] — `PRO-76` remains genuinely open, `PRO-82` no longer
-  blocked by this scope rule. The stray `[[Proxy em produção validado c/
-  LiveScript]]` wikilink (a Linear project name, not a wiki entity) changed to
+  blocked by this scope rule. The stray
+  `[[Proxy em produção validado c/ LiveScript]]` wikilink (a Linear project
+  name, not a wiki entity) changed to
   plain quoted text, matching how it's written everywhere else in the vault.
   `updated:` bumped to 2026-08-20.
 - **`index.md`**: the Decisions-section line for the same page rewritten to
@@ -2698,8 +2715,9 @@ asked for both ingested directly.
   and title are unaffected — wiki naming is Title Case/readable by
   convention, independent of the raw file's exact characters; only the
   citation pointer needed to match exactly.
-- Not touched: the missing-raw-file anomaly on [[How we built our
-  multi-agent research system]] — still flagged for msilva, not a wiki-side
+- Not touched: the missing-raw-file anomaly on
+  [[How we built our multi-agent research system]] — still flagged for
+  msilva, not a wiki-side
   fix.
 
 ## [2026-08-20] ingest | 1:1 Matheus - Gabrielle (2026-08-20)
@@ -3057,8 +3075,8 @@ asked for both ingested directly.
   schema).
 - **Achado confirmado, sem mudança**: `raw/Clippings/How we built our
   multi-agent research system.md` continua ausente — já flagado no 11º
-  lint, já documentado inline em [[How we built our multi-agent research
-  system]].
+  lint, já documentado inline em
+  [[How we built our multi-agent research system]].
 - **Duas fontes em `raw/Clippings/` sem página em `sources/`**: `Harness
   engineering for coding agent users.md` (Böckeler/Martin Fowler) e `How to
   Build a Custom Agent Harness.md` (Runkle/LangChain), ambas capturadas
@@ -3233,8 +3251,8 @@ asked for both ingested directly.
   [[Fluxo Agêntico project instruction]], coluna "Luís acha" e coluna "Gabi
   acha", cada uma citando a meeting de origem
   ([[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]],
-  [[2026-08-19 1-1 Matheus - Gabrielle]], [[2026-08-18 1-1 Matheus -
-  Luís]], [[2026-08-19 1-1 Matheus - Luís]]). A tabela por-tema da versão
+  [[2026-08-19 1-1 Matheus - Gabrielle]], [[2026-08-18 1-1 Matheus - Luís]],
+  [[2026-08-19 1-1 Matheus - Luís]]). A tabela por-tema da versão
   anterior foi retirada — a maior parte das perguntas (A6 vs. skills repo,
   A10/intranet, qual agente primeiro) já fica embutida no contexto de cada
   linha da tabela de agentes; sobrou só uma lista curta de "perguntas pra
@@ -3301,9 +3319,10 @@ asked for both ingested directly.
   msilva, não pra um colega pegar do zero; geração de artefato
   compartilhável só sob pedido explícito dele.
 - **Aplicado como teste real**: as três páginas em cadeia sobre
-  compartilhar a automação de contabilidade — [[Claude capabilities map -
-  accounting data scope]], [[Sharing the accounting automation with the
-  team]], [[Sharing via Projects - the accounting project]] — são
+  compartilhar a automação de contabilidade —
+  [[Claude capabilities map - accounting data scope]],
+  [[Sharing the accounting automation with the team]],
+  [[Sharing via Projects - the accounting project]] — são
   raciocínio de domínio ainda aberto (`status: active`), não scratch
   pessoal; movidas de `reference/` pra `syntheses/`, frontmatter `type:`
   corrigido de `reference` pra `synthesis`.
@@ -3374,8 +3393,9 @@ asked for both ingested directly.
   table scan e 2× select sem projeção nos testes locais do msilva.
 - Novo item aberto: risco de isolamento por conta GCP (plano atual não isola
   projetos entre usuários; só Enterprise resolveria, segundo Luís).
-- Reforçado, não substituído: [[2026-08-14 No mandatory PR review while the
-  proxy is pre-production]] — instância concreta via review por demo ao vivo.
+- Reforçado, não substituído:
+  [[2026-08-14 No mandatory PR review while the proxy is pre-production]] —
+  instância concreta via review por demo ao vivo.
 - Atualizado: [[2026-08-21 Deploy Airtable Proxy privately behind VPN]] —
   pergunta do backend de estado do Pulumi (Cloud vs. GCS) detalhada, ainda
   aberta; novo callout sobre o risco de tier da conta GCP.
@@ -3436,10 +3456,11 @@ asked for both ingested directly.
 - **Decisão nova**: [[2026-08-24 Start Agent Flow with A10 Portfolio]] —
   msilva decide começar por A10 Portfolio, convergência direta de quatro
   vozes (Gabrielle, Luís, Carol, a própria dor do msilva). Supersede
-  [[Which agent should be built first]] e [[Comparing the first-agent
-  candidates]] (ambas `status: superseded`, mantidas como registro de
-  raciocínio) e atualiza a tabela Settled de [[What should the Agent Flow
-  research phase study]].
+  [[Which agent should be built first]] e
+  [[Comparing the first-agent candidates]] (ambas `status: superseded`,
+  mantidas como registro de
+  raciocínio) e atualiza a tabela Settled de
+  [[What should the Agent Flow research phase study]].
 - Pergunta já aberta **respondida**: A12 Data Gov não é trabalho deste time,
   segundo a Carol — atualizado em
   [[What should the Agent Flow research phase study]].
@@ -3447,14 +3468,15 @@ asked for both ingested directly.
   reabre a dúvida) e qual dos dois — Luís ou Carol — está certo sobre quais
   agentes são de fato "transversais" (Luís: só A13; Carol: A10 sim, A11
   não).
-- Reforço, não mudança: [[2026-08-24 Deprioritize A5 Watcher as first-agent
-  candidate]] ganha confirmação em primeira mão da Carol sobre agentes de
+- Reforço, não mudança:
+  [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]] ganha
+  confirmação em primeira mão da Carol sobre agentes de
   monitoramento serem menos prioritários.
 - Atualizado: [[Agent Flow]], [[Carolina Bezerra]] (vira o 1:1 do msilva
   durante a licença da Gabrielle; framework de priorização em 3 variáveis;
-  opiniões sobre Farol/monitoramento/Teacher/Executor), [[Gabrielle
-  Ferreira]] (cobertura da licença), [[Maria Fernanda Lemos]] e [[João
-  Victor Andrade]] (lacunas reais de rastreamento pro A10), [[Farol]]
+  opiniões sobre Farol/monitoramento/Teacher/Executor),
+  [[Gabrielle Ferreira]] (cobertura da licença), [[Maria Fernanda Lemos]] e
+  [[João Victor Andrade]] (lacunas reais de rastreamento pro A10), [[Farol]]
   (opinião da Carol sobre priorização, registrada sem mudar o status do
   projeto).
 - Atualizado: `index.md`.
@@ -3480,8 +3502,8 @@ asked for both ingested directly.
 - **`[!msilva]` pendentes**: nenhum novo.
 - Nenhuma contradição nova entre as três syntheses de "qual agente primeiro"
   e a decisão nova — os banners de `superseded` em
-  [[Which agent should be built first]] e [[Comparing the first-agent
-  candidates]] apontam consistentemente pra
+  [[Which agent should be built first]] e
+  [[Comparing the first-agent candidates]] apontam consistentemente pra
   [[2026-08-24 Start Agent Flow with A10 Portfolio]], e a tabela Settled de
   [[What should the Agent Flow research phase study]] reflete o mesmo
   desfecho.
@@ -3514,8 +3536,9 @@ asked for both ingested directly.
   by how that app's Airtable PAT is scoped in Airtable itself.
 - New: [[2026-08-24 Control base access via PAT scoping, not proxy logic]].
 - Updated: [[Airtable Proxy]] (trust-model wording, resolves the "one base
-  or all bases in v1" open question), [[2026-08-21 Deploy Airtable Proxy
-  privately behind VPN]] (inline correction — the "base allow-list"
+  or all bases in v1" open question),
+  [[2026-08-21 Deploy Airtable Proxy privately behind VPN]] (inline
+  correction — the "base allow-list"
   verification step and "per-app base allow-lists" mitigation described
   there are not being built).
 - Open: no rationale captured beyond the decision itself — flagged
@@ -3582,8 +3605,9 @@ asked for both ingested directly.
   método do Luís); A14 tem o escopo reduzido nessa fase porque sua spec
   completa pressupõe um pipeline (A1/A2/A7/A8) que ainda não existe.
 - New: [[2026-08-24 Build A10 and A14 together, PoC first]].
-- Updated: [[Agent Flow]] (novo callout de M1), [[2026-08-24 Start Agent
-  Flow with A10 Portfolio]] (aponta pra resolução), `index.md`.
+- Updated: [[Agent Flow]] (novo callout de M1),
+  [[2026-08-24 Start Agent Flow with A10 Portfolio]] (aponta pra resolução),
+  `index.md`.
 - Linear: milestone **M1 - PoC A10 + A14** criada no projeto Fluxo Agêntico
   (PRO), com issues pra especificar cada agente e rodar a PoC.
 
@@ -3649,8 +3673,9 @@ asked for both ingested directly.
   sentido ou outro.
 - Atualizado: [[2026-08-25 Bossabox AI transformation discovery]]
   (banner de correção, attendees, todas as atribuições "Carolina"
-  trocadas por "lado da Livemode, não distinguível"), [[Bossabox
-  Engagement]], [[Agent Flow]], [[Carolina Bezerra]], [[Luís Fernandez]],
+  trocadas por "lado da Livemode, não distinguível"),
+  [[Bossabox Engagement]], [[Agent Flow]], [[Carolina Bezerra]],
+  [[Luís Fernandez]],
   `index.md`.
 - Item de ação novo: msilva confirmar, se lembrar, quem disse o quê —
   principalmente o framework de priorização e as opiniões sobre Farol/
@@ -3665,8 +3690,8 @@ asked for both ingested directly.
   mais alto que uma máquina-transcrição ruim mas mais baixo que o padrão
   de uma transcrição real.
 - A reunião planejada era conjunta com [[João Victor Andrade]]
-  ([[Meeting prep - Agent Flow discovery with Mafê and João Victor -
-  2026-08-25]]); rodou só com Mafê. A metade do João fica para conversa
+  ([[Meeting prep - Agent Flow discovery with Mafê and João Victor - 2026-08-25]]);
+  rodou só com Mafê. A metade do João fica para conversa
   separada — novo action item.
 - New: `meetings/2026-08-25 Agent Flow discovery with Mafê.md`.
 - **Refina (não fecha) o gap de fonte de dados do A10 Portfolio**: a
@@ -3688,10 +3713,11 @@ asked for both ingested directly.
   fragmentação de canal do A1 — ela recebe demanda por três canais
   diferentes.
 - Atualizado: [[Maria Fernanda Lemos]] (método de suporte, Airtable como
-  fonte de intake, exemplos de padrão→institucionalização), [[Agent
-  Flow]] (tip novo, warning do A4 endereçado, open question fechada com
-  ressalva), [[Meeting prep - Agent Flow discovery with Mafê and João
-  Victor - 2026-08-25]] (ponteiro pra reunião real), `index.md`.
+  fonte de intake, exemplos de padrão→institucionalização), [[Agent Flow]]
+  (tip novo, warning do A4 endereçado, open question fechada com
+  ressalva),
+  [[Meeting prep - Agent Flow discovery with Mafê and João Victor - 2026-08-25]]
+  (ponteiro pra reunião real), `index.md`.
 - Aberto: as perguntas específicas de diagnóstico A4 (L0–L3, se "camada
   técnica" é grupo fixo ou ad hoc) não foram todas respondidas nas notas
   estruturadas — conferir contra a transcrição completa quando Mafê
@@ -3732,8 +3758,8 @@ asked for both ingested directly.
 - Atualizado: [[João Victor Andrade]] (correção do backlog e da data de
   início, método de triagem, automação, dor da Gabrielle relatada),
   [[Agent Flow]] (tip novo, correção inline no tip do A10 de 2026-08-24),
-  [[Meeting prep - Agent Flow discovery with Mafê and João Victor -
-  2026-08-25]] (ponteiro), `index.md`.
+  [[Meeting prep - Agent Flow discovery with Mafê and João Victor - 2026-08-25]]
+  (ponteiro), `index.md`.
 - Aberto: se Carol/Gabi confirmam Linear como o caminho certo pro CRM
   especificamente; se o histórico do ClickUp é importável; se a ideia de
   auto-sincronizar o arquivo da Claude via agente (N8N ou MCP) vira algo
@@ -3872,12 +3898,12 @@ asked for both ingested directly.
   build-vs-buy nunca feita — vale deixar a Bossabox rodar o assessment
   gratuito pra acelerar a pesquisa do próprio Agent Flow? — temperada
   pelo ceticismo já registrado da Carolina e pelo problema de
-  corroboração ainda não resolvido do [[2026-08-25 Bossabox AI
-  transformation discovery]].
+  corroboração ainda não resolvido do
+  [[2026-08-25 Bossabox AI transformation discovery]].
 - Atualizado: [[Agent Flow]] (tip novo, nota no gap de QA),
   [[What should the Agent Flow research phase study]] (ponteiro),
-  [[Bossabox Assessment - institutional deck]] (ponteiro), [[Luís
-  Fernandez]] e [[Arthur Tavares]] (risco de bus-factor nomeado),
+  [[Bossabox Assessment - institutional deck]] (ponteiro),
+  [[Luís Fernandez]] e [[Arthur Tavares]] (risco de bus-factor nomeado),
   `index.md`.
 
 ## [2026-08-27] ingest | Recap da Semana, 15:06
@@ -4076,8 +4102,9 @@ asked for both ingested directly.
   Fernanda, Bossabox) ficaram de fora por decisão de msilva — não são dele
   pra fechar, ficam só como registro.
 - Achados/decisões ao longo da revisão:
-  - **Correção**: [[2026-08-10 Onboarding runs proxy and agent flow in
-    parallel]] tinha um gatilho de revisão disparado (proxy estourou a
+  - **Correção**:
+    [[2026-08-10 Onboarding runs proxy and agent flow in parallel]] tinha um
+    gatilho de revisão disparado (proxy estourou a
     estimativa de 1-2 semanas, ainda pre-produção 2026-08-26) — msilva
     também corrigiu que a divisão nunca foi estritamente
     primário/secundário, ele alternou com o Agent Flow. Banner de
@@ -4208,8 +4235,9 @@ asked for both ingested directly.
   único, pasta local `C:\Users\msilva\projects\livemode-fluxo-agentico`,
   remoto `git@github.com:tech-livemode/livemode-fluxo-agentico.git`. Resolve
   uma das três pendências operacionais deixadas em aberto na síntese do
-  design da PoC ([[Como implementar a PoC do A10+A14 (LangGraph, Skill,
-  Agent SDK)]], sessão anterior no mesmo dia). Seguem abertas: origem da
+  design da PoC
+  ([[Como implementar a PoC do A10+A14 (LangGraph, Skill, Agent SDK)]],
+  sessão anterior no mesmo dia). Seguem abertas: origem da
   API key da Anthropic pro LangGraph (pessoal vs. Livemode) e quem paga o
   uso.
 - Antes disso, montei em chat um guia de estudo (sem código, só leitura)
@@ -4236,8 +4264,9 @@ asked for both ingested directly.
   ([[Zed Cheatsheet]]), 0 `status: active` estagnada (impossível havendo
   <30 dias de vault), 0 wikilinks quebrados reais (mesmos falsos-positivos
   documentados: `[[Page]]`/`[[people/]]`/`[[log]]` como exemplo do schema,
-  auto-citação do próprio `log.md`, o embed `[[fluxo agêntico diagrama
-  0.png]]`, e a citação histórica `[[...Mafé...]]` num log entry de antes
+  auto-citação do próprio `log.md`, o embed
+  `[[fluxo agêntico diagrama 0.png]]`, e a citação histórica
+  `[[...Mafé...]]` num log entry de antes
   da correção de grafia — mesma categoria, texto histórico append-only).
   0 callouts `[!msilva]` pendentes (os dois hits de `[!msilva]` no vault
   são citações em prosa de callouts já resolvidos, não blocos vivos).
@@ -4398,8 +4427,9 @@ asked for both ingested directly.
   conversa), não a 1 (múltiplos triggers). Posição dele, verbatim: *"é
   desejável não travarmos a solução para inviabilizar, mas se for mais
   simples não pensar nisso, pode seguir sem isso."*
-- Fecha a open question que ficava em [[2026-08-26 1-1 Matheus - Luís
-  (agentes A10-A14)]] e em [[Desenho do agente LangGraph para A10+A14]] —
+- Fecha a open question que ficava em
+  [[2026-08-26 1-1 Matheus - Luís (agentes A10-A14)]] e em
+  [[Desenho do agente LangGraph para A10+A14]] —
   a ideia de `thread_id`/`chat_id` por adapter (já registrada como
   "possível caminho") cumpre a condição do Luís: não trava, não precisa
   ser construída agora.
@@ -4551,8 +4581,9 @@ asked for both ingested directly.
   `PortfolioReader` como `typing.Protocol`. Rejeitado: arvore completa
   domain/application/adapters (pesada demais pra PoC); `A10Analyzer`/
   `A14Reporter` como Protocol que o agente LangChain implementaria - reabre
-  o padrao ja descartado em [[Como implementar a PoC do A10+A14 (LangGraph,
-  Skill, Agent SDK)]] de uma interface compartilhada entre frentes, que
+  o padrao ja descartado em
+  [[Como implementar a PoC do A10+A14 (LangGraph, Skill, Agent SDK)]] de uma
+  interface compartilhada entre frentes, que
   colapsaria as tres numa so; classes Run*/RunPipeline (cerimonia sem
   ganho em Python); suite de 4 niveis (mais do que "pode ser simples"
   pedia).
@@ -5050,9 +5081,10 @@ asked for both ingested directly.
 - msilva perguntou como replicar a lógica de "camada de ontologia" (OS V2,
   vocabulário comum tool-agnostic) a que a [[Bossabox Engagement]] chegou.
 - Resposta cruzou três peças já existentes no Fluxo Agêntico que são a mesma
-  lógica em miniatura — contrato/ports-and-adapters ([[Vocabulário do Fluxo
-  Agêntico]]), [[Agent Harness Template]], e o próprio [[Como deve funcionar
-  o molde de agente]] — contra duas lacunas reais: o mapeamento DTO≠domínio
+  lógica em miniatura — contrato/ports-and-adapters
+  ([[Vocabulário do Fluxo Agêntico]]), [[Agent Harness Template]], e o
+  próprio [[Como deve funcionar o molde de agente]] — contra duas lacunas
+  reais: o mapeamento DTO≠domínio
   só existe para o Linear, e "sinal"/"memória do sistema agêntico" não tem
   dono.
 - Filed como seção nova em [[Como deve funcionar o molde de agente]] (a
@@ -5064,9 +5096,10 @@ asked for both ingested directly.
 - msilva perguntou se o cruzamento com a ontologia da Bossabox merecia mais
   registro; confirmado que era só wiki (nenhuma issue no Linear). Revisando
   [[Agent Flow]] pra decidir onde, achado um gap real: a página-mãe não tinha
-  nenhum callout apontando pro trabalho de [[Como deve funcionar o molde de
-  agente]] nem pra [[2026-09-01 Modelar SOUL em tabelas com composição
-  plana]], apesar de ambos serem do mesmo dia e do mesmo projeto.
+  nenhum callout apontando pro trabalho de
+  [[Como deve funcionar o molde de agente]] nem pra
+  [[2026-09-01 Modelar SOUL em tabelas com composição plana]], apesar de
+  ambos serem do mesmo dia e do mesmo projeto.
 - Adicionado callout `[!tip]` em [[Agent Flow]], seguindo o padrão dos demais
   pointers cronológicos, cobrindo molde + SOUL + o cruzamento com a
   [[Bossabox Engagement]].
@@ -5087,8 +5120,9 @@ asked for both ingested directly.
   parsing hoje, mas vale normalizar na próxima passada por esses arquivos.
 - **`[!msilva]` sem tratar**: nenhum — os únicos 4 hits de `[!msilva]` no
   vault são citações em prosa de callouts já resolvidos e apagados
-  ([[Agent Harness Template]], [[2026-08-19 Identify proxy apps by URL path,
-  not header]]), confirmando o lint anterior de 2026-08-27.
+  ([[Agent Harness Template]],
+  [[2026-08-19 Identify proxy apps by URL path, not header]]), confirmando o
+  lint anterior de 2026-08-27.
 - **Contradições internas** (páginas com 3+ commits, lidas por inteiro) — 12
   achados reais, entre eles: [[Agent Flow]] com `phase: research` no
   frontmatter contra callouts recentes de PoC/produção; checklist marcado
@@ -5116,8 +5150,9 @@ asked for both ingested directly.
   "DTO≠domínio só existe pro Linear" — a primeira não tem nem padrão nem dono,
   a segunda já tem `linear_client.py` como modelo pra copiar.
 - Como Luís já havia pedido explicitamente, em 2026-08-20, para não desenhar
-  memória antes de assentar quais entidades existem (ver [[Vocabulário do
-  Fluxo Agêntico]]), o trabalho criado não é desenho direto — é revisitar com
+  memória antes de assentar quais entidades existem (ver
+  [[Vocabulário do Fluxo Agêntico]]), o trabalho criado não é desenho direto
+  — é revisitar com
   ele se essa objeção ainda se sustenta, agora que A10/A14 estão em construção
   e o molde de agente está sendo fechado.
 - Criado spike [PRO-517](https://linear.app/projetos-livemode/issue/PRO-517/revisitar-se-ja-da-pra-desenhar-a-memoria-compartilhada-dos-agentes)
@@ -5141,8 +5176,8 @@ asked for both ingested directly.
   (sem shape do Linear vazando no tipo) — não precisam de trabalho agora;
   não há hoje uma segunda fonte de tickets competindo por esses conceitos.
   O resto do dado do GitHub (arquivos, commits, branches) fica cru de
-  propósito — é "sinal" pro LLM julgar, não domínio, per [[Vocabulário do
-  Fluxo Agêntico]].
+  propósito — é "sinal" pro LLM julgar, não domínio, per
+  [[Vocabulário do Fluxo Agêntico]].
 - Fix aplicado no repo `livemode-fluxo-agentico`: `GithubPR` ganhou os
   campos que só existiam no dict solto (todos opcionais);
   `github_client.get_pr_status` devolve `list[GithubPR]`;
@@ -5174,8 +5209,9 @@ asked for both ingested directly.
   `hasFilter`/`hasFieldProjection`/`bytes` capturados, `recordCount` ainda
   genuinely aberto); [[Como deve funcionar o molde de agente]] (disclaimer
   de escopo da Soul datado, não mais contradizendo a seção SOUL V1 —
-  também capturada no commit misto acima); duas 1:1s com [[Gabrielle
-  Ferreira]] (2026-08-14: pergunta de deadline fechada por prática, não
+  também capturada no commit misto acima); duas 1:1s com
+  [[Gabrielle Ferreira]] (2026-08-14: pergunta de deadline fechada por
+  prática, não
   por reunião; 2026-08-20: `PRO-94` marcado resolvido no mesmo dia,
   espelhando o Commitments); a decisão de `PRO-392` em waves (linguagem
   "objetivo real" reescrita como superada pela seção Resolvido);
@@ -5207,8 +5243,9 @@ asked for both ingested directly.
   (`work-98`, `work-8c`, via `ListAgents`) estão ativas no mesmo working
   tree; uma delas commitou `decision | Atacar a lacuna de memória do
   sistema agêntico primeiro` no meio desta correção, capturando de
-  carona as edições já feitas em [[Agent Flow]] e [[Como deve funcionar o
-  molde de agente]]. Sinalizado a msilva; nenhuma edição foi perdida.
+  carona as edições já feitas em [[Agent Flow]] e
+  [[Como deve funcionar o molde de agente]]. Sinalizado a msilva; nenhuma
+  edição foi perdida.
 - Updated: `concepts/Packaging as skills.md`, `decisions/2026-08-27
   Implementar PRO-392 em waves, mas em pair programming.md`,
   `meetings/2026-08-14 1-1 Matheus - Gabrielle.md`, `meetings/2026-08-20
@@ -6452,10 +6489,10 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
 - Corrigido: dois wikilinks quebrados por falta de prefixo de data
   (apontavam pro decision certo mas sem resolver) em
   `projects/Airtable Proxy.md` e `meetings/2026-09-15 Proxy e Fluxo
-  Agêntico com Luís.md`, agora `[[2026-09-17 Conectar o LiveScript ao
-  proxy via feature-airtable-proxy, sem OTel por ora]]` e
-  `[[2026-09-16 Resolver rollback do LiveScript com checagem de
-  variáveis de ambiente]]`.
+  Agêntico com
+  Luís.md`, agora `[[2026-09-17 Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por ora]]`
+  e
+  `[[2026-09-16 Resolver rollback do LiveScript com checagem de variáveis de ambiente]]`.
 - Corrigido: `syntheses/What should the Agent Flow research phase
   study.md` listava "A1 + A2 um agente ou dois?" como pergunta aberta;
   já resolvida em 2026-09-16 (virou o agente único **Intake**, ver
@@ -6678,8 +6715,9 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   áudio: `Microphone` = msilva (gravador confirmado), `System audio` =
   Luís (confirmado pelo título e pelo conteúdo).
 - Achado central: três violações concretas, no mesmo 1:1, da norma já
-  registrada em [[2026-08-18 Bring options to Luís before deciding,
-  communicate async and often]] — intake retomado sem avisar, Cloudflare
+  registrada em
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]]
+  — intake retomado sem avisar, Cloudflare
   Workers escolhido no lugar do Next.js sem comunicar, Supabase adotado
   por ruído de comunicação (Luís alega decisão contrária prévia, sem
   registro nesta wiki — ficou como open question). Corolário novo:
@@ -6936,8 +6974,9 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   qualidade já estava documentado ali (Marketplace binário, `claude plugin
   eval` dev-time, `skills-ref validate` só estrutural, update pull,
   telemetria dependente de exporter), mas a corroboração externa — nem a
-  MKT1 automatizou manutenção por conteúdo ([[Inside team MKT1's
-  multiplayer AI setup]], Parte 3) — não estava citada nesta página, só em
+  MKT1 automatizou manutenção por conteúdo
+  ([[Inside team MKT1's multiplayer AI setup]], Parte 3) — não estava citada
+  nesta página, só em
   [[A6 Curador deve padronizar e sinalizar defasagem de skills]].
 - Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (seção
   "Arquitetura resultante", linka a Parte 3 da MKT1 no ponto de gate de
@@ -7472,9 +7511,21 @@ no grafo e não contavam como inbound.
 Restante do relatório de lint, não corrigido nesta passada: premissa vencida
 em [[2026-08-14 No mandatory PR review while the proxy is pre-production]]
 (o proxy está em produção desde 2026-09-14); pergunta sobre o plano Business
-ainda marcada aberta em [[2026-08-14 Migrate project management from Jira to
-Linear]] embora resolvida em 2026-09-14; `PDI.md` vazio na raiz, fora do
+ainda marcada aberta em
+[[2026-08-14 Migrate project management from Jira to Linear]] embora
+resolvida em 2026-09-14; `PDI.md` vazio na raiz, fora do
 layout; 7 arquivos de `raw/` sem cobertura, sendo o transcript
 `Agente de portfólio - 2026_09_22` o único realmente não ingerido; e 90
 páginas `status: active` paradas há 30+ dias, das quais ~37 são convenção
 errada (nota de reunião e `sources/` deveriam nascer `stable`).
+
+## [2026-10-19] refactor | log.md incluído na correção de wikilinks + remoção de PDI.md
+
+- Mesma correção da entrada anterior aplicada ao `log.md`: 56 links
+  recolhidos para uma linha só. A regra de append-only foi aberta
+  explicitamente por msilva nesta passada — a alternativa era manter 56
+  links mortos no registro mais linkado do vault. Nenhuma entrada teve
+  texto alterado: multiset de palavras idêntico antes/depois.
+- `PDI.md` removido da raiz. Arquivo vazio (0 bytes), nunca commitado, fora
+  do layout permitido para a raiz. O PDI de verdade segue em
+  [[PDI Matheus 2026]].
