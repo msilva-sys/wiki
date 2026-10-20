@@ -1,7 +1,7 @@
 ---
 type: reference
 status: active
-updated: 2026-08-18
+updated: 2026-10-20
 aliases: [claude code habits, working with claude code, tooling notes]
 tags: [claude-code, tooling, workflow]
 ---
@@ -64,3 +64,15 @@ the terminal instead. Mentioned wanting to try a setup he'd seen elsewhere —
 planning with Fable/Opus-class models, implementing with a top GPT model — but
 noted OpenAI's own CLI doesn't expose that particular model. Low-confidence
 transcription on the exact model name; not verified.
+
+**Eixo mais amplo, de fonte externa (2026-10-20)**:
+[[Rasmic - The 4-Step Agentic Engineering Workflow]] faz o mesmo corte por
+**tarefa**, não só por etapa do trabalho — *"don't fall into this trap of having
+to use the state-of-the-art for everything; the really big models can do really
+dumb things for minuscule tasks."* A regra dele: modelo de ponta orquestra e
+revisa, modelo menor executa. Fora de código, usa um modelo barato pra crunchar
+números e um segundo modelo como subagente só pra conferir o trabalho do
+primeiro — mesma divisão executor/verificador, custo mais baixo. Hábito
+adjacente que vale copiar: **a cada modelo novo, rodar uma vez sem `AGENTS.md`
+e sem skill nenhuma** antes de reinjetar as instruções, pra saber o que é o
+modelo e o que é o harness.

@@ -1,7 +1,7 @@
 ---
 type: concept
 status: draft
-updated: 2026-09-25
+updated: 2026-10-20
 aliases: [harness template, trigger input harness output, agent template (Luís)]
 tags: [agent-flow, architecture, harness, claude-agent-sdk]
 ---
@@ -138,6 +138,33 @@ challenge, we're solving a production agent challenge"* aponta, na leitura
 dele, pro problema do harness (onde o agente roda, como se comunica) como
 categoria diferente de gerenciar skills — mesmo eixo desta pergunta em
 aberto, não resposta nova.
+
+## Um harness de codificação real, mapeado no eixo guias/sensores — 2026-10-20
+
+[[Rasmic - The 4-Step Agentic Engineering Workflow]] descreve um harness de
+engenharia em produção (`AGENTS.md` + quatro skills) que cai limpo no eixo
+feedforward/feedback de [[Harness engineering for coding agent users]]:
+
+| Passo | Skill | Guia ou sensor |
+|---|---|---|
+| Isolate | `new-feature` (git worktree) | Guia — restringe o espaço antes de agir |
+| Build | `code-structure` (service layer) | Guia — prescreve a arquitetura em vez de deixar o agente inventar uma por feature |
+| Prove | `evidence-driven-testing` / `before-and-after` | Sensor computacional — vídeo, screenshot ou número do antes e depois |
+| Ship | `grep-loop` (Greptile) | Sensor inferencial — outro LLM julga o PR, com critério de parada numérico (5/5) e teto de iteração |
+
+Por que interessa a este template: é a primeira fonte do vault que mostra um
+harness completo **em que a composição e o ciclo de controle são a mesma
+coisa**. O `AGENTS.md` dele não lista o que o harness tem (Soul.md, Skills,
+Tools, MCP — a leitura do template de Luís); lista **em que ponto do fluxo
+chamar qual skill**. As duas taxonomias param de ser só complementares: aqui a
+ordem das peças *é* a especificação do agente.
+
+Consequência pro desenho dos 14 agentes: o passo 4 é um caso concreto de gate
+inferencial com critério de parada explícito — exatamente a peça que falta nos
+gates de A12/A13, discutidos até aqui como gate determinístico. Mas o próprio
+autor não confia nele sozinho: mantém review manual depois do 5/5, o que é o
+*behaviour harness* de Böckeler reaparecendo como problema não resolvido, não
+como peça pronta pra copiar.
 
 ## Questões em aberto
 

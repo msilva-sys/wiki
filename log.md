@@ -7592,3 +7592,13 @@ A normalização foi mecânica e **não auditou premissa de decisão nenhuma**.
 As 27 de `decisions/` foram para `stable` por serem `active`, não por
 alguém ter conferido se ainda valem. Se outras estiverem vencidas como a do
 PR review, só aparece quando a página for lida.
+
+## [2026-10-20] ingest | Rasmic — The 4-Step Agentic Engineering Workflow
+- Lido raw/The 4-Step Agentic Engineering Workflow I Use to Ship Real Apps Ras Mic.md (1865 linhas, transcript de vídeo do YouTube; host Peter, convidado Michael/Rasmic)
+- Data de publicação não determinável — sem cabeçalho de data, sem data no nome do arquivo, `birth` = 2026-10-20 (dia do download). Registrado como indeterminado em vez de usar o mtime.
+- Nova: sources/Rasmic - The 4-Step Agentic Engineering Workflow.md
+- Atualizadas: concepts/Packaging as skills.md (7ª fonte de evidência + nova seção com o critério descritor-vs-workflow pra durabilidade de skill), concepts/Agent Harness Template.md (os 4 passos mapeados no eixo guias/sensores da Böckeler; primeira fonte do vault onde composição e ciclo de controle do harness são a mesma coisa), reference/Claude Code Working Habits.md (roteamento de modelo por tarefa, não só por etapa; hábito de testar modelo novo sem AGENTS.md antes de reinjetar skills)
+- Atualizados: index.md
+- Takeaway central: "software factory" dele não é o loop autônomo — é `AGENTS.md` + 4 skills nomeadas dizendo em que ponto do fluxo chamar qual, com os passos 3 e 4 (Prove, Ship) existindo pra encurtar o review manual, não eliminá-lo. Rigor proporcional a quem usa o software; security audit obrigatório onde há gente e dinheiro.
+- Decidido não criar concept novo pra "evidência antes do merge" — já é o eixo *sensores* de [[Harness engineering for coding agent users]]; virou citação na source, não página.
+- Ressalva registrada na própria página: nomes de modelo ("Astra", "Fable", "Luna", "Soul") corrompidos pela transcrição automática; claims específicos de modelo marcados como unverified.
