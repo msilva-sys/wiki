@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-10-20
+updated: 2026-10-21
 date: 2026-09-01
 aliases: [molde de agente, agent blueprint, agent template configurável]
 tags: [agent-flow, agents, harness, soul, configuration]
@@ -419,6 +419,14 @@ genérica — *"pelo que você tá explicando, é para qualquer agente"*.
 Não virou tarefa na conversa. Fica como critério a aplicar, não como dívida
 já aceita.
 
+**Primeira aplicação ao código, 2026-10-21.** Ver [[O que falta para os agentes passarem no teste de portabilidade]]. O
+teste falha por cinco motivos: o `core` mistura kernel, domínio de entrega,
+Linear e processo; o adapter do Linear copia em vez de traduzir; o processo
+da Livemode está em `Literal` e constante (o `Criterion` vive em 6 lugares);
+não há manifesto nem registro; e a arquitetura não está disponível pro
+agente de código. Traz um manifesto mínimo derivado dos 4 agentes reais e
+uma arquitetura-alvo em três camadas, não decididas.
+
 ## Questões em aberto
 
 - ~~Qual problema concreto o molde precisa resolver primeiro: criação de
@@ -435,6 +443,9 @@ já aceita.
   suficiente) — a direção é registrar candidatos a campo configurável
   conforme aparecem, pro terceiro agente real testar o schema de verdade.
 - Quais campos pertencem ao molde e quais só aparecem na instância?
+  Esboço de 2026-10-21 em [[O que falta para os agentes passarem no teste de portabilidade]]: manifesto mínimo
+  só com campos que os 4 agentes usam; vários campos daqui colapsam em
+  outros. Não validado com Luís.
 - Quais mudanças podem ser feitas sem código, e quais exigem revisão técnica?
 - Como versões de molde e de instância se relacionam quando o molde evolui?
 - Quais invariantes não podem ser sobrescritas por uma instância?
@@ -444,7 +455,9 @@ já aceita.
   specs reais de cada um.
 - Vale a pena migrar `CLOSED_STATE_TYPES` (e regras hardcoded parecidas) de
   constante Python pra campo computado no tipo (`Issue.is_closed`) agora, ou
-  só quando um segundo sistema de tickets entrar?
+  só quando um segundo sistema de tickets entrar? O estudo de 2026-10-21
+  recomenda tipos neutros (`Stage`, `Priority`, `Health`) mapeados no
+  adapter do Linear, porque hoje a tradução é cópia. Não decidido.
 - Vale usar o tier gratuito da Bossabox pra validar/acelerar a camada de
   memória compartilhada em vez de reconstruir do zero? (ver
   [[What Bossabox's Assessment suggests for Agent Flow]], ponto 7)

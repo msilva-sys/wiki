@@ -7645,3 +7645,32 @@ PR review, só aparece quando a página for lida.
 - Pendências sugeridas, não executadas: ingest do raw de 2026-09-22; página
   para a revisão de 2026-10-08 (fontes: `PRO-1005` + DM), se msilva quiser
   registrar.
+
+## [2026-10-21] synthesis | O que falta para os agentes passarem no teste de portabilidade
+
+- Pedido de msilva: pensar o Agent Flow de forma arquitetural "como o Luís
+  indicou", com o exemplo da lista `Criterion` em
+  `portfolio_analyst/domain/contracts.py`.
+- Varredura read-only do repo `livemode-fluxo-agentico` (commit `fb44842`) em 8
+  fatias paralelas, 212 achados brutos. A verificação adversarial automática
+  morreu por falta de crédito no meio da sessão; os achados que sustentam as
+  conclusões foram conferidos direto no código: core importa agentes (12
+  imports em `app.py` e `models.py`), único import agente→agente
+  (`alert_cron_failure`), adapter do Linear é cópia (`model_dump`), `Criterion`
+  em 6 lugares contra a decisão escrita em `prompts-langfuse.md` (l. 269 e
+  284), prompt em Python no prioritizer, prioritizer confirma sem a trava do
+  intake, kill switch literal no cron do A14, repo sem `CLAUDE.md`/`AGENTS.md`.
+- Achados avulsos conferidos: `_ACTIVE_ISSUE_FILTER` não exclui `duplicate`
+  (bug pequeno), e-mail de colega num comentário (não reproduzido na wiki),
+  texto "report de segunda" com cadência de quinta, código morto, eval
+  escrevendo no banco do app. `stage_inconsistent` do A14 conferido como morto
+  (as outras ocorrências da string são chave de dict no A10).
+- New: `syntheses/O que falta para os agentes passarem no teste de
+  portabilidade.md`.
+- Updated: `syntheses/Como deve funcionar o molde de agente.md` (primeira
+  aplicação do teste ao código; ponteiros nas duas questões em aberto que o
+  estudo toca, sem marcá-las como resolvidas), `projects/Agent Flow.md`,
+  `index.md`.
+- Não mexi no repo nem no Linear: proposta não decidida, e a regra de
+  conservadorismo com issues vale aqui. Próximo passo sugerido é ADR com o
+  Luís antes de 2026-10-31.

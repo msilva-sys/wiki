@@ -1450,6 +1450,8 @@ consultant rather than validator.
 Último walkthrough técnico longo antes da saída dele. Ver [[2026-10-20 Matheus - Luís (arquitetura dos agentes, ADR e tokens)]].
 Trajetória completa da opinião dele (ago→out), com o que a wiki não tinha
 (Slack, 22/09, 08/10) e correções de atribuição: [[O que Luís acha do projeto dos agentes]].
+O teste de portabilidade aplicado ao código, com o que falta e uma
+arquitetura-alvo proposta (2026-10-21): [[O que falta para os agentes passarem no teste de portabilidade]].
 
 **O teste de portabilidade falha hoje.** Luís propôs apagar tudo que é
 específico de Linear e levar o projeto para outra empresa; a leitura dele ao
