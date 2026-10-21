@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-09-10
+updated: 2026-10-20
 date: 2026-09-01
 aliases: [molde de agente, agent blueprint, agent template configurável]
 tags: [agent-flow, agents, harness, soul, configuration]
@@ -371,6 +371,53 @@ agente, (2) adicionar entrada no `crons` do `vercel.json`, (3) **disparar um
 deploy real de produção** — permissão de risco/blast-radius bem maior que
 escrever uma linha em tabela. Acompanha as outras peças do molde: nada disso
 foi codado, fica registrado como limite conhecido da ambição de factory.
+
+## Loop vs. workflow não é eixo do molde — resolvido 2026-10-20
+
+[[2026-10-20 Matheus - Luís (arquitetura dos agentes, ADR e tokens)]]: msilva levou a distinção **agente em loop** (as ferramentas são expostas
+ao modelo, que as chama até atingir o objetivo) vs. **agente em workflow**
+(execução passo a passo) como obstáculo para chegar a um molde único — se há
+dois tipos, teria que haver dois moldes. Luís encerrou: *"isso pouco importa
+pro desenho que a gente fez [...] é como, dentro dele, ele vai funcionar"*, e
+depois mais direto: *"esse teu argumento inicial do workflow ou looping, ele
+pra mim é zero dentro dessa discussão"*.
+`(unverified: diarização colapsada no raw, atribuição inferida)`
+
+A leitura: loop vs. workflow é **estratégia de execução interna**, não um
+campo do molde. Fica abaixo da fronteira que o molde descreve, junto do que
+já está registrado como runtime nesta página. Não gera família de arquétipos —
+consistente com "Molde único, sem família de arquétipos", resolvido em
+2026-09-10 por outro caminho.
+
+## O teste de portabilidade como critério de aceitação — 2026-10-20
+
+Da mesma conversa, o teste concreto que Luís propôs para saber se o molde
+existe de fato, em vez de existir só no papel:
+
+> *"Quero pegar o teu projeto, deletar tudo que é específico de Linear e levar
+> para outra empresa. Dá para fazer isso?"*
+
+O resultado esperado por ele: sobra uma base clara de como um agente funciona,
+com interfaces explícitas, e algo como 5% de exemplo específico de domínio
+deixado de propósito.
+
+**Isso dá a esta página o critério de aceitação que faltava.** Até aqui o molde
+estava descrito por anatomia (o que ele tem: slots, Soul, Trigger, MCP,
+agent-as-tool) e por propósito (nortear a criação de agentes novos). O teste de
+portabilidade é a primeira forma de **falhar** — e, portanto, de verificar: se
+apagar o domínio não deixa um molde de pé, o molde não existe ainda,
+independentemente de quantos slots estejam documentados.
+
+**Resultado da primeira aplicação: não passa.** Leitura de Luís olhando o
+código — *"parece que tá tudo ainda grudadão"*. O exemplo concreto é a pasta
+`core`, que deveria conter o comum a qualquer agente mas carrega `outcomes`
+falando de milestone e delivery, vocabulário de domínio. Contraexemplo do mesmo
+walkthrough: a camada `review` (o agente propõe fato ou ação, um sim/não humano
+decide, nada é salvo ou executado sozinho) ele reconheceu como genuinamente
+genérica — *"pelo que você tá explicando, é para qualquer agente"*.
+
+Não virou tarefa na conversa. Fica como critério a aplicar, não como dívida
+já aceita.
 
 ## Questões em aberto
 

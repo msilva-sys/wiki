@@ -1445,6 +1445,42 @@ this isn't a standing start.
 Gabrielle's framing of ownership: *"é teu filho e teu projeto"*, with Luís as
 consultant rather than validator.
 
+## Revisão de arquitetura com Luís — 2026-10-20
+
+Último walkthrough técnico longo antes da saída dele. Ver [[2026-10-20 Matheus - Luís (arquitetura dos agentes, ADR e tokens)]].
+
+**O teste de portabilidade falha hoje.** Luís propôs apagar tudo que é
+específico de Linear e levar o projeto para outra empresa; a leitura dele ao
+olhar o código foi *"parece que tá tudo ainda grudadão"*. Caso concreto: a
+pasta `core`, que deveria ser o comum a qualquer agente, carrega `outcomes`
+com vocabulário de domínio (milestone, delivery). Contraexemplo aprovado na
+mesma passada: a camada `review` — agente propõe fato ou ação, humano aprova
+ou rejeita, nada salva ou executa sozinho — é genérica de verdade.
+Critério registrado em [[Como deve funcionar o molde de agente]].
+
+**Loop vs. workflow deixou de ser questão de desenho.** Luís: *"é zero dentro
+dessa discussão"* — estratégia de execução interna, não campo do molde.
+
+**Estado do MCP, pela primeira vez registrado aqui.** Integra os agentes
+Portfólio e Projeto com Claude e Codex via **chat streaming**: o Claude
+conversa com o agente e pergunta o que ele sabe, mas **não** recebe as
+ferramentas dele. Origem: ideia da Carolina, implementado às pressas e pouco
+testado desde então. O argumento a favor desse desenho, articulado por Luís:
+entregar tools direto ao Claude faz cada instalação ficar configurada de um
+jeito e **perde o "coração" de cada agente**. Em aberto: msilva levantou que o
+chat consome token duas vezes, e a alternativa discutida foi expor rotas com
+objetivo delimitado (*"analisa o projeto, dado o ID"*) em vez de um chat que
+pode fazer qualquer coisa — Luís sem opinião formada, *"falta pensar, planejar
+e talvez testar"*.
+
+**Dívida apontada, não endereçada**: `agent_actions` (o agente agir sobre as
+próprias sugestões) está parado; a integração com Bugsnag não foi verificada
+quanto a ser a oficial ou um caminho inventado pelo modelo; `infra` merece ser
+desmembrada.
+
+`(unverified: diarização colapsada no raw dos dois arquivos; atribuição de
+falas inferida por contexto)`
+
 ## Open questions
 
 - **What, concretely, does the Watcher/A5 agent do — and does it need the proxy at

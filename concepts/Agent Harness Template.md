@@ -166,6 +166,36 @@ autor não confia nele sozinho: mantém review manual depois do 5/5, o que é o
 *behaviour harness* de Böckeler reaparecendo como problema não resolvido, não
 como peça pronta pra copiar.
 
+## A arquitetura é peça do harness, não contexto do arquiteto — 2026-10-20
+
+Três fontes independentes convergem num ponto que nenhuma delas chama assim:
+**a arquitetura só regula o agente se estiver disponível como artefato que ele
+lê, não como entendimento que o humano carrega.**
+
+| Fonte | Como aparece |
+|---|---|
+| Luís, [[2026-10-20 Matheus - Luís (arquitetura dos agentes, ADR e tokens)]] | *"Como é que ele vai seguir a arquitetura que você, como arquiteto, quer que ele siga, se você não tá disponibilizando a arquitetura para ele?"* — diagnóstico de que a arquitetura do repo dos agentes vive no *brain* de msilva, não versionada |
+| [[Rasmic - The 4-Step Agentic Engineering Workflow]] | A skill `code-structure` **é** exatamente isso: a arquitetura prescrita e nomeada dentro do harness, invocada no passo Build |
+| [[Harness engineering for coding agent users]] | A categoria *architecture fitness* e o eixo **guias (feedforward)** — regular antes de agir, não corrigir depois |
+
+A convergência é não planejada: Luís não leu o Rasmic, e o Rasmic chegou ao
+vault no mesmo dia por outro caminho. O que ela acrescenta a este template é
+que **Skills não é um slot neutro de capacidades** — é onde a arquitetura
+precisa morar para ter efeito regulatório. Um harness com Soul.md, Tools e MCP
+bem definidos, mas sem a arquitetura escrita em lugar nenhum, deixa a decisão
+estrutural para o modelo a cada tarefa.
+
+Luís vai além e torna a regra inegociável: a decisão vira **ADR**, e
+*"a partir daquele momento, aquilo ali é sagrado e ele não pode fugir
+daquilo"*. Onde a arquitetura de fato não serve, a saída é um puxadinho
+marcado em ADR própria — nunca abandonar a ADR em silêncio. Isso é o
+equivalente, no slot Skills, do critério de parada numérico que o passo Ship do
+Rasmic dá ao slot de sensores.
+
+**Não testado neste vault.** Nenhum dos agentes do [[Agent Flow]] tem hoje a
+arquitetura como arquivo no repositório — o diagnóstico de 2026-10-20 é
+justamente a ausência disso.
+
 ## Questões em aberto
 
 - Quais dos 14 agentes ficam no primeiro nível, com Trigger/Input/Harness/Output

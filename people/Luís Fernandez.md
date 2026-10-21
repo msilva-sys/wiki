@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-10-16
+updated: 2026-10-20
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
@@ -244,3 +244,48 @@ sometimes builds directly, otherwise supports.
   + uso estratégico de IA (multiplicar o time, não só uso pessoal); fit
   cultural avaliado por Carolina. Na visão dela, o próprio Luís hoje olha
   mais pro produto do que pro desenvolvimento em si — mesma conversa.
+
+## O método que ele prescreve — 2026-10-20
+
+Última conversa técnica longa antes da saída ([[2026-10-20 Matheus - Luís (arquitetura dos agentes, ADR e tokens)]]). Vale registrar como método
+dele, não só como feedback pontual, porque é a forma mais explícita que ele
+deu de como trabalha:
+
+1. **Arquitetura antes de código.** Exemplo próprio em curso na conversa: ~20
+   dias com acesso ao código de outro projeto, fora da Livemode, **sem ter
+   escrito nada** — testando, estudando e validando até ter opinião clara
+   sobre a arquitetura.
+2. **ADR como regra sagrada.** Pega o desenho, questiona com o modelo, pede
+   que ele descreva a solução por escrito — *"a partir daquele momento,
+   aquilo ali é sagrado e ele não pode fugir daquilo"*. Exceção prevista: se o
+   modelo apontar que algo não funciona, *"bota um puxadinho, deixa marcado
+   lá no outro ADR específico e segue"*.
+3. **A arquitetura mora no repositório, não na cabeça.** *"Como é que ele vai
+   seguir a arquitetura que você, como arquiteto, quer que ele siga, se você
+   não tá disponibilizando a arquitetura para ele?"*
+4. **Arquiteto não revisa todo o código.** Revisar tudo é sintoma de
+   arquitetura não disponibilizada. Ele reconhece não acompanhar cada passo do
+   agente e trata isso como parte delegável, não como falha.
+5. **Não economizar token.** Caminho dele: começou na conta mais barata do
+   Cursor e foi subindo a cada limite batido até o plano de 200, onde está há
+   seis meses. Regra: vir **de cima para baixo**, nunca otimizar para o modelo
+   mais fraco. Ressalvas que ele mesmo põe: não escala para 4–20 pessoas, e a
+   janela é temporária — *"enquanto os tokens estão baratos [...] uma hora o
+   preço vai pra realidade"*.
+6. **Ultra Code com plano lido e confirmado** antes de deixar rodar de
+   madrugada — consequência prática de ter a arquitetura fechada, não
+   substituto dela.
+
+**Propôs um projeto conjunto** com msilva: pegar o desenho do quadro e
+implementá-lo a quatro mãos, como caixa inicial para desenvolver qualquer
+solução de agente. Motivo declarado: *"a única forma de eu conseguir te passar
+é a gente fazer alguma coisa junto"*, precedido de *"eu não sei ensinar as
+pessoas ainda"* — ele trata a dificuldade de transmitir como limitação própria.
+Sem data marcada, e a janela acaba com a saída dele no fim de outubro.
+
+Também estabeleceu uma norma de comunicação, consistente com
+[[2026-08-18 Bring options to Luís before deciding, communicate async and often]]:
+bloqueio se avisa, não se contorna em silêncio — *"em que momento você me
+falou 'tô estourando token'?"*.
+
+`(unverified: diarização colapsada no raw; atribuição inferida por contexto)`
