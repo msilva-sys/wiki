@@ -7611,3 +7611,37 @@ PR review, só aparece quando a página for lida.
 - Atualizados: index.md
 - Decidido com msilva: registrar o diagnóstico técnico por inteiro, manter as frases mais ásperas da devolutiva só na página de `meetings/`, sem fan-out. E **não** criar concept novo para "arquitetura disponibilizada ao agente" — virou seção do [[Agent Harness Template]], onde o slot Skills já estava descrito como neutro.
 - Pendência deixada explícita na página, não resolvida: dois compromissos de msilva (renovação/plano da conta com Gabrielle e Carolina; avisar o time sobre a CLI) não foram abertos no Linear — nenhum time/projeto confirmado, e ambos parecem tarefa externa, não issue de projeto.
+
+## [2026-10-21] query | Qual a opinião do Luís sobre como está o projeto dos agentes?
+
+- Wiki primeiro (`people/Luís Fernandez`, `projects/Agent Flow`, meetings de
+  ago–out, syntheses do molde), depois o que ela não tinha: Slack (busca por
+  autor, set–out/2026), `raw/Agente de portfólio - 2026_09_22 15_00 GMT-03_00 -
+  Anotações do Gemini.md` (único raw de reunião não ingerido — lido para a
+  resposta, **não** ingerido: segue sem página em `meetings/`) e `PRO-1005`.
+- Verificação adversarial das 20 atribuições de
+  [[2026-10-20 Matheus - Luís (arquitetura dos agentes, ADR e tokens)]] contra
+  os dois raws: 18 confirmadas como Luís; ajustes anotados inline na página
+  (citação sintetizada de dois trechos; "brain" é palavra de msilva;
+  "bagunçado" provavelmente msilva; uma frase não verbatim).
+- Achados que a wiki não tinha: 2026-09-16 (Slack: mensagens dos agentes
+  "flodando" os canais, "não tô achando útil ainda"), 2026-09-23
+  (`#privado-pulso`: agente deve fazer update e ação em momentos distintos;
+  validar formatos como wireframes), 2026-09-25 (`#projetos`: fluxo agêntico
+  como caminho para agentes de outras áreas), 2026-10-01 (DM: o exercício dos
+  dois reports, "foi sua leitura ou de algum agente?"), 2026-10-02 ("fórmula
+  mais simples?"), e a **revisão de arquitetura de 2026-10-08** — sem
+  transcript, registrada só em `PRO-1005` ("estrutura atual difícil de
+  manter"); o "uma bagunça" lembrado em sessão anterior não aparece em fonte
+  escrita.
+- Leituras que evitam confusão: a "bagunça generalizada" de 2026-10-14 é
+  sobre os ~200 desenvolvedores-cidadãos da empresa, não sobre o repo dos
+  agentes; o canal `#_alertas_projetos_` que Luís questionou em 20/10 recebe
+  status de Cloudflare/GitHub, não saída dos agentes.
+- New: `syntheses/O que Luís acha do projeto dos agentes.md`.
+- Updated: `people/Luís Fernandez.md`, `projects/Agent Flow.md`,
+  `meetings/2026-10-20 Matheus - Luís (arquitetura dos agentes, ADR e tokens).md`
+  (callout de correções), `index.md`.
+- Pendências sugeridas, não executadas: ingest do raw de 2026-09-22; página
+  para a revisão de 2026-10-08 (fontes: `PRO-1005` + DM), se msilva quiser
+  registrar.

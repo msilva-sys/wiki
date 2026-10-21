@@ -2,7 +2,7 @@
 type: meeting
 status: stable
 date: 2026-10-20
-updated: 2026-10-20
+updated: 2026-10-21
 attendees: [Matheus Oliveira da Silva, Luís Fernandez]
 source: "raw/2026-10-20 Luis - Matheus (18h42 arquitetura, ADR e tokens) - Anotações do Gemini.md"
 source2: "raw/2026-10-20 Luis - Matheus (18h19 walkthrough do repo dos agentes) - Transcript.md"
@@ -28,6 +28,17 @@ da saída dele — ver [[2026-10-07 Divisão de projetos na transição de Luís
 > Luís) e marcado `(unverified: diarização colapsada)`. Mesmo tipo de problema
 > já registrado em [[2026-08-25 Bossabox AI transformation discovery]] e no 1:1
 > de 2026-09-10.
+
+> [!note] Correções de atribuição — 2026-10-21
+> Verificação adversarial dos 20 claims desta página contra os dois raws,
+> registrada em [[O que Luís acha do projeto dos agentes]]: 18 confirmados como Luís.
+> Ajustes: (1) a pergunta *"Em que momento o desenho do quadro virou a
+> solução atual?"* (Open questions) é paráfrase de dois trechos (00:04:58 e
+> 00:24:10), não verbatim — só *"muito mais filosófico"* é literal; (2)
+> *"brain"* é palavra de msilva, não diagnóstico de Luís; (3) *"talvez
+> esteja muito bagunçado"* (00:17:22) é provavelmente msilva, sobre o
+> próprio doc de reorganização; (4) *"provavelmente devolveria uma melhor"*
+> (pasta `infra`) não é verbatim. Nada muda no sentido dos Decisions.
 
 ## Decisions
 

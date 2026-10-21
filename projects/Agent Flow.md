@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: build
-updated: 2026-10-09
+updated: 2026-10-21
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -1448,6 +1448,8 @@ consultant rather than validator.
 ## Revisão de arquitetura com Luís — 2026-10-20
 
 Último walkthrough técnico longo antes da saída dele. Ver [[2026-10-20 Matheus - Luís (arquitetura dos agentes, ADR e tokens)]].
+Trajetória completa da opinião dele (ago→out), com o que a wiki não tinha
+(Slack, 22/09, 08/10) e correções de atribuição: [[O que Luís acha do projeto dos agentes]].
 
 **O teste de portabilidade falha hoje.** Luís propôs apagar tudo que é
 específico de Linear e levar o projeto para outra empresa; a leitura dele ao

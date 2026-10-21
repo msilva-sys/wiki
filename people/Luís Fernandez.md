@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-10-20
+updated: 2026-10-21
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
@@ -289,3 +289,7 @@ bloqueio se avisa, não se contorna em silêncio — *"em que momento você me
 falou 'tô estourando token'?"*.
 
 `(unverified: diarização colapsada no raw; atribuição inferida por contexto)`
+
+Trajetória completa da opinião dele sobre o projeto dos agentes —
+agosto a outubro/2026, incluindo Slack e fontes não ingeridas, com
+verificação das atribuições de 20/10 — em [[O que Luís acha do projeto dos agentes]] (2026-10-21).
