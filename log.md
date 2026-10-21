@@ -7674,3 +7674,22 @@ PR review, só aparece quando a página for lida.
 - Não mexi no repo nem no Linear: proposta não decidida, e a regra de
   conservadorismo com issues vale aqui. Próximo passo sugerido é ADR com o
   Luís antes de 2026-10-31.
+
+## [2026-10-21] lint | links do PDI e página do Guia de um Builder
+
+- Lint completo reportado em chat, nada mais corrigido além do que segue.
+  Pendente de decisão de msilva: 15 contradições (concentradas em
+  `projects/Agent Flow.md` e `projects/Airtable Proxy.md`), 2 HTML fora do
+  layout (`liveauth-vs-sentinela.html` na raiz, `Pre-leitura … 2026-09-16.html`
+  em `meetings/`), raws sem ingest (`cenarios-a14-2.2`, `O que quero que cada
+  agente faça`, `relatório de riscos e melhorias sobre o proxy`, reunião de
+  2026-09-22, 2 clippings), 3 meetings sem citação do raw, 27 páginas `active`
+  com mais de 30 dias, `syntheses/What should the Agent Flow research phase
+  study.md` candidata a `superseded`.
+- `[[PDI]]` (sobra da remoção de `PDI.md` em `8913ea4`) redirecionado para
+  `[[PDI Matheus 2026|PDI]]` em `index.md` e na reunião de 2026-10-13.
+- New: `projects/Guia de um Builder.md` — só fatos já presentes na wiki;
+  registra como open question a contradição "público vs. trava de domínio"
+  do inventário do LiveAuth.
+- Updated: `systems/Sentinela.md` (removida a open question da página
+  ausente), `meetings/2026-10-13 Matheus - Gabrielle (PDI).md`, `index.md`.

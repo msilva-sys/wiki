@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-10-08
+updated: 2026-10-21
 aliases: [sentinela, SentinelaMODE, /sentinela:sentinela]
 tags: [security, governance, homologação, cloudflare]
 ---
@@ -10,8 +10,7 @@ tags: [security, governance, homologação, cloudflare]
 
 Checagem de segurança e homologação de projetos da LiveMode. Peça central do
 **Programa de Governança e Segurança em IA** (dono: Carolina Bezerra, projeto
-Linear `Guia de um Builder`, P-PRO-16 — ainda sem página própria na wiki, ver
-[[Guia de um Builder]]).
+Linear `Guia de um Builder`, P-PRO-16 — ver [[Guia de um Builder]]).
 
 Fonte: repositórios `livemode-org/guia-de-um-builder` e
 `livemode-org/sentinelamode` (lidos via GitHub em 2026-10-06 — não há cópia
@@ -110,6 +109,4 @@ Checagem de segurança mais recente da própria Vitrine: **Grau A** (ver
 
 ## Open questions
 
-- A página do programa-mãe (`Guia de um Builder`) ainda não existe nesta
-  wiki — este é o primeiro fio dele a virar página própria.
 - Se o Hub de Automações Fiscais do Gustavo já passou pela checagem.

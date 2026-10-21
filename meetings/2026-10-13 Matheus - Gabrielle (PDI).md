@@ -2,7 +2,7 @@
 type: meeting
 status: stable
 date: 2026-10-13
-updated: 2026-10-13
+updated: 2026-10-21
 attendees: [Matheus Oliveira da Silva, Gabrielle Ferreira]
 aliases: [PDI Matheus 13/10, validação PDI]
 tags: [pdi, gestão, transição]
@@ -17,7 +17,7 @@ tags: [pdi, gestão, transição]
 > sentimentos). Atribuição abaixo reconstruída por conteúdo, não por
 > diarização — confirmada por msilva.
 
-Reunião de validação da v1 do [[PDI]] de Matheus (autoavaliação guiada de
+Reunião de validação da v1 do [[PDI Matheus 2026|PDI]] de Matheus (autoavaliação guiada de
 07/10/2026, perfil B — entrou depois do corte do ciclo formal), rodada pela
 skill `pdi-da-area`. Coincide com o CP1 marcado no painel.
 
