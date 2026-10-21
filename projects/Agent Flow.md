@@ -572,6 +572,10 @@ in parallel with the [[Airtable Proxy]] but with no delivery deadline —
 > [[Fluxo Agêntico diagram]]; it is a **revision**, with agents renumbered at
 > least once. The accompanying design documentation and recorded design
 > conversations have still not been received.
+>
+> **Superado 2026-09-01**: o projeto saiu da fase de desenho — A10/A14 estão
+> em PoC rodando (ver o abstract no topo). Mantido como registro do estado em
+> 2026-08-17.
 
 ## The three fronts it automates
 
@@ -1068,6 +1072,8 @@ Work starts **2026-08-17**, splitting time with the [[Airtable Proxy]].
 **Deliverables 1 and 3 are drafted**: [[Comparing the first-agent candidates]]
 carries the motivations, pros and cons for each candidate and a recommendation
 (A1 + A2), plus the eight things needing a decision before 2026-08-24.
+**Superado 2026-08-24**: a escolha foi A10 Portfolio, não A1 + A2 — ver
+[[2026-08-24 Start Agent Flow with A10 Portfolio]].
 
 Gabrielle's suggestion: start with the **monitoring/watch agent**, scoped to a
 single project rather than the whole portfolio — [[LiveScript]] or
@@ -1487,8 +1493,10 @@ falas inferida por contexto)`
 
 ## Open questions
 
-- **What, concretely, does the Watcher/A5 agent do — and does it need the proxy at
-  all?** New 2026-08-18, from [[2026-08-18 1-1 Matheus - Luís]]. Luís's read of
+- ~~**What, concretely, does the Watcher/A5 agent do — and does it need the proxy at
+  all?**~~ **Despriorizado 2026-08-24** — ver
+  [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]; mantido
+  como histórico. New 2026-08-18, from [[2026-08-18 1-1 Matheus - Luís]]. Luís's read of
   msilva's own description was *"muito genérico"*, and he wants **separate**
   ~30-minute discovery conversations with Gabrielle and Carol — deliberately apart,
   so neither's answer shapes the other's — before more design happens. This also
@@ -1536,7 +1544,9 @@ falas inferida por contexto)`
   ship-to-homologation-and-report over understanding everything upfront.
   **Tension with the bullet above**, not a resolution — see
   [[2026-08-19 1-1 Matheus - Gabrielle]] Part 2.
-- **Does this team even own A12 Data Gov?** New 2026-08-19 — it's internal
+- ~~**Does this team even own A12 Data Gov?**~~ **Respondido 2026-08-24,
+  Carol: não** — é trabalho do time de dados, ver
+  [[2026-08-24 Agent Flow discovery with Carol]]. New 2026-08-19 — it's internal
   data-usage validation, which may belong to a platform/foundation layer
   instead. Same source.
 - ~~**Is A13 Deduplication the same agent as A10 Portfolio?**~~ **Leans "no,"
@@ -1552,7 +1562,9 @@ falas inferida por contexto)`
   step converges it into an executable PRD, modeled on standard
   product-discovery frameworks. Leaned toward yes, not fully settled against
   how it fits the three branches above.
-- ~~**Which agent to build first?**~~ **A5 is off the table, 2026-08-24** —
+- ~~**Which agent to build first?**~~ **Respondido 2026-08-24: A10
+  Portfolio** — [[2026-08-24 Start Agent Flow with A10 Portfolio]]. O resto deste item é o histórico até a decisão.
+  **A5 is off the table, 2026-08-24** —
   [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]] closes it
   as a candidate regardless of criterion. The rest of the question stays
   open. **The selection criterion changed on 2026-08-18** —

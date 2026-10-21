@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-10-08
+updated: 2026-10-21
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -25,7 +25,10 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > - **O proxy ainda não está em produção** e precisa entrar **antes da
 >   saída de [[Luís Fernandez]]** — ver
 >   [[2026-10-07 Matheus - Luis (Transição)]]. msilva declarou a aplicação
->   estável e pronta; o que falta é o deploy.
+>   estável e pronta; o que falta é o deploy. *(Correção 2026-10-21: o
+>   deploy está no ar desde 2026-09-14, com instâncias zeradas — ver o
+>   callout daquela data abaixo. O que falta é subir para `min=1` e conectar
+>   o primeiro consumidor.)*
 > - **A evolução do dashboard passa a ser do time** ([[Yasmin Macedo]] e
 >   msilva), não mais do Luís. Ele montou os painéis com excesso
 >   deliberado de informação, para o time decidir o que fica numa versão
@@ -98,6 +101,9 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > *"o Luiz ainda não decidiu qual vai ser o aplicativo que vai estar
 > apontando para ele"*. Terceiro registro consecutivo dessa mesma pendência
 > (04/09, 08/09), sem dono se movendo.
+>
+> **Resolvido 2026-10-07**: é o [[LiveScript]] — ver o callout da reunião de
+> transição abaixo.
 
 > [!tip] Auditoria e limpeza de datas/status no Linear — 2026-09-03
 > Pedido de msilva: "validar as datas e algumas coisas relacionadas ao proxy
@@ -287,6 +293,9 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > esperado antes de terça (08/09).
 
 > [!tip] Current state, 2026-08-21
+> **Superado 2026-09-04**: deploy público no Cloud Run com API key por app,
+> sem VPN — ver [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API keys]]. Mantido como registro.
+>
 > Path-based app identification is implemented and hardened in the repo. The
 > next production step is the Go/Pulumi private-infrastructure slice recorded in
 > [[2026-08-21 Deploy Airtable Proxy privately behind VPN]]. App-key
@@ -376,7 +385,9 @@ tags: [airtable, go, observability, opentelemetry, cloud-run]
 > **Dois itens novos, não tratados antes nesta página**:
 > - **Pergunta em aberto sobre o limite de 429**: é por base, por personal
 >   access token ou pela conta inteira? Decide design do proxy, ainda não
->   investigado.
+>   investigado. **Respondido 2026-10-14**: 5 req/s por base e 50 req/s por
+>   conta emissora (não por token) — ver o topo da página e
+>   [[Airtable Rate Limits]].
 > - **503 com header `Retry-After`** é comportamento "normal" do Airtable
 >   que o proxy ainda não trata.
 >
@@ -478,8 +489,9 @@ not a LiveScript fix ([[2026-08-14 Recap da Semana]]).
 > [[2026-08-10 Onboarding Técnico - Matheus]] and [[LiveScript]] — data that doesn't
 > need to be in Airtable moving to a separate database. This page says below that
 > Phase 2 is **absent from the roadmap**; it is not absent, it is a **sibling project**.
-> *(unverified: this vault's inference from two hedged descriptions matching. **Ask
-> Luís**, not Gabrielle — she said twice she only half-remembers it.)*
+> ~~*(unverified: this vault's inference from two hedged descriptions matching. **Ask
+> Luís**, not Gabrielle — she said twice she only half-remembers it.)*~~
+> **Confirmado 2026-10-08 por msilva** (ver acima).
 >
 > **Practical consequence for the migration**: msilva is populating **one project**
 > inside this initiative, not modelling the whole programme
@@ -620,13 +632,16 @@ from Gabrielle Ferreira in onboarding.
    deployment trusts the VPN/network, while a future app-key layer will prove
    that the caller may claim the selected app ID. See
    [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
+   **Superado 2026-09-04**: sem VPN; a API key por app virou a fronteira de
+   segurança (`PRO-553`) — ver [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API keys]].
 
 5. **Instrumentation is decided: OpenTelemetry / OTLP.** Local dev uses a single
    `grafana/otel-lgtm` container (Loki + Prometheus + Tempo + Grafana).
    Production points the same OTLP exporter at Cloud Monitoring / Datadog / New
    Relic — proxy code unchanged. **No BigQuery** (Log Analytics is the optional
    upgrade if ad-hoc SQL is ever needed). — Answers my old "BigQuery? Datadog?"
-   question.
+   question. **Atualizado 2026-09-04**: produção usa Grafana Cloud — ver
+   [[2026-09-04 Use Grafana Cloud for Airtable Proxy production telemetry]].
 
 6. **Deployment target is decided: private Cloud Run, `min=1 max>1` for HA.**
    It is reached through the VPN at `https://proxy.livemode.space`, via private
@@ -634,10 +649,16 @@ from Gabrielle Ferreira in onboarding.
    `internal`. See [[2026-08-21 Deploy Airtable Proxy privately behind VPN]]. The proxy
    is on every app's critical path, so a single instance is unacceptable. v1
    holds no shared state, so multiple instances need no coordination. (Design §3.)
+   **Superado 2026-09-04**: Cloud Run público (`min=1 max=3`, `us-east4`),
+   sem LB/VPN — ver [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API keys]].
 
 ---
 
 ## Production private infrastructure plan (2026-08-21)
+
+> [!warning] Superado 2026-09-04
+> Plano abandonado com a decisão de Cloud Run público — ver [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API keys]]. Mantido
+> como histórico do desenho.
 
 ```text
 Internal apps -> VPN -> GCP VPC -> private DNS (proxy.livemode.space)
@@ -944,7 +965,7 @@ These remain open (design §14):
   lives when that future layer ships; ~~one base or all bases in v1~~
   **resolved 2026-08-24**: no proxy-side base restriction at all — see
   [[2026-08-24 Control base access via PAT scoping, not proxy logic]].
-- **Private-infra inputs** — GCP project/region; VPC, frontend subnet and
+- ~~**Private-infra inputs**~~ **Obsoleto 2026-09-04** (sem infra privada) — GCP project/region; VPC, frontend subnet and
   proxy-only subnet IDs; VPN DNS forwarding; private-zone and certificate
   ownership; Pulumi state backend; whether egress must use a static IP/NAT.
 
@@ -1082,6 +1103,8 @@ genuinely conflict, per
       Finding filed onto `PRO-96` (already the right issue for LiveScript
       proxy routing, Cenário A), which stays in Backlog per the deferral
       above — this only documents the gap, doesn't schedule the fix.
+      **Atualizado**: `PRO-96` foi depois para `Done` (ver callouts de
+      2026-09-10 e 2026-09-17).
 - [x] Criar a issue de app-key do LiveScript no Linear — `PRO-587`,
       2026-09-14, status In Review.
 - [ ] ~~Abrir e mergear o PR de `feature/airtable-proxy-observability`
@@ -1092,10 +1115,12 @@ genuinely conflict, per
       [[2026-09-17 Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por ora]].
       PR ainda não aberto,
       agora a partir dessa branch.
-- [ ] Confirm the private-infra inputs in
-      [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].
-- [ ] Start the Go/Pulumi stack only after those inputs and ownership boundaries
-      are known; do not recreate shared VPN/VPC/DNS infrastructure in this repo.
+- [ ] ~~Confirm the private-infra inputs in
+      [[2026-08-21 Deploy Airtable Proxy privately behind VPN]].~~
+      **Obsoleto 2026-09-04**: plano privado substituído por Cloud Run público.
+- [ ] ~~Start the Go/Pulumi stack only after those inputs and ownership boundaries
+      are known; do not recreate shared VPN/VPC/DNS infrastructure in this repo.~~
+      **Obsoleto 2026-09-04**, mesmo motivo.
 - [ ] Get a **dev** Airtable PAT + a test base id → run `docker compose up --build`
       and watch the dashboards populate (README "Run it").
 - [ ] Learn just enough Go to read `internal/proxy/proxy.go` comfortably.

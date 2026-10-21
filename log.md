@@ -7693,3 +7693,32 @@ PR review, só aparece quando a página for lida.
   do inventário do LiveAuth.
 - Updated: `systems/Sentinela.md` (removida a open question da página
   ausente), `meetings/2026-10-13 Matheus - Gabrielle (PDI).md`, `index.md`.
+
+## [2026-10-21] lint | contradições internas do Agent Flow e do Airtable Proxy
+
+- Correções inline, sem apagar o texto antigo: trecho vencido riscado ou
+  marcado "Superado/Obsoleto/Respondido <data>", com link para o que o
+  substituiu.
+- `projects/Agent Flow.md`: callout "Status: design only" marcado superado
+  (fase de build desde 2026-09-01); recomendação A1 + A2 dos entregáveis
+  marcada superada pela decisão de A10 (2026-08-24); open questions de A5
+  (despriorizado), A12 (Carol respondeu "não") e "qual agente primeiro"
+  (A10) marcadas como resolvidas.
+- `projects/Airtable Proxy.md`: "ainda não está em produção" (2026-10-14)
+  corrigido — deploy no ar desde 2026-09-14, falta `min=1` e primeiro
+  consumidor; "qual app aponta" resolvido (LiveScript, 2026-10-07); escopo do
+  429 respondido (5 req/s por base, 50 req/s por conta emissora); nota
+  "unverified, ask Luís" do Data Hub riscada (confirmado 2026-10-08); todo o
+  plano de VPN privada (current state de 2026-08-21, itens 4 e 6 das
+  decisões, seção de infra privada, inputs em aberto, dois to-dos) marcado
+  superado pelo Cloud Run público de 2026-09-04; backend OTLP de produção
+  atualizado para Grafana Cloud; `PRO-96` em Backlog anotado como `Done`.
+- `index.md`: linha do Agent Flow dizia "design only".
+- Não tocado (lado vencido está em outras páginas, fica para outra passada):
+  `concepts/Linear Project Structure.md` (Data Hub, app do proxy, plano
+  Business, estágio de ciclo de vida), `systems/LiveScript.md` (fonte dos
+  sinais de uso, integração não commitada vs. `83d1a7f`),
+  `people/Carolina Bezerra.md`, página de research, decisão A10+A14 (gate da
+  PoC sem desfecho), molde de agente (2 vs. 4 agentes). Prosa antiga em
+  inglês das duas páginas não foi retraduzida — tradução da página inteira
+  fica para quando houver edição maior.
