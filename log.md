@@ -7722,3 +7722,31 @@ PR review, só aparece quando a página for lida.
   PoC sem desfecho), molde de agente (2 vs. 4 agentes). Prosa antiga em
   inglês das duas páginas não foi retraduzida — tradução da página inteira
   fica para quando houver edição maior.
+
+## [2026-10-22] query | achados do discovery do LiveAuth, e a correção do "nenhum consumidor real"
+
+- Pergunta de msilva: quais os achados do discovery do LiveAuth. Respondido
+  pelas três conversas de discovery (hub fiscal 2026-09-30, atendimento
+  2026-10-02, jurídico 2026-10-08) mais o inventário de 2026-09-24.
+- **msilva corrigiu a resposta na hora**: a wiki afirmava "nenhum consumidor
+  real do LiveAuth", e o Fluxo Agêntico já é um. Conferido no código de
+  `livemode-fluxo-agentico` antes de escrever: login migrado pro
+  `/api/authorize` do LiveAuth em 2026-09-24 (`f4b69ae`, PRO-717) e servidor
+  MCP virando resource server do LiveAuth em 2026-09-28 (`f8d6fdd`, PRO-762,
+  JWT ES256 + JWKS). Do lado do LiveAuth, PRO-755 (`e7cb622`) + skill
+  `liveauth-protect-mcp` (`06fe3d8`) + correção de assinatura (`c752aac`).
+- Causa do erro: o inventário de 2026-09-24 classificou o Fluxo Agêntico como
+  "auth própria em `auth_gate.py`" (verdade até aquele dia; a migração entrou
+  no mesmo dia), e a passada de 2026-10-07 leu só o Linear — onde o trabalho
+  está sob o projeto do Fluxo Agêntico, não sob a iniciativa LiveAuth.
+  Reforça a regra de domínio: repo e código acima de doc de design.
+- Updated: `projects/LiveAuth.md` (nova seção "Consumidores reais, 2026-10-22",
+  duas afirmações antigas corrigidas inline, sem apagar o texto anterior),
+  `syntheses/Trava de domínio e autenticação — inventário para o LiveAuth.md`
+  (implicação corrigida, open question "algum dos 21 vira consumidor"
+  respondida), `syntheses/LiveAuth — Identidade e Autorização por Grupo entre
+  Apps Livemode.md` ("primeiro consumidor" vira "previsto"; open issue da
+  migração do Fluxo Agêntico marcada resolvida), `index.md` (duas linhas).
+- Não tocado, fica para outra passada: `projects/Agent Flow.md` não registra
+  em lugar nenhum que o Fluxo Agêntico usa o LiveAuth (login e MCP) — a
+  página é grande e a edição certa é na seção de MCP.

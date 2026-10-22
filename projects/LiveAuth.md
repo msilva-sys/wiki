@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-10-08
+updated: 2026-10-22
 aliases: [liveauth, liveauth poc]
 tags: [auth, security, liveauth, proxy]
 ---
@@ -39,9 +39,12 @@ wiki. A iniciativa **LiveAuth** no Linear hoje tem quatro projetos:
   de fato. É o trabalho do lado do proxy do Airtable pra virar o primeiro
   consumidor real: PRO-712 (cadastrar o proxy como app conectado), PRO-715
   (sessão própria pós-login), PRO-716 (bloquear `/dashboard` por grupo) —
-  as três ainda `Backlog`. **Continua valendo**: nenhum consumidor real do
-  LiveAuth hoje, consistente com
-  [[Trava de domínio e autenticação — inventário para o LiveAuth]].
+  as três ainda `Backlog`. **Corrigido em 2026-10-22**: o que estava aqui —
+  "nenhum consumidor real do LiveAuth hoje", apoiado em
+  [[Trava de domínio e autenticação — inventário para o LiveAuth]] — está
+  errado desde o dia em que foi escrito. O proxy do Airtable de fato segue
+  sem conectar, mas o [[Agent Flow|Fluxo Agêntico]] já é consumidor real em
+  produção; ver "Consumidores reais" abaixo.
 - **LiveAuth - Melhorias** ([P-PRO-35](https://linear.app/projetos-livemode/project/liveauth-melhorias-2cc8c0893747)) — **Backlog**, não iniciado. Papel
   leitura/escrita por membro de grupo (PRO-730/731/733), histórico
   auditável (PRO-734), access log (PRO-735), Sentinela checando auth nos
@@ -49,9 +52,54 @@ wiki. A iniciativa **LiveAuth** no Linear hoje tem quatro projetos:
   sua própria lista de quem edita num YAML.
 
 **Resumo**: LiveAuth está em produção de verdade (hospedagem definitiva,
-MCP incluso) — só falta conectar o primeiro consumidor real (Airtable
-Proxy `/dashboard`), que é trabalho represado, não bloqueado por nada
-técnico listado aqui.
+MCP incluso) e já tem consumidor real — o [[Agent Flow|Fluxo Agêntico]],
+por dois caminhos (ver abaixo). O que segue represado é o `/dashboard` do
+Airtable Proxy: trabalho não iniciado, não bloqueado por nada técnico
+listado aqui.
+
+## Consumidores reais, 2026-10-22 (correção)
+
+Correção levantada por msilva em 2026-10-22: esta página e o inventário
+vinham afirmando "nenhum consumidor real do LiveAuth" desde 2026-09-24.
+**Errado** — o [[Agent Flow|Fluxo Agêntico]] é consumidor real desde o
+mesmo dia em que o inventário foi escrito. Conferido direto no código de
+`livemode-fluxo-agentico` nesta sessão, não por relato:
+
+- **Login de navegador, desde 2026-09-24** (commit `f4b69ae`, *feat(auth):
+  migra login pro LiveAuth e fecha rotas de leitura sem sessao*, PRO-717):
+  o `auth_gate.py` não roda mais OAuth próprio — redireciona pro
+  `/api/authorize` do LiveAuth e valida o tíquete em
+  `/api/authorize/verify` (`apps/api/src/core/infra/auth_gate.py:92-118`).
+  App id `fluxo-agentico`, apontando por default pra URL de produção
+  `https://liveauth.livemode-projetos.workers.dev`
+  (`apps/api/src/core/infra/settings.py:87-88`).
+- **Servidor MCP protegido, desde 2026-09-28** (commit `f8d6fdd`,
+  *feat(mcp): expoe agentes via MCP com auth LiveAuth*, PRO-762): o Fluxo
+  Agêntico é *resource server*, o LiveAuth é o authorization server. O
+  token é verificado localmente por JWT ES256 + JWKS
+  (`/.well-known/jwks.json`), com `audience` igual à URL do MCP cadastrada
+  como `resource` do app (`apps/api/src/core/infra/mcp.py:52-107`). Do
+  lado do LiveAuth é o PRO-755 (commit `e7cb622`) + a skill
+  `liveauth-protect-mcp` (`06fe3d8`), com a assinatura do `access_token`
+  corrigida no runtime do Workers (`c752aac`).
+
+Ou seja: o primeiro consumidor real não foi o `/dashboard` do proxy do
+Airtable, como o design doc previa — foi o Fluxo Agêntico, e por dois
+caminhos (gate de navegador e MCP). *(unverified: não abri a URL de
+produção nesta sessão; a evidência é o código e o default de configuração
+apontando pra produção.)*
+
+**Consequência pro discovery**: o argumento "ninguém usa ainda" não vale
+mais — existe caso em produção pra mostrar nas conversas com as áreas,
+inclusive o caso MCP, que é exatamente o "login centralizado para agentes
+de IA" que o LiveAuth queria provar.
+
+**Por que a wiki errou**: o inventário de 2026-09-24 classificou o Fluxo
+Agêntico como "auth própria em `auth_gate.py`" — verdade até aquele dia, e
+a migração entrou no mesmo dia. A atualização de 2026-10-07 leu o Linear,
+onde esse trabalho está registrado sob o projeto do Fluxo Agêntico
+(PRO-717/PRO-762), não sob os projetos da iniciativa LiveAuth — e não
+reconferiu o código.
 
 ## Open questions (herdadas da synthesis)
 
@@ -70,8 +118,10 @@ código do GitHub tinha lacuna de indexação; varredura de árvore só
 olhava raiz; grep de palavra-chave só olhava nome de arquivo, não
 conteúdo (perdeu auth embutida direto em `index.html`). Total final:
 **20 deploys** reimplementando gate de e-mail/domínio cada um do seu
-jeito, fora o Fluxo Agêntico — **21 apps** no total, nenhum consumidor
-do LiveAuth hoje. Mais 1 app confirmado **aberto de propósito**
+jeito, fora o Fluxo Agêntico — **21 apps** no total. (Dizia aqui "nenhum
+consumidor do LiveAuth hoje"; **corrigido em 2026-10-22** — o próprio
+Fluxo Agêntico migrou no mesmo 2026-09-24, ver "Consumidores reais"
+acima.) Mais 1 app confirmado **aberto de propósito**
 (`copa2026-labelling`, banco Firebase com regra pública) e 2 candidatos
 não confirmados por código (`painel-salas`, `livemode-brain`). Achado
 notável: `livemode-projects-management` já tem autorização por grupo

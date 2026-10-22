@@ -81,11 +81,15 @@ que o fluxo OAuth é Python, não JS").
   skill **`liveauth-connect`** pra integrar o app — sem escrever middleware
   à mão. Espelha o par já existente `airtable-proxy-connect`/
   `airtable-proxy-doctor`; um `liveauth-doctor` companheiro é provável.
-- `/dashboard` do proxy é o primeiro consumidor concreto, validando que o
-  padrão generaliza de verdade.
+- `/dashboard` do proxy é o primeiro consumidor concreto previsto,
+  validando que o padrão generaliza de verdade. **Corrigido em 2026-10-22**:
+  na prática quem chegou primeiro foi o [[Agent Flow|Fluxo Agêntico]]
+  (login em 2026-09-24, MCP em 2026-09-28); o `/dashboard` do proxy segue
+  não iniciado.
 - Fluxo Agêntico consegue adotar o mesmo padrão depois, de forma aditiva —
   trocando o corpo do `middleware.js` atual (hoje roda o OAuth completo)
-  pela verificação do token do LiveAuth.
+  pela verificação do token do LiveAuth. **Feito em 2026-09-24**, no
+  `auth_gate.py` (Python, não num `middleware.js`).
 
 ## Non-goals
 
@@ -177,7 +181,8 @@ uma implementação OAuth própria, mais um **registro de app** e um
 - **Quem é dono/mantém a infraestrutura do LiveAuth** — vira dependência
   compartilhada por múltiplos apps; sem dono claro é bus factor. Próximo
   passo: alinhar com Luís antes de começar a construir.
-- **Quando (ou se) o Fluxo Agêntico migra pro LiveAuth** — hoje tem sua
-  própria trava (`auth_gate.py`); este doc é aditivo, não força migração.
-  Próximo passo: decisão separada, não bloqueia o proxy como primeiro
-  consumidor.
+- ~~**Quando (ou se) o Fluxo Agêntico migra pro LiveAuth**~~ — **resolvido
+  em 2026-09-24/28, registrado aqui em 2026-10-22**: migrou, e antes do
+  proxy. O `auth_gate.py` delega pro `/api/authorize` do LiveAuth, e o
+  servidor MCP do Fluxo Agêntico virou resource server do LiveAuth (JWT
+  ES256 + JWKS). Ver [[LiveAuth]], seção "Consumidores reais".

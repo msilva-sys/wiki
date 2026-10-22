@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-10-08
+updated: 2026-10-22
 date: 2026-09-24
 tags: [auth, security, liveauth, trava-de-dominio]
 aliases: [inventário trava de domínio, impacto liveauth, inventário de auth]
@@ -262,8 +262,11 @@ Superfície de apps com auth/domínio próprio identificados: **20 deploys**
 Supabase + 1 Express/Passport + 2 Google Identity embutido + 1 login
 client-only), fora os 3 de segredo único compartilhado (modelo
 diferente, não comparável) e o Fluxo Agêntico — **21 apps** no total já
-resolvendo esse problema, cada um à sua maneira, nenhum consumidor do
-LiveAuth. Mais **1 achado explicitamente aberto**
+resolvendo esse problema, cada um à sua maneira. (Dizia aqui "nenhum
+consumidor do LiveAuth" — **corrigido em 2026-10-22**: o Fluxo Agêntico
+migrou o login pro LiveAuth em 2026-09-24, o mesmo dia deste inventário, e
+o MCP em 2026-09-28; é o primeiro consumidor real. Ver [[LiveAuth]],
+seção "Consumidores reais".) Mais **1 achado explicitamente aberto**
 (`copa2026-labelling`) e **2 candidatos não confirmados**
 (`painel-salas`, `livemode-brain`) que nem entram nessa conta. O design
 doc do LiveAuth cobre migração do Fluxo Agêntico como não-objetivo por
@@ -281,8 +284,10 @@ domínio checado no client sem nenhum servidor por trás (Padrão 8,
 
 ## Open questions
 
-- Não confirmado se algum dos 21 apps tem plano de virar consumidor do
-  LiveAuth.
+- ~~Não confirmado se algum dos 21 apps tem plano de virar consumidor do
+  LiveAuth.~~ **Respondido em 2026-10-22**: o Fluxo Agêntico já é — migrou
+  o login em 2026-09-24 e o MCP em 2026-09-28, conferido no código. Dos
+  outros 20, nenhum plano confirmado.
 - `live-content` (Supabase) — não confirmado se restringe por domínio ou
   não.
 - `painel-salas` e `livemode-brain` — precisam de checagem ao vivo (abrir
