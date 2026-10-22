@@ -7854,3 +7854,11 @@ PR review, só aparece quando a página for lida.
   com 0 bytes — remover é decisão de msilva.
 - Updated: `index.md` (linha da synthesis do design do LiveAuth; linha da
   página movida, agora em Syntheses).
+
+## [2026-10-22] synthesis | segunda rodada do mapeamento do n8n, instância inteira via API
+- Pedido por msilva: nova varredura do n8n. Somente leitura.
+- Tentativa via MCP: enumerou 1.213 de 1.256, mas 835 têm `availableInMCP=false` (o MCP não lê o conteúdo). Os agentes em paralelo geraram "Too many requests" e o conector do claude.ai com o n8n caiu ("Server not found" do lado do claude.ai; a instância segue no ar). Corrige a rodada 1, que tratava só 4 fluxos como fechados ao MCP.
+- Tentativa via API REST, com API key de curta duração criada por msilva: 1.658 workflows (1.256 + 402 arquivados), 940 credenciais (só metadados), última execução dos ativos. Script local sobre todos; agentes leram 289 ativos de risco sobre digests com segredos e caminhos de webhook redigidos; achados médios ou piores passaram por verificadores céticos. Cópia bruta e key apagadas do disco local ao fim.
+- Resultado: 158 achados confirmados (2 críticos, 29 altos, 127 médios). Credenciais: 940, não 200+; Airtable: 130, não ~30.
+- Updated: `syntheses/Mapeamento dos fluxos do n8n.md` (seção "Segunda rodada", nota de correção no método, open questions), `index.md` (linha da página).
+- Pendente de msilva: revogar a API key usada nesta rodada.
