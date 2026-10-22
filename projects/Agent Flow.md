@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: build
-updated: 2026-10-21
+updated: 2026-10-22
 aliases: [fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -1482,6 +1482,19 @@ chat consome token duas vezes, e a alternativa discutida foi expor rotas com
 objetivo delimitado (*"analisa o projeto, dado o ID"*) em vez de um chat que
 pode fazer qualquer coisa — Luís sem opinião formada, *"falta pensar, planejar
 e talvez testar"*.
+
+**Auth do Fluxo Agêntico, registrado aqui em 2026-10-22.** Nem o login do
+app nem o do MCP é próprio — os dois passam pelo [[LiveAuth]]. O
+`auth_gate.py` redireciona pro `/api/authorize` do LiveAuth desde
+2026-09-24 (`f4b69ae`, PRO-717); antes disso o projeto rodava OAuth do
+Google por conta própria. O servidor MCP é *resource server* do LiveAuth
+desde 2026-09-28 (`f8d6fdd`, PRO-762): verifica o `access_token` por JWT
+ES256 + JWKS, com `audience` igual à URL do MCP cadastrada como `resource`
+do app (`apps/api/src/core/infra/mcp.py:52-107`). Isso faz do Fluxo
+Agêntico o **primeiro consumidor real do LiveAuth** — antes do
+`/dashboard` do proxy, que o design doc previa como primeiro. Ver
+[[LiveAuth]], seção "Consumidores reais", que corrige a afirmação contrária
+que a wiki carregou de 2026-09-24 a 2026-10-22.
 
 **Dívida apontada, não endereçada**: `agent_actions` (o agente agir sobre as
 próprias sugestões) está parado; a integração com Bugsnag não foi verificada

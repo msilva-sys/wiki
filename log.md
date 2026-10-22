@@ -7750,3 +7750,14 @@ PR review, só aparece quando a página for lida.
 - Não tocado, fica para outra passada: `projects/Agent Flow.md` não registra
   em lugar nenhum que o Fluxo Agêntico usa o LiveAuth (login e MCP) — a
   página é grande e a edição certa é na seção de MCP.
+
+## [2026-10-22] refactor | auth do Fluxo Agêntico registrada na página do projeto
+
+- Fecha a pendência deixada na entrada anterior: `projects/Agent Flow.md` não
+  registrava em lugar nenhum que o projeto usa o [[LiveAuth]].
+- Updated: `projects/Agent Flow.md` (parágrafo novo na seção da revisão de
+  arquitetura, ao lado do "Estado do MCP" — login via `/api/authorize` desde
+  2026-09-24, MCP como resource server com JWT ES256 + JWKS desde
+  2026-09-28), `index.md` (linha do Agent Flow).
+- Sem fato novo: mesma evidência de código da entrada anterior, só levada pra
+  página do consumidor.
