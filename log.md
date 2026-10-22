@@ -7761,3 +7761,24 @@ PR review, só aparece quando a página for lida.
   2026-09-28), `index.md` (linha do Agent Flow).
 - Sem fato novo: mesma evidência de código da entrada anterior, só levada pra
   página do consumidor.
+
+## [2026-10-22] synthesis | mapeamento dos fluxos do n8n
+
+- Pedido de msilva depois da correção do LiveAuth: o inventário de auth só
+  tinha varrido repos do GitHub, e automação de n8n não deixa repo. Conector
+  MCP do n8n autenticado nesta sessão.
+- New: `syntheses/Mapeamento dos fluxos do n8n.md`.
+- Totais exatos (campo `count` do n8n): 1.256 workflows, 1.036 na raiz, 38.694
+  execuções em ~1,5 dia, 200+ credenciais em 53 contas distintas, 54 tags
+  cobrindo ~150 usos.
+- Amostra de 781 workflows (62%): 433 ativos, 98 ativos sem edição há 6+
+  meses, 76 com nome de teste/cópia (20 ativos), 306 ativos sem descrição,
+  198 expostos como ferramenta de MCP.
+- Achado central: `teamProjectsEnabled: false` — todo workflow e credencial
+  mora em projeto pessoal; 30 chaves de Airtable distintas, várias nomeadas
+  por pessoa. É o problema do [[Inventário de Processos e Ferramentas]] e da
+  distribuição de chaves do [[Airtable Proxy]], com número.
+- Limite declarado na página: `search_workflows` do MCP não tem paginação
+  (limit 200, sem cursor), então 38% dos fluxos não foram enumerados —
+  fechar exige API key da instância (`/api/v1/workflows?cursor=`).
+- Updated: `index.md`.
