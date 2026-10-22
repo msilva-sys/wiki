@@ -7782,3 +7782,27 @@ PR review, só aparece quando a página for lida.
   (limit 200, sem cursor), então 38% dos fluxos não foram enumerados —
   fechar exige API key da instância (`/api/v1/workflows?cursor=`).
 - Updated: `index.md`.
+
+## [2026-10-22] synthesis | auditoria dos webhooks do n8n
+
+- Continuação do mapeamento, pedida por msilva: dos 41 fluxos que citam
+  webhook, 26 estão ativos; classifiquei os 26 por tipo de trava, lendo o
+  `triggerInfo` de todos e o JSON completo dos decisivos.
+- Grupos: 4 fluxos com trava no nó do n8n (header/Basic Auth); 6+ com
+  checagem dentro do fluxo contra segredo literal escrito no JSON; 1
+  capability URL (UUID como token, documentado pelo autor); 1 com sessão
+  própria + login Google; 2 **sem trava nenhuma, confirmado no código**; 3
+  abertos de propósito com dado de baixo risco; 4 integrações de terceiro sem
+  verificação de assinatura aparente; 4 ativos que o MCP recusa ler
+  (`availableInMCP: false`).
+- Achado mais grave: o site de controle de **cartões corporativos** é servido
+  por webhook GET sem nenhuma verificação, path legível, 4 nós. Segundo: o
+  registro do checklist de manutenção aceita POST anônimo com CORS `*` e faz
+  o bot postar no WhatsApp e no Slack da empresa.
+- Achado pro LiveAuth: a página de Ranking do CRM reimplementou **login
+  Google com cookie de sessão à mão** dentro de um fluxo de n8n — mais um
+  caso de auth reimplementada, o primeiro fora do GitHub.
+- Segredos literais encontrados dentro do JSON de fluxos. **Valores não
+  foram escritos na wiki** (regra de credencial), só o padrão.
+- Updated: `syntheses/Mapeamento dos fluxos do n8n.md` (seção nova + open
+  question respondida).
