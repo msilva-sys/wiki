@@ -2,7 +2,7 @@
 type: person
 status: active
 updated: 2026-10-22
-aliases: [João Victor, JV]
+aliases: [João Victor]
 tags: [people, crm, monday, linear]
 ---
 

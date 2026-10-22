@@ -1,12 +1,16 @@
 ---
 type: project
-status: active
+status: stable
 updated: 2026-10-22
 aliases: [bossabox, bossabox assessment]
 tags: [bossabox, vendor, ai-transformation, agent-flow]
 ---
 
 # Bossabox Engagement
+
+> [!abstract] Encerrado — msilva, 2026-10-22
+> A conversa com a Bossabox morreu depois de 2026-08-26: a proposta de
+> assessment não chegou a ser discutida. Página mantida como registro.
 
 Not msilva's own project, but he and Luís were both on the 2026-08-25
 discovery call — Carolina Bezerra is the one driving it. Tracked because
@@ -170,7 +174,7 @@ Assessment deck attached — see the note above. *(Atualização 2026-10-22:
 nenhum registro na wiki de que a proposta ou o assessment tenham
 acontecido depois de 2026-08-26; o "tier gratuito" ainda aparece como
 pergunta aberta em [[Como deve funcionar o molde de agente]], 2026-10-21.
-Unverified: confirmar se a conversa com a Bossabox seguiu.)*
+**Confirmado por msilva em 2026-10-22: a conversa morreu.**)*
 
 ## Relevance to Agent Flow
 

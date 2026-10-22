@@ -609,6 +609,9 @@ The architecture mirrors how the area actually works today:
 
 ## Proposed shape — 14 agents
 
+*(2026-10-01: msilva reduziu a visão a 4 agentes — Portfólio, PM, Taquinho
+e Priorização; ver [[O que quero que cada agente faça]].)*
+
 Rewritten 2026-08-17 from the design diagram itself
 ([[Fluxo Agêntico diagram]]), which is more specific than the verbal description
 this section previously relied on. Full agent table on that page.

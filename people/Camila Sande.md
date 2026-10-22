@@ -1,6 +1,6 @@
 ---
 type: person
-status: active
+status: stable
 updated: 2026-10-22
 aliases: [Cami, Camille]
 tags: [people, bossabox, vendor]

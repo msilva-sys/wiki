@@ -71,7 +71,8 @@ são 4 agentes reais — A10, A14, Intake (PoC 2026-09-28, `bd23c0d`) e
 prioritizer (2026-10-01, `da31ea5`) — e o Intake, disparado por Slack e
 escrevendo com trava de confirmação, cumpre a condição de revisita abaixo.
 O molde único continua por outro caminho: loop vs. workflow não é eixo do
-molde (seção de 2026-10-20) e o ADR 0012 do repo adota um só `Manifest`.)*
+molde (seção de 2026-10-20) e o ADR 0012 do repo adota um só `Manifest`.
+A visão dos 4: [[O que quero que cada agente faça]].)*
 Revisitar quando um agente
 estruturalmente diferente (escrita com aprovação, disparado por evento) for
 construído de fato.
@@ -489,6 +490,7 @@ avaliação pelo manifesto), PRO-1143 passos 1 a 7 mergeados, passo 8
   só quando um segundo sistema de tickets entrar? O estudo de 2026-10-21
   recomenda tipos neutros (`Stage`, `Priority`, `Health`) mapeados no
   adapter do Linear, porque hoje a tradução é cópia. Não decidido.
-- Vale usar o tier gratuito da Bossabox pra validar/acelerar a camada de
+- ~~Vale usar o tier gratuito da Bossabox pra validar/acelerar a camada de
   memória compartilhada em vez de reconstruir do zero? (ver
-  [[What Bossabox's Assessment suggests for Agent Flow]], ponto 7)
+  [[What Bossabox's Assessment suggests for Agent Flow]], ponto 7)~~
+  *(Moot: a conversa com a Bossabox morreu — msilva, 2026-10-22.)*

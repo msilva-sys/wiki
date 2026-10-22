@@ -1,7 +1,7 @@
 ---
 type: source
 status: stable
-updated: 2026-08-17
+updated: 2026-10-22
 date: 2026-07-23
 aliases: [gkpacker, packer workflow, waves, graph engineering]
 source: "raw/Clippings/Gabriel Packer → visorfinance.app (@gkpacker) no X.md"
@@ -169,3 +169,8 @@ Four further points of contact:
   on demand**. Different decompositions — is one better for Livemode's work?
 - Packer is a solo founder with a single codebase. How much survives a
   multi-team, multi-system environment?
+
+## Leitura relacionada
+
+- [[Arpit Nath - Orchestrating AI Agent Systems with DAGs]] — mesmo
+  argumento do DAG como motor de execução, sem Linear nem waves.

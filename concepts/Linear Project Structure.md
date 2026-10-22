@@ -398,7 +398,8 @@ Duas reuniões no mesmo dia mexeram com o que está registrado acima:
 validado c/ LiveScript` presume que o LiveScript é a aplicação que vai
 apontar pro proxy — ~~decisão que ainda não foi tomada e que é do Luís (ver
 [[2026-09-04 1-1 Matheus - Luís]])~~ *(Superado em 2026-10-07: o
-LiveScript é o primeiro consumidor — ver [[Airtable Proxy]]. A premissa do
+LiveScript foi escolhido como primeiro consumidor, ainda não conectado em
+2026-10-22 — ver [[Airtable Proxy]]. A premissa do
 nome agora vale; renomear só se justifica pela legibilidade, e isso não
 foi decidido.)*. Renomear resolveria de uma vez esse
 ponto e boa parte da confusão de nomes que a Carol levantou acima.

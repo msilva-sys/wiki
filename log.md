@@ -7917,3 +7917,36 @@ PR review, só aparece quando a página for lida.
   `raw/Novo(a) Documento de Texto.txt`; se a rotação das 5 credenciais
   citada em `Proxy Environments` aconteceu; status do
   `Bossabox Engagement`; alias `JV` em duas páginas de pessoa diferentes.
+
+## [2026-10-22] ingest | 5 raws pendentes + respostas do msilva ao lint
+
+- Respostas de msilva às pendências do lint anterior:
+  - **O LiveScript ainda não está conectado ao proxy.** Corrigidos dois
+    textos que eu mesmo tinha escrito hoje dizendo que ele "é o primeiro
+    consumidor desde 2026-10-07" (`Proxy Environments`,
+    `Linear Project Structure`). O certo é: escolhido em 2026-10-07, ainda
+    não conectado. O erro veio do resumo que passei aos subagentes.
+  - Rotação das 5 credenciais de `Proxy Environments`: feita (msilva, sem
+    data). Callout e index atualizados.
+  - Bossabox: a conversa morreu. `Bossabox Engagement` → `stable` com
+    banner de encerrado; as páginas dos 5 representantes → `stable`, sem
+    bump; pergunta do tier gratuito no molde marcada como moot.
+  - Alias `JV` fica só em `JV Abreu`; saiu de `João Victor Andrade`.
+  - `raw/Novo(a) Documento de Texto.txt` (0 bytes) apagado a pedido de
+    msilva.
+- Ingest (takeaways discutidos no chat antes de escrever):
+  - New: `sources/O que quero que cada agente faça.md` — os 4 agentes
+    (Portfólio, PM, Taquinho, Priorização), mapeados para o repo. Taquinho
+    é a persona do Intake (PRO-546), conferido no código.
+  - New: `sources/Anotações sobre os cenários do A14 (2.2).md` — as
+    perguntas do msilva foram respondidas no próprio doc de cenários em
+    2026-10-07 (`3e6909c`); a página registra pergunta e resposta, lidas do
+    repo.
+  - New: `sources/Relatório de riscos e melhorias sobre o proxy.md` — as
+    duas perguntas já tinham resposta em `Airtable Rate Limits`.
+  - New: `sources/Arpit Nath - Orchestrating AI Agent Systems with DAGs.md`
+    e `sources/CrewAI - landing page.md` — recortes de 2026-09-11.
+  - Fan-out: `projects/Agent Flow.md`, molde de agente, synthesis de
+    portabilidade, `concepts/Airtable Rate Limits.md`, fonte do Packer,
+    `CrewAI vs LangGraph`, `index.md`.
+- Páginas `active` paradas: 5, todas de pessoas internas sem fato novo.

@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-10-13
+updated: 2026-10-22
 aliases: [CrewAI vs LangGraph, comparação CrewAI]
 tags: [agent-flow, langgraph, crewai, memória]
 ---
@@ -85,3 +85,5 @@ código, não na doc):
   orquestração)
 - [[Desenho do agente LangGraph para A10+A14]]
 - [[Luís Fernandez]]
+- [[CrewAI - landing page]] — o pitch comercial: Control Plane e
+  governança central, não o framework.

@@ -179,7 +179,8 @@ ao front e à coluna `rota`), escala `tshirt` XS–XL do prioritizer, labels
 `Técnico`/`Não Técnico` e estado `triage` no writer do intake, regex
 `^_alertas_`, persona "Taquinho", `PortfolioStatus`/`direction`/`Severity` em
 pt-BR, `ProactiveFlag` do A14. No A14 também: a política de cobrança derivada da
-letra do código de cenário do doc 2.7 (`"A"` cobra, `"B"` espera), cortes
+letra do código de cenário do doc 2.7 (`"A"` cobra, `"B"` espera; formato
+dos docs de cenário em [[Anotações sobre os cenários do A14 (2.2)]]), cortes
 70% / 8 / 2 / 14 dias, escada 7 dias × 4 degraus, `WEEKLY_PUBLISH_WEEKDAY = 3`
 e `is_weekly_publish_day = False` como kill switch literal
 (`project_reporter/infra/cron.py:144`).

@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-10-16
+updated: 2026-10-22
 aliases: [429, rate limit, rate limiting, limite de uso]
 tags: [airtable, rate-limits, http]
 ---
@@ -107,3 +107,5 @@ julgamento qualitativo — nem todo full scan é erro.
 - URLs de anexo em payloads de registro expiram em ~2 horas, que é por que
   dados de registro não podem simplesmente ser cacheados para reduzir volume
   de requisições — [[Airtable Proxy]].
+- Perguntas do msilva de 2026-10-13 sobre escopo do PAT e 429 por base —
+  [[Relatório de riscos e melhorias sobre o proxy]].
