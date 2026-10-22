@@ -4,6 +4,7 @@ status: stable
 date: 2026-10-15
 updated: 2026-10-16
 attendees: [Carolina Bezerra, Luís Fernandez, Yasmin Macedo, Michelly Magalhães, João Victor Andrade, Matheus Oliveira da Silva, Camila Sande, Gabrielle Ferreira]
+aliases: []
 tags: [pdi, desenvolvimento, time, rito]
 ---
 

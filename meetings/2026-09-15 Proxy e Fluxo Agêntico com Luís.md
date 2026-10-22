@@ -10,6 +10,9 @@ tags: [luís, airtable-proxy, agent-flow, a1, a2, skills, livescript]
 
 # Proxy e Fluxo Agêntico com Luís — 2026-09-15
 
+> Fonte: `raw/Luis _ Matheus - 2026_09_15 15_02 GMT-03_00 - Anotações do
+> Gemini.md`.
+
 Continuação de [[Meeting prep - Proxy e Fluxo Agêntico com Luís - 2026-09-15]].
 ~54 min, diarização por turno confiável (ao contrário das reuniões recentes
 com Carolina/Gabrielle). Duas pautas: estado do proxy (skills de conexão,

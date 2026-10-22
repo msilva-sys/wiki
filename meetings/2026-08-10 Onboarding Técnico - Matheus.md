@@ -6,6 +6,7 @@ date: 2026-08-10
 attendees: [Gabrielle Ferreira, Matheus Silva, "(a second colleague, referred to as Gabi)"]
 source: "raw/2026-08-10 Onboarding Técnico - Matheus - Anotações do Gemini.txt"
 transcription_confidence: low
+aliases: []
 tags: [onboarding, airtable, proxy, agents, livescript]
 ---
 

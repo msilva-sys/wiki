@@ -8,6 +8,7 @@ source:
   - "raw/Matheus _ Gabriel - Fluxo de reconhecimento da receita cztv - 2026_08_17 15_02 GMT-03_00 - Anotações do Gemini.txt"
   - "raw/Matheus _ Gabriel - Fluxo de reconhecimento da receita cztv - 2026_08_17 15_31 GMT-03_00 - Anotações do Gemini.txt"
 transcription_confidence: low
+aliases: []
 tags: [n8n, agents, tokens, enablement, finance, claude]
 ---
 

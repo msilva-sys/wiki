@@ -1,6 +1,6 @@
 ---
 type: meeting-prep
-status: draft
+status: stable
 updated: 2026-09-15
 date: 2026-09-15
 aliases: [prep gabi a1 a2, prep gabrielle intake roteamento]

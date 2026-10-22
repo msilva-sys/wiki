@@ -5,6 +5,7 @@ updated: 2026-09-14
 date: 2026-08-17
 decided_by: msilva
 source: working session 2026-08-17
+aliases: []
 tags: [agents, a5, infrastructure, cloud-run, n8n]
 ---
 

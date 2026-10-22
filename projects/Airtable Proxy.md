@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-10-21
+updated: 2026-10-22
 aliases: [prxy, the proxy, airtable proxy, proxim]
 tags: [airtable, go, observability, opentelemetry, cloud-run]
 ---
@@ -450,6 +450,11 @@ not a LiveScript fix ([[2026-08-14 Recap da Semana]]).
 > **Open — is discovery in scope for msilva?** Enumerating who runs Airtable-touching
 > n8n flows is a prerequisite nobody owns. Gabrielle: *"a gente vai ter que entender
 > melhor [a] maneira de aplicar isso aqui para dentro."*
+>
+> **Atualização 2026-10-22**: o [[Mapeamento dos fluxos do n8n]] respondeu parte
+> disso — ~30 chaves de Airtable distintas em credenciais do n8n, todas em projeto
+> pessoal, várias com nome de pessoa; 74 fluxos citam Airtable no nome ou descrição.
+> Quantos chamam o Airtable de fato, e quantas chaves ainda valem, segue sem resposta.
 
 > [!important] The proxy is one of three projects in an **Airtable governance and
 > reliability** initiative — Gabrielle, 2026-08-18

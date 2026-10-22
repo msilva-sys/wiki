@@ -6,6 +6,7 @@ date: 2026-08-14
 attendees: [Gabrielle Ferreira, Maria Fernanda Lemos, Yasmin Macedo, Matheus Silva]
 source: "raw/Recap da Semana - 2026_08_14 14_01 GMT-03_00 - Anotações do Gemini.txt"
 transcription_confidence: low
+aliases: []
 tags: [recap, weekly, process, proxy, farol]
 ---
 

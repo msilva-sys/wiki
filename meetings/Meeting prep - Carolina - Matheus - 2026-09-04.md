@@ -4,6 +4,7 @@ status: superseded
 updated: 2026-09-04
 date: 2026-09-04
 attendees: [Matheus Silva, Carolina Bezerra]
+aliases: []
 tags: [agent-flow, a10, a14, métricas]
 ---
 # Prep — Carolina × Matheus (2026-09-04)

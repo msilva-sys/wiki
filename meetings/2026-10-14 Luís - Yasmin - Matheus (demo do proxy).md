@@ -4,6 +4,7 @@ status: stable
 date: 2026-10-14
 updated: 2026-10-16
 attendees: [Luís Fernandez, Yasmin Macedo, Matheus Oliveira da Silva]
+aliases: []
 tags: [airtable, proxy, grafana, observabilidade, transicao]
 ---
 

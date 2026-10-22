@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-09-24
+updated: 2026-10-22
 date: 2026-09-21
 tags: [auth, security, proxy, agent-flow, liveauth]
 aliases: [LiveAuth, autorização por grupo, grupo de acesso, liveauth-connect]
@@ -16,8 +16,11 @@ grupo — mas desenhado deliberadamente em nível abstrato, multi-app, não
 amarrado ao proxy. **2026-09-24: já existe como POC em execução no Linear**
 — projeto [LiveAuth - POC](https://linear.app/projetos-livemode/project/liveauth-poc-c6dfa1c702b0)
 (3 de 4 issues concluídas), target date 2026-09-25, faltando issue de
-deploy em produção. Estado de execução acompanhado em [[LiveAuth]]; esta
-página segue como o desenho.
+deploy em produção. *(Superado no mesmo dia: a POC fechou 4 de 4, e o
+deploy saiu como projeto próprio, também concluído em 2026-09-24 — ver
+[[LiveAuth]].)* Estado de execução acompanhado em [[LiveAuth]]; esta página
+segue como o desenho — e o implementado diverge dele em quatro pontos, ver
+"Desenho vs. código".
 
 Uma sessão paralela (link `claude.ai/share/803d8669-...`, resumo colado por
 msilva) chegou a um desenho concorrente no mesmo problema — RBAC por grupo,
@@ -163,6 +166,22 @@ uma implementação OAuth própria, mais um **registro de app** e um
   tomada uma vez, no login, e cacheada na sessão local do app — não é
   dependência de runtime por request.
 
+## Desenho vs. código
+
+Conferido no lint de 2026-10-22, no checkout local do `livemode-liveauth`
+(`c752aac`, 2026-09-28; não comparado com o remoto) e no
+`livemode-fluxo-agentico` (`f4b69ae`). Onde divergem, vale o código.
+
+| Desenho (acima) | Implementado |
+|---|---|
+| Login via Firebase Authentication | OAuth do Google direto (`src/authGate.ts`); Firebase entra só como Firestore, via REST |
+| Domínio validado por Blocking Function `beforeSignIn` | `isAllowedEmail` no callback, depois de `email_verified` (`src/authGate.ts:122`); `hd=` segue como hint |
+| Token de handoff assinado; o app só confere assinatura e `aud` | Tíquete de uso único (`mintTicket`); o app troca o tíquete por e-mail e app em `POST /api/authorize/verify` (`src/authorizeRouter.ts:44`) |
+| Chave de assinatura gerida pelo Firebase, sem custódia própria | `access_token` do MCP é JWT ES256 com chave própria, `ACCESS_TOKEN_SIGNING_KEY` (secret do Wrangler, `src/accessToken.ts`) |
+
+Consequência para Security: o LiveAuth **tem** chave própria para guardar e
+rotacionar, ao contrário do que a seção afirma.
+
 ## Open Issues
 
 - **Validar o nome "LiveAuth" com a Gabi** — fechado com Luís em
@@ -180,7 +199,10 @@ uma implementação OAuth própria, mais um **registro de app** e um
   esse default, ou definir algo mais restrito, com Luís.
 - **Quem é dono/mantém a infraestrutura do LiveAuth** — vira dependência
   compartilhada por múltiplos apps; sem dono claro é bus factor. Próximo
-  passo: alinhar com Luís antes de começar a construir.
+  passo: alinhar com Luís antes de começar a construir. *(Lint 2026-10-22:
+  o LiveAuth já está construído e em produção, e o Luís está em transição
+  de saída desde 2026-10-07 — o próximo passo como escrito não serve mais;
+  a pergunta segue aberta.)*
 - ~~**Quando (ou se) o Fluxo Agêntico migra pro LiveAuth**~~ — **resolvido
   em 2026-09-24/28, registrado aqui em 2026-10-22**: migrou, e antes do
   proxy. O `auth_gate.py` delega pro `/api/authorize` do LiveAuth, e o

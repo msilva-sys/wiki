@@ -4,6 +4,7 @@ status: stable
 updated: 2026-09-02
 date: 2026-09-02
 attendees: [Matheus Silva, Carolina Bezerra]
+aliases: []
 tags: [onboarding, 1-1]
 ---
 

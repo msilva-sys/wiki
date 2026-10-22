@@ -4,6 +4,7 @@ status: stable
 date: 2026-10-14
 updated: 2026-10-16
 attendees: [Luís Fernandez, Gabrielle Ferreira, Yasmin Macedo, Matheus Oliveira da Silva, Carolina Bezerra]
+aliases: []
 tags: [git, linear, homologacao, cloudflare, vercel, processo]
 ---
 

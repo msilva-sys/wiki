@@ -7806,3 +7806,51 @@ PR review, só aparece quando a página for lida.
   foram escritos na wiki** (regra de credencial), só o padrão.
 - Updated: `syntheses/Mapeamento dos fluxos do n8n.md` (seção nova + open
   question respondida).
+
+## [2026-10-22] lint | contradições do LiveAuth, fan-out do n8n e higiene de frontmatter
+
+- Lint completo reportado em chat. Corpo lido só nas páginas mexidas desde
+  o lint de 2026-10-21 (LiveAuth, as duas syntheses de auth, diff do Agent
+  Flow); o resto ficou coberto por aquele.
+- **PRO-717, conferido no Linear**: é a skill de auditoria de auth, projeto
+  LiveAuth - POC — não trabalho do Fluxo Agêntico. O commit `f4b69ae`
+  (migração do login) cita esse número. Corrigido inline o "Por que a wiki
+  errou" em `projects/LiveAuth.md`; a entrada `query` desta mesma data
+  repete o erro e fica como está (append-only).
+- **Desenho vs. código do LiveAuth**, conferido no checkout local do
+  `livemode-liveauth` (`c752aac`): login por OAuth do Google direto (não
+  Firebase Auth), domínio checado no callback (não Blocking Function),
+  tíquete de uso único trocado em `POST /api/authorize/verify` (não token
+  verificado só por assinatura), chave ES256 própria pro MCP (não custódia
+  do Firebase). Seção nova "Desenho vs. código" na synthesis do design.
+- PRO-728 conferido: cancelado às 12h22 de 2026-09-24, antes do commit do
+  Fluxo Agêntico (16h14). "Nenhum app conectado ainda" estava certo.
+- Inventário de trava de domínio: trecho que punha o Fluxo Agêntico com
+  `auth_gate.py` próprio, no presente, marcado como válido só até
+  2026-09-24.
+- Fan-out do [[Mapeamento dos fluxos do n8n]], que só o index e o log
+  linkavam: `projects/LiveAuth.md`, inventário de trava de domínio,
+  `projects/Airtable Proxy.md` (callout dos fluxos cidadãos),
+  `projects/Inventário de Processos e Ferramentas.md`. No próprio
+  mapeamento, "22º caso" virou 21º: o Fluxo Agêntico deixou de contar como
+  reimplementação ao migrar pro LiveAuth.
+- `2026-08-18 Product feedback in Linear, code review in Git` movida de
+  `decisions/` para `syntheses/`, `status: deferred`, por delegação de
+  msilva: nunca foi decisão (*"não tem martelo batido"*). Prosa em inglês
+  mantida — mover não é edição maior.
+- Mecânico: 2 wikilinks quebrados por quebra de linha
+  (`projects/Onboarding.md` e o inventário de trava de domínio — este desde
+  2026-09-24, escapou da correção de 2026-10-19); `aliases: []` em 18
+  páginas e 4 meeting-preps `draft` → `stable`, sem bump de `updated:`
+  (mesma regra de 2026-10-19); as 3 `superseded` ficaram; raw citado em 3
+  meetings (dois de 2026-09-15, um de 2026-10-02); `updated:` da synthesis
+  do design do LiveAuth, que não tinha sido batido na edição de hoje.
+- Pendente, sem mudança desde 2026-10-21: contradições em
+  `Linear Project Structure`, `LiveScript`, `Carolina Bezerra`, página de
+  research, decisão A10+A14 e molde de agente; 2 HTML fora do layout; raws
+  não ingeridos (`cenarios-a14-2.2`, `O que quero que cada agente faça`,
+  `relatório de riscos e melhorias sobre o proxy`, 2 clippings); 28 páginas
+  `active` paradas há 30+ dias. Novo: `raw/Novo(a) Documento de Texto.txt`
+  com 0 bytes — remover é decisão de msilva.
+- Updated: `index.md` (linha da synthesis do design do LiveAuth; linha da
+  página movida, agora em Syntheses).

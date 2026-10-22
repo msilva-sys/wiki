@@ -279,9 +279,11 @@ inteiro marcado como uso externo.
   não dá pra dizer *quem* abriu o painel de contas a pagar, só que alguém
   tinha o header.
 - **Um fluxo já reimplementou login Google com cookie de sessão à mão** (o
-  Ranking do CRM). É o 22º caso de "cada um reimplementa auth do seu jeito"
-  e o primeiro achado fora do GitHub — reforça o argumento central do
-  [[LiveAuth]] com um exemplo que ninguém tinha mapeado.
+  Ranking do CRM). É o ~~22º~~ 21º caso de "cada um reimplementa auth do
+  seu jeito" (os 20 do inventário; o Fluxo Agêntico deixou de contar ao
+  migrar pro LiveAuth) e o primeiro achado fora do GitHub — reforça o
+  argumento central do [[LiveAuth]] com um exemplo que ninguém tinha
+  mapeado.
 - **O caminho de menor esforço aqui não é migrar fluxo pro LiveAuth**, e sim
   oferecer a trava no nó (Header Auth com credencial do n8n, que já existe e
   é gerenciada pela plataforma) como padrão mínimo, e reservar o LiveAuth

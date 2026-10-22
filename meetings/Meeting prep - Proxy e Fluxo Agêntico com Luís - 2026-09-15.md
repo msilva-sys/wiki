@@ -1,6 +1,6 @@
 ---
 type: meeting-prep
-status: draft
+status: stable
 updated: 2026-09-15
 date: 2026-09-15
 aliases: [prep luís 15/09, prep proxy e fluxo agêntico]

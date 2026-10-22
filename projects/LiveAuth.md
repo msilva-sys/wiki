@@ -34,7 +34,10 @@ wiki. A iniciativa **LiveAuth** no Linear hoje tem quatro projetos:
   (a nova hospedagem não garante processo único), conexão com agentes de
   IA via MCP migrada junto (PRO-755), login validado ponta a ponta
   (PRO-727). Único item **Canceled**: PRO-728 (migrar apps já conectados
-  pro endereço novo) — N/A, nenhum app estava conectado ainda.
+  pro endereço novo) — N/A, nenhum app estava conectado ainda. *(Conferido
+  no lint de 2026-10-22: cancelado às 12h22 de 2026-09-24; o commit que
+  conecta o Fluxo Agêntico é das 16h14 do mesmo dia e já nasce no endereço
+  de produção.)*
 - **Integração com LiveAuth** ([P-PRO-32](https://linear.app/projetos-livemode/project/integracao-com-liveauth-e78af1e2fd54)) — **Backlog**, não iniciado
   de fato. É o trabalho do lado do proxy do Airtable pra virar o primeiro
   consumidor real: PRO-712 (cadastrar o proxy como app conectado), PRO-715
@@ -97,9 +100,15 @@ de IA" que o LiveAuth queria provar.
 **Por que a wiki errou**: o inventário de 2026-09-24 classificou o Fluxo
 Agêntico como "auth própria em `auth_gate.py`" — verdade até aquele dia, e
 a migração entrou no mesmo dia. A atualização de 2026-10-07 leu o Linear,
-onde esse trabalho está registrado sob o projeto do Fluxo Agêntico
-(PRO-717/PRO-762), não sob os projetos da iniciativa LiveAuth — e não
-reconferiu o código.
+~~onde esse trabalho está registrado sob o projeto do Fluxo Agêntico
+(PRO-717/PRO-762), não sob os projetos da iniciativa LiveAuth~~ — e não
+reconferiu o código. *(Corrigido no lint de 2026-10-22, conferido no
+Linear: só o PRO-762 é do projeto Infra do Fluxo Agêntico. O PRO-717 é da
+LiveAuth - POC — a skill de auditoria listada acima — e é o número que o
+commit `f4b69ae` cita. A pista estava sob a iniciativa LiveAuth, com título
+de skill, não de migração. Unverified: por que o commit cita o PRO-717;
+provável que fechar as rotas de leitura abertas tenha saído da
+auditoria.)*
 
 ## Open questions (herdadas da synthesis)
 
@@ -128,6 +137,13 @@ notável: `livemode-projects-management` já tem autorização por grupo
 própria (`authz.ts`), o precedente mais próximo do objetivo do LiveAuth
 achado no levantamento. Ver
 [[Trava de domínio e autenticação — inventário para o LiveAuth]].
+
+**Fora do GitHub, 2026-10-22**: a auditoria dos webhooks em
+[[Mapeamento dos fluxos do n8n]] achou a página de Ranking de Executivos do
+CRM com login Google e cookie de sessão reimplementados dentro de um fluxo
+— o 21º caso de reimplementação, primeiro fora de repo. Pelo menos 6
+webhooks servem página pra humano e são os candidatos naturais ao LiveAuth;
+para o resto, a synthesis sugere trava no nó do n8n.
 
 ## Discovery — casos de uso levantados, 2026-09-30
 
@@ -184,8 +200,9 @@ domínio Google.
 já cometeu e corrigiu o mesmo erro que motivou
 [[2026-08-28 Trava de domínio no Fluxo Agêntico via Google OAuth]] —
 restringir só por domínio `@livemode.com` não é suficiente, precisa de
-granularidade. Segundo discovery independente (depois de Gustavo Cruz e
-Marina Ferrão) a confirmar a mesma dor.
+granularidade. Segundo discovery independente a confirmar a mesma dor,
+depois do de Gustavo Cruz — o de Marina Ferrão apontou outro problema (ver
+acima).
 
 **Possível fechamento de gap do inventário**: Ana diz ter terminado hoje
 de migrar o Vercel e o GitHub do hub jurídico pra conta da organização

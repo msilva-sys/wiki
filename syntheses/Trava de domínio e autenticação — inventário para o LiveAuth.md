@@ -88,10 +88,13 @@ projeto, sem registro central, falha aberta se faltar secret.
 | `vitrine-ia-lmarques` | Cloudflare Pages |
 
 `client-intelligence` e `livemode-template` têm a skill copiada mas não
-instalada (sem gate ativo na raiz). O próprio [[Agent Flow|Fluxo
-Agêntico]] usa o mesmo modelo mental mas com implementação própria em
-`auth_gate.py`, não a skill (`livemode-fluxo-agentico`, ver
+instalada (sem gate ativo na raiz). O próprio
+[[Agent Flow|Fluxo Agêntico]] usa o mesmo modelo mental mas com
+implementação própria em `auth_gate.py`, não a skill
+(`livemode-fluxo-agentico`, ver
 [[2026-08-28 Trava de domínio no Fluxo Agêntico via Google OAuth]]).
+*(Vale até 2026-09-24: no mesmo dia o `auth_gate.py` passou a delegar ao
+LiveAuth — ver Implicação.)*
 
 ## Padrão 2 — Auth.js/NextAuth própria, domínio restrito via callback `signIn` (5 deploys)
 
@@ -269,9 +272,10 @@ o MCP em 2026-09-28; é o primeiro consumidor real. Ver [[LiveAuth]],
 seção "Consumidores reais".) Mais **1 achado explicitamente aberto**
 (`copa2026-labelling`) e **2 candidatos não confirmados**
 (`painel-salas`, `livemode-brain`) que nem entram nessa conta. O design
-doc do LiveAuth cobre migração do Fluxo Agêntico como não-objetivo por
-ora, mas não menciona nenhum dos outros 20 — se um dia virar migração,
-não é troca de um lugar só. Pelo menos 3 apps já têm autorização mais
+doc do LiveAuth ~~cobre migração do Fluxo Agêntico como não-objetivo por
+ora, mas~~ tratava a migração do Fluxo Agêntico como não-objetivo, e ela
+aconteceu mesmo assim; não menciona nenhum dos outros 20 — se um dia virar
+migração, não é troca de um lugar só. Pelo menos 3 apps já têm autorização mais
 granular que o modelo atual de grupo binário por `app_id` do LiveAuth:
 `sistemas-visuais-hub` e `ai-enablement-hub` (RBAC por pessoa/role), e
 sobretudo `livemode-projects-management` (grupo por projeto,
@@ -306,4 +310,7 @@ domínio checado no client sem nenhum servidor por trás (Padrão 8,
   sinais buscados. Se surgir mais algum caso, seguir o mesmo padrão
   desta correção: registrar inline, não reescrever silenciosamente.
 - Escopo desta pesquisa: conta `tech-livemode` (org + pessoal). Não
-  cobre outras contas/orgs GitHub da Livemode, se existirem.
+  cobre outras contas/orgs GitHub da Livemode, se existirem. Automação em
+  n8n também ficava de fora, por não deixar repo — coberta em 2026-10-22
+  por [[Mapeamento dos fluxos do n8n]], que achou 1 login Google
+  reimplementado (Ranking do CRM), fora da conta dos 21.

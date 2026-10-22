@@ -5,6 +5,7 @@ updated: 2026-10-19
 date: 2026-08-14
 decided_by: Luís Fernandez, Gabrielle Ferreira
 source: "[[2026-08-14 1-1 Matheus - Gabrielle]]"
+aliases: []
 tags: [process, code-review, git]
 ---
 

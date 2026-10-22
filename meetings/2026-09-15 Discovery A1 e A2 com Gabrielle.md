@@ -11,6 +11,9 @@ tags: [agent-flow, agents, a1, a2, gabrielle, discovery, portfolio, airtable, pr
 
 # Discovery A1 e A2 com Gabrielle — 2026-09-15
 
+> Fonte: `raw/Gabrielle _ Matheus - 2026_09_15 11_49 GMT-03_00 - Anotações do
+> Gemini.md`.
+
 Continuação de [[Meeting prep - Discovery A1 e A2 com Gabrielle - 2026-09-15]].
 Objetivo duplo: discovery do projeto **A1 & A2** no Linear (PRO-543/544) e,
 aproveitando a conversa, PRO-595 (regras de priorização de portfólio que

@@ -11,6 +11,9 @@ tags: [liveauth, auth, discovery, atendimento]
 
 # Discovery LiveAuth com Marina Ferrão (Atendimento) — 2026-10-02
 
+> Fonte: `raw/Marina _ Matheus - 2026_10_02 14_30 GMT-03_00 - Anotações do
+> Gemini.md`.
+
 Follow-up direto ao caso citado de segunda mão por Gustavo Cruz em
 [[2026-09-30 LiveAuth - Discovery com Gustavo Cruz (Hub Fiscal)]] — Gabrielle
 ("Gabi") passou o contato de Marina Souza Ferrão pra msilva. Boa diarização

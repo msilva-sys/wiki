@@ -6,6 +6,7 @@ date: 2026-08-14
 attendees: [Carolina Bezerra, Luis Fernandez, Arthur Tavares, João Victor Andrade, Yasmin Macedo, Michelly Magalhães, Matheus Silva]
 source: "raw/2026-06-14-Papo de Projetos  - Anotações do Gemini.docx"
 transcription_confidence: medium
+aliases: []
 tags: [governance, orca, hub, brain, process]
 ---
 
