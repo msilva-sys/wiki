@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-08-18
+updated: 2026-10-22
 aliases: [orca roadmap, orca v4, next version of orca, orca-produto, orca novas versões]
 tags: [orca, cde, roadmap, linear, pm]
 ---
@@ -42,8 +42,15 @@ Linear project: **"ORCA - Novas Versões"**
 - **2026-08-17** — per [[2026-08-17 Weekly - Projetos e Tarefas]]: **nothing
   deployed yet**. "Pedrinho" (likely Pedro Alves) still on documentation and
   the wordmap. Deliveries planned 2026-08-17, -21, -24, -28; project targeted
-  to close **2026-08-28**. See [[Orca (CDE)]] for why this is not a
+  to close ~~**2026-08-28**~~ *(não fechou — ver 2026-09-08 abaixo)*. See [[Orca (CDE)]] for why this is not a
   contradiction with Orca being in production.
+- **2026-09-08** — [[2026-09-08 Weekly - Projetos e Tarefas]]: a meta de
+  fechar em 2026-08-28 não se cumpriu. As tarefas em aberto são pendências
+  técnicas que o Pedrinho deveria ter movido para uma nova versão; Carolina
+  vai cobrá-lo para isso e para fechar a tarefa anterior.
+- **2026-10-05** — Carolina trata o Orca como sistema em manutenção, não
+  projeto ativo no Linear:
+  [[2026-10-05 Carolina - Matheus (feedback reports A14)]].
 
 ## Milestones (execution order, not the source PDF's numbering)
 
@@ -78,6 +85,8 @@ Bezerra).
 ## Open questions
 
 - Is Orca's migration behind the Airtable Proxy on this roadmap at all, or a
-  separate, unscheduled effort? Not mentioned in `ROADMAP.md`.
+  separate, unscheduled effort? Not mentioned in `ROADMAP.md`. *(Ver
+  [[2026-10-14 Migração obrigatória para o proxy do Airtable]]: migração
+  obrigatória para todos; o Orca não é citado.)*
 - Confirm "Pedrinho" (2026-08-17 weekly) = Pedro Alves.
 - Did the E1 MAM/IVC legal spike start?

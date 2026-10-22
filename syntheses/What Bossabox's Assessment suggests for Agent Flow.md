@@ -1,6 +1,6 @@
 ---
 type: synthesis
-status: active
+status: deferred
 updated: 2026-09-21
 date: 2026-08-26
 aliases: [bossabox vs agent flow, assessment cross-read]

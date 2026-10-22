@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-09-15
+updated: 2026-10-22
 aliases: [gap de priorizacao do A10, A10 nao prioriza, esforco e retorno faltando]
 tags: [agents, a10, a14, portfolio, priorizacao, airtable, linear]
 ---
@@ -99,3 +99,12 @@ reaproveitável.
 Refina [[2026-08-24 Start Agent Flow with A10 Portfolio]] (o que essa
 decisão não resolveu) e [[Fronteira A10×A14 (informação e métricas)]]
 (fronteira de escopo, não só de dado).
+
+**Atualização 2026-10-22:** o [[Design Doc — Intake]] (A1+A2 num agente
+só, 2026-09-16) fecha o escopo do Intake como **não decide priorização de
+portfólio** — resolve por construção a tensão A2×A10, mas **não** o gap de
+priorização do próprio A10, que segue aberto (PRO-595, sem atualização na
+wiki desde 2026-09-15).
+
+Pré-leitura preparada para a conversa de 2026-09-16, em HTML:
+[[Pre-leitura - Da saude a priorizacao de portfolio - 2026-09-16.html]].

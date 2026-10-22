@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-10-21
+updated: 2026-10-22
 aliases: [sentinela, SentinelaMODE, /sentinela:sentinela]
 tags: [security, governance, homologação, cloudflare]
 ---
@@ -29,7 +29,7 @@ Não são dois produtos — são dois momentos do mesmo ciclo (`homologacao.md`
 
 ## Correção à minha própria nota anterior (2026-10-06)
 
-O artefato `liveauth-vs-sentinela.html` (raiz desta wiki, 2026-09-22) descrevia
+O artefato [[liveauth-vs-sentinela.html]] (2026-09-22) descrevia
 o Sentinela como uma checagem **"rodada pelo time de TI... depois do
 deploy"**. Isso não é mais como o contrato de homologação descreve (v2.9.0,
 divulgado como obrigatório na empresa): **quem roda é a própria pessoa que
@@ -98,7 +98,8 @@ Checagem de segurança mais recente da própria Vitrine: **Grau A** (ver
 - [[LiveAuth]] — produtos diferentes do mesmo ciclo de vida de produto:
   LiveAuth autentica o usuário final; Sentinela audita se o projeto (LiveAuth
   incluso) está seguro antes de ir ao ar. Comparativo completo em
-  `liveauth-vs-sentinela.html` (raiz da wiki).
+  [[liveauth-vs-sentinela.html]] (em `systems/` desde 2026-10-22; antes na
+  raiz da wiki).
 - [[Vitrine de IA]] — é quem **consome** o veredito do Sentinela: projeto que
   passa (grau A/B) ganha endereço `.livemode.space` e aparece "aprovado" no
   catálogo público; grau C entra sinalizado, sem endereço. Ver contrato acima.

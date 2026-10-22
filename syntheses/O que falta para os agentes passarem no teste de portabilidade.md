@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-10-21
+updated: 2026-10-22
 aliases: [estudo de desacoplamento, portabilidade dos agentes, varredura de portabilidade, teste de portabilidade no código]
 tags: [agent-flow, arquitetura, portabilidade, molde, adr, linear, langfuse]
 ---
@@ -188,7 +188,9 @@ e `is_weekly_publish_day = False` como kill switch literal
 
 - `core/infra/app.py` importa 9 módulos de agentes e `core/infra/models.py`,
   3. Viola a regra "core nunca importa agente".
-- `AgentKey` é um `StrEnum` fechado com os 4 agentes; `INSTRUCTIONS` de
+- ~~`AgentKey` é um `StrEnum` fechado com os 4 agentes~~ *(superado em
+  2026-10-22: `ad8df96` abriu a chave, declarada pelo pacote do agente —
+  PRO-1143, passo 5)*; `INSTRUCTIONS` de
   `core/infra/mcp.py` descreve 3 deles e o Linear; `_ORIGIN_BY_PREFIX` do
   tracer conhece a rota do Slack do intake.
 - Único import agente → agente: `project_reporter/infra/cron.py:19` importa

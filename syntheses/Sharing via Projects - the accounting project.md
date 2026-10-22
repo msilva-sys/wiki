@@ -1,7 +1,7 @@
 ---
 title: Sharing via Projects — what belongs in the accounting project
 type: synthesis
-status: active
+status: deferred
 updated: 2026-08-17
 date: 2026-08-14
 aliases: [sharing via projects, the accounting project]

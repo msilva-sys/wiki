@@ -1,7 +1,7 @@
 ---
 type: decision
 status: stable
-updated: 2026-09-14
+updated: 2026-10-22
 date: 2026-08-24
 decided_by: Matheus Silva
 source: "[[2026-08-24 Agent Flow discovery with Carol]]"
@@ -82,5 +82,6 @@ call msilva is making today.
   the reasoning record; not
   rewritten.
 - [[What should the Agent Flow research phase study]] — Settled table
-  updated; this page continues as the live router for what's still open.
+  updated; ~~this page continues as the live router for what's still open~~
+  *(arquivada em 2026-10-22; perguntas vivas em [[Agent Flow]])*.
 - [[Agent Flow]] — noted as the concrete next build.

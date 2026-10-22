@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: stable
-updated: 2026-08-26
+updated: 2026-10-22
 date: 2026-08-25
 attendees: [Matheus Silva, Luís Fernandez, Carolina Bezerra, Arthur Tavares]
 source: "raw/Farol _ Dados - 2026_08_25 17_39 GMT-03_00 - Anotações do Gemini.md"
@@ -77,7 +77,7 @@ tags: [farol, data, gcp, airtable, bigquery, governance]
 - **Which GCP database product?** Still not named — [[Farol]]'s existing
   open question ("BigQuery is the obvious guess... never named") stands;
   this meeting only rules out Airtable, doesn't name the replacement.
-- Does **Bruno**'s team (financeiro, a separate case re: Totvs data) ever
+- Does **[[Bruno]]**'s team (financeiro, a separate case re: Totvs data) ever
   get its own database person, or does integration work keep defaulting
   to the data team regardless? Flagged as a repeat structural pattern,
   attribution below.

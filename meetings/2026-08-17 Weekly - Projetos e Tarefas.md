@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: stable
-updated: 2026-08-26
+updated: 2026-10-22
 date: 2026-08-17
 attendees: [Gabrielle Ferreira, Luis Fernandez, João Victor Andrade, Yasmin Macedo, Arthur Tavares, Matheus Silva]
 source: "raw/Weekly - Projetos e Tarefas  - 2026_08_17 14_03 GMT-03_00 - Anotações do Gemini.txt"
@@ -199,7 +199,7 @@ design goal.
 The most substantial technical discussion in the meeting, and the only place anyone
 proposed building an agent for a problem they actually had.
 
-**The situation.** Osmar built an application in Vercel centralizing the requests
+**The situation.** [[Osmar]] built an application in Vercel centralizing the requests
 *reportagem* makes to create **external events**. Leg one works. Leg two is creating
 those events **automatically in the matriz**.
 
@@ -267,7 +267,7 @@ those events **automatically in the matriz**.
   to close by 2026-08-28. Relevant to [[Airtable Proxy]], which records Orca as a
   planned consumer, and to [[Which agent should be built first]], where Orca was the
   candidate first subject for A5 — **it is not observable yet.**
-- **Camila starts Wednesday 2026-08-19**, not Monday as previously announced.
+- **[[Camila Schueler|Camila]] starts Wednesday 2026-08-19**, not Monday as previously announced.
 - **Gabrielle's week is handover** — organizing it and making sure everything is
   passed on, plus receiving Camila Wednesday to Friday, with projects still the
   priority. She is on leave from the week of 2026-08-24

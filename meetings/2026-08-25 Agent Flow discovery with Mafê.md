@@ -1,7 +1,7 @@
 ---
 type: meeting
 status: stable
-updated: 2026-08-26
+updated: 2026-10-22
 date: 2026-08-25
 attendees: [Maria Fernanda Lemos, Matheus Silva]
 source: https://notes.granola.ai/t/3df40d40-04bd-4a4e-b4c7-40086f928fbd-008umkv4
@@ -77,7 +77,7 @@ the build sequence, and he ended up running the whole thing alone with
 just an Anthropic key.
 
 **Escalation to the technical layer**: when a request exceeds her own
-understanding, she redirects to the right person. Worked example: Osmar
+understanding, she redirects to the right person. Worked example: [[Osmar]]
 built a Vercel app for external-event registration (the same use case
 recorded in [[Agent Flow]]'s *"use case that arrived from the business"*
 section); msilva redirected him to Arthur Tavares because it touched the

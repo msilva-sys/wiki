@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-09-09
+updated: 2026-10-22
 aliases: [João Victor, JV]
 tags: [people, crm, monday, linear]
 ---
@@ -122,3 +122,13 @@ Do status dele na [[2026-09-08 Weekly - Projetos e Tarefas]]:
   que reconcilia: é o *workflow* da Monday, não o CRM, e nem ela tem
   visibilidade do uso diário. Ele vai falar com o Esbarai para achar o
   responsável real.
+
+## PDI (2026-10-15)
+
+Em [[2026-10-15 Papo de Projetos (rodada de PDIs)]]: vai triar demandas
+de executivos que chegam fora de projeto com três critérios (faz sentido,
+é urgente, pertence ao escopo de CRM); criar uma skill de monitoramento do
+histórico de solicitações para evitar retrabalho; e colocar no ar o agente
+de monitoramento das automações de CRM, como primeiro especialista do
+time. O PDI dele também aparece nos temas "autonomia dos agentes" e
+"documentar para não centralizar conhecimento".

@@ -2,8 +2,8 @@
 type: meeting
 status: stable
 date: 2026-10-15
-updated: 2026-10-16
-attendees: [Gabrielle Ferreira, Maria Fernanda Lemos, Yasmin Macedo, Matheus Oliveira da Silva, Camila Sande]
+updated: 2026-10-22
+attendees: [Gabrielle Ferreira, Maria Fernanda Lemos, Yasmin Macedo, Matheus Oliveira da Silva, Camila Schueler]
 aliases: []
 tags: [recap, semanal, skills, playwright, automacoes, linear]
 ---

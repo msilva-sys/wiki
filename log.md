@@ -7862,3 +7862,58 @@ PR review, só aparece quando a página for lida.
 - Resultado: 158 achados confirmados (2 críticos, 29 altos, 127 médios). Credenciais: 940, não 200+; Airtable: 130, não ~30.
 - Updated: `syntheses/Mapeamento dos fluxos do n8n.md` (seção "Segunda rodada", nota de correção no método, open questions), `index.md` (linha da página).
 - Pendente de msilva: revogar a API key usada nesta rodada.
+
+## [2026-10-22] lint | pendências resolvidas: contradições, páginas paradas, Camila
+
+- Pedido de msilva: resolver as pendências do lint. Análise das
+  contradições e triagem das páginas paradas delegadas a 5 subagentes só
+  de leitura; cada achado conferido antes de aplicar, os de código
+  reconferidos nos repos (`livemode-fluxo-agentico`,
+  `livemode-roteiros-nextjs`).
+- **Contradições das 6 páginas da lista de 2026-10-21**, corrigidas inline:
+  - `Linear Project Structure`: Data Hub confirmado (é o [[Live Hub]]), app
+    do proxy decidido (LiveScript), plano do Linear resolvido em
+    2026-09-14, estágio de ciclo de vida esclarecido.
+  - `LiveScript`: são duas integrações com o proxy — com fallback, sem
+    commit em `main`; só-proxy, commitada em `83d1a7f` na
+    `feature/airtable-proxy`. Sinais de uso já extraídos no próprio proxy;
+    "dummy PAT" e `X-Api-Key` superados.
+  - `Carolina Bezerra`: escalonamento depois da saída do Luís, central de
+    skills, e a pausa do A14 era compromisso do msilva (PRO-860), não dela.
+  - `What should the Agent Flow research phase study` → `superseded`,
+    arquivada com banner que lista as 7 perguntas que ficaram sem dono;
+    corrigidos os links que a tratavam como viva (Agent Flow, decisão do
+    A10, meeting prep, index).
+  - `2026-08-24 Build A10 and A14 together, PoC first` → `stale`: o gate
+    da PoC nunca foi avaliado; cadência, unidade do A10 e commits
+    atualizados.
+  - `Como deve funcionar o molde de agente`: 4 agentes reais, não 2; SOUL
+    e skills no Langfuse; ADRs 0011–0013.
+  - Achados de fora da lista: `2026-09-01 Modelar SOUL em tabelas` →
+    `stale` (ADR 0003, `b846701`); nota na decisão de critérios por skill;
+    `AgentKey` aberto (`ad8df96`) na synthesis de portabilidade.
+- **Camila**: a Camila do time é outra pessoa — Camila Ribeiro de Schueler
+  Machado Xavier, pelo convite da reunião de 2026-10-15 no raw. Nova
+  página `people/Camila Schueler.md`; links corrigidos em 4 notas de
+  reunião e em `Maria Fernanda Lemos`; aviso em `Camila Sande`, que perdeu
+  o alias "Camila".
+- **Páginas `active` paradas: de 28 para 9.**
+  - Atualizadas com fatos mais novos: `Proxy Environments` (callout com o
+    estado de 2026-09-17 em diante), `Orca (CDE)`, `Orca Next Version`,
+    `AI status reporting on Linear`, `Agents read primary sources`,
+    `Vocabulário do Fluxo Agêntico`, `A10 avalia saúde`,
+    `Bossabox Engagement`, `Marina`, `Arthur Tavares`,
+    `João Victor Andrade`.
+  - `deferred`, sem bump de `updated:`: as 3 syntheses de contabilidade,
+    `Taxa de hallucination de issue_id no A10` e
+    `What Bossabox's Assessment suggests for Agent Flow`.
+    `Zed Cheatsheet` → `stable`.
+  - Sobram 9 páginas de pessoas sem fato novo desde agosto; `people/` é
+    `active` por convenção, então seguem aparecendo no relatório.
+- Layout: `liveauth-vs-sentinela.html` movido para `systems/` e linkado do
+  Sentinela; pré-leitura de 2026-09-16 linkada de `A10 avalia saúde`.
+  Links novos para `Bruno`, `Osmar` e para a decisão do PRO-392.
+- Pendente, depende de msilva: os 5 ingests (em discussão no chat); apagar
+  `raw/Novo(a) Documento de Texto.txt`; se a rotação das 5 credenciais
+  citada em `Proxy Environments` aconteceu; status do
+  `Bossabox Engagement`; alias `JV` em duas páginas de pessoa diferentes.

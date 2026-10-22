@@ -1,7 +1,7 @@
 ---
 title: Claude capabilities map — accounting / large-data scope
 type: synthesis
-status: active
+status: deferred
 updated: 2026-08-17
 date: 2026-08-14
 aliases: [capabilities map, claude capabilities]

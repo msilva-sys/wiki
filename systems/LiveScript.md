@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-10-16
+updated: 2026-10-22
 aliases: [live script, livescript, roteiros, roteiros app, live stre]
 tags: [airtable, livescript, realtime, frontend]
 ---
@@ -12,8 +12,15 @@ tags: [airtable, livescript, realtime, frontend]
 > Três fatos do repo `livemode-roteiros-nextjs` que as atas de 14–15/10
 > tocam:
 >
-> **1. A integração com o proxy existe, com fallback, e ainda não foi
-> commitada.** `lib/services/airtable-client.ts` (não rastreado) centraliza
+> **1. A integração com o proxy existe, com fallback, ~~e ainda não foi
+> commitada~~.** *(Esclarecido 2026-10-22, conferido no repo: são duas
+> implementações. A **versão com fallback** — `airtable-client.ts` mais
+> edições em 13 arquivos de `main` — segue sem commit. A **versão
+> só-proxy**, sem fallback (`airtable-proxy-env.ts`, exige
+> `AIRTABLE_PROXY_KEY` e `AIRTABLE_PROXY_URL`), está commitada em
+> `83d1a7f` (2026-09-16) na `feature/airtable-proxy` e na origin, fora de
+> `main`; ver "Confusão de branch" abaixo.)*
+> `lib/services/airtable-client.ts` (não rastreado) centraliza
 > o acesso: com `AIRTABLE_PROXY_URL` definido usa `AIRTABLE_PROXY_KEY` e
 > aponta pro proxy; sem ela, cai no PAT direto
 > (`AIRTABLE_PERSONAL_ACCESS_TOKEN`). Scripts de manutenção em `scripts/`
@@ -92,15 +99,23 @@ Two initiatives were merged into one programme — [[Airtable Proxy]] plus
 **LiveScript stabilization**. Phase 2 of that merged effort: data that doesn't
 need to live in Airtable moves into a **database belonging to LiveScript alone**.
 Nothing was said about which data, which engine, or when.
+*(Desde 2026-10-08, essa Phase 2 é o projeto [[Live Hub]], do time e sem
+dono único; "só do LiveScript" vem do onboarding falado e não foi
+reconfirmado.)*
 
 ## Relationship to the proxy
 
 - LiveScript is the primary source of the traffic the proxy is instrumented to
   measure.
-- Its SDK wrapper is currently the **only** source of the `hasFilter`,
+- ~~Its SDK wrapper is currently the **only** source of the `hasFilter`,
   `hasFieldProjection`, `recordCount` and `bytes` signals — the open work in
   [[Airtable Proxy]] is to move that extraction into the proxy so it works for
-  every app.
+  every app.~~
+  *(Superado — o proxy já extrai `hasFilter`, `hasFieldProjection` e os
+  bytes de resposta por conta própria (`internal/proxy/telemetry.go`,
+  `proxy.go`), valendo para qualquer app; item `[x]` em
+  [[Airtable Proxy]], 2026-08-26. `recordCount` segue não capturado,
+  adiado de propósito.)*
 - Named as a candidate target for the first monitoring agent — [[Agent Flow]].
 
 ## Wiring to the proxy (auth) — GC-5
@@ -131,8 +146,12 @@ the full evidence:
   That comparison led to the URL-path decision above, not to `X-App-Id`
   shipping — see [[How LiveScript sends the proxy X-App-Id header]] for the
   full options comparison that was superseded.
-- The SDK always sends `Authorization: Bearer`, so the app keeps a **dummy PAT**;
-  the proxy overwrites it. `X-Api-Key` is deferred.
+- ~~The SDK always sends `Authorization: Bearer`, so the app keeps a **dummy PAT**;
+  the proxy overwrites it. `X-Api-Key` is deferred.~~ *(Superado: a chave
+  por app (`AIRTABLE_PROXY_KEY`) viaja justamente em `Authorization: Bearer`
+  e o proxy a valida (`PRO-96`/`PRO-587`); o app não guarda PAT. `X-Api-Key`
+  foi descartado, não adiado — o `customHeaders` do SDK não vale nos dois
+  caminhos.)*
 - **Rollout order mattered while the header approach was live:** the header
   shipped before `AIRTABLE_ENDPOINT_URL` flips (it's inert against Airtable),
   so it couldn't 401 anything until the flip. Moot now that identification is

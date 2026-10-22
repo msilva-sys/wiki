@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-09-09
+updated: 2026-10-22
 aliases: [Maria Fernanda, Mafê]
 tags: [people, agents, enablement, a4]
 ---
@@ -79,7 +79,7 @@ Cadeira com **duas posições**: a de Mafê, ocupada; uma segunda, **vaga**
   complexas, quebra em etapas e guia passo a passo (ex: Jorge, que
   terminou rodando tudo sozinho com uma chave da Anthropic); quando
   extrapola seu entendimento, redireciona para a camada técnica (ex:
-  Osmar → Arthur, por tocar a matriz) e a tarefa é reatribuída no
+  [[Osmar]] → Arthur, por tocar a matriz) e a tarefa é reatribuída no
   Airtable.
 - **Detecta padrões e escala para institucionalização** — dois exemplos
   concretos: uso independente de Google Earth Studio por 36 contatos →
@@ -127,7 +127,8 @@ Cadeira com **duas posições**: a de Mafê, ocupada; uma segunda, **vaga**
   como aprendizado técnico reaproveitável. Próxima frente dela: automatizar
   a abertura de pedidos de arte de telão para jogos — trabalho manual
   repetitivo que cresceu com as cinco ligas — com Ana Domingos, envolvendo
-  [[Camila Sande]] como primeira tarefa de contexto.
+  [[Camila Schueler]] como primeira tarefa de contexto.
+  *(link corrigido em 2026-10-22: apontava para [[Camila Sande]], da Bossabox)*
 - **Pediu a Luís um relatório de uso da [[Opta]]** (~2026-08-25, "um mês e
   meio" antes de [[2026-10-09 Opta - O que é isso]]) — queria saber se
   alguém de fato usava o sistema. Luís conectou no log da GCP e achou um

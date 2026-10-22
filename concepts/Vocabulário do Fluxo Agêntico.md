@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-09-02
+updated: 2026-10-22
 aliases: [glossário do Fluxo Agêntico, sinal, contrato de agente, ticket graph, gateway, soul, profile, fragment]
 tags: [agents, agent-flow, vocabulary, architecture]
 ---
@@ -73,6 +73,14 @@ explícita em vários lugares ao mesmo tempo.
 - **Promoção** — trocar qual versão de profile está ativa pra um
   `agent_key`+`environment`; é também o mecanismo de rollback (promover de
   volta uma versão anterior), não uma operação separada.
+- **`agent_facts`** — fato que o próprio agente propõe guardar durante a
+  execução; padrão propõe → aprova, nunca grava direto. `agent_key` NULL =
+  global (entre agentes); `"a10"`/`"a14"` = individual. Distinto do estado
+  operacional (snapshots, histórico). Ver
+  [[2026-09-10 Memória de fatos do agente (agent_facts)]].
+- **Agente como tool** — todo agente pode chamar qualquer outro pelo
+  contrato público (`Input → Output`), com teto de profundidade da cadeia.
+  Ver [[2026-09-10 Agentes expostos como tool uns para os outros]].
 
 ## Como isso se relaciona com o vocabulário de nomes de projeto
 
@@ -101,4 +109,9 @@ Agentes").
   isso não é mais toda a "memória do sistema agêntico" em aberto — SOUL
   (memória comportamental/config) e a memória de domínio por agente
   (snapshot do A14, histórico do A10) já existem e estão implementadas; só
-  a acumulação de sinal *entre* agentes segue sem desenho.
+  a acumulação de sinal *entre* agentes segue sem desenho. *(Atualizado
+  2026-10-22: desde 2026-09-10, `agent_facts` com `agent_key` NULL é uma
+  memória global entre agentes, aprovada por humano — cobre parte da
+  lacuna; indexação/busca e acumulação de sinal bruto seguem sem desenho.
+  Memória organizacional em estudo em
+  [[Cognee como memória dos agentes e do time]], PoC PRO-983.)*

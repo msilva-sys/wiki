@@ -12,7 +12,7 @@ tags: [agents, llm, automation, onboarding, research]
 > [!abstract] Research phase (2026-08-17) → **build phase** (as of 2026-09-01)
 > Authoritative spec: [[Fluxo Agêntico project instruction]] (per-agent detail for
 > all 14). Architecture: [[Fluxo Agêntico diagram]]. Agenda and open questions
-> from the research phase: [[What should the Agent Flow research phase study]].
+> from the research phase: [[What should the Agent Flow research phase study]] (arquivada, `superseded` 2026-10-22).
 > A10 Portfolio + A14 PM Agent moved into a live PoC (three parallel fronts),
 > already with real GitHub/Linear access and a proactive digest running on a
 > Vercel Cron in pairing — see the chronological callouts below.
@@ -1355,7 +1355,7 @@ Recorded because it is the **first time anyone at Livemode proposed building an
 agent for a problem they actually had**, rather than as part of this architecture.
 Full detail in [[2026-08-17 Weekly - Projetos e Tarefas]]; the shape:
 
-Osmar built a Vercel app centralizing *reportagem*'s requests to create **external
+[[Osmar]] built a Vercel app centralizing *reportagem*'s requests to create **external
 events**. The second leg has to create them in the **matriz**, which is sensitive
 data nobody wants to grant him write access to. The proposal, unprompted: *"a gente
 pode até criar um agente para tá ali no meio, ver o que que ele mandou pra gente, a

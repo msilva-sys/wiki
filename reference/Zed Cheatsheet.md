@@ -1,6 +1,6 @@
 ---
 type: reference
-status: active
+status: stable
 updated: 2026-08-11
 date: 2026-08-11
 aliases: [zed cheatsheet, zed vim]

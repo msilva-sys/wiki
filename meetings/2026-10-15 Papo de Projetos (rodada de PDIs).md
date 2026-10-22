@@ -2,8 +2,8 @@
 type: meeting
 status: stable
 date: 2026-10-15
-updated: 2026-10-16
-attendees: [Carolina Bezerra, Luís Fernandez, Yasmin Macedo, Michelly Magalhães, João Victor Andrade, Matheus Oliveira da Silva, Camila Sande, Gabrielle Ferreira]
+updated: 2026-10-22
+attendees: [Carolina Bezerra, Luís Fernandez, Yasmin Macedo, Michelly Magalhães, João Victor Andrade, Matheus Oliveira da Silva, Camila Schueler, Gabrielle Ferreira]
 aliases: []
 tags: [pdi, desenvolvimento, time, rito]
 ---
@@ -61,8 +61,9 @@ Registrados como contexto do time; não são de msilva.
 - **[[Gabrielle Ferreira]]** vai desenhar fluxos de trabalho com a pessoa
   usuária antes de iniciar desenvolvimento, estabelecer critérios de pronto
   e metrificar adoção do que for entregue.
-- **[[Camila Sande]]** vai levantar o estado atual de uso e backlog de
+- **[[Camila Schueler]]** vai levantar o estado atual de uso e backlog de
   todos os LiveScripts e projetos em execução, para um panorama geral.
+  *(link corrigido em 2026-10-22: apontava para [[Camila Sande]], da Bossabox)*
 - Uma pessoa da frente de dados vai quebrar tarefas complexas em subtarefas
   com prazos realistas, e manter alinhamento diário de 15 minutos com
   Carolina.

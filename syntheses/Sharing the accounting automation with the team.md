@@ -1,7 +1,7 @@
 ---
 title: Sharing the accounting automation with the team — distribution options
 type: synthesis
-status: active
+status: deferred
 updated: 2026-08-17
 date: 2026-08-14
 aliases: [distribution options, sharing automations]

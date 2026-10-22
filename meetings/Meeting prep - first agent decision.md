@@ -1,7 +1,7 @@
 ---
 type: meeting-prep
 status: superseded
-updated: 2026-08-24
+updated: 2026-10-22
 aliases: [one pager, first agent one pager, first agent prep]
 tags: [agents, planning, decision, meeting-prep]
 ---
@@ -19,7 +19,8 @@ tags: [agents, planning, decision, meeting-prep]
 > recommendation and comparison below are stale as a
 > whole, not just on the A5 point — kept as a record of the plan as it stood
 > on 2026-08-18, not as live reasoning. For the current state of the
-> question, see [[What should the Agent Flow research phase study]].
+> question, see ~~[[What should the Agent Flow research phase study]]~~
+> [[Agent Flow]] *(a página de pesquisa foi arquivada em 2026-10-22)*.
 
 **The ask:** agree which agent I build first. **Gabrielle is on leave from 2026-08-24
 for ~2.5 weeks**, so without a decision this slips about three weeks.

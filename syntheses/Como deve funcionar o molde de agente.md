@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-10-21
+updated: 2026-10-22
 date: 2026-09-01
 aliases: [molde de agente, agent blueprint, agent template configurável]
 tags: [agent-flow, agents, harness, soul, configuration]
@@ -65,8 +65,14 @@ real) ou molde por agente (sem reaproveitamento).
 serviço), sem validar que esses sejam os arquétipos certos aqui.
 
 **Decisão** (sessão de código em `livemode-fluxo-agentico`, 2026-09-10):
-molde-base único por ora. As duas instâncias reais (A10, A14) são o mesmo
-arquétipo; não há evidência de um segundo. Revisitar quando um agente
+molde-base único por ora. ~~As duas instâncias reais (A10, A14) são o mesmo
+arquétipo; não há evidência de um segundo.~~ *(Superado em 2026-10-22: já
+são 4 agentes reais — A10, A14, Intake (PoC 2026-09-28, `bd23c0d`) e
+prioritizer (2026-10-01, `da31ea5`) — e o Intake, disparado por Slack e
+escrevendo com trava de confirmação, cumpre a condição de revisita abaixo.
+O molde único continua por outro caminho: loop vs. workflow não é eixo do
+molde (seção de 2026-10-20) e o ADR 0012 do repo adota um só `Manifest`.)*
+Revisitar quando um agente
 estruturalmente diferente (escrita com aprovação, disparado por evento) for
 construído de fato.
 
@@ -91,6 +97,9 @@ texto direto por versão, `soul_composition` compõe profile+fragments de
 forma plana — sem YAML, sem campos aninhados, sem propagação automática. Ver
 [[2026-09-01 Modelar SOUL em tabelas com composição plana]] pro schema. V1 já
 implementado (PRO-503, Done); conteúdo real dos fragments segue em aberto.
+*(Superado em 2026-10-14: o ADR 0003 do repo e `b846701` (PRO-1005, 3b)
+apagaram as tabelas `soul_*`, `skills` e o pacote `soul`; SOUL e skills
+vivem só no Langfuse, compostos no prompt de tarefa.)*
 
 ## Vocabulário de domínio vs. molde — resolvido 2026-09-02
 
@@ -112,6 +121,9 @@ não dentro do contrato de cada instância.
   `CLOSED_STATE_TYPES = {"completed", "canceled", "duplicate"}`) deveria
   idealmente virar campo computado no tipo (`Issue.is_closed`) — não decidido
   se vale migrar já ou só quando um segundo sistema de tickets aparecer.
+  *(Parcialmente resolvido em 2026-09-02: `a773f46` unificou o `state_type`
+  em `Issue.is_active`/`is_delivered`; `CLOSED_STATE_TYPES` não existe
+  mais. Segue aberto só o mapeamento neutro `Stage`/`Priority`/`Health`.)*
 - **Metodologia de estruturação de demanda** (como decompor projeto →
   milestone → issue) — não é campo de tipo, precisa de fragment/skill,
   deliberadamente independente de qual adapter escreve o resultado depois.
@@ -150,8 +162,9 @@ avançaram.
 
 **Desenho feito mesmo assim, 2026-09-10** — ver
 [[2026-09-10 Memória de fatos do agente (agent_facts)]]: padrão
-propõe→aprova (`agent_facts`, individual + global), sem implementação
-autorizada. A metade global é exatamente o que este spike pede pra revisitar
+propõe→aprova (`agent_facts`, individual + global), ~~sem implementação
+autorizada~~ *(a metade individual foi implementada em 2026-09-11,
+`ff2ad74`; a global segue sem implementação)*. A metade global é exatamente o que este spike pede pra revisitar
 com Luís antes de codar; a metade individual não tem objeção registrada.
 
 ## Slot MCP: refinado numa sessão de código, 2026-09-10
@@ -194,7 +207,9 @@ pessoal de Claude Code isso é de graça (single-user); num serviço hospedado
 compartilhado, é requisito explícito de desenho.
 
 **Por que nada disso foi codado**: mesma regra de amostra do molde inteiro —
-só existem 2 integrações reais hoje (Linear, GitHub), resolvidas com adapter
+só existiam 2 integrações reais em 2026-09-10 (Linear, GitHub) *(depois: Slack
+entrou com o Intake em 2026-09-28, e o GitHub deixou de ser integração
+direta dos agentes em `5bb196b`, 2026-10-09)*, resolvidas com adapter
 direto, nenhum host pediu uma terceira em runtime ainda. Um spike isolado
 (testando Slack via MCP) foi cogitado mas parado antes de codar: sem token de
 Slack disponível, sem `langchain-mcp-adapters` instalado, questão de
@@ -302,7 +317,10 @@ pra skill também.
 **Nada codado** — mesma postura do resto do molde: conceitual até um
 critério/tarefa real pedir a separação. Hoje `priorizacao_desalinhada` e
 `escopo_descontrolado` (candidatos mais óbvios) ainda vivem só no prompt
-principal do A10, sem skill dedicada.
+principal do A10, sem skill dedicada. *(Superado: skills por critério
+implementadas em 2026-09-11 (`4a47fd9`, PRO-571), numa tabela `skills`
+removida em 2026-10-14 (`b846701`); hoje vivem no Langfuse — ADR 0003 do
+repo.)*
 
 **Critério real apareceu, 2026-09-10** — ver
 [[2026-09-10 A10 - critérios julgados por skill, não determinísticos em Python]]:
@@ -330,7 +348,11 @@ e uma factory low-code futura**). Auditado no repo real
 hit é homônimo — *database triggers* do Postgres em `db.py`
 (`soul_versions_immutable`, etc.), sem relação com o conceito do Harness.
 Hoje Trigger/Channel só existe como fato observável de fora (qual
-entrypoint chamou), nunca declarado no código.
+entrypoint chamou), nunca declarado no código. *(Parcialmente superado em
+2026-10-22: `ExecutionContext.channel` (`core/infra/manifest.py`) leva o
+canal por execução — `poe run` fixa `cli` — e o `Manifest` declara
+`entrypoints` e `cron`. Seguem sem existir o `trigger_channel` em
+`cron_runs` e o `Literal` proposto abaixo; o canal hoje é `str` livre.)*
 
 **Trigger (Human|Machine) descartado por ora — sem evidência.** Auditando os
 3 pontos reais de invocação (`cron.py` → Machine, rota `/run` de
@@ -425,7 +447,12 @@ Linear e processo; o adapter do Linear copia em vez de traduzir; o processo
 da Livemode está em `Literal` e constante (o `Criterion` vive em 6 lugares);
 não há manifesto nem registro; e a arquitetura não está disponível pro
 agente de código. Traz um manifesto mínimo derivado dos 4 agentes reais e
-uma arquitetura-alvo em três camadas, não decididas.
+uma arquitetura-alvo em três camadas, ~~não decididas~~. *(Atualizado em
+2026-10-22: decididas e em implementação no repo — ADRs 0011 a 0013
+(fronteiras por teste de imports, manifesto e registro, execução e
+avaliação pelo manifesto), PRO-1143 passos 1 a 7 mergeados, passo 8
+(agente de exemplo em processo isolado, `5dbf196`) em branch. O veredito
+"não passa" de 2026-10-21 não foi reavaliado.)*
 
 ## Questões em aberto
 
@@ -442,6 +469,10 @@ uma arquitetura-alvo em três camadas, não decididas.
   construir a factory (duas instâncias do mesmo arquétipo não são amostra
   suficiente) — a direção é registrar candidatos a campo configurável
   conforme aparecem, pro terceiro agente real testar o schema de verdade.
+  *(Atualizado em 2026-10-22: já são 4 agentes reais, e o ADR 0012 fixou um
+  `Manifest` mínimo de 9 campos no lugar do bloco `yaml` de "Hipótese de
+  estrutura"; a factory low-code segue não construída — ver
+  [[O que falta para os agentes passarem no teste de portabilidade]].)*
 - Quais campos pertencem ao molde e quais só aparecem na instância?
   Esboço de 2026-10-21 em [[O que falta para os agentes passarem no teste de portabilidade]]: manifesto mínimo
   só com campos que os 4 agentes usam; vários campos daqui colapsam em

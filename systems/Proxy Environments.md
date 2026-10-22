@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-08-24
+updated: 2026-10-22
 aliases: [envs prxy, proxy envs]
 tags: [airtable, proxy, config, environments, livescript]
 ---
@@ -157,7 +157,7 @@ the app. Confirms the "base-URL swap, not DNS cutover" model in
 > to start without one and always sends it; the proxy overwrites it). Full
 > history: [[How LiveScript sends the proxy X-App-Id header]].
 
-> [!warning] Coverage is partial — the `airtable` SDK path only
+> [!warning] ~~Coverage is partial — the `airtable` SDK path only~~ *(Superado na `feature/airtable-proxy` em 2026-09-17 — ver o callout seguinte.)*
 > Confirmed by reading the code 2026-08-24: `AIRTABLE_ENDPOINT_URL` is read
 > natively by the `airtable` npm package's own default config
 > (`node_modules/airtable/lib/airtable.js`), so it repoints calls made through
@@ -169,6 +169,28 @@ the app. Confirms the "base-URL swap, not DNS cutover" model in
 > [[2026-08-18 Proxy first, defer LiveScript-side SDK changes]]: full REST-call
 > migration onto the proxy is out of scope for now, so this partial coverage is
 > expected, not a bug to fix urgently.
+
+> [!warning] Superado em 2026-09-17 — o wiring acima é da branch antiga
+> A seção "Proxy wiring" descreve `AIRTABLE_ENDPOINT_URL` e o proxy local
+> (`localhost:8080`). Depois dela:
+> - O proxy foi para produção **público no Cloud Run**, com API key por
+>   app em `Authorization: Bearer`, não via VPN:
+>   [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API keys]]
+>   (no ar desde 2026-09-14; o LiveScript é o primeiro consumidor desde
+>   2026-10-07 — ver [[Airtable Proxy]]).
+> - No LiveScript, `AIRTABLE_PROXY_URL` + `AIRTABLE_PROXY_KEY` substituem
+>   `AIRTABLE_ENDPOINT_URL` e o PAT em todas as chamadas, inclusive os
+>   `fetch()` REST:
+>   [[2026-09-17 Conectar o LiveScript ao proxy via feature-airtable-proxy, sem OTel por ora]].
+>   O commit dessa branch (`83d1a7f`) exige as duas variáveis, sem
+>   fallback; o fallback para o PAT direto de
+>   [[2026-09-16 Resolver rollback do LiveScript com checagem de variáveis de ambiente]]
+>   só existe na versão sem commit em `main` — ver [[LiveScript]]
+>   (conferido no repo em 2026-10-22).
+> - OTel do lado do LiveScript está **deferido**; o
+>   `OTEL_EXPORTER_OTLP_ENDPOINT` abaixo não vale pra essa branch.
+> - Chaves diretas do Airtable serão desabilitadas após ~2 meses:
+>   [[2026-10-14 Migração obrigatória para o proxy do Airtable]].
 
 ## Firebase
 

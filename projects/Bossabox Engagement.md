@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-08-26
+updated: 2026-10-22
 aliases: [bossabox, bossabox assessment]
 tags: [bossabox, vendor, ai-transformation, agent-flow]
 ---
@@ -166,7 +166,11 @@ to close, said the day after msilva committed to building it
 2026-08-26**: Pedro Arantes opened a dedicated email thread
 ([[LiveMode e Bossabox Services - email thread]]) to centralize this, with
 the
-Assessment deck attached — see the note above.
+Assessment deck attached — see the note above. *(Atualização 2026-10-22:
+nenhum registro na wiki de que a proposta ou o assessment tenham
+acontecido depois de 2026-08-26; o "tier gratuito" ainda aparece como
+pergunta aberta em [[Como deve funcionar o molde de agente]], 2026-10-21.
+Unverified: confirmar se a conversa com a Bossabox seguiu.)*
 
 ## Relevance to Agent Flow
 
