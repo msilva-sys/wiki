@@ -1,12 +1,20 @@
 ---
 type: project
 status: active
-updated: 2026-10-08
+updated: 2026-10-23
 aliases: [liveauth, liveauth poc]
 tags: [auth, security, liveauth, proxy]
 ---
 
 # LiveAuth
+
+## Evolução em estudo — sistemas e automações
+
+[[Como LiveAuth pode autenticar sistemas e automações]] (2026-10-23)
+explora identidades de serviço, permissões e tokens curtos para fluxos
+autônomos. É proposta, não capacidade implementada: o desenho atual
+exclui auth app-to-app. O estado de execução abaixo continua sendo o
+registro de 2026-10-07, sem nova verificação nesta query.
 
 > Related: [[LiveAuth — Identidade e Autorização por Grupo entre Apps Livemode]] · [[Airtable Proxy]]
 

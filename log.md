@@ -7190,3 +7190,10 @@ implementado no repo `livemode-fluxo-agentico` (branch `langgraph`, commit
   prática de prompt caching, DRY, proposta de Open Router), `syntheses/Cognee
   como memória dos agentes e do time.md` (reafirma migração de memória
   adiada, consistente com PoC ainda aberta), `index.md`.
+
+
+## [2026-10-23] query | Como LiveAuth pode autenticar sistemas e automações
+- Consultados o projeto LiveAuth, seu desenho e a reunião com Daniel de 2026-10-07; sem nova verificação do código ou do Linear. Nenhum callout pendente encontrado.
+- Nova síntese em rascunho: identidade por serviço/automação, permissões, tokens curtos, enforcement no destino e limites de revogação. Auth app-to-app continua fora do escopo implementado documentado; proposta não é decisão.
+- Distintos acesso interno, credenciais de fornecedores e governança de custo; Client Credentials conferido na RFC 6749 e federação na documentação GCP.
+- New: syntheses/Como LiveAuth pode autenticar sistemas e automações.md. Updated: projects/LiveAuth.md, index.md.
