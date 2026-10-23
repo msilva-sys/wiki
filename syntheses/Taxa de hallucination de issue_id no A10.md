@@ -1,6 +1,6 @@
 ---
 type: synthesis
-status: active
+status: deferred
 updated: 2026-08-28
 tags: [agents, agent-flow, a10, langgraph, hallucination, quality]
 aliases: [taxa de hallucination A10, PRO-480]

@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-10-06
+updated: 2026-10-22
 aliases: [Carolina, Carol]
 tags: [people, governance]
 ---
@@ -17,9 +17,14 @@ elsewhere in the wiki.
 - Owns the area's documentation Hub (`Brain` GitHub repo) walkthrough and the
   standing ask for everyone to check and correct their own entry.
 - Driving a company-wide **shared AI architecture** goal and a **Claude Code
-  training programme** for all areas, with Luís helping.
+  training programme** for all areas, with Luís helping *(ver nota abaixo)*.
 - Building a real team-wide skills/plugins repo, named `livemode`
-  ([[2026-08-18 1-1 Matheus - Luís]]).
+  ([[2026-08-18 1-1 Matheus - Luís]]). *(Atualização 2026-09-15: Luís
+  disse que não se envolve na central de skills, "é a Carolina quem puxa
+  isso" — [[2026-09-15 Proxy e Fluxo Agêntico com Luís]]. Ela já tinha
+  distribuído uma skill de Linear ao time em 2026-09-08 —
+  [[Linear Project Structure]]. Não confirmado que o repo `livemode` exista
+  como destino compartilhado.)*
 - Requested a Claude plan upgrade for msilva (the seat-based *"Humanos"*
   account).
 - Tentatively the speaker (unattributed in the transcript) working to unblock
@@ -29,11 +34,15 @@ elsewhere in the wiki.
   [[Pedro Alves]].
 - **Looped into [[Agent Flow]] conversations going forward (2026-08-20)** —
   Gabrielle gave her context on both the proxy and Fluxo Agêntico; escalation
-  path confirmed as msilva → Luís → Carol. Also doing a weekly check-in with
+  path confirmed as ~~msilva → Luís → Carol~~ *(superado em 2026-10-07:
+  com a saída do Luís, conflito de prioridade vai a Gabrielle ou Carolina —
+  [[2026-10-07 Divisão de projetos na transição de Luís]])*. Also doing a
+  weekly check-in with
   msilva through his first month ([[2026-08-20 1-1 Matheus - Gabrielle]]).
 - **Becomes msilva's 1:1 contact while Gabrielle is on leave** (2026-08-24 →
   ~2026-09-10), confirmed explicitly at the end of
-  [[2026-08-24 Agent Flow discovery with Carol]].
+  [[2026-08-24 Agent Flow discovery with Carol]]. *(Encerrado: Gabrielle
+  voltou em ~2026-09-10.)*
 - **Declines to rank [[Agent Flow]]'s 14 agents for msilva** — deliberately,
   to avoid biasing him toward telling her what she wants to hear. Says she
   isn't the design's author and defers per-agent authority to Gabrielle.
@@ -60,7 +69,7 @@ elsewhere in the wiki.
   priority opinion almost verbatim**, in a separate conversation the
   next day. The rest of the meeting's content (Airtable questioned then
   ruled out on volume; the "integration work defaults to us" pattern
-  citing Bruno) is plausibly hers but could equally be Luís's or
+  citing [[Bruno]]) is plausibly hers but could equally be Luís's or
   Arthur's — not confidently attributed further.
 - **Attended [[2026-08-27 Recap da Semana]]**, alongside Yasmin, Maria
   Fernanda and msilva — Gemini collapsed all four into one label. Some
@@ -85,12 +94,20 @@ elsewhere in the wiki.
 - **Dona do Programa de Governança e Segurança em IA** (projeto Linear `Guia
   de um Builder`, P-PRO-16) — inclui o **Guia de um Builder** (página de
   onboarding ao padrão corporativo) e o [[Sentinela]]. Pediu feedback a
-  msilva sobre a página em 2026-10-06; ver [[Feedback Carol guia de um
-  builder]].
+  msilva sobre a página em 2026-10-06; ver
+  [[Feedback Carol guia de um builder]].
+- **Contato indicado por Luís pra achar o dono do contrato comercial da
+  [[Opta]]** (2026-10-09) — ninguém sabe hoje quem internamente negocia/
+  aprova mudança de contrato com a Opta; Luís ia levar a questão a ela (e
+  possivelmente a [[Gabrielle Ferreira]]). Ver
+  [[2026-10-09 Opta - O que é isso]].
 - **Revisou os status updates semanais do A14, 2026-10-05** ([[2026-10-05 Carolina - Matheus (feedback reports A14)]]) —
   pediu três blocos (falta de dado · alertas/progresso · sugestões),
   recomendou não usar o estágio de ciclo de vida na v1 (deixou o mérito com
   Gabrielle), defende um agente separado para sistemas em manutenção e um
-  agente "pré-requisito" de completude de dados. Sugeriu pausar o envio
-  automático até o formato convergir. Vai incluir milestone na skill de
+  agente "pré-requisito" de completude de dados. ~~Sugeriu pausar o envio
+  automático até o formato convergir.~~ *(Corrigido em 2026-10-22: a pausa
+  é compromisso do msilva, PRO-860 — ver
+  [[2026-10-05 Carolina - Matheus (feedback reports A14)]]; a nota não a
+  atribui à Carolina.)* Vai incluir milestone na skill de
   criação de projeto.

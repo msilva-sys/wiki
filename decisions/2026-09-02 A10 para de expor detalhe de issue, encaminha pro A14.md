@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-09-04
 date: 2026-09-02
 aliases: [fronteira PM vs Portfolio, A10 não vê issue, A10 fala só de portfólio]

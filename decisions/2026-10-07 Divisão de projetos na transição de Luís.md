@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-10-08
 aliases: [divisão de projetos, transição Luís]
 tags: [transição, agent-flow, airtable-proxy, livescript, farol, opta, onboarding]

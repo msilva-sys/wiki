@@ -1,12 +1,38 @@
 ---
 type: person
 status: active
-updated: 2026-10-08
+updated: 2026-10-21
 aliases: [Luís, Luis Fernandez]
 tags: [people, engineering]
 ---
 	
 # Luís Fernandez
+
+> [!note] O que ele está passando adiante e propondo — 14/10
+> Duas reuniões no mesmo dia, ambas com cara de transição (ver
+> [[2026-10-07 Matheus - Luis (Transição)]]):
+>
+> **Entrega o [[Airtable Proxy]]** em
+> [[2026-10-14 Luís - Yasmin - Matheus (demo do proxy)]] — a evolução do
+> dashboard passa a msilva e [[Yasmin Macedo]]. Deixou pendente, como
+> ideia sem solução, levar a detecção de antipadrões para o momento de
+> escrever o código, em vez de só observar depois: *"o ideal é que o
+> próprio Claude, enquanto a gente tá desenvolvendo, veja isso, saiba e já
+> corrija. [...] Só não sei como que a gente automatiza esse processo
+> inteiro ainda."*
+>
+> **Propõe o fluxo de Git e homologação** em
+> [[2026-10-14 Workflow de Git + Linear Status]] — `main` protegida,
+> `release/*`, `develop`, PR obrigatório, chaves separadas por ambiente,
+> branches amarradas ao Linear. **Não foi aprovado**: ficou como "precisa
+> de mais conversa" diante do questionamento sobre burocracia para o
+> tamanho do time. Ele assumiu cinco commitments para a próxima rodada,
+> incluindo listar os sistemas a migrar para a Cloudflare e montar a
+> homologação do [[LiveScript]] lá.
+>
+> Posição dele sobre a migração Vercel → Cloudflare: cética quanto a
+> abandonar a Vercel por completo — prioriza serviços essenciais, propõe
+> descontinuar sistemas obsoletos e manter na Vercel o que for complexo.
 
 Tech Lead for the area. Part-time — afternoons only, with flexibility
 ([[2026-08-14 Papo de Projetos]]). Validates architecture and systems,
@@ -127,13 +153,14 @@ sometimes builds directly, otherwise supports.
   [[Fronteira A10×A14 (informação e métricas)]]. A fronteira ampla ainda
   não está formalmente adotada — o doc é material de referência, não
   decisão fechada.
-- **Respondeu as duas análises que pediu em 2026-09-02** ([[Direcionamento
-  PRO-84 PRO-87]], 2026-09-04): descarta rede privada/VM, decide Cloud Run
+- **Respondeu as duas análises que pediu em 2026-09-02**
+  ([[Direcionamento PRO-84 PRO-87]], 2026-09-04): descarta rede privada/VM,
+  decide Cloud Run
   público com API key por app como fronteira de segurança
-  ([[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app
-  API keys]]), e decide Grafana Cloud para telemetria de produção
-  ([[2026-09-04 Use Grafana Cloud for Airtable Proxy production
-  telemetry]]), fechando a investigação de
+  ([[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API keys]]),
+  e decide Grafana Cloud para telemetria de produção
+  ([[2026-09-04 Use Grafana Cloud for Airtable Proxy production telemetry]]),
+  fechando a investigação de
   [[Grafana hospedado vs Cloud Monitoring para telemetria de produção]].
   **Confirma ao vivo o mesmo dia** ([[2026-09-04 1-1 Matheus - Luís]]) e
   acrescenta um fato novo: ninguém usa VPN pra acessar as aplicações
@@ -161,8 +188,9 @@ sometimes builds directly, otherwise supports.
 - **Decide, com convicção forte, 2026-09-15**: cada agente do
   [[Agent Flow]] que fala com usuário externo precisa de identidade/persona
   própria, e o A1 Receptor tem que responder ao usuário quase na hora —
-  ver [[2026-09-15 Agente voltado a usuário externo precisa de identidade
-  própria e resposta imediata]]. Mesma conversa: discorda de msilva sobre
+  ver
+  [[2026-09-15 Agente voltado a usuário externo precisa de identidade própria e resposta imediata]].
+  Mesma conversa: discorda de msilva sobre
   se os critérios de classificação do A2 têm ligação com os de priorização
   de portfólio (A10) — baixa convicção dos dois lados, em aberto. Confirma
   ter um fluxo pessoal (LangGraph + Claude Code) já funcionando pra um
@@ -184,8 +212,11 @@ sometimes builds directly, otherwise supports.
   (atrapalha reordenação) — ainda não é padrão do time. Vai escrever
   briefing de testes E2E com Playwright pra msilva e Yasmin, isolando a
   camada de comunicação com Airtable, depois de alinhar com Carol e Gabi.
-- **Está saindo da empresa — reunião de transição, 2026-10-07**
-  ([[2026-10-07 Matheus - Luis (Transição)]]): divide os projetos que
+- **Está saindo da empresa, último dia fim de outubro/2026** (confirmado
+  por msilva, 2026-10-13 — corrige a leitura anterior desta página de que
+  ele já teria saído em 2026-10-07; essa data foi só a reunião de
+  transição/divisão de projetos, ele segue presente e ativo até o fim do
+  mês) ([[2026-10-07 Matheus - Luis (Transição)]]): divide os projetos que
   tocava — ver [[2026-10-07 Divisão de projetos na transição de Luís]].
   [[LiveScript]] e [[Farol]] passam pra [[Yasmin Macedo]]; msilva
   fica com [[Agent Flow]] e [[Airtable Proxy]]; [[Opta]] continua
@@ -200,3 +231,65 @@ sometimes builds directly, otherwise supports.
   (`livemode-juridico`)**, e em algum momento anterior achou uma
   informação vazada no código desse mesmo projeto — relatado por ela em
   [[2026-10-08 Discovery LiveAuth com Ana Beatriz Fonseca (Jurídico)]].
+- **Passa o histórico e funcionamento da [[Opta]] pra Matheus e Yasmin,
+  2026-10-09** ([[2026-10-09 Opta - O que é isso]]): histórico de ownership
+  ([[Pessanha]] → [[Pedro Alves]] → [[Vini]]), arquitetura em três repos
+  (Opta API/MCP/Docs), chave de API única compartilhada pela empresa
+  (quer rotacionar), credencial fora do Secret Manager (aponta como
+  problema), relatório de uso que fez pra [[Maria Fernanda Lemos]] (bug real
+  no `get_schedule`, 51% de sucesso). Quer que o time trate a Opta como
+  produto, com dashboard de uso visível, antes de sair da empresa.
+- **Perfil da vaga que o substitui, descrito por Gabrielle em
+  [[2026-10-13 Matheus - Gabrielle (PDI)]]**: arquitetura + visão de produto
+  + uso estratégico de IA (multiplicar o time, não só uso pessoal); fit
+  cultural avaliado por Carolina. Na visão dela, o próprio Luís hoje olha
+  mais pro produto do que pro desenvolvimento em si — mesma conversa.
+
+## O método que ele prescreve — 2026-10-20
+
+Última conversa técnica longa antes da saída ([[2026-10-20 Matheus - Luís (arquitetura dos agentes, ADR e tokens)]]). Vale registrar como método
+dele, não só como feedback pontual, porque é a forma mais explícita que ele
+deu de como trabalha:
+
+1. **Arquitetura antes de código.** Exemplo próprio em curso na conversa: ~20
+   dias com acesso ao código de outro projeto, fora da Livemode, **sem ter
+   escrito nada** — testando, estudando e validando até ter opinião clara
+   sobre a arquitetura.
+2. **ADR como regra sagrada.** Pega o desenho, questiona com o modelo, pede
+   que ele descreva a solução por escrito — *"a partir daquele momento,
+   aquilo ali é sagrado e ele não pode fugir daquilo"*. Exceção prevista: se o
+   modelo apontar que algo não funciona, *"bota um puxadinho, deixa marcado
+   lá no outro ADR específico e segue"*.
+3. **A arquitetura mora no repositório, não na cabeça.** *"Como é que ele vai
+   seguir a arquitetura que você, como arquiteto, quer que ele siga, se você
+   não tá disponibilizando a arquitetura para ele?"*
+4. **Arquiteto não revisa todo o código.** Revisar tudo é sintoma de
+   arquitetura não disponibilizada. Ele reconhece não acompanhar cada passo do
+   agente e trata isso como parte delegável, não como falha.
+5. **Não economizar token.** Caminho dele: começou na conta mais barata do
+   Cursor e foi subindo a cada limite batido até o plano de 200, onde está há
+   seis meses. Regra: vir **de cima para baixo**, nunca otimizar para o modelo
+   mais fraco. Ressalvas que ele mesmo põe: não escala para 4–20 pessoas, e a
+   janela é temporária — *"enquanto os tokens estão baratos [...] uma hora o
+   preço vai pra realidade"*.
+6. **Ultra Code com plano lido e confirmado** antes de deixar rodar de
+   madrugada — consequência prática de ter a arquitetura fechada, não
+   substituto dela.
+
+**Propôs um projeto conjunto** com msilva: pegar o desenho do quadro e
+implementá-lo a quatro mãos, como caixa inicial para desenvolver qualquer
+solução de agente. Motivo declarado: *"a única forma de eu conseguir te passar
+é a gente fazer alguma coisa junto"*, precedido de *"eu não sei ensinar as
+pessoas ainda"* — ele trata a dificuldade de transmitir como limitação própria.
+Sem data marcada, e a janela acaba com a saída dele no fim de outubro.
+
+Também estabeleceu uma norma de comunicação, consistente com
+[[2026-08-18 Bring options to Luís before deciding, communicate async and often]]:
+bloqueio se avisa, não se contorna em silêncio — *"em que momento você me
+falou 'tô estourando token'?"*.
+
+`(unverified: diarização colapsada no raw; atribuição inferida por contexto)`
+
+Trajetória completa da opinião dele sobre o projeto dos agentes —
+agosto a outubro/2026, incluindo Slack e fontes não ingeridas, com
+verificação das atribuições de 20/10 — em [[O que Luís acha do projeto dos agentes]] (2026-10-21).

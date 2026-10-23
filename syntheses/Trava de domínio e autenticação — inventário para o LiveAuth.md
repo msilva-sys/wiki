@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-10-08
+updated: 2026-10-22
 date: 2026-09-24
 tags: [auth, security, liveauth, trava-de-dominio]
 aliases: [inventário trava de domínio, impacto liveauth, inventário de auth]
@@ -88,10 +88,13 @@ projeto, sem registro central, falha aberta se faltar secret.
 | `vitrine-ia-lmarques` | Cloudflare Pages |
 
 `client-intelligence` e `livemode-template` têm a skill copiada mas não
-instalada (sem gate ativo na raiz). O próprio [[Agent Flow|Fluxo
-Agêntico]] usa o mesmo modelo mental mas com implementação própria em
-`auth_gate.py`, não a skill (`livemode-fluxo-agentico`, ver
+instalada (sem gate ativo na raiz). O próprio
+[[Agent Flow|Fluxo Agêntico]] usa o mesmo modelo mental mas com
+implementação própria em `auth_gate.py`, não a skill
+(`livemode-fluxo-agentico`, ver
 [[2026-08-28 Trava de domínio no Fluxo Agêntico via Google OAuth]]).
+*(Vale até 2026-09-24: no mesmo dia o `auth_gate.py` passou a delegar ao
+LiveAuth — ver Implicação.)*
 
 ## Padrão 2 — Auth.js/NextAuth própria, domínio restrito via callback `signIn` (5 deploys)
 
@@ -262,13 +265,17 @@ Superfície de apps com auth/domínio próprio identificados: **20 deploys**
 Supabase + 1 Express/Passport + 2 Google Identity embutido + 1 login
 client-only), fora os 3 de segredo único compartilhado (modelo
 diferente, não comparável) e o Fluxo Agêntico — **21 apps** no total já
-resolvendo esse problema, cada um à sua maneira, nenhum consumidor do
-LiveAuth. Mais **1 achado explicitamente aberto**
+resolvendo esse problema, cada um à sua maneira. (Dizia aqui "nenhum
+consumidor do LiveAuth" — **corrigido em 2026-10-22**: o Fluxo Agêntico
+migrou o login pro LiveAuth em 2026-09-24, o mesmo dia deste inventário, e
+o MCP em 2026-09-28; é o primeiro consumidor real. Ver [[LiveAuth]],
+seção "Consumidores reais".) Mais **1 achado explicitamente aberto**
 (`copa2026-labelling`) e **2 candidatos não confirmados**
 (`painel-salas`, `livemode-brain`) que nem entram nessa conta. O design
-doc do LiveAuth cobre migração do Fluxo Agêntico como não-objetivo por
-ora, mas não menciona nenhum dos outros 20 — se um dia virar migração,
-não é troca de um lugar só. Pelo menos 3 apps já têm autorização mais
+doc do LiveAuth ~~cobre migração do Fluxo Agêntico como não-objetivo por
+ora, mas~~ tratava a migração do Fluxo Agêntico como não-objetivo, e ela
+aconteceu mesmo assim; não menciona nenhum dos outros 20 — se um dia virar
+migração, não é troca de um lugar só. Pelo menos 3 apps já têm autorização mais
 granular que o modelo atual de grupo binário por `app_id` do LiveAuth:
 `sistemas-visuais-hub` e `ai-enablement-hub` (RBAC por pessoa/role), e
 sobretudo `livemode-projects-management` (grupo por projeto,
@@ -281,8 +288,10 @@ domínio checado no client sem nenhum servidor por trás (Padrão 8,
 
 ## Open questions
 
-- Não confirmado se algum dos 21 apps tem plano de virar consumidor do
-  LiveAuth.
+- ~~Não confirmado se algum dos 21 apps tem plano de virar consumidor do
+  LiveAuth.~~ **Respondido em 2026-10-22**: o Fluxo Agêntico já é — migrou
+  o login em 2026-09-24 e o MCP em 2026-09-28, conferido no código. Dos
+  outros 20, nenhum plano confirmado.
 - `live-content` (Supabase) — não confirmado se restringe por domínio ou
   não.
 - `painel-salas` e `livemode-brain` — precisam de checagem ao vivo (abrir
@@ -301,4 +310,7 @@ domínio checado no client sem nenhum servidor por trás (Padrão 8,
   sinais buscados. Se surgir mais algum caso, seguir o mesmo padrão
   desta correção: registrar inline, não reescrever silenciosamente.
 - Escopo desta pesquisa: conta `tech-livemode` (org + pessoal). Não
-  cobre outras contas/orgs GitHub da Livemode, se existirem.
+  cobre outras contas/orgs GitHub da Livemode, se existirem. Automação em
+  n8n também ficava de fora, por não deixar repo — coberta em 2026-10-22
+  por [[Mapeamento dos fluxos do n8n]], que achou 1 login Google
+  reimplementado (Ranking do CRM), fora da conta dos 21.

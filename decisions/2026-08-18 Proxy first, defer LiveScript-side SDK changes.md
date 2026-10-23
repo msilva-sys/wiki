@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-08-26
 date: 2026-08-18
 decided_by: Luís Fernandez
@@ -41,8 +41,9 @@ problema? Não [...] é uma necessidade identificada."*
 - ~~**`PRO-82`** (fluxo de onboarding e emissão de chaves por app) — same
   limit applies, per the same comment on `PRO-76`.~~ **Resolved 2026-08-20**:
   Luís settled the onboarding flow directly — no self-serve tooling now,
-  worst case is direct config in the base, per [[2026-08-18 Bring options to
-  Luís before deciding, communicate async and often]]. No longer blocked by
+  worst case is direct config in the base, per
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]].
+  No longer blocked by
   this scope rule; see [[Airtable Proxy]] for the resolution.
 - **`PRO-62`** (commit LiveScript's `feat/airtable-observability-local`
   branch so it talks to the proxy, plus confirming the REST-call path's

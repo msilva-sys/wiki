@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-08-18
+updated: 2026-10-22
 aliases: [orca, cde, comprovante de entregas]
 tags: [orca, cde, ml, computer-vision, audio, production]
 ---
@@ -49,6 +49,10 @@ Orca's product code — see [[Orca Next Version]].
 - Used hard during the 2026 World Cup by ops in Brazil (Yuri Muanes) and
   Portugal (Lucas Gomes) — thousands of deliveries processed, several rough
   edges surfaced (below).
+- *(2026-10-05)* Carolina classifica Orca e LiveScript como **sistemas em
+  manutenção**, fora do Linear como projeto ativo, e acha que pedem outro
+  agente que não o A14:
+  [[2026-10-05 Carolina - Matheus (feedback reports A14)]].
 
 ## How it works, and where it's rough
 
@@ -106,4 +110,9 @@ certainly refers to **Pedro Alves**, the engineer named throughout the
   clear the IVC parity question?
 - Is Orca's migration behind the [[Airtable Proxy]] sequenced or still just
   intended? ([[Which agent should be built first]] needs this dated.)
+  *(Parcialmente respondida em 2026-10-14: a
+  [[2026-10-14 Migração obrigatória para o proxy do Airtable]] obriga toda
+  integração com o Airtable a usar o proxy, com as chaves diretas
+  desabilitadas após ~2 meses. O Orca não é nomeado; data de migração dele
+  segue sem registro.)*
 - Confirm "Pedrinho" = Pedro Alves.

@@ -1,9 +1,9 @@
 ---
 type: meeting
 status: stable
-updated: 2026-09-09
+updated: 2026-10-22
 date: 2026-09-08
-attendees: [Carolina Bezerra, Maria Fernanda Lemos, João Victor Andrade, Camila Sande, Matheus Silva]
+attendees: [Carolina Bezerra, Maria Fernanda Lemos, João Victor Andrade, Camila Schueler, Matheus Silva]
 aliases: [weekly 08/09, weekly remarcação]
 tags: [linear, process, project-management, airtable-proxy, portfolio]
 ---
@@ -56,7 +56,7 @@ gente.
   view de planejamento no Monday; migrar o acompanhamento do ClickUp pro
   Linear — **feito no mesmo dia**, ver
   [[2026-09-08 Overview de Linear com João Victor]].
-- **Camila**: terminar o segundo bloco do curso da Cloud e mandar feedback
+- **[[Camila Schueler|Camila]]**: terminar o segundo bloco do curso da Cloud e mandar feedback
   pra Carolina.
 
 > [!note] A ata do Gemini errou uma atribuição

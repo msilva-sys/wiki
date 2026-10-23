@@ -1,7 +1,7 @@
 ---
 type: concept
 status: draft
-updated: 2026-09-25
+updated: 2026-10-20
 aliases: [harness template, trigger input harness output, agent template (Luís)]
 tags: [agent-flow, architecture, harness, claude-agent-sdk]
 ---
@@ -30,8 +30,9 @@ Output (result, changed systems, etc)
 
 ## Como se conecta ao que já existe na wiki
 
-**Refina o método actor→input→output.** Em [[2026-08-20 Fluxo Agêntico diagram
-walkthrough with Luís]], Luís propõe que cada entidade do [[Agent Flow]] seja
+**Refina o método actor→input→output.** Em
+[[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]], Luís propõe que
+cada entidade do [[Agent Flow]] seja
 especificada somente como actor → input → output, sem desenhar antecipadamente
 o grafo entre agentes. Este template é a mesma ideia com mais resolução: o lado
 do “actor” se divide em **tipo de Trigger** (Human ou Machine) e **Trigger
@@ -83,8 +84,9 @@ camada Skills/Tools de outro agente.
 eixo distinto dos quatro canais de entrada de [[Agent Flow]] (`Bug sistema` ·
 `Bug manual` · `Tarefa` · `Consultoria`); ambos coexistem no modelo.
 
-**Reforçado ao vivo, não só por escrito.** Em [[2026-08-26 1-1 Matheus - Luís
-(agentes A10-A14)]], Luís retoma a distinção trigger/input especificamente
+**Reforçado ao vivo, não só por escrito.** Em
+[[2026-08-26 1-1 Matheus - Luís (agentes A10-A14)]], Luís retoma a distinção
+trigger/input especificamente
 sobre A10/A14. Não é um conceito isolado da mensagem de 2026-08-21, mas uma
 forma consistente de pensar os agentes.
 
@@ -93,8 +95,8 @@ forma consistente de pensar os agentes.
 A conversa de msilva com Luís em 2026-09-01 acrescenta uma questão de produto:
 além de usar este template para descrever um agente, deveria existir um **molde
 reutilizável** a partir do qual novas instâncias de agentes possam ser criadas e
-configuradas. O desenho inicial, ainda não decidido, está em [[Como deve
-funcionar o molde de agente]].
+configuradas. O desenho inicial, ainda não decidido, está em
+[[Como deve funcionar o molde de agente]].
 
 O molde não substitui este template: ele transforma a anatomia conceitual acima
 em um contrato configurável. A fronteira entre aquilo que pertence ao molde, à
@@ -128,13 +130,71 @@ Nenhuma das duas resolve qual substrato roda o Harness de Luís — Claude Agent
 SDK ou LangChain `create_agent`. Servem como vocabulário e comparação, não como
 resposta.
 
-**msilva, lendo [[Inside the multiplayer AI setups at Mintlify, LangChain,
-and Buffer]] (2026-09-25)**, nota a mesma distinção por conta própria: a
+**msilva, lendo
+[[Inside the multiplayer AI setups at Mintlify, LangChain, and Buffer]]
+(2026-09-25)**, nota a mesma distinção por conta própria: a
 frase da LangChain *"we're not solving a repo of skills management
 challenge, we're solving a production agent challenge"* aponta, na leitura
 dele, pro problema do harness (onde o agente roda, como se comunica) como
 categoria diferente de gerenciar skills — mesmo eixo desta pergunta em
 aberto, não resposta nova.
+
+## Um harness de codificação real, mapeado no eixo guias/sensores — 2026-10-20
+
+[[Rasmic - The 4-Step Agentic Engineering Workflow]] descreve um harness de
+engenharia em produção (`AGENTS.md` + quatro skills) que cai limpo no eixo
+feedforward/feedback de [[Harness engineering for coding agent users]]:
+
+| Passo | Skill | Guia ou sensor |
+|---|---|---|
+| Isolate | `new-feature` (git worktree) | Guia — restringe o espaço antes de agir |
+| Build | `code-structure` (service layer) | Guia — prescreve a arquitetura em vez de deixar o agente inventar uma por feature |
+| Prove | `evidence-driven-testing` / `before-and-after` | Sensor computacional — vídeo, screenshot ou número do antes e depois |
+| Ship | `grep-loop` (Greptile) | Sensor inferencial — outro LLM julga o PR, com critério de parada numérico (5/5) e teto de iteração |
+
+Por que interessa a este template: é a primeira fonte do vault que mostra um
+harness completo **em que a composição e o ciclo de controle são a mesma
+coisa**. O `AGENTS.md` dele não lista o que o harness tem (Soul.md, Skills,
+Tools, MCP — a leitura do template de Luís); lista **em que ponto do fluxo
+chamar qual skill**. As duas taxonomias param de ser só complementares: aqui a
+ordem das peças *é* a especificação do agente.
+
+Consequência pro desenho dos 14 agentes: o passo 4 é um caso concreto de gate
+inferencial com critério de parada explícito — exatamente a peça que falta nos
+gates de A12/A13, discutidos até aqui como gate determinístico. Mas o próprio
+autor não confia nele sozinho: mantém review manual depois do 5/5, o que é o
+*behaviour harness* de Böckeler reaparecendo como problema não resolvido, não
+como peça pronta pra copiar.
+
+## A arquitetura é peça do harness, não contexto do arquiteto — 2026-10-20
+
+Três fontes independentes convergem num ponto que nenhuma delas chama assim:
+**a arquitetura só regula o agente se estiver disponível como artefato que ele
+lê, não como entendimento que o humano carrega.**
+
+| Fonte | Como aparece |
+|---|---|
+| Luís, [[2026-10-20 Matheus - Luís (arquitetura dos agentes, ADR e tokens)]] | *"Como é que ele vai seguir a arquitetura que você, como arquiteto, quer que ele siga, se você não tá disponibilizando a arquitetura para ele?"* — diagnóstico de que a arquitetura do repo dos agentes vive no *brain* de msilva, não versionada |
+| [[Rasmic - The 4-Step Agentic Engineering Workflow]] | A skill `code-structure` **é** exatamente isso: a arquitetura prescrita e nomeada dentro do harness, invocada no passo Build |
+| [[Harness engineering for coding agent users]] | A categoria *architecture fitness* e o eixo **guias (feedforward)** — regular antes de agir, não corrigir depois |
+
+A convergência é não planejada: Luís não leu o Rasmic, e o Rasmic chegou ao
+vault no mesmo dia por outro caminho. O que ela acrescenta a este template é
+que **Skills não é um slot neutro de capacidades** — é onde a arquitetura
+precisa morar para ter efeito regulatório. Um harness com Soul.md, Tools e MCP
+bem definidos, mas sem a arquitetura escrita em lugar nenhum, deixa a decisão
+estrutural para o modelo a cada tarefa.
+
+Luís vai além e torna a regra inegociável: a decisão vira **ADR**, e
+*"a partir daquele momento, aquilo ali é sagrado e ele não pode fugir
+daquilo"*. Onde a arquitetura de fato não serve, a saída é um puxadinho
+marcado em ADR própria — nunca abandonar a ADR em silêncio. Isso é o
+equivalente, no slot Skills, do critério de parada numérico que o passo Ship do
+Rasmic dá ao slot de sensores.
+
+**Não testado neste vault.** Nenhum dos agentes do [[Agent Flow]] tem hoje a
+arquitetura como arquivo no repositório — o diagnóstico de 2026-10-20 é
+justamente a ausência disso.
 
 ## Questões em aberto
 

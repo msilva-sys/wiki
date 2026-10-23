@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-08-25
 date: 2026-08-25
 aliases: [quadro farol, farol whiteboard]

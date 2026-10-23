@@ -1,6 +1,6 @@
 ---
 type: meeting
-status: active
+status: stable
 updated: 2026-08-26
 date: 2026-08-19
 attendees: [Gabrielle Ferreira, Matheus Silva]
@@ -116,8 +116,9 @@ ops-monitoring one, but doesn't resolve it.
 
 > [!important] This may be the reconciliation the Luís/Gabrielle conflict needs — not yet run past either of them
 > [[2026-08-18 1-1 Matheus - Luís]] has Luís arguing Watch shouldn't be
-> defined by the proxy at all; the same-day [[2026-08-18 1-1 Matheus -
-> Gabrielle]] and [[Airtable Proxy]] lean on the proxy as Watch's strongest
+> defined by the proxy at all; the same-day
+> [[2026-08-18 1-1 Matheus - Gabrielle]] and [[Airtable Proxy]] lean on the
+> proxy as Watch's strongest
 > utility case. **Path B treats the proxy as one input among several** (proxy,
 > LogRocket, Vercel), not as the thing that defines Watch's scope — which
 > answers Luís's actual objection (*"imagina que ele não funciona com o
@@ -125,8 +126,9 @@ ops-monitoring one, but doesn't resolve it.
 > useful once it exists, which is Gabrielle's case. **This is msilva's own
 > synthesis from this meeting, not something agreed with Luís** — worth
 > raising in the discovery conversations already planned with Gabrielle and
-> Carol, per [[2026-08-18 Bring options to Luís before deciding, communicate
-> async and often]], rather than treated as settled.
+> Carol, per
+> [[2026-08-18 Bring options to Luís before deciding, communicate async and often]],
+> rather than treated as settled.
 >
 > It also means [[How to implement A5 Watcher]]'s existing build plan — a
 > single Grafana/Prometheus pipeline scoped to the proxy — is **Path A applied

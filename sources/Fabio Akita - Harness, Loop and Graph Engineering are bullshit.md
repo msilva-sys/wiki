@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-08-20
 date: 2026-08-18
 aliases: [akita hot take, harness engineering bullshit, spec-driven development critique, ai-memory]

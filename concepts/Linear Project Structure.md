@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-10-05
+updated: 2026-10-22
 aliases: [Linear structure, initiatives and projects, milestones, Liner]
 tags: [linear, process, project-management]
 ---
@@ -56,9 +56,11 @@ projects, all created by Luís:
 
 1. the [[Airtable Proxy]];
 2. **expanding the proxy to other apps beyond LiveScript**;
-3. a **Livemode data hub** — an intermediate database, plausibly the wiki's
+3. a **Livemode data hub** — an intermediate database, ~~plausibly the wiki's
    already-recorded Phase 2. Gabrielle is relaying Luís second-hand and hedges four
-   times; ask him.
+   times; ask him.~~ *(Confirmado por msilva em 2026-10-08: é o mesmo
+   projeto que [[Live Hub]], a Phase 2; no Linear, `LiveMode Data Hub
+   (POC)`.)*
 
 Read against the definition, the *solution* is governing and stabilizing Airtable access
 company-wide, and the proxy is one delivery segment. That matches msilva's own internal
@@ -306,10 +308,13 @@ qualified in words.
 
 - Free plan caps around **250 issues** (*"uma barreira de 250, se não me engano, 150"*) —
   the original reason the Jira migration was postponed.
-- The team is on a **Business trial expiring 2026-09-09**
-  ([[2026-08-18 1-1 Matheus - Gabrielle]]).
-- **The purchase is undecided**, not pending: *"pra gente entender qual o plano faz
-  sentido a gente assinar e se faz sentido assinar."*
+- ~~The team is on a **Business trial expiring 2026-09-09**
+  ([[2026-08-18 1-1 Matheus - Gabrielle]]).~~
+- ~~**The purchase is undecided**, not pending: *"pra gente entender qual o plano faz
+  sentido a gente assinar e se faz sentido assinar."*~~
+  *(Superado em 2026-09-14 — o time fez o upgrade e o trial deixou de
+  bloquear a criação de issues; ver o callout "Trial resolvido" abaixo. O
+  plano contratado não está registrado.)*
 - Gabrielle's stated preference is to stay: *"eu particularmente eu gosto do liner, eu
   acho que a gente vai continuar nele."*
 
@@ -391,8 +396,12 @@ Duas reuniões no mesmo dia mexeram com o que está registrado acima:
 **O nome do projeto está errado, por admissão de msilva.** Na mesma call:
 *"o nome tá errado. Seria validado com algum projeto."* `Proxy em produção
 validado c/ LiveScript` presume que o LiveScript é a aplicação que vai
-apontar pro proxy — decisão que ainda não foi tomada e que é do Luís (ver
-[[2026-09-04 1-1 Matheus - Luís]]). Renomear resolveria de uma vez esse
+apontar pro proxy — ~~decisão que ainda não foi tomada e que é do Luís (ver
+[[2026-09-04 1-1 Matheus - Luís]])~~ *(Superado em 2026-10-07: o
+LiveScript foi escolhido como primeiro consumidor, ainda não conectado em
+2026-10-22 — ver [[Airtable Proxy]]. A premissa do
+nome agora vale; renomear só se justifica pela legibilidade, e isso não
+foi decidido.)*. Renomear resolveria de uma vez esse
 ponto e boa parte da confusão de nomes que a Carol levantou acima.
 
 ### A skill de Linear, e um segundo caminho de distribuição
@@ -454,8 +463,10 @@ que esbarra no Monday entra na iniciativa do Monday, não numa própria).
 - ~~**Which initiative does [[Agent Flow]] belong to?**~~ **Answered** — its own, one
   project per part (Gabrielle, hedged).
 - **What does Luís think is wrong with his templates?** He is rewriting them. Assigned.
-- **Is the Livemode data hub a real project?** Described as an intermediate database for
-  migrating off Airtable, second-hand and hedged four times. Ask Luís.
+- ~~**Is the Livemode data hub a real project?** Described as an intermediate database for
+  migrating off Airtable, second-hand and hedged four times. Ask Luís.~~
+  **Answered 2026-10-08, msilva** — sim: é o projeto `LiveMode Data Hub
+  (POC)` (já existia no Linear em 2026-08-18) e a página [[Live Hub]].
 - **Does the tracking board really read Airtable?** If so it is a proxy candidate, and
   the tool watching msilva's project would sit behind the project itself.
 - **Does a project have to be classified *em andamento* to appear on the board?** Implied.
@@ -467,5 +478,9 @@ msilva, em [[2026-10-05 Carolina - Matheus (feedback reports A14)]]: o Linear n�
 (confirmado também por Gabrielle, segundo ele) — por isso o A10/A14 ganhou
 um campo próprio de **estágio** (Planejamento/Construção/Evolução/
 Manutenção…) com de-para para o status nativo (`PRO-704`). Carolina
-questiona usar esse estágio na v1 do agente; mérito em aberto com
-Gabrielle.
+questiona usar esse estágio na v1 do agente; ~~mérito em aberto com
+Gabrielle.~~ *(Esclarecido por msilva em 2026-10-05: o estágio continua
+como campo, só sai da análise do A10/A14 por enquanto; a validação da
+Carolina não chegou. Em 2026-10-20, combinou expandir os valores de
+`stage` e montar o de-para — ver
+[[2026-10-20 Matheus - Luís (arquitetura dos agentes, ADR e tokens)]].)*

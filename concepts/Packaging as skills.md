@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-10-02
+updated: 2026-10-20
 date: 2026-08-17
 aliases: [skills, packaging, skill packaging, distribution]
 tags: [agents, skills, tokens, sharing, claude]
@@ -13,7 +13,7 @@ tags: [agents, skills, tokens, sharing, claude]
 a Claude *skill*: instructions plus any scripts, versioned as files, shareable, and
 invocable without dragging its context along.
 
-Filed as a concept because it has arrived independently from **six sources**
+Filed as a concept because it has arrived independently from **seven sources**
 without anyone setting out to establish it, and because it appears to answer two
 problems that were being treated as separate.
 
@@ -40,6 +40,7 @@ rather than a bullet.
 | [[Gabriel Packer - solo founder AI workflow (part 1)]] | *"Write agent instructions to files, not memory. Memory compacts and agents forget context mid-task; files persist and every agent reads the same source of truth"* |
 | [[Sharing the accounting automation with the team]] | Distribution options worked through for the accounting case; skills among them |
 | [[Sharing via Projects - the accounting project]] | Projects as the container packaged work lives in |
+| [[Rasmic - The 4-Step Agentic Engineering Workflow]] | Um workflow de engenharia inteiro empacotado como `AGENTS.md` + 4 skills nomeadas, `"model and harness agnostic"` — e o autor vive de entregar software pra terceiros com isso |
 
 The Gabriel case is the strongest because it is a controlled comparison: two
 components, one packaged and one not, and the packaged one is the one that works.
@@ -194,18 +195,51 @@ Code, descartado por não ser harness-agnostic). Ainda não resolve a
 gate de qualidade real segue em aberto, mesma lacuna que esta página já
 registra.
 
+## Quando uma skill morre — o critério descritor vs. workflow, 2026-10-20
+
+[[Rasmic - The 4-Step Agentic Engineering Workflow]] divide skills em dois
+tipos com destinos opostos conforme os modelos melhoram:
+
+- **Descritor** — explica ao agente algo a que ele já tem acesso (como o
+  código está estruturado, onde ficam as pastas). *"That's for sure gone.
+  You shouldn't do that."*
+- **Workflow** — codifica como a pessoa trabalha e o que ela aceita como
+  pronto. Sobrevive, porque não é informação que o modelo possa derivar
+  lendo o repo.
+
+Isso dá a esta página um critério que ela não tinha: **nem toda skill
+empacotada é igualmente durável, e dá pra dizer qual é qual antes de
+investir em padronizá-la.** As skills de proxy do Luís
+(`airtable-proxy-connect`, `airtable-proxy-doctor`) são workflow — carregam
+a ordem dos passos e o que conta como integração verificada, não descrevem
+o repo. O que envelheceu nelas foi um requisito do mundo (API key), não o
+modelo ficar mais esperto. Consistente com o critério, não contra ele.
+
+O mesmo autor prevê que o que aposenta as skills de workflow dele não é o
+modelo, é o **harness** passar a incorporar a prática — o que empurra a
+pergunta em aberto desta página sobre "qual deveria ser o padrão" uma
+camada pra cima: padronizar no repo do time pode ser padronizar algo que o
+harness vai absorver.
+
+**Não testado aqui.** O critério é plausível e vem de prática relatada, sem
+medição; nada no vault ainda mediu uma skill ficando obsoleta por melhora
+de modelo, em vez de por mudança de requisito.
+
 ## Open questions
 
 - **Como uma skill de manutenção enxerga o contexto da skill que mantém?**
-  Levantado por msilva lendo [[Marketing teams are stuck in single-player
-  Claude mode. Here's how to go multiplayer]] (2026-09-25) — nem a fonte
+  Levantado por msilva lendo
+  [[Marketing teams are stuck in single-player Claude mode. Here's how to go multiplayer]]
+  (2026-09-25) — nem a fonte
   externa nem esta página têm resposta ainda.
-- **Candidato a resposta parcial, 2026-09-25**: ver [[A6 Curador deve
-  padronizar e sinalizar defasagem de skills]] — atribuir a padronização e
+- **Candidato a resposta parcial, 2026-09-25**: ver
+  [[A6 Curador deve padronizar e sinalizar defasagem de skills]] — atribuir
+  a padronização e
   o sinal de defasagem a A6 Curador, não a uma skill isolada. Reasoning
   ainda não passou por Luís/Gabrielle.
-- **Mecanismo real revelado, 2026-09-25**: [[Inside team MKT1's
-  multiplayer AI setup]] (parte 3) mostra como a própria MKT1 resolve
+- **Mecanismo real revelado, 2026-09-25**:
+  [[Inside team MKT1's multiplayer AI setup]] (parte 3) mostra como a
+  própria MKT1 resolve
   isso — `/skill-update` não enxerga a skill em abstrato, só lê a sessão
   específica em que a pessoa acabou de usá-la, disparado manualmente.
   Detecção de defasagem sem gatilho humano existe (`/skill-audit`,

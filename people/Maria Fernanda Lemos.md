@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-09-09
+updated: 2026-10-22
 aliases: [Maria Fernanda, Mafê]
 tags: [people, agents, enablement, a4]
 ---
@@ -67,8 +67,9 @@ Cadeira com **duas posições**: a de Mafê, ocupada; uma segunda, **vaga**
   refina a hipótese anterior (abaixo): não é que nada é rastreado, é que
   o registro de **evolução das pessoas** (quem já anda sozinho) continua
   não confirmado como rastreado em lugar nenhum — pergunta ainda aberta.
-- **Hipótese original, per Carol** ([[2026-08-24 Agent Flow discovery with
-  Carol]]): seu trabalho de habilitação (não o de PM) vive em nenhum
+- **Hipótese original, per Carol**
+  ([[2026-08-24 Agent Flow discovery with Carol]]): seu trabalho de
+  habilitação (não o de PM) vive em nenhum
   sistema rastreado. Com o cargo conhecido, a hipótese era de que fosse
   especificamente o registro de interações de apoio — parcialmente
   testada pela reunião de 2026-08-25 acima, ainda sem resposta completa.
@@ -78,7 +79,7 @@ Cadeira com **duas posições**: a de Mafê, ocupada; uma segunda, **vaga**
   complexas, quebra em etapas e guia passo a passo (ex: Jorge, que
   terminou rodando tudo sozinho com uma chave da Anthropic); quando
   extrapola seu entendimento, redireciona para a camada técnica (ex:
-  Osmar → Arthur, por tocar a matriz) e a tarefa é reatribuída no
+  [[Osmar]] → Arthur, por tocar a matriz) e a tarefa é reatribuída no
   Airtable.
 - **Detecta padrões e escala para institucionalização** — dois exemplos
   concretos: uso independente de Google Earth Studio por 36 contatos →
@@ -92,8 +93,8 @@ Cadeira com **duas posições**: a de Mafê, ocupada; uma segunda, **vaga**
   informação — evidência a favor de A4 Teacher passar o teste
   agir/informar como agente próprio, não skill aninhada; ver
   [[Agent Flow]].
-- **Semana de 2026-08-27, muito ativa** ([[2026-08-27 Recap da
-  Semana]] — transcrição de baixa confiança, ver ressalva na página):
+- **Semana de 2026-08-27, muito ativa** ([[2026-08-27 Recap da Semana]] —
+  transcrição de baixa confiança, ver ressalva na página):
   toca o [[Farol]] junto com Yasmin/Luís (reunião com [[Marina]], dados
   da Expresso entregues, só falta Uber); teve overview técnico do
   [[LiveScript]] com Luís após ~40 dias afastada; está documentando
@@ -104,8 +105,9 @@ Cadeira com **duas posições**: a de Mafê, ocupada; uma segunda, **vaga**
   produção executiva) e Jorge (agente de transmissão da matriz); revisa
   a Taxonomia (marca/produto/submarca, tier de jogo) e assume o
   fechamento do "depara" como tarefa própria.
-- **Conduz a weekly de projetos da área** — [[2026-09-08 Weekly - Projetos
-  e Tarefas]]: ela é quem passa projeto a projeto, cobra status e nomeia
+- **Conduz a weekly de projetos da área** —
+  [[2026-09-08 Weekly - Projetos e Tarefas]]: ela é quem passa projeto a
+  projeto, cobra status e nomeia
   quem fala. Papel de PM da área, distinto do de habilitadora, exercido em
   fórum. Vale registrar porque a página descrevia o papel de PM
   genericamente ("PM em projetos de produto sob sua responsabilidade")
@@ -125,7 +127,13 @@ Cadeira com **duas posições**: a de Mafê, ocupada; uma segunda, **vaga**
   como aprendizado técnico reaproveitável. Próxima frente dela: automatizar
   a abertura de pedidos de arte de telão para jogos — trabalho manual
   repetitivo que cresceu com as cinco ligas — com Ana Domingos, envolvendo
-  [[Camila Sande]] como primeira tarefa de contexto.
+  [[Camila Schueler]] como primeira tarefa de contexto.
+  *(link corrigido em 2026-10-22: apontava para [[Camila Sande]], da Bossabox)*
+- **Pediu a Luís um relatório de uso da [[Opta]]** (~2026-08-25, "um mês e
+  meio" antes de [[2026-10-09 Opta - O que é isso]]) — queria saber se
+  alguém de fato usava o sistema. Luís conectou no log da GCP e achou um
+  volume de uso considerável via a API interna (1556 requests em 31 dias,
+  até 28/08). Ver [[Opta]] pros números completos.
 - **Levanta uma dúvida real e não resolvida sobre o LiveScript**: é
   responsabilidade do time abordar áreas proativamente sobre
   funcionalidades pouco usadas e complexas de manter (ex: "congelar

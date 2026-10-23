@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-08-18
+updated: 2026-10-22
 aliases: [status readout, AI status agent, Linear status readout]
 tags: [linear, agents, process, observability, metrics]
 ---
@@ -145,7 +145,9 @@ it is the one this meeting produced no mechanism for.
 
 **A1 and A2 inherit the parent/subissue ambiguity, but not the blindness.** Both read
 Linear ([[Agents read primary sources]]), and the recommended first build is the
-[[Comparing the first-agent candidates|intake pair A1 + A2]]. Anything computing state
+[[Comparing the first-agent candidates|intake pair A1 + A2]] *(superado em 2026-08-24:
+o primeiro build passou a ser o A10 — [[2026-08-24 Start Agent Flow with A10 Portfolio]];
+A1+A2 viraram depois o agente único Intake, [[Design Doc — Intake]])*. Anything computing state
 or progress from that board has to decide what a partially-done parent means — that
 ambiguity is in the data and it is real.
 
@@ -190,7 +192,9 @@ He is about to **restructure the proxy issues in Linear**
 report on that structure to Gabrielle and Luís, and he is the person with the
 least established track record — the one who can least afford a 6%-shaped
 readout while the deadline conversation is happening. Gabrielle is on leave from
-**2026-08-24**, so for ~2.5 weeks this readout *is* his visible progress.
+**2026-08-24**, so for ~2.5 weeks this readout *is* his visible progress. *(Premissa
+expirada: Gabrielle já estava de volta em 2026-09-15 —
+[[2026-09-15 Discovery A1 e A2 com Gabrielle]].)*
 
 **Flat issues are legible to the readout; deep subtask trees are invisible to it.**
 Luís's `Triagem`-column convention from the same meeting is the complementary
@@ -262,4 +266,6 @@ provisional by the manager's own account.
   page proposed it. The mechanical half has an owner with a plan, so the remaining
   target is the judgment half — smaller, and harder to specify. Still worth raising,
   but no longer the unusually well-defined build it looked like. On the list at
-  [[What should the Agent Flow research phase study]].
+  [[What should the Agent Flow research phase study]]. *(Respondida em
+  2026-08-24: o julgamento virou o par A10+A14, construído junto —
+  [[2026-08-24 Build A10 and A14 together, PoC first]].)*

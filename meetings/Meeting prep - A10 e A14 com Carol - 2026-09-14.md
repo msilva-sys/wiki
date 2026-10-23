@@ -1,6 +1,6 @@
 ---
 type: meeting-prep
-status: draft
+status: stable
 updated: 2026-09-14
 date: 2026-09-14
 aliases: [carol a10 a14 prep, prep carol setembro, pauta carol a10 a14]

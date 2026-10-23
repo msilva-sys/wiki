@@ -11,6 +11,9 @@ tags: [agent-flow, agents, a1, a2, gabrielle, discovery, portfolio, airtable, pr
 
 # Discovery A1 e A2 com Gabrielle — 2026-09-15
 
+> Fonte: `raw/Gabrielle _ Matheus - 2026_09_15 11_49 GMT-03_00 - Anotações do
+> Gemini.md`.
+
 Continuação de [[Meeting prep - Discovery A1 e A2 com Gabrielle - 2026-09-15]].
 Objetivo duplo: discovery do projeto **A1 & A2** no Linear (PRO-543/544) e,
 aproveitando a conversa, PRO-595 (regras de priorização de portfólio que
@@ -62,8 +65,9 @@ Nenhuma decisão formal fechada — reunião de discovery, sem fechamento.
   (inclusive pela ferramenta dela, que aponta pra lá e não pro Linear), e
   mensagem direta no Slack, sem registro em lugar nenhum.
 - Gabrielle: todo o histórico de projetos anterior ao "marco zero" da
-  migração pro Linear ([[2026-08-14 Migrate project management from Jira
-  to Linear]]) — backlog nunca tocado, projetos concluídos, abandonados —
+  migração pro Linear
+  ([[2026-08-14 Migrate project management from Jira to Linear]]) — backlog
+  nunca tocado, projetos concluídos, abandonados —
   vive só no Airtable, nunca foi migrado.
 - Gabrielle: o board de priorização de portfólio (antigo) tinha uma coluna
   de "hold" com motivo explícito registrado (dependência de projeto

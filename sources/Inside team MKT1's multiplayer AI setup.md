@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-09-25
 date: 2026-09-17
 aliases: [mkt1 parte 3, vacation test, mkt1 own setup]
@@ -69,8 +69,9 @@ um gatilho, com um agente?"* — **resposta: as duas coisas, dependendo da
 skill**, não uma única resposta uniforme (ver lista acima).
 
 **Isso responde, com uma ressalva, a pergunta que ficou em aberto em
-[[Packaging as skills]] e em [[Marketing teams are stuck in single-player
-Claude mode. Here's how to go multiplayer]]** — como `/skill-update`
+[[Packaging as skills]] e em
+[[Marketing teams are stuck in single-player Claude mode. Here's how to go multiplayer]]**
+— como `/skill-update`
 acessa o contexto da skill que mantém: **não acessa a skill em
 abstrato.** O mecanismo é *"reads my past Claude sessions and proposes
 edits based on corrections made, new rules stated, or errors encountered
@@ -93,8 +94,9 @@ inatividade — por edição, não por conteúdo).
   [[A6 Curador deve padronizar e sinalizar defasagem de skills]] com essa
   descoberta: mesmo quem inventou o framework não automatizou totalmente
   a manutenção.
-- **Corrobora o "shared tool layer"** já decidido em [[Agents read
-  primary sources]] — narrow fetching via MCP contra bases especializadas
+- **Corrobora o "shared tool layer"** já decidido em
+  [[Agents read primary sources]] — narrow fetching via MCP contra bases
+  especializadas
   é a mesma resposta, chegada de forma independente.
 - **Convergência tripla no teste de férias/computador** — reforça, sem
   decidir nada novo, a preocupação já registrada por Gabrielle e Mafê no

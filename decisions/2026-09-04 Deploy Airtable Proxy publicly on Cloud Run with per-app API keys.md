@@ -73,8 +73,9 @@ descartando o valor recebido sem validar. A única mudança necessária é
 porque o próprio Airtable exige `Authorization: Bearer <token>` em toda
 chamada — não há SDK ou chamada REST que não mande esse header.
 
-Mantém o `/{appId}/` no path ([[2026-08-19 Identify proxy apps by URL path,
-not header]]) — a key precisa bater com o app do path. Duas keys válidas
+Mantém o `/{appId}/` no path
+([[2026-08-19 Identify proxy apps by URL path, not header]]) — a key precisa
+bater com o app do path. Duas keys válidas
 por app, para rotacionar sem downtime. Isso ativa o "future app-key phase"
 que [[2026-08-21 Deploy Airtable Proxy privately behind VPN]] e
 [[2026-08-19 Identify proxy apps by URL path, not header]] deixaram como
@@ -120,5 +121,5 @@ Pricing Calculator em 2026-09-04, a validar contra billing real.
 
 `PRO-84` ganhou comentário registrando esta decisão; `PRO-90` (IaC Pulumi)
 não foi fechado, só comentário de nota de escopo; `PRO-553` criada como
-sub-issue de `PRO-84` pra API key por app. Ver [[Direcionamento PRO-84
-PRO-87]].
+sub-issue de `PRO-84` pra API key por app. Ver
+[[Direcionamento PRO-84 PRO-87]].

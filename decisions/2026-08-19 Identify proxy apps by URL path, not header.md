@@ -58,8 +58,9 @@ page now points here instead of continuing to carry the comparison as live.
   **Activated 2026-09-04**: identification (this page, by path) and
   authentication (API key) stay decoupled mechanisms, but the key layer is
   no longer future — it's a go-live prerequisite for the public Cloud Run
-  deployment. See [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run
-  with per-app API keys]], which supersedes the private-network deployment
+  deployment. See
+  [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API keys]],
+  which supersedes the private-network deployment
   this bullet originally pointed to
   ([[2026-08-21 Deploy Airtable Proxy privately behind VPN]]).
 - ~~**Whether `X-App-Id` is retained as a redundant check.**~~ **Resolved in code**:

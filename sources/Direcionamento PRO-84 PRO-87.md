@@ -22,8 +22,8 @@ real mostrar necessidade.
 ## Decisões
 
 - **Hospedagem**: Cloud Run `min=1 max=3`, público (`ingress=all`). Sem Load
-  Balancer interno, NEG, VPN ou VM. Ver [[2026-09-04 Deploy Airtable Proxy
-  publicly on Cloud Run with per-app API keys]].
+  Balancer interno, NEG, VPN ou VM. Ver
+  [[2026-09-04 Deploy Airtable Proxy publicly on Cloud Run with per-app API keys]].
 - **Exposição/segurança**: proxy aberto na internet, fronteira de segurança
   passa da rede (VPN) para uma API key por app — mesmo raio de estrago da PAT
   atual, mas com visibilidade e revogação por app. Aceito só enquanto o proxy
@@ -36,8 +36,9 @@ real mostrar necessidade.
 - **URL**: `*.run.app`, sem domínio custom (domain mapping é preview/sem SLA;
   LB externo custaria ~US$ 18/mês sem necessidade agora).
 - **Telemetria**: Grafana Cloud free tier, não Cloud Monitoring nem Grafana
-  self-hosted. Ver [[2026-09-04 Use Grafana Cloud for Airtable Proxy
-  production telemetry]]. Exige trocar exporters gRPC → HTTP
+  self-hosted. Ver
+  [[2026-09-04 Use Grafana Cloud for Airtable Proxy production telemetry]].
+  Exige trocar exporters gRPC → HTTP
   (`autoexport`) — **isso é mudança de código**, o que contradiz o título
   atual da `PRO-87` ("sem mudar código do proxy").
 - **`min=1 max=3`**: não escala com número de apps — Cloud Run escala por

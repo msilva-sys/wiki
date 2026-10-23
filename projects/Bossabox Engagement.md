@@ -1,12 +1,16 @@
 ---
 type: project
-status: active
-updated: 2026-08-26
+status: stable
+updated: 2026-10-22
 aliases: [bossabox, bossabox assessment]
 tags: [bossabox, vendor, ai-transformation, agent-flow]
 ---
 
 # Bossabox Engagement
+
+> [!abstract] Encerrado — msilva, 2026-10-22
+> A conversa com a Bossabox morreu depois de 2026-08-26: a proposta de
+> assessment não chegou a ser discutida. Página mantida como registro.
 
 Not msilva's own project, but he and Luís were both on the 2026-08-25
 discovery call — Carolina Bezerra is the one driving it. Tracked because
@@ -109,8 +113,8 @@ rather than squad-specific.
 
 > [!note] Método and Assessment, in concrete detail — 2026-08-26
 > [[Bossabox Assessment - institutional deck]] (their sales deck,
-> emailed as a follow-up — [[LiveMode e Bossabox Services - email
-> thread]]): the **Método** is a fixed 12-stage pipeline (Backlog →
+> emailed as a follow-up — [[LiveMode e Bossabox Services - email thread]]):
+> the **Método** is a fixed 12-stage pipeline (Backlog →
 > Protot. → Design Critique → Epic Spec → DoD Approval → Tech Refining →
 > Ready to Dev → In Dev → QA(Dev) → QA(Stage) → Ready to Prod → Prod
 > Validate), upstream/downstream split at the Ready-to-Dev boundary,
@@ -120,8 +124,9 @@ rather than squad-specific.
 > interviews** — nearly Livemode's exact toolset — and comes in a
 > **free entry tier** (hypothesis-level, no cost) and a **paid, scoped
 > deep tier** (validated root cause, AI Readiness score, executable
-> plan). The proposal expected next ([[2026-08-25 Bossabox AI
-> transformation discovery]]'s "Tuesday, 15:00") is probably the free
+> plan). The proposal expected next
+> ([[2026-08-25 Bossabox AI transformation discovery]]'s "Tuesday, 15:00")
+> is probably the free
 > tier — not confirmed.
 
 ## Relationship history
@@ -162,16 +167,22 @@ to close, said the day after msilva committed to building it
 
 **Next**: Bossabox brings a tailored assessment proposal next Tuesday,
 15:00 (afternoon, scheduled around Luís's availability). **Confirmed
-2026-08-26**: Pedro Arantes opened a dedicated email thread ([[LiveMode
-e Bossabox Services - email thread]]) to centralize this, with the
-Assessment deck attached — see the note above.
+2026-08-26**: Pedro Arantes opened a dedicated email thread
+([[LiveMode e Bossabox Services - email thread]]) to centralize this, with
+the
+Assessment deck attached — see the note above. *(Atualização 2026-10-22:
+nenhum registro na wiki de que a proposta ou o assessment tenham
+acontecido depois de 2026-08-26; o "tier gratuito" ainda aparece como
+pergunta aberta em [[Como deve funcionar o molde de agente]], 2026-10-21.
+**Confirmado por msilva em 2026-10-22: a conversa morreu.**)*
 
 ## Relevance to Agent Flow
 
 - **The same core pains get named again** — cross-project visibility/
   prioritization, no area-wide view — after Gabrielle, Luís, and Carol
-  converged directly with msilva ([[2026-08-24 Start Agent Flow with A10
-  Portfolio]]). Whether this is genuine outside corroboration or just
+  converged directly with msilva
+  ([[2026-08-24 Start Agent Flow with A10 Portfolio]]). Whether this is
+  genuine outside corroboration or just
   msilva/Luís restating their own case to a vendor depends on who was
   actually speaking — unresolved, see the attribution caveat.
 - **Two pains not yet on Agent Flow's radar**: (1) predictability/

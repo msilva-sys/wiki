@@ -1,6 +1,6 @@
 ---
 type: meeting
-status: active
+status: stable
 updated: 2026-08-26
 date: 2026-08-24
 attendees: [Carolina Bezerra, Matheus Silva]
@@ -59,8 +59,9 @@ sent by Carolina Bezerra at 15:35 the same afternoon.
   confidence on this exchange — see the transcription-quality note.)* Carol
   and msilva discuss "Executor" and "Developer" and msilva says *"esses dois
   talvez não sejam a mesma coisa"* (these two might not be the same thing) —
-  read literally, this **reopens** [[2026-08-20 Fluxo Agêntico diagram
-  walkthrough with Luís]]'s finding that A3 and A9 are the same agent, rather
+  read literally, this **reopens**
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]'s finding that
+  A3 and A9 are the same agent, rather
   than confirming it. Recorded as a live tension, not resolved either way —
   worth checking directly with msilva what he meant.
 - **Is A13 Deduplication in scope at all, or just a pipeline step?** Carol
@@ -68,8 +69,9 @@ sent by Carolina Bezerra at 15:35 the same afternoon.
   the recording — msilva's reply generalizes to "some of these transversal
   items are just CI/CD-style pipeline steps, not standalone agents" without
   confirming whether that includes A13 specifically. Overlaps but doesn't
-  resolve the existing open question on [[What should the Agent Flow
-  research phase study]] ("is A13 the same agent as A10 Portfolio?").
+  resolve the existing open question on
+  [[What should the Agent Flow research phase study]] ("is A13 the same
+  agent as A10 Portfolio?").
 - **Which entity, exactly, is the "generalize LiveScript's own agentic
   pattern company-wide" one Carol raises?** *(unidentified Ax — best guess
   A7 Discovery, unconfirmed.)* She suggests it might be easier for **Luís**
@@ -125,14 +127,16 @@ sent by Carolina Bezerra at 15:35 the same afternoon.
   generic company-wide capability.
 - **Carol on A12 Data Governance**: doesn't think it belongs to this team at
   all — *"isso aqui é com time de dados, isso não deveria estar com a
-  gente."* Directly answers the open question on [[What should the Agent
-  Flow research phase study]] ("does this team own A12 Data Gov?").
+  gente."* Directly answers the open question on
+  [[What should the Agent Flow research phase study]] ("does this team own
+  A12 Data Gov?").
 - **Carol re-classifies which "transversal intelligences" actually are
   transversal**: **prioritization (A10) is genuinely transversal** for her;
   **usage analysis (A11) is not** — it needs an actual shipped product to
   analyze, so it belongs to the post-launch/maintenance phase, not
-  construction. This **conflicts with** [[2026-08-20 Fluxo Agêntico diagram
-  walkthrough with Luís]]'s verdict, where Luís found the opposite shape —
+  construction. This **conflicts with**
+  [[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]'s verdict,
+  where Luís found the opposite shape —
   only **A13** clearly transversal, with A10/A11/A12 all "coisas realmente
   separadas." Recorded as a genuine disagreement between the two, not
   resolved here.

@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-09-15
+updated: 2026-10-22
 aliases: [gap de priorizacao do A10, A10 nao prioriza, esforco e retorno faltando]
 tags: [agents, a10, a14, portfolio, priorizacao, airtable, linear]
 ---
@@ -10,10 +10,11 @@ tags: [agents, a10, a14, portfolio, priorizacao, airtable, linear]
 
 Aberta em [[2026-09-14 Carolina - Matheus (critérios A10-A14)]]. Carolina
 (perspectiva de produto) apontou que o A10, como implementado, não é o
-"portfólio" da proposta original de [[2026-08-24 Start Agent Flow with A10
-Portfolio]] — é uma segunda instância do A14, olhando saúde por iniciativa
-em vez de projeto. Ver também [[Fronteira A10×A14 (informação e
-métricas)]], que já documenta a granularidade "iniciativa" do A10 mas sob o
+"portfólio" da proposta original de
+[[2026-08-24 Start Agent Flow with A10 Portfolio]] — é uma segunda instância
+do A14, olhando saúde por iniciativa
+em vez de projeto. Ver também [[Fronteira A10×A14 (informação e métricas)]],
+que já documenta a granularidade "iniciativa" do A10 mas sob o
 ângulo de fronteira A10/A14, não sob o ângulo "isso ainda é priorização de
 portfólio?".
 
@@ -41,8 +42,8 @@ existem no Linear:
 Essas informações vivem hoje no **Airtable**, não no Linear. Gabi já tem
 regras de priorização de portfólio definidas (fato novo para msilva — não
 sabia disso antes desta reunião). Com a migração Airtable → Linear em
-andamento ([[2026-08-14 Migrate project management from Jira to
-Linear]] é sobre a saída do Jira, não do Airtable — este é um fluxo de
+andamento ([[2026-08-14 Migrate project management from Jira to Linear]] é
+sobre a saída do Jira, não do Airtable — este é um fluxo de
 dado separado), fica em aberto se esses campos migram também.
 
 ## Correção — os "critérios já definidos" não são esforço/ganho/risco prontos
@@ -98,3 +99,12 @@ reaproveitável.
 Refina [[2026-08-24 Start Agent Flow with A10 Portfolio]] (o que essa
 decisão não resolveu) e [[Fronteira A10×A14 (informação e métricas)]]
 (fronteira de escopo, não só de dado).
+
+**Atualização 2026-10-22:** o [[Design Doc — Intake]] (A1+A2 num agente
+só, 2026-09-16) fecha o escopo do Intake como **não decide priorização de
+portfólio** — resolve por construção a tensão A2×A10, mas **não** o gap de
+priorização do próprio A10, que segue aberto (PRO-595, sem atualização na
+wiki desde 2026-09-15).
+
+Pré-leitura preparada para a conversa de 2026-09-16, em HTML:
+[[Pre-leitura - Da saude a priorizacao de portfolio - 2026-09-16.html]].

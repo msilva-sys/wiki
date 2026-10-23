@@ -1,7 +1,7 @@
 ---
 type: decision
-status: active
-updated: 2026-09-03
+status: stale
+updated: 2026-10-22
 date: 2026-08-24
 decided_by: Matheus Silva
 source: "chat with Claude, 2026-08-24"
@@ -18,6 +18,8 @@ prototype Luís already tasked
 ([[2026-08-20 Fluxo Agêntico diagram walkthrough with Luís]]) to cover both
 agents' scope instead of A10 alone. This is the scope of **M1** on the
 [[Fluxo Agêntico project instruction|Fluxo Agêntico]] Linear project.
+*(Desde 2026-09-03 o projeto do Linear se chama "A10 & A14"; "Fluxo
+Agêntico" é só a Initiative — ver [[Agent Flow]].)*
 
 ## Why
 
@@ -33,6 +35,9 @@ prioritization view (A10) and no proactive status/delivery communication
   decisions, or on an agent that doesn't exist yet — per
   [[Fluxo Agêntico project instruction]], A10 *"sugere, nunca executa"*, and
   A14 in this phase just needs something already tracked to report on.
+  *(Qualificado em 2026-09-04: o A10 passou a ler o outcome gravado pelo
+  A14 — acoplamento assíncrono aceito, sem import cruzado — ver
+  [[Fronteira A10×A14 (informação e métricas)]].)*
 - **Reuses the PoC Luís already assigned**, rather than opening a second
   validation process for a second agent.
 - **Applies Carol's own prioritization test reasonably well** — her
@@ -57,7 +62,12 @@ prioritization view (A10) and no proactive status/delivery communication
   separate specs are what let that show up instead of being averaged away.
 - **Production timeline isn't set.** The PoC is the gate; if it doesn't
   validate the approach, M1 doesn't roll into a production build as scoped
-  here.
+  here. *(Superado em 2026-09-03: o gate nunca foi avaliado formalmente.
+  Resolveu-se por via de fato — só a frente LangGraph (PRO-392) seguiu e
+  foi pra produção, com cron proativo desde 2026-09-01 (`8a91b71`); Skill,
+  Agent SDK, PRO-395 e a comparação PRO-377 ficaram abandonadas. Ver
+  [[Agent Flow]] (callout de 2026-09-03) e
+  [[Como implementar a PoC do A10+A14 (LangGraph, Skill, Agent SDK)]].)*
 
 ## Reforçado 2026-08-28 — revisão de contratos do Luís, escopo mantido em A10+A14
 
@@ -126,6 +136,10 @@ contratos, não só o resumo do Luís) — duas conclusões que revisam o
     pessoa não vê).
   - `trend` — compara contagem de alertas desta rodada com a última,
     usando o **próprio** `cache.py` do A10 (não o `memory.py` do A14).
+  *(Atualizado em 2026-09-04, `7fcb354`: a unidade do A10 virou a
+  iniciativa; os campos hoje são `initiatives_with_alerts`,
+  `risk_by_initiative` e `workload_by_initiative`, esta em esforço (soma de
+  estimate).)*
   **Custo: zero chamada nova de LLM** — tudo isso é `rules.py` puro,
   computado depois que o agente já rodou, mesmo padrão de
   `summarize_backlog`/`BacklogSummary` que já existe hoje. Único ajuste
@@ -163,6 +177,8 @@ O restante do feedback do Luís (desvio de prazo com causa, bloqueios com
 dono, decisões pendentes, riscos com idade, veredito explícito, recorte
 por audiência, e o item de A10 sobre redação "backlog de projetos")
 continua no backlog pós-PoC, sem mudança — só essas duas saem daí.
+*(Atualizado em 2026-10-22: veredito explícito (`905f38e`, `c438018`) e
+bloqueios com dependência real (`94f0bfa`) já foram implementados no A14.)*
 Implementação segue no repo `livemode-fluxo-agentico`, não nesta wiki.
 
 ## Ideia registrada 2026-08-28 — A14 ler repositórios de código
@@ -321,12 +337,17 @@ Decisões, eixo a eixo:
   (`vercel.json`/`gateway:app`), sem infraestrutura nova. Cadência diária,
   não event-driven: os sinais que os dois usam (`dias_sem_update`, PR
   aberto há N dias) são deriva ao longo do tempo, não eventos pontuais —
-  não existe webhook natural do Linear/GitHub pra isso.
+  não existe webhook natural do Linear/GitHub pra isso. *(Superado em
+  2026-09-22/25: hoje são dois crons semanais, quintas às 12:00 UTC
+  (`vercel.json`); o A14 publica por semana, com alerta fora da cadência
+  (`2bdcb17`), no lugar do "só publica se algo mudou".)*
 - **Publicação**: **sem gate de pré-aprovação** — o agente publica
   sozinho, a correção acontece depois, publicamente (status update de
   projeto no Linear já posta automaticamente no Slack, então "depois" já
   é visível pro time). A14 usa o status update nativo do projeto
-  (`projectUpdateCreate`); A10 comenta na issue (`commentCreate`).
+  (`projectUpdateCreate`); ~~A10 comenta na issue (`commentCreate`)~~
+  *(revertido em 2026-09-01: A10 também usa `projectUpdateCreate`; ver
+  "Revertido 2026-09-01" abaixo)*.
   **Confirmado nesta sessão**: status update de projeto no Linear não tem
   estado de rascunho — é criado e já fica visível na hora, diferente de
   Document (que tem draft/publish na própria UI do Linear). Ou seja,
@@ -352,7 +373,7 @@ só na conversa — não virou `HANDOFF_*.md` em `livemode-fluxo-agentico`.
 Esta seção registra a decisão e o raciocínio; os detalhes de
 implementação não estão duplicados aqui.
 
-**Em aberto**: cooldown de dedupe do A10 (dias); nome exato dos campos
+~~**Em aberto**~~ *(resolvido na mesma sessão, ver abaixo)*: cooldown de dedupe do A10 (dias); nome exato dos campos
 GraphQL de `commentCreate`/`projectUpdateCreate` (não verificado contra o
 schema real); onde vive a rota de cron (`gateway.py` vs `main.py`).
 
@@ -374,7 +395,9 @@ o projeto dos meus colegas de time" enquanto isso não foi validado. A10
 continua analisando o backlog do time inteiro (é o que "Portfolio"
 significa); só o comentário é filtrado. A14 filtra cálculo e publicação
 juntos, sem sentido gastar LLM num projeto fora do escopo. Expansão do
-escopo é manual (editar a constante), não automática — cogitou-se
+escopo é manual (editar a constante) *(superado em 2026-09-04: `f938340`
+trocou a constante por `PROACTIVE_SCOPE_INITIATIVE_ID`, que também já não
+existe no código)*, não automática — cogitou-se
 resolver por uma Linear Initiative de mesmo nome (existe uma, id
 `24fa95ef-...`, hoje com só esse projeto dentro), mas msilva preferiu o
 filtro arbitrário simples em vez da resolução dinâmica.
@@ -385,7 +408,7 @@ código, esperando confirmação antes de cada arquivo — mesma regra do
 `a10/formatting.py`, `a14/formatting.py`, `a10/memory.py`, `cron.py`.
 Arquivos editados: `linear_client.py`, `a14/rules.py`, `db.py`,
 `a10/seed_prompt.py`, `gateway.py`, `middleware.js`, `vercel.json`.
-**Nada commitado ainda** — fica no working tree local até msilva revisar.
+~~**Nada commitado ainda**~~ *(commitado em 2026-09-01, `8a91b71`)* — fica no working tree local até msilva revisar.
 
 Achado no caminho, não previsto no desenho original: `middleware.js`
 (trava de domínio por Google OAuth) protegia todo path exceto
@@ -418,8 +441,9 @@ testes (adiados pra depois da validação manual, decisão explícita).
 > `Langfuse().get_prompt(PROMPT_NAME, label=os.environ["ENVIRONMENT"])` em
 > `a10/agent.py`/`a14/agent.py`) está rodando a versão 3 do prompt — sem a
 > regra de anonimização/pergunta consolidada depois, e sem a regra mais
-> recente de [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro
-> A14]] (redirecionamento pro A14), que só existe na versão de
+> recente de
+> [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro A14]]
+> (redirecionamento pro A14), que só existe na versão de
 > desenvolvimento. Promover o label é uma ação manual no dashboard do
 > Langfuse (ou via API) — ainda não feita.
 >
@@ -453,6 +477,9 @@ de comentar nela. Cooldown/dedupe continua por `(issue_id, criterio)`: só entra
 no digest as sugestões fora do cooldown de 7 dias; se nenhuma sugestão do projeto
 estiver fora do cooldown, nada é publicado naquela rodada (mesmo controle de ruído
 de antes, só que a decisão de publicar passa a ser por projeto, não por sugestão).
+*(Atualizado: em 2026-09-02 o digest deixou de linkar issue específica, só
+agregado, e em 2026-09-04 o post passou a ser por iniciativa, não por
+projeto — ver [[2026-09-02 A10 para de expor detalhe de issue, encaminha pro A14]].)*
 
 **Implementado na mesma sessão** (`livemode-fluxo-agentico`): `linear_client.py`
 perde `create_comment`/`_COMMENT_CREATE_MUTATION` (órfã depois da troca);
@@ -475,7 +502,7 @@ update, não de um comentário; documentado inline no código, não vale migraç
 schema só por nome). Testes (`test_agent.py`) e `npx tsc --noEmit` passam depois
 da mudança.
 
-**Ainda não commitado** — fica no working tree local do repo
+~~**Ainda não commitado**~~ *(commitado em 2026-09-02, `238f88f`/`9e0be2f`)* — fica no working tree local do repo
 `livemode-fluxo-agentico` até msilva revisar e rodar contra o Linear de verdade
 (nenhuma execução real do novo `format_portfolio_digest`/`projectUpdateCreate`
 via A10 foi testada ainda).

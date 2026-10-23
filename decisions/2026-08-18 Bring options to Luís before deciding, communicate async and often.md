@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-10-01
 date: 2026-08-18
 aliases: [decision process norm, present options first]

@@ -57,8 +57,9 @@ of her own A5 suggestion.
 > page's candidate list. Also that day: a possible narrowing of the A5
 > lowest-risk row above, since Gabrielle may now share Luís's proxy-scoping
 > objection (attribution collapsed, unconfirmed). See
-> [[2026-08-19 1-1 Matheus - Gabrielle]] and [[Which agent should be built
-> first]]. Not incorporated into the comparison below yet — this page still
+> [[2026-08-19 1-1 Matheus - Gabrielle]] and
+> [[Which agent should be built first]]. Not incorporated into the
+> comparison below yet — this page still
 > reflects the four candidates as scoped on 2026-08-18. **msilva's own
 > follow-up**: Pain 1 argues harder for starting there because it's recurring
 > and current, not one-off.

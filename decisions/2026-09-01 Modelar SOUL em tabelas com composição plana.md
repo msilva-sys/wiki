@@ -1,13 +1,20 @@
 ---
 type: decision
-status: active
-updated: 2026-09-02
+status: stale
+updated: 2026-10-22
 date: 2026-09-01
 aliases: [SOUL relacional, soul_versions, soul_composition]
 tags: [agent-flow, agents, soul, database, composition]
 ---
 
 # Modelar SOUL em tabelas com composição plana
+
+> [!warning] Premissa vencida em 2026-10-14
+> O ADR 0003 do repo (`0003-langfuse-fonte-unica-de-prompt.md`) e o commit
+> `b846701` (PRO-1005, 3b) tiraram SOUL e skills do Postgres: as tabelas
+> `soul_*` e `skills` e o pacote `soul` foram apagados, e o Langfuse virou
+> a fonte única de prompt, SOUL e skill. O modelo em tabelas abaixo é
+> histórico.
 
 ## Decisão
 

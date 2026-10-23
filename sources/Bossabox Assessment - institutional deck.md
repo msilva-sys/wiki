@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-08-26
 date: 2026-08-26
 aliases: [bossabox assessment deck, material institucional bossabox]

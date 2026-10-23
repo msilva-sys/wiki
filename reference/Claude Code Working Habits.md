@@ -1,7 +1,7 @@
 ---
 type: reference
 status: active
-updated: 2026-08-18
+updated: 2026-10-20
 aliases: [claude code habits, working with claude code, tooling notes]
 tags: [claude-code, tooling, workflow]
 ---
@@ -64,3 +64,63 @@ the terminal instead. Mentioned wanting to try a setup he'd seen elsewhere —
 planning with Fable/Opus-class models, implementing with a top GPT model — but
 noted OpenAI's own CLI doesn't expose that particular model. Low-confidence
 transcription on the exact model name; not verified.
+
+**Eixo mais amplo, de fonte externa (2026-10-20)**:
+[[Rasmic - The 4-Step Agentic Engineering Workflow]] faz o mesmo corte por
+**tarefa**, não só por etapa do trabalho — *"don't fall into this trap of having
+to use the state-of-the-art for everything; the really big models can do really
+dumb things for minuscule tasks."* A regra dele: modelo de ponta orquestra e
+revisa, modelo menor executa. Fora de código, usa um modelo barato pra crunchar
+números e um segundo modelo como subagente só pra conferir o trabalho do
+primeiro — mesma divisão executor/verificador, custo mais baixo. Hábito
+adjacente que vale copiar: **a cada modelo novo, rodar uma vez sem `AGENTS.md`
+e sem skill nenhuma** antes de reinjetar as instruções, pra saber o que é o
+modelo e o que é o harness.
+
+## Direcionar o agente: o que Luís prescreve — 2026-10-20
+
+De [[2026-10-20 Matheus - Luís (arquitetura dos agentes, ADR e tokens)]]. Registrado aqui, e não só na página dele, porque é hábito diário de uso
+de Claude Code, não desenho de sistema.
+
+**A arquitetura vai pro repositório.** O diagnóstico direto sobre o trabalho de
+msilva: ADRs foram tentadas, mas a decisão não ficou inegociável, e a
+arquitetura principal mora no *brain* — acessível ao agente só sob concessão,
+não versionada. O método dele: desenha, questiona o desenho com o modelo, pede
+que ele descreva a solução, e a partir daí *"aquilo ali é sagrado"*. Quando o
+modelo apontar que algo não funciona, puxadinho marcado em ADR própria.
+
+**Arquiteto não revisa todo o código.** *"Papel do arquiteto é garantir que a
+arquitetura está sendo seguida — e você não está fazendo isso. Então você vai
+ter que revisar o código inteiro."* Revisar tudo é sintoma de arquitetura não
+disponibilizada, não disciplina.
+
+**Escolher o modelo pela tarefa, nunca pelo limite da conta.** Problema
+concreto encontrado: msilva vinha usando esforço médio porque a janela da conta
+Humanas estourava — a conta estava escolhendo o modelo. A regra de Luís é vir
+**de cima para baixo**: *"eu não vou botar o modelo mais burro possível para
+tentar fazer funcionar com o modelo mais burro, porque eu vou estar fazendo um
+monte de coisa que talvez eu não precise se eu estiver no próximo modelo"*.
+Ressalvas dele mesmo: não escala para times de 4–20 pessoas, e a janela de
+tokens baratos é temporária. Complementa o roteamento por tarefa já registrado
+acima a partir de [[Rasmic - The 4-Step Agentic Engineering Workflow]] — os
+dois dizem para não deixar o custo decidir sozinho, por motivos opostos (um
+contra gastar demais em tarefa pequena, outro contra economizar na tarefa
+grande).
+
+**Ultra Code só depois do plano lido.** Definir a arquitetura no nível de
+detalhe, montar o plano, **ler o plano**, confirmar, e aí deixar rodar de
+madrugada. *"Uma coisa é você pedir para ele fazer do jeito que ele quer, outra
+coisa é você direcionar pro jeito que você quer."*
+
+**Bloqueio se avisa.** msilva passou semanas contornando limite de token e uma
+CLI quebrada achando que era problema dele. Posição de Luís: *"não fica se
+virando aí, trabalhando de qualquer maneira — avisa"*.
+
+> [!warning] Pendência aberta nesta máquina, 2026-10-20
+> Há mais de uma instalação do Claude Code no Windows (uma do usuário, uma
+> global). `cloud update` atualiza a que **não** é chamada por default, então a
+> CLI segue sem oferecer os modelos mais novos; pelo Zed/GUI funciona. TI
+> acionada, pediu permissão de administrador e não resolveu nem com o notebook
+> fisicamente em mãos.
+
+`(unverified: diarização colapsada no raw; atribuição inferida por contexto)`

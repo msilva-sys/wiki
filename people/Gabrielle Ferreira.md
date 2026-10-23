@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-09-15
+updated: 2026-10-13
 aliases: [Gabrielle, Gabi]
 tags: [people, management]
 ---
@@ -55,6 +55,19 @@ primary technical contact ([[2026-08-24 Agent Flow discovery with Carol]]).
   abandoned) and keeps receiving loose tasks today, including from her own
   internal tool, which still creates tasks in Airtable instead of Linear (a
   gap she flagged on herself, unfixed).
+
+- **Possivelmente copiada num e-mail de Luís pro time da [[Opta]]**
+  (não confirmado por ele mesmo) tentando puxar a responsabilidade de
+  contrato pra dentro de casa — ver [[2026-10-09 Opta - O que é isso]].
+- **Conduz o PDI de Matheus**, com cadência quinzenal combinada (desvio do
+  padrão bimestral da área) — valida a v1 e fecha ajustes em
+  [[2026-10-13 Matheus - Gabrielle (PDI)]]: Foco 3 próprio pra feedback
+  (antes dentro do Foco 1), reforço do Foco 2 (discovery ouvindo mais,
+  pensar em como a solução escala/conecta com a arquitetura da empresa).
+  Confirma, nela e em Carolina, nenhuma ressalva técnica sobre as entregas
+  de Matheus. Descreve o perfil buscado pra vaga que substitui o Luís:
+  arquitetura + visão de produto + uso estratégico de IA, fit cultural
+  avaliado por Carolina — mesma conversa.
 
 ## Aliases
 

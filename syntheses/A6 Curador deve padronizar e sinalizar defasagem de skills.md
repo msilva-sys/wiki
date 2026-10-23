@@ -17,8 +17,9 @@ organizar memória institucional do que já aconteceu?
 
 ## Como chegou aqui
 
-Lendo [[Marketing teams are stuck in single-player Claude mode. Here's how
-to go multiplayer]] (MKT1, parte 1), msilva levantou a pergunta que o
+Lendo
+[[Marketing teams are stuck in single-player Claude mode. Here's how to go multiplayer]]
+(MKT1, parte 1), msilva levantou a pergunta que o
 artigo não responde: como uma skill de manutenção teria contexto da skill
 que está mantendo? Essa pergunta já tinha endereço na wiki — é a mesma
 lacuna registrada em [[Packaging as skills]] ("o que packaging não
@@ -51,16 +52,18 @@ atribuição explícita até agora.
   [[Vocabulário do Fluxo Agêntico]] (open question, sem dono desde
   2026-08-26/27) — sinalizar defasagem de skill é uma instância concreta
   dessa acumulação de sinal ao longo do tempo.
-- Corrobora, do lado de fora, o corolário já registrado em [[Agents read
-  primary sources]]: A6 é duas coisas, retrieval (tool, sem julgamento,
+- Corrobora, do lado de fora, o corolário já registrado em
+  [[Agents read primary sources]]: A6 é duas coisas, retrieval (tool, sem
+  julgamento,
   sendo construído agora) e curadoria (agente, julgamento real, fase 2) —
   padronizar e sinalizar defasagem cai inteiramente do lado de curadoria,
   não força reabrir esse corte.
 
 ## Segunda leitura independente, 2026-09-25
 
-Lendo [[Inside the multiplayer AI setups at Mintlify, LangChain, and
-Buffer]] (MKT1, parte 2), msilva chegou na mesma divisão por outro
+Lendo
+[[Inside the multiplayer AI setups at Mintlify, LangChain, and Buffer]]
+(MKT1, parte 2), msilva chegou na mesma divisão por outro
 caminho, sem reler esta página: Buffer separa capability em "faz o
 trabalho" vs. "mantém o sistema atualizado", e ele encaixou o agente
 curador direto na segunda categoria — *"o agente curador seria uma

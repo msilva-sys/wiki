@@ -1,6 +1,6 @@
 ---
 type: meeting
-status: active
+status: stable
 updated: 2026-08-26
 date: 2026-08-17
 attendees: [Matheus Silva, Gabriel]
@@ -8,6 +8,7 @@ source:
   - "raw/Matheus _ Gabriel - Fluxo de reconhecimento da receita cztv - 2026_08_17 15_02 GMT-03_00 - Anotações do Gemini.txt"
   - "raw/Matheus _ Gabriel - Fluxo de reconhecimento da receita cztv - 2026_08_17 15_31 GMT-03_00 - Anotações do Gemini.txt"
 transcription_confidence: low
+aliases: []
 tags: [n8n, agents, tokens, enablement, finance, claude]
 ---
 

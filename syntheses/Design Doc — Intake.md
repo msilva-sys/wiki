@@ -11,7 +11,7 @@ tags: [agent-flow, intake, design-doc, a1, a2]
 
 Construído em chat, seção por seção, usando a skill `design-doc` (baseada em
 [[How to Write an Effective Software Design Document]]). Ponto de partida
-era o projeto **A1 & A2** no Linear (ver [[linear-a1-a2-project]] — memória,
+era o projeto **A1 & A2** no Linear (ver `linear-a1-a2-project` — memória,
 não página da wiki) e a discovery/decisões de 2026-09-15
 ([[2026-09-15 Discovery A1 e A2 com Gabrielle]],
 [[2026-09-15 Proxy e Fluxo Agêntico com Luís]],

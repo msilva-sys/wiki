@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-08-17
 date: 2026-08-17
 aliases: [instrucao projeto fluxo agentico, project instruction, AI-First]

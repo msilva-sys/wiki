@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-08-24
 date: 2026-04-02
 source: "raw/Clippings/Harness engineering for coding agent users.md"

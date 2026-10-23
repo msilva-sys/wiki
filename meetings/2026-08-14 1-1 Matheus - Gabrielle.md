@@ -1,11 +1,12 @@
 ---
 type: meeting
-status: active
+status: stable
 updated: 2026-09-01
 date: 2026-08-14
 attendees: [Gabrielle Ferreira, Matheus Silva]
 source: "raw/1_1 Matheus _ Gabrielle - 2026_08_14 15_55 GMT-03_00 - Anotações do Gemini.txt"
 transcription_confidence: low
+aliases: []
 tags: [1-1, proxy, agents, linear, process]
 ---
 

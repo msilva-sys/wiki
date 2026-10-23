@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: superseded
-updated: 2026-10-06
+updated: 2026-10-22
 date: 2026-08-26
 tags: [agents, agent-flow, a10, a14, poc, langgraph, langchain, linear-api, langfuse]
 aliases: [desenho do LangGraph, agent vs workflow A10+A14, PRO-392 design]
@@ -24,7 +24,9 @@ da frente LangGraph** (issue [PRO-392](https://linear.app/projetos-livemode/issu
 resultado de uma sessão de discovery em chat no dia 2026-08-26, feita antes de
 qualquer código. Repositório: `C:\Users\msilva\projects\livemode-fluxo-agentico`,
 branch `langgraph` — ver `HANDOFF.md` nesse repo, que carrega o mesmo desenho
-pra uma sessão de código sem acesso a esta wiki.
+pra uma sessão de código sem acesso a esta wiki. Como a implementação foi
+conduzida (waves, em pair programming):
+[[2026-08-27 Implementar PRO-392 em waves, mas em pair programming]].
 
 ## A pergunta que abriu o desenho
 
@@ -417,8 +419,9 @@ parcialmente adotada:
 
 ## O que isso resolve na página-mãe
 
-As duas pendências operacionais que [[Como implementar a PoC do A10+A14
-(LangGraph, Skill, Agent SDK)]] deixou em aberto (origem da API key, quem paga)
+As duas pendências operacionais que
+[[Como implementar a PoC do A10+A14 (LangGraph, Skill, Agent SDK)]] deixou
+em aberto (origem da API key, quem paga)
 estão fechadas aqui — ver "Modelo e empacotamento" acima.
 
 ## Um risco encontrado no caminho, não sobre design

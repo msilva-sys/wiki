@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-09-01
 date: 2026-08-27
 aliases: [waves, packer waves, implementação em waves, pair programming A10/A14]

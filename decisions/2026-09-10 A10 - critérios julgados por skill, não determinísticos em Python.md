@@ -1,13 +1,17 @@
 ---
 type: decision
-status: active
-updated: 2026-09-10
+status: stable
+updated: 2026-10-22
 date: 2026-09-10
 aliases: [fluxo_represado, upstream downstream A10, critérios A10 via skill, DETERMINISTIC_CRITERIA removido]
 tags: [agent-flow, agents, a10, harness, skill, criteria]
 ---
 
 # A10 — critérios julgados por skill, não determinísticos em Python
+
+*(Nota de 2026-10-22: a tabela `skills` citada abaixo foi removida em
+`b846701` (2026-10-14); as skills vivem no Langfuse — ADR 0003 do repo. A
+decisão de julgar os critérios por skill segue valendo.)*
 
 ## Origem
 

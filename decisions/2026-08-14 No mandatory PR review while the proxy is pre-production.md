@@ -1,10 +1,11 @@
 ---
 type: decision
-status: active
-updated: 2026-08-24
+status: stale
+updated: 2026-10-19
 date: 2026-08-14
 decided_by: Luís Fernandez, Gabrielle Ferreira
 source: "[[2026-08-14 1-1 Matheus - Gabrielle]]"
+aliases: []
 tags: [process, code-review, git]
 ---
 
@@ -52,7 +53,9 @@ step nobody is performing.
 
 ## Open questions
 
-- What replaces this once the proxy reaches production? Undefined.
+- **O que substitui isto agora que o proxy está em produção?** Continua
+  indefinido, mas deixou de ser hipotético — ver a nota de premissa vencida
+  no fim da página.
 
 > [!note] Concrete instance, 2026-08-24
 > [[2026-08-24 1-1 Matheus - Luís]]: rather than reading a diff, Luís reviewed
@@ -62,3 +65,22 @@ step nobody is performing.
 > (deferred, not absent review), a different mechanism than "read the commit
 > history" described above. msilva also confirmed he still isn't opening PRs
 > for this branch of work, for the same pre-production reasoning.
+
+> [!note] Premissa vencida, 2026-10-19 (lint)
+> As duas condições que sustentavam esta decisão caíram, e nada foi decidido
+> em substituição.
+>
+> **(1) O proxy não é mais pre-production.** Está em produção no Cloud Run
+> desde 2026-09-14 ([[Airtable Proxy]]). A cláusula que dá nome à página
+> descreve um estado que acabou há mais de um mês.
+>
+> **(2) O revisor nomeado aqui está de saída.** A revisão descrita — Luís
+> lendo o histórico de commits depois do merge — depende de alguém que está
+> deixando a empresa, com a transição já em curso desde 2026-10-07
+> ([[2026-10-07 Divisão de projetos na transição de Luís]]). msilva é o dono
+> único do proxy desde então.
+>
+> Na prática a decisão continua valendo por inércia, não por escolha: os PRs
+> seguem sendo abertos e mergeados pelo próprio autor, agora sem a revisão a
+> jusante que era a contrapartida do acordo. `status` movido para `stale`
+> até que exista uma decisão sobre o que vale em produção.

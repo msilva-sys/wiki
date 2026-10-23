@@ -1,10 +1,11 @@
 ---
-type: decision
-status: draft
-updated: 2026-08-18
+type: synthesis
+status: deferred
+updated: 2026-10-22
 date: 2026-08-18
 decided_by: nobody — stated as a preference by Gabrielle Ferreira
 source: "[[2026-08-18 1-1 Matheus - Gabrielle]]"
+aliases: []
 tags: [process, linear, git, review, product]
 ---
 
@@ -26,7 +27,11 @@ tags: [process, linear, git, review, product]
 >
 > `status: draft` and `decided_by: nobody` reflect that. The page is kept rather than
 > deleted because the *practice* below is real and observed, and because several pages
-> already link here. **Deleting or moving it out of `decisions/` needs msilva's call.**
+> already link here. ~~**Deleting or moving it out of `decisions/` needs msilva's call.**~~
+> **Movida para `syntheses/` em 2026-10-22** (lint, por delegação de msilva): não é
+> decisão, é pergunta aberta estacionada — `status: deferred`. A reunião
+> [[2026-10-14 Workflow de Git + Linear Status]] tratou de fluxo de Git e
+> homologação, mas não fechou onde fica cada tipo de review.
 
 ## The stated preference
 
@@ -116,4 +121,5 @@ Slack integration can already deliver to a channel.
 - **Does a product rejection require a Git revert?** Unstated, and it is the seam
   between the two surfaces.
 - **Who validates while Gabrielle is on leave?** The role is her.
-- **Should this page live in `decisions/` at all?** msilva's call.
+- ~~**Should this page live in `decisions/` at all?** msilva's call.~~ Respondido
+  2026-10-22: não — movida para `syntheses/`.

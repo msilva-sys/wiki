@@ -1,10 +1,11 @@
 ---
 type: decision
-status: active
-updated: 2026-08-19
+status: stable
+updated: 2026-10-19
 date: 2026-08-14
 decided_by: Gabrielle Ferreira
 source: "[[2026-08-14 1-1 Matheus - Gabrielle]]"
+aliases: []
 tags: [process, tooling, linear, jira]
 ---
 
@@ -208,8 +209,9 @@ full at [[Linear Project Structure]]:
     were documenting/closing out work that had already landed, not new builds.
   - **`PRO-82` (Onboarding/key-issuance flow) → In Progress, blocked on Luís.**
     No code to write for the current env-JSON setup — this is a process
-    decision. Per [[2026-08-18 Bring options to Luís before deciding,
-    communicate async and often]], msilva posted 3 options as a Linear comment
+    decision. Per
+    [[2026-08-18 Bring options to Luís before deciding, communicate async and often]],
+    msilva posted 3 options as a Linear comment
     (manual env edit / self-serve script over env / defer until DB migration)
     rather than deciding unilaterally. Leaning option 3, but explicitly framed
     as Luís's call.
@@ -251,10 +253,15 @@ full at [[Linear Project Structure]]:
 
 - **How should `AIRTABLEGC` itself be wound down** — bulk-transition its issues,
   archive the whole Jira project, or leave it as-is? msilva's call 2026-08-18: leave
-  it untouched for now, decide separately. Revisit once the Business-trial /
-  purchase question below is settled.
-- **Is the Business plan being purchased before 2026-09-09?** See the correction
-  above. This is the one with a deadline.
+  it untouched for now, decide separately. The Business-trial / purchase
+  question it waited on is now settled (below), so this one is unblocked and
+  still open.
+- ~~**Is the Business plan being purchased before 2026-09-09?**~~ **Answered
+  2026-09-14** — sim, o upgrade foi feito e o trial deixou de bloquear a
+  criação de issues. Confirmado por msilva e registrado no callout
+  `[!success]` de [[Linear Project Structure]]; o efeito prático aparece em
+  [[Airtable Proxy]]. Era a pergunta com prazo desta página, e o prazo
+  passou com a resposta certa.
 - Confirm the reordering with Luís before restructuring further — Gabrielle
   suggested checking his thinking first. Note that as of 2026-08-17 Luís said he had
   been following msilva *"um pouco mais distante do que deveria"*, so this needs

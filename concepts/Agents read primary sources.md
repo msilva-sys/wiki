@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-08-18
+updated: 2026-10-22
 date: 2026-08-18
 aliases: [primary sources, direct access, retrieval layer, context retrieval]
 tags: [agents, architecture, retrieval, context, a6]
@@ -28,9 +28,10 @@ Events tell an agent *when*. Query access lets it establish *what*.
 
 | Instance | The design said | What was settled instead |
 |---|---|---|
-| **A5 Watcher** | Consume Grafana alert payloads | **Direct access to Prometheus, Loki and the observability stack.** Otherwise A5's quality is bounded by thresholds a human wrote — *"the intelligence migrates into Grafana"* ([[Which agent should be built first]], risk 4) |
+| **A5 Watcher** | Consume Grafana alert payloads | **Direct access to Prometheus, Loki and the observability stack.** Otherwise A5's quality is bounded by thresholds a human wrote — *"the intelligence migrates into Grafana"* ([[Which agent should be built first]], risk 4). *(A5 despriorizado em 2026-08-24 — [[2026-08-24 Deprioritize A5 Watcher as first-agent candidate]]; a linha fica como registro do raciocínio.)* |
 | **A7 Discovery** | *"Discovery autônomo completo via chat estruturado"*, consulting A10/A11/A12 to validate | **Read the PRD corpus, `Brain`, Linear, the documentation Hub, the five systems' repos and meeting transcripts.** Raised by msilva 2026-08-18: chat alone makes A7 a bad-spec generator with good prose |
 | **A1 Receptor** | Enrich from A6 (history) and A13 (duplication) | Neither exists. A1 v1 reads **Linear and the existing Airtable team board** directly |
+| **A10 / A14** *(acrescentado em 2026-10-22)* | Não previstos na tabela original | Leem o Linear direto e ganharam acesso real ao GitHub — [[2026-08-31 A10 e A14 ganham acesso real ao GitHub]] |
 
 Supporting evidence from prior art, arriving at the same place from a different
 direction — a practitioner replying to
@@ -51,7 +52,10 @@ them.
 
 This rule dissolves that. **Cross-agent dependency is forbidden; depending on a
 data source is not.** Substituting direct reads for a missing upstream agent is how
-a phase 1 agent gets built at all.
+a phase 1 agent gets built at all. *(Qualificado em 2026-09-10: agentes podem
+se chamar pelo contrato público (`Input → Output`) —
+[[2026-09-10 Agentes expostos como tool uns para os outros]]. Fatos
+compartilhados seguem como store passivo.)*
 
 ## No fifteenth agent
 

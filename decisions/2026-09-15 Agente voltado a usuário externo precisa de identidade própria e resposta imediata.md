@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-09-15
 date: 2026-09-15
 aliases: [identidade dos agentes, resposta imediata do A1, personas dos agentes]

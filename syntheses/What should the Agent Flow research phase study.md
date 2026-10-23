@@ -1,13 +1,30 @@
 ---
 type: synthesis
-status: active
-updated: 2026-09-24
+status: superseded
+updated: 2026-10-22
 date: 2026-08-17
 aliases: [agent flow research, research agenda, agent flow status]
 tags: [agents, research, planning, index]
 ---
 
 # What should the Agent Flow research phase study?
+
+> [!abstract] Arquivada — `superseded` em 2026-10-22
+> A fase de pesquisa acabou: o Agent Flow está em build desde 2026-09-01
+> ([[Agent Flow]]). Primeiro agente:
+> [[2026-08-24 Start Agent Flow with A10 Portfolio]]. Escopo do M1:
+> [[2026-08-24 Build A10 and A14 together, PoC first]]. A1+A2 viraram
+> [[Design Doc — Intake]]. Perguntas ainda vivas estão em [[Agent Flow]],
+> § Open questions. O resto desta página é registro de evidência até
+> setembro — tabelas "Settled" sobre o A5 descrevem um plano `deferred`,
+> e vários "open" abaixo já têm resposta em outras páginas.
+>
+> Ficaram só aqui, sem dono desde o fim da fase de pesquisa: stack
+> controlada do A9 sem Go; Monday como canal de intake apesar da migração
+> pro Linear; por que os agentes foram renumerados; a documentação de
+> design oferecida pela Gabrielle em 2026-08-10; se o fluxo de homologação
+> é gate deste trabalho; se msilva entra no grupo do TES; a pergunta do
+> Luís sobre execução longa no Ultra Code.
 
 > [!tip] External cross-read added, 2026-08-26
 > [[What Bossabox's Assessment suggests for Agent Flow]]: a vendor's
@@ -18,8 +35,9 @@ tags: [agents, research, planning, index]
 > [!danger] "Which agent first" is answered — msilva, 2026-08-24
 > [[2026-08-24 Start Agent Flow with A10 Portfolio]]: four independent
 > readings (Gabrielle, Luís, Carol, msilva's own pain) converged on **A10
-> Portfolio**. [[Which agent should be built first]] and [[Comparing the
-> first-agent candidates]] are now `status: superseded` — read as history.
+> Portfolio**. [[Which agent should be built first]] and
+> [[Comparing the first-agent candidates]] are now `status: superseded` —
+> read as history.
 > This page keeps routing what's still genuinely open.
 
 > [!danger] A5 deprioritized entirely — msilva, 2026-08-24

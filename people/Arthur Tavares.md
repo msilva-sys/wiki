@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-25
+updated: 2026-10-22
 aliases: [Arthur]
 tags: [people]
 ---
@@ -17,8 +17,14 @@ tags: [people]
 - **Moving to another area** ([[2026-08-14 Papo de Projetos]]) — this
   knowledge is in transition, no successor recorded. **Named as a
   bus-factor risk, 2026-08-26** — cross-read against Bossabox's Team
-  Topologies instrument in [[What Bossabox's Assessment suggests for
-  Agent Flow]] — nobody currently owns tracking this.
+  Topologies instrument in
+  [[What Bossabox's Assessment suggests for Agent Flow]] — nobody currently
+  owns tracking this. *(Atualizado em 2026-10-22: ainda consta como
+  presente na [[2026-09-14 Weekly - Projetos e Tarefas]], sem registro de
+  que a mudança de área se concretizou.)*
+- Participava da reunião de priorização de quinta (Gabrielle, Carol, Luís,
+  Arthur), cuja fórmula de score caiu em desuso
+  ([[2026-09-15 Discovery A1 e A2 com Gabrielle]]).
 - Also does central-de-dados work (landmark only, not detailed here).
 - In the **TES** vendor-trial WhatsApp group, with [[Bianca (Bia)]] and
   [[Kauan]].

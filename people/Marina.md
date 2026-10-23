@@ -1,7 +1,7 @@
 ---
 type: person
 status: active
-updated: 2026-08-25
+updated: 2026-10-22
 aliases: []
 tags: [people, finance, farol]
 ---
@@ -23,6 +23,11 @@ Met with Maria Fernanda Tuesday (2026-08-25): walked through BigQuery
 access and which tables she can see. Expresso's data is now delivered to
 her, plus two "skills" to help her read the table structures. Only Uber
 remains outstanding ([[2026-08-27 Recap da Semana]]).
+
+Em [[2026-09-08 Weekly - Projetos e Tarefas]], Carol e Yasmin davam o
+[[Farol]] como entregue, com a equipe da Marina testando; o Linear ainda
+marcava "em progresso", entrega registrada em 04/09. A fonte diz só
+"Marina" — a atribuição a esta página vem do contexto do Farol.
 
 ## Open questions
 

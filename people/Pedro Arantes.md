@@ -1,6 +1,6 @@
 ---
 type: person
-status: active
+status: stable
 updated: 2026-08-25
 aliases: [Pedrão]
 tags: [people, bossabox, vendor]

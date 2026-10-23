@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-08-17
 date: 2026-03-26
 aliases: [gkpacker part 1, conductor workflow, solo founder workflow]

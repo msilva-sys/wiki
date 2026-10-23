@@ -1,6 +1,6 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-08-24
 date: 2026-08-24
 aliases: [deprioritize watcher, A5 not first, watcher deprioritized]
@@ -14,8 +14,9 @@ tags: [agents, a5, agent-flow, decision]
 primeiro agente, nem como design ativo por ora.
 
 ## O que isso muda
-- **[[Which agent should be built first]]** e **[[Comparing the first-agent
-  candidates]]**: toda a análise de A5 ali (arquitetura orientada a eventos,
+- **[[Which agent should be built first]]** e
+  **[[Comparing the first-agent candidates]]**: toda a análise de A5 ali
+  (arquitetura orientada a eventos,
   Path A/B, riscos, plano de build) permanece como registro do raciocínio,
   mas **deixa de ser a recomendação ativa** — mesmo sob o critério de "menor
   risco" que a gerou em 2026-08-17. Isso já vinha sob pressão da

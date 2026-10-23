@@ -1,10 +1,11 @@
 ---
 type: decision
-status: active
+status: stable
 updated: 2026-08-18
 date: 2026-08-18
 decided_by: Gabrielle Ferreira
 source: "[[2026-08-18 1-1 Matheus - Gabrielle]]"
+aliases: []
 tags: [n8n, observability, tokens, audit, agents]
 ---
 

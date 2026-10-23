@@ -1,6 +1,6 @@
 ---
 type: source
-status: active
+status: stable
 updated: 2026-08-24
 date: 2026-06-03
 source: "raw/Clippings/How to Build a Custom Agent Harness.md"

@@ -1,6 +1,6 @@
 ---
 type: meeting
-status: active
+status: stable
 updated: 2026-09-01
 date: 2026-08-20
 attendees: [Gabrielle Ferreira, Matheus Silva]
@@ -37,8 +37,8 @@ None — a check-in, not a working session.
   Go vs. TypeScript per this conversation — matches the existing open
   question, not a new one). Still pending as of this call; Luís's
   bandwidth this week was reduced (see below). *(resolved later the same
-  day — see [[2026-08-18 Bring options to Luís before deciding, communicate
-  async and often]].)*
+  day — see
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]].)*
 - **Gabrielle** — has a doctor's appointment tomorrow morning
   (2026-08-21); asked msilva to relay something to the team at the recap
   meeting in her place. **What exactly is to be relayed was not stated in
@@ -53,8 +53,7 @@ None — a check-in, not a working session.
 - **Pulumi language for the proxy** (`PRO-94`) — open as of this call, gated
   on Luís, who was unavailable part of this week (sick Tue–Thu, per this
   call). *(resolvido no mesmo dia — Luís escolheu Go, ver
-  [[2026-08-18 Bring options to Luís before deciding, communicate async and
-  often]].)*
+  [[2026-08-18 Bring options to Luís before deciding, communicate async and often]].)*
 - **Is the current Fluxo Agêntico diagram/approach the right one?** msilva is
   reconsidering it — leaning toward starting simpler and letting it evolve,
   rather than a complete design that risks being obsolete in a few months.
@@ -71,8 +70,8 @@ None — a check-in, not a working session.
   he's been exploring for organizing project/meeting notes. *(unverified:
   exact meaning of "LRM Week" — not otherwise defined in the transcript.)*
 - **Communication habit, following up on the 2026-08-18 process norm**
-  ([[2026-08-18 Bring options to Luís before deciding, communicate async and
-  often]]): msilva says he's now proactively sending Luís anything that seems
+  ([[2026-08-18 Bring options to Luís before deciding, communicate async and often]]):
+  msilva says he's now proactively sending Luís anything that seems
   worth a look, rather than defaulting to figuring things out solo — a habit
   he traces to years of fully remote, single-contributor work before this
   job. He describes still adjusting to in-person work generally (his first
@@ -97,8 +96,9 @@ None — a check-in, not a working session.
   Airtable's own conventions at this point.
 - **Fluxo Agêntico**: msilva has been reading the references Luís shared
   (Anthropic sources) over the weekend, per the same thread as
-  [[Don't Build Multi-Agents]] / [[How we built our multi-agent research
-  system]] already in the wiki. Missed a scheduled sync with Carol this
+  [[Don't Build Multi-Agents]] /
+  [[How we built our multi-agent research system]] already in the wiki.
+  Missed a scheduled sync with Carol this
   week; will catch up with her separately.
 
 ## What this changes elsewhere

@@ -1,11 +1,12 @@
 ---
 type: meeting
-status: active
+status: stable
 updated: 2026-08-26
 date: 2026-08-14
 attendees: [Gabrielle Ferreira, Maria Fernanda Lemos, Yasmin Macedo, Matheus Silva]
 source: "raw/Recap da Semana - 2026_08_14 14_01 GMT-03_00 - Anotações do Gemini.txt"
 transcription_confidence: low
+aliases: []
 tags: [recap, weekly, process, proxy, farol]
 ---
 
@@ -64,8 +65,9 @@ matters:
   project's tooling kept insisting on Luís's approval per the old documented flow.
 
 The direction of travel is the same as msilva's arrangement, but it's a separate
-instance with a different reviewer. [[2026-08-14 No mandatory PR review while the
-proxy is pre-production]] has been corrected accordingly.
+instance with a different reviewer.
+[[2026-08-14 No mandatory PR review while the proxy is pre-production]] has
+been corrected accordingly.
 
 ## Commitments
 

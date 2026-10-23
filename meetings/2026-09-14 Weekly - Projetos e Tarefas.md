@@ -1,6 +1,6 @@
 ---
 type: meeting-prep
-status: active
+status: stable
 updated: 2026-09-14
 date: 2026-09-14
 attendees: [Gabrielle Ferreira, Luís Fernandez, Carolina Bezerra, Maria Fernanda Lemos, Yasmin Macedo, Arthur Tavares, João Victor Andrade, Matheus Silva]
