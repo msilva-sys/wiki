@@ -7957,6 +7957,13 @@ PR review, só aparece quando a página for lida.
 - Distintos acesso interno, credenciais de fornecedores e governança de custo; Client Credentials conferido na RFC 6749 e federação na documentação GCP.
 - New: syntheses/Como LiveAuth pode autenticar sistemas e automações.md. Updated: projects/LiveAuth.md, index.md.
 
+## [2026-10-23] query | LiveStry × PRO-903
+- Pergunta de msilva: o que temos levantado do LiveStry e quanto disso cruza com a `PRO-903` (servidor MCP de skills).
+- Lidos: `syntheses/Desenho de um Skills Registry corporativo.md`, `meetings/2026-10-15 Recap da Semana.md`, `systems/Vitrine de IA.md`; no Linear, `PRO-903` e as 15 issues do projeto "Skills do time", mais os comentários de `PRO-902`/`PRO-899`; no Slack, o DM da Maria Fernanda de 2026-10-22 sobre o MCP do A10/A14.
+- Achado: os três pitches do segundo esboço (2026-10-02) viraram o projeto inteiro, com três donos. A `PRO-903` cobre registry+MCP e propagação de versão; "acesso por pessoa" é critério de aceite sem desenho na wiki; o problema de trigger/hook não aparece na issue.
+- Open question do mapeamento fechada pela `PRO-899`; gate de qualidade ganhou resposta parcial na `PRO-902` (`testar-skill`, conteúdo não lido). Registrada possível contradição: no Recap de 2026-10-15, msilva propôs distribuir "como plugins", caminho descartado em 2026-10-02.
+- Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (nova seção de intersecção, open questions revisadas), `index.md`.
+
 ## [2026-10-26] synthesis | reconfirmação manual do n8n + PRO-1198
 - Pedido por msilva antes de comunicar os stakeholders: confirmar os achados. Lidos 9 dos 31 críticos/altos pelo MCP do n8n (`get_workflow_details`), só leitura. Nenhum refutado. 22 fechados ao MCP (`availableInMCP=false`).
 - Achado novo: o conector MCP devolve segredos literais em claro (cookies de admin, PAT do Airtable, JWT do Monday). Nenhum valor copiado para o wiki.

@@ -197,6 +197,64 @@ serviço persistente entrega.
 
 Ainda não decidido entre as duas opções.
 
+## Intersecção com `PRO-903` e o projeto "Skills do time" (2026-10-23)
+
+Query de msilva: quanto do que foi levantado aqui cai na
+[PRO-903](https://linear.app/projetos-livemode/issue/PRO-903/criar-o-servidor-mcp-que-entrega-as-skills-da-empresa)
+("Criar o servidor (MCP) que entrega as skills da empresa"). Lido direto no
+Linear em 2026-10-23: `Todo`, vence 2026-10-23, effort G (1 semana), 12ª na
+votação do time, criada em 2026-10-07, sem comentários nem relações.
+
+**Os três pitches do segundo esboço viraram o projeto inteiro.** O projeto
+Linear *Skills do time: inventário, qualidade e distribuição* tem
+exatamente os três "Soluciona?", cada um com um dono diferente:
+
+| Pitch do esboço | Issue | Dono | Estado em 2026-10-23 |
+|---|---|---|---|
+| Servidor (MCP) de skills da LiveMode | `PRO-903` | msilva | `Todo`, vence hoje |
+| Definir o teste de uma skill antes de publicar | `PRO-902` | João Victor Andrade | `Done` em 2026-10-20; entregou uma skill `testar-skill` (zip anexado num comentário, conteúdo não lido) |
+| Skill de mapeamento das skills pessoais e de projeto | `PRO-899` + `PRO-1092` | Maria Fernanda Lemos | `PRO-899` `Done`; cruzamento de duplicadas (`PRO-1092`) em `In Review` |
+
+O projeto também tem `PRO-904` (João Victor, `Done`): uma skill de fim de
+sessão que propõe ajustes na skill original, com aprovação humana. É o
+mesmo padrão do `/skill-update` da MKT1 e cobre a "manutenção" do esboço.
+
+**O que a PRO-903 pede e o que esta página já tem**
+
+| Critério da PRO-903 | Cobertura aqui |
+|---|---|
+| Skills disponíveis pra quem se conecta | Coberto: registry central servido via MCP (`search_skills`/`load_skill`) |
+| A versão nova chega a todos sem pedido manual | Coberto no servidor: `load_skill` serve o conteúdo atual. Só vale enquanto a skill é lida do servidor; se houver cópia local (sync), volta a defasagem, e o sync ficou fora do LiveStry em 2026-10-07 |
+| Acesso por pessoa | **Não desenhado.** Aqui só aparece "governança por time" como open question. Candidato natural: identidade via [[LiveAuth]] (unverified: ninguém discutiu ainda) |
+
+**O que esta página tem e a PRO-903 não menciona**: o problema de trigger
+(nada faz o modelo chamar `search_skills` sozinho) e o hook por harness;
+o requisito harness-agnostic com 4 harnesses escopados; o formato
+`SKILL.md` da agentskills.io; o log de uso por chamada (analytics de
+graça); e a pergunta da [[Vitrine de IA]], que já modela `tipo: Skill`.
+Para a PRO-903 o trigger é o maior risco: um servidor que entrega skills
+mas que o modelo nunca consulta cumpre o critério de aceite e não resolve
+o problema.
+
+**Riscos de entrega que vieram de fora desta página**
+
+- **Conectar um MCP remoto é difícil pra quem não é técnico.** Maria
+  Fernanda Lemos (Slack, 2026-10-22), validando o MCP do A10/A14: o Claude
+  Desktop sobrescreveu o `claude_desktop_config.json` e o servidor sumiu;
+  o caminho via `mcp-remote` exige Node.js e editar JSON. Ela registrou
+  isso como achado da validação. A PRO-903 entrega pelo mesmo canal, pro
+  mesmo público.
+- **A própria entrega da `PRO-902` circulou como zip** num comentário do
+  Linear, que é o mecanismo manual que a PRO-903 quer substituir.
+- **Possível contradição com o Recap de 2026-10-15**: lá msilva propôs
+  "unificar as skills do time num único repositório Git como plugins", com
+  o Claude puxando os plugins por comando
+  ([[2026-10-15 Recap da Semana]]). Um repositório Git como fonte de
+  verdade cabe na arquitetura acima ("git ou DB"). Distribuir *como
+  plugins* é o marketplace do Claude Code, descartado aqui em 2026-10-02
+  por não ser harness-agnostic. Falta saber se foi mudança de rumo ou só
+  modo de falar.
+
 ## PRD da v1 publicado no Linear (2026-10-27)
 
 O LiveStry virou a issue `PRO-903` (projeto *Skills do time: inventário,
