@@ -7964,6 +7964,11 @@ PR review, só aparece quando a página for lida.
 - Open question do mapeamento fechada pela `PRO-899`; gate de qualidade ganhou resposta parcial na `PRO-902` (`testar-skill`, conteúdo não lido). Registrada possível contradição: no Recap de 2026-10-15, msilva propôs distribuir "como plugins", caminho descartado em 2026-10-02.
 - Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (nova seção de intersecção, open questions revisadas), `index.md`.
 
+## [2026-10-23] query | O que sabemos sobre a Opta
+- Pergunta de msilva: panorama do que a wiki sabe sobre a Opta. `notes` rodou antes: nenhum callout `[!msilva]` pendente.
+- Lidos: `projects/Opta.md`, `systems/Opta API.md`, `systems/Opta MCP.md`, `systems/Golzinho.md`, `meetings/2026-10-09 Opta - O que é isso.md`, `syntheses/Quem escreve nas tabelas goals e matches.md`.
+- Respondido em chat. Nada novo filado: `projects/Opta.md` já é a consolidação (quatro peças, contrato, uso, 18 riscos, backlog). Lacunas que seguem abertas: responsável interno pelo contrato, cláusula sobre cache, item 13 (placar ao vivo) não verificado, qual região do Cloud Run atende o domínio.
+
 ## [2026-10-26] synthesis | reconfirmação manual do n8n + PRO-1198
 - Pedido por msilva antes de comunicar os stakeholders: confirmar os achados. Lidos 9 dos 31 críticos/altos pelo MCP do n8n (`get_workflow_details`), só leitura. Nenhum refutado. 22 fechados ao MCP (`availableInMCP=false`).
 - Achado novo: o conector MCP devolve segredos literais em claro (cookies de admin, PAT do Airtable, JWT do Monday). Nenhum valor copiado para o wiki.
