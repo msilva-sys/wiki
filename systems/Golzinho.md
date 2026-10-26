@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-10-19
+updated: 2026-10-26
 aliases: [golzinho, live content, goal-webhook, pipeline de gols]
 tags: [opta, cazetv, supabase, realtime, live-content, n8n]
 ---
@@ -54,7 +54,7 @@ Resolve [[Quem escreve nas tabelas goals e matches]].
 | Nó | O que faz |
 | --- | --- |
 | `Schedule Trigger` | Campo `seconds` sem intervalo explícito — o default do n8n é 30s, que bate com o *"delay de no máximo 30 segundos"* do anúncio |
-| `Get bearer token` | Nó BigQuery com a **mesma query** dos dois serviços: `SELECT key FROM bronze_layer.opta_chaves_api ORDER BY insert_ts DESC LIMIT 1`, projeto `data-analytics-422617`, credencial OAuth2 própria |
+| `Get bearer token` | Nó BigQuery com a **mesma query** dos dois serviços: `SELECT key FROM bronze_layer.opta_chaves_api ORDER BY insert_ts DESC LIMIT 1`, projeto `data-analytics-422617`. Credencial n8n "Tech - Conta de Servico" (`EAzjg2lmgcEVzqjn`): até 2026-10-22 autenticava como `tech@livemode.com`; desde 2026-10-26 16:16 UTC, como a SA `n8n-bigquery@`. A "chave" lida é o token de 4h do [[Atualizador do Token Opta]] |
 | `Get Match` | `GET api.performfeeds.com/soccerdata/match/{outlet}` com `live=yes`, `lineups=yes`, `_pgSz=100` e `mt.mDt=[ontem 00:00Z TO amanhã 00:00Z]` |
 | `Code` | Extrai `liveData.goal[]`, resolve o nome do time e inverte o contestant quando o tipo é `OG` |
 | `Upsert Match` / `Upsert Goal HTTP` | `POST /rest/v1/{matches,goals}?on_conflict=id` no Supabase, com `Prefer: resolution=merge-duplicates`; há também uma Edge Function `upsert-match` |
@@ -67,6 +67,13 @@ e deduz.
 `settings.saveDataSuccessExecution: "all"` — diferente do default da instância,
 este fluxo **salva execuções bem-sucedidas**. Existe histórico pra auditar e pra
 montar alerta de parada.
+
+> [!warning] Correção 2026-10-26 — o histórico existe, mas dura pouco
+> Em 2026-10-26 a execução mais antiga do fluxo era das 16:17 UTC do mesmo dia.
+> A do [[Atualizador do Token Opta]], com a mesma configuração, era das 03:00
+> UTC, embora a tabela prove execuções dele no fim de semana. A instância poda o
+> histórico em menos de ~1 dia. Serve para montar alerta em tempo real, **não**
+> para auditar o passado.
 
 > [!danger] O export do fluxo carrega segredo em texto claro
 > O JSON exportado traz, embutidas nos headers dos nós HTTP, uma chave
@@ -207,3 +214,4 @@ Os IDs são os mesmos da Opta: `id` de partida serve como `fx` nos feeds, e
 | 2026-04-24 | Último commit do `goal-webhook` (troca do modelo Gemini) |
 | 2026-10-16 | Em operação — alertas de Libertadores, Ligue 1, Serie A e Bundesliga no canal |
 | 2026-10-19 | Produtor identificado: o fluxo n8n `[GOLZINHO] Upload de Gols da Opta` |
+| 2026-10-22 23:53 → 2026-10-26 16:17 UTC | **Parado ~3,7 dias**: nenhuma leitura da chave no período, sem alerta. Volta ao ser editado com a credencial nova. Ver [[Por que as automações da Opta pararam em 2026-10-22]] |

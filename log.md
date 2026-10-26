@@ -7968,3 +7968,11 @@ PR review, só aparece quando a página for lida.
 - DNS: o interno aponta a instância para IP privado; o público, para a Cloudflare. Caminho de webhook inexistente chamado pelo 5G devolveu 404: os webhooks respondem pela internet. Contraria a premissa da TI de que o n8n só responde na rede.
 - Releitura do `[OPTA] CALL OPTA API` pelo MCP (somente leitura): o destino vem da chamada e a credencial da Opta é anexada; a credencial pode sair para servidor externo. Não testado ao vivo.
 - Updated: syntheses/Mapeamento dos fluxos do n8n.md (seção nova, open question), projects/Opta.md (risco 1b), index.md.
+
+## [2026-10-26] synthesis | Arquitetura da credencial da Opta e a quebra de 2026-10-22
+- Pedido por msilva: registrar o que foi mapeado da arquitetura da Opta durante a investigação de "trocaram a credencial e automações do n8n quebraram". Fontes: leitura dos repos `opta-api`/`opta-mcp`/`livemode-opta-docs`, Cloud Run, auditoria IAM e BigQuery, log `opta-proxy`, n8n via MCP. Só leitura, com `tech@livemode.com` por `--account`; conta pessoal sem acesso (PRO-1213).
+- Achado central: a "chave" em `opta_chaves_api` é um bearer token de 4h, gerado pelo fluxo n8n `[OPTA] Atualizador do Token Opta`, que carrega o segredo do contrato em texto claro. Ponto único de falha para API, MCP e Golzinho. Nenhum valor copiado para o wiki; da tabela só `insert_ts` foi lida.
+- Quebra: credencial `tech@` do n8n parou em 22/10 ~23:53 UTC; token ~23h sem renovar; MCP com 9 `401` em 23/10; Golzinho parado até 26/10 16:17; Opta API não afetada. Migração para a SA `n8n-bigquery` (criada 23/10). Causa da parada da `tech@` não confirmada.
+- Correções: risco 7 (o que está no BigQuery é token, não a credencial do contrato), 8 e 10; o histórico de execução do n8n dura menos de ~1 dia (Golzinho dizia que servia para auditar).
+- New: systems/Atualizador do Token Opta.md, syntheses/Por que as automações da Opta pararam em 2026-10-22.md.
+- Updated: projects/Opta.md, systems/Opta API.md, systems/Opta MCP.md, systems/Golzinho.md, index.md.

@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-10-19
+updated: 2026-10-26
 aliases: [opta-api, opta api, proxy da opta, api interna da opta]
 tags: [opta, cloud-run, fastapi, supabase, bigquery]
 ---
@@ -47,7 +47,16 @@ tempo real)."*
    do Cloud Run.
 3. Busca a credencial da Opta no BigQuery — **a cada chamada, sem cache**
    (`lib/secret.py`). O cache de 5 minutos existia e foi removido no commit
-   `7164c9f` (2026-04-16). Rastreado em `PRO-693`.
+   `7164c9f` (2026-04-16). Rastreado em `PRO-693`. O que ela busca é um token de
+   4h, produzido pelo [[Atualizador do Token Opta]], não a credencial do contrato.
+
+   > [!warning] Produção não bate com o repo (2026-10-26)
+   > Em 2026-10-24 o serviço atendeu 717 chamadas de proxy (Cloud Run e log
+   > `opta-proxy` batem), mas a SA `opta-api@` fez só **18** leituras da tabela
+   > no BigQuery. Sem cache seriam 717. A revisão no ar (2026-10-20) parece
+   > ter cache, ao contrário da cópia local do repo
+   > (unverified: conferir o código da revisão `opta-api-00010-plr` ou o `main`
+   > atual no GitHub).
 4. Grava o log de auditoria sem esperar confirmação, **antes** da chamada à Opta —
    por isso a entrada não tem status nem latência (`PRO-695`).
 5. Repassa método, query e corpo pra `OPTA_BASE_URL`, trocando o `Authorization`
@@ -74,7 +83,7 @@ Valores ficam no Cloud Run do serviço; nenhum entra aqui.
 | --- | --- |
 | `OPTA_BASE_URL` | Base da Opta (`api.performfeeds.com`) |
 | `ALLOWED_API_KEYS` | Lista de chaves de cliente aceitas, separadas por vírgula |
-| `GCP_SERVICE_ACCOUNT_JSON` | Service account pro BigQuery e Cloud Logging |
+| `GCP_SERVICE_ACCOUNT_JSON` | JSON inteiro da SA `opta-api@data-analytics-422617` (principal visto na auditoria do BigQuery em 2026-10-26), pro BigQuery e Cloud Logging. Vem do Secret Manager via `--set-secrets`. O código **não** usa ADC: a SA de runtime do Cloud Run é ignorada, e sem essa variável toda chamada ao proxy vira `502 "Failed to retrieve upstream credentials"` |
 | `SUPABASE_URL` | Projeto Supabase das tabelas `goals`/`matches` |
 | `SUPABASE_SERVICE_ROLE_KEY` | Service role — ignora o RLS, nunca sai do servidor |
 
@@ -108,6 +117,13 @@ Consolidados em [[Opta]] § Riscos. Os específicos deste serviço:
   e `us-east4` (`opta-api-00006`), serviços independentes em 2026-10-05. Uma
   revogação aplicada numa não vale na outra. Não está confirmado qual atende o
   domínio (unverified: levantado na doc interna, não checado no Cloud Run).
+  **Atualizado 2026-10-26, no Cloud Run** (projeto `n8n-automation-hub-448718`):
+  `opta-api-00010-plr` em `southamerica-east1` e `opta-api-00007-bt8` em
+  `us-east4`, as duas criadas em 2026-10-20. O tráfego real está em
+  `southamerica-east1` (~600–900 chamadas `200` por dia). `us-east4` recebe ~1
+  chamada `200` por dia; o resto é `404` de scanner procurando `.env` e
+  `phpinfo.php`. Logo o domínio quase certamente aponta para `southamerica-east1`
+  (unverified: o mapeamento de domínio não foi lido).
 - **A credencial do contrato mora no BigQuery**, não no Secret Manager — mesma
   dívida que o [[Airtable Proxy]] já resolveu.
 - **Falha silenciosa nas rotas `our*`**: se o fluxo n8n do [[Golzinho]] parar, elas
@@ -122,3 +138,5 @@ Consolidados em [[Opta]] § Riscos. Os específicos deste serviço:
 | 2026-05-11 | Anunciado no `#general` como porta única da Opta, com GPT customizado de docs |
 | 2026-06-08 | Filtro `tournament_calendar` em `/ourMatches` (`4c12238`) |
 | 2026-09-22 | Guia de integração publicado no repo |
+| 2026-10-20 | Revisões novas nas duas regiões (`00009`/`00010` em `southamerica-east1`, `00007` em `us-east4`) |
+| 2026-10-22–26 | Não afetada pela quebra da credencial do n8n: só `200` no fim de semana. Ver [[Por que as automações da Opta pararam em 2026-10-22]] |

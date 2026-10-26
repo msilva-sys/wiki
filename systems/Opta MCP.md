@@ -1,7 +1,7 @@
 ---
 type: system
 status: active
-updated: 2026-10-19
+updated: 2026-10-26
 aliases: [opta-mcp, mcp da opta, conector da opta]
 tags: [opta, mcp, cloud-run, typescript]
 ---
@@ -37,7 +37,10 @@ fora e não é medido ali (ver [[Opta API]] § Auditoria).
   HTTP `200` — quem lê o erro é o agente, que pode se recuperar.
 - **Credencial da Opta cacheada 5 minutos** em memória por instância
   (`lib/bigquery.ts`) — diferente da [[Opta API]], que lê do BigQuery a cada
-  chamada.
+  chamada. Autentica com `GOOGLE_APPLICATION_CREDENTIALS_JSON` ou, se ausente,
+  ADC, com projeto fixo `data-analytics-422617`. O que lê é o token de 4h do
+  [[Atualizador do Token Opta]]. Qual principal aparece na auditoria do BigQuery
+  não foi identificado (2026-10-26).
 
 ## Ferramentas
 
@@ -93,3 +96,5 @@ do proxy, com o rótulo indo pro campo `apiKey` do log.
 | 2026-03-26 | Anunciado no `#live-innovation` como MCP ativo no Claude corporativo |
 | 2026-06-16 | Chamadas à Opta passam a ir pro mesmo log de auditoria do proxy (`ef8a289`) |
 | 2026-09-21 | Competições atualizadas pra 2026/27 e correção do filtro de datas, por [[Luís Fernandez]] |
+| 2026-10-19 | Revisão `opta-mcp-00013-blc` (Cloud Run, `n8n-automation-hub-448718`, `southamerica-east1`) — a que estava no ar em 2026-10-26 |
+| 2026-10-23 | 9 respostas `HTTP_401` da Opta (11:36 e 18:45–20:45 UTC) por token vencido, enquanto o [[Atualizador do Token Opta]] estava parado. Fim de semana sem impacto. Ver [[Por que as automações da Opta pararam em 2026-10-22]] |

@@ -65,8 +65,48 @@ pergunta em aberto, Luís ia levar a [[Carolina Bezerra]] e possivelmente
   upsert em `matches`/`goals`. Identificado em 2026-10-19; é a única peça que
   não vive em repositório. Ver [[Quem escreve nas tabelas goals e matches]].
 
+- **[[Atualizador do Token Opta]]** — fluxo n8n que renova o token da Opta a cada
+  4h e grava em `opta_chaves_api`. Identificado em 2026-10-26; é a peça de que as
+  outras quatro dependem, e também não vive em repositório.
+
 Luís já cogitou unificar os três repos num monorepo; não chegou a fazer —
 hoje é incômodo trabalhar com Claude Code cruzando os três.
+
+### Como a credencial circula (verificado 2026-10-26)
+
+```
+                        a cada 4h
+n8n: [OPTA] Atualizador ──────────► BigQuery data-analytics-422617
+  (segredo do contrato               bronze_layer.opta_chaves_api
+   em texto claro no código)         (key = bearer token, insert_ts)
+                                              │ SELECT key … ORDER BY insert_ts DESC LIMIT 1
+              ┌───────────────────────────────┼───────────────────────────────┐
+              ▼                               ▼                               ▼
+         Opta API                         Opta MCP                  n8n: [GOLZINHO]
+  SA opta-api@ (JSON na env)      JSON na env ou ADC, cache 5min    SA n8n-bigquery
+              │                               │                               │
+              └──────────────► api.performfeeds.com ◄─────────────────────────┘
+                              (Authorization: Bearer <token>)
+```
+
+O que fica no BigQuery é um **token derivado, de vida curta**, não a credencial do
+contrato. A credencial de verdade (outlet + segredo) está no nó `Code` do
+[[Atualizador do Token Opta]]. Se o Atualizador para, os três consumidores caem
+juntos algumas horas depois. Foi o que aconteceu em
+[[Por que as automações da Opta pararam em 2026-10-22]].
+
+### Onde cada peça roda (verificado 2026-10-26)
+
+| Peça | Onde | Revisão / estado |
+| --- | --- | --- |
+| [[Opta API]] | Cloud Run, projeto `n8n-automation-hub-448718`, `southamerica-east1` **e** `us-east4` | `opta-api-00010-plr` e `opta-api-00007-bt8`, ambas de 2026-10-20 |
+| [[Opta MCP]] | Cloud Run, mesmo projeto, `southamerica-east1` | `opta-mcp-00013-blc`, de 2026-10-19 |
+| Token, log de auditoria, SAs | Projeto `data-analytics-422617` | — |
+| Atualizador, [[Golzinho]] e demais fluxos `[OPTA]` | n8n (contas `tech@`/`projetos@`) | — |
+
+Acesso: a conta pessoal de msilva não lê logs em nenhum dos dois projetos GCP
+(`PRO-1213`, aberta em 2026-10-26). A leitura feita naquele dia usou
+`tech@livemode.com`.
 
 ## Contrato e chave de API
 
@@ -82,6 +122,15 @@ a antiga.
 **Credencial hoje é buscada direto do BigQuery, não é secret do GCP** —
 mesma classe de dívida que o [[Airtable Proxy]] já resolveu, apontada por
 Luís como "um problema" real.
+
+> [!warning] Correção 2026-10-26 — o que está no BigQuery é um token de 4h
+> O que fica em `opta_chaves_api` não é a credencial do contrato: é um bearer
+> token OAuth (`client_credentials`), renovado a cada 4h pelo
+> [[Atualizador do Token Opta]]. A credencial do contrato (outlet + segredo)
+> fica **em texto claro no código** desse fluxo n8n, o que é pior do que o
+> BigQuery. "Rotacionar a chave" tem então duas leituras: a chave de cliente da
+> [[Opta API]] (o plano verbal acima) ou o segredo do contrato com a Opta (que
+> exige a Opta).
 
 ## Uso em produção
 
@@ -124,7 +173,7 @@ como cliente, citar a Opta como case de sucesso do time (como já fizeram com
 LiveScript e [[Orca (CDE)]]). Pediu a Matheus e [[Yasmin Macedo]] que
 considerassem apresentar a Opta pro time como dupla.
 
-## Riscos levantados (2026-10-16, atualizado 2026-10-19)
+## Riscos levantados (2026-10-16, atualizado 2026-10-26)
 
 Consolidado da leitura dos repos, da doc interna, do relato de 09/10, do fluxo
 n8n exportado em 19/10 e dos logs de API do Supabase do mesmo dia. Ordenado por gravidade.
@@ -138,10 +187,10 @@ n8n exportado em 19/10 e dos logs de API do Supabase do mesmo dia. Ordenado por 
 | 4 | Chave única do MCP: sem revogação individual nem atribuição | doc + 09/10 | não |
 | 5 | 28 chaves de API sem registro de dono | doc | `PRO-694` |
 | 6 | Chaves em claro no log e no BigQuery | doc | não |
-| 7 | Credencial do contrato no BigQuery, não no Secret Manager | 09/10 | não |
-| 8 | Produtor do [[Golzinho]] sem alerta de parada (identificado em 19/10, histórico de execução existe) | fluxo n8n | não |
+| 7 | Token da Opta no BigQuery, não no Secret Manager. **Corrigido em 26/10**: é um token de 4h; o segredo do contrato está no item 19 | 09/10 | não |
+| 8 | Produtor do [[Golzinho]] sem alerta de parada (identificado em 19/10). **Confirmado em 26/10**: ficou ~3,7 dias parado (22–26/10) sem ninguém perceber; o histórico de execução **não** cobre isso (item 22) | fluxo n8n | não |
 | 9 | Três clientes no Supabase direto, fora da auditoria | código | não |
-| 10 | Duas regiões da API em revisões divergentes | doc | não |
+| 10 | Duas regiões da API em revisões divergentes. Em 26/10 as duas tinham revisão de 2026-10-20 (`00010` e `00007`); se é a mesma imagem não foi conferido. `us-east4` recebe quase só scanner | doc + Cloud Run (26/10) | não |
 | 11 | `service-account.json` versionado no `goal-webhook` (conteúdo não lido) | repo | não |
 | 12 | Rotação de chave é plano verbal, nunca executada | 09/10 | não |
 | 13 | Placar ao vivo possivelmente errado: o fluxo testa `scores.total` e grava `scores.ft` (não verificado) | fluxo n8n | não |
@@ -152,6 +201,10 @@ n8n exportado em 19/10 e dos logs de API do Supabase do mesmo dia. Ordenado por 
 | 16 | Credencial lida do BigQuery a cada chamada do proxy | código | `PRO-693` |
 | 17 | README do `opta-mcp` anuncia ferramenta removida (`opta_raw`) | código | não |
 | 18 | `401`/`403` não entram no log de auditoria | doc | `PRO-699` |
+| 19 | **Segredo do contrato da Opta em texto claro** no nó `Code` do [[Atualizador do Token Opta]] — visível a quem lê o n8n | fluxo n8n (26/10) | não |
+| 20 | **Ponto único de falha sem alerta**: se o Atualizador para, API, MCP e Golzinho caem juntos; em 23/10 ficou ~23h sem renovar e ninguém viu | incidente 22–26/10 | não |
+| 21 | Fluxos `[OPTA]` dependiam da conta `tech@livemode.com`; migrados para a SA `n8n-bigquery` em 23–26/10, credencial antiga não aposentada | incidente 22–26/10 | não |
+| 22 | Histórico de execução do n8n não passa de ~1 dia, apesar de `saveDataSuccessExecution: "all"` — impossível auditar falhas passadas | incidente 22–26/10 | não |
 
 Só 5, 14, 15, 16 e 18 têm issue. O item 1 é o único com cara de incidente, não de
 dívida: a rotação derruba o fluxo e a [[Opta API]] juntos, então precisa de janela
