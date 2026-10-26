@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-10-22
+updated: 2026-10-26
 date: 2026-10-22
 aliases: [mapeamento n8n, inventário n8n, fluxos do n8n]
 tags: [n8n, automação, auth, governança, liveauth, credenciais]
@@ -704,6 +704,25 @@ webhook solto, não ligado a nada. O outro é `(unverified)`.
 12. **Governança:** definir um dono de plataforma para o n8n, avaliar a
     licença de team projects e conferir o escopo das 7 credenciais da API do
     próprio n8n.
+
+## Reconfirmação manual, 2026-10-26
+
+Leitura direta do JSON de 9 dos 31 fluxos críticos/altos pelo MCP do n8n,
+só leitura, sem chamar endpoint. Os 9 batem com a lista acima: Inicial
+(crítico), teste Onboarding Portugal, Offboarding Portugal, Aging Contas a
+Receber, AVD Comunicados, RR CazéTV Principal, [OPTA] CALL OPTA API, CRM
+Auditoria Semanal, Coletar Usuários Claude Teams. Nenhum refutado.
+
+Checagens: `parameters.authentication` do nó Webhook; valores literais em
+headers, body e código; presença de `X-Slack-Signature`/HMAC; tipos dos nós
+de ação. Os outros 22 estão com `availableInMCP=false` e só saem pela API
+REST ou pela UI.
+
+**Achado novo:** o conector MCP devolve os segredos literais em claro.
+Qualquer agente autenticado no conector lê cookies de sessão de admin, PAT
+do Airtable e JWT do Monday. A exposição não é só para quem edita o fluxo.
+
+Comunicação aos stakeholders rastreada em PRO-1198.
 
 ## Open questions
 

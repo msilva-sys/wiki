@@ -7956,3 +7956,9 @@ PR review, só aparece quando a página for lida.
 - Nova síntese em rascunho: identidade por serviço/automação, permissões, tokens curtos, enforcement no destino e limites de revogação. Auth app-to-app continua fora do escopo implementado documentado; proposta não é decisão.
 - Distintos acesso interno, credenciais de fornecedores e governança de custo; Client Credentials conferido na RFC 6749 e federação na documentação GCP.
 - New: syntheses/Como LiveAuth pode autenticar sistemas e automações.md. Updated: projects/LiveAuth.md, index.md.
+
+## [2026-10-26] synthesis | reconfirmação manual do n8n + PRO-1198
+- Pedido por msilva antes de comunicar os stakeholders: confirmar os achados. Lidos 9 dos 31 críticos/altos pelo MCP do n8n (`get_workflow_details`), só leitura. Nenhum refutado. 22 fechados ao MCP (`availableInMCP=false`).
+- Achado novo: o conector MCP devolve segredos literais em claro (cookies de admin, PAT do Airtable, JWT do Monday). Nenhum valor copiado para o wiki.
+- Criada PRO-1198 (tarefa interna, Backlog, sem projeto, S, prazo 2026-10-28): apresentar os riscos aos stakeholders; critério de aceite inclui reproduzir críticos e altos na UI antes.
+- Updated: syntheses/Mapeamento dos fluxos do n8n.md (seção "Reconfirmação manual"), index.md.
