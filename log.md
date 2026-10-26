@@ -7962,3 +7962,9 @@ PR review, só aparece quando a página for lida.
 - Achado novo: o conector MCP devolve segredos literais em claro (cookies de admin, PAT do Airtable, JWT do Monday). Nenhum valor copiado para o wiki.
 - Criada PRO-1198 (tarefa interna, Backlog, sem projeto, S, prazo 2026-10-28): apresentar os riscos aos stakeholders; critério de aceite inclui reproduzir críticos e altos na UI antes.
 - Updated: syntheses/Mapeamento dos fluxos do n8n.md (seção "Reconfirmação manual"), index.md.
+
+## [2026-10-26] synthesis | webhooks do n8n expostos à internet + credencial da Opta
+- Pedido por msilva depois de testar pelo 5G.
+- DNS: o interno aponta a instância para IP privado; o público, para a Cloudflare. Caminho de webhook inexistente chamado pelo 5G devolveu 404: os webhooks respondem pela internet. Contraria a premissa da TI de que o n8n só responde na rede.
+- Releitura do `[OPTA] CALL OPTA API` pelo MCP (somente leitura): o destino vem da chamada e a credencial da Opta é anexada; a credencial pode sair para servidor externo. Não testado ao vivo.
+- Updated: syntheses/Mapeamento dos fluxos do n8n.md (seção nova, open question), projects/Opta.md (risco 1b), index.md.

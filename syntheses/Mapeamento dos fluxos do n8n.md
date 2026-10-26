@@ -724,6 +724,32 @@ do Airtable e JWT do Monday. A exposição não é só para quem edita o fluxo.
 
 Comunicação aos stakeholders rastreada em PRO-1198.
 
+## Exposição à internet e fluxo da Opta, 2026-10-26
+
+**Os webhooks respondem pela internet.** A TI afirma que o n8n só é
+acessível pela rede da empresa. O DNS mostra outra coisa: o DNS interno
+aponta `n8nops.livemode.com` para um IP privado, e o DNS público (Google e
+Cloudflare) aponta para IPs da Cloudflare. msilva testou pelo 5G, fora da
+rede, um caminho de webhook que não existe e recebeu 404. A requisição
+chegou ao n8n pela internet sem executar fluxo nenhum. `(unverified: o
+texto exato do 404 não foi registrado; o do n8n diz que o webhook não está
+registrado.)`
+
+Leitura provável: a restrição vale para o editor, e os caminhos de webhook
+ficam liberados porque Slack, Evolution, Airtable e formulários externos
+chamam de fora. Consequência: "só funciona dentro da rede" não atenua
+nenhum achado desta página. A autenticação no nó Webhook é a única
+barreira.
+
+**O fluxo da Opta envia a credencial para qualquer endereço.** Releitura do
+`[OPTA] CALL OPTA API` pelo MCP: o webhook (POST, sem trava) recebe da
+própria chamada o endereço de destino, e o nó HTTP Request usa esse
+endereço com a credencial `[OPTA] Bearer Token`. A resposta inteira volta
+para quem chamou. Agrava o achado alto da tabela: além de proxy aberto para
+a API paga, a credencial do contrato pode ser enviada a um servidor de
+fora. Não testado ao vivo, de propósito. Cada chamada grava uma linha em
+`bronze_layer.logs_opta_api`. Ver [[Opta]] § Riscos, item 1b.
+
 ## Open questions
 
 - ~~Os 38% de workflows não enumerados.~~ **Respondido em 2026-10-22**: a
@@ -745,6 +771,9 @@ Comunicação aos stakeholders rastreada em PRO-1198.
   B/G.
 - As 130 chaves de Airtable (eram ~30 na rodada 1): quantas ainda são
   válidas, quantas são de gente que saiu. Cruzar com o [[Airtable Proxy]] antes de propor migração.
+- O endereço raiz da instância pelo 5G: o editor está fechado pela
+  Cloudflare ou exposto com a tela de login do n8n? A regra da Cloudflare
+  libera também os caminhos dos 3 servidores MCP sem auth?
 - Se team projects (licença) resolveria metade do problema de governança
   sozinho, sem nenhum desenvolvimento — avaliar custo.
 

@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-updated: 2026-10-19
+updated: 2026-10-26
 aliases: [opta]
 tags: [opta, transição, n8n]
 ---
@@ -132,6 +132,7 @@ n8n exportado em 19/10 e dos logs de API do Supabase do mesmo dia. Ordenado por 
 | # | Risco | Origem | No Linear? |
 | --- | --- | --- | --- |
 | 1 | Chave **`service_role`** do Supabase em texto claro dentro do fluxo n8n do [[Golzinho]] — escrita total no banco da transmissão, e todo export vaza de novo | fluxo n8n | não |
+| 1b | Fluxo n8n `[OPTA] CALL OPTA API`: webhook sem trava, **acessível pela internet**, recebe da chamada o endereço de destino e anexa a credencial do contrato — a credencial pode ser enviada a servidor externo, e a resposta volta inteira para quem chamou. Visto em 2026-10-26, ver [[Mapeamento dos fluxos do n8n]] | fluxo n8n | não |
 | 2 | [[Opta MCP]] sobe **sem autenticação** se `MCP_AUTH_KEY` sumir | código | não |
 | 3 | **Consumo do contrato invisível**: o fluxo do [[Golzinho]] chama a Opta direto, fora do proxy — ~86 mil chamadas/mês que não entram em relatório nenhum | fluxo n8n | não |
 | 4 | Chave única do MCP: sem revogação individual nem atribuição | doc + 09/10 | não |
