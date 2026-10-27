@@ -7976,3 +7976,32 @@ PR review, só aparece quando a página for lida.
 - Correções: risco 7 (o que está no BigQuery é token, não a credencial do contrato), 8 e 10; o histórico de execução do n8n dura menos de ~1 dia (Golzinho dizia que servia para auditar).
 - New: systems/Atualizador do Token Opta.md, syntheses/Por que as automações da Opta pararam em 2026-10-22.md.
 - Updated: projects/Opta.md, systems/Opta API.md, systems/Opta MCP.md, systems/Golzinho.md, index.md.
+
+## [2026-10-27] synthesis | Fechamento de combinados de outubro (prep da 1:1)
+- Skill `combinados-do-mes`, modo `preparar`. Combinados lidos da DM com a Gabi (08/10, ajuste de 09/10); Linear de 01 a 26/10; PDI de `reference/PDI Matheus 2026.md`.
+- Correções do msilva no caminho: o combinado 2 é a v1 inteira da doc da Gabi (9 responsabilidades, PRO-881), não só a 2.7; a 2.7 não levou 11 dias, foram ~5 de trabalho com tempo dividido; o proxy parou por dependência do Luís; não houve conversa sobre o LiveAuth, só a entrega escrita (22/10).
+- Padrão validado: demanda paralela entra sem renegociar o combinado (cruza F1.2). Degrau escolhido: renegociar no dia.
+- New: meetings/2026-10-27 Fechamento de combinados - outubro (prep).md. Updated: index.md.
+
+## [2026-10-27] synthesis | LiveStry — PRD da PRO-903 montado em chat e publicado no Linear
+- Lido no Linear: PRO-903, projeto P-PRO-45 e todas as issues irmãs
+  (PRO-899, 900, 901, 902, 904, 1092, 1200–1204). Contexto mudou desde
+  2026-10-07: repositório oficial + marketplace (PRO-1200) e rotina de
+  sync nos projetos (PRO-1202) já entregues; mapeamento (PRO-899) e teste
+  antes de publicar (PRO-902) já fechados. LiveStry v1 = canal de entrega
+  do repositório oficial, não o registry.
+- PRD montado seção a seção com msilva (10 seções + 3 anexos) e publicado
+  como Document anexado à PRO-903:
+  https://linear.app/projetos-livemode/document/prd-livestry-servidor-que-entrega-as-skills-da-empresa-a05dcf2d0210
+  Prazo da issue acertado 2026-10-23 → 2026-10-30.
+- Workflow de 10 agentes verificou na doc oficial das 5 ferramentas
+  (app do Claude, Claude Code, Cursor, Codex, Gemini CLI): instructions no
+  contexto, prompts como `/`, OAuth remoto, restrição de admin. Achados
+  principais: Codex não implementa prompts; app do Claude exige Owner pra
+  cadastrar conector; `/livestry__nome` não existe em ferramenta nenhuma.
+- Achado de padrão: extensão oficial `io.modelcontextprotocol/skills`
+  (SEP-2640, final 2026-09-13), sem suporte nas 5 ferramentas ainda.
+  `skillsprotocol.com` descartado (protocolo próprio, anônimo, v0.1).
+- Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (nova
+  seção "PRD da v1 publicado no Linear", "O que continua em aberto"
+  reescrito), `index.md` (entrada LiveStry).

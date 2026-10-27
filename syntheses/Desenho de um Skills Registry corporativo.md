@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-10-07
+updated: 2026-10-27
 date: 2026-10-02
 aliases: [skills registry, registro de skills, LiveStry]
 tags: [skills, agent-skills, mcp, agent-flow, governance]
@@ -197,23 +197,86 @@ serviço persistente entrega.
 
 Ainda não decidido entre as duas opções.
 
+## PRD da v1 publicado no Linear (2026-10-27)
+
+O LiveStry virou a issue `PRO-903` (projeto *Skills do time: inventário,
+qualidade e distribuição*, P-PRO-45, lead Gabrielle, iniciativa Governança
+de IA; criada por Carolina em 2026-10-07, assignee msilva). O PRD foi montado
+seção a seção em chat e publicado como Document anexado à issue:
+[PRD — LiveStry](https://linear.app/projetos-livemode/document/prd-livestry-servidor-que-entrega-as-skills-da-empresa-a05dcf2d0210).
+Prazo da issue acertado de 2026-10-23 para 2026-10-30 (combinado da 1:1,
+ver [[2026-10-27 Fechamento de combinados - outubro (prep)]]).
+
+**O que mudou de contexto desde 2026-10-07.** O projeto do Linear já
+entregou o que esta página chamava de "registry": repositório oficial
+`livemode-org/livemode-claude-skills` + marketplace `livemode-skills` no
+Claude Code (`PRO-1200`, done 2026-10-26) e a rotina que abre PR nas
+cópias dentro dos projetos, modelo Dependabot via GitHub App
+`livemode-skills-sync` (`PRO-1202`, done 2026-10-26). Os dois "pitches"
+do segundo esboço também já são issues fechadas: a skill de mapeamento é a
+`PRO-899` (done, inventário dos 65 repos: 30 skills em 39 versões) e o
+teste antes de publicar é a `PRO-902` (done 2026-10-20). Ou seja: o
+LiveStry da v1 **não é o registry** — é só mais um canal de entrega do
+repositório oficial, pra quem não usa o Claude Code.
+
+**Decisões fechadas no PRD** (todas de msilva, em chat, 2026-10-27):
+
+- Duas dores na v1: distribuir e manter atualizadas. Dado de uso fica como
+  medida, não como objetivo.
+- Cinco ferramentas, inclusive Claude Code (convive com o marketplace por
+  enquanto; orientação no README, sem bloqueio técnico). Só pessoas; agentes
+  ficam fora.
+- Correção vale "na próxima conversa"; atualização em conversa aberta é
+  débito registrado.
+- Hospedagem **Cloudflare Workers** (mesma plataforma do [[LiveAuth]]);
+  comparativo com Cloud Run no anexo A do PRD. Registro de uso em D1, custo
+  a confirmar.
+- Login pelo LiveAuth, mesmo padrão do MCP do [[Agent Flow]]. Endereço
+  `livestry.livemode.space`.
+- Catálogo vai pelas `instructions` do servidor **e** pela descrição da
+  tool "carregar skill" — porque a verificação por ferramenta (abaixo)
+  mostrou que três das cinco não garantem as instructions. Isso substitui
+  o hook por harness desenhado em 2026-10-02, que fica fora da v1.
+- Atalho `/`: nome simples da skill; cada ferramenta monta o prefixo do seu
+  jeito. Busca semântica fora da v1.
+- Owner do app do Claude já identificado (não nomeado no Linear);
+  comportamento do app é o primeiro teste, sem servidor de exemplo.
+
+**Verificação por ferramenta** (workflow de 10 agentes, doc oficial +
+leitura cética independente, 2026-10-27): instructions entram no contexto
+só no Claude Code (corte em 4.096 chars) e no Gemini CLI; no Codex há bug
+aberto (#29097); app do Claude e Cursor não documentam. Prompts como `/`:
+Claude Code `/livestry:nome (MCP)` ou `/mcp__livestry__nome`; Gemini CLI
+`/nome` (renomeia pra `/livestry.nome` em colisão); Codex **não implementa**
+prompts (#5059); app e Cursor sem doc. OAuth remoto: sim nas cinco. App do
+Claude em Team/Enterprise: só Owner cadastra o conector, uma vez. Tabela
+completa no anexo B do PRD.
+
+**Padrões.** Achado novo: o MCP tem extensão oficial
+`io.modelcontextprotocol/skills` (SEP-2640, final 2026-09-13; `skills/list`,
+`skills/get`, `resources/read` com `skill://`, manifesto com SHA-256),
+formato de conteúdo = agentskills.io. Nenhuma das cinco ferramentas suporta
+ainda (matriz: ChatGPT web, fast-agent, MCP Inspector, parciais). Decisão:
+v1 expõe as skills também como resources `skill://`; os métodos da extensão
+ficam pra quando o SDK TypeScript tiver suporte (questão em aberto no PRD).
+`skillsprotocol.com` (perguntado por msilva) descartado: protocolo próprio
+JSON-RPC, v0.1, anônimo, sem adotantes, manifesto `skill.toml` que conflita
+com a regra de nome do agentskills.io.
+
 ## O que continua em aberto
 
-- Schema exato do hook em cada um dos 4 harnesses (nome do evento, formato
-  de `additionalContext`) — pesquisa inicial via resumo de doc, não leitura
-  verbatim; precisa confirmação campo-a-campo antes de implementar.
-- Gate de qualidade real pro caso `pm-linear` — "esteira de qualidade" foi
-  nomeada no segundo esboço, mas o que ela roda de fato (validação
-  estrutural, eval automatizado, review humano) ainda não foi definido.
-- Escopo da "skill de mapeamento das skills pessoais e de projeto" — não
-  esclarecido com msilva ainda.
-- Governança/escopo por time — ainda não desenhado como o registry decide
-  o que cada time vê.
-- Mecanismo de sync local: coldstart síncrono vs. serviço persistente a
-  nível de OS — duas opções mapeadas, nenhuma escolhida. Dono da
-  abstração (quem constrói/mantém) também em aberto.
-- Não foi levado a Luís, Gabrielle, ou qualquer outra pessoa do time —
-  raciocínio só entre msilva e Claude até aqui.
+- Custo do D1 pro registro de uso; se e quando implementar os métodos da
+  extensão Skills do MCP — as duas únicas questões abertas no PRD.
+- Gate de qualidade real pro caso `pm-linear` — a `PRO-902` definiu quem
+  testa/com que dados/critério, mas esta página não leu o resultado dela
+  ainda. *(unverified: ingerir a issue fechada.)*
+- Governança/escopo por time — fora do escopo da v1 por decisão; volta se
+  aparecer skill que só um time deva ver.
+- Mecanismo de sync local (coldstart vs. serviço persistente) — **superado
+  pela v1**: o catálogo entra via `instructions`/descrição de tool, sem
+  hook nem sync. Mantido aqui como histórico.
+- O PRD ainda não foi lido por Gabrielle (lead do projeto) nem por Carolina
+  (criadora da issue) — publicado hoje.
 
 ## Relacionado
 
