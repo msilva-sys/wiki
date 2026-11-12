@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-10-26
+updated: 2026-11-12
 ---
 
 # Index
@@ -427,6 +427,7 @@ _(transcripts are filed under Meetings instead — see `CLAUDE.md`)_
 - [[2026-10-27 Fechamento de combinados - outubro (prep)]] — preparação da 1:1 de fechamento com a Gabi (skill `combinados-do-mes`). Outubro: 0 de 4 combinados entregues por inteiro (proxy não entregue; v1 dos agentes 1 de 9; LiveAuth e multiplayer parciais). Padrão: demanda paralela entra sem renegociar; degrau: renegociar no dia (F1.2). Prévia de novembro: v1 inteira até 13/11, LiveAuth na segunda quinzena.
 
 ## Syntheses
+- [[Plano de migração da API do Fluxo Agêntico para a Cloudflare]] — rascunho de 2026-11-12, só registro (sem ADR, issue nem spike). API + frontend num Worker próprio (`apps/edge`) com Cloudflare Container, separado do Worker da rotina (ADR 0028). Passos, pontos do código presos à Vercel, riscos (partida a frio vs. 3 s do Slack) e duas decisões em aberto: domínio e container sempre ligado.
 - [[Como LiveAuth pode autenticar sistemas e automações]] — síntese em rascunho (2026-10-23): proposta de identidade por automação, permissões e tokens curtos; distingue evolução de auth app-to-app do login humano já desenhado e conecta ao inventário de processos/API keys.
 - [[2026-08-18 Product feedback in Linear, code review in Git]] — **`status: deferred`**, movida de `decisions/` em 2026-10-22: nunca foi decisão — a transcrição tem Gabrielle dizendo *"não tem martelo batido"*. Registra a prática observada: **ela é a revisora de produto**, testa em homologação e devolve pelo comentário do Linear; Luís revisa o trabalho da Yasmin no Git. Comentário do Linear não chega ao Git.
 - [[O que falta para os agentes passarem no teste de portabilidade]] — aberta 2026-10-21. Teste de portabilidade do Luís aplicado ao repo `livemode-fluxo-agentico` (varredura em 8 fatias, 212 achados, centrais conferidos no código). Falha por cinco motivos: `core` mistura kernel + domínio de entrega + Linear + processo (~220 de ~1.030 linhas são kernel; causa raiz é a regra "usado por mais de um agente → core"); o adapter do Linear copia em vez de traduzir; processo em `Literal` (o `Criterion` vive em 6 lugares, contra a própria decisão de `prompts-langfuse.md`); sem manifesto nem registro (core importa agentes 12 vezes); sem `CLAUDE.md`/teste de imports. Propõe kernel / `delivery` / `adapters/linear` / `config/livemode`, manifesto mínimo e ordem em 5 passos. Achados avulsos: filtro de ativas inclui duplicadas, e-mail em comentário, código morto, eval no banco do app.

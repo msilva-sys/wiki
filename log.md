@@ -8005,3 +8005,10 @@ PR review, só aparece quando a página for lida.
 - Updated: `syntheses/Desenho de um Skills Registry corporativo.md` (nova
   seção "PRD da v1 publicado no Linear", "O que continua em aberto"
   reescrito), `index.md` (entrada LiveStry).
+
+## [2026-11-12] synthesis | Plano de migração da API do Fluxo Agêntico para a Cloudflare
+- Montado em chat (Claude Code, repo `livemode-fluxo-agentico`). Lidos: `docs/future_migrations/cloudflare.md`, ADR 0028, `docs/agent-framework.md`, `apps/worker` (wrangler, index.ts, Dockerfile), `vercel.json`, `migrate.yml`, `scripts/worker_secrets.py`, pontos `vercel_*` em `core/infra`.
+- Ponto de partida: só a rotina está na Cloudflare; a imagem dela já carrega o código da API.
+- msilva quer migrar a API também. Escolhido em chat: Worker separado do da rotina (pública vs. privada, rollback e logs independentes, `/run` fora do domínio público).
+- Só registro, a pedido de msilva: sem ADR, issue no Linear ou spike.
+- New: syntheses/Plano de migração da API do Fluxo Agêntico para a Cloudflare.md. Updated: index.md.
