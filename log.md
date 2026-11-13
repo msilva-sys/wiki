@@ -8012,3 +8012,11 @@ PR review, só aparece quando a página for lida.
 - msilva quer migrar a API também. Escolhido em chat: Worker separado do da rotina (pública vs. privada, rollback e logs independentes, `/run` fora do domínio público).
 - Só registro, a pedido de msilva: sem ADR, issue no Linear ou spike.
 - New: syntheses/Plano de migração da API do Fluxo Agêntico para a Cloudflare.md. Updated: index.md.
+
+## [2026-11-13] ingest | Rovo — What's the difference between a skill and tool
+- Lido `raw/Clippings/What's the difference between a skill and tool  Rovo.md` (suporte da Atlassian, publicado 2026-08-07).
+- Doc de produto, peso baixo. Tool = ação única com input/output definidos; skill = instruções que combinam tools com raciocínio. Mesmo corte das camadas Tools/Skills do template de harness.
+- Novo para o wiki: skill declara as tools de que depende (toca a pergunta de agentes aninhados) e transparência como argumento para skill. Confirma a divisão calcular vs. julgar sem mudar decisões.
+- Decidido em chat: não entra como fonte da tese de Packaging as skills, só como nota à parte.
+- New: `sources/Rovo - What's the difference between a skill and tool.md`.
+- Updated: `concepts/Agent Harness Template.md`, `concepts/Vocabulário do Fluxo Agêntico.md` (verbetes Tool e Skill), `concepts/Packaging as skills.md`, `index.md`.

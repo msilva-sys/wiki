@@ -1,7 +1,7 @@
 ---
 type: concept
 status: draft
-updated: 2026-10-20
+updated: 2026-11-13
 aliases: [harness template, trigger input harness output, agent template (Luís)]
 tags: [agent-flow, architecture, harness, claude-agent-sdk]
 ---
@@ -196,11 +196,20 @@ Rasmic dá ao slot de sensores.
 arquitetura como arquivo no repositório — o diagnóstico de 2026-10-20 é
 justamente a ausência disso.
 
+**Mesma divisão num vendor, 2026-11-13.**
+[[Rovo - What's the difference between a skill and tool]] separa as
+capacidades de um agente em tools (o que ele faz, uma ação com input/output
+definidos) e skills (como faz, instruções que combinam tools com
+raciocínio). São as camadas Tools e Skills deste template, com o mesmo corte.
+
 ## Questões em aberto
 
 - Quais dos 14 agentes ficam no primeiro nível, com Trigger/Input/Harness/Output
   próprios, e quais ficam aninhados como Tool/Skill no harness de outro agente?
-  Para os aninhados, a qual harness pertencem? Ainda não discutido com Luís.
+  Para os aninhados, a qual harness pertencem? No Rovo, a skill declara as
+  tools de que depende e o sistema as inclui automaticamente
+  ([[Rovo - What's the difference between a skill and tool]]); aninhar aqui
+  exigiria a mesma declaração explícita. Ainda não discutido com Luís.
 - A fronteira da Soul foi parcialmente fechada na
   [[2026-09-01 Modelar SOUL em tabelas com composição plana|decisão da SOUL]];
   continuam abertas as fronteiras completas

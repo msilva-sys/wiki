@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-10-22
+updated: 2026-11-13
 aliases: [glossário do Fluxo Agêntico, sinal, contrato de agente, ticket graph, gateway, soul, profile, fragment]
 tags: [agents, agent-flow, vocabulary, architecture]
 ---
@@ -78,6 +78,13 @@ explícita em vários lugares ao mesmo tempo.
   global (entre agentes); `"a10"`/`"a14"` = individual. Distinto do estado
   operacional (snapshots, histórico). Ver
   [[2026-09-10 Memória de fatos do agente (agent_facts)]].
+- **Tool** — ação única com input e output definidos (consultar o Linear,
+  ler o GitHub). Calcula ou executa; não julga. Ver
+  [[Rovo - What's the difference between a skill and tool]].
+- **Skill** — instruções reutilizáveis que dizem ao agente como fazer um
+  tipo de tarefa, combinando tools com raciocínio. É onde mora o julgamento
+  (critérios do A10/A14, decisões de 2026-09-10). Mesma divisão de Sinal
+  acima: tool calcula, skill/agente julga.
 - **Agente como tool** — todo agente pode chamar qualquer outro pelo
   contrato público (`Input → Output`), com teto de profundidade da cadeia.
   Ver [[2026-09-10 Agentes expostos como tool uns para os outros]].

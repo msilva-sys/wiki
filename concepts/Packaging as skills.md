@@ -1,7 +1,7 @@
 ---
 type: concept
 status: active
-updated: 2026-10-20
+updated: 2026-11-13
 date: 2026-08-17
 aliases: [skills, packaging, skill packaging, distribution]
 tags: [agents, skills, tokens, sharing, claude]
@@ -44,6 +44,12 @@ rather than a bullet.
 
 The Gabriel case is the strongest because it is a controlled comparison: two
 components, one packaged and one not, and the packaged one is the one that works.
+
+**Argumento à parte, não evidência da tese — 2026-11-13.**
+[[Rovo - What's the difference between a skill and tool]] defende skill por
+transparência: dá para ver qual skill roda e em que passo, o que facilita
+confiar e investigar. Não fala de custo nem de distribuição, por isso fica
+fora da tabela.
 
 ## Why narrow fetching is the cost lever
 
