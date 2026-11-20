@@ -8032,3 +8032,9 @@ PR review, só aparece quando a página for lida.
 - Decidido em chat: não entra como fonte da tese de Packaging as skills, só como nota à parte.
 - New: `sources/Rovo - What's the difference between a skill and tool.md`.
 - Updated: `concepts/Agent Harness Template.md`, `concepts/Vocabulário do Fluxo Agêntico.md` (verbetes Tool e Skill), `concepts/Packaging as skills.md`, `index.md`.
+
+## [2026-11-20] synthesis | Design Doc — Curadoria de skills pelo LiveAgents
+- Montado em chat (Claude Code, repo `livemode-livestry`) em 2026-11-19. Lidos: `DESIGN.md` e ADR 0003 do LiveStry; ADRs 0014, 0020, 0025, 0027, 0042 e 0046 do Fluxo Agêntico; `qualificacao-skill` (modo testar).
+- Decidido por msilva: curadoria antes do PR; o LiveStry abre o PR por callback do LiveAgents (trocado no fim, depois de cogitar o LiveAgents escrevendo no GitHub); avisos por DM a todos os contribuidores; falha vai para #alertas; `metadata.origem`.
+- Cogitado e recusado: rodar a `qualificacao-skill` no curador (etapa 2 exige a pessoa) e outros critérios além de duplicação e gatilho.
+- New: syntheses/Design Doc — Curadoria de skills pelo LiveAgents.md. Updated: index.md, syntheses/Desenho de um Skills Registry corporativo.md.

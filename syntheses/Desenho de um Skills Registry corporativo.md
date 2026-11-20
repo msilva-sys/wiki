@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-10-27
+updated: 2026-11-20
 date: 2026-10-02
 aliases: [skills registry, registro de skills, LiveStry]
 tags: [skills, agent-skills, mcp, agent-flow, governance]
@@ -343,3 +343,5 @@ com a regra de nome do agentskills.io.
 - [[Agent Flow]]
 - [[Vitrine de IA]] — plataforma em produção com "Skill" já no modelo de
   dado, exibição desligada; ver achado acima.
+
+**2026-11-19**: curadoria das propostas por agente antes do PR desenhada em [[Design Doc — Curadoria de skills pelo LiveAgents]].
