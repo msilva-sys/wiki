@@ -242,7 +242,7 @@ transcript content; see each meeting page for that.
 - [[Michelly Magalhães]] — attendee only, no role recorded yet.
 - [[Gabriel (CazéTV automation)]] — n8n revenue-recognition flow; **distinct
   from** [[Gabriel (matriz de eventos, departed)]], who built the matriz and
-  has since left.
+  has since left. **2026-11-23**: é Gabriel Abib, de FP&A.
 - [[Osmar]] · [[Nina]] · [[Diego]] — *reportagem* team; the matriz
   external-events gateway use case in [[Agent Flow]] is their problem.
 - [[Bianca (Bia)]] · [[Kauan]] — with Arthur in the TES vendor-trial group.
@@ -280,7 +280,7 @@ transcript content; see each meeting page for that.
 - [[Thiago Saldanha]] — CTO, entrou em 2026-11-23; convidado da Weekly desde
   o primeiro dia. Escopo ainda não registrado.
 - [[Gabriel Novais]] — dono do [[Maluquinho]] (sem página ainda); convidado
-  da Weekly. Não confirmado se é o mesmo de [[Gabriel (CazéTV automation)]].
+  da Weekly. Conferido em 2026-11-23: não é [[Gabriel (CazéTV automation)]].
 - [[Marina]] — financeiro, consumer of [[Farol]]'s output; slated to get a
   GitHub repo + DB copy, not the ingestion pipeline itself (2026-08-25).
 - [[Bruno]] — financeiro; a separate, older case of the same

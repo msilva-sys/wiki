@@ -8087,3 +8087,10 @@ PR review, só aparece quando a página for lida.
 - Gabriel Novais: dono do Maluquinho, que ainda não tem página. Em aberto se é o mesmo de `Gabriel (CazéTV automation)`; páginas mantidas separadas.
 - New: `people/Thiago Saldanha.md`, `people/Gabriel Novais.md`.
 - Updated: `index.md`.
+
+## [2026-11-23] update | Gabriel Novais e Gabriel Abib são pessoas diferentes
+- Conferido no Linear, no Slack e no calendário, a pedido de msilva.
+- O Gabriel da automação de receita da CazéTV é Gabriel Abib, de FP&A: criou o convite de 2026-08-17 (`gabib@livemode.com`) e tem o título "FP&A" no Slack.
+- Gabriel Novais (`gnovais@livemode.com`) é o responsável pelas issues do Maluquinho no Linear (projeto "Teste de férias: Maluquinho").
+- Em aberto: o "Gabriel" da Weekly de 2026-09-08 parece ser o Novais, sem fonte com o sobrenome.
+- Updated: `people/Gabriel Novais.md`, `people/Gabriel (CazéTV automation).md`, `index.md`.

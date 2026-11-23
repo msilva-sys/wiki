@@ -1,8 +1,8 @@
 ---
 type: person
 status: active
-updated: 2026-08-18
-aliases: [Gabriel]
+updated: 2026-11-23
+aliases: [Gabriel, Gabriel Abib, gabib]
 tags: [people, agent-flow]
 ---
 
@@ -11,6 +11,12 @@ tags: [people, agent-flow]
 A colleague building an n8n automation for CazéTV revenue recognition.
 **Not** [[Gabriel (matriz de eventos, departed)]], who built the matriz de
 eventos — different person, same first name, kept apart deliberately.
+
+> [!note] Sobrenome identificado — 2026-11-23
+> É **Gabriel Abib**, de FP&A: o convite da reunião de 2026-08-17 foi criado
+> por `gabib@livemode.com`, e o Slack dele traz o título "FP&A". Também não
+> é [[Gabriel Novais]], dono do [[Maluquinho]]. O nome do arquivo ficou como
+> estava para não quebrar links.
 
 ## Owns / decides
 
