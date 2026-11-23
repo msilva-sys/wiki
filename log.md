@@ -8080,3 +8080,10 @@ PR review, só aparece quando a página for lida.
 - Com isso os oito passos da PRO-1616 estão concluídos. O doc segue `active` porque ainda tem uma pergunta aberta (check de CI exigindo `origem`); resolver a síntese numa decisão fica para quando msilva quiser.
 - A cópia local da wiki estava divergente do remoto (3 commits locais de pessoas, 5 remotos); a edição foi feita numa worktree a partir do remoto, sem tocar nos commits locais.
 - Updated: syntheses/Design Doc — Curadoria de skills pelo LiveAgents.md (status no topo, nota de entrega, correção do diagrama, Decisões, blocos 5 e 6, Segurança, checklist e Perguntas em aberto), index.md.
+
+## [2026-11-23] update | Páginas de Thiago Saldanha e Gabriel Novais
+- Origem: prep da Weekly de 2026-11-23; dois e-mails do convite não tinham página em `people/`. Nomes e papéis informados por msilva em chat.
+- Thiago Saldanha: CTO, entrou em 2026-11-23. Escopo e linha de reporte não registrados.
+- Gabriel Novais: dono do Maluquinho, que ainda não tem página. Em aberto se é o mesmo de `Gabriel (CazéTV automation)`; páginas mantidas separadas.
+- New: `people/Thiago Saldanha.md`, `people/Gabriel Novais.md`.
+- Updated: `index.md`.
