@@ -2,8 +2,8 @@
 type: project
 status: active
 phase: build
-updated: 2026-10-22
-aliases: [fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
+updated: 2026-11-23
+aliases: [LiveAgents, fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
 tags: [agents, llm, automation, onboarding, research]
 ---
 
@@ -1506,6 +1506,17 @@ desmembrada.
 
 `(unverified: diarização colapsada no raw dos dois arquivos; atribuição de
 falas inferida por contexto)`
+
+## Hospedagem
+
+- **Rotina** dos agentes num Cloudflare Container desde 2026-11-10 (ADR 0028,
+  PRO-1481), no Worker `fluxo-agentico-rotina`.
+- **Painel, API, chat, MCP e webhooks** ainda na Vercel em 2026-11-23. Saem para a
+  Cloudflare num Worker só, o `liveagents-worker`, no domínio
+  `liveagents.livemode.space`. Ver
+  [[2026-11-23 A API e o painel do LiveAgents vão para a Cloudflare]] (ADR 0048,
+  PRO-1617). A etapa 1 (PRO-1618) está codada numa branch, sem merge nem deploy.
+- O produto passou a se chamar **LiveAgents** no repositório em 2026-11-20 (PRO-1495).
 
 ## Open questions
 

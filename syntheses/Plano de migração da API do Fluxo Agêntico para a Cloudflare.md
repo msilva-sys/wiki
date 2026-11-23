@@ -1,12 +1,26 @@
 ---
 type: synthesis
-status: draft
-updated: 2026-11-12
+status: superseded
+updated: 2026-11-23
 aliases: [migração da API pra Cloudflare, API na Cloudflare, sair da Vercel, apps/edge]
 tags: [agent-flow, cloudflare, vercel, infra, deploy]
 ---
 
 # Plano de migração da API do Fluxo Agêntico para a Cloudflare
+
+> [!warning] Superada em 2026-11-23
+> A decisão final está em [[2026-11-23 A API e o painel do LiveAgents vão para a Cloudflare]]
+> (ADR 0048, PRO-1617). Esta página fica como registro do raciocínio de 2026-11-12.
+> Três correções em relação ao que está abaixo:
+> - **Estrutura**: a ADR 0048 recusa os dois Workers permanentes. No fim fica um
+>   Worker só, o `liveagents-worker`, com o painel, a API e a rotina. Ele nasce novo,
+>   ao lado do `fluxo-agentico-rotina`, que só é apagado no fim, quando a agenda muda.
+>   O código da etapa 1 está em `apps/edge/`, o nome sugerido aqui.
+> - **Spike feito em 2026-11-22**: a partida a frio leva de 10 a 11 s.
+> - **As duas decisões em aberto foram fechadas**: o domínio é
+>   `liveagents.livemode.space`, e o container desliga quando ocioso, porque o
+>   sempre ligado custaria cerca de US$ 27/mês. O Slack segue dependendo da reentrega
+>   e da trava por `event_id`.
 
 Plano montado em chat com msilva em 2026-11-12, numa sessão do Claude Code no repo
 `livemode-fluxo-agentico` (branch `msilva/pro-1523-…`). **Só registro**: não há ADR,

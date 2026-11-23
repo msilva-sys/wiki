@@ -8048,3 +8048,11 @@ PR review, só aparece quando a página for lida.
 - Linear: criadas PRO-1620 e PRO-1621 (filhas da PRO-1616, bloqueiam a PRO-1614); PRO-1615 reescrita; tabela de passos da PRO-1616 atualizada (passos 5a, 5b e 7).
 - New: decisions/2026-11-23 Separar no LiveStry o registro das interfaces.md, decisions/2026-11-23 LiveStry guarda o status das propostas de skill.md.
 - Updated: syntheses/Design Doc — Curadoria de skills pelo LiveAgents.md (revisão de 2026-11-23 e correções inline nos blocos 1, 4 e 5, Objetivos, Decisões, Segurança e Mudanças), syntheses/Desenho de um Skills Registry corporativo.md (seção nova), index.md.
+
+## [2026-11-23] decision | A API e o painel do LiveAgents vão para a Cloudflare
+- Partiu da pergunta de msilva sobre o andamento da migração para a Cloudflare. `notes` rodou antes: nenhum callout `[!msilva]` pendente.
+- Lidos: commit `6c2cfdb` da branch `msilva/pro-1618-o-painel-e-a-api-do-liveagents-sobem-na` (ADR 0048, `apps/edge/`), PRO-1617 (descrição e notas do spike de 2026-11-22), lista de issues do Linear e lista de Workers da conta Cloudflare "LiveMode - Projetos".
+- Estado: a ADR 0048 está "Proposta", sem merge em `main`; PRO-1617, PRO-1618 e PRO-1619 estão em Backlog; o `liveagents-worker` ainda não foi publicado. Registrado como decisão porque a PRO-1617 lista as decisões como já tomadas.
+- Correção: o rascunho de 2026-11-12 escolhia dois Workers permanentes, e a ADR 0048 recusa essa forma (um Worker só no fim). As duas decisões em aberto do rascunho foram fechadas: domínio `liveagents.livemode.space` e container que desliga quando ocioso.
+- New: decisions/2026-11-23 A API e o painel do LiveAgents vão para a Cloudflare.md.
+- Updated: syntheses/Plano de migração da API do Fluxo Agêntico para a Cloudflare.md (`superseded`, correções no topo), projects/Agent Flow.md (seção Hospedagem, alias LiveAgents), index.md.
