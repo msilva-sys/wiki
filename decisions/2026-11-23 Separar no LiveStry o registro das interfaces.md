@@ -91,10 +91,34 @@ O contrato é o proposto em chat. A forma final sai na ADR 0005 do livestry.
 Ordem: (1) ADR 0005 + `DESIGN.md`; (2) mover sem mudar comportamento; (3) puxar as
 regras para o registro e trocar a origem; (4) PRO-1614 em cima do contrato.
 
-## Em aberto
+## As 17 skills com `origem: livestry`
 
-- As 17 skills que já têm `origem: livestry` (gravado pela PRO-1610, PR #35 do
-  repositório de skills): ficam como estão ou passam por um PR de correção?
+Respondido por msilva em chat, em 2026-11-23: **as 17 passam a `origem: mcp`**, num PR de
+correção no repositório de skills. Antes de responder, conferi nos PRs do repositório que
+só 4 delas foram criadas pela tool de proposta (`handover-de-ferias` #17,
+`documenta-automacoes` #18, `montar-prd` #26, `criar-automacao-airtable` #27). As outras 13
+entraram por PR direto e só ganharam a ficha pelo MCP (#19 a #25, entre outros). Mesmo
+assim, msilva escolheu um valor só para o acervo atual, em vez de separar por porta de
+criação. O DESIGN do livestry registra a escolha em Resolved Issues.
+
+O PR de correção está no branch `claude/livestry-registry-interfaces-woexmj` do
+`livemode-claude-skills`, ainda sem PR aberto. O merge dispara o `sincronizar-org.yml`
+(PRs `sincronizar-skills` nos repositórios com cópia dessas skills), como o PR #35.
+
+## Implementação
+
+Em 2026-11-23, no branch `claude/livestry-registry-interfaces-woexmj` do livestry, ainda
+sem PR:
+
+- ADR 0005 (`docs/adr/0005-registro-e-interfaces.md`) aceita, e `DESIGN.md` 1.8. A Non-goal
+  "não é um registry" virou "não guarda as skills".
+- Arquivos movidos sem mudar comportamento; depois, as regras foram puxadas para o registro.
+- O contrato ficou com `divisions()`, além dos três métodos acima. `applyApproved` devolve
+  o mesmo `ProposeResult`; o tipo próprio fica para a PRO-1621. A porta do armazenamento é
+  `proposal(name)`, que devolve a proposta aberta e a função que grava.
+- Exceção declarada à regra 2 da ADR 0001: o `SkillCatalog` do SDK passa do registro para a
+  interface MCP, porque o SDK é o juiz do formato e também quem serve a extensão Skills.
+- `npm test` com 121 testes passando (eram 111) e `npm run typecheck` limpo. Falta o deploy.
 
 ## Relacionadas
 

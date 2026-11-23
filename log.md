@@ -8048,3 +8048,9 @@ PR review, só aparece quando a página for lida.
 - Linear: criadas PRO-1620 e PRO-1621 (filhas da PRO-1616, bloqueiam a PRO-1614); PRO-1615 reescrita; tabela de passos da PRO-1616 atualizada (passos 5a, 5b e 7).
 - New: decisions/2026-11-23 Separar no LiveStry o registro das interfaces.md, decisions/2026-11-23 LiveStry guarda o status das propostas de skill.md.
 - Updated: syntheses/Design Doc — Curadoria de skills pelo LiveAgents.md (revisão de 2026-11-23 e correções inline nos blocos 1, 4 e 5, Objetivos, Decisões, Segurança e Mudanças), syntheses/Desenho de um Skills Registry corporativo.md (seção nova), index.md.
+
+## [2026-11-23] decision | LiveStry: ADR 0005 e as 17 skills com origem livestry
+- `notes` rodou antes: nenhum callout `[!msilva]` pendente.
+- PRO-1620, passos 1 a 3, no branch `claude/livestry-registry-interfaces-woexmj` do `livemode-livestry`: ADR 0005 aceita, DESIGN 1.8, arquivos movidos e regras puxadas para o registro. 121 testes passando.
+- Pergunta das 17 skills: conferido nos PRs que só 4 foram criadas pela tool de proposta; as outras 13 entraram por PR direto. msilva escolheu `mcp` nas 17 assim mesmo. Correção feita no branch de mesmo nome do `livemode-claude-skills`, sem PR aberto.
+- Updated: decisions/2026-11-23 Separar no LiveStry o registro das interfaces.md (seções novas "As 17 skills…" e "Implementação", no lugar de "Em aberto"), index.md.
