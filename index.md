@@ -277,6 +277,10 @@ transcript content; see each meeting page for that.
   pela Gabrielle; PDI de 2026-10-15: levantar uso e backlog dos LiveScripts.
   Até 2026-10-22 era confundida com [[Camila Sande]], da Bossabox.
 - [[Talisa]] — nova na área, onboarding a partir de 2026-08-27.
+- [[Thiago Saldanha]] — CTO, entrou em 2026-11-23; convidado da Weekly desde
+  o primeiro dia. Escopo ainda não registrado.
+- [[Gabriel Novais]] — dono do [[Maluquinho]] (sem página ainda); convidado
+  da Weekly. Não confirmado se é o mesmo de [[Gabriel (CazéTV automation)]].
 - [[Marina]] — financeiro, consumer of [[Farol]]'s output; slated to get a
   GitHub repo + DB copy, not the ingestion pipeline itself (2026-08-25).
 - [[Bruno]] — financeiro; a separate, older case of the same
