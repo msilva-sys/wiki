@@ -8056,3 +8056,11 @@ PR review, só aparece quando a página for lida.
 - Correção: o rascunho de 2026-11-12 escolhia dois Workers permanentes, e a ADR 0048 recusa essa forma (um Worker só no fim). As duas decisões em aberto do rascunho foram fechadas: domínio `liveagents.livemode.space` e container que desliga quando ocioso.
 - New: decisions/2026-11-23 A API e o painel do LiveAgents vão para a Cloudflare.md.
 - Updated: syntheses/Plano de migração da API do Fluxo Agêntico para a Cloudflare.md (`superseded`, correções no topo), projects/Agent Flow.md (seção Hospedagem, alias LiveAgents), index.md.
+
+## [2026-11-23] decision | A API e o painel do LiveAgents vão para o Cloud Run
+- Mesmo dia da entrada anterior. msilva seguia com a PRO-1618 e perguntou se dava para chamar a API sem passar pelo Worker. Não dá: na Cloudflare, o container não tem endereço próprio. msilva: o Worker devia resolver só o timeout do webhook.
+- Escolhido em chat: API no Cloud Run, servindo o painel. Depois de "o gcp tem o problema de timeout tb?": o prazo de 3 s é do Slack, mas no Cloud Run a rota pode responder antes de processar, porque a instância não congela, e o Worker deixou de ser necessário. Instância sempre ligada recusada pelo custo: escala a zero, e a reentrega do Slack mais a trava por `event_id` cobrem a partida a frio.
+- Repo `livemode-fluxo-agentico`, branch `claude/cloudflare-migration-610wja`: ADR 0048 reescrita no lugar (`0048-api-e-painel-no-cloud-run.md`, commit `4fac72d`), e desfeito o commit do `deploy-edge`/`--worker painel` feito antes na mesma sessão.
+- Linear: PRO-1617 e PRO-1618 reescritas (título e descrição); PRO-1619 com o texto trocado de Cloudflare para Cloud Run.
+- New: decisions/2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run.md.
+- Updated: decisions/2026-11-23 A API e o painel do LiveAgents vão para a Cloudflare.md (`superseded`, aviso no topo), syntheses/Plano de migração da API do Fluxo Agêntico para a Cloudflare.md (aviso aponta para a decisão nova), projects/Agent Flow.md (Hospedagem), index.md.

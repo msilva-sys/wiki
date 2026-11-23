@@ -9,9 +9,11 @@ tags: [agent-flow, cloudflare, vercel, infra, deploy]
 # Plano de migração da API do Fluxo Agêntico para a Cloudflare
 
 > [!warning] Superada em 2026-11-23
-> A decisão final está em [[2026-11-23 A API e o painel do LiveAgents vão para a Cloudflare]]
-> (ADR 0048, PRO-1617). Esta página fica como registro do raciocínio de 2026-11-12.
-> Três correções em relação ao que está abaixo:
+> A decisão final está em [[2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run]]
+> (ADR 0048, PRO-1617): a API sai da Vercel para o Cloud Run, não para a Cloudflare.
+> Antes dela, no mesmo dia, valeu [[2026-11-23 A API e o painel do LiveAgents vão para a Cloudflare]], também superada.
+> Esta página fica como registro do raciocínio de 2026-11-12.
+> Correções feitas em 2026-11-23, quando o destino ainda era a Cloudflare:
 > - **Estrutura**: a ADR 0048 recusa os dois Workers permanentes. No fim fica um
 >   Worker só, o `liveagents-worker`, com o painel, a API e a rotina. Ele nasce novo,
 >   ao lado do `fluxo-agentico-rotina`, que só é apagado no fim, quando a agenda muda.
