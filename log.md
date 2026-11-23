@@ -8071,3 +8071,12 @@ PR review, só aparece quando a página for lida.
 - Repo: a ADR 0048 (versão Cloud Run) fica só na branch `claude/cloudflare-migration-610wja`, sem PR. O PR #521 (Cloudflare Container) foi fechado sem merge, com comentário.
 - Linear: PRO-1617 e PRO-1618 receberam comentário de adiamento com as opções avaliadas, e seguem em Backlog. Na PRO-1619, mantida viva a pedido de msilva, a descrição agora diz que a saída da Vercel foi adiada.
 - Updated: decisions/2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run.md (`deferred`, aviso no topo), projects/Agent Flow.md (Hospedagem), index.md.
+
+
+## [2026-11-23] update | Curadoria de skills: passo 7 entregue
+- msilva pediu para atualizar o design doc depois da entrega da PRO-1615. `notes` não rodou: a sessão era de implementação, não de wiki.
+- Lidos: PRO-1615 (descrição final), PRs livemode-livestry#15 e livemode-fluxo-agentico#542 e #543, log do serviço `liveagents-api`, tabela `proposals` do LiveStry e as DMs do teste no Slack.
+- O que entrou: o webhook do GitHub ficou no LiveStry (ADR 0008 de lá), o desfecho entra na fila do `skill_curator` (ADR 0051 do LiveAgents), e o repasse que falha volta 500 ao GitHub para reenvio manual, sem alerta. Decisões de msilva no dia: reenvio só manual e linhas antigas corrigidas por SQL, sem DM; textos das DMs aprovados.
+- Com isso os oito passos da PRO-1616 estão concluídos. O doc segue `active` porque ainda tem uma pergunta aberta (check de CI exigindo `origem`); resolver a síntese numa decisão fica para quando msilva quiser.
+- A cópia local da wiki estava divergente do remoto (3 commits locais de pessoas, 5 remotos); a edição foi feita numa worktree a partir do remoto, sem tocar nos commits locais.
+- Updated: syntheses/Design Doc — Curadoria de skills pelo LiveAgents.md (status no topo, nota de entrega, correção do diagrama, Decisões, blocos 5 e 6, Segurança, checklist e Perguntas em aberto), index.md.
