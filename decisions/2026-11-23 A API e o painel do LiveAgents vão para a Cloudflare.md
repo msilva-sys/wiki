@@ -1,6 +1,6 @@
 ---
 type: decision
-status: stable
+status: superseded
 date: 2026-11-23
 updated: 2026-11-23
 aliases: [ADR 0048, sair da Vercel, liveagents-worker, migração pra Cloudflare, PRO-1617, PRO-1618]
@@ -8,6 +8,13 @@ tags: [agent-flow, liveagents, cloudflare, vercel, infra, deploy]
 ---
 
 # 2026-11-23 A API e o painel do LiveAgents vão para a Cloudflare
+
+> [!warning] Substituída no mesmo dia por [[2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run]]
+> A ADR 0048 foi reescrita: a API vai para o **Cloud Run** e serve o painel, sem
+> Worker na frente, e a rotina fica na Cloudflare. O motivo da troca: num Cloudflare
+> Container, um Worker fica na frente de todo pedido, e msilva queria um Worker só para
+> o timeout do webhook, se precisasse de algum. Esta página fica como registro do
+> desenho anterior e das medições do spike de 2026-11-22, que continuam valendo.
 
 O painel, a API, o chat, o MCP e os webhooks do [[Agent Flow|LiveAgents]] saem da
 Vercel e vão para a Cloudflare. O destino é **um Worker só, o `liveagents-worker`**,
