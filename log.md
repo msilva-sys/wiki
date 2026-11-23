@@ -8064,3 +8064,10 @@ PR review, só aparece quando a página for lida.
 - Linear: PRO-1617 e PRO-1618 reescritas (título e descrição); PRO-1619 com o texto trocado de Cloudflare para Cloud Run.
 - New: decisions/2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run.md.
 - Updated: decisions/2026-11-23 A API e o painel do LiveAgents vão para a Cloudflare.md (`superseded`, aviso no topo), syntheses/Plano de migração da API do Fluxo Agêntico para a Cloudflare.md (aviso aponta para a decisão nova), projects/Agent Flow.md (Hospedagem), index.md.
+
+## [2026-11-23] decision | Saída da Vercel adiada; a API fica lá por enquanto
+- Mesmo dia das duas entradas anteriores. msilva perguntou por que não usar o Cloudflare Container (ele também escala a zero) e se, com domínio próprio, dava para chegar ao container sem Worker. Não dá: na Cloudflare, um domínio só se liga a um Worker. Depois disso, msilva decidiu deixar a API na Vercel por enquanto.
+- Por que adiar não custa nada agora: a rotina já saiu da Vercel, e o Slack segue com a reentrega mais a trava por `event_id`.
+- Repo: a ADR 0048 (versão Cloud Run) fica só na branch `claude/cloudflare-migration-610wja`, sem PR. O PR #521 (Cloudflare Container) foi fechado sem merge, com comentário.
+- Linear: PRO-1617 e PRO-1618 receberam comentário de adiamento com as opções avaliadas, e seguem em Backlog. Na PRO-1619, mantida viva a pedido de msilva, a descrição agora diz que a saída da Vercel foi adiada.
+- Updated: decisions/2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run.md (`deferred`, aviso no topo), projects/Agent Flow.md (Hospedagem), index.md.

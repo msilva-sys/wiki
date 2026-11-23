@@ -1,6 +1,6 @@
 ---
 type: decision
-status: stable
+status: deferred
 date: 2026-11-23
 updated: 2026-11-23
 aliases: [ADR 0048, sair da Vercel, API no Cloud Run, PRO-1617, PRO-1618]
@@ -8,6 +8,24 @@ tags: [agent-flow, liveagents, cloud-run, gcp, vercel, slack, infra, deploy]
 ---
 
 # 2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run
+
+> [!warning] Adiada no mesmo dia: a API fica na Vercel por enquanto
+> Decidido por msilva em 2026-11-23, depois de saber que nem com domínio próprio um
+> Cloudflare Container dispensa o Worker na frente. A saída da Vercel inteira foi
+> adiada. A ADR 0048 não foi mergeada e fica só na branch
+> `claude/cloudflare-migration-610wja`. O PR #521 (Cloudflare Container) foi fechado
+> sem merge. PRO-1617 e PRO-1618 seguem em Backlog, com um comentário de adiamento.
+> **A PRO-1619 (domínio `liveagents.livemode.space`, ainda na Vercel) continua viva**,
+> porque reduz qualquer saída futura a uma troca de DNS.
+>
+> Por que adiar não custa nada agora: a rotina, que era o problema urgente (teto de
+> 800 s), já saiu da Vercel em 2026-11-10. O Slack continua reentregando toda menção, e
+> a trava por `event_id` impede a issue duplicada. Seguem existindo a segunda fatura e a
+> corrida entre o deploy da Vercel e a migration do banco.
+>
+> Se o assunto voltar, a escolha está entre este desenho (Cloud Run, sem peça no meio,
+> duas plataformas) e um Cloudflare Container com um Worker mínimo, só de repasse (uma
+> plataforma, código já pronto e medido). Na Cloudflare, o Worker é inevitável.
 
 O painel, a API, o chat, o MCP e os webhooks do [[Agent Flow|LiveAgents]] saem da
 Vercel e vão para o **Cloud Run**. A rotina continua na Cloudflare, sem mudança. Não há

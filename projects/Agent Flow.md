@@ -1511,12 +1511,11 @@ falas inferida por contexto)`
 
 - **Rotina** dos agentes num Cloudflare Container desde 2026-11-10 (ADR 0028,
   PRO-1481), no Worker `fluxo-agentico-rotina`.
-- **Painel, API, chat, MCP e webhooks** ainda na Vercel em 2026-11-23. Saem para o
-  **Cloud Run**, que escala a zero, com a API servindo o painel e sem Worker na frente,
-  no domínio `liveagents.livemode.space`. A rotina fica na Cloudflare. Ver
-  [[2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run]] (ADR 0048,
-  PRO-1617), que substituiu no mesmo dia o desenho com Cloudflare Container. Nada
-  codado ainda para o Cloud Run.
+- **Painel, API, chat, MCP e webhooks** ficam na Vercel: a saída foi **adiada** em
+  2026-11-23, depois de dois desenhos no mesmo dia (Cloudflare Container e Cloud Run).
+  Ver [[2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run]] (`deferred`,
+  ADR 0048 sem merge, PRO-1617). Segue viva só a PRO-1619: o domínio
+  `liveagents.livemode.space`, ainda na Vercel.
 - O produto passou a se chamar **LiveAgents** no repositório em 2026-11-20 (PRO-1495).
 
 ## Open questions
