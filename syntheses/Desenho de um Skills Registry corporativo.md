@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-11-20
+updated: 2026-11-23
 date: 2026-10-02
 aliases: [skills registry, registro de skills, LiveStry]
 tags: [skills, agent-skills, mcp, agent-flow, governance]
@@ -320,6 +320,32 @@ ficam pra quando o SDK TypeScript tiver suporte (questão em aberto no PRD).
 `skillsprotocol.com` (perguntado por msilva) descartado: protocolo próprio
 JSON-RPC, v0.1, anônimo, sem adotantes, manifesto `skill.toml` que conflita
 com a regra de nome do agentskills.io.
+
+## O LiveStry voltou a ser o registry (2026-11-23)
+
+Pergunta de msilva em chat: como o LiveStry está organizado. Lido o código
+(`livemode-livestry`, commit `43c56bc`, ADR 0001 e `DESIGN.md`). msilva notou que o
+LiveStry mistura componentes que o esboço de 2026-09-28 separava: o registry, o
+servidor MCP/API e outras interfaces.
+
+**Correção ao que está acima.** Em 2026-10-27 esta página registrou que "o LiveStry
+da v1 **não é o registry**", só um canal de entrega. O código foi para o outro lado.
+O registry existia só como dados no `livemode-claude-skills`, sem comportamento. As
+regras novas foram parar no único código que havia, o Worker do MCP: governança por
+diretoria (PRO-1359, PRO-1434, PRO-1593), `origem` (PRO-1610), escrita por PR (ADR
+0003) e a rota da curadoria (PRO-1611). Na prática, o LiveStry virou o registry, sem
+ninguém decidir isso.
+
+Decidido em 2026-11-23: separar o registro das interfaces dentro do mesmo Worker, com
+o repositório de skills como persistência e o `skill_curator` como juiz, por enquanto.
+Ver [[2026-11-23 Separar no LiveStry o registro das interfaces]]. Logo depois, o
+registro ganhou o status das propostas:
+[[2026-11-23 LiveStry guarda o status das propostas de skill]].
+
+Achado da mesma leitura: as regras de leitura valem só no caminho do MCP. O
+marketplace `livemode-skills` e o sync `livemode-skills-sync` leem o repositório
+direto, então o recorte por diretoria provavelmente não vale para eles
+(unverified: falta ler como o marketplace monta o catálogo).
 
 ## O que continua em aberto
 

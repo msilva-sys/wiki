@@ -8038,3 +8038,13 @@ PR review, só aparece quando a página for lida.
 - Decidido por msilva: curadoria antes do PR; o LiveStry abre o PR por callback do LiveAgents (trocado no fim, depois de cogitar o LiveAgents escrevendo no GitHub); avisos por DM a todos os contribuidores; falha vai para #alertas; `metadata.origem`.
 - Cogitado e recusado: rodar a `qualificacao-skill` no curador (etapa 2 exige a pessoa) e outros critérios além de duplicação e gatilho.
 - New: syntheses/Design Doc — Curadoria de skills pelo LiveAgents.md. Updated: index.md, syntheses/Desenho de um Skills Registry corporativo.md.
+
+## [2026-11-23] decision | LiveStry: registro separado das interfaces e status das propostas
+- `notes` rodou antes: nenhum callout `[!msilva]` pendente.
+- Começou numa pergunta de msilva sobre a arquitetura do LiveStry. Lidos `src/`, ADRs 0001–0004 e `DESIGN.md` do `livemode-livestry` (commit `43c56bc`). msilva notou que o LiveStry mistura registry, MCP e outras interfaces, que o esboço de 2026-09-28 separava.
+- Achado: o registry existia só como dados no git, e as regras foram parar no Worker do MCP (recorte por diretoria em `server.ts`, `pin` e `origem` em `propose.ts`). Isso contradiz o PRD de 2026-10-27 ("LiveStry v1 não é o registry"); a correção está anotada na página do registry.
+- Decidido por msilva: separar no mesmo Worker (`registry/`, `store/`, `interfaces/`); repositório de skills e `skill_curator` ficam como persistência e juiz por enquanto; `origem: mcp`; log por interface adiado.
+- Decidido por msilva: status das propostas no D1 do LiveStry, só com o sha256; rota única `POST /proposals/{id}/verdict`; PR fechado avisa o LiveStry, que repassa ao `skill_curator`. Recusados: o LiveAgents escrever no D1 do LiveStry (proposto por msilva) e um segundo webhook.
+- Linear: criadas PRO-1620 e PRO-1621 (filhas da PRO-1616, bloqueiam a PRO-1614); PRO-1615 reescrita; tabela de passos da PRO-1616 atualizada (passos 5a, 5b e 7).
+- New: decisions/2026-11-23 Separar no LiveStry o registro das interfaces.md, decisions/2026-11-23 LiveStry guarda o status das propostas de skill.md.
+- Updated: syntheses/Design Doc — Curadoria de skills pelo LiveAgents.md (revisão de 2026-11-23 e correções inline nos blocos 1, 4 e 5, Objetivos, Decisões, Segurança e Mudanças), syntheses/Desenho de um Skills Registry corporativo.md (seção nova), index.md.

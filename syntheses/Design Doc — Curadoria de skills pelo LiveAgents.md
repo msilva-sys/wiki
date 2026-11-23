@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: active
-updated: 2026-11-20
+updated: 2026-11-23
 date: 2026-11-19
 aliases: [curadoria de skills, skill_curator, skill curator, esteira de skills, ci de skills]
 tags: [livestry, agent-flow, skills, design-doc, github]
@@ -19,6 +19,19 @@ Toda skill proposta pelo LiveStry passa pelo agente `skill_curator`, no LiveAgen
 antes de chegar à revisão humana. Só a skill aprovada vira PR, e quem abre o PR
 continua sendo o LiveStry, chamado de volta pelo LiveAgents. Quem propôs recebe
 pelo Slack o resultado da curadoria, a abertura do PR e o desfecho dele.
+
+> **Revisão de 2026-11-23.** Três decisões tomadas em chat por msilva corrigem
+> partes deste doc. As correções estão marcadas onde cada trecho aparece; o texto
+> original foi mantido.
+> - O LiveStry passa a guardar o status de cada proposta (D1, só o sha256 do
+>   conteúdo). O LiveAgents avisa o veredito numa rota única,
+>   `POST /proposals/{id}/verdict`, que substitui `POST /proposals/approved`
+>   ([[2026-11-23 LiveStry guarda o status das propostas de skill]], PRO-1621).
+> - O webhook de PR fechado vai para o LiveStry, que atualiza o status e repassa o
+>   desfecho ao `skill_curator` (mesma decisão, PRO-1615).
+> - O código do LiveStry separa o registro das interfaces, e skill nova criada pelo
+>   MCP grava `origem: mcp`
+>   ([[2026-11-23 Separar no LiveStry o registro das interfaces]], PRO-1620).
 
 ## Contexto
 
@@ -40,6 +53,8 @@ O LiveAgents já tem as peças para o trabalho assíncrono:
   proposta que já está em revisão humana.
 - Quem propôs, e todo mundo que contribuiu, é avisado em cada passo.
 - O LiveStry continua sem estado e continua sendo o único que escreve no
+  *(corrigido 2026-11-23: o LiveStry passa a guardar o status das propostas, sem o
+  conteúdo; continua sendo o único que escreve no GitHub)*
   repositório de skills.
 
 ## Não-objetivos
@@ -98,11 +113,11 @@ sequenceDiagram
 | Quem é avisado | **Todo mundo que contribuiu** com a proposta (e-mail de cada chamada) |
 | Canal dos avisos | DM no Slack |
 | Falha do curador ou do callback | Entrada fica `failed` na fila. Alerta em [#alertas](https://livemode.slack.com/archives/C0CHE9QTEAX). Quem propôs não é avisado |
-| Proposta só na fila, sem PR | O LiveStry não a enxerga. Continua lendo a branch, como hoje, só para o erro "skill ainda em revisão" |
+| Proposta só na fila, sem PR | O LiveStry não a enxerga. Continua lendo a branch, como hoje, só para o erro "skill ainda em revisão". *Corrigido 2026-11-23: o LiveStry passa a enxergá-la pelo registro de status (PRO-1621)* |
 | Nomes | Agente `skill_curator`, no padrão da ADR 0002 do Fluxo Agêntico (Interfaces) |
 | Autenticação entre os dois | **Um secret compartilhado**, nos dois sentidos, por enquanto |
 | Contra o que se julga duplicação | O `main` do `livemode-org/livemode-claude-skills`, lido no momento da curadoria pela porta da ADR 0046 |
-| Registro de onde a skill veio | **`metadata.origem`** no `SKILL.md`, com a interface que criou a skill (`livestry`). Gravado pelo LiveStry na criação e nunca mais alterado (Interfaces, bloco 1). As skills de hoje recebem `origem: livestry` num PR único. Daqui em diante, skill sem o campo conta como `unknown` |
+| Registro de onde a skill veio | **`metadata.origem`** no `SKILL.md`, com a interface que criou a skill (`livestry`). Gravado pelo LiveStry na criação e nunca mais alterado (Interfaces, bloco 1). As skills de hoje recebem `origem: livestry` num PR único. Daqui em diante, skill sem o campo conta como `unknown`. *Corrigido 2026-11-23: skill nova criada pelo MCP grava `origem: mcp`; as 17 já gravadas com `livestry` estão em aberto (PRO-1620)* |
 
 ## Interfaces
 
@@ -172,6 +187,11 @@ deploy (ADR 0003 do Fluxo Agêntico).
 
 ### 4. LiveAgents → LiveStry: proposta aprovada
 
+> *Corrigido 2026-11-23:* o LiveAgents chama `POST /proposals/{id}/verdict` nos dois
+> casos, aprovando (com a proposta) ou reprovando (com os motivos). O LiveStry confere
+> o sha256 da proposta aprovada contra o que mandou à curadoria. A rota abaixo sai
+> (PRO-1621).
+
 Só quando a curadoria passa. `POST /proposals/approved` no LiveStry, com o mesmo
 secret, e o `payload` da entrada como corpo.
 
@@ -197,6 +217,11 @@ passa pelo curador de novo. É o mesmo limite de hoje ("Não protege contra vers
 desatualizada", bloco 5).
 
 ### 5. Webhook do GitHub
+
+> *Corrigido 2026-11-23:* o webhook aponta para o LiveStry (`POST /webhooks/github`),
+> que atualiza o status das propostas ligadas ao PR e repassa ao `skill_curator`
+> (`POST /api/skill_curator/outcomes`). O LiveAgents não recebe mais o evento do
+> GitHub nem guarda o webhook secret da App (PRO-1615).
 
 A App `livemode-livestry` entrega o evento `pull_request` em
 `POST /api/skill_curator/webhooks/github`, no padrão do
@@ -227,7 +252,9 @@ desde o último desfecho (reprovação, merge ou PR fechado).
 
 - **A chave da App continua só no Worker do LiveStry.** O LiveAgents tem só o
   webhook secret da App, que não escreve nada.
-- **A rota `/proposals/approved` pula a curadoria.** Quem tem o secret abre PR com
+- **A rota `/proposals/approved` pula a curadoria.** *(2026-11-23: a rota vira
+  `/proposals/{id}/verdict`, e o sha256 impede aprovar conteúdo diferente do
+  julgado.)* Quem tem o secret abre PR com
   qualquer conteúdo em nome de qualquer e-mail. A revisão humana continua sendo a
   porta, como na v1. É a segunda rota do LiveStry fora do `/mcp` que aceita
   escrita, e a única sem token do LiveAuth.
@@ -269,7 +296,8 @@ desde o último desfecho (reprovação, merge ou PR fechado).
 
 **GitHub App `livemode-livestry`**
 
-- [ ] Assinar o evento `pull_request` e apontar o webhook para o LiveAgents, com
+- [ ] *(2026-11-23: o webhook aponta para o LiveStry, não para o LiveAgents)*
+      Assinar o evento `pull_request` e apontar o webhook para o LiveAgents, com
       webhook secret.
 
 ## Perguntas em aberto
