@@ -8094,3 +8094,11 @@ PR review, só aparece quando a página for lida.
 - Gabriel Novais (`gnovais@livemode.com`) é o responsável pelas issues do Maluquinho no Linear (projeto "Teste de férias: Maluquinho").
 - Em aberto: o "Gabriel" da Weekly de 2026-09-08 parece ser o Novais, sem fonte com o sobrenome.
 - Updated: `people/Gabriel Novais.md`, `people/Gabriel (CazéTV automation).md`, `index.md`.
+
+## [2026-11-26] decision | O Slack vira canal comum aos agentes; correção da hospedagem do LiveAgents
+- `notes` rodou no início da sessão: os dois `[!msilva]` encontrados já estão citados em prosa e no log, nenhum pendente.
+- Começou em "onde paramos?" e numa explicação, em chat, da entrada compartilhada do Slack. Lidos: ADRs 0049, 0050, 0056, 0057 e 0058 e o código em `packages/agents/src/agents/common/infra/slack/` (`events.py`, `conversations.py`, `threads.py`) do `livemode-fluxo-agentico`, `main` em `7807a0c`; `.github/workflows/migrate.yml` e `apps/pages/wrangler.jsonc`; PRO-1617, PRO-1618, PRO-1619, PRO-1672, PRO-1674 e PRO-1705 no Linear.
+- Correção: msilva avisou que "a api já está na gcp e cloudflare". O adiamento registrado em 2026-11-23 às 10:23 foi revertido no mesmo dia: ADR 0049 aceita às 13:30, PRO-1618 às 14:21, PRO-1617 ("... e a Vercel é desligada") às 16:42 e PRO-1619 (domínio por um Pages, ADR 0050) às 18:29. A ADR 0048 da branch virou 0049 no `main`. O motivo da retomada não está registrado. O `main` ainda tem `vercel.json` e `work_after_response` com padrão `False`, provável sobra.
+- New: decisions/2026-11-25 O Slack vira canal de conversa comum aos agentes.md (ADRs 0056 e 0058), decisions/2026-11-25 Estágio do projeto e retrato do portfólio na memória do A10.md (ADR 0057).
+- Updated: decisions/2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run.md (`deferred` → `stable`, aviso de correção no topo, seção nova da ADR 0050, Em aberto), projects/Agent Flow.md (Hospedagem e Slack), syntheses/Plano de migração da API do Fluxo Agêntico para a Cloudflare.md (aviso), index.md.
+- Fica de fora por ora: a ADR 0053 (memória permanente em quatro operações) e o resto do trabalho de 2026-11-24 e 2026-11-25 (ADRs 0052, 0054 e 0055, PRO-1639 a 1646, 1665 a 1671, 1700 a 1702).

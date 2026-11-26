@@ -2,7 +2,7 @@
 type: project
 status: active
 phase: build
-updated: 2026-11-23
+updated: 2026-11-26
 aliases: [LiveAgents, fluxo, fluxo de agentes, agent architecture, the agent project, A10 & A14]
 tags: [agents, llm, automation, onboarding, research]
 ---
@@ -1511,11 +1511,16 @@ falas inferida por contexto)`
 
 - **Rotina** dos agentes num Cloudflare Container desde 2026-11-10 (ADR 0028,
   PRO-1481), no Worker `fluxo-agentico-rotina`.
-- **Painel, API, chat, MCP e webhooks** ficam na Vercel: a saída foi **adiada** em
-  2026-11-23, depois de dois desenhos no mesmo dia (Cloudflare Container e Cloud Run).
-  Ver [[2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run]] (`deferred`,
-  ADR 0048 sem merge, PRO-1617). Segue viva só a PRO-1619: o domínio
-  `liveagents.livemode.space`, ainda na Vercel.
+- **Painel, API, chat, MCP e webhooks** no **Cloud Run** desde 2026-11-23 (ADR 0049,
+  PRO-1617 e PRO-1618), projeto `livemode-liveagents`, serviço `liveagents-api` em
+  `southamerica-east1`, escalando a zero. O domínio `liveagents.livemode.space` chega
+  à API por um projeto Pages da Cloudflare (ADR 0050, PRO-1619). A Vercel saiu.
+  Ver [[2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run]].
+  *(Correção 2026-11-26: esta linha dizia que a saída da Vercel tinha sido adiada. O
+  adiamento existiu, mas foi revertido no mesmo dia, e o wiki não acompanhou.)*
+- **Slack** é canal de conversa comum aos agentes desde 2026-11-25 (ADR 0056 e 0058):
+  um robô só, e a conversa escolhe o agente. Ver
+  [[2026-11-25 O Slack vira canal de conversa comum aos agentes]].
 - O produto passou a se chamar **LiveAgents** no repositório em 2026-11-20 (PRO-1495).
 
 ## Open questions

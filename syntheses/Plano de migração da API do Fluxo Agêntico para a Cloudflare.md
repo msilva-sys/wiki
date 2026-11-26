@@ -1,7 +1,7 @@
 ---
 type: synthesis
 status: superseded
-updated: 2026-11-23
+updated: 2026-11-26
 aliases: [migração da API pra Cloudflare, API na Cloudflare, sair da Vercel, apps/edge]
 tags: [agent-flow, cloudflare, vercel, infra, deploy]
 ---
@@ -10,7 +10,9 @@ tags: [agent-flow, cloudflare, vercel, infra, deploy]
 
 > [!warning] Superada em 2026-11-23
 > A decisão final está em [[2026-11-23 A API e o painel do LiveAgents vão para o Cloud Run]]
-> (ADR 0048, PRO-1617): a API sai da Vercel para o Cloud Run, não para a Cloudflare.
+> (ADR 0049 no `main`, PRO-1617): a API sai da Vercel para o Cloud Run, não para a Cloudflare.
+> Feito em 2026-11-23. A Cloudflare entra só como repasse do domínio, por um projeto
+> Pages (ADR 0050).
 > Antes dela, no mesmo dia, valeu [[2026-11-23 A API e o painel do LiveAgents vão para a Cloudflare]], também superada.
 > Esta página fica como registro do raciocínio de 2026-11-12.
 > Correções feitas em 2026-11-23, quando o destino ainda era a Cloudflare:
