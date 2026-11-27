@@ -8101,3 +8101,9 @@ PR review, só aparece quando a página for lida.
 - Em aberto: prova do SDK, avaliação do agente gerado, confirmação em conversa em grupo, proteção de branch, rede do job, dono de cada agente.
 - New: `syntheses/Construtor de agentes pelo MCP.md`.
 - Updated: `index.md`.
+
+## [2026-11-27] update | Construtor de agentes: job no Cloud Run
+- msilva decidiu pelo job no Cloud Run para a máquina do construtor, depois de comparar com o container da Cloudflare e o GitHub Actions (limite de rede nativo, mesmo provedor da API; preço é centavos nos três).
+- Achado no repo: o CI só roda no PR de release (`develop` para `main`); os testes do agente gerado rodam na máquina do construtor, que repete o job de backend do `ci.yml` com Postgres local.
+- Desenho: o job só lê e devolve o diff; PR, Langfuse e Slack ficam com a rodada na API. Custo estimado por pedido: ~US$ 0,06 de máquina, US$ 2 a 10 de modelo.
+- Updated: `syntheses/Construtor de agentes pelo MCP.md` (e o Document no Linear).
