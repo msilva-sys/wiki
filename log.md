@@ -8094,3 +8094,10 @@ PR review, só aparece quando a página for lida.
 - Gabriel Novais (`gnovais@livemode.com`) é o responsável pelas issues do Maluquinho no Linear (projeto "Teste de férias: Maluquinho").
 - Em aberto: o "Gabriel" da Weekly de 2026-09-08 parece ser o Novais, sem fonte com o sobrenome.
 - Updated: `people/Gabriel Novais.md`, `people/Gabriel (CazéTV automation).md`, `index.md`.
+
+## [2026-11-27] synthesis | Construtor de agentes pelo MCP
+- Origem: sessão de `/design-doc` com msilva, seção por seção, sobre deixar usuários criarem e editarem agentes pelo MCP.
+- Decisões de msilva: agente gerado como código (non-goal do arcabouço fica); construtor no LiveAgents faz tudo, PR é o único portão humano; prompts direto no Langfuse fora da produção; mudança só de prompt confirmada por admin no Slack; avisos de todo estado numa conversa em grupo dos admins; qualquer pessoa pede mudança em qualquer agente; sem limite de custo; Claude Agent SDK como hipótese de framework.
+- Em aberto: prova do SDK, avaliação do agente gerado, confirmação em conversa em grupo, proteção de branch, rede do job, dono de cada agente.
+- New: `syntheses/Construtor de agentes pelo MCP.md`.
+- Updated: `index.md`.
